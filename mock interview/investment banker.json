@@ -1,0 +1,504 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary role of an investment bank?",
+      "answer": "The primary role is to act as an intermediary between issuers of securities (corporations, governments) and investors, providing services such as underwriting, M&A advisory, sales & trading, and research."
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between investment banking and commercial banking?",
+      "answer": "Investment banking focuses on capital raising, M&A, and market making. Commercial banking accepts deposits, makes loans, and provides basic financial services. Post-2008, large banks often do both under a holding company."
+    },
+    {
+      "id": 3,
+      "question": "What is an Initial Public Offering (IPO)?",
+      "answer": "An IPO is the first sale of stock by a private company to the public, allowing it to raise equity capital, provide liquidity to early investors, and become a publicly-traded entity."
+    },
+    {
+      "id": 4,
+      "question": "Explain the underwriting process in an IPO.",
+      "answer": "Underwriting involves the investment bank purchasing shares from the issuer and reselling them to the public, assuming the risk of not selling at the offering price. Types include firm commitment, best efforts, and bought deal."
+    },
+    {
+      "id": 5,
+      "question": "What is a prospectus?",
+      "answer": "A prospectus is a legal disclosure document filed with regulators (e.g., SEC) containing detailed information about an offering, including financial statements, risk factors, use of proceeds, and management background."
+    },
+    {
+      "id": 6,
+      "question": "What is the difference between primary and secondary market transactions?",
+      "answer": "Primary market involves new securities issued directly by the company (IPO, follow-on), with proceeds going to the issuer. Secondary market involves trading existing securities among investors; issuer does not receive proceeds."
+    },
+    {
+      "id": 7,
+      "question": "What is a follow-on public offering (FPO)?",
+      "answer": "An FPO is an issuance of additional shares by an already-public company to raise more equity capital. It can be dilutive to existing shareholders."
+    },
+    {
+      "id": 8,
+      "question": "What is a Rights Offering?",
+      "answer": "A rights offering gives existing shareholders the right to purchase additional shares at a discount before the company offers them to the public, allowing them to maintain ownership percentage."
+    },
+    {
+      "id": 9,
+      "question": "What is the difference between a merger and an acquisition?",
+      "answer": "A merger combines two roughly equal companies into one new entity. An acquisition involves one company (acquirer) purchasing another (target), which may become subsidiary or be absorbed."
+    },
+    {
+      "id": 10,
+      "question": "What is a hostile takeover?",
+      "answer": "A hostile takeover occurs when an acquirer attempts to buy a target company against the wishes of its management/board, often through a tender offer directly to shareholders or a proxy fight."
+    },
+    {
+      "id": 11,
+      "question": "What is a leveraged buyout (LBO)?",
+      "answer": "An LBO is the acquisition of a company using significant borrowed money (debt), with the target's assets and cash flows used as collateral and to repay the debt over time."
+    },
+    {
+      "id": 12,
+      "question": "Explain the concept of 'synergy' in M&A.",
+      "answer": "Synergy is the additional value created by combining two companies that exceeds their standalone sum. It comes from revenue synergies (cross-selling) and cost synergies (eliminating redundancies)."
+    },
+    {
+      "id": 13,
+      "question": "What is due diligence in investment banking?",
+      "answer": "Due diligence is a comprehensive investigation of a target company's financials, operations, legal matters, contracts, and risks before an M&A transaction or financing, conducted by the acquirer and its advisors."
+    },
+    {
+      "id": 14,
+      "question": "What is a fairness opinion?",
+      "answer": "A fairness opinion is a professional letter from an investment bank stating that the financial terms of a transaction (e.g., merger price) are fair from a financial point of view to the shareholders."
+    },
+    {
+      "id": 15,
+      "question": "What are the three main valuation methods used in investment banking?",
+      "answer": "1) Discounted Cash Flow (DCF), 2) Comparable Company Analysis (Comps), 3) Precedent Transaction Analysis (Transaction Comps). A fourth is Leveraged Buyout (LBO) analysis."
+    },
+    {
+      "id": 16,
+      "question": "Explain Discounted Cash Flow (DCF) analysis briefly.",
+      "answer": "DCF values a company based on the present value of its projected future free cash flows, discounted at the weighted average cost of capital (WACC). It requires forecasting financials and a terminal value."
+    },
+    {
+      "id": 17,
+      "question": "What is Terminal Value in DCF, and two common ways to calculate it?",
+      "answer": "Terminal Value represents the value of cash flows beyond the explicit forecast period. Two methods: Perpetuity Growth Method (Gordon Growth) and Exit Multiple Method (applying EBITDA multiple)."
+    },
+    {
+      "id": 18,
+      "question": "What is WACC (Weighted Average Cost of Capital)?",
+      "answer": "WACC is the blended cost of a company's debt and equity financing, weighted by their market values. It is used as the discount rate in DCF. Formula: (E/V * Re) + (D/V * Rd * (1-Tax Rate))."
+    },
+    {
+      "id": 19,
+      "question": "What is the difference between Enterprise Value (EV) and Equity Value?",
+      "answer": "Enterprise Value is the total value of the business to all providers of capital (debt + equity). Equity Value is the value only to shareholders. EV = Equity Value + Net Debt (Total Debt - Cash) + Minorities + Preferred."
+    },
+    {
+      "id": 20,
+      "question": "What is EBITDA and why is it used in valuation?",
+      "answer": "EBITDA = Earnings Before Interest, Taxes, Depreciation, and Amortization. It approximates operating cash flow, neutralizes capital structure and tax differences, and is a common valuation multiple basis (EV/EBITDA)."
+    },
+    {
+      "id": 21,
+      "question": "What is a comparable company analysis (trading comps)?",
+      "answer": "It values a company by comparing its valuation multiples (e.g., EV/EBITDA, P/E) to a set of similar public companies, using current market prices. It reflects real-time market sentiment."
+    },
+    {
+      "id": 22,
+      "question": "What is precedent transaction analysis?",
+      "answer": "It values a company based on multiples paid for similar companies in past M&A transactions. It includes a control premium and reflects M&A market conditions, but may be outdated."
+    },
+    {
+      "id": 23,
+      "question": "What is a control premium?",
+      "answer": "A control premium is the extra amount an acquirer pays over the current market price to gain controlling interest in a target company, typically 20-40%, reflecting synergy and strategic value."
+    },
+    {
+      "id": 24,
+      "question": "What is an LBO model used for?",
+      "answer": "An LBO model projects the acquisition of a company using significant debt, calculates returns to the private equity sponsor (IRR, MOIC), and determines the maximum purchase price that meets return hurdles."
+    },
+    {
+      "id": 25,
+      "question": "What is Internal Rate of Return (IRR) in private equity?",
+      "answer": "IRR is the annualized compound rate of return on an investment, accounting for timing of cash flows. In LBOs, sponsors target 20-25% IRR typically over a 5-7 year holding period."
+    },
+    {
+      "id": 26,
+      "question": "What is the difference between IRR and MOIC?",
+      "answer": "IRR accounts for time value of money (annualized return). MOIC (Multiple on Invested Capital) = total cash returned / total cash invested, ignoring time. Both are used in PE performance measurement."
+    },
+    {
+      "id": 27,
+      "question": "What is a debt financing structure in an LBO?",
+      "answer": "In an LBO, debt is layered: Senior debt (bank loans, lowest cost), Subordinated debt (mezzanine, high-yield bonds), and sometimes seller financing. Debt typically covers 60-80% of purchase price."
+    },
+    {
+      "id": 28,
+      "question": "What is a dividend recapitalization (dividend recap)?",
+      "answer": "A dividend recap occurs when a company takes on new debt to pay a large dividend to its private equity owners, often used to return capital to investors without selling the company."
+    },
+    {
+      "id": 29,
+      "question": "What is a sell-side M&A process?",
+      "answer": "An investment bank representing the seller (sell-side) prepares marketing materials (teaser, CIM), contacts potential buyers, manages due diligence, solicits bids, and negotiates the highest price/terms."
+    },
+    {
+      "id": 30,
+      "question": "What is a buy-side M&A process?",
+      "answer": "A bank representing the acquirer (buy-side) identifies targets, performs valuation, advises on bid strategy, negotiates price and terms, and helps arrange financing."
+    },
+    {
+      "id": 31,
+      "question": "What is a Confidential Information Memorandum (CIM)?",
+      "answer": "A CIM is a detailed marketing document prepared by the sell-side bank for potential buyers, containing business description, financials, growth opportunities, management, and projections, but typically excluding price."
+    },
+    {
+      "id": 32,
+      "question": "What is a letter of intent (LOI) in M&A?",
+      "answer": "An LOI is a non-binding document from a potential buyer expressing interest to acquire the target, outlining proposed price, structure, exclusivity period, and key terms, often preceding final agreement."
+    },
+    {
+      "id": 33,
+      "question": "What is a definitive agreement (purchase agreement) in M&A?",
+      "answer": "The definitive agreement is the legally binding contract finalizing the transaction, including representations & warranties, covenants, closing conditions, indemnification, and termination fees."
+    },
+    {
+      "id": 34,
+      "question": "What is an earn-out in M&A?",
+      "answer": "An earn-out is a contingent payment where the seller receives additional consideration if the target achieves certain financial or operational milestones post-acquisition, bridging valuation gaps."
+    },
+    {
+      "id": 35,
+      "question": "What is a reverse merger?",
+      "answer": "A reverse merger allows a private company to become public by acquiring a publicly-traded shell company, bypassing the traditional IPO process. It’s faster but carries risks."
+    },
+    {
+      "id": 36,
+      "question": "What are a SPAC (Special Purpose Acquisition Company)?",
+      "answer": "A SPAC is a shell company that raises capital in an IPO to later merge with a private operating company (de-SPAC), taking it public. Sponsors typically have 18-24 months to find a target."
+    },
+    {
+      "id": 37,
+      "question": "What is a PIPEs transaction?",
+      "answer": "PIPE (Private Investment in Public Equity) is a private placement of public company shares to accredited investors, often at a discount, allowing rapid capital raise without traditional follow-on."
+    },
+    {
+      "id": 38,
+      "question": "What is the difference between a stock deal and an asset deal?",
+      "answer": "In a stock deal, acquirer buys target company shares, assuming all liabilities (known and unknown). In an asset deal, acquirer selects specific assets and liabilities; target remains legal entity with residual."
+    },
+    {
+      "id": 39,
+      "question": "What is Section 338(h)(10) election in US M&A tax?",
+      "answer": "It is a tax election allowing a stock acquisition to be treated as an asset purchase for tax purposes, giving buyer a step-up in asset basis while seller pays capital gains tax on stock sale."
+    },
+    {
+      "id": 40,
+      "question": "What is the difference between a fixed income security and an equity security?",
+      "answer": "Fixed income (bonds) pays periodic interest and returns principal at maturity, with priority in liquidation. Equity (stock) represents ownership, residual claim, and variable dividends/potential appreciation."
+    },
+    {
+      "id": 41,
+      "question": "What is a high-yield bond (junk bond)?",
+      "answer": "A high-yield bond is a debt security rated below investment grade (BB+ or lower by S&P, Ba1 by Moody's), offering higher yield to compensate for higher default risk."
+    },
+    {
+      "id": 42,
+      "question": "What is a convertible bond?",
+      "answer": "A convertible bond can be exchanged for a predetermined number of common shares at the holder's option, offering downside protection (bond floor) and upside equity participation."
+    },
+    {
+      "id": 43,
+      "question": "What is a mezzanine financing?",
+      "answer": "Mezzanine debt is subordinated to senior debt but senior to equity, often unsecured with equity features (warrants, PIK interest). It fills the gap between senior debt and equity in capital structures."
+    },
+    {
+      "id": 44,
+      "question": "What is a PIK (Payment-in-Kind) interest?",
+      "answer": "PIK interest allows borrower to pay interest with additional debt instead of cash, increasing the principal amount. Common in mezzanine or distressed debt to preserve liquidity."
+    },
+    {
+      "id": 45,
+      "question": "What is a credit rating, and which are the major agencies?",
+      "answer": "A credit rating assesses a borrower's creditworthiness and default risk. Major agencies: S&P, Moody's, and Fitch. Investment grade: BBB-/Baa3 and above; below is high-yield."
+    },
+    {
+      "id": 46,
+      "question": "What is a yield curve, and what is its typical shape?",
+      "answer": "The yield curve plots bond yields against maturities. A normal curve is upward-sloping (longer maturities have higher yields). An inverted curve (short-term yields > long-term) often signals recession."
+    },
+    {
+      "id": 47,
+      "question": "What is the difference between a syndicated loan and a bilateral loan?",
+      "answer": "A syndicated loan involves multiple lenders (a syndicate) pooling funds for a large borrower, agent bank administers. Bilateral loan involves two parties (one bank, one borrower)."
+    },
+    {
+      "id": 48,
+      "question": "What is a bridge loan?",
+      "answer": "A bridge loan is short-term interim financing (e.g., to fund an acquisition before permanent debt or equity is raised), usually repaid within 12-24 months, at higher rates."
+    },
+    {
+      "id": 49,
+      "question": "What is a derivative? Give three common types.",
+      "answer": "A derivative is a financial contract whose value derives from an underlying asset (stock, bond, commodity, rate). Common types: options (calls/puts), futures/forwards, and swaps (interest rate, credit default)."
+    },
+    {
+      "id": 50,
+      "question": "What is an interest rate swap, and why would a company use it?",
+      "answer": "An interest rate swap exchanges fixed-rate payments for floating-rate payments. A company with floating-rate debt might swap to fix payments, hedging against rising rates."
+    },
+    {
+      "id": 51,
+      "question": "What is a credit default swap (CDS)?",
+      "answer": "A CDS is a derivative where the buyer pays periodic premiums to a seller for protection against default of a reference entity (bond/loan). If default occurs, seller pays buyer par minus recovery value."
+    },
+    {
+      "id": 52,
+      "question": "What is the difference between a call option and a put option?",
+      "answer": "A call option gives the buyer the right (not obligation) to buy an underlying asset at a strike price. A put option gives the right to sell. Buyers pay a premium; sellers receive premium."
+    },
+    {
+      "id": 53,
+      "question": "What is an IPO 'roadshow'?",
+      "answer": "A roadshow is a series of presentations by the issuer and its investment bankers to potential institutional investors, marketing the IPO, explaining the business, and gauging demand before pricing."
+    },
+    {
+      "id": 54,
+      "question": "What is a 'book-building' process in an IPO?",
+      "answer": "Book-building is the process where underwriters collect indications of interest from investors at various price levels, building a 'book' to determine the optimal offering price and allocation."
+    },
+    {
+      "id": 55,
+      "question": "What is a 'green shoe' or over-allotment option?",
+      "answer": "A green shoe is an option allowing underwriters to sell up to 15% additional shares in an IPO to cover over-allotments and stabilize the price post-IPO by repurchasing shares in the open market."
+    },
+    {
+      "id": 56,
+      "question": "What is a 'lock-up period' in IPOs?",
+      "answer": "A lock-up period (typically 90-180 days) prohibits insiders, founders, and early investors from selling their shares after the IPO, preventing a price collapse due to sudden supply."
+    },
+    {
+      "id": 57,
+      "question": "What is a 'deal team' in investment banking (typical roles)?",
+      "answer": "Deal team includes: junior analysts (financial models, pitch books), associates (manage analysts, draft documents), VPs (day-to-day client management), MDs (senior relationship, negotiation), and sector/regional bankers."
+    },
+    {
+      "id": 58,
+      "question": "What is a 'pitch book'?",
+      "answer": "A pitch book is a presentation used by investment bankers to win business (sell-side or buy-side mandate), showcasing industry expertise, comparable transactions, valuation ideas, and the bank's credentials."
+    },
+    {
+      "id": 59,
+      "question": "What is a 'teaser' in M&A?",
+      "answer": "A teaser is a short, anonymous one-page summary of a target company sent to potential buyers to generate interest, highlighting industry, financial metrics (e.g., revenue, EBITDA), but hiding the target's name."
+    },
+    {
+      "id": 60,
+      "question": "What is a 'management presentation' in an M&A process?",
+      "answer": "After signing an LOI, the target management presents to the acquirer, covering strategy, operations, financials, and answering detailed questions — a key step in due diligence."
+    },
+    {
+      "id": 61,
+      "question": "What is an 'adjustment mechanism' like dollar-for-dollar or collar in M&A?",
+      "answer": "Adjustment mechanisms handle valuation changes between signing and closing. Dollar-for-dollar reduces purchase price dollar-for-dollar for net debt/working capital changes. A collar limits stock-for-stock exchange ratio within a band."
+    },
+    {
+      "id": 62,
+      "question": "What is a 'material adverse change' (MAC) clause?",
+      "answer": "A MAC clause allows the acquirer to walk away from a deal if a significant negative event (e.g., financial collapse, natural disaster) materially harms the target before closing."
+    },
+    {
+      "id": 63,
+      "question": "What is a 'break-up fee' (termination fee)?",
+      "answer": "A break-up fee is a penalty (typically 1-4% of deal value) paid by the target to the acquirer if the target backs out of a signed merger agreement to accept a superior offer (go-shop provision)."
+    },
+    {
+      "id": 64,
+      "question": "What is 'reverse break-up fee'?",
+      "answer": "A reverse break-up fee is paid by the acquirer to the target if the acquirer fails to close due to financing issues or regulatory disapproval. Common in private equity deals with financing contingencies."
+    },
+    {
+      "id": 65,
+      "question": "What is a 'no-shop' clause?",
+      "answer": "A no-shop clause prohibits the target from soliciting or negotiating with other potential buyers after signing an LOI or definitive agreement, ensuring exclusivity for the acquirer."
+    },
+    {
+      "id": 66,
+      "question": "What is a 'fiduciary out' clause?",
+      "answer": "A fiduciary out allows the target board to terminate an agreement to accept a superior proposal after a go-shop period, to fulfill their duty to shareholders, often requiring payment of break-up fee."
+    },
+    {
+      "id": 67,
+      "question": "What is the role of the 'valuation opinion' in M&A litigation?",
+      "answer": "A fair valuation opinion from an investment bank helps the board establish the 'business judgment rule' defense against shareholder lawsuits claiming sale price is too low or process flawed."
+    },
+    {
+      "id": 68,
+      "question": "What is a 'dog and pony show' in investment banking?",
+      "answer": "A dog and pony show is a sales presentation (often by management and bankers) to potential investors or acquirers to market a security or a company, typically during a roadshow."
+    },
+    {
+      "id": 69,
+      "question": "What is a 'power pitch' and a 'beauty parade'?",
+      "answer": "A 'beauty parade' is when companies interview multiple investment banks for a mandate. A 'power pitch' is each bank's short, compelling presentation to win that business."
+    },
+    {
+      "id": 70,
+      "question": "What is the difference between 'sell-side research' and 'independent research'?",
+      "answer": "Sell-side research is produced by investment banks, often distributed to clients and may have conflicts of interest (e.g., banking relationships). Independent research is conflict-free, paid by subscribers."
+    },
+    {
+      "id": 71,
+      "question": "What is a 'Chinese wall' in investment banking?",
+      "answer": "A Chinese wall is an information barrier within a bank between the investment banking division (advising on M&A, IPOs) and research/sales & trading to prevent insider trading and conflicts of interest."
+    },
+    {
+      "id": 72,
+      "question": "What is Regulation FD (Fair Disclosure) in the US?",
+      "answer": "Reg FD prohibits selective disclosure of material non-public information; all investors must have equal access to material information, enforced by the SEC."
+    },
+    {
+      "id": 73,
+      "question": "What is a 'bulge bracket' investment bank?",
+      "answer": "Bulge bracket banks are the largest global full-service investment banks (e.g., Goldman Sachs, Morgan Stanley, J.P. Morgan, BofA Merrill, Citi). They deal with large-cap clients, large deals, and all product lines."
+    },
+    {
+      "id": 74,
+      "question": "What is a 'boutique' investment bank?",
+      "answer": "Boutique banks are smaller, specialized firms offering advisory services (M&A, restructuring) without capital-intensive businesses (trading, lending). Examples: Lazard, Evercore, Centerview."
+    },
+    {
+      "id": 75,
+      "question": "What is a 'fairness opinion' and who requests it?",
+      "answer": "A fairness opinion is a third-party evaluation (often from an investment bank) that a transaction's consideration is fair. It is requested by target boards to protect against shareholder lawsuits."
+    },
+    {
+      "id": 76,
+      "question": "What is a 'solvency opinion'?",
+      "answer": "A solvency opinion assesses whether a company will be solvent after a transaction (e.g., dividend recap or LBO), meeting its debts as they come due; protects lenders and boards against fraudulent conveyance claims."
+    },
+    {
+      "id": 77,
+      "question": "What is a 'going private' transaction?",
+      "answer": "A going private transaction takes a public company private, often via a management buyout or PE firm acquisition, delisting the shares. Shareholders receive cash and the company becomes private."
+    },
+    {
+      "id": 78,
+      "question": "What is a 'minority squeeze-out' or freeze-out merger?",
+      "answer": "After acquiring a controlling stake, a majority shareholder forces minority holders to sell their shares (often at a court-appraised fair value) to gain 100% ownership."
+    },
+    {
+      "id": 79,
+      "question": "What is a 'tracking stock'?",
+      "answer": "Tracking stock is a class of common stock that reflects financial performance of a specific division or subsidiary, not the entire company, but shareholders have a single corporate entity with limited rights."
+    },
+    {
+      "id": 80,
+      "question": "What is a 'carve-out' (spin-off IPO)?",
+      "answer": "A carve-out is when a parent company sells a minority stake (e.g., 20%) of a subsidiary via an IPO, while retaining control. Later full separation may occur via spin-off or split-off."
+    },
+    {
+      "id": 81,
+      "question": "What is a 'split-off' vs. 'spin-off'?",
+      "answer": "Spin-off: parent distributes subsidiary shares pro rata to its shareholders tax-free. Split-off: parent offers shareholders to exchange their parent shares for subsidiary shares, reducing parent's share count."
+    },
+    {
+      "id": 82,
+      "question": "What is a 'leveraged recapitalization' as a defense against hostile takeovers?",
+      "answer": "A leveraged recap uses borrowed funds to pay a large dividend or buy back shares, increasing debt and reducing the equity available for a hostile acquirer, making takeover uneconomical."
+    },
+    {
+      "id": 83,
+      "question": "What is a 'poison pill' (shareholders rights plan)?",
+      "answer": "A poison pill allows existing shareholders (excluding the acquirer) to buy shares at a deep discount, diluting the acquirer's stake, making a hostile takeover prohibitively expensive or dilutive."
+    },
+    {
+      "id": 84,
+      "question": "What is a 'white knight' defense?",
+      "answer": "A white knight is a friendly acquirer that the target board seeks to merge with to avoid a hostile takeover, usually offering better terms or preserving management/employees."
+    },
+    {
+      "id": 85,
+      "question": "What is a 'crown jewel' defense?",
+      "answer": "A crown jewel defense involves selling or threatening to sell the target's most valuable assets to a friendly third party, making the company unattractive to the hostile bidder."
+    },
+    {
+      "id": 86,
+      "question": "What is a 'Pac-Man' defense?",
+      "answer": "The Pac-Man defense occurs when the target company turns the tables and attempts to acquire the hostile acquirer, a rare and aggressive counter-bid strategy."
+    },
+    {
+      "id": 87,
+      "question": "What is a 'shareholder activism' and how does an investment bank advise?",
+      "answer": "Shareholder activists buy stakes to pressure management for changes (e.g., spin-offs, buybacks, board seats). Banks advise on defense strategies (negotiate settlements, proxy contests) or support activists on offensive campaigns."
+    },
+    {
+      "id": 88,
+      "question": "What is a 'proxy fight'?",
+      "answer": "A proxy fight is a shareholder battle to vote out existing management/directors, soliciting votes from other shareholders to support the dissident slate of directors."
+    },
+    {
+      "id": 89,
+      "question": "What is the difference between 'enterprise value' (EV) and 'total enterprise value' (TEV)?",
+      "answer": "They are essentially synonymous: EV or TEV is the sum of equity value, debt, minority interests, and preferred stock minus cash. Some definitions exclude certain items, but in IB EV is the standard term."
+    },
+    {
+      "id": 90,
+      "question": "What is the 'rule of thumb' for transaction multiples in a specific industry?",
+      "answer": "A rule of thumb is a simplistic valuation benchmark used in preliminary discussions (e.g., 'retail stores are often valued at 0.5x sales'), but not reliable for final pricing."
+    },
+    {
+      "id": 91,
+      "question": "What is a 'discount for lack of marketability' (DLOM)?",
+      "answer": "DLOM is a reduction in value applied to private company shares or restricted stock for the lack of a liquid public market. Typical DLOM ranges 20-35% depending on restrictions."
+    },
+    {
+      "id": 92,
+      "question": "What is a 'nominal value' strip (in asset valuation)?",
+      "answer": "Not a standard IB term. If you meant 'net asset value' (NAV) — it's the total assets minus liabilities. In investment banking, NAV is used for funds or asset-holding companies. Please clarify. (Assuming skip or rephrased)."
+    },
+    {
+      "id": 93,
+      "question": "What is an 'accordion feature' in debt financing?",
+      "answer": "An accordion feature allows a borrower to increase the committed loan amount (up to a limit) without renegotiation, providing flexibility for future needs (e.g., add-on acquisitions)."
+    },
+    {
+      "id": 94,
+      "question": "What is a 'covenant-lite' loan?",
+      "answer": "A covenant-lite loan has fewer or looser financial maintenance covenants (e.g., no recurring leverage tests), giving borrower more operational flexibility, common in institutional leveraged loans."
+    },
+    {
+      "id": 95,
+      "question": "What is the difference between 'fundamental' and 'technical' factors in equity capital markets?",
+      "answer": "Fundamental factors: company financials, industry growth, valuation. Technical factors: supply/demand for shares, IPO backlog, investor sentiment, fund flows, and market volatility."
+    },
+    {
+      "id": 96,
+      "question": "What is a 'black-out period' for insiders trading?",
+      "answer": "A black-out period is a pre-set window (e.g., 2 weeks before earnings) when insiders cannot trade due to possession of material non-public information, preventing insider trading allegations."
+    },
+    {
+      "id": 97,
+      "question": "What is a 'stock exchange' listing requirement (e.g., for Nasdaq/NYSE)?",
+      "answer": "Listing requirements include minimum shareholder equity, share price ($4+), market cap ($50M+ for NYSE), public float, and governance rules (audit committee, independent directors)."
+    },
+    {
+      "id": 98,
+      "question": "What is 'Regulation S-K' or 'S-X' for SEC filings?",
+      "answer": "Reg S-K prescribes disclosure requirements (non-financial: description of business, risk factors). Reg S-X governs financial statement format and content. Both apply to IPO prospectuses and periodic filings."
+    },
+    {
+      "id": 99,
+      "question": "What is an 'at-the-market' (ATM) offering?",
+      "answer": "An ATM is a flexible equity offering where a public company sells shares gradually into the market at prevailing prices over time (rather than a single block), minimizing dilution and discount."
+    },
+    {
+      "id": 100,
+      "question": "What are the top five essential skills for an investment banker?",
+      "answer": "1. Financial modeling and valuation expertise (DCF, LBO, M&A), 2. Strong analytical and quantitative rigor, 3. Deal execution and project management under tight deadlines, 4. Client management and communication (pitch, negotiation), 5. Resilience, work ethic, and attention to detail."
+    }
+  ]
+}

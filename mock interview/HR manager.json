@@ -1,0 +1,501 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between 'personnel management' and 'human resource management'?",
+    "answer": "Personnel management is traditional, reactive, and administrative (payroll, compliance). HRM is strategic, proactive, and focuses on developing human capital as a competitive advantage."
+  },
+  {
+    "id": 2,
+    "question": "What is 'human resource planning' (HRP)?",
+    "answer": "HRP is the process of forecasting future workforce demand and supply to ensure the right number of people with the right skills at the right time."
+  },
+  {
+    "id": 3,
+    "question": "What is the difference between 'job description' and 'job specification'?",
+    "answer": "Job description lists duties, responsibilities, and working conditions. Job specification lists required qualifications, skills, and traits for the role."
+  },
+  {
+    "id": 4,
+    "question": "What is 'recruitment' vs 'selection'?",
+    "answer": "Recruitment is attracting a pool of candidates (positive process). Selection is choosing the most suitable candidate (negative/eliminatory process)."
+  },
+  {
+    "id": 5,
+    "question": "What is 'internal recruitment' and its advantage?",
+    "answer": "Internal recruitment fills vacancies from existing employees (promotion, transfer). Advantage: lower cost, faster, boosts morale, and known performance track record."
+  },
+  {
+    "id": 6,
+    "question": "What is 'employer branding'?",
+    "answer": "Employer branding is the company's reputation as an employer, influencing attraction and retention of talent through EVP (Employee Value Proposition)."
+  },
+  {
+    "id": 7,
+    "question": "What is a 'competency-based interview'?",
+    "answer": "An interview focusing on past behavior to assess specific competencies (e.g., teamwork, problem-solving) using STAR (Situation, Task, Action, Result) questions."
+  },
+  {
+    "id": 8,
+    "question": "What is 'onboarding' and how is it different from orientation?",
+    "answer": "Orientation is a one-time event (first day/week). Onboarding is a longer process (months) integrating new hires into culture, role, and performance expectations."
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between 'training' and 'development'?",
+    "answer": "Training is short-term, job-specific skill improvement (e.g., software training). Development is long-term, broad career growth (e.g., leadership program)."
+  },
+  {
+    "id": 10,
+    "question": "What is 'performance appraisal' vs 'performance management'?",
+    "answer": "Performance appraisal is the annual/semi-annual rating event. Performance management is a continuous cycle of goal setting, feedback, coaching, and review."
+  },
+  {
+    "id": 11,
+    "question": "What is '360-degree feedback'?",
+    "answer": "A multi-source feedback method where employee receives input from manager, peers, subordinates, and self for holistic development."
+  },
+  {
+    "id": 12,
+    "question": "What is the 'halo effect' in performance appraisal?",
+    "answer": "A bias where one positive trait (e.g., punctuality) influences overall rating, overshadowing other areas needing improvement."
+  },
+  {
+    "id": 13,
+    "question": "What is 'forced distribution' (rank and yank) method?",
+    "answer": "A performance rating system that forces employees into categories (e.g., top 20%, middle 70%, bottom 10%) to differentiate performance."
+  },
+  {
+    "id": 14,
+    "question": "What is the difference between 'central tendency error' and 'leniency error'?",
+    "answer": "Central tendency is rating everyone average. Leniency error is rating everyone high (or low in strictness error)."
+  },
+  {
+    "id": 15,
+    "question": "What is 'compensation' vs 'total rewards'?",
+    "answer": "Compensation is direct monetary pay (salary, bonus). Total rewards includes compensation, benefits, work-life balance, recognition, and career development."
+  },
+  {
+    "id": 16,
+    "question": "What is 'variable pay'? Give two examples.",
+    "answer": "Variable pay is performance-linked compensation not guaranteed. Examples: sales commission, annual bonus, profit sharing."
+  },
+  {
+    "id": 17,
+    "question": "What is a 'grade structure' in compensation?",
+    "answer": "A hierarchy of job grades with associated pay ranges, ensuring internal equity and career progression paths."
+  },
+  {
+    "id": 18,
+    "question": "What is 'job evaluation'?",
+    "answer": "A systematic process to determine the relative worth of jobs within an organization, used to establish equitable pay structures."
+  },
+  {
+    "id": 19,
+    "question": "What is 'equal pay for equal work' concept?",
+    "answer": "Mandating that men and women receive same pay for same or similar work, as protected under the Equal Remuneration Act in India."
+  },
+  {
+    "id": 20,
+    "question": "What is the difference between 'gratuity' and 'provident fund' (EPF)?",
+    "answer": "Gratuity is a lump sum paid for long service (5+ years). EPF is a mandatory retirement savings scheme with contributions from employer and employee."
+  },
+  {
+    "id": 21,
+    "question": "What is 'HR analytics' (people analytics)?",
+    "answer": "Data-driven approach to HR decisions using statistical analysis of workforce data (attrition, productivity, engagement) to improve outcomes."
+  },
+  {
+    "id": 22,
+    "question": "What is 'attrition rate' and how is it conceptually calculated?",
+    "answer": "Attrition rate measures employee departures as percentage of average headcount over a period. High attrition indicates retention issues."
+  },
+  {
+    "id": 23,
+    "question": "What is the difference between 'voluntary' and 'involuntary' turnover?",
+    "answer": "Voluntary turnover is employee-initiated (resignation, retirement). Involuntary is employer-initiated (termination, layoff)."
+  },
+  {
+    "id": 24,
+    "question": "What is a 'stay interview'?",
+    "answer": "A proactive conversation with high-performing employees to understand why they stay and what might cause them to leave, unlike exit interviews."
+  },
+  {
+    "id": 25,
+    "question": "What is 'succession planning'?",
+    "answer": "A strategic process to identify and develop internal talent for future leadership roles to ensure business continuity."
+  },
+  {
+    "id": 26,
+    "question": "What is a 'talent pool'?",
+    "answer": "A database of pre-screened potential candidates (internal or external) ready to fill future vacancies quickly."
+  },
+  {
+    "id": 27,
+    "question": "What is the difference between 'HR generalist' and 'HR specialist'?",
+    "answer": "Generalist handles multiple HR functions (recruitment, employee relations, compliance). Specialist focuses on one area (e.g., L&D, compensation)."
+  },
+  {
+    "id": 28,
+    "question": "What is 'employee engagement'?",
+    "answer": "Emotional commitment employees have to organizational goals, going beyond satisfaction — engaged employees give discretionary effort."
+  },
+  {
+    "id": 29,
+    "question": "What is an 'employee assistance program' (EAP)?",
+    "answer": "A confidential employer-provided service offering counseling, mental health support, financial advice, or substance abuse help for employees."
+  },
+  {
+    "id": 30,
+    "question": "What is 'work-life balance'?",
+    "answer": "The equilibrium between work demands and personal life, supported by flexible hours, remote work, parental leave, and wellness policies."
+  },
+  {
+    "id": 31,
+    "question": "What is the difference between 'diversity' and 'inclusion'?",
+    "answer": "Diversity is representation (gender, race, age). Inclusion is creating an environment where diverse individuals feel valued, heard, and empowered."
+  },
+  {
+    "id": 32,
+    "question": "What is 'unconscious bias' in HR processes?",
+    "answer": "Automatic, unintentional stereotypes that affect recruitment, promotion, and evaluation (e.g., affinity bias, confirmation bias)."
+  },
+  {
+    "id": 33,
+    "question": "What is 'sexual harassment' under the POSH Act in India?",
+    "answer": "Unwelcome sexually determined behavior (physical, verbal, nonverbal) creating hostile work environment, with Internal Complaints Committee mandatory for employers with 10+ employees."
+  },
+  {
+    "id": 34,
+    "question": "What is a 'disciplinary procedure' in HR?",
+    "answer": "A formal process (verbal warning, written warning, suspension, termination) for addressing misconduct or performance issues, ensuring natural justice."
+  },
+  {
+    "id": 35,
+    "question": "What is 'constructive dismissal'?",
+    "answer": "When an employee resigns due to employer's conduct making work environment intolerable, treating it as forced resignation legally."
+  },
+  {
+    "id": 36,
+    "question": "What is the difference between 'layoff' and 'retrenchment' under Indian labor law?",
+    "answer": "Layoff is temporary inability to employ due to shortage of power, raw materials, or breakdown. Retrenchment is permanent termination of surplus workforce (not due to discipline)."
+  },
+  {
+    "id": 37,
+    "question": "What is 'collective bargaining'?",
+    "answer": "Negotiation between employer and trade union representatives on wages, working conditions, benefits, and dispute resolution."
+  },
+  {
+    "id": 38,
+    "question": "What is a 'trade union'?",
+    "answer": "An organized association of workers formed to protect and advance their collective interests in negotiations with employers."
+  },
+  {
+    "id": 39,
+    "question": "What is 'HR audit'?",
+    "answer": "A systematic review of HR policies, procedures, documentation, and compliance to identify gaps and improve effectiveness."
+  },
+  {
+    "id": 40,
+    "question": "What is 'HRIS' (Human Resource Information System)?",
+    "answer": "A software system for digitizing HR processes like employee database, payroll, attendance, recruitment, and performance management."
+  },
+  {
+    "id": 41,
+    "question": "What is 'outsourcing' in HR? Give an example.",
+    "answer": "Contracting external vendors for non-core HR functions. Example: payroll processing, background verification, recruitment (RPO)."
+  },
+  {
+    "id": 42,
+    "question": "What is 'psychological contract'?",
+    "answer": "Unwritten, implicit expectations between employer and employee (e.g., job security for loyalty), not legally binding but impacts engagement."
+  },
+  {
+    "id": 43,
+    "question": "What is 'glass ceiling'?",
+    "answer": "Invisible barrier preventing women and minorities from rising to senior leadership positions despite qualifications."
+  },
+  {
+    "id": 44,
+    "question": "What is 'flexible work arrangement' (FWA)?",
+    "answer": "Alternative work options beyond standard 9-to-5 office: flexi-time, compressed workweek, remote work, part-time, job sharing."
+  },
+  {
+    "id": 45,
+    "question": "What is the difference between 'remote work' and 'hybrid work'?",
+    "answer": "Remote work: employee works entirely from home/anywhere. Hybrid work: split time between office and remote (e.g., 3 days office, 2 days home)."
+  },
+  {
+    "id": 46,
+    "question": "What is 'job rotation' as a development tool?",
+    "answer": "Moving employees across different roles/departments periodically to broaden skills, reduce boredom, and develop versatility."
+  },
+  {
+    "id": 47,
+    "question": "What is a 'career ladder' vs 'career lattice'?",
+    "answer": "Career ladder is vertical upward progression (promotion). Career lattice allows lateral moves, cross-functional moves, or demotions for growth."
+  },
+  {
+    "id": 48,
+    "question": "What is 'mentoring' vs 'coaching'?",
+    "answer": "Mentoring is long-term, career-focused, senior guide providing advice. Coaching is short-term, performance-focused, often by manager or external coach."
+  },
+  {
+    "id": 49,
+    "question": "What is 'assessment center' in selection/promotion?",
+    "answer": "A method using multiple exercises (role plays, case studies, group discussions) to evaluate candidates on multiple competencies."
+  },
+  {
+    "id": 50,
+    "question": "What is 'background verification' in recruitment?",
+    "answer": "Process of validating candidate claims (education, employment history, criminal record, references) to reduce hiring risk."
+  },
+  {
+    "id": 51,
+    "question": "What is the difference between 'probation period' and 'confirmation'?",
+    "answer": "Probation is a trial period (typically 3-6 months) to assess suitability. Confirmation grants permanent employment status and full benefits."
+  },
+  {
+    "id": 52,
+    "question": "What is an 'appointment letter' vs 'offer letter'?",
+    "answer": "Offer letter states conditional terms; appointment letter confirms final hiring with joining date, role, salary, and terms of employment."
+  },
+  {
+    "id": 53,
+    "question": "What is 'full and final settlement' (F&F)?",
+    "answer": "Process of clearing all dues (salary, leave encashment, gratuity, reimbursements) when an employee leaves the organization."
+  },
+  {
+    "id": 54,
+    "question": "What is 'exit interview'?",
+    "answer": "A conversation with departing employee to understand reasons for leaving, gather feedback on culture/work, and improve retention."
+  },
+  {
+    "id": 55,
+    "question": "What is 'employee wellness program'?",
+    "answer": "Initiatives promoting physical, mental, financial well-being: gym memberships, yoga, health checkups, stress management workshops."
+  },
+  {
+    "id": 56,
+    "question": "What is 'organizational climate' vs 'organizational culture'?",
+    "answer": "Climate is the temporary mood/atmosphere (how it feels to work today). Culture is deep, stable values and beliefs (how we do things here)."
+  },
+  {
+    "id": 57,
+    "question": "What is the 'Hawthorne effect'?",
+    "answer": "The phenomenon where employees change behavior simply because they know they are being observed, from Hawthorne factory experiments."
+  },
+  {
+    "id": 58,
+    "question": "What is 'Maslow's Hierarchy of Needs' in HR context?",
+    "answer": "A motivation theory: employees are motivated to fulfill needs in order (physiological → safety → social → esteem → self-actualization)."
+  },
+  {
+    "id": 59,
+    "question": "What is 'Herzberg's Two-Factor Theory'?",
+    "answer": "Hygiene factors (salary, work conditions) prevent dissatisfaction. Motivators (recognition, growth) create satisfaction and motivation."
+  },
+  {
+    "id": 60,
+    "question": "What is 'McGregor's Theory X and Theory Y'?",
+    "answer": "Theory X assumes employees are lazy and need control. Theory Y assumes employees are self-motivated and seek responsibility."
+  },
+  {
+    "id": 61,
+    "question": "What is 'job enrichment' vs 'job enlargement'?",
+    "answer": "Job enlargement adds more tasks at same level (horizontal). Job enrichment adds more responsibility and autonomy (vertical)."
+  },
+  {
+    "id": 62,
+    "question": "What is 'flexible benefits' (cafeteria plan)?",
+    "answer": "A benefits system allowing employees to choose from a menu of options (e.g., extra leave, health coverage, transport allowance) within a budget."
+  },
+  {
+    "id": 63,
+    "question": "What is 'ESOP' (Employee Stock Option Plan)?",
+    "answer": "A benefit giving employees the right to buy company shares at a predetermined price after vesting, aligning interests with shareholders."
+  },
+  {
+    "id": 64,
+    "question": "What is 'statutory bonus' under the Payment of Bonus Act?",
+    "answer": "Minimum bonus (8.33% of salary) payable to employees earning up to ₹21,000/month if organization has 20+ employees, provided profit condition."
+  },
+  {
+    "id": 65,
+    "question": "What is 'leave encashment'?",
+    "answer": "Converting unused leave days into cash payment, either at resignation/retirement or annually as per company policy."
+  },
+  {
+    "id": 66,
+    "question": "What is the difference between 'sick leave', 'casual leave', and 'earned leave'?",
+    "answer": "Sick leave for illness, casual leave for short personal needs (1-2 days), earned leave (privilege leave) for planned vacation, earned based on days worked."
+  },
+  {
+    "id": 67,
+    "question": "What is 'maternity benefit' under the Maternity Benefit Act in India?",
+    "answer": "Paid leave of 26 weeks for first two children (12 weeks for third), with medical bonus and nursing breaks, applicable to establishments with 10+ employees."
+  },
+  {
+    "id": 68,
+    "question": "What is 'sexual harassment complaint committee' (ICC)?",
+    "answer": "Internal Complaints Committee mandated under POSH Act, 2013 for employers with 10+ employees, to inquire into harassment complaints."
+  },
+  {
+    "id": 69,
+    "question": "What is the 'Standing Orders Act'?",
+    "answer": "Industrial Employment (Standing Orders) Act requires employers (100+ workers) to define service conditions (attendance, discipline, termination) clearly."
+  },
+  {
+    "id": 70,
+    "question": "What is the difference between 'contract labor' and 'permanent employee'?",
+    "answer": "Contract labor is hired through contractor for temporary needs, no direct employer benefits or job security. Permanent employee has direct payroll and benefits."
+  },
+  {
+    "id": 71,
+    "question": "What is 'minimum wages'?",
+    "answer": "Statutory minimum hourly/daily wage set by government to prevent exploitation, varying by state, skill level, and industry."
+  },
+  {
+    "id": 72,
+    "question": "What is 'PF number' and 'UAN'?",
+    "answer": "PF number is employee's provident fund account identifier per establishment. UAN (Universal Account Number) is a single ID for all PF accounts across jobs."
+  },
+  {
+    "id": 73,
+    "question": "What is 'ESI' (Employee State Insurance)?",
+    "answer": "Social security scheme for medical, disability, and maternity benefits for employees earning below ₹21,000/month, for establishments with 10+ employees."
+  },
+  {
+    "id": 74,
+    "question": "What is the difference between 'layoff', 'retrenchment', and 'closure'?"
+  },
+  {
+    "id": 75,
+    "question": "What is 'workmen's compensation'?",
+    "answer": "Compensation (medical, disability, death) to workers for injuries arising from employment, regulated by Employee's Compensation Act."
+  },
+  {
+    "id": 76,
+    "question": "What is 'HR strategy'?",
+    "answer": "A long-term plan aligning HR practices (recruitment, training, rewards) with business strategy (cost leadership, differentiation)."
+  },
+  {
+    "id": 77,
+    "question": "What is the difference between 'hard HRM' and 'soft HRM'?",
+    "answer": "Hard HRM treats employees as resources to be controlled (cost minimization). Soft HRM treats employees as assets to be developed (commitment)."
+  },
+  {
+    "id": 78,
+    "question": "What is 'HR business partner' (HRBP) model?",
+    "answer": "HRBP model places HR professionals within business units to align HR initiatives with business goals, moving beyond administrative roles."
+  },
+  {
+    "id": 79,
+    "question": "What is 'competency mapping'?",
+    "answer": "Process of identifying key competencies (knowledge, skills, behaviors) required for each role to guide selection, training, and appraisal."
+  },
+  {
+    "id": 80,
+    "question": "What is 'balanced scorecard' for HR?",
+    "answer": "A strategic framework measuring HR performance across four perspectives: financial, customer, internal process, learning & growth."
+  },
+  {
+    "id": 81,
+    "question": "What is 'headcount' vs 'FTE' (full-time equivalent)?",
+    "answer": "Headcount counts each person as 1 regardless of hours. FTE converts part-time roles into equivalent full-time units (e.g., two half-time = 1 FTE)."
+  },
+  {
+    "id": 82,
+    "question": "What is 'cost per hire' metric?",
+    "answer": "Total recruitment costs (advertising, agency fees, internal time) divided by number of hires, measuring recruitment efficiency."
+  },
+  {
+    "id": 83,
+    "question": "What is 'time to fill' vs 'time to hire'?",
+    "answer": "Time to fill: days from requisition approval to candidate acceptance. Time to hire: days from candidate sourcing to acceptance (excluding requisition phase)."
+  },
+  {
+    "id": 84,
+    "question": "What is 'employee net promoter score' (eNPS)?",
+    "answer": "A single-question survey: 'How likely are you to recommend this as a great place to work?' Score = % promoters - % detractors."
+  },
+  {
+    "id": 85,
+    "question": "What is 'absenteeism rate'?",
+    "answer": "Percentage of scheduled workdays lost due to unplanned absences (sick leave, casual leave), not including planned leave or holidays."
+  },
+  {
+    "id": 86,
+    "question": "What is 'HR dashboard'?",
+    "answer": "A visual display of key HR metrics (attrition, headcount, diversity, training hours) in real-time for data-driven decision making."
+  },
+  {
+    "id": 87,
+    "question": "What is 'socialization' in organizational context?",
+    "answer": "The process by which new employees learn organizational culture, values, norms, and expected behaviors."
+  },
+  {
+    "id": 88,
+    "question": "What is 'outplacement' service?",
+    "answer": "Career transition support (resume help, counseling, job search) provided by employer to laid-off employees as part of severance package."
+  },
+  {
+    "id": 89,
+    "question": "What is 'job sharing' arrangement?",
+    "answer": "Two part-time employees voluntarily share responsibilities of one full-time role, splitting salary and benefits proportionally."
+  },
+  {
+    "id": 90,
+    "question": "What is 'whistleblower policy'?",
+    "answer": "A policy encouraging employees to report unethical or illegal conduct (fraud, harassment) without fear of retaliation, offering anonymity."
+  },
+  {
+    "id": 91,
+    "question": "What is 'code of conduct'?",
+    "answer": "A written set of ethical rules and behavioral standards (conflict of interest, confidentiality, dress code) for employees."
+  },
+  {
+    "id": 92,
+    "question": "What is 'non-disclosure agreement' (NDA) in employment?",
+    "answer": "A legal contract where employee agrees not to disclose confidential company information (trade secrets, client data) during or after employment."
+  },
+  {
+    "id": 93,
+    "question": "What is 'non-compete clause'? Is it enforceable in India?",
+    "answer": "Restriction on working for a competitor after leaving. In India, non-competes during employment are valid, but post-employment are generally unenforceable under Section 27 of Contract Act."
+  },
+  {
+    "id": 94,
+    "question": "What is 'gig economy' and its HR implications?",
+    "answer": "Temporary, flexible jobs (freelancers, independent contractors). HR implications: no statutory benefits, engagement model, performance tracking, compliance risk."
+  },
+  {
+    "id": 95,
+    "question": "What is 'quiet quitting' as a workplace trend?",
+    "answer": "Employee doing minimum required work, disengaging from extra effort or emotional investment, without formally resigning."
+  },
+  {
+    "id": 96,
+    "question": "What is 'attrition' vs 'churn' vs 'churn rate'?",
+    "answer": "Attrition is employee departures not replaced. Churn (turnover) includes departures replaced with new hires. Churn rate is total separations / average headcount."
+  },
+  {
+    "id": 97,
+    "question": "What is a 'PIP' (Performance Improvement Plan)?",
+    "answer": "A formal document and process to help underperforming employees improve within a specified time (30-90 days), failing which leads to termination."
+  },
+  {
+    "id": 98,
+    "question": "What is 'role clarity' and why is it important?",
+    "answer": "Clear understanding of job duties, authority, accountability, and reporting. Reduces confusion, conflict, and improves productivity."
+  },
+  {
+    "id": 99,
+    "question": "What is the difference between 'HR metrics' and 'HR analytics'?",
+    "answer": "HR metrics are descriptive numbers (turnover rate, cost per hire). HR analytics uses statistical analysis to find correlations and predictive insights."
+  },
+  {
+    "id": 100,
+    "question": "What is the 'SHRM model' (Society for Human Resource Management) of HR competency?",
+    "answer": "A framework of key HR competencies: business acumen, consultation, critical evaluation, leadership, communication, ethical practice, and relationship management."
+  }
+]

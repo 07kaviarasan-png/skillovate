@@ -1,0 +1,504 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary difference between a CA and a CPA?",
+      "answer": "CA (Chartered Accountant) is a designation used internationally (Commonwealth countries, ICAEW, ICAI), while CPA (Certified Public Accountant) is the primary US designation. Both certify expertise in accounting, auditing, and taxation, with differences in local laws and reciprocity."
+    },
+    {
+      "id": 2,
+      "question": "What are the key ethical principles for a CA/CPA?",
+      "answer": "Integrity, objectivity, professional competence and due care, confidentiality, and professional behavior (as per IESBA or AICPA Code of Professional Conduct)."
+    },
+    {
+      "id": 3,
+      "question": "What is a material misstatement in an audit?",
+      "answer": "A material misstatement is an error or omission in financial statements that could influence the economic decisions of users. Materiality depends on size and nature."
+    },
+    {
+      "id": 4,
+      "question": "Explain the difference between an audit and a review engagement.",
+      "answer": "Audit provides reasonable assurance (positive opinion) with detailed evidence gathering. Review provides limited assurance (negative assurance) with analytical procedures and inquiries, less scope."
+    },
+    {
+      "id": 5,
+      "question": "What is the going concern assumption, and when must it be disclosed?",
+      "answer": "Going concern assumes the entity will continue operating for the next 12 months. If substantial doubt exists, management must disclose uncertainties, and auditor may issue a qualified or adverse opinion."
+    },
+    {
+      "id": 6,
+      "question": "What is a qualified audit opinion?",
+      "answer": "A qualified opinion states that except for a specific material misstatement or scope limitation, the financial statements are fairly presented. It is not clean but not adverse."
+    },
+    {
+      "id": 7,
+      "question": "What is the difference between an adverse opinion and a disclaimer of opinion?",
+      "answer": "Adverse opinion: financial statements are materially misstated and not fairly presented. Disclaimer of opinion: auditor could not obtain sufficient evidence (scope limitation) and expresses no opinion."
+    },
+    {
+      "id": 8,
+      "question": "What are International Financial Reporting Standards (IFRS)?",
+      "answer": "IFRS are a set of global accounting standards issued by the IASB, used in over 140 countries to ensure comparable, transparent financial reporting across borders."
+    },
+    {
+      "id": 9,
+      "question": "What is US GAAP, and how does it differ from IFRS in inventory costing?",
+      "answer": "US GAAP (FASB) allows LIFO (Last-In, First-Out) for inventory; IFRS prohibits LIFO. IFRS requires same cost formula for all similar inventory; GAAP allows different formulas."
+    },
+    {
+      "id": 10,
+      "question": "What is the revenue recognition standard (ASC 606 / IFRS 15)?",
+      "answer": "A five-step model: 1) Identify contract with customer, 2) Identify performance obligations, 3) Determine transaction price, 4) Allocate price, 5) Recognize revenue when (or as) obligations are satisfied."
+    },
+    {
+      "id": 11,
+      "question": "What is a contingent liability, and when is it recognized?",
+      "answer": "A contingent liability is a possible obligation arising from past events (e.g., lawsuit). Recognized (accrued) if probable and estimable. Disclosed in notes if reasonably possible."
+    },
+    {
+      "id": 12,
+      "question": "What is the difference between a provision and a reserve?",
+      "answer": "Provision is a liability of uncertain timing/amount (recognized). Reserve is an appropriation of retained earnings (e.g., general reserve), not a liability; IFRS avoids term 'reserve' for liabilities."
+    },
+    {
+      "id": 13,
+      "question": "What is a deferred tax asset (DTA) and deferred tax liability (DTL)?",
+      "answer": "DTA arises when taxable income exceeds book income (future deduction). DTL arises when book income exceeds taxable income (future tax payment). Due to temporary differences."
+    },
+    {
+      "id": 14,
+      "question": "What is a valuation allowance for deferred tax assets?",
+      "answer": "A valuation allowance reduces DTA if it is more likely than not (probability >50%) that some or all of the DTA will not be realized, based on future taxable income projections."
+    },
+    {
+      "id": 15,
+      "question": "What is the difference between a finance lease and an operating lease under ASC 842/IFRS 16?",
+      "answer": "Lessee: virtually all leases are on-balance-sheet with right-of-use asset and lease liability. Finance leases front-load interest expense; operating leases have straight-line expense. Lessor accounting differs."
+    },
+    {
+      "id": 16,
+      "question": "What is goodwill impairment testing?",
+      "answer": "Goodwill is tested for impairment annually or triggering events. Under GAAP, one-step test: compare reporting unit fair value to carrying amount; if fair value lower, record impairment loss for excess."
+    },
+    {
+      "id": 17,
+      "question": "Explain the equity method of accounting for investments.",
+      "answer": "Used for significant influence (20-50% ownership). Investment recorded at cost, then adjusted for investor's share of investee's net income (increase investment) and dividends (decrease)."
+    },
+    {
+      "id": 18,
+      "question": "What is a business combination (acquisition method)?",
+      "answer": "Acquisition method: Identify acquirer, determine acquisition date, recognize identifiable assets/liabilities at fair value, recognize goodwill or gain from bargain purchase, and consider non-controlling interests."
+    },
+    {
+      "id": 19,
+      "question": "What is a bargain purchase gain (negative goodwill)?",
+      "answer": "When acquisition price is less than fair value of net assets acquired. The difference is recognized immediately as a gain in P&L, after reassessing fair values."
+    },
+    {
+      "id": 20,
+      "question": "What is the difference between consolidation and equity method?",
+      "answer": "Consolidation (control >50%) combines 100% of subsidiary's assets/liabilities with NCI shown in equity. Equity method (20-50%) shows single line 'investment in associate' on balance sheet."
+    },
+    {
+      "id": 21,
+      "question": "What is a non-controlling interest (NCI) on a consolidated balance sheet?",
+      "answer": "NCI represents the portion of a subsidiary's equity not owned by the parent. It is presented within equity, separate from parent's equity."
+    },
+    {
+      "id": 22,
+      "question": "What is the purpose of the statement of cash flows?",
+      "answer": "It shows sources and uses of cash from operating, investing, and financing activities, helping assess liquidity, solvency, and financial flexibility."
+    },
+    {
+      "id": 23,
+      "question": "What are the three categories of the statement of cash flows?",
+      "answer": "Operating (core business cash flow), Investing (purchase/sale of long-term assets, investments), Financing (debt, equity, dividends)."
+    },
+    {
+      "id": 24,
+      "question": "How is free cash flow calculated from the statement of cash flows?",
+      "answer": "Free Cash Flow = Cash Flow from Operations - Capital Expenditures (CapEx). It measures cash available for debt repayment, dividends, or growth."
+    },
+    {
+      "id": 25,
+      "question": "What is EBITDA, and why do analysts use it?",
+      "answer": "EBITDA = Earnings Before Interest, Taxes, Depreciation, Amortization. It approximates operating cash flow, neutralizes capital structure and tax differences, used in valuation multiples."
+    },
+    {
+      "id": 26,
+      "question": "What is the difference between EBITDA and Operating Cash Flow?",
+      "answer": "EBITDA is accrual-based (excludes changes in working capital). Operating Cash Flow includes actual cash effects of working capital (receivables, inventory, payables)."
+    },
+    {
+      "id": 27,
+      "question": "What is a subsequent event, and what are the two types?",
+      "answer": "Subsequent events occur after balance sheet date but before issuance. Type 1: conditions existing at year-end (adjust financials). Type 2: new conditions (disclose only)."
+    },
+    {
+      "id": 28,
+      "question": "What is a related party transaction disclosure requirement?",
+      "answer": "Transactions with related parties (management, affiliates, family) must be disclosed: nature of relationship, transaction amount, outstanding balances, and terms, to avoid conflicts of interest."
+    },
+    {
+      "id": 29,
+      "question": "What is the difference between a change in accounting estimate and a change in accounting principle?",
+      "answer": "Change in estimate (e.g., useful life) is applied prospectively. Change in principle (e.g., LIFO to FIFO) is applied retrospectively, restating prior periods, unless impracticable."
+    },
+    {
+      "id": 30,
+      "question": "How is a prior period error correction accounted for?",
+      "answer": "Material errors are corrected retrospectively: restate prior period financial statements, adjust opening retained earnings, and disclose nature and impact of error."
+    },
+    {
+      "id": 31,
+      "question": "What is a functional currency vs. presentation currency?",
+      "answer": "Functional currency is the primary economic environment currency of the entity (used for day-to-day). Presentation currency is the currency used for financial statements (may differ)."
+    },
+    {
+      "id": 32,
+      "question": "What is the difference between a foreign currency transaction and translation?",
+      "answer": "Transaction: individual deals (e.g., sale in EUR) recorded at spot rate, gains/losses in P&L. Translation: converting entire foreign subsidiary's financials into parent's currency."
+    },
+    {
+      "id": 33,
+      "question": "What is a cumulative translation adjustment (CTA)?",
+      "answer": "CTA is a component of other comprehensive income (OCI) where translation gains/losses are parked, not affecting net income, until the foreign entity is sold or liquidated."
+    },
+    {
+      "id": 34,
+      "question": "What is hedge accounting, and what are the three types?",
+      "answer": "Hedge accounting matches derivative gains/losses with hedged item's opposite impact to reduce volatility. Types: Fair value hedge, Cash flow hedge, Net investment hedge."
+    },
+    {
+      "id": 35,
+      "question": "What is the effective interest method for amortizing bond discounts/premiums?",
+      "answer": "It calculates interest expense based on carrying amount × market rate at issuance, producing constant effective interest rate; difference between cash interest and expense amortizes discount/premium."
+    },
+    {
+      "id": 36,
+      "question": "What is a debt covenant violation, and how is it reported?",
+      "answer": "If a company violates a debt covenant (e.g., leverage ratio), the debt may be callable. Under GAAP/IFRS, the debt must be classified as current unless lender waives rights before reporting date."
+    },
+    {
+      "id": 37,
+      "question": "What is the difference between a stock dividend and a stock split?",
+      "answer": "Stock dividend (small: <20-25%) transfers retained earnings to paid-in capital at fair value. Stock split increases number of shares, reduces par value, no accounting entry (only memorandum)."
+    },
+    {
+      "id": 38,
+      "question": "What is earnings per share (EPS), basic and diluted?",
+      "answer": "Basic EPS = (Net Income - Preferred Dividends) / Weighted Average Common Shares. Diluted EPS includes potential common shares (options, convertibles) that would decrease EPS."
+    },
+    {
+      "id": 39,
+      "question": "What is a treasury stock transaction? (Cost method vs. par value method)",
+      "answer": "Treasury stock is a company's own repurchased shares. Cost method debits treasury stock (contra equity) at repurchase price. Par method splits between par and additional paid-in capital."
+    },
+    {
+      "id": 40,
+      "question": "What is a gain or loss on debt extinguishment?",
+      "answer": "If a company retires debt before maturity and pays more or less than carrying amount, the difference is recognized as a gain/loss in P&L, usually reacquired at market price."
+    },
+    {
+      "id": 41,
+      "question": "What is the difference between a defined benefit and a defined contribution pension plan?",
+      "answer": "Defined contribution: employer contributes fixed amount; employee bears investment risk. Defined benefit: employer promises fixed benefit at retirement; employer bears actuarial/investment risk."
+    },
+    {
+      "id": 42,
+      "question": "What are actuarial gains and losses in a defined benefit plan?",
+      "answer": "Actuarial gains/losses arise from changes in assumptions (mortality, discount rate) or differences between expected and actual return on plan assets. Recognized in OCI under IFRS/GAAP."
+    },
+    {
+      "id": 43,
+      "question": "What is a share-based payment (stock options) accounting?",
+      "answer": "Compensation expense measured at fair value of options on grant date (using Black-Scholes or binomial model), recognized over vesting period, with credit to additional paid-in capital."
+    },
+    {
+      "id": 44,
+      "question": "What are the required disclosures for fair value measurements?",
+      "answer": "Fair value hierarchy levels: Level 1 (quoted prices in active markets), Level 2 (significant observable inputs), Level 3 (significant unobservable inputs). Additional quantitative/qualitative disclosures."
+    },
+    {
+      "id": 45,
+      "question": "What is impairment of long-lived assets (PP&E, intangibles) under GAAP?",
+      "answer": "Two-step test: 1) Recoverability test (undiscounted cash flows < carrying value), 2) Fair value test, impairment loss = carrying value - fair value. IFRS: one-step recoverable amount test."
+    },
+    {
+      "id": 46,
+      "question": "What is a cash-generating unit (CGU) in IFRS impairment?",
+      "answer": "The smallest identifiable group of assets generating independent cash inflows. Goodwill is allocated to CGUs for impairment testing (one-step: recoverable amount vs. carrying amount)."
+    },
+    {
+      "id": 47,
+      "question": "What is a research and development cost capitalization?",
+      "answer": "Under GAAP, R&D costs are expensed as incurred (except software development after technological feasibility). Under IFRS, development costs can be capitalized if technical/financial criteria met."
+    },
+    {
+      "id": 48,
+      "question": "What is the difference between a service concession arrangement (PPP)?",
+      "answer": "Public-private partnership: private operator builds infrastructure and operates it. Accounting depends on who controls residual interest: financial asset model (if guaranteed payment) or intangible asset model."
+    },
+    {
+      "id": 49,
+      "question": "What is a variable interest entity (VIE) and consolidation requirement?",
+      "answer": "VIE is an entity that lacks sufficient equity or where equity investors lack control. Primary beneficiary (absorbs majority of variability) must consolidate, even with <50% ownership."
+    },
+    {
+      "id": 50,
+      "question": "What is the role of the Public Company Accounting Oversight Board (PCAOB)?",
+      "answer": "PCAOB oversees audits of public companies in the US, sets auditing standards, inspects audit firms, and enforces compliance under the Sarbanes-Oxley Act."
+    },
+    {
+      "id": 51,
+      "question": "What is the difference between attestation and assurance services?",
+      "answer": "Attestation (e.g., audit, review) is a subset of assurance where CPA issues report on subject matter or assertion. Assurance services are broader, including non-attest (e.g., sustainability, cybersecurity)."
+    },
+    {
+      "id": 52,
+      "question": "What is a management representation letter in an audit?",
+      "answer": "A letter from management to the auditor confirming they have provided all information, acknowledged responsibility for internal controls, and disclosed fraud or non-compliance; dated at report date."
+    },
+    {
+      "id": 53,
+      "question": "What is audit risk, and its three components?",
+      "answer": "Audit risk = Inherent Risk × Control Risk × Detection Risk. Inherent: susceptibility to misstatement. Control: failure to prevent/detect. Detection: auditor fails to find misstatement."
+    },
+    {
+      "id": 54,
+      "question": "What is materiality in planning an audit (performance materiality)?",
+      "answer": "Performance materiality is an amount less than overall materiality set to reduce aggregate uncorrected misstatements. Typically 50-75% of overall materiality."
+    },
+    {
+      "id": 55,
+      "question": "What is the difference between substantive procedures and tests of controls?",
+      "answer": "Substantive procedures test dollar amounts (balances, transactions). Tests of controls evaluate effectiveness of internal controls (e.g., approvals, reconciliations)."
+    },
+    {
+      "id": 56,
+      "question": "What is audit sampling, and what are statistical vs. non-statistical methods?",
+      "answer": "Audit sampling tests less than 100% of population. Statistical: uses probability (random selection, MUS). Non-statistical: judgmental sampling; both require professional judgement."
+    },
+    {
+      "id": 57,
+      "question": "What is the difference between a control deficiency, significant deficiency, and material weakness?",
+      "answer": "Control deficiency: design/operation issue. Significant deficiency: less severe than material weakness but important. Material weakness: a deficiency (or combination) that results in reasonable possibility of material misstatement."
+    },
+    {
+      "id": 58,
+      "question": "What is the auditor's responsibility for fraud detection?",
+      "answer": "Auditor must obtain reasonable assurance that financial statements are free from material misstatement due to fraud or error. However, audit cannot guarantee absolute detection of collusive fraud."
+    },
+    {
+      "id": 59,
+      "question": "What is the difference between an external auditor and an internal auditor?",
+      "answer": "External auditor: independent CPA firm, reports to shareholders, focuses on financial statement accuracy. Internal auditor: employee or contractor, reports to audit committee/board, focuses on operational efficiency, risk, and internal controls."
+    },
+    {
+      "id": 60,
+      "question": "What is a forensic accounting engagement?",
+      "answer": "Forensic accounting investigates fraud, embezzlement, financial disputes, and litigation support. Includes asset tracing, damage calculations, and expert testimony."
+    },
+    {
+      "id": 61,
+      "question": "What is a tax avoidance vs. tax evasion?",
+      "answer": "Tax avoidance is legally minimizing tax liability (deductions, credits, planning). Tax evasion is illegal non-payment or understatement (fraud, hiding income)."
+    },
+    {
+      "id": 62,
+      "question": "What is the difference between C corporation and S corporation tax treatment (US)?",
+      "answer": "C corp pays entity-level tax (21% flat), shareholders pay tax on dividends (double tax). S corp is pass-through (no entity tax); income/ losses flow to shareholders' personal returns."
+    },
+    {
+      "id": 63,
+      "question": "What is a 1031 like-kind exchange (US)?",
+      "answer": "Section 1031 allows deferral of capital gains tax when exchanging business or investment property for like-kind property, subject to strict timing rules (45 days to identify, 180 days to close)."
+    },
+    {
+      "id": 64,
+      "question": "What is the difference between a standard deduction and itemized deductions (US)?",
+      "answer": "Standard deduction is a fixed amount based on filing status. Itemized deductions are specific expenses (mortgage interest, state taxes, charitable contributions). Taxpayer chooses whichever is larger."
+    },
+    {
+      "id": 65,
+      "question": "What is a Qualified Business Income (QBI) deduction under Section 199A?",
+      "answer": "Allows pass-through entity owners to deduct up to 20% of qualified business income, subject to phaseouts based on taxable income and W-2 wages/capital limitations."
+    },
+    {
+      "id": 66,
+      "question": "What is transfer pricing?",
+      "answer": "Transfer pricing sets prices for transactions between related entities (e.g., parent and subsidiary) in different tax jurisdictions. Must follow arm's length principle (OECD guidelines) to avoid profit shifting."
+    },
+    {
+      "id": 67,
+      "question": "What is a tax credit vs. a tax deduction?",
+      "answer": "Tax credit reduces tax liability dollar-for-dollar (more valuable). Tax deduction reduces taxable income (value = deduction × marginal tax rate)."
+    },
+    {
+      "id": 68,
+      "question": "What is a R&D tax credit (US)?",
+      "answer": "A federal credit for qualified research expenses (wages, supplies, contract research). It is 20% of excess over base amount, and can offset payroll taxes for startups."
+    },
+    {
+      "id": 69,
+      "question": "What is a value-added tax (VAT) or goods and services tax (GST)?",
+      "answer": "VAT/GST is a consumption tax levied at each stage of production/sale on the value added. Businesses collect on sales and recover input tax on purchases, final burden on end consumer."
+    },
+    {
+      "id": 70,
+      "question": "What is a tax treaty?",
+      "answer": "A bilateral agreement between countries to avoid double taxation, define taxing rights (e.g., withholding tax rates), and provide exchange of information."
+    },
+    {
+      "id": 71,
+      "question": "What is a permanent establishment (PE) in international tax?",
+      "answer": "A fixed place of business (office, branch, factory) that creates taxable presence in a foreign country, subjecting profits to local corporate tax under most treaties."
+    },
+    {
+      "id": 72,
+      "question": "What is the difference between tax residency and domicile?",
+      "answer": "Tax residency: where person is subject to tax (e.g., 183-day rule). Domicile is permanent legal home (longer-term concept for inheritance/estate tax)."
+    },
+    {
+      "id": 73,
+      "question": "What is a controlled foreign corporation (CFC) and Subpart F?",
+      "answer": "CFC: foreign corporation >50% owned by US shareholders. Subpart F income (passive, mobile income) is taxed immediately to US shareholders, regardless of repatriation."
+    },
+    {
+      "id": 74,
+      "question": "What is the Global Intangible Low-Taxed Income (GILTI) regime (US)?",
+      "answer": "GILTI taxes foreign subsidiary's excess returns over a 10% routine return on tangible assets, at a reduced effective rate (~10.5%) for US shareholders of CFCs, preventing profit shifting."
+    },
+    {
+      "id": 75,
+      "question": "What is the Base Erosion and Anti-Abuse Tax (BEAT)?",
+      "answer": "BEAT is a minimum tax on large corporations that make excessive deductible payments to foreign affiliates, designed to prevent profit shifting out of the US."
+    },
+    {
+      "id": 76,
+      "question": "What is the difference between an estate tax and an inheritance tax?",
+      "answer": "Estate tax is levied on the deceased's estate before distribution (federal level, US). Inheritance tax is levied on the beneficiary receiving assets (state level, some states)."
+    },
+    {
+      "id": 77,
+      "question": "What is the statute of limitations for IRS tax audits (general rule)?",
+      "answer": "Generally 3 years from filing date or due date (whichever later). Extends to 6 years if gross income omitted >25%. No limit for fraud or unfiled returns."
+    },
+    {
+      "id": 78,
+      "question": "What is an Offer in Compromise (OIC) in tax practice?",
+      "answer": "An OIC allows taxpayer to settle tax debt for less than full amount if there is doubt about collectability, liability, or to promote effective tax administration."
+    },
+    {
+      "id": 79,
+      "question": "What is the Independent Contractor vs. Employee classification (IRS 20-factor test)?",
+      "answer": "Key factors: behavioral control (instructions, training), financial control (investment, expenses), and relationship type (benefits, permanency). Misclassification risks penalties."
+    },
+    {
+      "id": 80,
+      "question": "What is a disregarded entity for US tax purposes?",
+      "answer": "A single-member LLC is disregarded (treated as sole proprietorship for tax), not separate from owner. Multi-member LLC is treated as partnership by default (unless elect C/S corp)."
+    },
+    {
+      "id": 81,
+      "question": "What is the difference between a partnership tax return (Form 1065) and a corporate tax return (Form 1120)?",
+      "answer": "Form 1065: pass-through entity, files information return, issues Schedule K-1 to partners who pay tax individually. Form 1120: C corp pays tax at entity level."
+    },
+    {
+      "id": 82,
+      "question": "What is an accounting method (cash vs. accrual) for tax purposes?",
+      "answer": "Cash method: income when received, expenses when paid (simple, not allowed for large C corps/inventory unless exception). Accrual: income when earned, expenses when incurred (all-events test)."
+    },
+    {
+      "id": 83,
+      "question": "What is Section 179 depreciation vs. bonus depreciation?",
+      "answer": "Section 179: immediate expensing up to limit ($1.16M in 2024) for new/used equipment, phaseout. Bonus depreciation: 60% (falling) additional first-year depreciation, no income limit."
+    },
+    {
+      "id": 84,
+      "question": "What is the difference between GAAP and tax accounting for bad debts?",
+      "answer": "GAAP: allowance method (estimate bad debt expense). Tax: direct write-off method (deduction only when specific debt becomes worthless), with exceptions for certain receivables."
+    },
+    {
+      "id": 85,
+      "question": "What is the Uniform Capitalization (UNICAP) rules (Section 263A)?",
+      "answer": "UNICAP requires certain direct and indirect costs (overhead) to be capitalized to inventory or self-constructed assets, not expensed, for tax purposes to match income."
+    },
+    {
+      "id": 86,
+      "question": "What is a net operating loss (NOL) carryforward?",
+      "answer": "NOL occurs when tax deductions exceed income. Under TCJA, post-2017 NOLs carry forward indefinitely, limited to 80% of taxable income, cannot carry back (except for certain exceptions)."
+    },
+    {
+      "id": 87,
+      "question": "What is a like-kind exchange (1031) real property only change?",
+      "answer": "The Tax Cuts and Jobs Act of 2017 limited Section 1031 exchanges to real property (land, buildings). Personal property (vehicles, equipment) no longer qualifies."
+    },
+    {
+      "id": 88,
+      "question": "What is depreciation recapture under Section 1245 and 1250?",
+      "answer": "Section 1245 recapture all depreciation on personal property as ordinary income. Section 1250 recapture only excess depreciation (over straight-line) on real property as ordinary."
+    },
+    {
+      "id": 89,
+      "question": "What is a wash sale rule (Section 1091)?",
+      "answer": "Disallows loss deduction if taxpayer buys substantially identical stock/securities within 30 days before or after sale (61-day window). Disallowed loss added to basis of new shares."
+    },
+    {
+      "id": 90,
+      "question": "What is the difference between a capital gain and an ordinary gain?",
+      "answer": "Capital gain from sale of capital assets (investments, property) taxed at preferential rates (0%, 15%, 20%). Ordinary gain (inventory, business assets, short-term <1 year) taxed at ordinary income rates."
+    },
+    {
+      "id": 91,
+      "question": "What is the kiddie tax?",
+      "answer": "Tax on unearned income (interest, dividends, capital gains) of children under 19 (or full-time students under 24) at parents' marginal rate rather than child's rate, above a threshold ($2,500 in 2024)."
+    },
+    {
+      "id": 92,
+      "question": "What is a qualified retirement plan (401(k) vs. IRA)?",
+      "answer": "401(k): employer-sponsored, higher contribution limit ($23k 2024), possible employer match. IRA: individual, lower limit ($7k 2024). Roth: after-tax contributions, qualified withdrawals tax-free."
+    },
+    {
+      "id": 93,
+      "question": "What is the tax treatment of cryptocurrency (virtual currency) by the IRS?",
+      "answer": "The IRS treats cryptocurrency as property, not currency. Sales result in capital gain/loss based on fair market value. Mining or staking income is ordinary income at receipt."
+    },
+    {
+      "id": 94,
+      "question": "What is the Foreign Account Tax Compliance Act (FATCA)?",
+      "answer": "FATCA requires foreign financial institutions to report US account holders. US taxpayers with foreign accounts >$10,000 must file FBAR (FinCEN 114) and Form 8938."
+    },
+    {
+      "id": 95,
+      "question": "What is the difference between a tax lien and tax levy?",
+      "answer": "Tax lien is a legal claim against property for unpaid taxes. Tax levy is actual seizure of property (bank account, wages) to satisfy the tax debt."
+    },
+    {
+      "id": 96,
+      "question": "What is an Accounting Standards Update (ASU) by FASB?",
+      "answer": "ASU communicates changes to the Accounting Standards Codification (GAAP). Each ASU describes new guidance, transition, and effective dates for public and private entities."
+    },
+    {
+      "id": 97,
+      "question": "What is the role of the AICPA in the US accounting profession?",
+      "answer": "AICPA (American Institute of CPAs) sets ethical standards, develops the Uniform CPA Exam, advocates for the profession, and provides continuing education and guidance for non-public companies (via ARSC, ASB)."
+    },
+    {
+      "id": 98,
+      "question": "What are the requirements to maintain a CPA license (CPE)?",
+      "answer": "Licensed CPAs must complete Continuing Professional Education (typically 40 hours per year, 120 per 3-year period), including ethics hours, varying by state board."
+    },
+    {
+      "id": 99,
+      "question": "What is the difference between the CPA Exam and the CA (e.g., ICAEW) exams?",
+      "answer": "CPA Exam (US) has 4 sections (FAR, AUD, REG, BEC/now DISC), focuses on US GAAP/tax. CA (UK/India) has more levels (e.g., Foundation, Intermediate, Final), broader non-US IFRS focus."
+    },
+    {
+      "id": 100,
+      "question": "What are the top five essential skills for a CA/CPA in practice?",
+      "answer": "1. Technical accounting and tax knowledge (GAAP/IFRS, Tax Code), 2. Audit and assurance proficiency (risk assessment, evidence), 3. Ethics and professional judgment, 4. Data analytics and technology (Excel, ERP, audit software), 5. Communication and client management."
+    }
+  ]
+}

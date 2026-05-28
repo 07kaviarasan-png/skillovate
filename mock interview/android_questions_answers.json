@@ -1,0 +1,504 @@
+{
+  "android_questions_answers": [
+    {
+      "id": 1,
+      "question": "What is Android?",
+      "answer": "Android is an open-source operating system based on Linux kernel, designed for mobile devices like smartphones and tablets. It's developed by Google and provides a platform for running applications written in Java/Kotlin."
+    },
+    {
+      "id": 2,
+      "question": "What is the Android stack?",
+      "answer": "Android stack consists of four layers: Linux kernel (core), Libraries and Android Runtime (native code and runtime), Application Framework (system services), and Applications (user-facing apps)."
+    },
+    {
+      "id": 3,
+      "question": "What is an Activity in Android?",
+      "answer": "An Activity is a single screen with a user interface representing one window. It's the building block of Android applications. Each Activity extends the Activity class and defines the UI and interactions for that screen."
+    },
+    {
+      "id": 4,
+      "question": "What is the Activity lifecycle?",
+      "answer": "Activity lifecycle has states: onCreate() (creation), onStart() (visible), onResume() (user interaction), onPause() (losing focus), onStop() (not visible), onDestroy() (destruction). Understanding lifecycle is crucial for proper resource management."
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between onCreate() and onStart()?",
+      "answer": "onCreate() is called once when the Activity is created. onStart() is called when the Activity becomes visible. onCreate() is for initialization; onStart() is for visibility-related tasks."
+    },
+    {
+      "id": 6,
+      "question": "What is the difference between onPause() and onStop()?",
+      "answer": "onPause() is called when the Activity is losing focus or partially obscured. onStop() is called when the Activity is completely hidden. Save critical data in onPause(); resource-heavy operations can wait for onStop()."
+    },
+    {
+      "id": 7,
+      "question": "What is a Fragment in Android?",
+      "answer": "A Fragment is a reusable portion of UI that can be embedded in Activities. It has its own lifecycle, layout, and can handle user interactions independently. Fragments enable flexible and modular UI design."
+    },
+    {
+      "id": 8,
+      "question": "What is the Fragment lifecycle?",
+      "answer": "Fragment lifecycle includes: onAttach(), onCreate(), onCreateView(), onActivityCreated(), onStart(), onResume(), onPause(), onStop(), onDestroyView(), onDestroy(), onDetach(). It's parallel to but more complex than Activity lifecycle."
+    },
+    {
+      "id": 9,
+      "question": "What is the difference between Activity and Fragment?",
+      "answer": "Activity is a complete screen; Fragment is a portion of UI. Activity has independent lifecycle; Fragment's lifecycle depends on Activity. Fragments are reusable; Activities are typically not. Fragments provide better modularity."
+    },
+    {
+      "id": 10,
+      "question": "What is an Intent in Android?",
+      "answer": "An Intent is a message object used to request an action from another application component. It can start Activities, Services, and trigger Broadcasts. Intents enable loose coupling between components."
+    },
+    {
+      "id": 11,
+      "question": "What are the types of Intents?",
+      "answer": "Explicit Intents specify the target component by name (e.g., new Intent(this, TargetActivity.class)). Implicit Intents specify the action without naming the component, allowing the system to choose (e.g., opening a URL)."
+    },
+    {
+      "id": 12,
+      "question": "What are Intent Filters?",
+      "answer": "Intent Filters declare which implicit Intents an Activity, Service, or Broadcast Receiver can handle. Defined in AndroidManifest.xml with action, category, and data specifications. Enable receiving Intents from other apps."
+    },
+    {
+      "id": 13,
+      "question": "What is the AndroidManifest.xml file?",
+      "answer": "AndroidManifest.xml is the configuration file for Android apps. It declares Activities, Services, Receivers, Providers, permissions required, Intent Filters, and API level requirements. It's essential for app functionality."
+    },
+    {
+      "id": 14,
+      "question": "What are permissions in Android?",
+      "answer": "Permissions control access to sensitive device features (camera, location, contacts). Apps must declare required permissions in AndroidManifest.xml. Android 6.0+ requires runtime permission requests from users."
+    },
+      {
+      "id": 15,
+      "question": "What is the difference between normal and dangerous permissions?",
+      "answer": "Normal permissions grant access to non-sensitive features (internet, vibration); granted automatically at installation. Dangerous permissions access sensitive data (location, contacts); require explicit user approval at runtime."
+    },
+    {
+      "id": 16,
+      "question": "What is a Service in Android?",
+      "answer": "A Service is a component that runs in the background without a UI. It performs long-running operations, continues running even if the app loses focus. Used for music playback, file downloads, and background sync."
+    },
+    {
+      "id": 17,
+      "question": "What are the types of Services?",
+      "answer": "Started Services run indefinitely until stopped (startService()). Bound Services provide a client-server interface for interaction (bindService()). Foreground Services run with visible notifications."
+    },
+    {
+      "id": 18,
+      "question": "What is the difference between started and bound Services?",
+      "answer": "Started Services continue running independent of the initiating component. Bound Services are connected to clients and stop when all clients unbind. Started Services require explicit stopping; Bound Services stop when no clients remain."
+    },
+    {
+      "id": 19,
+      "question": "What is a Broadcast Receiver in Android?",
+      "answer": "A Broadcast Receiver is a component that receives and responds to system-wide broadcasts. It listens for Intents and executes code when receiving broadcasts (e.g., battery low, network change, SMS received)."
+    },
+    {
+      "id": 20,
+      "question": "What is the difference between static and dynamic Broadcast Receivers?",
+      "answer": "Static Broadcast Receivers are registered in AndroidManifest.xml and receive broadcasts even if the app is not running. Dynamic Broadcast Receivers are registered in code at runtime and only receive broadcasts while the app is running."
+    },
+    {
+      "id": 21,
+      "question": "What is a Content Provider in Android?",
+      "answer": "A Content Provider manages structured data access and sharing between apps. It provides a standard interface (CRUD operations) for accessing data through ContentResolver. Examples: contacts, calendar, media store."
+    },
+    {
+      "id": 22,
+      "question": "What is ContentResolver in Android?",
+      "answer": "ContentResolver is used to query, insert, update, and delete data from Content Providers. It provides methods: query(), insert(), update(), delete(). Acts as a client to access provider data."
+    },
+    {
+      "id": 23,
+      "question": "What is a Context in Android?",
+      "answer": "Context is an abstract class providing access to app resources and system services. It provides methods to access files, databases, launch Activities, and access system services. There are Application and Activity contexts."
+    },
+    {
+      "id": 24,
+      "question": "What is the difference between Activity and Application Context?",
+      "answer": "Activity Context is tied to a specific Activity and destroyed when the Activity is destroyed. Application Context is global and lives for the entire app duration. Use Application Context for long-lived objects; Activity Context for UI elements."
+    },
+    {
+      "id": 25,
+      "question": "What is a View in Android?",
+      "answer": "A View is the basic building block of UI. It represents a rectangular area on the screen and handles drawing and event processing. Examples: Button, TextView, EditText. Views are arranged in ViewGroups."
+    },
+    {
+      "id": 26,
+      "question": "What is a ViewGroup in Android?",
+      "answer": "A ViewGroup is a subclass of View that holds other Views and ViewGroups as children. It manages layout and arrangement of child views. Examples: LinearLayout, RelativeLayout, FrameLayout, GridLayout."
+    },
+    {
+      "id": 27,
+      "question": "What are common layouts in Android?",
+      "answer": "Common layouts: LinearLayout (arranges views linearly), RelativeLayout (positions views relative to each other), FrameLayout (stacks views), GridLayout (arranges in grid), ConstraintLayout (flexible positioning). ConstraintLayout is modern and preferred."
+    },
+    {
+      "id": 28,
+      "question": "What is ConstraintLayout?",
+      "answer": "ConstraintLayout is a flexible and powerful layout that positions views using constraints to other views or containers. It reduces nested layouts, improves performance, and simplifies complex UIs. It's the recommended modern layout."
+    },
+    {
+      "id": 29,
+      "question": "What is an Adapter in Android?",
+      "answer": "An Adapter is a bridge between data sources and UI components like ListView, GridView, and RecyclerView. It converts data into Views that are displayed in the UI. Common adapters: ArrayAdapter, CursorAdapter, RecyclerView.Adapter."
+    },
+    {
+      "id": 30,
+      "question": "What is a RecyclerView and why use it?",
+      "answer": "RecyclerView is an improved version of ListView that displays large datasets efficiently by recycling Views. Benefits: better performance, built-in animations, flexible layouts. It requires a Adapter and LayoutManager."
+    },
+    {
+      "id": 31,
+      "question": "What is the difference between ListView and RecyclerView?",
+      "answer": "ListView recycles only visible item views. RecyclerView recycles both visible and off-screen views, offering better performance. RecyclerView has built-in animations and animations API. RecyclerView is recommended for modern apps."
+    },
+    {
+      "id": 32,
+      "question": "What is a LayoutManager in RecyclerView?",
+      "answer": "LayoutManager manages positioning and layout of items in RecyclerView. Common types: LinearLayoutManager (vertical/horizontal list), GridLayoutManager (grid), StaggeredGridLayoutManager (staggered grid). It controls how items are displayed."
+    },
+    {
+      "id": 33,
+      "question": "What is data binding in Android?",
+      "answer": "Data Binding is a library enabling binding UI components to data sources declaratively. It reduces boilerplate code by automatically syncing data with UI. Two-way binding updates UI when data changes and vice versa."
+    },
+    {
+      "id": 34,
+      "question": "What is the ViewModel in Android Architecture Components?",
+      "answer": "ViewModel is a class that stores UI-related data and survives configuration changes (like screen rotation). It holds data separately from the UI, improving testability and preventing memory leaks."
+    },
+    {
+      "id": 35,
+      "question": "What is LiveData in Android?",
+      "answer": "LiveData is an observable data holder that is lifecycle-aware. It notifies observers of data changes and automatically stops updates when observers are not active. It prevents memory leaks and handles lifecycle management."
+    },
+    {
+      "id": 36,
+      "question": "What is the difference between ViewModel and LiveData?",
+      "answer": "ViewModel stores UI-related data and survives configuration changes. LiveData is an observable within ViewModel that notifies observers of changes. Together they provide robust architecture for handling lifecycle and data."
+    },
+    {
+      "id": 37,
+      "question": "What is the Repository pattern in Android?",
+      "answer": "Repository is a design pattern that abstracts data sources (API, database, cache). It provides a single interface for accessing data from multiple sources, improving testability and decoupling."
+    },
+    {
+      "id": 38,
+      "question": "What is SQLite in Android?",
+      "answer": "SQLite is a lightweight relational database embedded in Android. It's used for local data storage, supporting SQL queries. Android provides SQLiteDatabase and Room ORM for easier database operations."
+    },
+    {
+      "id": 39,
+      "question": "What is Room in Android?",
+      "answer": "Room is an abstraction layer over SQLite providing type-safe database access. It uses annotations for schema definition and generates query code at compile-time. Benefits: type safety, compile-time checks, simpler code than SQLiteDatabase."
+    },
+    {
+      "id": 40,
+      "question": "What is SharedPreferences in Android?",
+      "answer": "SharedPreferences stores small amounts of primitive data as key-value pairs. It's useful for storing user preferences, simple settings, and state. Data is stored in XML files in the app's private directory."
+    },
+    {
+      "id": 41,
+      "question": "What is the difference between SharedPreferences and SQLite?",
+      "answer": "SharedPreferences stores simple key-value pairs for small data. SQLite stores structured data with relationships and complex queries. Use SharedPreferences for settings; use SQLite for complex data."
+    },
+    {
+      "id": 42,
+      "question": "What is networking in Android?",
+      "answer": "Networking involves making HTTP requests to servers. Common approaches: HttpURLConnection, Retrofit, Volley, OkHttp. Requests must run on background threads (not main thread) to prevent ANR errors."
+    },
+    {
+      "id": 43,
+      "question": "What is Retrofit in Android?",
+      "answer": "Retrofit is a type-safe HTTP client library for Android. It simplifies REST API calls using annotations and interface definitions. Features: interceptors, converters (JSON/XML), automatic serialization, error handling."
+    },
+    {
+      "id": 44,
+      "question": "What is Volley in Android?",
+      "answer": "Volley is a networking library for making HTTP requests with automatic request queuing, prioritization, and caching. It handles concurrency and network errors. Simpler than Retrofit but less flexible."
+    },
+    {
+      "id": 45,
+      "question": "What is JSON parsing in Android?",
+      "answer": "JSON parsing converts JSON strings into objects. Libraries: Gson (converts Java objects to JSON and vice versa), Jackson, Moshi. Most HTTP clients automatically handle JSON parsing."
+    },
+    {
+      "id": 46,
+      "question": "What is the main thread in Android?",
+      "answer": "The main thread (UI thread) runs the UI and handles user interactions. Long-running operations on the main thread freeze the UI and cause ANR (Application Not Responding). All UI updates must occur on the main thread."
+    },
+    {
+      "id": 47,
+      "question": "What is an ANR (Application Not Responding) error?",
+      "answer": "ANR occurs when the main thread is blocked for more than 5 seconds (Activities) or 10 seconds (Services/Broadcast Receivers). It results from blocking operations on the main thread. Avoid it by moving long operations to background threads."
+    },
+    {
+      "id": 48,
+      "question": "What are background threads in Android?",
+      "answer": "Background threads (worker threads) perform long-running operations without blocking the main thread. Methods: Thread, Runnable, AsyncTask, Coroutines, Executors. Results must be posted back to main thread for UI updates."
+    },
+    {
+      "id": 49,
+      "question": "What is AsyncTask in Android?",
+      "answer": "AsyncTask is a helper class for performing background tasks with easy result posting to the main thread. Methods: doInBackground() (background thread), onPostExecute() (main thread). Deprecated in favor of Coroutines."
+    },
+    {
+      "id": 50,
+      "question": "What are Coroutines in Android?",
+      "answer": "Coroutines (Kotlin feature integrated with Jetpack) provide lightweight threading for asynchronous operations. They enable writing sequential code that runs asynchronously. Advantages: cancellation support, simpler than AsyncTask and Callbacks."
+    },
+    {
+      "id": 51,
+      "question": "What is the difference between threads and Coroutines?",
+      "answer": "Threads are heavier and more expensive. Coroutines are lightweight and can be suspended and resumed. Threads can be blocked; Coroutines cannot. Coroutines offer simpler, more readable asynchronous code."
+    },
+    {
+      "id": 52,
+      "question": "What are Notifications in Android?",
+      "answer": "Notifications are messages displayed in the system notification area. They inform users of events without interrupting current activity. Built using NotificationCompat.Builder with actions, styles, and importance levels."
+    },
+    {
+      "id": 53,
+      "question": "What are notification channels?",
+      "answer": "Notification channels (Android 8.0+) group notifications by type, allowing users to manage preferences per channel. Each channel has importance level controlling interruption behavior. Required for posting notifications on Android 8.0+."
+    },
+    {
+      "id": 54,
+      "question": "What is a dialog in Android?",
+      "answer": "A dialog is a small window prompting user input or action. Types: AlertDialog, DatePickerDialog, TimePickerDialog, ProgressDialog. Dialogs are built using DialogFragment or AlertDialog.Builder."
+    },
+    {
+      "id": 55,
+      "question": "What is a Toast in Android?",
+      "answer": "A Toast is a short notification displaying temporary messages. It appears at the bottom of the screen and disappears automatically. Useful for brief feedback. Used via Toast.makeText(context, message, duration).show()."
+    },
+    {
+      "id": 56,
+      "question": "What is SharedPreferences and how is it used?",
+      "answer": "SharedPreferences is accessed via context.getSharedPreferences(name, mode) or getDefaultSharedPreferences(). Data is stored as key-value pairs. Modification uses putString(), putInt(), etc., followed by apply() or commit()."
+    },
+    {
+      "id": 57,
+      "question": "What is Preference DataStore in Android?",
+      "answer": "Preference DataStore is a successor to SharedPreferences offering better performance, safer API, and Coroutine support. It stores data as protocol buffers. Recommended for new apps over SharedPreferences."
+    },
+    {
+      "id": 58,
+      "question": "What are sensors in Android?",
+      "answer": "Android sensors measure physical quantities (accelerometer, gyroscope, compass, etc.). Apps access sensors via SensorManager. Common use: motion detection, location awareness, fitness tracking."
+    },
+    {
+      "id": 59,
+      "question": "What is the Camera API in Android?",
+      "answer": "Camera API allows apps to take photos and record videos. Modern approach: Camera2 API with better control and flexibility. Requires camera permission and preview surface configuration."
+    },
+    {
+      "id": 60,
+      "question": "What is LocationManager in Android?",
+      "answer": "LocationManager provides location services (GPS, network). It delivers location updates to registered listeners. Requires location permissions and proper manifest declarations. GPS is accurate but battery-intensive."
+    },
+    {
+      "id": 61,
+      "question": "What is the Battery optimization in Android?",
+      "answer": "Battery optimization involves reducing power consumption: avoid frequent database access, use Doze mode, minimize network calls, disable sensors when not needed, use WorkManager for deferred tasks, avoid continuous location tracking."
+    },
+    {
+      "id": 62,
+      "question": "What is WorkManager in Android?",
+      "answer": "WorkManager schedules deferrable asynchronous tasks with guaranteed execution even after app restart. It respects Doze mode and battery optimization. Preferred for background tasks over alarms and services."
+    },
+    {
+      "id": 63,
+      "question": "What is an Alarm in Android?",
+      "answer": "AlarmManager triggers tasks at specific times or intervals. It works even if the app is not running. Types: exact alarms (precise timing) and inexact alarms (respects Doze). Use WorkManager for deferrable tasks instead."
+    },
+    {
+      "id": 64,
+      "question": "What is the Material Design in Android?",
+      "answer": "Material Design is Google's design language emphasizing visual hierarchy, responsive animations, and intuitive interactions. It includes guidelines for colors, typography, spacing, and components."
+    },
+    {
+      "id": 65,
+      "question": "What is the AndroidX library?",
+      "answer": "AndroidX is the modernized Android Jetpack library suite including support libraries. It provides backward compatibility and new features. Replaces old support library (android.support.*) with androidx.* packages."
+    },
+    {
+      "id": 66,
+      "question": "What is the Jetpack library?",
+      "answer": "Jetpack is a suite of libraries providing building blocks for Android development. Includes: Architecture (Room, ViewModel, LiveData), Foundation (AppCompat, Android KTX), Behavior (WorkManager, Notifications)."
+    },
+    {
+      "id": 67,
+      "question": "What is configuration change in Android?",
+      "answer": "Configuration change occurs when device configuration changes (orientation, language, screen size). Activity is destroyed and recreated. Use ViewModel to persist data across configuration changes."
+    },
+    {
+      "id": 68,
+      "question": "What is the difference between onCreate() and onConfigurationChanged()?",
+      "answer": "onCreate() is called when Activity is created. onConfigurationChanged() is called when configuration changes if the Activity declares handleable configurations in the manifest, preventing destruction/recreation."
+    },
+    {
+      "id": 69,
+      "question": "What is Fragment BackStack?",
+      "answer": "FragmentBackStack maintains history of Fragment transactions. When the back button is pressed, the previous Fragment is shown. Managed via FragmentManager.addToBackStack() and popBackStack()."
+    },
+    {
+      "id": 70,
+      "question": "What is Fragment replace vs add?",
+      "answer": "add() places a Fragment on top of existing Fragments (stacking). replace() removes the current Fragment and adds a new one. replace() is more common for switching between Fragments."
+    },
+    {
+      "id": 71,
+      "question": "What is an animation in Android?",
+      "answer": "Animations provide visual effects. Types: Property Animation (animates object properties), View Animation (animates Views), Drawable Animation (animates drawables). Modern approach uses Transition animations."
+    },
+    {
+      "id": 72,
+      "question": "What is a Transition in Android?",
+      "answer": "Transitions animate changes between View states automatically. Types: Enter transition (new content appears), Exit transition (content disappears), Shared element transition (morphs between Views). Used with Scenes."
+    },
+    {
+      "id": 73,
+      "question": "What is testing in Android?",
+      "answer": "Android testing includes: unit tests (local, test logic), instrumented tests (on device/emulator, test UI). Frameworks: JUnit, Espresso (UI testing), Robolectric (local unit tests), Mockito (mocking)."
+    },
+    {
+      "id": 74,
+      "question": "What is Espresso in Android testing?",
+      "answer": "Espresso is a UI testing framework for testing user interactions. It provides synchronization, matchers, and actions. Tests run on device/emulator and verify UI behavior, user flows, and state changes."
+    },
+    {
+      "id": 75,
+      "question": "What is dependency injection in Android?",
+      "answer": "Dependency injection provides dependencies (objects) to components rather than creating them internally. Benefits: testability, decoupling, flexibility. Libraries: Dagger, Hilt, Koin."
+    },
+    {
+      "id": 76,
+      "question": "What is Hilt in Android?",
+      "answer": "Hilt is a dependency injection library built on top of Dagger. It simplifies DI with annotations and boilerplate reduction. Provides scoped instances, binding management, and integration with Android components."
+    },
+    {
+      "id": 77,
+      "question": "What is Kotlin in Android development?",
+      "answer": "Kotlin is a modern, concise programming language for Android. It's fully interoperable with Java, reduces boilerplate, provides null safety, and is now the preferred language for Android development."
+    },
+    {
+      "id": 78,
+      "question": "What are extension functions in Kotlin?",
+      "answer": "Extension functions allow adding functions to classes without inheritance. Syntax: fun ClassName.functionName(). They improve code readability and reduce boilerplate. Example: fun String.isValidEmail()."
+    },
+    {
+      "id": 79,
+      "question": "What is null safety in Kotlin?",
+      "answer": "Kotlin distinguishes nullable (String?) and non-nullable (String) types at compile time. It prevents NullPointerException by catching null errors at compile time rather than runtime."
+    },
+    {
+      "id": 80,
+      "question": "What are data classes in Kotlin?",
+      "answer": "Data classes are specialized for holding data. They automatically generate equals(), hashCode(), toString(), and copy() methods. They're perfect for model objects and POJOs."
+    },
+    {
+      "id": 81,
+      "question": "What are sealed classes in Kotlin?",
+      "answer": "Sealed classes restrict inheritance to defined subclasses. They're useful for restricted class hierarchies with known implementations. Enable exhaustive when expressions without else."
+    },
+    {
+      "id": 82,
+      "question": "What is delegation in Kotlin?",
+      "answer": "Delegation allows objects to delegate method calls to other objects instead of inheriting. Syntax: class ClassName(delegated: Interface) : Interface by delegated. Reduces boilerplate for composition."
+    },
+    {
+      "id": 83,
+      "question": "What is the AndroidStudio in Android development?",
+      "answer": "Android Studio is the official IDE for Android development built on IntelliJ IDEA. Features: code editor, debugger, emulator, profiler, layout editor, APK analyzer, version control integration."
+    },
+    {
+      "id": 84,
+      "question": "What is an emulator in Android?",
+      "answer": "An emulator is a virtual Android device running on the development machine. It allows testing apps without physical devices. Alternatively, use Android Virtual Device (AVD) for configuration."
+    },
+    {
+      "id": 85,
+      "question": "What is APK in Android?",
+      "answer": "APK (Android Package) is the package format for distributing Android apps. It's a compressed archive containing compiled code, resources, and manifest. Signed APKs are required for distribution."
+    },
+    {
+      "id": 86,
+      "question": "What is ProGuard and R8 in Android?",
+      "answer": "ProGuard is a code obfuscator and optimizer. R8 is the replacement (Android Gradle Plugin 3.4+) that combines ProGuard with D8 compiler. Both reduce APK size and obfuscate code for security."
+    },
+    {
+      "id": 87,
+      "question": "What is the Gradle build system?",
+      "answer": "Gradle is the build system for Android. build.gradle files define dependencies, compileSdkVersion, minSdkVersion, targetSdkVersion, build variants, and signing configurations."
+    },
+    {
+      "id": 88,
+      "question": "What is AndroidManifest.xml permissions declaration?",
+      "answer": "Permissions are declared in AndroidManifest.xml using <uses-permission> tags. Normal permissions are granted automatically; dangerous permissions require runtime requests on Android 6.0+."
+    },
+    {
+      "id": 89,
+      "question": "What is deep linking in Android?",
+      "answer": "Deep linking enables opening specific app screens via URLs. Implemented using Intent Filters with custom schemes or HTTPS URLs. Useful for app indexing, notifications, and external links."
+    },
+    {
+      "id": 90,
+      "question": "What is app signing in Android?",
+      "answer": "App signing uses cryptographic keys to verify app authenticity. Release builds must be signed with a keystore. Google Play requires app signing for distribution. Debug builds are auto-signed by Android Studio."
+    },
+    {
+      "id": 91,
+      "question": "What is in-app billing in Android?",
+      "answer": "In-app billing enables selling digital products within apps (subscriptions, one-time purchases). Implemented via Google Play Billing Library. Supports subscriptions, managed products, and consumable items."
+    },
+    {
+      "id": 92,
+      "question": "What is push notifications in Android?",
+      "answer": "Push notifications send messages from servers to apps. Implemented via Firebase Cloud Messaging (FCM). It handles message delivery, device token registration, and background message handling."
+    },
+    {
+      "id": 93,
+      "question": "What is Firebase in Android?",
+      "answer": "Firebase is Google's platform providing backend services: real-time database, authentication, cloud storage, messaging, analytics. Simplifies development by eliminating backend infrastructure needs."
+    },
+    {
+      "id": 94,
+      "question": "What is crash reporting in Android?",
+      "answer": "Crash reporting tools (Firebase Crashlytics, Fabric) capture app crashes with stack traces. They help identify bugs, track frequency, and monitor app health. Automatic stack trace symbolication for debugging."
+    },
+    {
+      "id": 95,
+      "question": "What is analytics in Android?",
+      "answer": "Analytics track user behavior: events, user properties, screens visited. Tools: Google Analytics for Firebase, Mixpanel. Provides insights into user engagement, retention, and funnel analysis."
+    },
+    {
+      "id": 96,
+      "question": "What is accessibility in Android?",
+      "answer": "Accessibility ensures apps are usable by people with disabilities. Features: TalkBack (screen reader), contrast ratios, touch target sizes, content descriptions. Essential for inclusive app design."
+    },
+    {
+      "id": 97,
+      "question": "What is localization in Android?",
+      "answer": "Localization adapts apps for different languages and regions. Implement via string resources in values-lang folders. Also adapt layouts, images, and numbers for different locales."
+    },
+    {
+      "id": 98,
+      "question": "What are app widgets in Android?",
+      "answer": "App widgets are mini-apps that display on home screen, providing quick access to app functionality. Implemented using AppWidgetProvider and RemoteViews. Can receive updates via AppWidgetManager."
+    },
+    {
+      "id": 99,
+      "question": "What is the difference between Kotlin and Java in Android?",
+      "answer": "Kotlin is more concise, has null safety, extension functions, and coroutines. Java is more verbose but widely known. Kotlin is now preferred by Google for Android development."
+    },
+    {
+      "id": 100,
+      "question": "What are Android best practices?",
+      "answer": "Best practices: use lifecycle-aware components, implement proper error handling, respect user privacy, optimize battery usage, follow Material Design guidelines, secure sensitive data, test thoroughly, handle configuration changes, use modern libraries (Jetpack, Coroutines)."
+    }
+  ]
+}

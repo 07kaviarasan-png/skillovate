@@ -1,0 +1,504 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the purpose of the OSI model in networking?",
+      "answer": "The OSI model is a conceptual framework that standardizes network communication into 7 layers (Physical to Application), allowing different systems to interoperate and separating concerns for troubleshooting and design."
+    },
+    {
+      "id": 2,
+      "question": "Explain the difference between TCP and UDP.",
+      "answer": "TCP is connection-oriented, reliable, and ensures ordered delivery with error checking, while UDP is connectionless, faster, and does not guarantee delivery or ordering, making it suitable for streaming and real-time applications."
+    },
+    {
+      "id": 3,
+      "question": "What is a MAC address, and what layer does it operate at?",
+      "answer": "A MAC address is a unique 48-bit hardware identifier assigned to a network interface card (NIC) operating at Layer 2 (Data Link Layer) for communication within the same local network."
+    },
+    {
+      "id": 4,
+      "question": "What is an IP address, and what are the two primary versions?",
+      "answer": "An IP address is a logical identifier assigned to a device on a network. The two primary versions are IPv4 (32-bit, dotted decimal) and IPv6 (128-bit, hexadecimal), used at Layer 3 (Network Layer)."
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between a public and a private IP address?",
+      "answer": "Public IP addresses are globally routable on the internet, while private IP addresses (e.g., 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) are reserved for internal networks and require NAT for internet access."
+    },
+    {
+      "id": 6,
+      "question": "What is subnetting, and why is it used?",
+      "answer": "Subnetting divides a large IP network into smaller, manageable subnetworks to improve performance, reduce broadcast domains, enhance security, and conserve IP address space."
+    },
+    {
+      "id": 7,
+      "question": "What is CIDR (Classless Inter-Domain Routing) notation?",
+      "answer": "CIDR notation is a compact method of representing an IP address and its subnet mask (e.g., 192.168.1.0/24), which indicates how many leading bits are fixed, enabling flexible subnetting without class boundaries."
+    },
+    {
+      "id": 8,
+      "question": "What is the default gateway, and what is its role?",
+      "answer": "The default gateway is a network device (typically a router) that forwards traffic from a local subnet to destinations outside that subnet, acting as the exit point for external communication."
+    },
+    {
+      "id": 9,
+      "question": "How does ARP (Address Resolution Protocol) work?",
+      "answer": "ARP resolves an IPv4 address to a MAC address by broadcasting a request on the local network; the device owning that IP replies with its MAC address, which is then cached for future use."
+    },
+    {
+      "id": 10,
+      "question": "What is a VLAN, and how does it improve network management?",
+      "answer": "A Virtual LAN logically segments a physical switch into multiple isolated broadcast domains, improving security, reducing congestion, and simplifying management by grouping devices by function rather than location."
+    },
+    {
+      "id": 11,
+      "question": "Explain the concept of 802.1Q trunking.",
+      "answer": "802.1Q is a VLAN tagging standard that allows multiple VLANs to traverse a single physical link between switches by inserting a 4-byte VLAN identifier into the Ethernet frame header."
+    },
+    {
+      "id": 12,
+      "question": "What is the difference between a router and a layer 3 switch?",
+      "answer": "A router is specialized for wide area connectivity (WAN) and advanced routing features (NAT, VPN, ACLs). A layer 3 switch routes between VLANs at wire speed in a LAN but has limited WAN capabilities."
+    },
+    {
+      "id": 13,
+      "question": "What are the common dynamic routing protocols?",
+      "answer": "Common dynamic routing protocols include RIP (distance vector), OSPF (link-state for internal networks), EIGRP (Cisco hybrid), and BGP (path-vector for internet routing)."
+    },
+    {
+      "id": 14,
+      "question": "What is the administrative distance (AD) in routing?",
+      "answer": "Administrative distance is a value (0-255) that rates the trustworthiness of a routing protocol source. Lower AD values are preferred; for example, static route (1) is preferred over OSPF (110)."
+    },
+    {
+      "id": 15,
+      "question": "How does OSPF differ from RIP?",
+      "answer": "OSPF is a link-state protocol using Dijkstra's algorithm, supports larger networks, converges faster, and uses cost as a metric. RIP is a distance-vector protocol with hop count limit (15), slower convergence, and simpler configuration."
+    },
+    {
+      "id": 16,
+      "question": "What is a default route, and when is it used?",
+      "answer": "A default route (0.0.0.0/0) is a catch-all route used to forward packets when no specific route matches the destination. It is commonly used on edge routers to send traffic to the internet."
+    },
+    {
+      "id": 17,
+      "question": "What is a routing loop, and how do protocols prevent it?",
+      "answer": "A routing loop occurs when packets circulate endlessly between routers. Prevention mechanisms include split horizon, route poisoning, hold-down timers (distance vector), and loop-free topology using SPF (link-state)."
+    },
+    {
+      "id": 18,
+      "question": "What is the difference between static and dynamic routing?",
+      "answer": "Static routes are manually configured and do not adapt to network changes. Dynamic routing uses protocols to automatically discover and adjust routes based on topology changes, offering scalability and fault tolerance."
+    },
+    {
+      "id": 19,
+      "question": "What is NAT (Network Address Translation) and its main types?",
+      "answer": "NAT translates IP addresses between private and public realms. Types: Static NAT (one-to-one), Dynamic NAT (pool of public IPs), and PAT (Port Address Translation, many-to-one)."
+    },
+    {
+      "id": 20,
+      "question": "What is PAT (Port Address Translation), also known as NAT Overload?",
+      "answer": "PAT maps multiple private IP addresses to a single public IP using unique source ports, allowing many devices to share one public IP for internet access, commonly used in home routers."
+    },
+    {
+      "id": 21,
+      "question": "What is a DMZ (Demilitarized Zone) in network design?",
+      "answer": "A DMZ is a perimeter network segment that hosts public-facing services (web, email) while isolating them from the internal LAN, providing an additional security layer."
+    },
+    {
+      "id": 22,
+      "question": "What is the role of DNS in a network?",
+      "answer": "DNS (Domain Name System) translates human-readable domain names (e.g., google.com) into IP addresses, enabling users to access resources without memorizing numerical addresses."
+    },
+    {
+      "id": 23,
+      "question": "What is DHCP, and what are the DORA process steps?",
+      "answer": "DHCP (Dynamic Host Configuration Protocol) automatically assigns IP configuration. The DORA process is: Discovery (client broadcast), Offer (server offers IP), Request (client requests the offer), Acknowledgment (server confirms)."
+    },
+    {
+      "id": 24,
+      "question": "What is the difference between a hub, a switch, and a bridge?",
+      "answer": "A hub broadcasts all traffic to all ports (collision domain). A switch forwards traffic based on MAC addresses, creating separate collision domains per port. A bridge connects two network segments and filters traffic similarly to a switch."
+    },
+    {
+      "id": 25,
+      "question": "What is a VLAN trunk, and what is the native VLAN?",
+      "answer": "A trunk carries multiple VLANs over one link. The native VLAN carries untagged traffic on a trunk port; by default, this is VLAN 1, but it should be changed or pruned for security."
+    },
+    {
+      "id": 26,
+      "question": "What is STP (Spanning Tree Protocol) and why is it needed?",
+      "answer": "STP prevents Layer 2 loops in redundant network topologies by logically blocking some ports while maintaining a loop-free tree structure, avoiding broadcast storms and MAC table instability."
+    },
+    {
+      "id": 27,
+      "question": "What are the port states in STP?",
+      "answer": "STP port states include: Blocking (no traffic, listens for BPDUs), Listening (prepares to forward), Learning (learns MAC addresses), Forwarding (normal operation), and Disabled (administratively down)."
+    },
+    {
+      "id": 28,
+      "question": "What is the difference between RSTP (802.1w) and traditional STP (802.1D)?",
+      "answer": "RSTP provides faster convergence (a few seconds vs. 30-50 seconds) by introducing edge ports, proposal/agreement handshake, and removing separate listening/learning states into a combined discarding state."
+    },
+    {
+      "id": 29,
+      "question": "What is EtherChannel or LACP (Link Aggregation Control Protocol)?",
+      "answer": "EtherChannel groups multiple physical links into a single logical link for increased bandwidth and redundancy. LACP (IEEE 802.3ad) is a standardized protocol for dynamic link aggregation negotiation."
+    },
+    {
+      "id": 30,
+      "question": "What is the difference between a firewall and an intrusion prevention system (IPS)?",
+      "answer": "A firewall controls traffic based on rules (allow/deny). An IPS sits inline, inspects packet payloads, and actively blocks detected malicious patterns (signatures/anomalies), providing deeper threat prevention."
+    },
+    {
+      "id": 31,
+      "question": "What is a VPN (Virtual Private Network) and its common tunneling protocols?",
+      "answer": "A VPN extends a private network across a public network using encrypted tunnels. Common protocols include IPSec, OpenVPN, WireGuard, L2TP, and SSL/TLS VPNs."
+    },
+    {
+      "id": 32,
+      "question": "What is the difference between site-to-site VPN and remote access VPN?",
+      "answer": "Site-to-site VPN connects entire networks (e.g., branch to HQ) using VPN gateways. Remote access VPN connects individual users to the corporate network from remote locations using client software."
+    },
+    {
+      "id": 33,
+      "question": "What are ACLs (Access Control Lists) in networking?",
+      "answer": "ACLs are ordered sets of rules that filter network traffic based on criteria (source/destination IP, port number, protocol). They are applied on router/switch interfaces to permit or deny packets."
+    },
+    {
+      "id": 34,
+      "question": "What is the difference between standard and extended ACLs?",
+      "answer": "Standard ACLs filter only based on source IP address (numbered 1-99). Extended ACLs filter based on source/destination IP, protocol (TCP/UDP/ICMP), and port numbers (numbered 100-199), offering finer control."
+    },
+    {
+      "id": 35,
+      "question": "What is QoS (Quality of Service) and its primary mechanisms?",
+      "answer": "QoS manages network congestion by prioritizing critical traffic. Mechanisms include classification (marking), queuing (e.g., LLQ, WFQ), policing (rate limiting), shaping (buffering), and dropping (WRED)."
+    },
+    {
+      "id": 36,
+      "question": "What is the difference between latency, jitter, and packet loss?",
+      "answer": "Latency is the delay for a packet to travel source to destination. Jitter is the variation in latency between consecutive packets. Packet loss is the percentage of packets that never arrive."
+    },
+    {
+      "id": 37,
+      "question": "What is a collision domain vs. a broadcast domain?",
+      "answer": "A collision domain is a segment where simultaneous transmissions collide (reduced by switches). A broadcast domain is a set of devices receiving broadcast frames (reduced by routers/VLANs)."
+    },
+    {
+      "id": 38,
+      "question": "What is the purpose of a proxy server?",
+      "answer": "A proxy server acts as an intermediary between clients and servers, providing caching (performance), anonymity, content filtering, access control, and logging."
+    },
+    {
+      "id": 39,
+      "question": "What is the difference between a forward proxy and a reverse proxy?",
+      "answer": "A forward proxy sits between clients and the internet, hiding client identities. A reverse proxy sits in front of web servers, hiding server identities, handling load balancing, and caching content."
+    },
+    {
+      "id": 40,
+      "question": "What is a load balancer and what algorithms does it use?",
+      "answer": "A load balancer distributes traffic across multiple servers. Common algorithms: round-robin, least connections, IP hash, least response time, and weighted distribution."
+    },
+    {
+      "id": 41,
+      "question": "What is SNMP (Simple Network Management Protocol) and its components?",
+      "answer": "SNMP monitors and manages network devices. Components: Manager (monitoring system), Agent (software on device), MIB (Management Information Base, the data structure), and traps (asynchronous alerts)."
+    },
+    {
+      "id": 42,
+      "question": "What are the three versions of SNMP?",
+      "answer": "SNMPv1 (original, weak security), SNMPv2c (community strings but improved performance), and SNMPv3 (strong authentication, privacy, and encryption via USM)."
+    },
+    {
+      "id": 43,
+      "question": "What is NetFlow or sFlow, and how is it different from SNMP?",
+      "answer": "NetFlow/sFlow provide flow-based traffic analytics (who talked to whom, how much). SNMP provides device-level statistics (CPU, bytes per interface). Flow data is more detailed for traffic patterns."
+    },
+    {
+      "id": 44,
+      "question": "What is the difference between a physical topology and a logical topology?",
+      "answer": "Physical topology is the physical layout of cables, devices, and connections (e.g., star, mesh). Logical topology is how data flows between devices regardless of physical arrangement (e.g., logical ring)."
+    },
+    {
+      "id": 45,
+      "question": "What are common network topologies (star, bus, ring, mesh)?",
+      "answer": "Star: devices connect to central switch. Bus: single backbone cable. Ring: each device connects to two others. Mesh: fully or partially interconnected. Hybrid: combination of these."
+    },
+    {
+      "id": 46,
+      "question": "What is Ethernet, and what are common standards (10BaseT, 1000BaseT)?",
+      "answer": "Ethernet is a family of LAN technologies. Common standards: 10BaseT (10 Mbps, twisted pair), 100BaseTX (Fast Ethernet), 1000BaseT (Gigabit over copper), 10GBaseT (10 Gigabit)."
+    },
+    {
+      "id": 47,
+      "question": "What is the difference between Cat5e, Cat6, and Cat6a cabling?",
+      "answer": "Cat5e supports Gigabit Ethernet up to 100m. Cat6 supports 10GbE up to 55m. Cat6a supports 10GbE up to 100m with better shielding and alien crosstalk reduction."
+    },
+    {
+      "id": 48,
+      "question": "What is the difference between single-mode and multi-mode fiber optics?",
+      "answer": "Single-mode fiber (SMF) uses a very small core (9 microns) and laser light for long distances (up to 100km). Multi-mode fiber (MMF) uses larger core (50/62.5 microns) and LED for shorter distances (up to 550m for 10GbE)."
+    },
+    {
+      "id": 49,
+      "question": "What is PoE (Power over Ethernet) and its common standards?",
+      "answer": "PoE delivers both data and power over twisted-pair cabling to devices like IP cameras and phones. Standards include 802.3af (15.4W), 802.3at (PoE+, 30W), and 802.3bt (PoE++, 60/90W)."
+    },
+    {
+      "id": 50,
+      "question": "What is the purpose of a network TAP (Test Access Point)?",
+      "answer": "A TAP passively copies traffic from a link to a monitoring port without disrupting the flow, allowing tools like packet analyzers or IDS to see all traffic, including errors."
+    },
+    {
+      "id": 51,
+      "question": "What is the difference between a wireless access point (AP) and a wireless router?",
+      "answer": "An AP provides Wi-Fi connectivity to a wired network. A wireless router combines an AP, router, switch, and often a modem into a single device for home/small office use."
+    },
+    {
+      "id": 52,
+      "question": "What are the common Wi-Fi standards (802.11 a/b/g/n/ac/ax)?",
+      "answer": "802.11b (11 Mbps, 2.4 GHz), 802.11a (54 Mbps, 5 GHz), 802.11g (54 Mbps, 2.4 GHz), 802.11n (Wi-Fi 4, up to 600 Mbps), 802.11ac (Wi-Fi 5, up to 3.5 Gbps), 802.11ax (Wi-Fi 6, higher efficiency)."
+    },
+    {
+      "id": 53,
+      "question": "What is SSID, BSSID, and ESSID in wireless networking?",
+      "answer": "SSID is the network name visible to users. BSSID is the MAC address of a specific AP. ESSID is the same SSID used across multiple APs in an extended service set for roaming."
+    },
+    {
+      "id": 54,
+      "question": "What is WPA3, and how does it improve on WPA2?",
+      "answer": "WPA3 (Wi-Fi Protected Access 3) introduces Simultaneous Authentication of Equals (SAE) replacing PSK, stronger encryption (GCMP-256), individualized data encryption on open networks (OWE), and protection against brute-force attacks."
+    },
+    {
+      "id": 55,
+      "question": "What is the difference between 2.4 GHz and 5 GHz Wi-Fi bands?",
+      "answer": "2.4 GHz has longer range, better wall penetration, but more interference (microwaves, Bluetooth) and fewer non-overlapping channels. 5 GHz offers higher speeds, more channels, less interference, but shorter range."
+    },
+    {
+      "id": 56,
+      "question": "What is the purpose of the TCP three-way handshake?",
+      "answer": "The three-way handshake establishes a TCP connection: SYN (client sends seq#), SYN-ACK (server acknowledges and sends its seq#), ACK (client acknowledges). It synchronizes sequence numbers and negotiates parameters."
+    },
+    {
+      "id": 57,
+      "question": "What is the difference between TCP windowing and TCP sliding window?",
+      "answer": "Windowing allows multiple packets in flight before acknowledgment. The sliding window dynamically changes size based on network conditions, congestion, and receiver buffer availability to optimize throughput."
+    },
+    {
+      "id": 58,
+      "question": "What is a well-known port, and list five examples?",
+      "answer": "Well-known ports (0-1023) are assigned to common services. Examples: HTTP (80), HTTPS (443), SSH (22), DNS (53), SMTP (25), FTP (21), DHCP (67/68), SNMP (161)."
+    },
+    {
+      "id": 59,
+      "question": "What is ICMP and its common uses?",
+      "answer": "ICMP (Internet Control Message Protocol) carries error messages and diagnostic information. Common uses: ping (Echo Request/Reply), traceroute (Time Exceeded), and Path MTU Discovery (Destination Unreachable)."
+    },
+    {
+      "id": 60,
+      "question": "What is the difference between a ping and a traceroute?",
+      "answer": "Ping measures reachability and round-trip time using ICMP Echo. Traceroute discovers the path (each router hop) by sending packets with increasing TTL values and recording ICMP Time Exceeded messages."
+    },
+    {
+      "id": 61,
+      "question": "What is the function of the TTL (Time To Live) field in an IP packet?",
+      "answer": "TTL limits the lifespan of a packet by decrementing at each hop; when TTL reaches zero, the packet is discarded and an ICMP Time Exceeded is sent, preventing infinite loops."
+    },
+    {
+      "id": 62,
+      "question": "What is the difference between IPv4 and IPv6 header structures?",
+      "answer": "IPv4 header is 20-60 bytes with checksum and options. IPv6 header is fixed 40 bytes, no checksum (relying on L2/L4), no fragmentation at routers, and extension headers for options, improving routing efficiency."
+    },
+    {
+      "id": 63,
+      "question": "What is IPv6 link-local addressing and its purpose?",
+      "answer": "IPv6 link-local addresses (fe80::/10) are automatically configured and only valid on a single network segment. They are used for neighbor discovery and routing protocol communication without global reachability."
+    },
+    {
+      "id": 64,
+      "question": "What is NDP (Neighbor Discovery Protocol) in IPv6?",
+      "answer": "NDP replaces ARP, ICMPv4 Router Discovery, and Redirect in IPv6. Functions: address resolution, router discovery, duplicate address detection (DAD), and prefix autoconfiguration."
+    },
+    {
+      "id": 65,
+      "question": "What is the difference between unicast, multicast, broadcast, and anycast?",
+      "answer": "Unicast: one-to-one. Broadcast: one-to-all (IPv4 only). Multicast: one-to-many (specific group). Anycast: one-to-nearest (multiple receivers share the same IP, routing chooses closest)."
+    },
+    {
+      "id": 66,
+      "question": "What is VRRP (Virtual Router Redundancy Protocol) and its purpose?",
+      "answer": "VRRP allows multiple routers to share a virtual IP address, providing default gateway failover. One master forwards traffic, others are backups; if master fails, backup takes over with sub-second convergence."
+    },
+    {
+      "id": 67,
+      "question": "What is the difference between HSRP and VRRP?",
+      "answer": "HSRP (Cisco proprietary) uses a virtual MAC and two multicast addresses, supports one active/one standby. VRRP (IETF standard) allows multiple routers, uses single multicast (224.0.0.18), and supports preemption and authentication."
+    },
+    {
+      "id": 68,
+      "question": "What is MPLS (Multiprotocol Label Switching) and its advantage?",
+      "answer": "MPLS uses short labels instead of IP lookup at each hop, enabling fast forwarding, traffic engineering, VPNs (L3VPN, L2VPN), and QoS. It is widely used in service provider networks."
+    },
+    {
+      "id": 69,
+      "question": "What is the difference between an L2VPN and L3VPN in MPLS?",
+      "answer": "L2VPN (e.g., VPLS) emulates a switched Ethernet LAN across WAN, carrying Layer 2 frames. L3VPN (e.g., BGP/MPLS IP VPN) uses VRFs to separate Layer 3 routing tables and routes VPN traffic via MP-BGP."
+    },
+    {
+      "id": 70,
+      "question": "What is SD-WAN (Software-Defined WAN) and its benefits?",
+      "answer": "SD-WAN decouples networking hardware from control, centralizing policy management. Benefits: dynamic path selection (MPLS, broadband, LTE), lower cost, application-aware routing, simplified deployment."
+    },
+    {
+      "id": 71,
+      "question": "What is network virtualization and how is it different from SDN?",
+      "answer": "Network virtualization abstracts physical network resources to create multiple logical networks (VLANs, VXLANs, NVGRE). SDN (Software-Defined Networking) separates control and data planes for programmability. SDN often enables network virtualization."
+    },
+    {
+      "id": 72,
+      "question": "What is VXLAN (Virtual Extensible LAN) and its use case?",
+      "answer": "VXLAN overlays Layer 2 networks over Layer 3 (IP) underlay using MAC-in-UDP encapsulation (VNI up to 16 million). It scales data center networks beyond VLAN limits (4094) and supports multi-tenancy."
+    },
+    {
+      "id": 73,
+      "question": "What is the difference between North-South and East-West traffic?",
+      "answer": "North-South traffic flows between client and server, often through a firewall or load balancer. East-West traffic flows between servers within the same data center (e.g., microservices), dominating modern data center bandwidth."
+    },
+    {
+      "id": 74,
+      "question": "What is a spine-leaf architecture in data center networks?",
+      "answer": "Spine-leaf is a two-layer Clos topology where every leaf (access) switch connects to every spine (aggregation) switch, providing low latency, high bandwidth, and predictable latency for east-west traffic."
+    },
+    {
+      "id": 75,
+      "question": "What is the function of a network tap in a monitoring network?",
+      "answer": "A network tap (Test Access Point) physically replicates traffic from a link to a monitoring device (e.g., IDS, packet analyzer) without altering the original data flow, ensuring 100% visibility, including errors."
+    },
+    {
+      "id": 76,
+      "question": "What is a packet capture (PCAP) and how is it used in troubleshooting?",
+      "answer": "PCAP is a file format containing captured network packets. Engineers analyze PCAPs with Wireshark to identify latency, retransmissions, protocol errors, or security incidents by examining exact packet contents."
+    },
+    {
+      "id": 77,
+      "question": "What is the 'path MTU discovery' process?",
+      "answer": "PMTUD discovers the maximum transmission unit without fragmenting by sending packets with the Don't Fragment flag and reacting to ICMP 'Fragmentation Needed' messages, adjusting packet size downward."
+    },
+    {
+      "id": 78,
+      "question": "What is the difference between a symplex, half-duplex, and full-duplex transmission?",
+      "answer": "Simplex: one-way only (radio broadcast). Half-duplex: both directions but not simultaneously (walkie-talkie). Full-duplex: simultaneous bidirectional communication (Ethernet switch to NIC)."
+    },
+    {
+      "id": 79,
+      "question": "What is the role of a default gateway in a subnet?",
+      "answer": "The default gateway is the router interface that connects a local subnet to other networks. When a host needs to communicate outside its subnet, it sends packets to the default gateway's MAC address (obtained via ARP/NDP)."
+    },
+    {
+      "id": 80,
+      "question": "What is a broadcast storm, and how can it be mitigated?",
+      "answer": "A broadcast storm is excessive broadcast traffic saturating a network due to loops or misbehaving devices. Mitigations: STP (prevent loops), storm control (rate limiting), VLAN segmentation, and broadcast filtering."
+    },
+    {
+      "id": 81,
+      "question": "What is the difference between a routed port and a switched port on a multilayer switch?",
+      "answer": "A switched port operates at Layer 2, belongs to a VLAN, and forwards frames based on MAC addresses. A routed port operates at Layer 3, is assigned an IP address, and routes traffic between networks."
+    },
+    {
+      "id": 82,
+      "question": "What is BGP (Border Gateway Protocol) and where is it used?",
+      "answer": "BGP is the path-vector routing protocol used between autonomous systems (AS) on the internet. It exchanges reachability information, applies policy-based routing, and selects best path based on attributes (AS-Path, MED, Local Pref)."
+    },
+    {
+      "id": 83,
+      "question": "What is the difference between eBGP and iBGP?",
+      "answer": "eBGP runs between different autonomous systems (external), usually directly connected neighbors. iBGP runs within the same AS, requires full mesh or route reflectors, and does not change AS-Path."
+    },
+    {
+      "id": 84,
+      "question": "What is a BGP community and its purpose?",
+      "answer": "A BGP community is a tag (32-bit value) attached to routes to simplify policy implementation. Examples: NO_EXPORT (don't advertise to eBGP peers), LOCAL_AS (control within AS)."
+    },
+    {
+      "id": 85,
+      "question": "What is the purpose of a route reflector in large iBGP networks?",
+      "answer": "A route reflector reduces the iBGP full-mesh requirement (n*(n-1)/2 sessions). It reflects routes learned from clients to other clients and non-clients, simplifying configuration and scaling."
+    },
+    {
+      "id": 86,
+      "question": "What is VRF (Virtual Routing and Forwarding) used for?",
+      "answer": "VRF creates multiple independent routing tables on the same router, enabling network segmentation for multi-tenancy (e.g., MPLS L3VPN, management plane isolation, or overlapping IP addresses)."
+    },
+    {
+      "id": 87,
+      "question": "What is the difference between VRF Lite and MPLS L3VPN?",
+      "answer": "VRF Lite uses static routes or routing protocols directly between VRFs on routers, requiring logical links. MPLS L3VPN uses MP-BGP and MPLS labels to extend VRFs across a provider network without per-VRF interfaces."
+    },
+    {
+      "id": 88,
+      "question": "What is the purpose of a network baseline?",
+      "answer": "A network baseline is a historical record of normal performance (bandwidth, latency, errors, utilization). It allows engineers to detect anomalies, plan capacity, and validate changes."
+    },
+    {
+      "id": 89,
+      "question": "What is the difference between proactive and reactive network monitoring?",
+      "answer": "Proactive monitoring detects potential issues before outage (e.g., trending interface utilization, threshold alarms). Reactive monitoring responds after an incident, using alerts from SNMP traps or syslog."
+    },
+    {
+      "id": 90,
+      "question": "What are common syslog severity levels (0 to 7)?",
+      "answer": "0 Emergencies (system unusable), 1 Alerts (immediate action), 2 Critical, 3 Errors, 4 Warnings, 5 Notifications, 6 Informational, 7 Debugging."
+    },
+    {
+      "id": 91,
+      "question": "What is the difference between active FTP and passive FTP?",
+      "answer": "In active FTP, client opens random port and server initiates data connection to client. In passive FTP, server provides a port for client to connect, solving client-side firewall issues. Most modern clients use passive mode."
+    },
+    {
+      "id": 92,
+      "question": "What is a network socket?",
+      "answer": "A socket is the combination of IP address + port number (e.g., 192.168.1.1:443) defining a unique endpoint for a network communication between two applications."
+    },
+    {
+      "id": 93,
+      "question": "What is the difference between symmetric and asymmetric encryption in network security?",
+      "answer": "Symmetric (e.g., AES) uses same key for encryption/decryption, fast but key distribution problem. Asymmetric (e.g., RSA) uses public/private keys, slower but solves key exchange; used in TLS/SSH."
+    },
+    {
+      "id": 94,
+      "question": "What is a man-in-the-middle (MITM) attack and how can it be prevented?",
+      "answer": "MITM intercepts and potentially alters communication between two parties. Prevention: mutual authentication (TLS certificates), strong encryption, ARP spoofing detection, and using HTTPS/SSH."
+    },
+    {
+      "id": 95,
+      "question": "What is a DDoS attack and how can network engineers mitigate it?",
+      "answer": "Distributed Denial of Service floods a target with traffic. Mitigations: rate limiting, blackhole routing, scrubbing centers (DDoS protection services), BGP RTBH (Remotely Triggered Black Hole), and ACLs."
+    },
+    {
+      "id": 96,
+      "question": "What is 802.1X and its role in network access control?",
+      "answer": "802.1X is a port-based authentication standard. It blocks all traffic except authentication until a client (supplicant) successfully authenticates to a RADIUS server, enforcing network access control (NAC)."
+    },
+    {
+      "id": 97,
+      "question": "What is the difference between RADIUS and TACACS+?",
+      "answer": "RADIUS (UDP) combines authentication and authorization, encrypts only the password, and uses a shared secret. TACACS+ (TCP) separates AAA components, encrypts entire packet, and supports command-level authorization (Cisco)."
+    },
+    {
+      "id": 98,
+      "question": "What is the function of a bastion host in network security?",
+      "answer": "A bastion host is a hardened server placed in a DMZ to provide external access (e.g., SSH jump server, web proxy). It is the only entry point from untrusted networks and is heavily monitored and hardened."
+    },
+    {
+      "id": 99,
+      "question": "What is the difference between stateful and stateless firewalls?",
+      "answer": "Stateful firewalls track connection state (TCP handshake, sequence numbers) and allow return traffic automatically. Stateless firewalls examine each packet independently based on static rules (e.g., ACLs)."
+    },
+    {
+      "id": 100,
+      "question": "What are the five essential skills for a network engineer?",
+      "answer": "1. Routing & switching (OSPF, BGP, STP, VLANs), 2. Network security (firewalls, VPNs, NAC), 3. Troubleshooting (packet capture analysis, traceroute, logging), 4. Automation/scripting (Python, Ansible, REST APIs), 5. Monitoring tools (SNMP, NetFlow, syslog, observability)."
+    }
+  ]
+}

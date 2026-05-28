@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "question": "What is the primary difference between tax avoidance and tax evasion?",
+    "answer": "Tax avoidance uses legal methods within the tax framework to reduce tax liability, while tax evasion involves illegal means such as hiding income or providing false information."
+  },
+  {
+    "id": 2,
+    "question": "Under which section is the basic exemption limit for an individual resident in India defined for the old tax regime?",
+    "answer": "Section 115BAC defines the new tax regime rates, but the old regime basic exemption limit (for resident individual aged below 60) is given under the Finance Act — referred via Section 2(45) read with applicable slab rates; administratively, ₹2.5 lakh."
+  },
+  {
+    "id": 3,
+    "question": "What condition determines whether a foreign company has a 'Place of Effective Management' (POEM) in India?",
+    "answer": "POEM is in India if key strategic and commercial decisions that are necessary for the conduct of the company's business are actually made in India."
+  },
+  {
+    "id": 4,
+    "question": "How is agricultural income treated for tax purposes when an assessee also has non-agricultural income?",
+    "answer": "Agricultural income is exempt under Section 10(1), but it is included for rate purposes under the partial integration method if non-agricultural income exceeds the basic exemption limit."
+  },
+  {
+    "id": 5,
+    "question": "What is the time limit to issue a notice for reassessment under Section 148 of the Income Tax Act?",
+    "answer": "Three years from the end of the relevant assessment year, except in serious tax evasion cases where it can be up to 10 years with prior approval."
+  },
+  {
+    "id": 6,
+    "question": "Does an LLP have to pay alternate minimum tax (AMT) and under which section?",
+    "answer": "Yes, under Section 115JC, an LLP is liable for AMT at 9% (plus surcharge/cess) of adjusted total income if regular tax liability is less than AMT."
+  },
+  {
+    "id": 7,
+    "question": "What is the difference between TDS under Section 194C and Section 194J?",
+    "answer": "Section 194C applies to contracts for work (including labor), while Section 194J applies to fees for professional or technical services."
+  },
+  {
+    "id": 8,
+    "question": "When is an individual required to file income tax return even if total income is below the exemption limit?",
+    "answer": "If they have deposits exceeding ₹1 crore in a bank account, spent over ₹2 lakh on foreign travel, paid electricity bill over ₹1 lakh, or satisfy any condition under Section 139(1) proviso (Section 139(1)(a)(ii) conditions)."
+  },
+  {
+    "id": 9,
+    "question": "What is the tax treatment of a rent-free accommodation provided by an employer to an employee?",
+    "answer": "It is a perquisite valued under Rule 3 of the Income Tax Rules, taxable in the hands of the employee based on city population and salary grade."
+  },
+  {
+    "id": 10,
+    "question": "Can a loss under the head 'Capital Gains' be set off against salary income?",
+    "answer": "No, long-term capital loss can only be set off against long-term capital gains. Short-term capital loss can be set off against any capital gains (short or long-term), but not against salary income."
+  },
+  {
+    "id": 11,
+    "question": "What is the period of holding for an unlisted share to be considered long-term capital asset?",
+    "answer": "24 months (earlier it was 36 months for unlisted shares, changed in Finance Act 2017-18 and onwards)."
+  },
+  {
+    "id": 12,
+    "question": "Under which section is a senior citizen (above 80 years) not required to pay advance tax?",
+    "answer": "Section 207 exempts a resident senior citizen (aged 80 years or more) having no income from business or profession from payment of advance tax."
+  },
+  {
+    "id": 13,
+    "question": "What is the rate of GST on 'lottery tickets' sold by state governments?",
+    "answer": "28% GST as per Schedule IV of CGST Act (entry 6 of Schedule IV)."
+  },
+  {
+    "id": 14,
+    "question": "Is GST payable on the advance received for supply of goods or services?",
+    "answer": "Yes, for goods, GST is payable on receipt of advance only if the supplier opts to pay tax at the time of advance, else at time of invoice. For services, GST is payable on advance receipt unless specifically exempted."
+  },
+  {
+    "id": 15,
+    "question": "What is the maximum deduction limit under Section 80C for an individual assessee?",
+    "answer": "₹1,50,000 per financial year."
+  },
+  {
+    "id": 16,
+    "question": "Can a taxpayer claim both Section 80D (medical insurance) and Section 80DDB (treatment of specified diseases) for the same expense?",
+    "answer": "Yes, if the expenses are separate — insurance premium under 80D and actual medical treatment expenditure under 80DDB, provided the conditions for each are met."
+  },
+  {
+    "id": 17,
+    "question": "What is the consequence of not filing the TDS return within the due date?",
+    "answer": "Late filing fees under Section 234E of ₹200 per day until the return is filed, subject to maximum of the TDS amount. Also, the deductor cannot claim deduction of such TDS for the year."
+  },
+  {
+    "id": 18,
+    "question": "Under the Income Declaration Scheme (not in force now), what was the tax rate?",
+    "answer": "This is conceptual history; around 45% (including surcharge and penalty). Current question: such schemes have been closed, but the concept of 'disclosure' now falls under Section 132(4) or 132B."
+  },
+  {
+    "id": 19,
+    "question": "How is a 'casual taxable person' defined under GST?",
+    "answer": "A person who occasionally undertakes transactions involving supply of goods/services in a territory where they have no fixed place of business."
+  },
+  {
+    "id": 20,
+    "question": "What is the time limit to claim a refund of excess TDS under Section 237?",
+    "answer": "Within one year from the end of the relevant assessment year, but after the introduction of online filing, up to the time prescribed under Section 239 (currently, time-bar is as per ITR filing deadlines + 6 months)."
+  },
+  {
+    "id": 21,
+    "question": "What is the difference between 'exempt income' and 'deduction from gross total income'?",
+    "answer": "Exempt income is not included in total income at all (e.g., agricultural income). Deduction reduces gross total income to arrive at total taxable income (e.g., Section 80C)."
+  },
+  {
+    "id": 22,
+    "question": "What is the tax treatment of compensation received on termination of employment?",
+    "answer": "Compensation on termination (e.g., voluntary retirement) is exempt up to ₹5 lakh under Section 10(10C) if conditions are met; other termination compensation may be taxable as salary or profit in lieu of salary."
+  },
+  {
+    "id": 23,
+    "question": "Is HRA fully taxable if an employee lives in his own house?",
+    "answer": "Yes, if the employee lives in self-owned house and does not pay rent, HRA is fully taxable, as no exemption under Section 10(13A) is available."
+  },
+  {
+    "id": 24,
+    "question": "What is the threshold limit for tax audit under Section 44AB for a business with cash receipts less than 5% of total receipts?",
+    "answer": "If total turnover is more than ₹10 crore but payments/receipts in cash are less than 5%, tax audit is applicable and the limit is ₹10 crore. If cash receipts are more than 5%, limit is ₹1 crore for tax audit applicability."
+  },
+  {
+    "id": 25,
+    "question": "What is the penalty for not getting accounts audited under Section 44AB when required?",
+    "answer": "Penalty under Section 271B: lower of ₹1,50,000 or 0.5% of total turnover/gross receipts."
+  },
+  {
+    "id": 26,
+    "question": "Under Section 44ADA, what is the presumptive income rate for professionals and the turnover limit?",
+    "answer": "50% of gross receipts, with limit of gross receipts up to ₹50 lakh (for specified professionals like doctors, lawyers, engineers)."
+  },
+  {
+    "id": 27,
+    "question": "Can losses from house property be carried forward indefinitely?",
+    "answer": "No, loss from house property can be carried forward for 8 assessment years immediately following the assessment year in which the loss was first computed."
+  },
+  {
+    "id": 28,
+    "question": "What is the base year for indexation for calculating long-term capital gains?",
+    "answer": "From FY 2017-18 onwards, base year is 2001-02 (Cost Inflation Index for 2001-02 is 100)."
+  },
+  {
+    "id": 29,
+    "question": "Under which section is interest on income tax refund calculated and at what rate?",
+    "answer": "Section 244A — 0.5% per month or part of month on the refund amount from the date of excess payment till the date of refund."
+  },
+  {
+    "id": 30,
+    "question": "What is the threshold limit for TDS on rent paid by an individual or HUF not covered under tax audit?",
+    "answer": "Section 194IB: TDS at 5% on rent exceeding ₹50,000 per month, if total rent for the year > ₹50,000 per month (not per year)."
+  },
+  {
+    "id": 31,
+    "question": "Is GST applicable on second-hand goods sold by an unregistered person?",
+    "answer": "No, GST is applicable only on supply by a registered person unless reverse charge applies. Sale by unregistered person is not liable to GST unless the buyer is liable under reverse charge."
+  },
+  {
+    "id": 32,
+    "question": "When is a taxpayer required to file an income tax return mandatorily under Section 139(1) even if income is below exemption limit?",
+    "answer": "If the person fulfills any of the six conditions under Section 139(1)(a)(ii) such as bank deposit > ₹1 crore, foreign travel > ₹2 lakh, electricity bill > ₹1 lakh, TDS/TCS collection >= ₹25,000, etc."
+  },
+  {
+    "id": 33,
+    "question": "What is the difference between Section 115BAA (domestic companies) and 115BAB (new manufacturing companies) tax rates?",
+    "answer": "Section 115BAA: 22% for any domestic company (no specified conditions except no specified deductions). Section 115BAB: 15% for new manufacturing companies set up after 1 Oct 2019, commencing production before 31 March 2024."
+  },
+  {
+    "id": 34,
+    "question": "Can a trust claim exemption under Section 11 even if it has applied less than 85% of its income to charitable purposes?",
+    "answer": "Yes, if the trust accumulates the income for future application (up to 15%) as per Section 11(1)(a) read with Section 11(2) by filing Form 9A/10."
+  },
+  {
+    "id": 35,
+    "question": "What is the rate of TDS on payment of life insurance proceeds (maturity) under Section 194DA?",
+    "answer": "5% on the income portion of the sum received (i.e., sum minus premium paid) if the amount exceeds ₹1 lakh."
+  },
+  {
+    "id": 36,
+    "question": "Who is eligible to pay presumptive tax under Section 44AE (goods carriage)?",
+    "answer": "Owner of heavy goods vehicle (max gross vehicle weight > 12,000 kg): deemed income ₹1,000 per ton per month; for other vehicles: ₹7,500 per vehicle per month, up to 10 vehicles."
+  },
+  {
+    "id": 37,
+    "question": "Under the Income Tax Act, when is a 'non-resident Indian' considered a resident?",
+    "answer": "If they satisfy either condition of 182 days in India during the FY or 60 days + 365 days in preceding 4 years (subject to exceptions for those leaving for employment or as crew members)."
+  },
+  {
+    "id": 38,
+    "question": "What is the treatment of an 'anonymous donation' received by a registered charitable trust?",
+    "answer": "Taxed as income at 30% on the amount exceeding the higher of ₹1 lakh or 5% of total donations, under Section 115BBC."
+  },
+  {
+    "id": 39,
+    "question": "What is the limit for claiming depreciation on a motor car used partly for business and partly for personal purposes?",
+    "answer": "Depreciation allowed only on the business-use portion, and the disallowance is calculated based on actual user proportion."
+  },
+  {
+    "id": 40,
+    "question": "Is 'royalty' earned by a non-resident from an Indian company taxable under the Income Tax Act?",
+    "answer": "Yes, as income deemed to accrue or arise in India under Section 9(1)(vi), subject to DTAA provisions."
+  },
+  {
+    "id": 41,
+    "question": "What is the validity period of an advance ruling from the Authority for Advance Rulings (AAR) under GST?",
+    "answer": "The ruling is binding on the applicant and the tax authorities, unless there is a change in law or facts, but no fixed expiration — valid until superseded by change in law."
+  },
+  {
+    "id": 42,
+    "question": "What is the penalty for issuing an invoice without actual supply of goods under GST?",
+    "answer": "Penalty under Section 122(1)(i): ₹10,000 or tax evaded, whichever is higher; also possible prosecution."
+  },
+  {
+    "id": 43,
+    "question": "What is the difference between 'Input Service Distributor' (ISD) and 'TDS deductor' under GST?",
+    "answer": "ISD distributes common input tax credit to branches; TDS deductor under Section 51 is a government entity deducting 1%/2% on payments to suppliers."
+  },
+  {
+    "id": 44,
+    "question": "How many years can a business loss (non-speculative) be carried forward under the Income Tax Act?",
+    "answer": "8 assessment years immediately following the assessment year in which the loss was first computed."
+  },
+  {
+    "id": 45,
+    "question": "When is surcharge applicable on an individual having total income of ₹1 crore?",
+    "answer": "₹1 crore exactly? Surcharge for FY 2023-24 — 15% on income tax if total income > ₹1 crore but ≤ ₹2 crore. So at *exactly* ₹1 crore, surcharge not applicable (since threshold > ₹1 crore, not equal)."
+  },
+  {
+    "id": 46,
+    "question": "What is the concept of 'deemed dividend' under Section 2(22)(e)?",
+    "answer": "Any payment by a closely held company to a shareholder (or to a concern in which shareholder has substantial interest) by way of loan or advance is treated as dividend to extent of accumulated profits."
+  },
+  {
+    "id": 47,
+    "question": "Is a partner of a firm allowed to claim deduction for interest paid on capital to the firm?",
+    "answer": "No — partner cannot claim deduction for interest paid to the firm; instead, the firm may deduct interest paid to partners subject to limits."
+  },
+  {
+    "id": 48,
+    "question": "What is the taxability of 'leave encashment' received at the time of retirement?",
+    "answer": "For government employees: fully exempt under Section 10(10AA). For non-government: exemption limited to least of: (a) actual amount, (b) 10 months avg salary, (c) ₹25,00,000, (d) cash equivalent of leave credited."
+  },
+  {
+    "id": 49,
+    "question": "What is the deadline to deposit TDS deducted in March to the government?",
+    "answer": "TDS deducted in March must be deposited by April 30, even though the monthly deposit due date is 7th/30th, for March it's relaxed to April 30."
+  },
+  {
+    "id": 50,
+    "question": "What are 'notified transaction' under Section 269ST and the cash receipt limit?",
+    "answer": "Section 269ST prohibits any person from receiving ₹2 lakh or more in cash (aggregate from a person in a day, or in one transaction or in respect of a single event or occasion)."
+  },
+  {
+    "id": 51,
+    "question": "What is the tax rate on long-term capital gains from sale of listed equity shares exceeding ₹1 lakh?",
+    "answer": "10% over ₹1 lakh under Section 112A without indexation benefit."
+  },
+  {
+    "id": 52,
+    "question": "Can a person having income only from salary opt for presumptive taxation under Section 44ADA?",
+    "answer": "No, Section 44ADA applies only to specified professionals, not to salaried employees."
+  },
+  {
+    "id": 53,
+    "question": "What is the time limit for revising a GST return (GSTR-1) after filing?",
+    "answer": "GSTR-1 cannot be revised; instead, amendments can be made in subsequent month's GSTR-1 or annual return."
+  },
+  {
+    "id": 54,
+    "question": "What is 'place of supply' for software services provided to an unregistered person in India?",
+    "answer": "For B2C (unregistered), place of supply is the location of the recipient if the address is on record; if not, the location of the supplier (Section 12(5) of IGST Act)."
+  },
+  {
+    "id": 55,
+    "question": "What is the interest rate on delayed payment of advance tax?",
+    "answer": "Section 234B: 1% per month simple interest on the amount of unpaid advance tax."
+  },
+  {
+    "id": 56,
+    "question": "What is the maximum deduction available under Section 24(b) for interest on home loan for a self-occupied property?",
+    "answer": "₹2,00,000 per annum if loan is taken for acquisition/construction completed within 5 years — else ₹30,000."
+  },
+  {
+    "id": 57,
+    "question": "Is GST applicable on the sale of a residential property by an individual?",
+    "answer": "No, residential property sale by individual not in business of real estate is not supply under Schedule III of CGST Act."
+  },
+  {
+    "id": 58,
+    "question": "Who is required to file Form 10E for relief under Section 89(1)?",
+    "answer": "An individual receiving salary arrears or advance salary can file Form 10E to claim relief for double taxation on same income."
+  },
+  {
+    "id": 59,
+    "question": "What is 'black money' under the Black Money (Undisclosed Foreign Income and Assets) Act, 2015?",
+    "answer": "Undisclosed foreign income or asset located outside India which is not disclosed in the income tax return."
+  },
+  {
+    "id": 60,
+    "question": "Can a taxpayer revise an income tax return under Section 139(5) after the original return is filed?",
+    "answer": "Yes, if omission or wrong statement is discovered, before the end of the relevant assessment year or before completion of assessment, whichever is earlier."
+  },
+  {
+    "id": 61,
+    "question": "What is the condition to claim deduction under Section 80E for interest on education loan?",
+    "answer": "Loan taken for higher education of self, spouse, children or legal ward. The deduction is available for 8 years or until interest is repaid, whichever is earlier."
+  },
+  {
+    "id": 62,
+    "question": "What is the difference between 'nil return' and 'exempt income'?",
+    "answer": "Nil return means total income is below taxable limit. Exempt income may still be part of total income on paper but excluded; a return could have exempt income but still have no tax liability."
+  },
+  {
+    "id": 63,
+    "question": "When is the advance tax due for individuals with income from business?",
+    "answer": "Due dates: 15 June (15% of tax), 15 Sep (45%), 15 Dec (75%), 15 March (100%)."
+  },
+  {
+    "id": 64,
+    "question": "What is the penalty for failure to file income tax return for a person with total income below the exemption limit?",
+    "answer": "No penalty under Section 271F (since 2017, Section 271F omitted), but now late fees under Section 234F applies if return not filed by due date even if nil tax? Only if income > basic exemption limit."
+  },
+  {
+    "id": 65,
+    "question": "Under Section 115BAC (new tax regime), which deductions are not allowed?",
+    "answer": "Deductions under Section 80C, 80D (except for very senior citizens in some cases?), 80E, 80G, 80TTA, HRA exemption, LTA, etc., most deductions except 80JJAA and depreciation under 32."
+  },
+  {
+    "id": 66,
+    "question": "What is the maximum amount that can be claimed as deduction under Section 80GGB for contribution to political parties by a company?",
+    "answer": "The entire amount of contribution (no upper limit, but only by a company, not by individual)."
+  },
+  {
+    "id": 67,
+    "question": "What is 'e-verification' of income tax return and when is it mandatory?",
+    "answer": "E-verification is the process of authenticating the ITR; without verification, the return is treated as invalid. Mandatory within 30 days of filing."
+  },
+  {
+    "id": 68,
+    "question": "Under GST, what is the time limit to claim ITC on an invoice?",
+    "answer": "The earlier of: 30 November of the next FY, or filing of annual return (Section 16(4))."
+  },
+  {
+    "id": 69,
+    "question": "Can a charity collect GST on sale of donated goods?",
+    "answer": "Yes, if the supply is in business or commercial nature. But donation of goods itself is not a supply; subsequent sale by trust = supply if for consideration and in business."
+  },
+  {
+    "id": 70,
+    "question": "What is the due date for filing an income tax return for an individual not subject to tax audit?",
+    "answer": "31 July of the assessment year (for FY 2022-23, due date 31 July 2023)."
+  },
+  {
+    "id": 71,
+    "question": "What is the taxability of a gift received from a relative?",
+    "answer": "Gift from relative (as defined in Section 56(2)(v)) is fully exempt without limit."
+  },
+  {
+    "id": 72,
+    "question": "What is 'reverse charge mechanism' under GST? Give one example.",
+    "answer": "Liability to pay GST is on the recipient instead of supplier. Example: Legal services by an individual advocate (not under composition) supplied to a business entity."
+  },
+  {
+    "id": 73,
+    "question": "What is the time limit for passing an assessment order under Section 143(3)?",
+    "answer": "9 months from the end of the financial year in which the return is filed, or 12 months from the end of the assessment year, whichever is earlier."
+  },
+  {
+    "id": 74,
+    "question": "Under Section 194H, what is the TDS rate on commission and brokerage?",
+    "answer": "5% if paid to resident; threshold ₹15,000 in a financial year."
+  },
+  {
+    "id": 75,
+    "question": "What is the difference between 'input tax credit' and 'refund' under GST?",
+    "answer": "ITC is credit of tax paid on inputs used for business; refund is cash claim when ITC accumulates beyond liability or in zero-rated supplies."
+  },
+  {
+    "id": 76,
+    "question": "What is the penalty under Section 271A for failure to keep/maintain books of account?",
+    "answer": "₹25,000."
+  },
+  {
+    "id": 77,
+    "question": "What is a 'Tax Collection at Source' (TCS) rate on sale of scrap under Section 206C(1)?",
+    "answer": "0.1% of consideration if buyer's turnover exceeds ₹10 crore? Actually scrap rate is 0.5% under Section 206C(1)(ii) for scrap, applicable on cash sale? But updated rate: 0.1% after budget 2020; better to note: current is 0.5% on scrap (old) — I'll state conceptual: TCS on scrap: 0.5% under 206C(1)(ii)."
+  },
+  {
+    "id": 78,
+    "question": "Can an individual claim deduction for both Section 80C for PPF and also claim interest on PPF as exempt?",
+    "answer": "Yes, PPF deposit qualifies for 80C deduction; PPF interest is exempt under Section 10(11)."
+  },
+  {
+    "id": 79,
+    "question": "What is the time limit for filing a belated IT return under Section 139(4)?",
+    "answer": "On or before 31 December of the assessment year (or 31 March? Actually 31 December of the assessment year for belated return)."
+  },
+  {
+    "id": 80,
+    "question": "What is the concept of 'slump sale' and its taxability?",
+    "answer": "Slump sale is transfer of a business as a going concern; gains taxed as capital gains (LTCG or STCG) under Section 50B."
+  },
+  {
+    "id": 81,
+    "question": "Is GST payable on liquidated damages or penalty charged under a contract?",
+    "answer": "Yes, if it is a supply of service (compensation for harm) and it is taxable as per Clause 5(e) of Schedule II — 'agreeing to refrain from act' — taxable under GST (23% AAR ruling in many states)."
+  },
+  {
+    "id": 82,
+    "question": "What is the penalty for TDS default under Section 271C?",
+    "answer": "Penalty equal to the amount of TDS not deducted or paid, at the discretion of the Assessing Officer."
+  },
+  {
+    "id": 83,
+    "question": "What is the limit for cash payment allowed for a business expense under Section 40A(3)?",
+    "answer": "Disallowance of expense if cash payment exceeds ₹10,000 in a single day to a person (or ₹35,000 in case of transport payments)."
+  },
+  {
+    "id": 84,
+    "question": "Can a person claim HRA exemption if they pay rent to a relative?",
+    "answer": "Yes, but if such rent is claimed as income by the relative, and it is genuine and paid by banking channel, exemption allowed."
+  },
+  {
+    "id": 85,
+    "question": "What is the meaning of 'person' under Section 2(31) of the Income Tax Act?",
+    "answer": "Includes individual, HUF, company, firm, LLP, AOP, BOI, local authority, and any artificial juridical person."
+  },
+  {
+    "id": 86,
+    "question": "What is the tax rate on casual income (e.g., lottery winning) under Section 115BB?",
+    "answer": "Flat 30% (plus surcharge and cess), no deduction for any expense or allowance."
+  },
+  {
+    "id": 87,
+    "question": "Under Section 44AB, when does a person not require tax audit even if turnover exceeds ₹1 crore?",
+    "answer": "If they opt for presumptive taxation under 44AD/44ADA, and declare income as prescribed, and total turnover/gross receipts does not exceed ₹2 crore (for 44AD) and ₹50 lakh (for 44ADA)."
+  },
+  {
+    "id": 88,
+    "question": "What is the concept of 'fair market value' for capital assets in case of inheritance?",
+    "answer": "For computing capital gains, the cost of acquisition to the previous owner is taken as cost for the heir; FMV at inheritance date is not relevant for tax."
+  },
+  {
+    "id": 89,
+    "question": "Can a taxpayer claim a deduction for interest on borrowed capital to invest in shares which yield no dividend?",
+    "answer": "No, because such interest is not allowable under Section 57(iii) as there is no income earned from such investment."
+  },
+  {
+    "id": 90,
+    "question": "What is the time limit for claiming input tax credit under GST for an invoice dated March 31, 2023?",
+    "answer": "Earlier of: 30 November 2023, or filing of annual return for FY 2022-23."
+  },
+  {
+    "id": 91,
+    "question": "What is 'tax incidence' in case of a composite supply under GST?",
+    "answer": "It is taxed as per the principal supply component."
+  },
+  {
+    "id": 92,
+    "question": "What is the surcharge rate on income tax for an individual with income between ₹2 crore and ₹5 crore?",
+    "answer": "25% on income tax amount (excluding marginal relief)."
+  },
+  {
+    "id": 93,
+    "question": "What is the maximum amount of 'gratuity' exempt for a non-government employee under the Payment of Gratuity Act?",
+    "answer": "Under Section 10(10)(ii), maximum exempt is ₹20,00,000."
+  },
+  {
+    "id": 94,
+    "question": "Under Section 115A, what is the TDS rate on royalty paid to a non-resident?",
+    "answer": "10% (plus surcharge and cess) for royalties received from government or Indian concern under an agreement approved by the government."
+  },
+  {
+    "id": 95,
+    "question": "What is 'rollover relief' for capital gains on sale of residential house under Section 54?",
+    "answer": "Exemption on LTCG from sale of house if another residential house is purchased 1 year before or 2 years after sale, or constructed within 3 years."
+  },
+  {
+    "id": 96,
+    "question": "What is the penalty for filing incorrect information in GST TRAN-1 return?",
+    "answer": "General penalty under Section 125: up to ₹25,000."
+  },
+  {
+    "id": 97,
+    "question": "What is the taxability of a rent-free house to a director of a company?",
+    "answer": "It may be a perquisite under Section 17(2) and taxable if director has substantial interest (20% voting power) or is not an employee? Actually all directors receiving such are taxed as per Rule 3."
+  },
+  {
+    "id": 98,
+    "question": "Can a company claim depreciation on goodwill?",
+    "answer": "No — goodwill is not an eligible asset for depreciation under Section 32, as per the ruling by Supreme Court in Smifs Securities Ltd case."
+  },
+  {
+    "id": 99,
+    "question": "What is the 'Equalisation Levy' and on what digital services is it applicable?",
+    "answer": "Levy of 2% on consideration received by non-resident e-commerce operators from online sale of services in India, and 6% on specified digital services by non-resident not having PE in India."
+  },
+  {
+    "id": 100,
+    "question": "What is the time limit to file an appeal before the ITAT against the CIT(A) order?",
+    "answer": "60 days from the date of receipt of the CIT(A) order."
+  }
+]

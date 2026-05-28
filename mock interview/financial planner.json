@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between a 'financial plan' and a 'budget'?",
+    "answer": "A budget tracks income and expenses over a short period (usually monthly), while a financial plan is a long-term roadmap covering goals like retirement, children's education, insurance, and investments."
+  },
+  {
+    "id": 2,
+    "question": "What is the 'time value of money' and why is it important for financial planning?",
+    "answer": "It means a rupee today is worth more than a rupee tomorrow due to its earning potential. It is the foundation for retirement planning, loan EMIs, and goal-based investing."
+  },
+  {
+    "id": 3,
+    "question": "What is an emergency fund and how many months of expenses should it typically cover?",
+    "answer": "An emergency fund is liquid savings set aside for unexpected events like job loss or medical emergencies. Typically 3 to 6 months of essential expenses."
+  },
+  {
+    "id": 4,
+    "question": "What is the difference between 'risk tolerance' and 'risk capacity'?",
+    "answer": "Risk tolerance is the psychological ability to endure market volatility, while risk capacity is the financial ability to absorb losses without derailing goals."
+  },
+  {
+    "id": 5,
+    "question": "What is asset allocation and why is it considered the most important investment decision?",
+    "answer": "Asset allocation is the distribution of portfolio among equity, debt, gold, real estate, etc. It determines 90% of long-term returns and risk, not individual security selection."
+  },
+  {
+    "id": 6,
+    "question": "What is 'rebalancing' in portfolio management?",
+    "answer": "Rebalancing is the process of realigning asset allocation to original weights by buying or selling assets periodically to control risk."
+  },
+  {
+    "id": 7,
+    "question": "What is the difference between 'growth' and 'value' investing styles?",
+    "answer": "Growth investing focuses on companies with above-average earnings growth even if expensive; value investing seeks undervalued stocks trading below intrinsic value."
+  },
+  {
+    "id": 8,
+    "question": "What is systematic investment plan (SIP) and a systematic withdrawal plan (SWP)?",
+    "answer": "SIP is regular investment into a mutual fund; SWP is regular withdrawal from a mutual fund, often used for retirement income."
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between a 'term insurance plan' and a 'whole life insurance plan'?",
+    "answer": "Term insurance provides pure risk cover for a fixed period at low cost; whole life insurance provides coverage for the entire lifetime with a cash value component."
+  },
+  {
+    "id": 10,
+    "question": "What is the 4% rule in retirement planning?",
+    "answer": "The rule suggests withdrawing 4% of retirement corpus in the first year and adjusting for inflation thereafter to make savings last 30 years with high probability."
+  },
+  {
+    "id": 11,
+    "question": "What is the 'debt to income ratio' and what is a healthy range?",
+    "answer": "It is total monthly debt payments divided by gross monthly income. Healthy range: below 35% to 40%."
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between a 'need,' a 'want,' and a 'goal' in financial planning?",
+    "answer": "Need is essential (food, shelter); want is desirable but optional (vacation); goal is a specific savings target with timeline (₹15 lakh for child's college in 7 years)."
+  },
+  {
+    "id": 13,
+    "question": "What is 'rupee cost averaging' and how does an SIP achieve it?",
+    "answer": "Rupee cost averaging means buying more units when prices are low and fewer when high, reducing average cost per unit. SIP does this by investing fixed amounts periodically."
+  },
+  {
+    "id": 14,
+    "question": "What is the difference between 'nominal return', 'real return', and 'inflation-adjusted return'?",
+    "answer": "Nominal return is actual rate before inflation; real return = nominal return minus inflation rate; inflation-adjusted return is same as real return."
+  },
+  {
+    "id": 15,
+    "question": "What is a 'certified financial planner (CFP)' and what is its relevance in India?",
+    "answer": "CFP is a globally recognized certification for financial planners covering investment, tax, retirement, estate, and insurance planning. In India, it is issued by FPSB India."
+  },
+  {
+    "id": 16,
+    "question": "What is the difference between 'active' and 'passive' fund management?",
+    "answer": "Active management tries to beat the market through stock selection and timing; passive management aims to replicate a market index at lower cost."
+  },
+  {
+    "id": 17,
+    "question": "What is a 'target date fund' or lifecycle fund?",
+    "answer": "A fund that automatically shifts from aggressive to conservative asset allocation as a target retirement date approaches."
+  },
+  {
+    "id": 18,
+    "question": "What is 'ESG investing'?",
+    "answer": "ESG investing considers Environmental, Social, and Governance factors alongside financial returns to align investments with ethical values."
+  },
+  {
+    "id": 19,
+    "question": "What is the difference between 'will' and 'trust' in estate planning?",
+    "answer": "A will is a legal document directing asset distribution after death; a trust is a legal arrangement where a trustee holds assets for beneficiaries, often avoiding probate."
+  },
+  {
+    "id": 20,
+    "question": "What are the three pillars of retirement planning in India?",
+    "answer": "EPF/NPS (formal employment), voluntary retirement savings (mutual funds, PPF), and personal assets (real estate, gold)."
+  },
+  {
+    "id": 21,
+    "question": "What is 'laddering' in fixed income investing?",
+    "answer": "Laddering means buying bonds or fixed deposits with different maturities to manage interest rate risk and maintain liquidity."
+  },
+  {
+    "id": 22,
+    "question": "What is 'insurable interest' in life insurance?",
+    "answer": "Insurable interest means a financial loss would occur upon the insured’s death. In life insurance, it exists for self, spouse, children, and business partners."
+  },
+  {
+    "id": 23,
+    "question": "What is the difference between 'standard deduction' and 'itemized deduction' in income tax (Indian context)?",
+    "answer": "In India, standard deduction is a flat ₹50,000 from salary income; itemized deductions are actual expenses under 80C, 80D, etc. (no itemized for salary except professional tax)."
+  },
+  {
+    "id": 24,
+    "question": "What is the 'power of compounding' and how does it benefit long-term investors?",
+    "answer": "Compounding means earning returns on previously earned returns, causing exponential growth. Longer the horizon, greater the compounding effect."
+  },
+  {
+    "id": 25,
+    "question": "What is the difference between 'pre-tax' and 'post-tax' retirement contributions?",
+    "answer": "Pre-tax contributions reduce current taxable income (e.g., EPF, NPS Tier 1), while post-tax contributions (e.g., NPS Tier 2, some annuities) don't reduce current tax."
+  },
+  {
+    "id": 26,
+    "question": "What is 'behavioral finance'? Give one common bias.",
+    "answer": "Behavioral finance studies psychological influences on financial decisions. Example: loss aversion — feeling losses twice as intensely as gains."
+  },
+  {
+    "id": 27,
+    "question": "What is 'recency bias' in investing?",
+    "answer": "Recency bias is giving more weight to recent events than historical data, e.g., buying equity after a market rally."
+  },
+  {
+    "id": 28,
+    "question": "What is a 'liquidity ratio' in personal finance and how is it calculated?",
+    "answer": "Liquidity ratio = liquid assets / monthly expenses. It measures months of expenses covered by cash/bank deposits."
+  },
+  {
+    "id": 29,
+    "question": "What is the difference between 'term life insurance' and 'accidental death benefit'?",
+    "answer": "Term life covers death from any cause except specific exclusions; accidental death benefit pays additional sum only if death is due to accident."
+  },
+  {
+    "id": 30,
+    "question": "What is 'critical illness insurance' and how does it differ from health insurance?",
+    "answer": "Critical illness pays a lump sum upon diagnosis of listed diseases (cancer, heart attack), while health insurance reimburses hospitalization expenses."
+  },
+  {
+    "id": 31,
+    "question": "What is 'estate freeze' and when is it used?",
+    "answer": "Estate freeze is a strategy to fix current value of assets for tax purposes, future growth passes to heirs. Used in high net worth estate planning."
+  },
+  {
+    "id": 32,
+    "question": "What is a 'nominee' and how is it different from a 'legal heir'?",
+    "answer": "Nominee is a trustee who receives assets on behalf of legal heirs. Legal heirs are those entitled by succession law. Nominee does not override will or succession."
+  },
+  {
+    "id": 33,
+    "question": "What is the 50/30/20 budgeting rule?",
+    "answer": "50% of income on needs, 30% on wants, 20% on savings and debt repayment."
+  },
+  {
+    "id": 34,
+    "question": "What is the difference between 'primary' and 'secondary' life insurance beneficiaries?",
+    "answer": "Primary beneficiary receives proceeds first; secondary (contingent) beneficiary receives only if primary predeceases the insured."
+  },
+  {
+    "id": 35,
+    "question": "What is 'reverse mortgage' and who is eligible?",
+    "answer": "Reverse mortgage allows senior citizens (above 60) to borrow against home equity; no repayment during lifetime; bank sells house after death."
+  },
+  {
+    "id": 36,
+    "question": "What is 'annuity' and how does it provide retirement income?",
+    "answer": "An annuity is a contract with an insurer to convert a lump sum into a guaranteed regular income stream for life or fixed period."
+  },
+  {
+    "id": 37,
+    "question": "What is 'inflation risk' for a retiree?",
+    "answer": "Inflation risk is the risk that rising prices erode purchasing power of fixed retirement income over time."
+  },
+  {
+    "id": 38,
+    "question": "What is 'sequence of returns risk' in retirement?",
+    "answer": "The risk of experiencing poor investment returns early in retirement, which depletes corpus faster even if average returns later are good."
+  },
+  {
+    "id": 39,
+    "question": "What is the difference between 'guaranteed' and 'non-guaranteed' returns in insurance products?",
+    "answer": "Guaranteed returns are contractually assured; non-guaranteed returns (bonuses, dividends) depend on insurer's performance and are uncertain."
+  },
+  {
+    "id": 40,
+    "question": "What is a 'sinking fund' in personal finance?",
+    "answer": "A sinking fund is a separate savings account for a known future expense (e.g., car purchase, roof repair) built up over time."
+  },
+  {
+    "id": 41,
+    "question": "What is 'diversification' and why does it reduce risk?",
+    "answer": "Diversification is spreading investments across uncorrelated assets. It reduces unsystematic risk because different assets perform differently under same conditions."
+  },
+  {
+    "id": 42,
+    "question": "What is the difference between 'equity risk premium' and 'default risk premium'?",
+    "answer": "Equity risk premium is extra return over risk-free rate for investing in stocks; default risk premium is extra return for taking credit risk on bonds."
+  },
+  {
+    "id": 43,
+    "question": "What is 'mental accounting' in behavioral finance?",
+    "answer": "Mental accounting is treating money differently based on its source or intended use (e.g., spending tax refund frivolously but salary carefully)."
+  },
+  {
+    "id": 44,
+    "question": "What is 'dollar cost averaging' compared to 'lump sum' investing?",
+    "answer": "DCA invests fixed amount periodically, reducing timing risk. Lump sum invests entire amount at once, which historically performs better but with higher volatility risk."
+  },
+  {
+    "id": 45,
+    "question": "What is a 'living will'?",
+    "answer": "A living will expresses medical treatment preferences (e.g., life support refusal) in case of terminal illness or incapacity. Not legally recognized in all countries."
+  },
+  {
+    "id": 46,
+    "question": "What is 'excess withdrawal penalty' in PPF/EPF?",
+    "answer": "Premature withdrawal from EPF before 5 years may be taxed; PPF allows partial withdrawal from year 7 onward with restrictions, but no penalty except loss of interest."
+  },
+  {
+    "id": 47,
+    "question": "What is the difference between 'secured' and 'unsecured' debt?",
+    "answer": "Secured debt is backed by collateral (home loan, car loan); unsecured debt has no collateral (credit card, personal loan) and carries higher interest."
+  },
+  {
+    "id": 48,
+    "question": "What is a 'credit score' and what is a good range in India (CIBIL)?",
+    "answer": "Credit score is a 3-digit number reflecting creditworthiness. Good CIBIL score: 750-900."
+  },
+  {
+    "id": 49,
+    "question": "What is 'buy term and invest the difference' strategy?",
+    "answer": "Buy pure term insurance (low cost) and invest remaining premium amount (compared to costly endowment plans) into equity/debt for better returns."
+  },
+  {
+    "id": 50,
+    "question": "What is the difference between 'NAV' and 'AUM' in mutual funds?",
+    "answer": "NAV is per-unit price of a fund; AUM is total market value of assets managed by the fund."
+  },
+  {
+    "id": 51,
+    "question": "What is 'exit load' in mutual funds?",
+    "answer": "Exit load is a fee charged when redeeming units before a specified period (e.g., 1% if redeemed within 1 year)."
+  },
+  {
+    "id": 52,
+    "question": "What is the difference between 'large cap', 'mid cap', and 'small cap' stocks in India?",
+    "answer": "Large cap: top 100 companies by market cap; mid cap: 101st to 250th; small cap: 251st onward as per SEBI definitions."
+  },
+  {
+    "id": 53,
+    "question": "What is 'portfolio turnover ratio' and what does high ratio indicate?",
+    "answer": "It measures how frequently fund buys/sells securities. High ratio indicates active trading, higher costs, and potential tax inefficiency."
+  },
+  {
+    "id": 54,
+    "question": "What is 'real estate investment trust (REIT)'?",
+    "answer": "REIT is a company owning income-generating real estate, traded like a stock. Investors earn rental income and capital appreciation."
+  },
+  {
+    "id": 55,
+    "question": "What is the difference between 'gratuity' and 'pension'?",
+    "answer": "Gratuity is a lump sum paid by employer for long service (5+ years); pension is a periodic income stream after retirement."
+  },
+  {
+    "id": 56,
+    "question": "What is 'step-up SIP'?",
+    "answer": "Step-up SIP automatically increases investment amount annually (e.g., 10% per year) to match income growth and inflation."
+  },
+  {
+    "id": 57,
+    "question": "What is 'endowment effect' in behavioral finance?",
+    "answer": "The endowment effect is overvaluing assets simply because we own them, leading to reluctance to sell."
+  },
+  {
+    "id": 58,
+    "question": "What is 'estate planning' and why is it needed even with small assets?",
+    "answer": "Estate planning arranges transfer of assets on death/minor care/incapacity. Needed to avoid family disputes, appoint guardians, and ensure wishes are followed."
+  },
+  {
+    "id": 59,
+    "question": "What is the difference between 'probate' and 'letter of administration'?",
+    "answer": "Probate validates a will; letter of administration is granted when no valid will exists or executor is absent."
+  },
+  {
+    "id": 60,
+    "question": "What is 'tax-loss harvesting'?",
+    "answer": "Selling losing investments to realize capital losses that can offset realized capital gains, reducing tax liability."
+  },
+  {
+    "id": 61,
+    "question": "What is the difference between 'front-end load' and 'back-end load' in mutual funds?",
+    "answer": "Front-end load is charged at purchase (now banned in India for open-ended funds); back-end load is exit load at redemption."
+  },
+  {
+    "id": 62,
+    "question": "What is 'liquidity risk' in fixed deposits?",
+    "answer": "Liquidity risk is inability to access funds without penalty before maturity. FDs have premature withdrawal penalty (0.5-1% lower interest)."
+  },
+  {
+    "id": 63,
+    "question": "What is the 'debt snowball method' of debt repayment?",
+    "answer": "Pay off smallest debt first while making minimum payments on others, then roll that payment to next smallest, creating psychological momentum."
+  },
+  {
+    "id": 64,
+    "question": "What is the difference between 'absolute return' and 'CAGR'?",
+    "answer": "Absolute return is total gain over period without annualizing; CAGR is annualized growth rate smoothing volatility."
+  },
+  {
+    "id": 65,
+    "question": "What is 'inflation-indexed bond' (IIB) and how does it work?",
+    "answer": "IIB's principal and interest are adjusted for inflation, protecting real returns. In India, RBI issues Inflation Indexed National Saving Securities (IINSS)."
+  },
+  {
+    "id": 66,
+    "question": "What is 'health savings account' (HSA) concept? (Not in India but conceptually)",
+    "answer": "A tax-advantaged account for medical expenses, seen in US. India has no direct HSA but Section 80D provides deduction for health insurance."
+  },
+  {
+    "id": 67,
+    "question": "What is 'agent conflict of interest' in financial advice?",
+    "answer": "When advisor recommends products that earn them higher commission, even if not best for client. Fiduciary duty contrasts this."
+  },
+  {
+    "id": 68,
+    "question": "What is the difference between 'fee-only' and 'commission-based' financial advisor?",
+    "answer": "Fee-only charges client directly (hourly/retainer/AUM). Commission-based earns from product sales, creating potential bias."
+  },
+  {
+    "id": 69,
+    "question": "What is 'asset under management (AUM)' fee structure?",
+    "answer": "Advisor charges a percentage of portfolio value annually (e.g., 1% of AUM). Aligns advisor's interest with portfolio growth."
+  },
+  {
+    "id": 70,
+    "question": "What is 'regression to the mean' in investing?",
+    "answer": "An extreme performance (very high or low) tends to move closer to average over time. Past high returns often are not sustained."
+  },
+  {
+    "id": 71,
+    "question": "What is the difference between 'market order' and 'limit order'?",
+    "answer": "Market order buys/sells at current market price immediately; limit order sets a specific price, executed only if reached."
+  },
+  {
+    "id": 72,
+    "question": "What is 'education savings plan' and example in India?",
+    "answer": "A plan to save for higher education. Example: Sukanya Samriddhi Yojana (girl child education) or mutual fund goal-based SIP."
+  },
+  {
+    "id": 73,
+    "question": "What is 'cash flow statement' in personal finance?",
+    "answer": "A record of income and expenses over time, showing net cash surplus or deficit."
+  },
+  {
+    "id": 74,
+    "question": "What is the difference between 'net worth' and 'liquid net worth'?",
+    "answer": "Net worth = assets minus liabilities. Liquid net worth = only assets that can be quickly converted to cash (excludes home, real estate, retirement accounts until age)."
+  },
+  {
+    "id": 75,
+    "question": "What is 'risk-adjusted return' and why is Sharpe ratio used?",
+    "answer": "Risk-adjusted return measures return per unit of risk. Sharpe ratio = (return minus risk-free rate) divided by standard deviation."
+  },
+  {
+    "id": 76,
+    "question": "What is 'contingency plan' in financial planning?",
+    "answer": "A backup plan for unexpected events like job loss, disability, or death — includes emergency fund, adequate insurance, and flexible spending."
+  },
+  {
+    "id": 77,
+    "question": "What is the difference between 'prepaid' and 'postpaid' credit cards?",
+    "answer": "Prepaid card is loaded with money (no credit); postpaid card is credit card with bill later."
+  },
+  {
+    "id": 78,
+    "question": "What is 'discount rate' used for in financial planning?",
+    "answer": "Discount rate is used to calculate present value of future goals (reverse compounding). Helps decide how much to save today."
+  },
+  {
+    "id": 79,
+    "question": "What is 'survivor's pension'?",
+    "answer": "A pension paid to spouse/children after death of pensioner (e.g., family pension under EPS-95)."
+  },
+  {
+    "id": 80,
+    "question": "What is 'vesting period' in employee stock options (ESOPs)?",
+    "answer": "Time an employee must wait before exercising options. Unvested options lost if leaving before vesting."
+  },
+  {
+    "id": 81,
+    "question": "What is 'alternative investment fund' (AIF) category?",
+    "answer": "AIFs are pooled investment vehicles for sophisticated investors: Category I (venture capital), II (private equity, real estate), III (hedge funds)."
+  },
+  {
+    "id": 82,
+    "question": "What is 'offshore investment' and a risk of it?",
+    "answer": "Investment outside home country (e.g., US stocks via mutual funds). Risks: currency fluctuation, different tax rules, regulatory differences."
+  },
+  {
+    "id": 83,
+    "question": "What is 'sovereign gold bond' vs physical gold?",
+    "answer": "SGB is government bond in gold grams, pays 2.5% interest, no making/storage cost, capital gains tax exempt on maturity vs physical gold."
+  },
+  {
+    "id": 84,
+    "question": "What is the difference between 'stop-loss order' and 'trailing stop'?",
+    "answer": "Stop-loss sells at a set price to limit loss; trailing stop moves with price (e.g., 5% below market price) locking in profits."
+  },
+  {
+    "id": 85,
+    "question": "What is 'hedge' in investing?",
+    "answer": "A hedge is an investment to reduce risk of adverse price movement (e.g., buying put option to protect stock portfolio)."
+  },
+  {
+    "id": 86,
+    "question": "What is 'certificate of deposit' (CD) and how is it different from fixed deposit?",
+    "answer": "CD is a time deposit issued by banks (in India, similar to FD but often higher minimum, tradable, and issued only for larger amounts)."
+  },
+  {
+    "id": 87,
+    "question": "What is 'banker's lien' as applied to joint accounts?",
+    "answer": "Bank's right to hold securities or funds in lien. In joint accounts, lien can be applied on survivor basis with proper documentation."
+  },
+  {
+    "id": 88,
+    "question": "What is 'power of attorney' (POA) in financial management?",
+    "answer": "A legal document authorizing someone to act on your behalf in financial matters. General POA (broad) or specific POA (limited)."
+  },
+  {
+    "id": 89,
+    "question": "What is 'guardian' in estate planning for minor children?",
+    "answer": "A person appointed by will to care for minor children financially and personally, if both parents die."
+  },
+  {
+    "id": 90,
+    "question": "What is 'loss aversion' and how does it affect investment decisions?",
+    "answer": "Loss aversion is feeling losses twice as painful as gains. Leads to selling winners too early and holding losers too long (disposition effect)."
+  },
+  {
+    "id": 91,
+    "question": "What is 'disposition effect'?",
+    "answer": "Tendency to sell winning investments to 'lock in gains' and hold losing investments hoping to recover, contrary to tax-efficient strategy."
+  },
+  {
+    "id": 92,
+    "question": "What is 'overconfidence bias' in financial planning?",
+    "answer": "Overestimating own knowledge or ability to time markets, leading to excessive trading, under-diversification, and ignoring professional advice."
+  },
+  {
+    "id": 93,
+    "question": "What is 'herd mentality' in investing?",
+    "answer": "Following crowd into popular investments without own analysis, often leading to buying at peaks and selling at lows."
+  },
+  {
+    "id": 94,
+    "question": "What is 'anchoring bias'?",
+    "answer": "Relying too heavily on first piece of information (e.g., purchase price of a stock) when making decisions, ignoring new data."
+  },
+  {
+    "id": 95,
+    "question": "What is 'confirmation bias' in financial research?",
+    "answer": "Seeking information that confirms existing beliefs and ignoring contradictory evidence, leading to poor portfolio diversification."
+  },
+  {
+    "id": 96,
+    "question": "What is 'mental accounting' and its effect on asset allocation?",
+    "answer": "Treating money differently based on mental buckets. May lead to holding low-risk cash for future vacation while carrying high-interest debt."
+  },
+  {
+    "id": 97,
+    "question": "What is the difference between 'financial coach' and 'financial planner'?",
+    "answer": "Coach focuses on behavior, habits, and money mindset; planner focuses on strategy, products, and numbers."
+  },
+  {
+    "id": 98,
+    "question": "What is 'goal-based investing' and how is it different from return-based investing?",
+    "answer": "Goal-based investing aligns assets and risk to specific goals (retirement, child education) rather than chasing generic high returns."
+  },
+  {
+    "id": 99,
+    "question": "What is 'bucket strategy' for retirement income?",
+    "answer": "Divide retirement corpus into buckets: short-term (cash, 1-3 years), medium-term (bonds, 3-7 years), long-term (equity, 7+ years) to manage sequence risk."
+  },
+  {
+    "id": 100,
+    "question": "What is the 'fiduciary standard' and why is it important for financial planners?",
+    "answer": "Fiduciary standard requires advisor to act in client's best interest, putting client ahead of own compensation. Higher than suitability standard."
+  }
+]

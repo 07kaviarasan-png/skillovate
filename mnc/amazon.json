@@ -1,0 +1,4206 @@
+{
+  "disclaimer": "This list is curated for Amazon SDE preparation based on real interview experiences and company-tagged LeetCode problems. The 'Answer' describes the optimal algorithmic approach. 'Relevant Options' are provided to simulate MCQ-style reasoning.",
+  "totalQuestions": 300,
+  "questions": [
+    {
+      "id": 1,
+      "title": "Two Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table"],
+      "question": "Given an array of integers nums and an integer target, return indices of the two numbers that add up to target. You may assume exactly one solution.",
+      "answer": "Use a hash map to store complements while iterating O(n) time and O(n) space.",
+      "relevant_options": [
+        "Nested loops for all pairs O(n²)",
+        "Sort and use two pointers O(n log n)",
+        "Use a hash map to store complements O(n)",
+        "Use a stack to track elements"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Valid Parentheses",
+      "difficulty": "Medium",
+      "topics": ["String", "Stack"],
+      "question": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+      "answer": "Use a stack: push opening brackets, pop and match when closing brackets are encountered.",
+      "relevant_options": [
+        "Count number of each bracket type and compare",
+        "Use a stack with mapping dictionary",
+        "Replace valid pairs recursively until empty",
+        "Check if string length is even then compare halves"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Merge Intervals",
+      "difficulty": "Medium",
+      "topics": ["Array", "Sorting"],
+      "question": "Given an array of intervals, merge all overlapping intervals and return the non-overlapping intervals.",
+      "answer": "Sort by start time, then merge if current start <= last end; otherwise add new interval.",
+      "relevant_options": [
+        "Sort by end time and merge backwards",
+        "Use graph connected components",
+        "Sort by start and use stack for merging",
+        "Use sweep line algorithm"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "3Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "Sorting"],
+      "question": "Given an integer array nums, return all triplets that sum to zero, without duplicates.",
+      "answer": "Sort array, fix first element, use two pointers for remaining to find pairs summing to -first.",
+      "relevant_options": [
+        "Triple nested loops with hash set for deduplication",
+        "Sort and use two pointers with skip duplicates",
+        "Use hash map for pair sums",
+        "Divide and conquer approach"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Container With Most Water",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers"],
+      "question": "Given n non-negative integers representing heights, find two lines that form a container holding the most water.",
+      "answer": "Two pointers from both ends, move the shorter pointer inward, tracking max area.",
+      "relevant_options": [
+        "Brute force all pairs O(n²)",
+        "Two pointers moving both inward simultaneously",
+        "Two pointers moving shorter inward, compute area each step",
+        "Use monotonic stack to find boundaries"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Longest Substring Without Repeating Characters",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Sliding Window"],
+      "question": "Given a string s, find the length of the longest substring without repeating characters.",
+      "answer": "Sliding window with two pointers and a hash map storing last index of each character.",
+      "relevant_options": [
+        "Generate all substrings and check O(n³)",
+        "Sliding window with set and left pointer",
+        "Dynamic programming with last occurrence array",
+        "Use queue to maintain window"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Maximum Subarray",
+      "difficulty": "Medium",
+      "topics": ["Array", "Dynamic Programming"],
+      "question": "Given an integer array nums, find the contiguous subarray with the largest sum and return its sum.",
+      "answer": "Kadane's algorithm: current sum = max(nums[i], current + nums[i]), track global max.",
+      "relevant_options": [
+        "Sort and pick largest elements",
+        "Prefix sums with brute force O(n²)",
+        "Divide and conquer O(n log n)",
+        "Dynamic programming with state machine"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Product of Array Except Self",
+      "difficulty": "Medium",
+      "topics": ["Array", "Prefix Sum"],
+      "question": "Return an array answer such that answer[i] is the product of all elements except nums[i], without division and in O(n).",
+      "answer": "Compute prefix products and suffix products separately, then multiply for each index.",
+      "relevant_options": [
+        "Divide total product by each element (fails for zeros)",
+        "Use two passes: left to right then right to left",
+        "Use nested loops O(n²)",
+        "Use logarithms and exponentiation"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Search in Rotated Sorted Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Given a rotated sorted array (no duplicates) and a target, search for target in O(log n) time.",
+      "answer": "Modified binary search: determine which half is sorted by comparing mid with left/right.",
+      "relevant_options": [
+        "Linear search O(n)",
+        "Find pivot then binary search on both halves",
+        "Modified binary with sorted check on each half",
+        "Use ternary search (doesn't work for rotation)"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Find Minimum in Rotated Sorted Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Given a rotated sorted array, find the minimum element in O(log n) time.",
+      "answer": "Binary search: if mid > right, min is in right half; otherwise min is in left half.",
+      "relevant_options": [
+        "Linear scan O(n)",
+        "Binary search comparing mid with right",
+        "Find pivot using two pointers",
+        "Modified insertion sort detection"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Combination Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking"],
+      "question": "Find all unique combinations where numbers sum to target (unlimited use).",
+      "answer": "Backtracking with index to avoid duplicates, subtract target on each recursive call.",
+      "relevant_options": [
+        "Dynamic programming with combination tracking",
+        "DFS with remain target and start index",
+        "BFS on sums with memoization",
+        "Greedy with largest first then backtrack"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Permutations",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking"],
+      "question": "Given an array of distinct integers, return all possible permutations.",
+      "answer": "Backtracking with used boolean array, add to result when size equals nums length.",
+      "relevant_options": [
+        "Use next_permutation repeatedly on sorted array",
+        "Recursive swap-based backtracking",
+        "Heap's algorithm for generation",
+        "Iterative insertion method"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Subsets",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking", "Bit Manipulation"],
+      "question": "Return all possible subsets (the power set) of a unique integer array.",
+      "answer": "Backtracking adding/removing elements, or bitmask iteration from 0 to 2^n-1.",
+      "relevant_options": [
+        "Recursive pick/not pick decision tree",
+        "Iterative building from empty set",
+        "Bitmask enumeration with integer bits",
+        "BFS combination generation"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Generate Parentheses",
+      "difficulty": "Medium",
+      "topics": ["String", "Backtracking"],
+      "question": "Given n pairs of parentheses, generate all well-formed combinations.",
+      "answer": "Backtracking: add '(' if left < n, add ')' if right < left, building result string.",
+      "relevant_options": [
+        "Catalan number formula with generation",
+        "DP building from smaller n combinations",
+        "Recursive with open/close counts tracking",
+        "BFS on state (open, close, string)"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Word Search",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking", "Matrix"],
+      "question": "Given a grid and a word, return true if the word exists (adjacent letters, no reuse).",
+      "answer": "DFS backtracking from each starting cell, marking visited temporarily.",
+      "relevant_options": [
+        "BFS with state tracking",
+        "Trie for multiple word search",
+        "DFS with visited set and pruning",
+        "Iterative stack with backtracking"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Letter Combinations of a Phone Number",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Backtracking"],
+      "question": "Given a digit string, return all possible letter combinations from phone keypad.",
+      "answer": "Backtracking building string, mapping digits to corresponding letter arrays.",
+      "relevant_options": [
+        "BFS queue building combinations level by level",
+        "Iterative product using reduce",
+        "Recursive DFS with partial string",
+        "Dynamic programming prefix combinations"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Rotate Image",
+      "difficulty": "Medium",
+      "topics": ["Array", "Matrix"],
+      "question": "Rotate an n x n matrix 90 degrees clockwise in-place.",
+      "answer": "Transpose the matrix, then reverse each row.",
+      "relevant_options": [
+        "Layer by layer four-way swap",
+        "Rotate groups of four cells",
+        "Create new matrix and copy (O(n²) space)",
+        "Reverse columns then transpose"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Spiral Matrix",
+      "difficulty": "Medium",
+      "topics": ["Array", "Matrix", "Simulation"],
+      "question": "Return all elements of an m x n matrix in spiral order.",
+      "answer": "Track boundaries (top, bottom, left, right), traverse perimeter, shrink each iteration.",
+      "relevant_options": [
+        "Simulate with direction changes",
+        "Recursive peeling of outer layer",
+        "BFS with visited set and direction priority",
+        "Flatten then reorder by level"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Set Matrix Zeroes",
+      "difficulty": "Medium",
+      "topics": ["Array", "Matrix"],
+      "question": "If an element is 0, set its entire row and column to 0. Do it in-place with O(1) extra space.",
+      "answer": "Use first row and first column as markers; track if first row/col need zeroing separately.",
+      "relevant_options": [
+        "Use two sets to track rows and cols to zero O(m+n)",
+        "Create copy of matrix and check O(mn)",
+        "Mark with special sentinel value then convert",
+        "Use boolean flags for rows and cols"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Group Anagrams",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "String", "Sorting"],
+      "question": "Given an array of strings, group anagrams together.",
+      "answer": "Sort each string to use as key in hash map; values are lists of original strings.",
+      "relevant_options": [
+        "Character count tuple as key (26-length array)",
+        "Prime number multiplication as hash",
+        "Sort each word and use map of sorted->list",
+        "Use frequency string as key"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Top K Frequent Elements",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Heap", "Bucket Sort"],
+      "question": "Return the k most frequent elements from an integer array.",
+      "answer": "Count frequencies, use min-heap of size k or bucket sort by frequency.",
+      "relevant_options": [
+        "Sort by frequency after counting O(n log n)",
+        "Quickselect on frequency values",
+        "Use priority queue with custom comparator",
+        "Bucket sort with array of lists"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Encode and Decode TinyURL",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Design"],
+      "question": "Design a URL shortening service with encode and decode methods.",
+      "answer": "Use counter or hash to generate unique ID, store in hash map, convert ID to base62 string.",
+      "relevant_options": [
+        "Use MD5 hash and take first 6 chars",
+        "Increment counter and use base62 encoding",
+        "Use random UUID as key in database",
+        "Use encryption of original URL"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Design a Leaderboard",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Design", "Heap", "Sorting"],
+      "question": "Design a leaderboard with addScore, top(K) returning sum of top K scores, and reset.",
+      "answer": "Use hash map for player scores, and TreeMap for score frequencies or min-heap for top K.",
+      "relevant_options": [
+        "Use array of size N for player scores, sort for top K",
+        "Use priority queue with lazy updates",
+        "Use balanced BST (TreeMap) for score ranking",
+        "Use bucket sort if scores are bounded"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Design Circular Queue",
+      "difficulty": "Medium",
+      "topics": ["Array", "Design", "Queue"],
+      "question": "Design a circular queue using a fixed-size array.",
+      "answer": "Use head and tail pointers with modulo arithmetic; maintain count or use one empty slot to distinguish full/empty.",
+      "relevant_options": [
+        "Use two stacks to simulate queue",
+        "Use linked list with head and tail",
+        "Use array with head/tail and count variable",
+        "Use two pointers with modulo and size tracking"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Implement Trie (Prefix Tree)",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Design", "Trie"],
+      "question": "Implement a trie with insert, search, and startsWith methods.",
+      "answer": "Trie node contains children array (size 26) and boolean isEnd; insert traverses/creates nodes.",
+      "relevant_options": [
+        "Use hash map for children instead of array",
+        "Use linked list of nodes per level",
+        "Store all words and do prefix check O(n*m)",
+        "Use binary search tree of strings"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Add and Search Word - Data structure design",
+      "difficulty": "Medium",
+      "topics": ["String", "Backtracking", "Design", "Trie"],
+      "question": "Design a data structure supporting adding words and searching where '.' can match any character.",
+      "answer": "Use trie with DFS search for '.' wildcard; traverse all children when wildcard encountered.",
+      "relevant_options": [
+        "Use hash set of all words and check pattern with regex",
+        "Use trie with BFS for dot matching",
+        "Store words by length and binary search",
+        "Use Aho-Corasick automaton"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "LRU Cache",
+      "difficulty": "Hard",
+      "topics": ["Hash Table", "Linked List", "Design", "Doubly-Linked List"],
+      "question": "Design an LRU cache with get and put operations in O(1) average time.",
+      "answer": "Use hash map (key -> node) and doubly linked list to maintain order; move accessed nodes to head.",
+      "relevant_options": [
+        "Use LinkedHashMap in Java or OrderedDict in Python",
+        "Use queue with timestamp and map",
+        "Use two stacks for recent and old",
+        "Use array with timestamps and sweep"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Min Stack",
+      "difficulty": "Medium",
+      "topics": ["Stack", "Design"],
+      "question": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.",
+      "answer": "Use two stacks: main stack and min stack storing current minimum at each level.",
+      "relevant_options": [
+        "Store (value, current min) as pair in single stack",
+        "Calculate min difference and store delta",
+        "Use min variable and re-scan on pop (O(n))",
+        "Use priority queue as secondary structure"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Maximum Width of Binary Tree",
+      "difficulty": "Medium",
+      "topics": ["Tree", "BFS", "Binary Tree"],
+      "question": "Return the maximum width of a binary tree among all levels.",
+      "answer": "BFS with indexing: root index 0, left child = 2*index, right = 2*index+1; width = last - first + 1 per level.",
+      "relevant_options": [
+        "DFS with position tracking using hash map",
+        "BFS with queue storing (node, position)",
+        "Use level order traversal with null placeholder",
+        "Recursive preorder with level tracking"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Binary Tree Right Side View",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "BFS"],
+      "question": "Return the values of nodes visible when standing on the right side, top to bottom.",
+      "answer": "BFS level order and take last node of each level, or DFS with level tracking and first right node.",
+      "relevant_options": [
+        "Level order traversal with queue, add rightmost node each level",
+        "DFS right-first preorder, add when level not seen",
+        "Recursive with reversed level order",
+        "BFS and store entire level then take last"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Kth Smallest Element in a BST",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "BST"],
+      "question": "Given the root of a BST and an integer k, return the kth smallest value (1-indexed).",
+      "answer": "In-order traversal (left-root-right) yields sorted order; return kth element visited.",
+      "relevant_options": [
+        "Recursive in-order with counter",
+        "Iterative stack for in-order traversal",
+        "Augment tree with size of left subtree",
+        "Binary search on value range"
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Lowest Common Ancestor of a Binary Tree",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS"],
+      "question": "Find the lowest common ancestor of two given nodes in a binary tree.",
+      "answer": "Recursively search left and right; if both sides return non-null, current is LCA.",
+      "relevant_options": [
+        "Store parent pointers and find intersection",
+        "Preprocess with binary lifting (O(log n))",
+        "Find paths from root to both nodes and compare",
+        "BFS with parent tracking"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Binary Tree Maximum Path Sum",
+      "difficulty": "Hard",
+      "topics": ["Tree", "DFS", "DP"],
+      "question": "Find the maximum path sum in a binary tree (path can start and end at any node).",
+      "answer": "DFS returns max gain from node to leaf; track global max = max(global, node.val + left_gain + right_gain).",
+      "relevant_options": [
+        "Brute force check all paths O(n²)",
+        "DP with memoization on subtree",
+        "Post-order traversal with negative branch pruning",
+        "Rooted tree DP with two options (include/not include node)"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Serialize and Deserialize Binary Tree",
+      "difficulty": "Hard",
+      "topics": ["Tree", "Design", "String"],
+      "question": "Design an algorithm to serialize and deserialize a binary tree (any shape).",
+      "answer": "Use level order BFS with null markers, or preorder with sentinel for null children.",
+      "relevant_options": [
+        "Preorder traversal with delimiters and null markers",
+        "Level order with queue storing null",
+        "Use parentheses notation (value (left)(right))",
+        "Store inorder and preorder traversals"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Validate Binary Search Tree",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "BST"],
+      "question": "Determine if a binary tree is a valid BST.",
+      "answer": "In-order traversal and check if values are strictly increasing; or DFS with valid range (min, max).",
+      "relevant_options": [
+        "Recursive with lower and upper bound",
+        "Iterative in-order traversal with stack",
+        "Store previous node in in-order",
+        "Check min/max constraints recursively"
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Number of Islands",
+      "difficulty": "Medium",
+      "topics": ["Array", "DFS", "BFS", "Union Find", "Matrix"],
+      "question": "Given an m x n 2D grid of '1's and '0's, count the number of islands.",
+      "answer": "DFS/BFS on each unvisited '1', marking visited, increment count for each exploration.",
+      "relevant_options": [
+        "Union-Find (Disjoint Set Union) on land cells",
+        "BFS with queue for flood fill",
+        "DFS recursion (may cause stack overflow for large grids)",
+        "Use visited matrix or mark grid in-place"
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Course Schedule",
+      "difficulty": "Medium",
+      "topics": ["Graph", "Topological Sort"],
+      "question": "Given n courses and prerequisites, determine if all courses can be finished.",
+      "answer": "Detect cycle in directed graph using DFS with states or Kahn's topological sort.",
+      "relevant_options": [
+        "Topological sort with BFS (Kahn's)",
+        "DFS with recursion stack tracking",
+        "Union Find (not suitable for directed cycles)",
+        "Floyd-Warshall for transitive closure"
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Course Schedule II",
+      "difficulty": "Medium",
+      "topics": ["Graph", "Topological Sort"],
+      "question": "Return the ordering of courses to finish all; return empty array if impossible.",
+      "answer": "Kahn's BFS topological sort: enqueue nodes with indegree 0, remove edges, add to result.",
+      "relevant_options": [
+        "DFS post-order with stack for ordering",
+        "BFS with indegree array",
+        "DFS with color states and result list",
+        "Reverse graph and find sinks"
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Clone Graph",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Graph", "DFS", "BFS"],
+      "question": "Given a reference of a node in a connected undirected graph, return a deep copy.",
+      "answer": "BFS or DFS using hash map to map original nodes to cloned nodes, clone neighbors recursively.",
+      "relevant_options": [
+        "DFS recursion with visited map",
+        "BFS queue with visited map",
+        "Use serialization and deserialization",
+        "Create new nodes and copy adjacency separately"
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Pacific Atlantic Water Flow",
+      "difficulty": "Medium",
+      "topics": ["Array", "DFS", "BFS", "Matrix"],
+      "question": "Find cells where water can flow to both Pacific (top/left) and Atlantic (bottom/right).",
+      "answer": "DFS/BFS from Pacific edge and Atlantic edge separately, intersect reachable cells.",
+      "relevant_options": [
+        "DFS from each cell to both oceans (O((mn)²))",
+        "Multi-source BFS from oceans",
+        "Union Find on cells with flow direction",
+        "DP with memoization on flow reachability"
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Graph Valid Tree",
+      "difficulty": "Medium",
+      "topics": ["Graph", "BFS", "DFS", "Union Find"],
+      "question": "Given n nodes and edges, determine if the graph forms a valid tree (connected and acyclic).",
+      "answer": "Check if edges.length == n-1 and graph is connected (DFS/BFS).",
+      "relevant_options": [
+        "Union Find: if all edges unite nodes without cycle and total edges = n-1",
+        "DFS with visited set and parent tracking",
+        "BFS to check connectivity and cycle",
+        "Check if any node has degree > 2 for tree property?"
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Number of Connected Components in an Undirected Graph",
+      "difficulty": "Medium",
+      "topics": ["Graph", "DFS", "BFS", "Union Find"],
+      "question": "Find the number of connected components given n nodes and edges.",
+      "answer": "Union Find or DFS/BFS to count number of disjoint sets.",
+      "relevant_options": [
+        "Union Find with path compression",
+        "BFS from each unvisited node",
+        "DFS recursion marking visited",
+        "Adjacency list then DFS traversal count"
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Minimum Height Trees",
+      "difficulty": "Medium",
+      "topics": ["Graph", "BFS", "Topological Sort"],
+      "question": "Find all roots that give minimum height trees in a tree graph.",
+      "answer": "Trim leaves level by level (topological sort) until 1 or 2 nodes remain.",
+      "relevant_options": [
+        "Calculate height for each node using DFS O(n²)",
+        "BFS from each leaf with degree tracking",
+        "Find diameter of tree then middle nodes",
+        "Use centroid decomposition"
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Alien Dictionary",
+      "difficulty": "Hard",
+      "topics": ["Graph", "Topological Sort", "String"],
+      "question": "Given a sorted dictionary of an alien language, find the order of characters.",
+      "answer": "Compare adjacent words to find character ordering, build graph, topological sort.",
+      "relevant_options": [
+        "BFS Kahn's topological sort on character graph",
+        "DFS with cycle detection and post-order",
+        "Use adjacency matrix for 26 letters",
+        "Compare all pairs of words O(n² * L)"
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Word Ladder",
+      "difficulty": "Hard",
+      "topics": ["Hash Table", "String", "BFS"],
+      "question": "Find the length of shortest transformation sequence from beginWord to endWord, changing one letter at a time.",
+      "answer": "BFS from beginWord, generating all possible next words by changing each position.",
+      "relevant_options": [
+        "Bidirectional BFS for efficiency",
+        "Dijkstra with uniform cost (unnecessary)",
+        "DFS with backtracking (too slow)",
+        "Preprocess patterns (*og -> dog, log)"
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Minimum Knight Moves",
+      "difficulty": "Medium",
+      "topics": ["Graph", "BFS", "Math"],
+      "question": "On an infinite chessboard, find minimum moves for a knight to reach (x, y) from (0,0).",
+      "answer": "BFS with symmetry (use absolute values) and pruning; or mathematical formula with DP.",
+      "relevant_options": [
+        "BFS on infinite grid (bounded region)",
+        "A* search with heuristic",
+        "DP with memoization on (abs(x), abs(y))",
+        "BFS with visited set and queue"
+      ]
+    },
+    {
+      "id": 47,
+      "title": "Cheapest Flights Within K Stops",
+      "difficulty": "Medium",
+      "topics": ["Graph", "DP", "Heap", "BFS"],
+      "question": "Find cheapest price from src to dst with at most K stops.",
+      "answer": "Bellman-Ford variant (DP on stops) or BFS with priority queue (Dijkstra with stop limit).",
+      "relevant_options": [
+        "Modified Dijkstra with stop count in state",
+        "BFS with queue for each stop level",
+        "DP[stop][node] = min cost",
+        "DFS with pruning on stops and cost"
+      ]
+    },
+    {
+      "id": 48,
+      "title": "Network Delay Time",
+      "difficulty": "Medium",
+      "topics": ["Graph", "Heap", "Shortest Path"],
+      "question": "Find the minimum time for all nodes to receive a signal from source k.",
+      "answer": "Dijkstra's algorithm from source, answer = max distance to all nodes.",
+      "relevant_options": [
+        "Bellman-Ford (works with negative weights)",
+        "Floyd-Warshall O(n³) for small n",
+        "BFS on unweighted graph (not applicable)",
+        "DFS with path tracking"
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Reorganize String",
+      "difficulty": "Medium",
+      "topics": ["String", "Hash Table", "Greedy", "Heap", "Counting"],
+      "question": "Rearrange string so no two adjacent characters are same. Return result or empty string.",
+      "answer": "Max-heap by frequency; pop top two, append both, decrement counts, push back if still >0.",
+      "relevant_options": [
+        "Greedy fill with most frequent",
+        "Sort by frequency then interleave",
+        "DP on placements",
+        "Backtracking with pruning"
+      ]
+    },
+    {
+      "id": 50,
+      "title": "Partition Labels",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Two Pointers", "Greedy"],
+      "question": "Partition string into as many parts so each character appears in at most one part.",
+      "answer": "Store last occurrence of each char, expand segment until current index equals last occurrence.",
+      "relevant_options": [
+        "Two pointers with set",
+        "Sliding window with frequency",
+        "Greedy end tracking",
+        "Recursive partition"
+      ]
+    },
+    {
+      "id": 51,
+      "title": "Longest Palindromic Substring",
+      "difficulty": "Medium",
+      "topics": ["String", "DP", "Two Pointers"],
+      "question": "Given a string s, return the longest palindromic substring.",
+      "answer": "Expand around center for each possible center (2n-1 centers).",
+      "relevant_options": [
+        "DP table O(n²) space",
+        "Manacher's algorithm O(n) time",
+        "Brute force all substrings O(n³)",
+        "Two pointers expand each center"
+      ]
+    },
+    {
+      "id": 52,
+      "title": "Palindromic Substrings",
+      "difficulty": "Medium",
+      "topics": ["String", "DP", "Two Pointers"],
+      "question": "Count the number of palindromic substrings in a given string.",
+      "answer": "Expand around center and count palindromes for each center (odd and even length).",
+      "relevant_options": [
+        "DP with boolean table",
+        "Manacher's algorithm (also counts)",
+        "Brute force O(n³)",
+        "Two pointers per center"
+      ]
+    },
+    {
+      "id": 53,
+      "title": "Edit Distance",
+      "difficulty": "Hard",
+      "topics": ["String", "DP"],
+      "question": "Find minimum number of operations to convert one string to another.",
+      "answer": "DP table: if chars match, dp[i][j] = dp[i-1][j-1]; else dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]).",
+      "relevant_options": [
+        "Recursive with memoization (top-down)",
+        "Space-optimized to 2 rows",
+        "A* search with heuristic",
+        "Levenshtein distance algorithm"
+      ]
+    },
+    {
+      "id": 54,
+      "title": "Longest Common Subsequence",
+      "difficulty": "Medium",
+      "topics": ["String", "DP"],
+      "question": "Return the length of the longest common subsequence of two strings.",
+      "answer": "DP table: if match, dp[i][j] = dp[i-1][j-1] + 1; else dp[i][j] = max(dp[i-1][j], dp[i][j-1]).",
+      "relevant_options": [
+        "Recursive with memoization",
+        "Space-optimized DP to 2 rows",
+        "Hirschberg's algorithm for space",
+        "Using suffix array (advanced)"
+      ]
+    },
+    {
+      "id": 55,
+      "title": "Climbing Stairs",
+      "difficulty": "Medium",
+      "topics": ["DP", "Math"],
+      "question": "Count distinct ways to climb n steps with 1 or 2 steps at a time.",
+      "answer": "Fibonacci-like DP: dp[i] = dp[i-1] + dp[i-2] with base cases.",
+      "relevant_options": [
+        "Dynamic programming with recursion and memoization",
+        "Matrix exponentiation O(log n)",
+        "Combinatorics: sum of C(n-k, k)",
+        "Iterative with two variables"
+      ]
+    },
+    {
+      "id": 56,
+      "title": "House Robber",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Maximum amount you can rob from non-adjacent houses.",
+      "answer": "DP: rob[i] = max(rob[i-1], rob[i-2] + nums[i]), space-optimized to two variables.",
+      "relevant_options": [
+        "Recursive with memoization",
+        "Greedy picking alternate houses (fails for [2,1,1,2])",
+        "DP with state (include/exclude current)",
+        "Use two variables prev2, prev1, current"
+      ]
+    },
+    {
+      "id": 57,
+      "title": "House Robber II (Circular)",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Houses in a circle, cannot rob adjacent. Return max amount.",
+      "answer": "Two cases: rob houses 0 to n-2, and 1 to n-1; take max of both.",
+      "relevant_options": [
+        "DP with state tracking first house picked",
+        "Break the circle by considering two linear arrays",
+        "Greedy with parity skipping",
+        "DP with three states (first not robbed, could be robbed)"
+      ]
+    },
+    {
+      "id": 58,
+      "title": "Maximum Product Subarray",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Find contiguous subarray with largest product (may contain negatives).",
+      "answer": "Track both max and min product so far (because negative times negative becomes positive).",
+      "relevant_options": [
+        "Kadane's algorithm for sum (doesn't work for product)",
+        "Brute force all subarrays O(n²)",
+        "Prefix-suffix product approach",
+        "Divide and conquer O(n log n)"
+      ]
+    },
+    {
+      "id": 59,
+      "title": "Coin Change",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "BFS"],
+      "question": "Return fewest coins needed to make an amount, or -1 if impossible.",
+      "answer": "DP: dp[i] = min(dp[i-coin] + 1) for each coin, initialize with large value, dp[0]=0.",
+      "relevant_options": [
+        "Greedy (fails for [1,3,4], amount=6)",
+        "BFS on remainder amounts",
+        "DFS with memoization (top-down DP)",
+        "Recursive with caching"
+      ]
+    },
+    {
+      "id": 60,
+      "title": "Coin Change II (Number of combinations)",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Return number of combinations that make up an amount (order doesn't matter).",
+      "answer": "DP outer loop over coins and inner loop over amounts to avoid permutations.",
+      "relevant_options": [
+        "DP outer loop over amounts (counts permutations)",
+        "Recursive with memoization on (index, amount)",
+        "Unbounded knapsack DP",
+        "BFS on state (amount, coin_index)"
+      ]
+    },
+    {
+      "id": 61,
+      "title": "Longest Increasing Subsequence",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search", "DP"],
+      "question": "Return the length of the longest strictly increasing subsequence.",
+      "answer": "Patience sorting: maintain tails array, binary search for each num to replace or append.",
+      "relevant_options": [
+        "DP O(n²): LIS ending at each index",
+        "Binary search on tails O(n log n)",
+        "Segment tree with coordinate compression",
+        "Modified binary search for LIS"
+      ]
+    },
+    {
+      "id": 62,
+      "title": "Partition Equal Subset Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Determine if array can be partitioned into two subsets with equal sum.",
+      "answer": "If total sum odd, return false. Use knapsack DP to check if subset sum = total/2 is achievable.",
+      "relevant_options": [
+        "Recursive backtracking with pruning",
+        "Bitmask DP for small arrays",
+        "Top-down memoization with (index, sum)",
+        "Bottom-up boolean DP array"
+      ]
+    },
+    {
+      "id": 63,
+      "title": "Decode Ways",
+      "difficulty": "Medium",
+      "topics": ["String", "DP"],
+      "question": "Count number of ways to decode a digit string (A=1, B=2, ..., Z=26).",
+      "answer": "DP: dp[i] = dp[i-1] (if s[i]!='0') + dp[i-2] (if 10-26).",
+      "relevant_options": [
+        "Recursive with memoization",
+        "Iterative with two variables space optimization",
+        "DFS with backtracking",
+        "Greedy pattern matching"
+      ]
+    },
+    {
+      "id": 64,
+      "title": "Unique Paths",
+      "difficulty": "Medium",
+      "topics": ["Math", "DP", "Combinatorics"],
+      "question": "Count unique paths from top-left to bottom-right moving only right or down.",
+      "answer": "Combinatorics: C(m+n-2, m-1) or DP grid with dp[i][j] = dp[i-1][j] + dp[i][j-1].",
+      "relevant_options": [
+        "DP with 2D array",
+        "Space-optimized 1D DP (rolling array)",
+        "Recursive with memoization",
+        "Math formula using factorials"
+      ]
+    },
+    {
+      "id": 65,
+      "title": "Unique Paths II (with Obstacles)",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Matrix"],
+      "question": "Count unique paths with obstacles (1 represents obstacle).",
+      "answer": "DP, set dp[i][j]=0 if obstacle; otherwise dp[i][j]=dp[i-1][j]+dp[i][j-1] (with boundary checks).",
+      "relevant_options": [
+        "Same DP with obstacle check",
+        "Recursive DFS with memoization",
+        "BFS level counting",
+        "Use 2D DP with obstacle condition"
+      ]
+    },
+    {
+      "id": 66,
+      "title": "Minimum Path Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Matrix"],
+      "question": "Find path from top-left to bottom-right minimizing sum, moving only right or down.",
+      "answer": "DP: dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1]) with boundary initialization.",
+      "relevant_options": [
+        "Dijkstra on grid (overkill)",
+        "DP with 2D array",
+        "In-place DP modifying original grid",
+        "Recursive with memoization"
+      ]
+    },
+    {
+      "id": 67,
+      "title": "Jump Game",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Greedy"],
+      "question": "Determine if you can reach the last index given maximum jump lengths.",
+      "answer": "Greedy: maintain farthest reachable index; if at any point i > farthest, return false.",
+      "relevant_options": [
+        "DP boolean reachable array",
+        "Backtracking from end",
+        "BFS on indices",
+        "Recursive with pruning"
+      ]
+    },
+    {
+      "id": 68,
+      "title": "Jump Game II (Minimum Jumps)",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Greedy"],
+      "question": "Find minimum number of jumps to reach the last index.",
+      "answer": "Greedy BFS: track current_end, farthest, jumps++; when i reaches current_end, set current_end=farthest.",
+      "relevant_options": [
+        "BFS level order on indices",
+        "DP O(n²) with min jumps",
+        "Single pass greedy with two pointers",
+        "Dijkstra with unit weight (BFS)"
+      ]
+    },
+    {
+      "id": 69,
+      "title": "Best Time to Buy and Sell Stock with Cooldown",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Maximize profit with unlimited transactions but must wait 1 day after selling.",
+      "answer": "State machine DP: states are 'rest', 'buy', 'sell' with transitions between them.",
+      "relevant_options": [
+        "DP with 3 arrays (buy,sell,cooldown)",
+        "Greedy with local maxima tracking",
+        "Recursive with memoization on (index, holding, cooldown)",
+        "Space-optimized state variables"
+      ]
+    },
+    {
+      "id": 70,
+      "title": "Maximum Sum Circular Subarray",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Divide and Conquer"],
+      "question": "Find maximum sum of a non-empty circular subarray.",
+      "answer": "Max of (max subarray using Kadane) or (total sum - min subarray) if not all negative.",
+      "relevant_options": [
+        "Kadane for max subarray and min subarray",
+        "Concatenate array and sliding window of size n",
+        "Prefix sums with deque",
+        "Divide and conquer for circle"
+      ]
+    },
+    {
+      "id": 71,
+      "title": "Burst Balloons",
+      "difficulty": "Hard",
+      "topics": ["Array", "DP", "Divide and Conquer"],
+      "question": "Find maximum coins from bursting all balloons.",
+      "answer": "DP on intervals with virtual boundary 1s; try last balloon to burst in subarray.",
+      "relevant_options": [
+        "Recursive divide and conquer with memo",
+        "Bottom-up DP on interval lengths",
+        "Greedy smallest balloon first (fails)",
+        "Matrix chain multiplication style"
+      ]
+    },
+    {
+      "id": 72,
+      "title": "Stone Game",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Game Theory"],
+      "question": "Two players pick from ends; return true if first player can win.",
+      "answer": "DP for optimal play; first player wins if total sum is odd or optimal play difference >0.",
+      "relevant_options": [
+        "Minimax recursion with DP",
+        "Greedy pick larger end (fails)",
+        "Prefix sums with DP",
+        "Mathematical: first player always wins with even pile count"
+      ]
+    },
+    {
+      "id": 73,
+      "title": "Triangle (Minimum Path Sum)",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Find minimum path sum from top to bottom moving to adjacent numbers.",
+      "answer": "Bottom-up DP: start from second last row, update each element as min of two children + current.",
+      "relevant_options": [
+        "Top-down DP with memoization",
+        "BFS level by level",
+        "Space-optimized to 1D array",
+        "Recursive with duplicates"
+      ]
+    },
+    {
+      "id": 74,
+      "title": "Maximum Square Area in Matrix",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Matrix"],
+      "question": "Find the maximum side length of a square containing all 1's.",
+      "answer": "DP: dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1 if matrix[i][j]=='1'; track max.",
+      "relevant_options": [
+        "Brute force all squares O((mn)²)",
+        "Histogram method using monotonic stack",
+        "Prefix sum and binary search",
+        "DP with 2 rows space optimization"
+      ]
+    },
+    {
+      "id": 75,
+      "title": "Regular Expression Matching",
+      "difficulty": "Hard",
+      "topics": ["String", "DP", "Recursion"],
+      "question": "Implement regular expression matching with '.' and '*' (zero or more preceding).",
+      "answer": "DP with cases: if next char is '*', consider zero or more of current char; else single char match.",
+      "relevant_options": [
+        "Recursive with memoization",
+        "Bottom-up DP table",
+        "Automata approach (NFA simulation)",
+        "Backtracking with index pointers"
+      ]
+    },
+    {
+      "id": 76,
+      "title": "Wildcard Matching",
+      "difficulty": "Hard",
+      "topics": ["String", "DP", "Greedy"],
+      "question": "Implement wildcard matching with '?' (any char) and '*' (any sequence).",
+      "answer": "DP or greedy: track last '*' positions to backtrack when mismatch occurs.",
+      "relevant_options": [
+        "DP 2D table",
+        "Two pointers with star tracking",
+        "Recursive with memoization",
+        "Automata with backtracking"
+      ]
+    },
+    {
+      "id": 77,
+      "title": "Word Break II",
+      "difficulty": "Hard",
+      "topics": ["Array", "Hash Table", "String", "DP", "Backtracking", "Trie"],
+      "question": "Add spaces to string to construct all possible sentences from dictionary.",
+      "answer": "DFS with memoization: check prefixes, recurse on suffix, cache results for substrings.",
+      "relevant_options": [
+        "DFS without memo (exponential)",
+        "DP boolean array with list building",
+        "Trie for prefix matching",
+        "BFS on positions with path tracking"
+      ]
+    },
+    {
+      "id": 78,
+      "title": "Word Break I",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "String", "DP", "Trie"],
+      "question": "Determine if string can be segmented into dictionary words.",
+      "answer": "DP: dp[i] true if s[0:i] segmentable and s[j:i] in dictionary.",
+      "relevant_options": [
+        "Recursive with memoization",
+        "BFS on indices",
+        "Trie for prefix checking",
+        "DP boolean array"
+      ]
+    },
+    {
+      "id": 79,
+      "title": "Palindrome Partitioning",
+      "difficulty": "Medium",
+      "topics": ["String", "Backtracking", "DP"],
+      "question": "Partition string so every substring is palindrome; return all partitions.",
+      "answer": "Backtracking: check palindrome for prefix using DP or two pointers, recurse on suffix.",
+      "relevant_options": [
+        "DFS building partitions",
+        "DP precompute palindrome table",
+        "BFS on indices",
+        "Recursive with memoization on substring"
+      ]
+    },
+    {
+      "id": 80,
+      "title": "Restore IP Addresses",
+      "difficulty": "Medium",
+      "topics": ["String", "Backtracking"],
+      "question": "Return all possible valid IP addresses from a digit string.",
+      "answer": "Backtracking: place 3 dots forming 4 segments, validate each segment (0-255, no leading zeros).",
+      "relevant_options": [
+        "Iterative loops for dot positions",
+        "DFS with segment index",
+        "Recursive with string building",
+        "BFS on positions"
+      ]
+    },
+    {
+      "id": 81,
+      "title": "Subsets II (with duplicates)",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking"],
+      "question": "Return all subsets without duplicates (array may contain duplicates).",
+      "answer": "Sort array, backtrack with skip logic: if nums[i]==nums[i-1] and not used, skip.",
+      "relevant_options": [
+        "Use set of subsets",
+        "Backtracking with duplicate skipping after sorting",
+        "Iterative building with frequency",
+        "Bitmask with duplicate handling"
+      ]
+    },
+    {
+      "id": 82,
+      "title": "Combination Sum II (no reuse, duplicates)",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking"],
+      "question": "Find all unique combinations summing to target, each number used once, array may have duplicates.",
+      "answer": "Sort array, backtrack with index; skip duplicate numbers at same recursion level.",
+      "relevant_options": [
+        "Use set to store combinations",
+        "DP with frequency count",
+        "Backtracking with used array",
+        "Greedy largest first with skip"
+      ]
+    },
+    {
+      "id": 83,
+      "title": "N-Queens",
+      "difficulty": "Hard",
+      "topics": ["Array", "Backtracking"],
+      "question": "Place n queens on n x n board so no two attack each other. Return all solutions.",
+      "answer": "Backtracking row by row; track columns, diagonals (col-row constant, col+row constant).",
+      "relevant_options": [
+        "Bitmask optimization for speed",
+        "DFS with pruning",
+        "Recursive placement with validation",
+        "Iterative stack backtracking"
+      ]
+    },
+    {
+      "id": 84,
+      "title": "Sudoku Solver",
+      "difficulty": "Hard",
+      "topics": ["Array", "Backtracking", "Matrix"],
+      "question": "Write a program to solve a Sudoku puzzle.",
+      "answer": "Backtracking: try digits 1-9, validate row/col/box, recurse, undo if fails.",
+      "relevant_options": [
+        "Dancing Links Algorithm (Algorithm X)",
+        "Constraint propagation with backtracking",
+        "Bitmask for row/col/box check",
+        "BFS state search (too many states)"
+      ]
+    },
+    {
+      "id": 85,
+      "title": "Word Search II",
+      "difficulty": "Hard",
+      "topics": ["Array", "Backtracking", "Trie", "Matrix"],
+      "question": "Return all words from dictionary that exist in a board.",
+      "answer": "Build trie of dictionary, DFS on board, prune when prefix not found.",
+      "relevant_options": [
+        "DFS for each word O(board*words)",
+        "Use set of prefixes for pruning",
+        "BFS from each cell with trie",
+        "Multiple source BFS"
+      ]
+    },
+    {
+      "id": 86,
+      "title": "Remove Invalid Parentheses",
+      "difficulty": "Hard",
+      "topics": ["String", "Backtracking", "BFS"],
+      "question": "Remove minimum parentheses to make string valid; return all results.",
+      "answer": "BFS level-order: remove one char at a time, check validity; stop at first valid level.",
+      "relevant_options": [
+        "DFS with pruning",
+        "Count mismatched parentheses",
+        "Greedy removal (may miss some)",
+        "Use stack to find invalid positions"
+      ]
+    },
+    {
+      "id": 87,
+      "title": "Partition to K Equal Sum Subsets",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking", "DP"],
+      "question": "Determine if array can be partitioned into k subsets with equal sum.",
+      "answer": "Sort descending, compute target sum, backtrack assigning each number to one of k subsets with pruning.",
+      "relevant_options": [
+        "DP with bitmask (state = used elements)",
+        "Recursive with subset sums",
+        "Greedy fill largest first",
+        "DFS with visited array"
+      ]
+    },
+    {
+      "id": 88,
+      "title": "Beautiful Arrangement",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking", "Bit Manipulation"],
+      "question": "Count permutations of [1..n] where number at i is divisible by i or i divisible by number.",
+      "answer": "Backtracking with used boolean array; optimize with bitmask DP.",
+      "relevant_options": [
+        "Brute force all permutations O(n!)",
+        "Bitmask DP with memoization",
+        "DFS with pruning",
+        "Use precomputed candidates per position"
+      ]
+    },
+    {
+      "id": 89,
+      "title": "Matchsticks to Square",
+      "difficulty": "Medium",
+      "topics": ["Array", "Backtracking", "Bit Manipulation"],
+      "question": "Determine if you can make a square using all matchsticks.",
+      "answer": "Check total sum divisible by 4, sort descending, backtrack to fill 4 sides with pruning.",
+      "relevant_options": [
+        "DFS with side tracking",
+        "Bitmask DP for subsets",
+        "Greedy largest first with backtracking",
+        "DP on used mask to form sides"
+      ]
+    },
+    {
+      "id": 90,
+      "title": "Split Array Largest Sum",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search", "Greedy"],
+      "question": "Split array into m subarrays minimizing the largest subarray sum.",
+      "answer": "Binary search on answer (max sum), greedy to check if feasible (count subarrays with sum <= mid).",
+      "relevant_options": [
+        "DP O(n² * m)",
+        "Binary search on target sum",
+        "Greedy with prefix sums",
+        "Dynamic programming with binary search"
+      ]
+    },
+    {
+      "id": 91,
+      "title": "Koko Eating Bananas",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Find minimum k to eat all piles within h hours.",
+      "answer": "Binary search on k from 1 to max(piles); check if total hours ≤ h using ceil(pile/k).",
+      "relevant_options": [
+        "Linear search from 1 to max",
+        "Greedy pick max pile",
+        "Use Math.ceil division in check",
+        "Find average and binary search around it"
+      ]
+    },
+    {
+      "id": 92,
+      "title": "Capacity to Ship Packages Within D Days",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Find minimum capacity to ship all packages within given days.",
+      "answer": "Binary search on capacity between max(weights) and sum(weights); check if days needed ≤ D.",
+      "relevant_options": [
+        "Greedy allocate each day",
+        "Linear search from max weight",
+        "Dynamic programming for optimal division",
+        "Binary search with prefix sums"
+      ]
+    },
+    {
+      "id": 93,
+      "title": "Minimum Number of Days to Make m Bouquets",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Find minimum days to get m bouquets, each requiring k adjacent flowers.",
+      "answer": "Binary search on days; check if we can form m consecutive groups of k flowers bloomed ≤ day.",
+      "relevant_options": [
+        "Linear search from min to max",
+        "Sliding window with bloomed flag",
+        "Greedy count consecutive bloomed",
+        "Precompute prefix sums of bloomed"
+      ]
+    },
+    {
+      "id": 94,
+      "title": "Find the Smallest Divisor Given a Threshold",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Find smallest divisor such that sum of ceil(nums[i]/divisor) ≤ threshold.",
+      "answer": "Binary search on divisor from 1 to max(nums); check sum of ceil divisions ≤ threshold.",
+      "relevant_options": [
+        "Linear search from 1 to max",
+        "Use integer division formula",
+        "Dynamic divisor estimation",
+        "Prefix sums not applicable"
+      ]
+    },
+    {
+      "id": 95,
+      "title": "Search a 2D Matrix",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search", "Matrix"],
+      "question": "Search target in matrix where rows sorted and row first > previous row last.",
+      "answer": "Treat as 1D array: binary search using index mapping row = mid // n, col = mid % n.",
+      "relevant_options": [
+        "Binary search on rows then on columns",
+        "Two binary searches (row then col)",
+        "Linear scan by row (O(m+n))",
+        "Search from top-right corner (O(m+n))"
+      ]
+    },
+    {
+      "id": 96,
+      "title": "Search a 2D Matrix II",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search", "Divide and Conquer", "Matrix"],
+      "question": "Search target in matrix where rows and columns are sorted separately.",
+      "answer": "Start from top-right corner; if current > target move left, else move down (O(m+n)).",
+      "relevant_options": [
+        "Binary search on each row O(m log n)",
+        "Divide and conquer quadrant elimination",
+        "Binary search from bottom-left",
+        "Iterative elimination of row/col"
+      ]
+    },
+    {
+      "id": 97,
+      "title": "Find First and Last Position of Element in Sorted Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Given sorted array, return [first, last] position of target.",
+      "answer": "Binary search for leftmost (lower bound) and rightmost (upper bound - 1).",
+      "relevant_options": [
+        "Linear scan O(n)",
+        "Single binary search then expand",
+        "Two binary searches with different conditions",
+        "Use bisect_left and bisect_right"
+      ]
+    },
+    {
+      "id": 98,
+      "title": "Find Peak Element",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search"],
+      "question": "Find any peak element (greater than neighbors) in O(log n) time.",
+      "answer": "Binary search: if mid < mid+1, peak on right; else peak on left (including mid).",
+      "relevant_options": [
+        "Linear scan O(n)",
+        "Binary search comparing mid with mid+1",
+        "Divide and conquer recursion",
+        "Use gradient ascent to find peak"
+      ]
+    },
+    {
+      "id": 99,
+      "title": "Median of Two Sorted Arrays",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search"],
+      "question": "Find median of two sorted arrays in O(log(min(m,n))) time.",
+      "answer": "Binary search on smaller array to find partition point ensuring leftX <= rightY and leftY <= rightX.",
+      "relevant_options": [
+        "Merge and find median O(m+n)",
+        "Binary search with partition",
+        "Use two pointers to find kth element",
+        "Divide and conquer selection"
+      ]
+    },
+    {
+      "id": 100,
+      "title": "Kth Largest Element in an Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Divide and Conquer", "Heap", "Quickselect"],
+      "question": "Find the kth largest element in unsorted array.",
+      "answer": "Quickselect (Hoare's selection) with average O(n) or min-heap of size k.",
+      "relevant_options": [
+        "Sort array and pick index O(n log n)",
+        "Priority queue (min-heap) O(n log k)",
+        "Quickselect with median-of-medians O(n)",
+        "Use max-heap and pop k times"
+      ]
+    },
+    {
+      "id": 101,
+      "title": "Sort Colors",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers"],
+      "question": "Sort array with values 0,1,2 in-place with one pass.",
+      "answer": "Three pointers: low (0), mid (1), high (2); swap 0 to front, 2 to back.",
+      "relevant_options": [
+        "Counting sort (two passes)",
+        "Bubble sort",
+        "Standard sort (O(n log n))",
+        "Two pointers only for 0 and 2"
+      ]
+    },
+    {
+      "id": 102,
+      "title": "Merge k Sorted Lists",
+      "difficulty": "Hard",
+      "topics": ["Linked List", "Divide and Conquer", "Heap"],
+      "question": "Merge k sorted linked lists into one sorted list.",
+      "answer": "Min-heap of k heads; pop min, push next from same list; or divide and conquer pair merge.",
+      "relevant_options": [
+        "Compare all heads each time O(kn)",
+        "Use priority queue O(n log k)",
+        "Divide and conquer merge O(n log k)",
+        "Collect all values sort O(n log n)"
+      ]
+    },
+    {
+      "id": 103,
+      "title": "Find the Duplicate Number",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "Binary Search", "Bit Manipulation"],
+      "question": "Find duplicate number in array of n+1 integers in range [1,n] with O(1) space.",
+      "answer": "Floyd's cycle detection (treat array as linked list, value as next index).",
+      "relevant_options": [
+        "Sort and compare O(n log n) modifies array",
+        "Binary search on value range O(n log n)",
+        "Mark visited using negative (modifies array)",
+        "Sum of array minus sum of [1..n] (doesn't work for multiple occurrences)"
+      ]
+    },
+    {
+      "id": 104,
+      "title": "First Missing Positive",
+      "difficulty": "Hard",
+      "topics": ["Array", "Hash Table"],
+      "question": "Find smallest missing positive integer in O(n) time O(1) space.",
+      "answer": "Place each number in its correct index (nums[i] should be at index nums[i]-1), ignore out of range.",
+      "relevant_options": [
+        "Sort then scan O(n log n)",
+        "Use hash set O(n) space",
+        "Mark visited using negative values",
+        "Cyclic sort to rearrange"
+      ]
+    },
+    {
+      "id": 105,
+      "title": "Largest Number",
+      "difficulty": "Medium",
+      "topics": ["Array", "String", "Sorting"],
+      "question": "Arrange numbers to form the largest possible number.",
+      "answer": "Sort with custom comparator: a+b > b+a (string concatenation).",
+      "relevant_options": [
+        "Sort by value then length (incorrect)",
+        "Use radix sort on digits",
+        "Convert to string and sort lex reverse",
+        "Compare first digit then length"
+      ]
+    },
+    {
+      "id": 106,
+      "title": "Next Permutation",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers"],
+      "question": "Find next lexicographically greater permutation; if not possible, return sorted order.",
+      "answer": "Find first decreasing element from right, find next larger element to right, swap, reverse suffix.",
+      "relevant_options": [
+        "Generate all permutations O(n!)",
+        "Use next_permutation as black box",
+        "Find pattern of descent then ascent",
+        "Use monotonic stack from right"
+      ]
+    },
+    {
+      "id": 107,
+      "title": "Insert Delete GetRandom O(1)",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Design"],
+      "question": "Design data structure supporting insert, delete, getRandom in O(1) average.",
+      "answer": "HashMap for value->index, ArrayList for values; delete swaps with last element then pops.",
+      "relevant_options": [
+        "Use TreeMap O(log n)",
+        "Use HashSet for existence, getRandom via list of keys",
+        "Use LinkedHashSet for iteration",
+        "Use deque and map (delete not O(1))"
+      ]
+    },
+    {
+      "id": 108,
+      "title": "Design HashSet",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Design"],
+      "question": "Design a hash set without using built-in libraries.",
+      "answer": "Array of buckets with linked lists; compute hash modulo bucket count.",
+      "relevant_options": [
+        "Single boolean array of large size",
+        "Use binary search tree per bucket",
+        "Use array of ints with bit flags",
+        "Open addressing with linear probing"
+      ]
+    },
+    {
+      "id": 109,
+      "title": "Design HashMap",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Design"],
+      "question": "Implement a hash map with get, put, remove operations.",
+      "answer": "Array of buckets with linked list storing key-value pairs; hash function determines bucket.",
+      "relevant_options": [
+        "Use large array for key range (int)",
+        "Use tree for collision (Java 8+)",
+        "Open addressing with linear probing",
+        "Cuckoo hashing"
+      ]
+    },
+    {
+      "id": 110,
+      "title": "Time Based Key-Value Store",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Binary Search", "Design"],
+      "question": "Store values with timestamps; get returns latest value with timestamp <= given.",
+      "answer": "HashMap from key to list of (timestamp, value) pairs; binary search on timestamps for get.",
+      "relevant_options": [
+        "Use TreeMap for timestamps in sorted order",
+        "Linear scan on timestamp list",
+        "Use priority queue per key (inefficient for get)",
+        "Use sorted dictionary from key to timestamps"
+      ]
+    },
+    {
+      "id": 111,
+      "title": "Snapshot Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Binary Search", "Design"],
+      "question": "Implement array with snapshots; get(index, snap_id) returns value at that snapshot.",
+      "answer": "Store list of (snap_id, value) per index; use binary search for get; snap returns current snap_id.",
+      "relevant_options": [
+        "Store entire array per snapshot (O(mn) space)",
+        "Use tree map for changes per index",
+        "Periodic full snapshots with delta",
+        "Use persistent data structure"
+      ]
+    },
+    {
+      "id": 112,
+      "title": "Flatten Nested List Iterator",
+      "difficulty": "Medium",
+      "topics": ["Stack", "Tree", "Design", "Iterator"],
+      "question": "Implement an iterator to flatten a nested list of integers.",
+      "answer": "Use stack of iterators; on hasNext, peek; if current is integer return; else recurse on list.",
+      "relevant_options": [
+        "Flatten in constructor recursively",
+        "Use queue to collect all integers upfront",
+        "Use recursion with generator (Python)",
+        "BFS traversal during iteration"
+      ]
+    },
+    {
+      "id": 113,
+      "title": "Moving Average from Data Stream",
+      "difficulty": "Medium",
+      "topics": ["Design", "Queue", "Data Stream"],
+      "question": "Calculate moving average of last size elements.",
+      "answer": "Queue with sum variable; add new, remove old if size exceeds, update sum.",
+      "relevant_options": [
+        "Store array and compute each time",
+        "Deque with size limit",
+        "Circular buffer",
+        "Two pointers with rolling sum"
+      ]
+    },
+    {
+      "id": 114,
+      "title": "Implement Stack using Queues",
+      "difficulty": "Medium",
+      "topics": ["Stack", "Design", "Queue"],
+      "question": "Implement stack using only two queues.",
+      "answer": "Push: O(1) using one queue, rotate elements to bring new to front; or O(n) push with two queues.",
+      "relevant_options": [
+        "Two queues: swap after each push",
+        "Single queue: push, rotate size-1 elements",
+        "Use deque (but not allowed)",
+        "List with pop from end (not using queue)"
+      ]
+    },
+    {
+      "id": 115,
+      "title": "Implement Queue using Stacks",
+      "difficulty": "Medium",
+      "topics": ["Stack", "Design", "Queue"],
+      "question": "Implement a FIFO queue using two stacks.",
+      "answer": "Two stacks: input for push, output for pop; transfer if output empty.",
+      "relevant_options": [
+        "One stack with reversal each pop (O(n))",
+        "Two stacks with lazy transfer",
+        "Use single stack and recursion for pop",
+        "Use deque (not allowed)"
+      ]
+    },
+    {
+      "id": 116,
+      "title": "Design Circular Deque",
+      "difficulty": "Medium",
+      "topics": ["Array", "Linked List", "Design", "Queue"],
+      "question": "Design a circular double-ended deque with fixed capacity.",
+      "answer": "Use array with head, tail, count; modulo arithmetic for wraparound.",
+      "relevant_options": [
+        "Doubly linked list with size limit",
+        "Two stacks for front and back",
+        "ArrayList with rotate/shift",
+        "Use Java Deque interface (but not allowed)"
+      ]
+    },
+    {
+      "id": 117,
+      "title": "Find Median from Data Stream",
+      "difficulty": "Hard",
+      "topics": ["Design", "Heap", "Data Stream"],
+      "question": "Design structure supporting add and find median in O(log n) per operation.",
+      "answer": "Two heaps: max-heap for lower half, min-heap for upper half; balance sizes.",
+      "relevant_options": [
+        "Insert into list and sort O(n log n)",
+        "Use order statistics tree",
+        "Use balanced BST (not in standard lib)",
+        "Binary search on sorted list O(n) insert"
+      ]
+    },
+    {
+      "id": 118,
+      "title": "Sliding Window Maximum",
+      "difficulty": "Hard",
+      "topics": ["Array", "Queue", "Sliding Window", "Monotonic Queue"],
+      "question": "Return max of each sliding window of size k.",
+      "answer": "Monotonic deque (decreasing order) storing indices; pop from front when out of window.",
+      "relevant_options": [
+        "Max-heap with lazy removal O(n log k)",
+        "Brute force O(nk)",
+        "Segment tree O(n log k)",
+        "Two passes with block decomposition"
+      ]
+    },
+    {
+      "id": 119,
+      "title": "Minimum Window Substring",
+      "difficulty": "Hard",
+      "topics": ["Hash Table", "String", "Sliding Window"],
+      "question": "Find minimum window substring of s containing all characters of t.",
+      "answer": "Sliding window with two pointers; expand right until all chars found, then shrink left.",
+      "relevant_options": [
+        "Brute force all windows O(n²)",
+        "Use two pointers with frequency map",
+        "Precompute next occurrence positions",
+        "Binary search on window size"
+      ]
+    },
+    {
+      "id": 120,
+      "title": "Longest Repeating Character Replacement",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Sliding Window"],
+      "question": "Find longest substring where same character can be made same by ≤k changes.",
+      "answer": "Sliding window with frequency map; window size - max frequency <= k.",
+      "relevant_options": [
+        "Binary search on length",
+        "Two pointers with max frequency tracking",
+        "DP on character counts",
+        "Greedy expand then shrink"
+      ]
+    },
+    {
+      "id": 121,
+      "title": "Fruit Into Baskets",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Sliding Window"],
+      "question": "Collect maximum number of fruits with only two types allowed.",
+      "answer": "Sliding window with two types; expand right, when third type appears shrink left.",
+      "relevant_options": [
+        "Binary search on length",
+        "Two pointers with frequency map",
+        "Use queue for last occurrence",
+        "DP on types (2 types)"
+      ]
+    },
+    {
+      "id": 122,
+      "title": "Longest Substring with At Most K Distinct Characters",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Sliding Window"],
+      "question": "Find length of longest substring with at most k distinct characters.",
+      "answer": "Sliding window with frequency map; expand right, when distinct > k shrink left.",
+      "relevant_options": [
+        "Binary search on length",
+        "Two pointers with character set",
+        "DP with last occurrence tracking",
+        "Separate into runs of distinct"
+      ]
+    },
+    {
+      "id": 123,
+      "title": "Subarray Product Less Than K",
+      "difficulty": "Medium",
+      "topics": ["Array", "Sliding Window"],
+      "question": "Count number of contiguous subarrays with product < k.",
+      "answer": "Sliding window: expand right, adjust left while product ≥ k, count subarrays ending at right.",
+      "relevant_options": [
+        "Brute force all subarrays O(n²)",
+        "Two pointers with product tracking",
+        "Divide and conquer on product",
+        "Prefix product with binary search"
+      ]
+    },
+    {
+      "id": 124,
+      "title": "Number of Subarrays with Bounded Maximum",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "DP"],
+      "question": "Count subarrays where max element between L and R inclusive.",
+      "answer": "Count subarrays with max ≤ R, subtract those with max < L.",
+      "relevant_options": [
+        "Sliding window tracking max",
+        "Binary search on max value",
+        "DP on prefix max",
+        "Segment tree to query max"
+      ]
+    },
+    {
+      "id": 125,
+      "title": "Reverse Words in a String",
+      "difficulty": "Medium",
+      "topics": ["Two Pointers", "String"],
+      "question": "Reverse the order of words in a string (ignoring leading/trailing spaces).",
+      "answer": "Split by spaces into words, reverse list, join with single space.",
+      "relevant_options": [
+        "Two pointers on characters to reverse in-place",
+        "Use stack to store words",
+        "Regular expression to split",
+        "Manual traversal and word collection"
+      ]
+    },
+    {
+      "id": 126,
+      "title": "String to Integer (atoi)",
+      "difficulty": "Medium",
+      "topics": ["String"],
+      "question": "Implement atoi conversion handling whitespace, sign, overflow, non-digit termination.",
+      "answer": "Trim whitespace, check sign, convert digits, check overflow at each step.",
+      "relevant_options": [
+        "Use long to detect overflow",
+        "Check before multiplying",
+        "Regex to extract number part",
+        "State machine parsing"
+      ]
+    },
+    {
+      "id": 127,
+      "title": "Multiply Strings",
+      "difficulty": "Medium",
+      "topics": ["Math", "String"],
+      "question": "Multiply two numbers given as strings without using built-in big integers.",
+      "answer": "Simulate multiplication: array of size m+n, nested loops adding digit products.",
+      "relevant_options": [
+        "Convert to int (fails for large)",
+        "Karatsuba algorithm",
+        "Use integer array for positions",
+        "Recursive multiply with splitting"
+      ]
+    },
+    {
+      "id": 128,
+      "title": "Integer to Roman",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Math", "String"],
+      "question": "Convert integer to Roman numeral (1 to 3999).",
+      "answer": "Use mapping of values with special cases (4,9,40,90,400,900).",
+      "relevant_options": [
+        "Greedy subtract largest values",
+        "Digit by digit conversion",
+        "Precompute all Romans",
+        "Use arrays of pairs (value, symbol)"
+      ]
+    },
+    {
+      "id": 129,
+      "title": "Roman to Integer",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Math", "String"],
+      "question": "Convert Roman numeral to integer.",
+      "answer": "Iterate left to right; if current < next, subtract current; else add current.",
+      "relevant_options": [
+        "Replace special cases then sum",
+        "Use map and lookahead",
+        "Switch case for each symbol",
+        "Right to left addition"
+      ]
+    },
+    {
+      "id": 130,
+      "title": "Zigzag Conversion",
+      "difficulty": "Medium",
+      "topics": ["String"],
+      "question": "Convert string to zigzag pattern with given rows then read row-wise.",
+      "answer": "Put characters into rows using direction change at first and last row.",
+      "relevant_options": [
+        "Calculate pattern using cycle length = 2*numRows-2",
+        "Nested loops per row",
+        "Build rows as string list",
+        "Simulate with index increment/decrement"
+      ]
+    },
+    {
+      "id": 131,
+      "title": "Group Shifted Strings",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "String"],
+      "question": "Group strings that are shifts of each other.",
+      "answer": "Normalize each string by shifting to start with 'a'; use as key in hash map.",
+      "relevant_options": [
+        "Compute difference between consecutive chars",
+        "Use tuple of shifts as key",
+        "Store original strings and compare shifts",
+        "Generate all possible shifts for each string"
+      ]
+    },
+    {
+      "id": 132,
+      "title": "Find All Anagrams in a String",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Sliding Window"],
+      "question": "Find all start indices of p's anagrams in s.",
+      "answer": "Sliding window with frequency array; compare counts using matches counter.",
+      "relevant_options": [
+        "Sort each window and compare",
+        "Use rolling hash for anagrams",
+        "Two pointers with frequency map",
+        "Precompute p's frequency and use queue"
+      ]
+    },
+    {
+      "id": 133,
+      "title": "Minimum Number of Steps to Make Two Strings Anagram",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Counting"],
+      "question": "Find minimum steps (change char) to make s anagram of t.",
+      "answer": "Count character frequencies, answer = sum of positive differences.",
+      "relevant_options": [
+        "Compute intersection and subtract",
+        "Use array of 26 and sum diffs/2",
+        "Count matches then total-length - matches",
+        "Build frequency map for both strings"
+      ]
+    },
+    {
+      "id": 134,
+      "title": "Longest Palindrome by Concatenating Two-Letter Words",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "String", "Counting"],
+      "question": "Form longest palindrome from list of two-letter words (order can be rearranged).",
+      "answer": "Use frequency map: for each word, if reverse exists, pair them; track unpaired palindromic words.",
+      "relevant_options": [
+        "Greedy pair reverse words",
+        "Use two pointers after sorting",
+        "DP on word sequences",
+        "Build graph of words"
+      ]
+    },
+    {
+      "id": 135,
+      "title": "Compare Version Numbers",
+      "difficulty": "Medium",
+      "topics": ["Two Pointers", "String"],
+      "question": "Compare two version numbers (e.g., 1.01 and 1.1).",
+      "answer": "Split by '.' and compare integer values of each revision, filling missing with 0.",
+      "relevant_options": [
+        "Parse and compare as integers",
+        "Two pointers scanning digits",
+        "Split by dot and compare length",
+        "Use built-in version compare (not portable)"
+      ]
+    },
+    {
+      "id": 136,
+      "title": "Minimum Add to Make Parentheses Valid",
+      "difficulty": "Medium",
+      "topics": ["String", "Stack"],
+      "question": "Find minimum parentheses to add to make string valid.",
+      "answer": "Track balance; when balance < 0, add one and reset balance to 0; total adds = balance + count of resets.",
+      "relevant_options": [
+        "Stack to track unmatched",
+        "Two counters for open/close needed",
+        "Greedy count needed opens and closes",
+        "Simulate and insert when invalid"
+      ]
+    },
+    {
+      "id": 137,
+      "title": "Score of Parentheses",
+      "difficulty": "Medium",
+      "topics": ["String", "Stack"],
+      "question": "Compute score: '()'=1, AB = A+B, (A)=2*A.",
+      "answer": "Use stack: '()' pushes 1; on ')', pop until '(', compute sum, multiply by 2 if not first.",
+      "relevant_options": [
+        "Recursive divide and conquer",
+        "Track depth and multiply powers of 2",
+        "Use balance variable and add when '()' appears",
+        "Replace with numbers and evaluate"
+      ]
+    },
+    {
+      "id": 138,
+      "title": "Basic Calculator",
+      "difficulty": "Hard",
+      "topics": ["Math", "String", "Stack"],
+      "question": "Evaluate expression with +, -, (, ), and spaces.",
+      "answer": "Stack with sign and result; when '(' push current result and sign, reset, then multiply on ')'.",
+      "relevant_options": [
+        "Convert to postfix then evaluate",
+        "Recursive descend parser",
+        "Two stacks for numbers and operators",
+        "Remove spaces then evaluate from left"
+      ]
+    },
+    {
+      "id": 139,
+      "title": "Basic Calculator II",
+      "difficulty": "Medium",
+      "topics": ["Math", "String", "Stack"],
+      "question": "Evaluate expression with +, -, *, / and spaces, no parentheses.",
+      "answer": "Single pass: track last number, operator; for */ compute immediately; for +- push to stack.",
+      "relevant_options": [
+        "Two-pass: first */ then +-",
+        "Use stack for numbers and sign",
+        "Convert to postfix then evaluate",
+        "Recursive descent without parentheses"
+      ]
+    },
+    {
+      "id": 140,
+      "title": "Evaluate Reverse Polish Notation",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "Stack"],
+      "question": "Evaluate RPN (postfix) expression.",
+      "answer": "Use stack: push numbers; when operator, pop two, compute, push result.",
+      "relevant_options": [
+        "Recursive evaluation (not efficient)",
+        "Convert to infix then evaluate",
+        "Use queue simulation",
+        "Parse and compute using switch"
+      ]
+    },
+    {
+      "id": 141,
+      "title": "Add Two Numbers (Linked List)",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "Math"],
+      "question": "Add two numbers represented as reverse-linked lists.",
+      "answer": "Traverse both lists with carry, create new nodes for sum % 10, carry = sum / 10.",
+      "relevant_options": [
+        "Convert to integers (overflow risk)",
+        "Recursive addition with carry",
+        "Use stack to align digits",
+        "Reverse lists then add then reverse"
+      ]
+    },
+    {
+      "id": 142,
+      "title": "Add Two Numbers II (Forward order)",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "Math", "Stack"],
+      "question": "Add two numbers stored in forward order in linked lists.",
+      "answer": "Use stacks to push values, then pop and compute with carry, building result from tail.",
+      "relevant_options": [
+        "Recursive to align ends",
+        "Reverse both lists (allowed?)",
+        "Compute lengths and pad with zeros",
+        "Convert to arrays and add"
+      ]
+    },
+    {
+      "id": 143,
+      "title": "Remove Nth Node From End of List",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "Two Pointers"],
+      "question": "Remove nth node from end in one pass.",
+      "answer": "Two pointers with n gap; when fast reaches end, slow is at node before target.",
+      "relevant_options": [
+        "Two passes: find length then remove",
+        "Use stack to store nodes",
+        "Recursive with counting from end",
+        "Store nodes in array"
+      ]
+    },
+    {
+      "id": 144,
+      "title": "Reverse Linked List II (Reverse between positions)",
+      "difficulty": "Medium",
+      "topics": ["Linked List"],
+      "question": "Reverse linked list from position left to right in one pass.",
+      "answer": "Find node before left, reverse count = right-left+1 nodes using iterative reversal.",
+      "relevant_options": [
+        "Use recursion to reverse segment",
+        "Store segment in array then reassign",
+        "Two-pointer with prev tracking",
+        "Dummy node for left boundary"
+      ]
+    },
+    {
+      "id": 145,
+      "title": "Odd Even Linked List",
+      "difficulty": "Medium",
+      "topics": ["Linked List"],
+      "question": "Group odd-indexed nodes followed by even-indexed nodes (in-place, O(1) space).",
+      "answer": "Two pointers: odd head and even head; link odd to odd.next, even to even.next; join at end.",
+      "relevant_options": [
+        "Collect nodes in two lists then merge",
+        "Recursive grouping by index parity",
+        "Use dummy heads for odd/even",
+        "Single pass with pointer updates"
+      ]
+    },
+    {
+      "id": 146,
+      "title": "Partition List",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "Two Pointers"],
+      "question": "Partition list so nodes with value < x come before nodes ≥ x, preserving order.",
+      "answer": "Two dummy heads for less and greater; traverse and append; merge.",
+      "relevant_options": [
+        "Swap values using partitioning",
+        "Single pointer with insert",
+        "Use array then rebuild",
+        "Recursive partitioning"
+      ]
+    },
+    {
+      "id": 147,
+      "title": "Copy List with Random Pointer",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Linked List"],
+      "question": "Deep copy a linked list with random pointers.",
+      "answer": "Two passes: first create copy nodes with mapping from original to copy; second assign random pointers.",
+      "relevant_options": [
+        "Interweave nodes: copy next to original, then separate",
+        "Use recursion with memoization",
+        "BFS traversal with visited map",
+        "Serialize then deserialize"
+      ]
+    },
+    {
+      "id": 148,
+      "title": "Intersection of Two Linked Lists",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Linked List", "Two Pointers"],
+      "question": "Find node where two singly linked lists intersect.",
+      "answer": "Two pointers: traverse both, reset to other head when reaching end; they meet at intersection.",
+      "relevant_options": [
+        "Calculate lengths, align tails, traverse together",
+        "Use hash set for first list nodes",
+        "Reverse both lists and find divergence",
+        "Mark visited flag in node (not possible)"
+      ]
+    },
+    {
+      "id": 149,
+      "title": "Reorder List",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "Two Pointers"],
+      "question": "Reorder list to L0 → Ln → L1 → Ln-1 → L2 → ...",
+      "answer": "Find middle, reverse second half, merge alternating.",
+      "relevant_options": [
+        "Use array to store nodes then reorder",
+        "Recursive from ends",
+        "Stack for second half",
+        "Two pointers for middle, then reverse"
+      ]
+    },
+    {
+      "id": 150,
+      "title": "Palindrome Linked List",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "Two Pointers"],
+      "question": "Check if linked list is palindrome (O(1) space).",
+      "answer": "Find middle, reverse second half, compare halves.",
+      "relevant_options": [
+        "Copy to array then two pointers",
+        "Use recursion with front pointer",
+        "Use stack for first half",
+        "Reverse entire list and compare (O(n) space)"
+      ]
+    },
+    {
+      "id": 151,
+      "title": "Flatten a Multilevel Doubly Linked List",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "DFS"],
+      "question": "Flatten a doubly linked list where nodes may have child pointers.",
+      "answer": "DFS: recursively flatten child, insert after current node, continue traversal.",
+      "relevant_options": [
+        "Iterative using stack",
+        "BFS level order flattening",
+        "Recursive flatten tail",
+        "Use queue to process nodes in order"
+      ]
+    },
+    {
+      "id": 152,
+      "title": "Swap Nodes in Pairs",
+      "difficulty": "Medium",
+      "topics": ["Linked List", "Recursion"],
+      "question": "Swap every two adjacent nodes and return head.",
+      "answer": "Recursive: swap first two, attach result of recursion to second's next; or iterative with prev pointer.",
+      "relevant_options": [
+        "Iterative with dummy head",
+        "Recursive swapping values (not nodes)",
+        "Using three pointers",
+        "Convert to array and swap then rebuild"
+      ]
+    },
+    {
+      "id": 153,
+      "title": "Linked List Cycle II",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Linked List", "Two Pointers"],
+      "question": "Return the node where cycle begins; if no cycle return null.",
+      "answer": "Find meeting point using fast/slow, then move one pointer to head, advance both at same speed to find start.",
+      "relevant_options": [
+        "Use visited set",
+        "Store nodes in hash map",
+        "Floyd algorithm with distance formula",
+        "Reverse list and detect"
+      ]
+    },
+    {
+      "id": 154,
+      "title": "Binary Tree Level Order Traversal",
+      "difficulty": "Medium",
+      "topics": ["Tree", "BFS"],
+      "question": "Return level order traversal (left to right, level by level).",
+      "answer": "BFS with queue; process level size, collect nodes level by level.",
+      "relevant_options": [
+        "DFS with level tracking in list of lists",
+        "BFS with two queues swapping",
+        "Preorder traversal with depth parameter",
+        "Iterative depth first with stack storing (node, level)"
+      ]
+    },
+    {
+      "id": 155,
+      "title": "Binary Tree Zigzag Level Order Traversal",
+      "difficulty": "Medium",
+      "topics": ["Tree", "BFS"],
+      "question": "Return zigzag level order: first level left to right, second right to left, etc.",
+      "answer": "BFS with flag for direction; reverse level list for alternate levels.",
+      "relevant_options": [
+        "Use deque to add from front/back",
+        "Two stacks for alternating directions",
+        "DFS with list of lists, reverse odd indices",
+        "BFS then post-process"
+      ]
+    },
+    {
+      "id": 156,
+      "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+      "difficulty": "Medium",
+      "topics": ["Array", "Tree", "DFS"],
+      "question": "Construct binary tree from preorder and inorder traversal arrays.",
+      "answer": "First element of preorder is root; find root in inorder; recursively build left and right subtrees.",
+      "relevant_options": [
+        "Use hash map for inorder indices for O(1) lookup",
+        "Iterative stack method",
+        "Divide and conquer with recursion",
+        "Build using pointer moving"
+      ]
+    },
+    {
+      "id": 157,
+      "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+      "difficulty": "Medium",
+      "topics": ["Array", "Tree", "DFS"],
+      "question": "Construct binary tree from inorder and postorder traversals.",
+      "answer": "Last element of postorder is root; find in inorder; recursively build right then left.",
+      "relevant_options": [
+        "Use index pointers and map",
+        "Iterative stack construction",
+        "Recursive with ranges",
+        "Build from end of postorder first"
+      ]
+    },
+    {
+      "id": 158,
+      "title": "Symmetric Tree",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "BFS"],
+      "question": "Check if binary tree is symmetric around its center.",
+      "answer": "Recursively compare left.left with right.right, and left.right with right.left.",
+      "relevant_options": [
+        "BFS with queue comparing mirrored nodes",
+        "Invert tree and compare",
+        "Level order with null markers",
+        "Recursive mirror check"
+      ]
+    },
+    {
+      "id": 159,
+      "title": "Path Sum III",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "Prefix Sum"],
+      "question": "Count paths where sum of node values equals target. Path must go downwards.",
+      "answer": "DFS with hash map storing prefix sums; for current node, answer += map[currentSum - target]; then update map.",
+      "relevant_options": [
+        "Brute force: all paths O(n²)",
+        "Recursive from each node",
+        "BFS with running sum per path",
+        "Two loops: root to leaf then count subpaths"
+      ]
+    },
+    {
+      "id": 160,
+      "title": "Flatten Binary Tree to Linked List",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS"],
+      "question": "Flatten binary tree to linked list in-place (right pointers only, left = null) using preorder order.",
+      "answer": "Reverse preorder (right then left) to avoid overwriting; track prev node and link.",
+      "relevant_options": [
+        "Do preorder then rebuild using pointers",
+        "Recursive: flatten left, flatten right, attach to right",
+        "Use stack for iterative preorder",
+        "Morris traversal variant"
+      ]
+    },
+    {
+      "id": 161,
+      "title": "Inorder Successor in BST",
+      "difficulty": "Medium",
+      "topics": ["Tree", "BST"],
+      "question": "Find in-order successor of given node in BST (next larger value).",
+      "answer": "If node has right subtree, find min in right; else find first ancestor where node is in left subtree.",
+      "relevant_options": [
+        "Inorder traversal O(n)",
+        "Binary search on values",
+        "Use parent pointers if available",
+        "Simple BST property search"
+      ]
+    },
+    {
+      "id": 162,
+      "title": "Binary Search Tree Iterator",
+      "difficulty": "Medium",
+      "topics": ["Tree", "Design", "BST", "Stack"],
+      "question": "Implement BST iterator with next() and hasNext() (in-order). O(1) average, O(h) space.",
+      "answer": "Stack with leftmost path; next(): pop node, push right's leftmost, return node.val.",
+      "relevant_options": [
+        "Flatten BST in constructor O(n) space",
+        "Morris traversal iterator O(1) space but modifies",
+        "Recursive generator using yield",
+        "BFS level order iterator"
+      ]
+    },
+    {
+      "id": 163,
+      "title": "Recover Binary Search Tree",
+      "difficulty": "Hard",
+      "topics": ["Tree", "DFS", "BST"],
+      "question": "Two nodes in BST are swapped; recover the tree without changing structure (O(1) space).",
+      "answer": "Morris traversal (in-order) to detect two misplaced nodes, then swap values.",
+      "relevant_options": [
+        "Store inorder list find anomalies O(n) space",
+        "Recursive inorder with prev pointer",
+        "Iterative stack with prev tracking",
+        "Mark nodes then swap"
+      ]
+    },
+    {
+      "id": 164,
+      "title": "Unique Binary Search Trees",
+      "difficulty": "Medium",
+      "topics": ["Math", "DP", "Tree"],
+      "question": "Count distinct BSTs that can be formed with values 1..n.",
+      "answer": "Catalan number: C0=1, C(n+1)=sum(C(i)*C(n-i)). DP: dp[i]=sum(dp[j-1]*dp[i-j]).",
+      "relevant_options": [
+        "Recursive combinatorial",
+        "Formula (2n)!/(n!*(n+1)!)",
+        "DP with memoization",
+        "Matrix exponentiation for Catalan"
+      ]
+    },
+    {
+      "id": 165,
+      "title": "Count Complete Tree Nodes",
+      "difficulty": "Medium",
+      "topics": ["Tree", "Binary Search"],
+      "question": "Count nodes in a complete binary tree faster than O(n).",
+      "answer": "Compute left height and right height; if equal, nodes = 2^height -1; else 1 + count(left) + count(right).",
+      "relevant_options": [
+        "BFS counting O(n)",
+        "DFS preorder O(n)",
+        "Binary search on leaf existence",
+        "Divide and conquer by height"
+      ]
+    },
+    {
+      "id": 166,
+      "title": "Binary Tree Cameras",
+      "difficulty": "Hard",
+      "topics": ["Tree", "DFS", "DP"],
+      "question": "Place minimum cameras to cover entire binary tree (camera monitors itself, parent, children).",
+      "answer": "DFS post-order with states: 0=not covered, 1=covered but no camera, 2=has camera.",
+      "relevant_options": [
+        "Greedy place from leaves upward",
+        "DP with memoization on node",
+        "BFS from leaves bottom-up",
+        "Dynamic programming on states"
+      ]
+    },
+    {
+      "id": 167,
+      "title": "House Robber III (Binary Tree)",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "DP"],
+      "question": "Rob houses arranged as binary tree; cannot rob directly connected nodes. Max sum.",
+      "answer": "Return [rob current, not rob current]; not rob = max(left rob, left not) + max(right rob, right not); rob = node.val + left not + right not.",
+      "relevant_options": [
+        "Greedy level picking (fails)",
+        "Recursive with state (node, parent robbed)",
+        "DP with memoization on node",
+        "BFS level then DP on tree"
+      ]
+    },
+    {
+      "id": 168,
+      "title": "All Nodes Distance K in Binary Tree",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "BFS"],
+      "question": "Return all nodes at distance exactly k from target node.",
+      "answer": "Build parent map via DFS; BFS from target outward k steps using visited set.",
+      "relevant_options": [
+        "Convert to graph then BFS",
+        "DFS to mark depth from target with parent",
+        "Two-pass: find target, then propagate",
+        "BFS on tree with parent pointers"
+      ]
+    },
+    {
+      "id": 169,
+      "title": "Verify Preorder Serialization of a Binary Tree",
+      "difficulty": "Medium",
+      "topics": ["String", "Tree", "Stack"],
+      "question": "Given preorder serialization with null markers '#', check if valid binary tree.",
+      "answer": "Use degree property: slots = 1; for each node, slots--; if node not '#', slots+=2; if slots < 0 invalid; final slots == 0.",
+      "relevant_options": [
+        "Stack simulation: push numbers, pop on '#'",
+        "Count nodes and nulls relation",
+        "Recursive parse attempt",
+        "Bracket counting method"
+      ]
+    },
+    {
+      "id": 170,
+      "title": "Find Bottom Left Tree Value",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "BFS"],
+      "question": "Find the leftmost value in the last row of a binary tree.",
+      "answer": "BFS level order: first node of each level; return value of last level's first node.",
+      "relevant_options": [
+        "DFS with depth tracking and leftmost",
+        "Reverse level order (right to left) then last",
+        "Recursive with max depth variable",
+        "Queue BFS storing leftmost per level"
+      ]
+    },
+    {
+      "id": 171,
+      "title": "Sum Root to Leaf Numbers",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS"],
+      "question": "Each root-to-leaf path forms a number. Return sum of all such numbers.",
+      "answer": "DFS: pass current number (prev*10 + node.val); when leaf, add to sum.",
+      "relevant_options": [
+        "BFS with queue storing (node, num)",
+        "Iterative DFS stack",
+        "Recursive preorder with parameter",
+        "Level order accumulation"
+      ]
+    },
+    {
+      "id": 172,
+      "title": "Continuous Subarray Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Prefix Sum"],
+      "question": "Check if subarray of length at least 2 has sum divisible by k.",
+      "answer": "Use prefix sum modulo k: if same remainder seen before and distance ≥2, return true.",
+      "relevant_options": [
+        "Brute force all subarrays O(n²)",
+        "Prefix sums with set for remainders",
+        "Sliding window with two pointers",
+        "DP on subarray sums"
+      ]
+    },
+    {
+      "id": 173,
+      "title": "Subarray Sum Equals K",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Prefix Sum"],
+      "question": "Count number of subarrays where sum equals k (may include negatives).",
+      "answer": "Prefix sum with hash map: map[sum]++ ; ans += map[sum - k] at each step.",
+      "relevant_options": [
+        "Brute force O(n²)",
+        "Sliding window (only works for positives)",
+        "Prefix sums array then binary search (not for negatives)",
+        "Divide and conquer sum"
+      ]
+    },
+    {
+      "id": 174,
+      "title": "Find Pivot Index",
+      "difficulty": "Medium",
+      "topics": ["Array", "Prefix Sum"],
+      "question": "Find pivot index where sum of left equals sum of right (excluding pivot).",
+      "answer": "Total sum - left sum - nums[i] == left sum; so left sum * 2 == total - nums[i].",
+      "relevant_options": [
+        "Compute left sum and total sum iterate",
+        "Use two prefix arrays",
+        "Binary search on pivot",
+        "DP on cumulative sums"
+      ]
+    },
+    {
+      "id": 175,
+      "title": "Maximum Size Subarray Sum Equals k",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Prefix Sum"],
+      "question": "Find longest subarray length with sum = k (may include negatives).",
+      "answer": "Prefix sum with map storing first occurrence of each sum; ans = max(ans, i - map[sum-k]).",
+      "relevant_options": [
+        "Sliding window (only positives)",
+        "Brute force O(n²)",
+        "DP on subarray sums",
+        "Binary search on length with prefix sums"
+      ]
+    },
+    {
+      "id": 176,
+      "title": "Range Sum Query - Immutable",
+      "difficulty": "Medium",
+      "topics": ["Array", "Design", "Prefix Sum"],
+      "question": "SumRange(i,j) returns sum from i to j inclusive.",
+      "answer": "Precompute prefix sums; sumRange(i,j) = prefix[j+1] - prefix[i].",
+      "relevant_options": [
+        "Store array and sum each query O(n)",
+        "Segment tree",
+        "Binary indexed tree (Fenwick)",
+        "DP with 2D table for all ranges"
+      ]
+    },
+    {
+      "id": 177,
+      "title": "Minimum Size Subarray Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search", "Sliding Window"],
+      "question": "Find minimal length subarray with sum ≥ target (positive integers only).",
+      "answer": "Sliding window: expand right, shrink left while sum ≥ target, track min length.",
+      "relevant_options": [
+        "Binary search on length with prefix sums",
+        "Brute force O(n²)",
+        "Two pointers with cumulative sum",
+        "Prefix sums and binary search per start"
+      ]
+    },
+    {
+      "id": 178,
+      "title": "Number of Subarrays with Product Less Than K",
+      "difficulty": "Medium",
+      "topics": ["Array", "Sliding Window"],
+      "question": "Count subarrays with product < k.",
+      "answer": "Sliding window: expand right, shrink while product ≥ k, count += window size.",
+      "relevant_options": [
+        "Brute force O(n²)",
+        "Prefix products (overflow risk)",
+        "Binary search on length with product logs",
+        "Two pointers with product tracking"
+      ]
+    },
+    {
+      "id": 179,
+      "title": "Sort Array By Parity",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers"],
+      "question": "Sort array so all even numbers come before odd numbers.",
+      "answer": "Two pointers: left for even, right for odd; swap when left odd and right even.",
+      "relevant_options": [
+        "Create new array with two passes",
+        "Stable partition algorithm",
+        "Sort with custom comparator",
+        "Counting sort O(n) space"
+      ]
+    },
+    {
+      "id": 180,
+      "title": "Sort Array By Parity II",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers"],
+      "question": "Sort so even indices have even numbers, odd indices odd numbers.",
+      "answer": "Two pointers: even pointer at 0, odd pointer at 1; swap when mismatch found.",
+      "relevant_options": [
+        "Create new array and place even/odd",
+        "In-place swaps with both pointers",
+        "Counting then rearrange",
+        "Stable partition by parity"
+      ]
+    },
+    {
+      "id": 181,
+      "title": "Largest Perimeter Triangle",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "Greedy", "Sorting"],
+      "question": "Find largest perimeter triangle from array of side lengths.",
+      "answer": "Sort descending; first triple where a < b + c gives max perimeter.",
+      "relevant_options": [
+        "Brute force O(n³)",
+        "Greedy largest sides",
+        "Binary search for valid triangle",
+        "DP on combinations"
+      ]
+    },
+    {
+      "id": 182,
+      "title": "Valid Triangle Number",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "Binary Search", "Sorting"],
+      "question": "Count triplets that can form non-degenerate triangles.",
+      "answer": "Sort array, fix largest side c, use two pointers for a and b on left side.",
+      "relevant_options": [
+        "Brute force O(n³)",
+        "Binary search for valid b",
+        "Two pointers after sorting",
+        "Greedy fix largest first"
+      ]
+    },
+    {
+      "id": 183,
+      "title": "Three Sum Smaller",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "Sorting"],
+      "question": "Count triplets where sum < target.",
+      "answer": "Sort, fix first element, two pointers for remaining; if sum < target, count += right-left else right--.",
+      "relevant_options": [
+        "Brute force O(n³)",
+        "Binary search for valid pairs",
+        "Two pointers similar to 3Sum",
+        "Prefix sums after sorting"
+      ]
+    },
+    {
+      "id": 184,
+      "title": "Number of Subsequences That Satisfy the Given Sum Condition",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "Sorting"],
+      "question": "Count subsequences where min + max ≤ target.",
+      "answer": "Sort array; two pointers; for each left, find right such that nums[left]+nums[right]≤target; count += 2^(right-left).",
+      "relevant_options": [
+        "Brute force all subsequences (2^n)",
+        "DP on sorted array",
+        "Binary search for right bound",
+        "Power of two precomputation"
+      ]
+    },
+    {
+      "id": 185,
+      "title": "Advantage Shuffle",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy", "Sorting", "Two Pointers"],
+      "question": "Permute nums1 to maximize number of indices where nums1[i] > nums2[i].",
+      "answer": "Sort both arrays; use two pointers: if smallest nums1 > smallest nums2, match; else match smallest to largest of nums2.",
+      "relevant_options": [
+        "Brute force all permutations",
+        "Max heap for nums1 and assign",
+        "Binary search for smallest greater",
+        "Treap data structure"
+      ]
+    },
+    {
+      "id": 186,
+      "title": "Car Fleet",
+      "difficulty": "Medium",
+      "topics": ["Array", "Stack", "Sorting"],
+      "question": "Determine number of car fleets reaching destination.",
+      "answer": "Sort by position descending; compute time to target; merge if time ≤ last time (faster behind catches up).",
+      "relevant_options": [
+        "Simulation time steps (not efficient)",
+        "Priority queue for merge",
+        "Greedy fleet formation from right",
+        "DP on catch-up times"
+      ]
+    },
+    {
+      "id": 187,
+      "title": "Minimum Moves to Equal Array Elements II",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "Sorting"],
+      "question": "Min moves to make all elements equal using +/-1.",
+      "answer": "Sorted array median minimizes sum of absolute deviations.",
+      "relevant_options": [
+        "Try mean (not optimal)",
+        "Binary search on target",
+        "DP on prefix sums",
+        "Use quickselect for median"
+      ]
+    },
+    {
+      "id": 188,
+      "title": "Minimum Moves to Equal Array Elements",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math"],
+      "question": "Increment n-1 elements to make all equal. Min moves.",
+      "answer": "Moves = sum of (nums[i] - min).",
+      "relevant_options": [
+        "Simulation (too slow)",
+        "DP on differences",
+        "Greedy always increment smallest?",
+        "Subtract from max"
+      ]
+    },
+    {
+      "id": 189,
+      "title": "Find All Numbers Disappeared in an Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table"],
+      "question": "Find missing numbers in array of n numbers in [1,n] (O(1) space).",
+      "answer": "Mark by making nums[abs(nums[i])-1] negative; positives indicate missing indices.",
+      "relevant_options": [
+        "Use set and compare O(n) space",
+        "Sort then scan O(n log n)",
+        "Cyclic sort to rearrange",
+        "XOR with indices (fails for multiple missing)"
+      ]
+    },
+    {
+      "id": 190,
+      "title": "First Bad Version",
+      "difficulty": "Medium",
+      "topics": ["Binary Search", "Interactive"],
+      "question": "Find first bad version using isBadVersion API.",
+      "answer": "Binary search: if mid is bad, hi=mid else lo=mid+1.",
+      "relevant_options": [
+        "Linear scan O(n)",
+        "Exponential search then binary",
+        "Interpolation search",
+        "Randomized binary search"
+      ]
+    },
+    {
+      "id": 191,
+      "title": "Pow(x, n)",
+      "difficulty": "Medium",
+      "topics": ["Math", "Recursion"],
+      "question": "Implement pow(x, n) with O(log n) time.",
+      "answer": "Fast exponentiation: binary exponent recursion; handle negative n as 1/x^n.",
+      "relevant_options": [
+        "Loop multiplication O(n)",
+        "Divide and conquer exponent",
+        "Bit shifting iterative",
+        "Stirling approximation (not accurate)"
+      ]
+    },
+    {
+      "id": 192,
+      "title": "Sqrt(x)",
+      "difficulty": "Medium",
+      "topics": ["Math", "Binary Search"],
+      "question": "Return integer square root of x (floor).",
+      "answer": "Binary search between 0 and x; check mid*mid ≤ x.",
+      "relevant_options": [
+        "Newton's method",
+        "Math.sqrt then floor",
+        "Babylonian method",
+        "Digit-by-digit calculation"
+      ]
+    },
+    {
+      "id": 193,
+      "title": "Ugly Number II",
+      "difficulty": "Medium",
+      "topics": ["Math", "DP", "Heap"],
+      "question": "Find nth ugly number (divisible by 2,3,5 only).",
+      "answer": "DP with three pointers: next ugly = min(2*dp[p2], 3*dp[p3], 5*dp[p5]).",
+      "relevant_options": [
+        "Generate all and sort",
+        "Min-heap set",
+        "BFS on multiples",
+        "Priority queue with duplicates"
+      ]
+    },
+    {
+      "id": 194,
+      "title": "Happy Number",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Math", "Two Pointers"],
+      "question": "Determine if number is happy (sum squares eventually 1).",
+      "answer": "Floyd cycle detection: slow and fast pointer; cycle detected if slow==fast and not 1.",
+      "relevant_options": [
+        "Set to detect cycles",
+        "Mathematical: digits sum cycle property",
+        "Recursive with memoization",
+        "Precompute unhappy numbers"
+      ]
+    },
+    {
+      "id": 195,
+      "title": "Excel Sheet Column Title",
+      "difficulty": "Medium",
+      "topics": ["Math", "String"],
+      "question": "Convert integer to Excel column title (A, B, ..., Z, AA, AB).",
+      "answer": "While n>0: n--, char = 'A' + n%26, n /= 26.",
+      "relevant_options": [
+        "Base26 conversion with remainder",
+        "Recursive string building",
+        "Subtract 1 each step",
+        "Array of letters mapping"
+      ]
+    },
+    {
+      "id": 196,
+      "title": "Excel Sheet Column Number",
+      "difficulty": "Medium",
+      "topics": ["Math", "String"],
+      "question": "Convert Excel column title to number.",
+      "answer": "Iterate: result = result*26 + (c - 'A' + 1).",
+      "relevant_options": [
+        "Power of 26 from right",
+        "Recursive parsing",
+        "Map letters to 1-26",
+        "Use positional value"
+      ]
+    },
+    {
+      "id": 197,
+      "title": "Factorial Trailing Zeroes",
+      "difficulty": "Medium",
+      "topics": ["Math"],
+      "question": "Count trailing zeroes in n!.",
+      "answer": "Count factors of 5: sum floor(n/5) + floor(n/25) + floor(n/125) + ...",
+      "relevant_options": [
+        "Compute factorial (overflow)",
+        "Count 2 and 5 pairs",
+        "Binary search for exponent",
+        "Legendre's formula"
+      ]
+    },
+    {
+      "id": 198,
+      "title": "Count Primes",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "Sieve"],
+      "question": "Count number of primes less than n.",
+      "answer": "Sieve of Eratosthenes: boolean array, mark multiples starting from p².",
+      "relevant_options": [
+        "Check each number O(n√n)",
+        "Segmented sieve for large n",
+        "Miller-Rabin for large n",
+        "Atkin sieve (faster but complex)"
+      ]
+    },
+    {
+      "id": 199,
+      "title": "Maximum Swap",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "Greedy"],
+      "question": "Swap two digits once to get maximum number.",
+      "answer": "Find largest digit from right that can be swapped with smaller digit on left; or use bucket of last occurrence.",
+      "relevant_options": [
+        "Try all swaps O(n²)",
+        "Greedy from left: find max digit to right",
+        "Convert to array and sort for reference",
+        "Use next greater element concept"
+      ]
+    },
+    {
+      "id": 200,
+      "title": "Minimum Number of Swaps to Make the String Balanced",
+      "difficulty": "Medium",
+      "topics": ["String", "Stack", "Greedy"],
+      "question": "String has equal '[' and ']', min swaps to balance.",
+      "answer": "Track imbalance, answer = (max_imbalance+1)/2.",
+      "relevant_options": [
+        "Stack to count unmatched",
+        "Greedy count mismatches",
+        "Two pointers from ends",
+        "Convert to valid parentheses"
+      ]
+    },
+    {
+      "id": 201,
+      "title": "Longest Word in Dictionary through Deleting",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "String", "Sorting"],
+      "question": "Find longest word in dictionary that is subsequence of s (lex smallest if tie).",
+      "answer": "Sort words by length desc then lex; check subsequence using two pointers.",
+      "relevant_options": [
+        "DP for subsequence check",
+        "Trie or suffix array",
+        "Two pointers for each word",
+        "Preprocess next occurrence array"
+      ]
+    },
+    {
+      "id": 202,
+      "title": "Decode String",
+      "difficulty": "Medium",
+      "topics": ["String", "Stack", "Recursion"],
+      "question": "Decode encoded string: k[encoded_string] pattern.",
+      "answer": "Two stacks: one for numbers, one for strings; when ']', pop number and build repeated string.",
+      "relevant_options": [
+        "Recursive parsing",
+        "Use single stack with tuples",
+        "BFS building strings",
+        "Replace from innermost outwards"
+      ]
+    },
+    {
+      "id": 203,
+      "title": "Remove K Digits",
+      "difficulty": "Medium",
+      "topics": ["String", "Stack", "Greedy"],
+      "question": "Remove k digits to make smallest possible number (no leading zeros).",
+      "answer": "Monotonic increasing stack; pop when stack top > current and k>0; remove leading zeros.",
+      "relevant_options": [
+        "Brute force combinations O(C(n,k))",
+        "DP to choose digits",
+        "Greedy remove largest digits",
+        "Queue simulation"
+      ]
+    },
+    {
+      "id": 204,
+      "title": "Minimum Number of Refueling Stops",
+      "difficulty": "Hard",
+      "topics": ["Array", "DP", "Heap"],
+      "question": "Minimum stops to reach target with given fuel stations.",
+      "answer": "Max-heap of fuel from passed stations; always go farthest possible, refuel from heap when needed.",
+      "relevant_options": [
+        "DP O(n²)",
+        "BFS on stops",
+        "Dijkstra on stations",
+        "Greedy with priority queue"
+      ]
+    },
+    {
+      "id": 205,
+      "title": "Interval List Intersections",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers"],
+      "question": "Find intersections of two lists of intervals.",
+      "answer": "Two pointers: start = max(a.start, b.start), end = min(a.end, b.end); if start≤end, add. Move pointer with smaller end.",
+      "relevant_options": [
+        "Merge both lists then find overlaps",
+        "Use priority queue for min start",
+        "Sweep line across both",
+        "Binary search in one list for intervals"
+      ]
+    },
+    {
+      "id": 206,
+      "title": "Non-overlapping Intervals",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy", "Sorting"],
+      "question": "Find minimum number of intervals to remove to make the rest non-overlapping.",
+      "answer": "Sort by end time; greedy: keep intervals that end earliest, remove overlapping.",
+      "relevant_options": [
+        "DP (LIS style) O(n²)",
+        "Sort by start and use heap",
+        "Find maximum non-overlapping set",
+        "Interval scheduling algorithm"
+      ]
+    },
+    {
+      "id": 207,
+      "title": "Meeting Rooms II",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "Greedy", "Sorting", "Heap"],
+      "question": "Find minimum number of meeting rooms required.",
+      "answer": "Sort starts and ends separately, two pointers: if start < end, need room else free room.",
+      "relevant_options": [
+        "Min-heap of end times",
+        "Chronological events",
+        "Sweep line with priority",
+        "Sort by start then assign room"
+      ]
+    },
+    {
+      "id": 208,
+      "title": "Car Pooling",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy", "Sorting", "Prefix Sum"],
+      "question": "Given trips [numPassengers, from, to] and capacity, determine if possible.",
+      "answer": "Difference array: add passengers at from, subtract at to; check cumulative at any point ≤ capacity.",
+      "relevant_options": [
+        "Sort events by location",
+        "Priority queue for dropoffs",
+        "Simulate time steps",
+        "Segment tree for max passengers"
+      ]
+    },
+    {
+      "id": 209,
+      "title": "Minimum Number of Arrows to Burst Balloons",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy", "Sorting"],
+      "question": "Find minimum arrows to burst all balloons (interval overlap).",
+      "answer": "Sort by end, shoot arrow at end, burst all intervals containing that point.",
+      "relevant_options": [
+        "Sort by start then merge",
+        "Interval graph coloring",
+        "Sweep line with active count",
+        "Priority queue of ends"
+      ]
+    },
+    {
+      "id": 210,
+      "title": "Insert Interval",
+      "difficulty": "Medium",
+      "topics": ["Array"],
+      "question": "Insert new interval into sorted non-overlapping intervals, merge if needed.",
+      "answer": "Add all intervals before new, merge overlapping, add rest.",
+      "relevant_options": [
+        "Binary search insertion point",
+        "Linear scan with merging",
+        "Use stack for merging",
+        "Recursive insertion merge"
+      ]
+    },
+    {
+      "id": 211,
+      "title": "Summary Ranges",
+      "difficulty": "Medium",
+      "topics": ["Array"],
+      "question": "Given sorted unique array, return summary ranges.",
+      "answer": "Two pointers: start of range, extend while consecutive, add range when break.",
+      "relevant_options": [
+        "Use StringBuilder for ranges",
+        "Iterate and detect consecutive",
+        "Create list of pairs then format",
+        "Recursive range splitting"
+      ]
+    },
+    {
+      "id": 212,
+      "title": "Missing Ranges",
+      "difficulty": "Medium",
+      "topics": ["Array"],
+      "question": "Find missing ranges in sorted array from lower to upper inclusive.",
+      "answer": "Check between lower and first element, then between consecutive, then last and upper.",
+      "relevant_options": [
+        "Binary search to find boundaries",
+        "Use stream to generate missing",
+        "Set difference then group consecutive",
+        "Two pointers on range"
+      ]
+    },
+    {
+      "id": 213,
+      "title": "Most Frequent Subtree Sum",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Tree", "DFS"],
+      "question": "Find the most frequent sum of any subtree.",
+      "answer": "Post-order DFS: compute sum for node, update frequency map, track max frequency.",
+      "relevant_options": [
+        "BFS level order sums",
+        "Recursive sum calculation",
+        "Use map of sum to count",
+        "Global variable for max freq"
+      ]
+    },
+    {
+      "id": 214,
+      "title": "Subtree of Another Tree",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "String Matching"],
+      "question": "Check if tree t is subtree of tree s (exact structure).",
+      "answer": "Serialize both trees with null markers; check if t's serialization appears in s's serialization.",
+      "relevant_options": [
+        "Recursive: check if t equals s or t in left/right",
+        "Use Merkle hashing",
+        "Two DFS: find matching root then compare",
+        "BFS level matching"
+      ]
+    },
+    {
+      "id": 215,
+      "title": "Delete Nodes and Return Forest",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS", "Hash Set"],
+      "question": "Delete given nodes from binary tree; return forest of remaining roots.",
+      "answer": "Post-order DFS: if node to delete, add children as new roots, return null to parent; else return node.",
+      "relevant_options": [
+        "BFS with parent tracking",
+        "Queue for processing deletions",
+        "Recursive with set of deletions",
+        "Iterative stack with forest list"
+      ]
+    },
+    {
+      "id": 216,
+      "title": "Distribute Coins in Binary Tree",
+      "difficulty": "Medium",
+      "topics": ["Tree", "DFS"],
+      "question": "Minimum moves to distribute coins in binary tree so each node has exactly 1 coin.",
+      "answer": "DFS returns net coins needed (excess/deficit); move count += abs(dfs returned).",
+      "relevant_options": [
+        "Greedy from leaves upward",
+        "BFS level balancing",
+        "Compute prefix sums of subtree coin count",
+        "DP on subtree flows"
+      ]
+    },
+    {
+      "id": 217,
+      "title": "Kth Smallest Element in a Sorted Matrix",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search", "Heap", "Matrix"],
+      "question": "Find kth smallest element in matrix where rows and columns are sorted.",
+      "answer": "Binary search on value, count elements ≤ mid using O(n) counting: start from bottom-left.",
+      "relevant_options": [
+        "Min-heap merging rows O(k log n)",
+        "Binary search with counting",
+        "Flatten and sort O(n² log n)",
+        "Divide and conquer selection"
+      ]
+    },
+    {
+      "id": 218,
+      "title": "Find K Pairs with Smallest Sums",
+      "difficulty": "Medium",
+      "topics": ["Array", "Heap"],
+      "question": "Given two sorted arrays, find k pairs with smallest sums.",
+      "answer": "Min-heap with (sum, i, j); push (nums1[0]+nums2[0],0,0); push (i+1,j) and (i,j+1) with visited set.",
+      "relevant_options": [
+        "Brute force generate all O(n²)",
+        "Two pointers with buckets",
+        "Use priority queue with indices",
+        "Binary search on sum value"
+      ]
+    },
+    {
+      "id": 219,
+      "title": "Find K-th Smallest Pair Distance",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search", "Two Pointers", "Sorting"],
+      "question": "Find kth smallest distance between any two numbers in array.",
+      "answer": "Sort array; binary search on distance; count pairs with distance ≤ mid using two pointers.",
+      "relevant_options": [
+        "Generate all pairs O(n² log n)",
+        "Use heap of smallest distances",
+        "Binary search with sliding window",
+        "Bucket sort by distance"
+      ]
+    },
+    {
+      "id": 220,
+      "title": "Minimum Number of Operations to Move All Balls to Each Box",
+      "difficulty": "Medium",
+      "topics": ["Array", "String", "Prefix Sum"],
+      "question": "Compute moves needed to move all balls to each box.",
+      "answer": "Two passes: left to right cumulate moves, right to left cumulate moves.",
+      "relevant_options": [
+        "Brute force O(n²)",
+        "Prefix sums of counts and distances",
+        "BFS from each box",
+        "DP on cumulative distances"
+      ]
+    },
+    {
+      "id": 221,
+      "title": "Maximum Element After Decreasing and Rearranging",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy", "Sorting"],
+      "question": "Rearrange array so arr[0]=1, adjacent diff ≤1, each ≤ original. Maximize last element.",
+      "answer": "Sort, set arr[0]=1, for i: arr[i] = min(arr[i], arr[i-1]+1).",
+      "relevant_options": [
+        "Greedy increasing",
+        "DP on values",
+        "Priority queue",
+        "Binary search on answer"
+      ]
+    },
+    {
+      "id": 222,
+      "title": "Minimum Time to Make Rope Colorful",
+      "difficulty": "Medium",
+      "topics": ["Array", "String", "DP", "Greedy"],
+      "question": "Remove balloons to avoid consecutive same colors with costs. Min total cost.",
+      "answer": "Group consecutives, keep max cost in group, sum rest.",
+      "relevant_options": [
+        "Two pointers with grouping",
+        "Greedy keep highest",
+        "DP for each position",
+        "Use stack for runs"
+      ]
+    },
+    {
+      "id": 223,
+      "title": "Maximum Product of Two Elements in an Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Heap"],
+      "question": "Find max (nums[i]-1)*(nums[j]-1) for i≠j.",
+      "answer": "Find top two largest values; multiply (max1-1)*(max2-1).",
+      "relevant_options": [
+        "Sort and pick last two",
+        "Use heap to get two largest",
+        "Find max and second max",
+        "Brute force O(n²)"
+      ]
+    },
+    {
+      "id": 224,
+      "title": "Count Number of Pairs With Absolute Difference K",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table"],
+      "question": "Count pairs |nums[i]-nums[j]| == k.",
+      "answer": "Use frequency map; for each num, count num+k and num-k.",
+      "relevant_options": [
+        "Nested loops O(n²)",
+        "Sort and two pointers",
+        "Use set for lookups",
+        "Use array for small bounds"
+      ]
+    },
+    {
+      "id": 225,
+      "title": "Minimum Seconds to Equalize a Circular Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Greedy"],
+      "question": "In circular array, each second each value spreads to neighbors. Min seconds to make all equal.",
+      "answer": "For each value, track max gap between occurrences (circular). Answer = min over values of floor(max_gap/2).",
+      "relevant_options": [
+        "Simulate BFS",
+        "Consider each target value",
+        "Greedy spread simulation",
+        "Use distance array"
+      ]
+    },
+    {
+      "id": 226,
+      "title": "Count Equal and Divisible Pairs in an Array",
+      "difficulty": "Medium",
+      "topics": ["Array"],
+      "question": "Count pairs (i<j) where nums[i]==nums[j] and i*j % k == 0.",
+      "answer": "Nested loops O(n²) okay for small n; or group indices by value, check i*j mod k.",
+      "relevant_options": [
+        "Precompute divisibility",
+        "Use map of indices list",
+        "Optimize by k factorization",
+        "Two-pointer grouping"
+      ]
+    },
+    {
+      "id": 227,
+      "title": "Find First Palindromic String in the Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Two Pointers", "String"],
+      "question": "Return first palindromic string in array, or empty string.",
+      "answer": "For each word, check palindrome (two pointers). Return first.",
+      "relevant_options": [
+        "Reverse string check",
+        "Use StringBuilder reverse",
+        "Check half length",
+        "Use recursion"
+      ]
+    },
+    {
+      "id": 228,
+      "title": "Check if All Characters Have Equal Number of Occurrences",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Counting"],
+      "question": "Return true if all characters in string appear same number of times.",
+      "answer": "Count frequencies with map, collect values to set, check size==1.",
+      "relevant_options": [
+        "Use array of 26",
+        "Check min = max frequency",
+        "Sort frequencies",
+        "Use frequency of frequencies"
+      ]
+    },
+    {
+      "id": 229,
+      "title": "Redistribute Characters to Make All Strings Equal",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Counting"],
+      "question": "Check if you can redistribute characters across n strings to make all equal.",
+      "answer": "Total count of each char must be divisible by n.",
+      "relevant_options": [
+        "Simulate redistribution",
+        "Check frequency modulo n",
+        "Use map of char counts",
+        "Greedy assignment"
+      ]
+    },
+    {
+      "id": 230,
+      "title": "Sorting the Sentence",
+      "difficulty": "Medium",
+      "topics": ["String", "Sorting"],
+      "question": "Restore sentence from words with numbers at end indicating original position.",
+      "answer": "Split, create array of size max number, place word without last char at index-1, join.",
+      "relevant_options": [
+        "Use priority queue",
+        "Sort by extracted number",
+        "Use map of number to word",
+        "Manual parsing"
+      ]
+    },
+    {
+      "id": 231,
+      "title": "Decode the Message",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String"],
+      "question": "Decode message using key mapping: first occurrence of each letter in key maps to a-z order.",
+      "answer": "Build mapping dict by iterating key, assign next unused letter. Translate message.",
+      "relevant_options": [
+        "Use array of 26 for mapping",
+        "Use ASCII arithmetic",
+        "Use ordered set",
+        "Use LinkedHashMap"
+      ]
+    },
+    {
+      "id": 232,
+      "title": "Check if All Integers in a Range Are Covered",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Prefix Sum"],
+      "question": "Check if all numbers in range are covered by given intervals.",
+      "answer": "Mark covered numbers boolean array from left to right. Check if any false.",
+      "relevant_options": [
+        "Difference array technique",
+        "Sort intervals merge",
+        "Check via prefix sums",
+        "Use range tree"
+      ]
+    },
+    {
+      "id": 233,
+      "title": "Minimum Number of Operations to Convert Time",
+      "difficulty": "Medium",
+      "topics": ["String", "Greedy", "Math"],
+      "question": "Convert current to correct time using increments of 1,5,15,60 minutes.",
+      "answer": "Convert both to minutes, diff = correct-current. Greedy: use 60,15,5,1.",
+      "relevant_options": [
+        "DP coin change",
+        "Greedy with denominations",
+        "Modulo arithmetic",
+        "Difference in hours/minutes"
+      ]
+    },
+    {
+      "id": 234,
+      "title": "Find the K-Beauty of a Number",
+      "difficulty": "Medium",
+      "topics": ["Math", "String", "Sliding Window"],
+      "question": "Count substrings of length k that divide the original number.",
+      "answer": "Convert to string, slide window of size k, convert to int, check divisibility (non-zero).",
+      "relevant_options": [
+        "Use modulo operations",
+        "Use integer substring",
+        "Use prefix sums mod",
+        "Sliding window with number building"
+      ]
+    },
+    {
+      "id": 235,
+      "title": "Maximum Number of Words You Can Type",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String"],
+      "question": "Given broken letters, count words that can be typed fully.",
+      "answer": "Put broken letters in set. For each word, check if any char in set.",
+      "relevant_options": [
+        "Use boolean array for broken",
+        "Use regex with character class",
+        "Use bitmask for broken",
+        "Use indexOf for each char"
+      ]
+    },
+    {
+      "id": 236,
+      "title": "Find if Path Exists in Graph",
+      "difficulty": "Medium",
+      "topics": ["Graph", "DFS", "BFS", "Union Find"],
+      "question": "Given n vertices and edges, check if path exists from source to destination.",
+      "answer": "Build adjacency list, BFS/DFS from source to destination.",
+      "relevant_options": [
+        "Union-Find (DSU)",
+        "Recursive DFS",
+        "Iterative stack",
+        "Floyd-Warshall not needed"
+      ]
+    },
+    {
+      "id": 237,
+      "title": "Find Center of Star Graph",
+      "difficulty": "Medium",
+      "topics": ["Graph"],
+      "question": "Find center of star graph (center appears in every edge).",
+      "answer": "Center appears in every edge. Return common node in first two edges.",
+      "relevant_options": [
+        "Count degree of each node",
+        "Compare first two edges",
+        "Use set of nodes",
+        "Check adjacency"
+      ]
+    },
+    {
+      "id": 238,
+      "title": "Maximum Number of Balls in a Box",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "Math"],
+      "question": "Box number = sum of digits. Find box with max balls for numbers 1 to n.",
+      "answer": "Compute digit sum for each ball, use counting array (max sum 9*5=45).",
+      "relevant_options": [
+        "Use map for counts",
+        "Precompute digit sums",
+        "Use integer division and modulo",
+        "DP for digit sum"
+      ]
+    },
+    {
+      "id": 239,
+      "title": "Reformat Date",
+      "difficulty": "Medium",
+      "topics": ["String"],
+      "question": "Convert '20th Oct 2052' to '2052-10-20'.",
+      "answer": "Parse day (remove st/nd/rd/th), month mapping, year.",
+      "relevant_options": [
+        "Use date formatter",
+        "Manual string splitting",
+        "Use regex groups",
+        "Use switch for months"
+      ]
+    },
+    {
+      "id": 240,
+      "title": "Design an Ordered Stream",
+      "difficulty": "Medium",
+      "topics": ["Array", "Design", "Data Stream"],
+      "question": "Insert (id, value), return list of consecutive values starting from pointer.",
+      "answer": "Store in array, advance pointer while next exists.",
+      "relevant_options": [
+        "Use TreeMap",
+        "Use priority queue",
+        "Use list and sort",
+        "Use pointer with hash map"
+      ]
+    },
+    {
+      "id": 241,
+      "title": "Count Pairs of Similar Strings",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "String", "Bit Manipulation"],
+      "question": "Two strings are similar if they consist of same set of characters. Count pairs.",
+      "answer": "Convert each string to bitmask (26 bits). Use map of mask to count. Sum count*(count-1)/2.",
+      "relevant_options": [
+        "Use set of chars and compare",
+        "Sort strings and compare sets",
+        "Use boolean array and compare",
+        "Use frequency map of bits"
+      ]
+    },
+    {
+      "id": 242,
+      "title": "Count Sorted Vowel Strings",
+      "difficulty": "Medium",
+      "topics": ["Math", "DP", "Combinatorics"],
+      "question": "Count strings of length n consisting only of vowels in lexicographic order.",
+      "answer": "Stars and bars: C(n+4,4) or DP: dp[char][len].",
+      "relevant_options": [
+        "Recursion with backtracking",
+        "DP on characters",
+        "Use combinatorial formula",
+        "Generate and count"
+      ]
+    },
+    {
+      "id": 243,
+      "title": "Check if Word Equals Summation of Two Words",
+      "difficulty": "Medium",
+      "topics": ["String"],
+      "question": "Map letters a=1,...,z=26, sum numeric values. Check if firstWord + secondWord == targetWord.",
+      "answer": "Convert each to integer by iterating char and sum = sum*10 + (c-'a'+1). Compare sums.",
+      "relevant_options": [
+        "Use integer parsing after mapping",
+        "Use string concatenation and parse",
+        "Use direct char arithmetic",
+        "Use BigInteger for large"
+      ]
+    },
+    {
+      "id": 244,
+      "title": "Minimum Changes to Make Alternating Binary String",
+      "difficulty": "Medium",
+      "topics": ["String"],
+      "question": "Minimum changes to make string alternating (01 or 10 patterns).",
+      "answer": "Count mismatches for pattern starting with 0 and starting with 1. Return min.",
+      "relevant_options": [
+        "Greedy flipping",
+        "DP with two states",
+        "Sliding window",
+        "Use XOR with expected"
+      ]
+    },
+    {
+      "id": 245,
+      "title": "Largest Odd Number in String",
+      "difficulty": "Medium",
+      "topics": ["String", "Greedy"],
+      "question": "Return largest odd number that is substring of given numeric string.",
+      "answer": "Find last odd digit, return substring from start to that index.",
+      "relevant_options": [
+        "Check all substrings",
+        "Scan from end for odd digit",
+        "Use suffix odd check",
+        "Find maximum numeric odd substring"
+      ]
+    },
+    {
+      "id": 246,
+      "title": "Minimum Sum of Two Numbers Formed From Digits",
+      "difficulty": "Medium",
+      "topics": ["Greedy", "Sorting"],
+      "question": "Distribute digits of array into two numbers to minimize sum.",
+      "answer": "Sort digits, assign alternately to two numbers.",
+      "relevant_options": [
+        "Put smallest digits in highest place",
+        "Use priority queue",
+        "Try all permutations of assignment",
+        "Use DP partitioning"
+      ]
+    },
+    {
+      "id": 247,
+      "title": "Replace All Digits with Characters",
+      "difficulty": "Medium",
+      "topics": ["String"],
+      "question": "String alternates letter-digit. Replace digit with shift of previous letter.",
+      "answer": "Iterate, if digit, newChar = prevChar + digitValue.",
+      "relevant_options": [
+        "Use char arithmetic",
+        "Use StringBuilder",
+        "Use array of chars",
+        "Use recursion"
+      ]
+    },
+    {
+      "id": 248,
+      "title": "Maximum Value of a String in an Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "String"],
+      "question": "Value = length if contains letters, else integer value. Return max.",
+      "answer": "If string contains non-digit, value = length; else parse int. Return max.",
+      "relevant_options": [
+        "Use regex for digit check",
+        "Try catch parse",
+        "Use Character.isDigit",
+        "Check if all digits"
+      ]
+    },
+    {
+      "id": 249,
+      "title": "Count Prefixes of a Given String",
+      "difficulty": "Medium",
+      "topics": ["Array", "String"],
+      "question": "Count words that are prefixes of given string s.",
+      "answer": "For each word, if s.startsWith(word), count++.",
+      "relevant_options": [
+        "Use trie for prefixes",
+        "Use indexOf == 0",
+        "Use substring and compare",
+        "Use regex match"
+      ]
+    },
+    {
+      "id": 250,
+      "title": "Remove Trailing Zeros From a String",
+      "difficulty": "Medium",
+      "topics": ["String"],
+      "question": "Remove trailing zeros from numeric string.",
+      "answer": "Find last index where char != '0', return substring.",
+      "relevant_options": [
+        "Use regex replace",
+        "Use while loop from end",
+        "Use StringBuilder reverse trim",
+        "Use stripTrailing in Java 11+"
+      ]
+    },
+    {
+      "id": 251,
+      "title": "Determine if String Halves Are Alike",
+      "difficulty": "Medium",
+      "topics": ["String", "Counting"],
+      "question": "Check if both halves have same number of vowels.",
+      "answer": "Count vowels in first half and second half, compare.",
+      "relevant_options": [
+        "Use set of vowels",
+        "Use single pass with index",
+        "Use two pointer middle",
+        "Use prefix vowel count"
+      ]
+    },
+    {
+      "id": 252,
+      "title": "Intersection of Multiple Arrays",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table"],
+      "question": "Given 2D array, return intersection of all subarrays.",
+      "answer": "Start with set of first array, intersect with each subsequent using retainAll.",
+      "relevant_options": [
+        "Use frequency counts",
+        "Sort each and merge",
+        "Use boolean array for each",
+        "Use stream reduce"
+      ]
+    },
+    {
+      "id": 253,
+      "title": "Remove Palindromic Subsequences",
+      "difficulty": "Medium",
+      "topics": ["Two Pointers", "String"],
+      "question": "String only a and b. Remove palindromic subsequence. Min steps to empty.",
+      "answer": "If empty -> 0, if palindrome -> 1, else 2.",
+      "relevant_options": [
+        "Always remove all 'a' then all 'b'",
+        "Check palindrome property",
+        "Count distinct characters",
+        "Greedy removal"
+      ]
+    },
+    {
+      "id": 254,
+      "title": "Longest Nice Substring",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Divide and Conquer"],
+      "question": "Nice substring has both uppercase and lowercase of each letter. Return longest.",
+      "answer": "Divide and conquer: find chars missing pair, split, recurse.",
+      "relevant_options": [
+        "Sliding window with bitmask",
+        "Brute force all substrings",
+        "Recursive splitting",
+        "Use bitmask for case"
+      ]
+    },
+    {
+      "id": 255,
+      "title": "Minimum Difference Between Highest and Lowest of K Scores",
+      "difficulty": "Medium",
+      "topics": ["Array", "Sorting", "Sliding Window"],
+      "question": "Choose k scores, minimize difference between max and min.",
+      "answer": "Sort, slide window of size k, compute diff = nums[i+k-1]-nums[i], track min.",
+      "relevant_options": [
+        "Heap of size k",
+        "Two pointers after sort",
+        "Bucket sort",
+        "Selection algorithm"
+      ]
+    },
+    {
+      "id": 256,
+      "title": "Find All K-Distant Indices in an Array",
+      "difficulty": "Medium",
+      "topics": ["Array"],
+      "question": "For each occurrence of key, add indices within k distance.",
+      "answer": "Find all indices of key, for each, add range [i-k, i+k] to set.",
+      "relevant_options": [
+        "Two pointers with expansion",
+        "Sliding window of size 2k+1",
+        "Marking boolean array",
+        "Use interval merging"
+      ]
+    },
+    {
+      "id": 257,
+      "title": "Count of Matches in Tournament",
+      "difficulty": "Medium",
+      "topics": ["Math", "Simulation"],
+      "question": "Number of matches in tournament with n teams, each match eliminates one.",
+      "answer": "n-1. Or simulate: matches = floor(n/2), n = ceil(n/2).",
+      "relevant_options": [
+        "Simulation while n>1",
+        "Direct formula n-1",
+        "Recursive simulation",
+        "Use bit operations"
+      ]
+    },
+    {
+      "id": 258,
+      "title": "Find the Winner of the Circular Game",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "Queue"],
+      "question": "Josephus problem: n friends, eliminate every kth. Return last remaining.",
+      "answer": "Josephus: f(1)=0, f(n) = (f(n-1)+k)%n. Return +1.",
+      "relevant_options": [
+        "Queue simulation O(nk)",
+        "Recursive formula",
+        "Iterative Josephus",
+        "Use list and remove"
+      ]
+    },
+    {
+      "id": 259,
+      "title": "Maximum Population Year",
+      "difficulty": "Medium",
+      "topics": ["Array", "Counting", "Prefix Sum"],
+      "question": "Given births and deaths, find year with max population.",
+      "answer": "Difference array on [birth, death), prefix sum, find max index.",
+      "relevant_options": [
+        "Brute force per year",
+        "Sweep line events",
+        "Sort births and deaths",
+        "Use map of year to delta"
+      ]
+    },
+    {
+      "id": 260,
+      "title": "Check if Number Has Equal Digit Count and Digit Value",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Counting"],
+      "question": "For digit i, count of i in string should equal digit at position i.",
+      "answer": "Count frequencies, compare freq[i] == num[i] for all i.",
+      "relevant_options": [
+        "Use array of size 10",
+        "Self-checking loop",
+        "Use map of char to int",
+        "Sort and compare"
+      ]
+    },
+    {
+      "id": 261,
+      "title": "Maximum Element After Decreasing and Rearranging",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy", "Sorting"],
+      "question": "Rearrange array such that arr[0]=1, each adjacent diff ≤1, and each ≤ original. Maximize last element.",
+      "answer": "Sort, set arr[0]=1, for i: arr[i] = min(arr[i], arr[i-1]+1).",
+      "relevant_options": [
+        "Greedy increasing",
+        "DP on values",
+        "Priority queue",
+        "Binary search on answer"
+      ]
+    },
+    {
+      "id": 262,
+      "title": "Minimum Time to Remove All Cars",
+      "difficulty": "Hard",
+      "topics": ["String", "DP", "Prefix Sum"],
+      "question": "Remove '1's from left or right, cost=1 each removal, or remove middle '1's cost=2?",
+      "answer": "DP: prefix cost, suffix cost, combine. Or treat as remove no cost if contiguous.",
+      "relevant_options": [
+        "Compute prefix min cost",
+        "Use two passes",
+        "Greedy removing all 1s",
+        "Segment DP"
+      ]
+    },
+    {
+      "id": 263,
+      "title": "Count Number of Homogenous Substrings",
+      "difficulty": "Medium",
+      "topics": ["Math", "String"],
+      "question": "Count substrings with all same characters.",
+      "answer": "Group consecutive same chars, for run of length l, add l*(l+1)/2.",
+      "relevant_options": [
+        "Sliding window for runs",
+        "DP counting per position",
+        "Use two pointers grouping",
+        "Add contributions as you go"
+      ]
+    },
+    {
+      "id": 264,
+      "title": "Minimum Obstacle Removal to Reach Corner",
+      "difficulty": "Hard",
+      "topics": ["Array", "BFS", "Graph", "0-1 BFS"],
+      "question": "From (0,0) to (m-1,n-1) moving over grid where 1=obstacle (cost 1). Find min cost.",
+      "answer": "0-1 BFS with deque.",
+      "relevant_options": [
+        "Dijkstra with heap",
+        "DP with BFS layers",
+        "A* search",
+        "Binary search on cost with BFS"
+      ]
+    },
+    {
+      "id": 265,
+      "title": "Minimum Absolute Sum Difference",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search", "Sorting"],
+      "question": "Replace one element in nums1 to minimize sum |nums1[i]-nums2[i]|.",
+      "answer": "Sort nums1, for each i, find closest to nums2[i] in sorted nums1, compute improvement.",
+      "relevant_options": [
+        "Binary search for best replacement",
+        "Use TreeSet for sorted values",
+        "Try each replacement candidate",
+        "Greedy replace max diff"
+      ]
+    },
+    {
+      "id": 266,
+      "title": "Count Triplets That Can Form Two Arrays of Equal XOR",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Bit Manipulation", "Prefix Sum"],
+      "question": "Count triplets (i,j,k) where XOR i..j-1 == XOR j..k.",
+      "answer": "XOR property: prefix XOR. Condition prefix[i]==prefix[k+1]. For same prefix, any j between i+1..k works.",
+      "relevant_options": [
+        "Nested loops",
+        "Use map of prefix indices",
+        "XOR cumulative array",
+        "Count pairs of prefix indices"
+      ]
+    },
+    {
+      "id": 267,
+      "title": "Minimum Space Wasted From Packaging",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search", "Sorting", "Prefix Sum"],
+      "question": "Assign packages to boxes, minimize wasted space (box size - package size).",
+      "answer": "Sort packages, for each box size, binary search fit, compute sum of differences.",
+      "relevant_options": [
+        "Greedy assign smallest feasible box",
+        "DP with binary search",
+        "Sort both and two pointers",
+        "Use tree map for boxes"
+      ]
+    },
+    {
+      "id": 268,
+      "title": "Maximum Number of Consecutive Values You Can Make",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy"],
+      "question": "Using coins of denominations, find max consecutive values you can make from 1 upwards.",
+      "answer": "Sort coins, if coin ≤ current_max+1, current_max+=coin else break.",
+      "relevant_options": [
+        "DP knapsack",
+        "Greedy building range",
+        "Use set of reachable sums",
+        "Integer knapsack with limit"
+      ]
+    },
+    {
+      "id": 269,
+      "title": "Minimum Number of Frogs Croaking",
+      "difficulty": "Medium",
+      "topics": ["String", "Counting"],
+      "question": "Min frogs to produce given croaking string.",
+      "answer": "Track counts of c, r, o, a, k. If any negative, invalid. Answer = max count of c at any time.",
+      "relevant_options": [
+        "Simulate state machine",
+        "Use queue for each frog",
+        "Greedy assign to idle frog",
+        "Count overlapping croaks"
+      ]
+    },
+    {
+      "id": 270,
+      "title": "Minimum Cost to Make Array Equal",
+      "difficulty": "Hard",
+      "topics": ["Array", "Math", "Binary Search", "Sorting", "Prefix Sum"],
+      "question": "Cost to change nums[i] to target is abs(nums[i]-target)*cost[i]. Find target minimizing cost.",
+      "answer": "Weighted median of nums with costs as weights.",
+      "relevant_options": [
+        "Binary search on slope",
+        "Prefix sums after sorting",
+        "Use ternary search",
+        "DP on median candidate"
+      ]
+    },
+    {
+      "id": 271,
+      "title": "Max Sum of Rectangle No Larger Than K",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search", "Matrix", "Ordered Set", "Prefix Sum"],
+      "question": "Find max sum of any rectangle with sum ≤ k.",
+      "answer": "For each top/bottom row pair, compress columns to prefix sums, use TreeSet for cumulative sums.",
+      "relevant_options": [
+        "Kadane for each row pair",
+        "Divide and conquer",
+        "DP with prefix sums",
+        "Brute force O(n³ log n)"
+      ]
+    },
+    {
+      "id": 272,
+      "title": "Minimum Time Difference",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "String", "Sorting"],
+      "question": "Given time points in 'HH:MM', find min difference in minutes.",
+      "answer": "Convert to minutes, sort, compute circular diff, track min.",
+      "relevant_options": [
+        "Sort and compare adjacent",
+        "Bucket sort 1440 slots",
+        "Use set for duplicates",
+        "String parsing and min"
+      ]
+    },
+    {
+      "id": 273,
+      "title": "Stone Game VII",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Game Theory", "Prefix Sum"],
+      "question": "Alice and Bob remove from ends, score = sum removed. Alice max her score minus Bob's.",
+      "answer": "DP[i][j] = max difference for current player on subarray i..j = max(stones[i] + min(dp[i+2][j],dp[i+1][j-1]), ...).",
+      "relevant_options": [
+        "Minimax recursion",
+        "DP with prefix sums",
+        "Top-down memoization",
+        "Greedy pick larger sum"
+      ]
+    },
+    {
+      "id": 274,
+      "title": "Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts",
+      "difficulty": "Medium",
+      "topics": ["Array", "Sorting"],
+      "question": "Max area after cutting at given positions horizontally and vertically.",
+      "answer": "Find max gap between consecutive cuts (including edges) for horizontal and vertical, multiply mod.",
+      "relevant_options": [
+        "Sort cuts and compute diff",
+        "Add 0 and dimension",
+        "Use priority queue for gaps",
+        "Simulate cuts BFS"
+      ]
+    },
+    {
+      "id": 275,
+      "title": "Delete Columns to Make Sorted III",
+      "difficulty": "Hard",
+      "topics": ["Array", "String", "DP"],
+      "question": "Delete min columns so each row is lexicographically non-decreasing.",
+      "answer": "DP: find length of longest increasing subsequence of columns (consider entire column as whole string).",
+      "relevant_options": [
+        "Check each column",
+        "DP on columns",
+        "Greedy column removal",
+        "Use string comparison on columns"
+      ]
+    },
+    {
+      "id": 276,
+      "title": "Minimum Flips to Make a OR b Equal to c",
+      "difficulty": "Medium",
+      "topics": ["Bit Manipulation"],
+      "question": "Flip bits in a or b to make a|b==c. Min flips.",
+      "answer": "For each bit: if c bit 0, flips = a_bit+b_bit. If c bit 1, flips = 1 if both 0 else 0.",
+      "relevant_options": [
+        "Loop through bits",
+        "Use XOR for mismatch",
+        "Shift and mask",
+        "Count bits of (a|b ^ c) and (a&b & ~c)"
+      ]
+    },
+    {
+      "id": 277,
+      "title": "Minimum Insertions to Balance a Parentheses String",
+      "difficulty": "Medium",
+      "topics": ["String", "Stack", "Greedy"],
+      "question": "Each open needs two closes '))' to balance. Min insertions.",
+      "answer": "Track need for close. If '(', need+=2. If need odd, add one close. If ')', need--. Count insertions.",
+      "relevant_options": [
+        "Use stack for unmatched",
+        "Two pass greedy",
+        "Count needed close at each step",
+        "Replace '(' with '))'"
+      ]
+    },
+    {
+      "id": 278,
+      "title": "Number of Pairs of Strings With Concatenation Equal to Target",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "String"],
+      "question": "Count pairs (i≠j) where nums[i]+nums[j] == target.",
+      "answer": "Count frequencies. For each string, check target if starts with it, then suffix must exist.",
+      "relevant_options": [
+        "Nested loops",
+        "Prefix-suffix mapping",
+        "Use Trie for prefixes",
+        "Store suffix counts"
+      ]
+    },
+    {
+      "id": 279,
+      "title": "Minimum Deletions to Make Character Frequencies Unique",
+      "difficulty": "Medium",
+      "topics": ["Hash Table", "String", "Greedy", "Sorting"],
+      "question": "Delete chars so all frequencies unique. Min deletions.",
+      "answer": "Count frequencies, sort descending, greedy: keep freq, if seen, reduce until new unique.",
+      "relevant_options": [
+        "Use set for used frequencies",
+        "Greedy reduce",
+        "Use priority queue",
+        "Sort and adjust"
+      ]
+    },
+    {
+      "id": 280,
+      "title": "Maximum Number of Groups Getting Fresh Donuts",
+      "difficulty": "Hard",
+      "topics": ["Array", "DP", "Bit Manipulation", "Memoization"],
+      "question": "Batch size batchSize, groups with sizes. Max groups happy (remainder 0) by ordering.",
+      "answer": "State: count of groups for each remainder (0..batchSize-1). DP with memoization.",
+      "relevant_options": [
+        "Greedy put remainder 0 first",
+        "DP on remainder counts",
+        "Use BFS of states",
+        "Reduce by batchSize for large groups"
+      ]
+    },
+    {
+      "id": 281,
+      "title": "Minimum Number of Days to Disconnect Island",
+      "difficulty": "Hard",
+      "topics": ["Array", "DFS", "BFS", "Matrix"],
+      "question": "Min days (flipping 1 to 0) to disconnect island.",
+      "answer": "If already disconnected →0, if one articulation point →1, else 2.",
+      "relevant_options": [
+        "Count islands initially",
+        "Articulation point detection",
+        "Try removing each cell",
+        "BFS for connectivity"
+      ]
+    },
+    {
+      "id": 282,
+      "title": "Maximum Value at a Given Index in a Bounded Array",
+      "difficulty": "Medium",
+      "topics": ["Array", "Binary Search", "Greedy"],
+      "question": "Construct array length n, maxSum, at given index maximize value, adjacent diff ≤1, all positive.",
+      "answer": "Binary search on value, compute min sum for that peak using arithmetic series.",
+      "relevant_options": [
+        "Greedy construct triangle",
+        "Math formula for sum",
+        "Try increasing from 1",
+        "DP on left/right sides"
+      ]
+    },
+    {
+      "id": 283,
+      "title": "Minimum Number of Operations to Reinitialize a Permutation",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math", "Simulation"],
+      "question": "Operation: perm[i] = perm[i/2] if i even, perm[(n+i-1)/2] if i odd. Steps to return to original.",
+      "answer": "Simulate pointer position for element originally at index 1 until returns.",
+      "relevant_options": [
+        "Track one element's position",
+        "Simulate full array",
+        "Find cycle length",
+        "Use modular arithmetic"
+      ]
+    },
+    {
+      "id": 284,
+      "title": "Smallest Subarrays With Maximum Bitwise OR",
+      "difficulty": "Medium",
+      "topics": ["Array", "Bit Manipulation", "Sliding Window"],
+      "question": "For each i, smallest j≥i such that OR i..j is maximum possible from i.",
+      "answer": "From right, maintain bits found; use binary search or sliding window.",
+      "relevant_options": [
+        "Brute force O(n²)",
+        "Use last occurrence of each bit",
+        "Binary search on length",
+        "Sliding window from end"
+      ]
+    },
+    {
+      "id": 285,
+      "title": "Minimum Operations to Make Array Equal",
+      "difficulty": "Medium",
+      "topics": ["Array", "Math"],
+      "question": "Min operations to make all equal by incrementing n-1 elements.",
+      "answer": "Ops = sum of (nums[i] - min).",
+      "relevant_options": [
+        "Use formula sum - n*min",
+        "Sort and use differences",
+        "Greedy reduce max",
+        "Use median for different op"
+      ]
+    },
+    {
+      "id": 286,
+      "title": "Count Square Submatrices with All Ones",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Matrix"],
+      "question": "Count submatrices that are squares with all 1's.",
+      "answer": "DP[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1 if grid[i][j]==1. Sum all dp[i][j].",
+      "relevant_options": [
+        "For each cell, expand possible side",
+        "Prefix sum and binary search side",
+        "Use DP for side length",
+        "Use monotonic stack per row"
+      ]
+    },
+    {
+      "id": 287,
+      "title": "Maximum Number of Non-Overlapping Subarrays With Sum Equals Target",
+      "difficulty": "Medium",
+      "topics": ["Array", "Hash Table", "Greedy", "Prefix Sum"],
+      "question": "Max number of non-overlapping subarrays with sum = target.",
+      "answer": "Greedy: prefix sums map, if prefix-current-target seen, count++ and reset map.",
+      "relevant_options": [
+        "DP with intervals",
+        "Greedy earliest end",
+        "Use set of prefix sums",
+        "Two pointers with sorting"
+      ]
+    },
+    {
+      "id": 288,
+      "title": "Minimum Number of Work Sessions to Finish the Tasks",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP", "Backtracking", "Bit Manipulation"],
+      "question": "Each session max sessionTime, schedule all tasks. Min sessions.",
+      "answer": "Bitmask DP: dp[mask] = min sessions, within each try to pack tasks.",
+      "relevant_options": [
+        "Greedy largest first",
+        "Backtracking with pruning",
+        "Sort and DP",
+        "Bin packing approximation"
+      ]
+    },
+    {
+      "id": 289,
+      "title": "Sum of Subarray Ranges",
+      "difficulty": "Medium",
+      "topics": ["Array", "Stack", "Monotonic Stack"],
+      "question": "Sum of (max - min) over all subarrays.",
+      "answer": "Sum of max subarrays - sum of min subarrays using monotonic stacks.",
+      "relevant_options": [
+        "Brute force O(n²)",
+        "Divide and conquer",
+        "DP on next greater",
+        "Segment tree"
+      ]
+    },
+    {
+      "id": 290,
+      "title": "Minimum Number of Taps to Open to Water a Garden",
+      "difficulty": "Hard",
+      "topics": ["Array", "DP", "Greedy", "Sorting"],
+      "question": "Taps covering [i-range[i], i+range[i]]. Min taps to cover [0,n].",
+      "answer": "Transform to intervals, sort by start, greedy select farthest reach.",
+      "relevant_options": [
+        "DP on positions",
+        "Use interval scheduling",
+        "BFS on coverage",
+        "Convert to jump game"
+      ]
+    },
+    {
+      "id": 291,
+      "title": "Longest Subsequence With Limited Sum",
+      "difficulty": "Medium",
+      "topics": ["Array", "Greedy", "Sorting", "Prefix Sum"],
+      "question": "For each query, find length of longest subsequence with sum ≤ query.",
+      "answer": "Sort array, compute prefix sums, binary search for each query.",
+      "relevant_options": [
+        "Sorting + two pointers",
+        "Use min-heap for each query",
+        "DP for all queries",
+        "Sort queries offline"
+      ]
+    },
+    {
+      "id": 292,
+      "title": "Minimum Cost to Reach Destination in Time",
+      "difficulty": "Hard",
+      "topics": ["Graph", "DP", "Matrix"],
+      "question": "Graph with fees, each edge takes time. Min fee to reach dest within maxTime.",
+      "answer": "DP[time][node] = min cost to reach node at exact time.",
+      "relevant_options": [
+        "Dijkstra with state (node,time)",
+        "Bellman-Ford variant",
+        "BFS with pruning",
+        "Binary search on cost"
+      ]
+    },
+    {
+      "id": 293,
+      "title": "Maximum Number of Tasks You Can Assign",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search", "Greedy", "Queue", "Sorting"],
+      "question": "Tasks and workers, each worker can do one task if strength ≥ task, or with pill. Max tasks.",
+      "answer": "Binary search on k, assign k hardest tasks to k strongest workers with pill option.",
+      "relevant_options": [
+        "Greedy assign hardest",
+        "Use multiset for workers",
+        "Two pointers after sorting",
+        "Check feasibility with deque"
+      ]
+    },
+    {
+      "id": 294,
+      "title": "Minimum Time to Make Array Non-Decreasing",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search", "Greedy"],
+      "question": "In operation, set nums[i] = max(nums[i], nums[i+1]) simultaneously. Min seconds to make non-decreasing.",
+      "answer": "Binary search on answer, simulate from left and validate.",
+      "relevant_options": [
+        "Simulate in O(n log max)",
+        "Use monotonic stack",
+        "DP on steps",
+        "Greedy propagation"
+      ]
+    },
+    {
+      "id": 295,
+      "title": "Count Number of Ways to Place Houses",
+      "difficulty": "Medium",
+      "topics": ["Math", "DP"],
+      "question": "Place houses on 2 sides of road, no adjacent on same side. Count ways.",
+      "answer": "dp[i][0/1][0/1] for each side. Or compute Fibonacci-like. (F(n+2))^2.",
+      "relevant_options": [
+        "DP grid of size 2*n",
+        "State = last house placed",
+        "Use combinatorics",
+        "Matrix exponentiation"
+      ]
+    },
+    {
+      "id": 296,
+      "title": "Minimum Number of Removals to Make Mountain Array",
+      "difficulty": "Hard",
+      "topics": ["Array", "Binary Search", "DP"],
+      "question": "Min removals to make mountain array (strict inc then dec).",
+      "answer": "LIS from left and right, find max inc[i]+dec[i]-1. Answer = n-max.",
+      "relevant_options": [
+        "Use patience sorting for LIS",
+        "N² LIS fine for constraints",
+        "Binary search for LIS",
+        "DP with binary indexed tree"
+      ]
+    },
+    {
+      "id": 297,
+      "title": "Maximum Performance of a Team",
+      "difficulty": "Hard",
+      "topics": ["Array", "Greedy", "Sorting", "Heap"],
+      "question": "Choose k engineers with sum speed * min efficiency. Max performance.",
+      "answer": "Sort by efficiency descending, maintain min-heap of speeds of size k, sum speeds, track max.",
+      "relevant_options": [
+        "Try all subsets",
+        "DP on efficiency",
+        "Priority queue for speeds",
+        "Binary search on efficiency"
+      ]
+    },
+    {
+      "id": 298,
+      "title": "Maximum Number of Eaten Apples",
+      "difficulty": "Medium",
+      "topics": ["Array", "Heap", "Greedy"],
+      "question": "Each day new apples, rot on certain day. Eat one apple per day. Max eaten.",
+      "answer": "Min-heap of (rotten day, apples), eat earliest rotting, skip rotten.",
+      "relevant_options": [
+        "Simulate day by day",
+        "Sort by rotting date",
+        "Greedy eat earliest bad",
+        "Queue for each day"
+      ]
+    },
+    {
+      "id": 299,
+      "title": "Maximum Absolute Sum of Any Subarray",
+      "difficulty": "Medium",
+      "topics": ["Array", "DP"],
+      "question": "Max absolute subarray sum (|sum|).",
+      "answer": "Max subarray sum and min subarray sum, answer = max(|maxSum|, |minSum|).",
+      "relevant_options": [
+        "Kadane for max and min",
+        "Prefix sums with min/max",
+        "Brute force O(n²)",
+        "Divide and conquer"
+      ]
+    },
+    {
+      "id": 300,
+      "title": "Minimum Time to Type Word Using Special Typewriter",
+      "difficulty": "Medium",
+      "topics": ["String", "Greedy"],
+      "question": "Typewriter circular a-z, pointer starts at 'a', cost 1 per move or type. Min time.",
+      "answer": "For each char, min distance = min(|curr-target|, 26-|curr-target|). Sum + n.",
+      "relevant_options": [
+        "Greedy shortest path",
+        "DP on alphabet",
+        "Simulate turns",
+        "Preprocess distances"
+      ]
+    }
+  ]
+}

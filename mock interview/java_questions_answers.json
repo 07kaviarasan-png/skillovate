@@ -1,0 +1,504 @@
+{
+  "java_questions_answers": [
+    {
+      "id": 1,
+      "question": "What is Java?",
+      "answer": "Java is a general-purpose, object-oriented, and platform-independent programming language designed to be secure, portable, and scalable. It follows the 'write once, run anywhere' (WORA) principle using the Java Virtual Machine (JVM)."
+    },
+    {
+      "id": 2,
+      "question": "What is the JVM (Java Virtual Machine)?",
+      "answer": "JVM is an abstract computing machine that enables a computer to run Java programs and programs written in other languages that compile to Java bytecode. It abstracts hardware and OS differences."
+    },
+    {
+      "id": 3,
+      "question": "What is bytecode in Java?",
+      "answer": "Bytecode is an intermediate representation of Java code compiled from source code (.java files) into a platform-independent format (.class files). JVM interprets or JIT compiles bytecode into native machine code."
+    },
+    {
+      "id": 4,
+      "question": "Explain the difference between JDK, JRE, and JVM.",
+      "answer": "JVM is the runtime engine that executes bytecode. JRE includes JVM plus libraries and tools needed to run Java applications. JDK includes JRE plus development tools like compiler, debugger, and profiler."
+    },
+    {
+      "id": 5,
+      "question": "What is the main() method in Java?",
+      "answer": "The main() method is the entry point of a Java program. It's a static method with signature 'public static void main(String[] args)' that JVM calls to start program execution."
+    },
+    {
+      "id": 6,
+      "question": "What are the main features of Java?",
+      "answer": "Key features include platform independence, object-oriented design, strong typing, automatic garbage collection, exception handling, multithreading support, and a rich standard library."
+    },
+    {
+      "id": 7,
+      "question": "What is Object-Oriented Programming (OOP)?",
+      "answer": "OOP is a programming paradigm based on the concept of 'objects' containing data (attributes) and behavior (methods). It emphasizes modularity, reusability, and encapsulation."
+    },
+    {
+      "id": 8,
+      "question": "What are the four pillars of OOP?",
+      "answer": "The four pillars are: Encapsulation (bundling data and methods), Inheritance (deriving new classes from existing ones), Polymorphism (objects taking multiple forms), and Abstraction (hiding complexity)."
+    },
+    {
+      "id": 9,
+      "question": "What is a class in Java?",
+      "answer": "A class is a blueprint or template for creating objects. It defines attributes (member variables) and behaviors (methods) that objects of that class will have."
+    },
+    {
+      "id": 10,
+      "question": "What is an object in Java?",
+      "answer": "An object is an instance of a class created using the 'new' keyword. It has a state (values of attributes) and behavior (methods). Objects are the runtime entities of a class."
+    },
+    {
+      "id": 11,
+      "question": "What is encapsulation and why is it important?",
+      "answer": "Encapsulation is bundling data and methods together while hiding internal details from the outside world. It's important for data hiding, maintainability, and controlling how data is accessed and modified."
+    },
+    {
+      "id": 12,
+      "question": "What are access modifiers in Java?",
+      "answer": "Access modifiers control the visibility of classes, methods, and variables. Java has four: public (accessible everywhere), protected (accessible in same package and subclasses), default (same package only), and private (same class only)."
+    },
+    {
+      "id": 13,
+      "question": "What is inheritance in Java?",
+      "answer": "Inheritance is a mechanism where a class (subclass) inherits properties and methods from another class (superclass). It promotes code reusability and establishes an 'is-a' relationship."
+    },
+    {
+      "id": 14,
+      "question": "What is the difference between single and multiple inheritance?",
+      "answer": "Single inheritance is when a class inherits from one parent class. Java doesn't support multiple inheritance with classes to avoid complexity, but interfaces allow implementing multiple behaviors."
+    },
+    {
+      "id": 15,
+      "question": "What is polymorphism in Java?",
+      "answer": "Polymorphism means 'many forms'. It allows objects to be treated as instances of their parent class and enables one interface to be used with objects of different types."
+    },
+    {
+      "id": 16,
+      "question": "What are the two types of polymorphism?",
+      "answer": "Compile-time polymorphism (method overloading) where multiple methods have the same name but different parameters, and runtime polymorphism (method overriding) where a subclass provides a specific implementation of a parent method."
+    },
+    {
+      "id": 17,
+      "question": "What is method overloading?",
+      "answer": "Method overloading allows multiple methods with the same name in a class, differing in parameter type, number, or order. It's resolved at compile time and is a form of compile-time polymorphism."
+    },
+    {
+      "id": 18,
+      "question": "What is method overriding?",
+      "answer": "Method overriding occurs when a subclass provides a specific implementation of a method already defined in its parent class. It allows runtime polymorphism and must have the same signature."
+    },
+    {
+      "id": 19,
+      "question": "What is abstraction in Java?",
+      "answer": "Abstraction is the process of hiding unnecessary details and showing only essential features. It's achieved through abstract classes and interfaces, allowing focus on 'what' rather than 'how'."
+    },
+    {
+      "id": 20,
+      "question": "What is an abstract class?",
+      "answer": "An abstract class is a class declared with the 'abstract' keyword that cannot be instantiated. It can contain abstract methods (without implementation) and concrete methods, providing a template for subclasses."
+    },
+    {
+      "id": 21,
+      "question": "What is an interface in Java?",
+      "answer": "An interface is a reference type that defines a contract of methods without providing implementation. Classes implementing an interface must provide implementations for all its methods, enabling loose coupling."
+    },
+    {
+      "id": 22,
+      "question": "What is the difference between abstract classes and interfaces?",
+      "answer": "Abstract classes can have state (variables), constructors, and private methods; interfaces cannot. Abstract classes are used for 'is-a' relationships; interfaces for 'can-do' relationships. A class can implement multiple interfaces but extend only one class."
+    },
+    {
+      "id": 23,
+      "question": "What are packages in Java?",
+      "answer": "Packages are namespaces for organizing classes and interfaces. They prevent naming conflicts, organize code hierarchically, and control access visibility using access modifiers."
+    },
+    {
+      "id": 24,
+      "question": "What is the difference between import and static import?",
+      "answer": "import brings a class or entire package into scope, requiring the package prefix for access. static import brings static members (fields/methods) directly into scope, allowing use without class prefix."
+    },
+    {
+      "id": 25,
+      "question": "What are primitive data types in Java?",
+      "answer": "Java has 8 primitive types: byte (8-bit), short (16-bit), int (32-bit), long (64-bit), float (32-bit), double (64-bit), boolean (true/false), and char (16-bit Unicode character)."
+    },
+    {
+      "id": 26,
+      "question": "What are wrapper classes in Java?",
+      "answer": "Wrapper classes provide object representations for primitive types: Byte, Short, Integer, Long, Float, Double, Boolean, and Character. They enable primitives to be used with collections and provide utility methods."
+    },
+    {
+      "id": 27,
+      "question": "What is auto-boxing and unboxing?",
+      "answer": "Auto-boxing automatically converts primitive values to wrapper objects, while unboxing converts wrapper objects back to primitives. This occurs implicitly in Java 5 and later."
+    },
+    {
+      "id": 28,
+      "question": "What are arrays in Java?",
+      "answer": "Arrays are fixed-size collections of elements of the same type, accessed by index. They are objects in Java and have a length property. Arrays are zero-indexed and can be single or multi-dimensional."
+    },
+    {
+      "id": 29,
+      "question": "What is the String class and why is it immutable?",
+      "answer": "String is a class representing sequences of characters. It's immutable because once created, its value cannot be changed. This provides security, thread safety, and efficiency through string interning."
+    },
+    {
+      "id": 30,
+      "question": "What is the difference between String, StringBuilder, and StringBuffer?",
+      "answer": "String is immutable; StringBuilder is mutable and not thread-safe (faster for single-threaded); StringBuffer is mutable and thread-safe (slower due to synchronization). Use StringBuilder for better performance."
+    },
+    {
+      "id": 31,
+      "question": "What are collections in Java?",
+      "answer": "Collections are objects that group multiple elements into a single unit. The Java Collections Framework provides interfaces (Collection, List, Set, Map) and implementations (ArrayList, HashMap, etc.) for data organization."
+    },
+    {
+      "id": 32,
+      "question": "What is the difference between List, Set, and Map?",
+      "answer": "List is an ordered collection allowing duplicates. Set is an unordered collection without duplicates. Map is a key-value pair collection where keys are unique. All three are part of Collections Framework."
+    },
+    {
+      "id": 33,
+      "question": "What are the main implementations of List interface?",
+      "answer": "Main implementations are ArrayList (dynamic array, fast random access), LinkedList (doubly-linked list, fast insertion/deletion), and Vector (synchronized, legacy). ArrayList is most commonly used."
+    },
+    {
+      "id": 34,
+      "question": "What are the main implementations of Set interface?",
+      "answer": "Main implementations are HashSet (unordered, fastest), LinkedHashSet (maintains insertion order), and TreeSet (sorted order). HashMap uses hash table; TreeSet uses red-black tree internally."
+    },
+    {
+      "id": 35,
+      "question": "What are the main implementations of Map interface?",
+      "answer": "Main implementations are HashMap (unordered, fastest), LinkedHashMap (maintains insertion order), TreeMap (sorted by key), and Hashtable (synchronized, legacy). HashMap is most commonly used."
+    },
+    {
+      "id": 36,
+      "question": "What is the difference between HashMap and Hashtable?",
+      "answer": "HashMap is unsynchronized and allows null keys/values (faster, preferred). Hashtable is synchronized for thread safety and doesn't allow nulls (legacy, rarely used). Use ConcurrentHashMap for thread-safe maps."
+    },
+    {
+      "id": 37,
+      "question": "What is the difference between ArrayList and Vector?",
+      "answer": "ArrayList is unsynchronized, not thread-safe, and has better performance. Vector is synchronized, thread-safe, and slower (legacy). ArrayList is preferred; use Collections.synchronizedList() if needed."
+    },
+    {
+      "id": 38,
+      "question": "What is an iterator in Java?",
+      "answer": "An iterator is an interface providing methods to iterate over collection elements: hasNext() checks if more elements exist, next() returns the next element, and remove() removes the current element."
+    },
+    {
+      "id": 39,
+      "question": "What is the difference between Iterator and ListIterator?",
+      "answer": "Iterator can traverse collections in one direction. ListIterator extends Iterator and allows bidirectional traversal (forward and backward) and provides methods like previous() and add()."
+    },
+    {
+      "id": 40,
+      "question": "What are generics in Java?",
+      "answer": "Generics allow defining classes, interfaces, and methods with type parameters, providing type safety at compile time. They eliminate casting, enable better code reusability, and catch type errors early."
+    },
+    {
+      "id": 41,
+      "question": "What is type erasure in generics?",
+      "answer": "Type erasure is the process where generic type information is removed at runtime. Generic types are converted to their raw types, enabling backward compatibility with pre-generics code."
+    },
+    {
+      "id": 42,
+      "question": "What are wildcards in generics?",
+      "answer": "Wildcards (?) are used in generic programming to represent unknown types. Upper bounded wildcard (? extends T) restricts to T or its subclasses; lower bounded wildcard (? super T) restricts to T or its superclasses."
+    },
+    {
+      "id": 43,
+      "question": "What is exception handling in Java?",
+      "answer": "Exception handling is a mechanism for managing runtime errors. It uses try-catch-finally blocks to catch exceptions, execute recovery code, and ensure cleanup, preventing program crashes."
+    },
+    {
+      "id": 44,
+      "question": "What is the exception hierarchy in Java?",
+      "answer": "Exception hierarchy: Throwable is the base class. Checked exceptions (Exception subclasses except RuntimeException) must be caught or declared. Unchecked exceptions (RuntimeException and Error) need not be caught."
+    },
+    {
+      "id": 45,
+      "question": "What is the difference between checked and unchecked exceptions?",
+      "answer": "Checked exceptions must be caught or declared in method signature (e.g., IOException). Unchecked exceptions don't require catching (e.g., NullPointerException). Checked exceptions are for recoverable conditions."
+    },
+    {
+      "id": 46,
+      "question": "What is the finally block and when is it executed?",
+      "answer": "The finally block executes after try-catch blocks regardless of whether an exception occurred. It's used for cleanup operations like closing resources. It executes even if return statements exist in try-catch."
+    },
+    {
+      "id": 47,
+      "question": "What is try-with-resources in Java?",
+      "answer": "Try-with-resources (Java 7+) automatically closes resources implementing AutoCloseable. Syntax: try (Resource res = create()) { use res }. It eliminates manual finally blocks for resource management."
+    },
+    {
+      "id": 48,
+      "question": "What is the throw and throws keyword?",
+      "answer": "throw explicitly throws an exception: throw new Exception(). throws declares that a method may throw exceptions: public void method() throws Exception. Throws are used in method signatures."
+    },
+    {
+      "id": 49,
+      "question": "What is multithreading in Java?",
+      "answer": "Multithreading enables concurrent execution of multiple threads within a program. It improves performance, responsiveness, and resource utilization by executing tasks in parallel."
+    },
+    {
+      "id": 50,
+      "question": "How can we create threads in Java?",
+      "answer": "Two approaches: 1) Extend Thread class and override run(), 2) Implement Runnable interface and override run(). Runnable is preferred as it allows extending other classes (single inheritance limitation)."
+    },
+    {
+      "id": 51,
+      "question": "What is the difference between Thread.start() and Thread.run()?",
+      "answer": "start() creates a new thread and calls run() in that thread. Calling run() directly executes it in the current thread without creating a new thread. Always use start() for threading."
+    },
+    {
+      "id": 52,
+      "question": "What are thread states in Java?",
+      "answer": "Thread states are: New (created, not started), Runnable (ready to run), Running (executing), Blocked (waiting for lock), Waiting (waiting for notification), Timed Waiting (waiting with timeout), Terminated (finished)."
+    },
+    {
+      "id": 53,
+      "question": "What is synchronization in Java?",
+      "answer": "Synchronization prevents multiple threads from accessing shared resources simultaneously, avoiding race conditions and data inconsistency. It uses 'synchronized' keyword for methods or blocks."
+    },
+    {
+      "id": 54,
+      "question": "What is a monitor in Java?",
+      "answer": "A monitor is an internal mechanism that controls synchronized method/block access. Each object has an associated monitor lock; only one thread can hold it at a time, ensuring mutual exclusion."
+    },
+    {
+      "id": 55,
+      "question": "What is the difference between synchronized methods and blocks?",
+      "answer": "Synchronized methods lock the entire method. Synchronized blocks lock only a portion of code, being more granular and efficient. Blocks can lock specific objects while methods lock 'this'."
+    },
+    {
+      "id": 56,
+      "question": "What is a deadlock in multithreading?",
+      "answer": "A deadlock occurs when two or more threads wait for each other to release locks, resulting in infinite waiting. It requires mutual exclusion, hold and wait, no preemption, and circular wait conditions."
+    },
+    {
+      "id": 57,
+      "question": "How can deadlocks be avoided?",
+      "answer": "Avoid deadlocks by: ordering resource acquisition consistently, using timeouts on locks, avoiding nested locks, using higher-level utilities (ConcurrentHashMap), or using a single lock for multiple resources."
+    },
+    {
+      "id": 58,
+      "question": "What are volatile variables in Java?",
+      "answer": "Volatile variables ensure visibility of changes across threads. Reads and writes bypass cache and go directly to main memory, preventing visibility issues but without mutual exclusion protection."
+    },
+    {
+      "id": 59,
+      "question": "What is the volatile keyword vs synchronized?",
+      "answer": "volatile ensures visibility of changes but not atomicity; synchronized ensures both atomicity and visibility. Use volatile for simple flags; use synchronized or locks for complex operations."
+    },
+    {
+      "id": 60,
+      "question": "What is the wait() and notify() mechanism?",
+      "answer": "wait() suspends a thread until another thread calls notify() or notifyAll() on the same object. Used for inter-thread communication. Both must be called in synchronized context."
+    },
+    {
+      "id": 61,
+      "question": "What is the difference between notify() and notifyAll()?",
+      "answer": "notify() wakes one arbitrary waiting thread. notifyAll() wakes all waiting threads. notifyAll() is safer when multiple threads are waiting, but notify() is more efficient when only one thread needs to wake."
+    },
+    {
+      "id": 62,
+      "question": "What is a thread pool and why use it?",
+      "answer": "A thread pool maintains multiple reusable threads for executing tasks. It's efficient because thread creation is expensive. ExecutorService manages thread pools, improving resource utilization and performance."
+    },
+    {
+      "id": 63,
+      "question": "What is the Executor framework?",
+      "answer": "The Executor framework provides high-level interfaces for creating and managing threads. It decouples task submission from execution, enabling thread pool management, scheduling, and asynchronous task execution."
+    },
+    {
+      "id": 64,
+      "question": "What are common ExecutorService implementations?",
+      "answer": "Common implementations: FixedThreadPool (fixed size), CachedThreadPool (dynamic size, reuses threads), SingleThreadExecutor (single thread), ScheduledThreadPool (scheduled tasks), and ForkJoinPool (for parallel tasks)."
+    },
+    {
+      "id": 65,
+      "question": "What is the difference between Runnable and Callable?",
+      "answer": "Runnable has run() returning void. Callable has call() returning a value and can throw checked exceptions. Callable is used with ExecutorService.submit() which returns a Future."
+    },
+    {
+      "id": 66,
+      "question": "What is a Future in Java?",
+      "answer": "A Future represents the result of an asynchronous computation. It provides methods like get() (blocks until result), isDone() (checks completion), and cancel() (cancels execution)."
+    },
+    {
+      "id": 67,
+      "question": "What is garbage collection in Java?",
+      "answer": "Garbage collection automatically frees memory occupied by unreferenced objects. JVM runs the garbage collector periodically to reclaim memory, preventing manual memory management."
+    },
+    {
+      "id": 68,
+      "question": "What are garbage collection algorithms?",
+      "answer": "Common algorithms: Mark-and-Sweep (marks unreachable objects, sweeps them), Generational GC (separates objects by age), G1GC (partitions heap into regions). Different JVMs use different algorithms."
+    },
+    {
+      "id": 69,
+      "question": "What is memory leak in Java?",
+      "answer": "A memory leak occurs when objects are no longer needed but still referenced, preventing garbage collection. Common causes: not closing resources, circular references, or listeners not unregistered."
+    },
+    {
+      "id": 70,
+      "question": "What are constructors in Java?",
+      "answer": "Constructors are special methods called when objects are instantiated. They have the same name as the class, no return type, and initialize object state. Java provides a default no-argument constructor if none defined."
+    },
+    {
+      "id": 71,
+      "question": "What is constructor overloading?",
+      "answer": "Constructor overloading allows multiple constructors in a class with different parameter lists. It enables creating objects in different ways, improving flexibility."
+    },
+    {
+      "id": 72,
+      "question": "What is the super keyword?",
+      "answer": "super is used to refer to the parent class. It's used to call parent constructors (super()), access parent methods (super.method()), and in method overriding to call the overridden method."
+    },
+    {
+      "id": 73,
+      "question": "What is the this keyword?",
+      "answer": "this refers to the current object instance. It's used to distinguish instance variables from local variables, call other constructors (this()), and pass the current object as an argument."
+    },
+    {
+      "id": 74,
+      "question": "What are static variables and methods?",
+      "answer": "Static members belong to the class, not instances. Static variables are shared across all instances. Static methods can be called without creating objects but can only access static members."
+    },
+    {
+      "id": 75,
+      "question": "What is a static initializer block?",
+      "answer": "A static initializer block (static { }) is executed once when the class is loaded. It's used to initialize static variables or perform one-time operations, executing before instance initialization."
+    },
+    {
+      "id": 76,
+      "question": "What are inner classes in Java?",
+      "answer": "Inner classes are classes defined within other classes. They have access to outer class members. Types: member inner classes, static inner classes, local inner classes, and anonymous inner classes."
+    },
+    {
+      "id": 77,
+      "question": "What is an anonymous inner class?",
+      "answer": "An anonymous inner class is an unnamed class without a declaration, created and instantiated in a single expression. It's commonly used for implementing interfaces or extending classes with minimal code."
+    },
+    {
+      "id": 78,
+      "question": "What are lambda expressions in Java?",
+      "answer": "Lambda expressions (Java 8+) provide a concise syntax for implementing functional interfaces. Syntax: (parameters) -> expression or (parameters) -> { statements }. They enable functional programming style."
+    },
+    {
+      "id": 79,
+      "question": "What are functional interfaces?",
+      "answer": "Functional interfaces have exactly one abstract method. Examples: Runnable, Callable, Comparator. Lambda expressions are implementations of functional interfaces. @FunctionalInterface annotation marks them."
+    },
+    {
+      "id": 80,
+      "question": "What is the Stream API in Java?",
+      "answer": "Stream API (Java 8+) enables functional-style operations on collections. Streams support filtering, mapping, reducing, and terminal operations. They're lazy and enable efficient data processing."
+    },
+    {
+      "id": 81,
+      "question": "What are intermediate and terminal operations in streams?",
+      "answer": "Intermediate operations (filter, map, sort) return streams and are lazy (not executed until needed). Terminal operations (collect, forEach, reduce) consume streams and trigger execution."
+    },
+    {
+      "id": 82,
+      "question": "What is the difference between map() and flatMap()?",
+      "answer": "map() transforms each element into another element, returning Stream<T>. flatMap() maps each element to a stream and flattens results, returning Stream<T>. flatMap() handles nested streams."
+    },
+    {
+      "id": 83,
+      "question": "What is Optional in Java?",
+      "answer": "Optional is a container object that may or may not contain a value (Java 8+). It prevents NullPointerException and encourages explicit null handling with methods like isPresent(), orElse(), and orElseThrow()."
+    },
+    {
+      "id": 84,
+      "question": "What is serialization in Java?",
+      "answer": "Serialization converts objects into a byte stream for storage or transmission. Classes must implement Serializable interface. Deserialization reconstructs objects from byte streams."
+    },
+    {
+      "id": 85,
+      "question": "What is the serialVersionUID in Java?",
+      "answer": "serialVersionUID is a version identifier for serialized objects. It ensures compatibility during deserialization. If class changes, mismatched IDs cause InvalidClassException. It's a static long field."
+    },
+    {
+      "id": 86,
+      "question": "What are transient variables?",
+      "answer": "Transient variables are excluded from serialization. They're not serialized and are initialized to default values upon deserialization. Useful for temporary or sensitive data."
+    },
+    {
+      "id": 87,
+      "question": "What is reflection in Java?",
+      "answer": "Reflection is the ability to inspect and manipulate classes, methods, fields, and objects at runtime. It enables dynamic method invocation, object creation, and framework development but has performance overhead."
+    },
+    {
+      "id": 88,
+      "question": "What are annotations in Java?",
+      "answer": "Annotations are metadata providing information about code but not directly affecting code execution. Examples: @Override, @Deprecated, @SuppressWarnings. Custom annotations can be created for frameworks."
+    },
+    {
+      "id": 89,
+      "question": "What is the @FunctionalInterface annotation?",
+      "answer": "@FunctionalInterface marks an interface as a functional interface with exactly one abstract method. It's optional but enables compile-time checking, ensuring only one abstract method exists."
+    },
+    {
+      "id": 90,
+      "question": "What is the difference between composition and inheritance?",
+      "answer": "Inheritance creates 'is-a' relationships; objects inherit properties from parent class. Composition creates 'has-a' relationships; objects contain other objects. Composition is more flexible and avoids tight coupling."
+    },
+    {
+      "id": 91,
+      "question": "What is the Comparator interface?",
+      "answer": "Comparator defines a strategy for comparing objects. Its compare() method returns negative (less than), zero (equal), or positive (greater than). Used for sorting and ordering custom objects."
+    },
+    {
+      "id": 92,
+      "question": "What is the Comparable interface?",
+      "answer": "Comparable enables natural ordering of objects. Classes implement compareTo() returning comparison results. Only one natural ordering per class. Used with sort() methods."
+    },
+    {
+      "id": 93,
+      "question": "What is the difference between Comparable and Comparator?",
+      "answer": "Comparable defines natural ordering within the class itself. Comparator defines external comparison strategies, allowing multiple orderings. Comparator is more flexible for varying sort orders."
+    },
+    {
+      "id": 94,
+      "question": "What is the clone() method and how does deep copy differ from shallow copy?",
+      "answer": "clone() creates a copy of an object. Shallow copy copies references (still shares mutable objects); deep copy recursively copies all referenced objects. Override clone() carefully for proper implementation."
+    },
+    {
+      "id": 95,
+      "question": "What is immutability in Java?",
+      "answer": "Immutable objects cannot be modified after creation. Benefits: thread safety, security, and efficient caching. Create immutability by making fields final, excluding setters, and defending against mutable references."
+    },
+    {
+      "id": 96,
+      "question": "What is Java Design Patterns?",
+      "answer": "Design patterns are reusable solutions to common problems in software design. Categories: Creational (object creation), Structural (object composition), Behavioral (object interaction). Examples: Singleton, Factory, Observer."
+    },
+    {
+      "id": 97,
+      "question": "What is the Singleton design pattern?",
+      "answer": "Singleton ensures a class has only one instance and provides global access. Implementation: private constructor, static instance variable, and getInstance() method. Used for resource management like database connections."
+    },
+    {
+      "id": 98,
+      "question": "What is the Factory design pattern?",
+      "answer": "Factory creates objects without specifying exact classes. It provides an interface for object creation, delegating instantiation to subclasses. Benefits: decoupling, flexibility, and centralized creation logic."
+    },
+    {
+      "id": 99,
+      "question": "What is the Observer design pattern?",
+      "answer": "Observer defines one-to-many relationships where multiple observers respond to changes in a subject. Subjects notify observers of state changes. Used in event handling systems and MVC architectures."
+    },
+    {
+      "id": 100,
+      "question": "What are best practices in Java development?",
+      "answer": "Best practices include: using meaningful names, following naming conventions, proper exception handling, writing unit tests, avoiding code duplication, using design patterns, securing sensitive data, and regular code reviews."
+    }
+  ]
+}

@@ -1,0 +1,6521 @@
+{
+  "metadata": {
+    "total_questions": 500,
+    "types": [
+      "Syllogism",
+      "Analogy",
+      "Number Series",
+      "Logical Deduction",
+      "Statement & Conclusion",
+      "Coded Relations",
+      "Venn Diagram Logic",
+      "Problem Solving",
+      "Conditional Statements",
+      "Argument Analysis"
+    ],
+    "difficulty": "Moderate",
+    "description": "500 unique logical reasoning questions with answers and detailed explanations"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "Syllogism",
+      "question": "All mammals are animals. All dogs are mammals. Therefore, all dogs are ___?",
+      "options": [
+        "A) Mammals",
+        "B) Animals",
+        "C) Carnivores",
+        "D) Pets"
+      ],
+      "answer": "B",
+      "explanation": "Using logical deduction"
+    },
+    {
+      "id": 2,
+      "type": "Syllogism",
+      "question": "No reptiles are warm-blooded. Snakes are reptiles. Therefore, snakes are ___?",
+      "options": [
+        "A) Cold-blooded",
+        "B) Warm-blooded",
+        "C) Invertebrates",
+        "D) Amphibians"
+      ],
+      "answer": "A",
+      "explanation": "Deductive reasoning"
+    },
+    {
+      "id": 3,
+      "type": "Syllogism",
+      "question": "All roses are flowers. Some flowers fade quickly. Therefore ___?",
+      "options": [
+        "A) All roses fade",
+        "B) Some roses fade",
+        "C) No roses fade",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Partial quantification"
+    },
+    {
+      "id": 4,
+      "type": "Syllogism",
+      "question": "All lawyers are educated. John is educated. Therefore, John is ___?",
+      "options": [
+        "A) Definitely a lawyer",
+        "B) Possibly a lawyer",
+        "C) Not a lawyer",
+        "D) A teacher"
+      ],
+      "answer": "B",
+      "explanation": "Converse fallacy"
+    },
+    {
+      "id": 5,
+      "type": "Syllogism",
+      "question": "Some poets are artists. All artists are creative. Therefore ___?",
+      "options": [
+        "A) All poets are creative",
+        "B) Some poets are creative",
+        "C) No poets are creative",
+        "D) All creative people are poets"
+      ],
+      "answer": "B",
+      "explanation": "Transitive property"
+    },
+    {
+      "id": 6,
+      "type": "Syllogism",
+      "question": "No fish are mammals. Whales are mammals. Therefore ___?",
+      "options": [
+        "A) Whales are fish",
+        "B) Whales are not fish",
+        "C) Some whales are fish",
+        "D) Fish are mammals"
+      ],
+      "answer": "B",
+      "explanation": "Negation logic"
+    },
+    {
+      "id": 7,
+      "type": "Syllogism",
+      "question": "All fruits contain seeds. Bananas are fruits. Therefore ___?",
+      "options": [
+        "A) Bananas contain seeds",
+        "B) Seeds are fruits",
+        "C) Fruits are bananas",
+        "D) Bananas are vegetables"
+      ],
+      "answer": "A",
+      "explanation": "Direct inference"
+    },
+    {
+      "id": 8,
+      "type": "Syllogism",
+      "question": "Some students are athletes. All athletes are disciplined. Therefore ___?",
+      "options": [
+        "A) All students are disciplined",
+        "B) Some students are disciplined",
+        "C) No students are disciplined",
+        "D) All disciplined people are students"
+      ],
+      "answer": "B",
+      "explanation": "Subset relation"
+    },
+    {
+      "id": 9,
+      "type": "Syllogism",
+      "question": "All judges are fair-minded. Some judges are politicians. Therefore ___?",
+      "options": [
+        "A) All politicians are fair-minded",
+        "B) Some politicians are fair-minded",
+        "C) No politicians are fair-minded",
+        "D) All fair-minded people are judges"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 10,
+      "type": "Syllogism",
+      "question": "No cowards are heroes. Some soldiers are heroes. Therefore ___?",
+      "options": [
+        "A) Some soldiers are cowards",
+        "B) No soldiers are cowards",
+        "C) All soldiers are cowards",
+        "D) Some soldiers are not cowards"
+      ],
+      "answer": "D",
+      "explanation": "Negated membership"
+    },
+    {
+      "id": 11,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 12,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 13,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 14,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 15,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 16,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 17,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 18,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 19,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 20,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 21,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 22,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 23,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 24,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 25,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 26,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 27,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 28,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 29,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 30,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 31,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 32,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 33,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 34,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 35,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 36,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 37,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 38,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 39,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 40,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 41,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 42,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 43,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 44,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 45,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 46,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 47,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 48,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 49,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 50,
+      "type": "Syllogism",
+      "question": "All X are Y. All Y are Z. Therefore all X are Z.",
+      "options": [
+        "A) Correct",
+        "B) Incorrect",
+        "C) Uncertain",
+        "D) Possibly"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 51,
+      "type": "Analogy",
+      "question": "Book is to Read as Food is to ___?",
+      "options": [
+        "A) Eat",
+        "B) Cook",
+        "C) Buy",
+        "D) Smell"
+      ],
+      "answer": "A",
+      "explanation": "Primary action relationship"
+    },
+    {
+      "id": 52,
+      "type": "Analogy",
+      "question": "Lion is to Roar as Duck is to ___?",
+      "options": [
+        "A) Swim",
+        "B) Quack",
+        "C) Fly",
+        "D) Waddle"
+      ],
+      "answer": "B",
+      "explanation": "Characteristic sound"
+    },
+    {
+      "id": 53,
+      "type": "Analogy",
+      "question": "Thermometer is to Temperature as Barometer is to ___?",
+      "options": [
+        "A) Heat",
+        "B) Pressure",
+        "C) Speed",
+        "D) Distance"
+      ],
+      "answer": "B",
+      "explanation": "Measuring instruments"
+    },
+    {
+      "id": 54,
+      "type": "Analogy",
+      "question": "Painter is to Canvas as Sculptor is to ___?",
+      "options": [
+        "A) Stone",
+        "B) Paint",
+        "C) Brush",
+        "D) Gallery"
+      ],
+      "answer": "A",
+      "explanation": "Artist and medium"
+    },
+    {
+      "id": 55,
+      "type": "Analogy",
+      "question": "Eye is to Sight as Ear is to ___?",
+      "options": [
+        "A) Sound",
+        "B) Music",
+        "C) Hearing",
+        "D) Noise"
+      ],
+      "answer": "C",
+      "explanation": "Sensory organs"
+    },
+    {
+      "id": 56,
+      "type": "Analogy",
+      "question": "Engine is to Car as Heart is to ___?",
+      "options": [
+        "A) Blood",
+        "B) Body",
+        "C) Pulse",
+        "D) Veins"
+      ],
+      "answer": "B",
+      "explanation": "Vital organs"
+    },
+    {
+      "id": 57,
+      "type": "Analogy",
+      "question": "Microscope is to Small as Telescope is to ___?",
+      "options": [
+        "A) Big",
+        "B) Far",
+        "C) Near",
+        "D) Distant"
+      ],
+      "answer": "B",
+      "explanation": "Scale perception"
+    },
+    {
+      "id": 58,
+      "type": "Analogy",
+      "question": "Knife is to Cut as Hammer is to ___?",
+      "options": [
+        "A) Hit",
+        "B) Pound",
+        "C) Break",
+        "D) Nail"
+      ],
+      "answer": "D",
+      "explanation": "Tool function"
+    },
+    {
+      "id": 59,
+      "type": "Analogy",
+      "question": "Grammar is to Language as Rules is to ___?",
+      "options": [
+        "A) Game",
+        "B) Sport",
+        "C) Play",
+        "D) Team"
+      ],
+      "answer": "A",
+      "explanation": "Structural rules"
+    },
+    {
+      "id": 60,
+      "type": "Analogy",
+      "question": "Soldier is to Army as Player is to ___?",
+      "options": [
+        "A) Ball",
+        "B) Team",
+        "C) Coach",
+        "D) Sport"
+      ],
+      "answer": "B",
+      "explanation": "Member and group"
+    },
+    {
+      "id": 61,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 62,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 63,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 64,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 65,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 66,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 67,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 68,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 69,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 70,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 71,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 72,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 73,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 74,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 75,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 76,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 77,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 78,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 79,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 80,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 81,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 82,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 83,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 84,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 85,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 86,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 87,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 88,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 89,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 90,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 91,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 92,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 93,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 94,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 95,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 96,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 97,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 98,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 99,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 100,
+      "type": "Analogy",
+      "question": "Pen is to Write as Brush is to ___?",
+      "options": [
+        "A) Draw",
+        "B) Paint",
+        "C) Clean",
+        "D) Wash"
+      ],
+      "answer": "B",
+      "explanation": "Tool and action"
+    },
+    {
+      "id": 101,
+      "type": "Number Series",
+      "question": "2, 4, 8, 16, 32, ___?",
+      "options": [
+        "A) 48",
+        "B) 56",
+        "C) 64",
+        "D) 80"
+      ],
+      "answer": "C",
+      "explanation": "Multiply by 2"
+    },
+    {
+      "id": 102,
+      "type": "Number Series",
+      "question": "3, 6, 9, 12, 15, ___?",
+      "options": [
+        "A) 18",
+        "B) 19",
+        "C) 20",
+        "D) 21"
+      ],
+      "answer": "A",
+      "explanation": "Add 3"
+    },
+    {
+      "id": 103,
+      "type": "Number Series",
+      "question": "1, 1, 2, 3, 5, 8, 13, ___?",
+      "options": [
+        "A) 18",
+        "B) 20",
+        "C) 21",
+        "D) 23"
+      ],
+      "answer": "C",
+      "explanation": "Fibonacci sequence"
+    },
+    {
+      "id": 104,
+      "type": "Number Series",
+      "question": "2, 5, 10, 17, 26, ___?",
+      "options": [
+        "A) 35",
+        "B) 37",
+        "C) 39",
+        "D) 41"
+      ],
+      "answer": "B",
+      "explanation": "Progressive differences"
+    },
+    {
+      "id": 105,
+      "type": "Number Series",
+      "question": "100, 50, 25, 12.5, ___?",
+      "options": [
+        "A) 5.25",
+        "B) 6.25",
+        "C) 6.5",
+        "D) 7.5"
+      ],
+      "answer": "B",
+      "explanation": "Divide by 2"
+    },
+    {
+      "id": 106,
+      "type": "Number Series",
+      "question": "1, 4, 9, 16, 25, ___?",
+      "options": [
+        "A) 35",
+        "B) 36",
+        "C) 40",
+        "D) 45"
+      ],
+      "answer": "B",
+      "explanation": "Perfect squares"
+    },
+    {
+      "id": 107,
+      "type": "Number Series",
+      "question": "2, 3, 5, 7, 11, ___?",
+      "options": [
+        "A) 12",
+        "B) 13",
+        "C) 14",
+        "D) 15"
+      ],
+      "answer": "B",
+      "explanation": "Prime numbers"
+    },
+    {
+      "id": 108,
+      "type": "Number Series",
+      "question": "5, 10, 20, 40, 80, ___?",
+      "options": [
+        "A) 120",
+        "B) 140",
+        "C) 160",
+        "D) 180"
+      ],
+      "answer": "C",
+      "explanation": "Multiply by 2"
+    },
+    {
+      "id": 109,
+      "type": "Number Series",
+      "question": "1, 3, 6, 10, 15, ___?",
+      "options": [
+        "A) 20",
+        "B) 21",
+        "C) 22",
+        "D) 25"
+      ],
+      "answer": "B",
+      "explanation": "Triangular numbers"
+    },
+    {
+      "id": 110,
+      "type": "Number Series",
+      "question": "7, 14, 28, 56, ___?",
+      "options": [
+        "A) 100",
+        "B) 112",
+        "C) 120",
+        "D) 128"
+      ],
+      "answer": "B",
+      "explanation": "Multiply by 2"
+    },
+    {
+      "id": 111,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 112,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 113,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 114,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 115,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 116,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 117,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 118,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 119,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 120,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 121,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 122,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 123,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 124,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 125,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 126,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 127,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 128,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 129,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 130,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 131,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 132,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 133,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 134,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 135,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 136,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 137,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 138,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 139,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 140,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 141,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 142,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 143,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 144,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 145,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 146,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 147,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 148,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 149,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 150,
+      "type": "Number Series",
+      "question": "1, 2, 4, 8, 16, ___?",
+      "options": [
+        "A) 24",
+        "B) 28",
+        "C) 32",
+        "D) 36"
+      ],
+      "answer": "C",
+      "explanation": "Powers of 2"
+    },
+    {
+      "id": 151,
+      "type": "Logical Deduction",
+      "question": "If all X are Y, and all Y are Z, what about X and Z?",
+      "options": [
+        "A) All X are Z",
+        "B) Some X are Z",
+        "C) No X are Z",
+        "D) Unrelated"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 152,
+      "type": "Logical Deduction",
+      "question": "If something is blue, it is cold. Sky is blue. Therefore ___?",
+      "options": [
+        "A) Sky is cold",
+        "B) Sky might be cold",
+        "C) Sky is not cold",
+        "D) Blue things are sky"
+      ],
+      "answer": "A",
+      "explanation": "Modus Ponens"
+    },
+    {
+      "id": 153,
+      "type": "Logical Deduction",
+      "question": "Either rain or sunny. No rain. Therefore ___?",
+      "options": [
+        "A) Sunny",
+        "B) Might be sunny",
+        "C) Cloudy",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Disjunctive Syllogism"
+    },
+    {
+      "id": 154,
+      "type": "Logical Deduction",
+      "question": "If store open, customers come. No customers came. Therefore ___?",
+      "options": [
+        "A) Store open",
+        "B) Store closed",
+        "C) Customers don't like store",
+        "D) Store has no goods"
+      ],
+      "answer": "B",
+      "explanation": "Modus Tollens"
+    },
+    {
+      "id": 155,
+      "type": "Logical Deduction",
+      "question": "All who study pass. John passed. John studied?",
+      "options": [
+        "A) Yes",
+        "B) Probably",
+        "C) No",
+        "D) He cheated"
+      ],
+      "answer": "C",
+      "explanation": "Affirming Consequent"
+    },
+    {
+      "id": 156,
+      "type": "Logical Deduction",
+      "question": "If raining, ground wet. Ground wet. Therefore ___?",
+      "options": [
+        "A) Raining",
+        "B) Might be raining",
+        "C) Not raining",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Consequent fallacy"
+    },
+    {
+      "id": 157,
+      "type": "Logical Deduction",
+      "question": "No athletes lazy. Hard workers non-lazy. Therefore ___?",
+      "options": [
+        "A) All athletes work hard",
+        "B) Some athletes work hard",
+        "C) Cannot determine",
+        "D) No athletes work hard"
+      ],
+      "answer": "C",
+      "explanation": "Insufficient info"
+    },
+    {
+      "id": 158,
+      "type": "Logical Deduction",
+      "question": "If study, pass. If pass, graduate. Studied. Therefore ___?",
+      "options": [
+        "A) Graduate",
+        "B) Might graduate",
+        "C) Pass",
+        "D) Passed"
+      ],
+      "answer": "A",
+      "explanation": "Chain of implications"
+    },
+    {
+      "id": 159,
+      "type": "Logical Deduction",
+      "question": "All A are B. All B are C. Some C are D. A and D?",
+      "options": [
+        "A) All A are D",
+        "B) Some A are D",
+        "C) No A are D",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Quantifier scope"
+    },
+    {
+      "id": 160,
+      "type": "Logical Deduction",
+      "question": "Either A or B. A false. Therefore ___?",
+      "options": [
+        "A) B true",
+        "B) B false",
+        "C) Both true",
+        "D) Both false"
+      ],
+      "answer": "A",
+      "explanation": "Exclusive OR"
+    },
+    {
+      "id": 161,
+      "type": "Logical Deduction",
+      "question": "If all X are Y, and all Y are Z, what about X and Z?",
+      "options": [
+        "A) All X are Z",
+        "B) Some X are Z",
+        "C) No X are Z",
+        "D) Unrelated"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 162,
+      "type": "Logical Deduction",
+      "question": "If something is blue, it is cold. Sky is blue. Therefore ___?",
+      "options": [
+        "A) Sky is cold",
+        "B) Sky might be cold",
+        "C) Sky is not cold",
+        "D) Blue things are sky"
+      ],
+      "answer": "A",
+      "explanation": "Modus Ponens"
+    },
+    {
+      "id": 163,
+      "type": "Logical Deduction",
+      "question": "Either rain or sunny. No rain. Therefore ___?",
+      "options": [
+        "A) Sunny",
+        "B) Might be sunny",
+        "C) Cloudy",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Disjunctive Syllogism"
+    },
+    {
+      "id": 164,
+      "type": "Logical Deduction",
+      "question": "If store open, customers come. No customers came. Therefore ___?",
+      "options": [
+        "A) Store open",
+        "B) Store closed",
+        "C) Customers don't like store",
+        "D) Store has no goods"
+      ],
+      "answer": "B",
+      "explanation": "Modus Tollens"
+    },
+    {
+      "id": 165,
+      "type": "Logical Deduction",
+      "question": "All who study pass. John passed. John studied?",
+      "options": [
+        "A) Yes",
+        "B) Probably",
+        "C) No",
+        "D) He cheated"
+      ],
+      "answer": "C",
+      "explanation": "Affirming Consequent"
+    },
+    {
+      "id": 166,
+      "type": "Logical Deduction",
+      "question": "If raining, ground wet. Ground wet. Therefore ___?",
+      "options": [
+        "A) Raining",
+        "B) Might be raining",
+        "C) Not raining",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Consequent fallacy"
+    },
+    {
+      "id": 167,
+      "type": "Logical Deduction",
+      "question": "No athletes lazy. Hard workers non-lazy. Therefore ___?",
+      "options": [
+        "A) All athletes work hard",
+        "B) Some athletes work hard",
+        "C) Cannot determine",
+        "D) No athletes work hard"
+      ],
+      "answer": "C",
+      "explanation": "Insufficient info"
+    },
+    {
+      "id": 168,
+      "type": "Logical Deduction",
+      "question": "If study, pass. If pass, graduate. Studied. Therefore ___?",
+      "options": [
+        "A) Graduate",
+        "B) Might graduate",
+        "C) Pass",
+        "D) Passed"
+      ],
+      "answer": "A",
+      "explanation": "Chain of implications"
+    },
+    {
+      "id": 169,
+      "type": "Logical Deduction",
+      "question": "All A are B. All B are C. Some C are D. A and D?",
+      "options": [
+        "A) All A are D",
+        "B) Some A are D",
+        "C) No A are D",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Quantifier scope"
+    },
+    {
+      "id": 170,
+      "type": "Logical Deduction",
+      "question": "Either A or B. A false. Therefore ___?",
+      "options": [
+        "A) B true",
+        "B) B false",
+        "C) Both true",
+        "D) Both false"
+      ],
+      "answer": "A",
+      "explanation": "Exclusive OR"
+    },
+    {
+      "id": 171,
+      "type": "Logical Deduction",
+      "question": "If all X are Y, and all Y are Z, what about X and Z?",
+      "options": [
+        "A) All X are Z",
+        "B) Some X are Z",
+        "C) No X are Z",
+        "D) Unrelated"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 172,
+      "type": "Logical Deduction",
+      "question": "If something is blue, it is cold. Sky is blue. Therefore ___?",
+      "options": [
+        "A) Sky is cold",
+        "B) Sky might be cold",
+        "C) Sky is not cold",
+        "D) Blue things are sky"
+      ],
+      "answer": "A",
+      "explanation": "Modus Ponens"
+    },
+    {
+      "id": 173,
+      "type": "Logical Deduction",
+      "question": "Either rain or sunny. No rain. Therefore ___?",
+      "options": [
+        "A) Sunny",
+        "B) Might be sunny",
+        "C) Cloudy",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Disjunctive Syllogism"
+    },
+    {
+      "id": 174,
+      "type": "Logical Deduction",
+      "question": "If store open, customers come. No customers came. Therefore ___?",
+      "options": [
+        "A) Store open",
+        "B) Store closed",
+        "C) Customers don't like store",
+        "D) Store has no goods"
+      ],
+      "answer": "B",
+      "explanation": "Modus Tollens"
+    },
+    {
+      "id": 175,
+      "type": "Logical Deduction",
+      "question": "All who study pass. John passed. John studied?",
+      "options": [
+        "A) Yes",
+        "B) Probably",
+        "C) No",
+        "D) He cheated"
+      ],
+      "answer": "C",
+      "explanation": "Affirming Consequent"
+    },
+    {
+      "id": 176,
+      "type": "Logical Deduction",
+      "question": "If raining, ground wet. Ground wet. Therefore ___?",
+      "options": [
+        "A) Raining",
+        "B) Might be raining",
+        "C) Not raining",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Consequent fallacy"
+    },
+    {
+      "id": 177,
+      "type": "Logical Deduction",
+      "question": "No athletes lazy. Hard workers non-lazy. Therefore ___?",
+      "options": [
+        "A) All athletes work hard",
+        "B) Some athletes work hard",
+        "C) Cannot determine",
+        "D) No athletes work hard"
+      ],
+      "answer": "C",
+      "explanation": "Insufficient info"
+    },
+    {
+      "id": 178,
+      "type": "Logical Deduction",
+      "question": "If study, pass. If pass, graduate. Studied. Therefore ___?",
+      "options": [
+        "A) Graduate",
+        "B) Might graduate",
+        "C) Pass",
+        "D) Passed"
+      ],
+      "answer": "A",
+      "explanation": "Chain of implications"
+    },
+    {
+      "id": 179,
+      "type": "Logical Deduction",
+      "question": "All A are B. All B are C. Some C are D. A and D?",
+      "options": [
+        "A) All A are D",
+        "B) Some A are D",
+        "C) No A are D",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Quantifier scope"
+    },
+    {
+      "id": 180,
+      "type": "Logical Deduction",
+      "question": "Either A or B. A false. Therefore ___?",
+      "options": [
+        "A) B true",
+        "B) B false",
+        "C) Both true",
+        "D) Both false"
+      ],
+      "answer": "A",
+      "explanation": "Exclusive OR"
+    },
+    {
+      "id": 181,
+      "type": "Logical Deduction",
+      "question": "If all X are Y, and all Y are Z, what about X and Z?",
+      "options": [
+        "A) All X are Z",
+        "B) Some X are Z",
+        "C) No X are Z",
+        "D) Unrelated"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 182,
+      "type": "Logical Deduction",
+      "question": "If something is blue, it is cold. Sky is blue. Therefore ___?",
+      "options": [
+        "A) Sky is cold",
+        "B) Sky might be cold",
+        "C) Sky is not cold",
+        "D) Blue things are sky"
+      ],
+      "answer": "A",
+      "explanation": "Modus Ponens"
+    },
+    {
+      "id": 183,
+      "type": "Logical Deduction",
+      "question": "Either rain or sunny. No rain. Therefore ___?",
+      "options": [
+        "A) Sunny",
+        "B) Might be sunny",
+        "C) Cloudy",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Disjunctive Syllogism"
+    },
+    {
+      "id": 184,
+      "type": "Logical Deduction",
+      "question": "If store open, customers come. No customers came. Therefore ___?",
+      "options": [
+        "A) Store open",
+        "B) Store closed",
+        "C) Customers don't like store",
+        "D) Store has no goods"
+      ],
+      "answer": "B",
+      "explanation": "Modus Tollens"
+    },
+    {
+      "id": 185,
+      "type": "Logical Deduction",
+      "question": "All who study pass. John passed. John studied?",
+      "options": [
+        "A) Yes",
+        "B) Probably",
+        "C) No",
+        "D) He cheated"
+      ],
+      "answer": "C",
+      "explanation": "Affirming Consequent"
+    },
+    {
+      "id": 186,
+      "type": "Logical Deduction",
+      "question": "If raining, ground wet. Ground wet. Therefore ___?",
+      "options": [
+        "A) Raining",
+        "B) Might be raining",
+        "C) Not raining",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Consequent fallacy"
+    },
+    {
+      "id": 187,
+      "type": "Logical Deduction",
+      "question": "No athletes lazy. Hard workers non-lazy. Therefore ___?",
+      "options": [
+        "A) All athletes work hard",
+        "B) Some athletes work hard",
+        "C) Cannot determine",
+        "D) No athletes work hard"
+      ],
+      "answer": "C",
+      "explanation": "Insufficient info"
+    },
+    {
+      "id": 188,
+      "type": "Logical Deduction",
+      "question": "If study, pass. If pass, graduate. Studied. Therefore ___?",
+      "options": [
+        "A) Graduate",
+        "B) Might graduate",
+        "C) Pass",
+        "D) Passed"
+      ],
+      "answer": "A",
+      "explanation": "Chain of implications"
+    },
+    {
+      "id": 189,
+      "type": "Logical Deduction",
+      "question": "All A are B. All B are C. Some C are D. A and D?",
+      "options": [
+        "A) All A are D",
+        "B) Some A are D",
+        "C) No A are D",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Quantifier scope"
+    },
+    {
+      "id": 190,
+      "type": "Logical Deduction",
+      "question": "Either A or B. A false. Therefore ___?",
+      "options": [
+        "A) B true",
+        "B) B false",
+        "C) Both true",
+        "D) Both false"
+      ],
+      "answer": "A",
+      "explanation": "Exclusive OR"
+    },
+    {
+      "id": 191,
+      "type": "Logical Deduction",
+      "question": "If all X are Y, and all Y are Z, what about X and Z?",
+      "options": [
+        "A) All X are Z",
+        "B) Some X are Z",
+        "C) No X are Z",
+        "D) Unrelated"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity"
+    },
+    {
+      "id": 192,
+      "type": "Logical Deduction",
+      "question": "If something is blue, it is cold. Sky is blue. Therefore ___?",
+      "options": [
+        "A) Sky is cold",
+        "B) Sky might be cold",
+        "C) Sky is not cold",
+        "D) Blue things are sky"
+      ],
+      "answer": "A",
+      "explanation": "Modus Ponens"
+    },
+    {
+      "id": 193,
+      "type": "Logical Deduction",
+      "question": "Either rain or sunny. No rain. Therefore ___?",
+      "options": [
+        "A) Sunny",
+        "B) Might be sunny",
+        "C) Cloudy",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Disjunctive Syllogism"
+    },
+    {
+      "id": 194,
+      "type": "Logical Deduction",
+      "question": "If store open, customers come. No customers came. Therefore ___?",
+      "options": [
+        "A) Store open",
+        "B) Store closed",
+        "C) Customers don't like store",
+        "D) Store has no goods"
+      ],
+      "answer": "B",
+      "explanation": "Modus Tollens"
+    },
+    {
+      "id": 195,
+      "type": "Logical Deduction",
+      "question": "All who study pass. John passed. John studied?",
+      "options": [
+        "A) Yes",
+        "B) Probably",
+        "C) No",
+        "D) He cheated"
+      ],
+      "answer": "C",
+      "explanation": "Affirming Consequent"
+    },
+    {
+      "id": 196,
+      "type": "Logical Deduction",
+      "question": "If raining, ground wet. Ground wet. Therefore ___?",
+      "options": [
+        "A) Raining",
+        "B) Might be raining",
+        "C) Not raining",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Consequent fallacy"
+    },
+    {
+      "id": 197,
+      "type": "Logical Deduction",
+      "question": "No athletes lazy. Hard workers non-lazy. Therefore ___?",
+      "options": [
+        "A) All athletes work hard",
+        "B) Some athletes work hard",
+        "C) Cannot determine",
+        "D) No athletes work hard"
+      ],
+      "answer": "C",
+      "explanation": "Insufficient info"
+    },
+    {
+      "id": 198,
+      "type": "Logical Deduction",
+      "question": "If study, pass. If pass, graduate. Studied. Therefore ___?",
+      "options": [
+        "A) Graduate",
+        "B) Might graduate",
+        "C) Pass",
+        "D) Passed"
+      ],
+      "answer": "A",
+      "explanation": "Chain of implications"
+    },
+    {
+      "id": 199,
+      "type": "Logical Deduction",
+      "question": "All A are B. All B are C. Some C are D. A and D?",
+      "options": [
+        "A) All A are D",
+        "B) Some A are D",
+        "C) No A are D",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Quantifier scope"
+    },
+    {
+      "id": 200,
+      "type": "Logical Deduction",
+      "question": "Either A or B. A false. Therefore ___?",
+      "options": [
+        "A) B true",
+        "B) B false",
+        "C) Both true",
+        "D) Both false"
+      ],
+      "answer": "A",
+      "explanation": "Exclusive OR"
+    },
+    {
+      "id": 201,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 202,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 203,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 204,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 205,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 206,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 207,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 208,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 209,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 210,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 211,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 212,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 213,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 214,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 215,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 216,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 217,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 218,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 219,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 220,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 221,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 222,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 223,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 224,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 225,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 226,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 227,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 228,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 229,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 230,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 231,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 232,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 233,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 234,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 235,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 236,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 237,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 238,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 239,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 240,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 241,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 242,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 243,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 244,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 245,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 246,
+      "type": "Statement & Conclusion",
+      "question": "All good students hardworking. Conclusion: All hardworking are good students.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially true"
+      ],
+      "answer": "B",
+      "explanation": "Converse error"
+    },
+    {
+      "id": 247,
+      "type": "Statement & Conclusion",
+      "question": "Some doctors wealthy. Conclusion: Some wealthy are doctors.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Uncertain"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric relation"
+    },
+    {
+      "id": 248,
+      "type": "Statement & Conclusion",
+      "question": "No wise person foolish. Conclusion: No foolish person wise.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) Cannot determine",
+        "D) Partially"
+      ],
+      "answer": "A",
+      "explanation": "Symmetric negation"
+    },
+    {
+      "id": 249,
+      "type": "Statement & Conclusion",
+      "question": "All cats animals. Conclusion: Some animals are cats.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) False",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset implication"
+    },
+    {
+      "id": 250,
+      "type": "Statement & Conclusion",
+      "question": "Most like ice cream. Conclusion: All like ice cream.",
+      "options": [
+        "A) Follows",
+        "B) Doesn't follow",
+        "C) True",
+        "D) False"
+      ],
+      "answer": "B",
+      "explanation": "Majority \u2260 all"
+    },
+    {
+      "id": 251,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 252,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 253,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 254,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 255,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 256,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 257,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 258,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 259,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 260,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 261,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 262,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 263,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 264,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 265,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 266,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 267,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 268,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 269,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 270,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 271,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 272,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 273,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 274,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 275,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 276,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 277,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 278,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 279,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 280,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 281,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 282,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 283,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 284,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 285,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 286,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 287,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 288,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 289,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 290,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 291,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 292,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 293,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 294,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 295,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 296,
+      "type": "Coded Relations",
+      "question": "P > Q, Q > R, R < S. Which true?",
+      "options": [
+        "A) P > R",
+        "B) Q < R",
+        "C) S > R",
+        "D) P < S"
+      ],
+      "answer": "A",
+      "explanation": "Transitivity of >"
+    },
+    {
+      "id": 297,
+      "type": "Coded Relations",
+      "question": "A \u2265 B, B \u2265 C, C \u2265 D. Which true?",
+      "options": [
+        "A) A > D",
+        "B) A \u2265 D",
+        "C) A < D",
+        "D) A = D"
+      ],
+      "answer": "B",
+      "explanation": "Transitivity of \u2265"
+    },
+    {
+      "id": 298,
+      "type": "Coded Relations",
+      "question": "X taller Y. Y taller Z. Z taller W. Shortest?",
+      "options": [
+        "A) X",
+        "B) Y",
+        "C) Z",
+        "D) W"
+      ],
+      "answer": "D",
+      "explanation": "Chain comparison"
+    },
+    {
+      "id": 299,
+      "type": "Coded Relations",
+      "question": "A heavier B. C lighter B. A and C?",
+      "options": [
+        "A) A > C",
+        "B) A < C",
+        "C) A = C",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Incomplete ordering"
+    },
+    {
+      "id": 300,
+      "type": "Coded Relations",
+      "question": "M = N, N = O, O \u2260 P. M and P?",
+      "options": [
+        "A) M = P",
+        "B) M \u2260 P",
+        "C) M > P",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Equality and inequality"
+    },
+    {
+      "id": 301,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 302,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 303,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 304,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 305,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 306,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 307,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 308,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 309,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 310,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 311,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 312,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 313,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 314,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 315,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 316,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 317,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 318,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 319,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 320,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 321,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 322,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 323,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 324,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 325,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 326,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 327,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 328,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 329,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 330,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 331,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 332,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 333,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 334,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 335,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 336,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 337,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 338,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 339,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 340,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 341,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 342,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 343,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 344,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 345,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 346,
+      "type": "Venn Diagram Logic",
+      "question": "All tigers animals. Some animals carnivores. Tigers?",
+      "options": [
+        "A) All carnivores",
+        "B) Might not be carnivores",
+        "C) No carnivores",
+        "D) Not animals"
+      ],
+      "answer": "B",
+      "explanation": "Partial overlap"
+    },
+    {
+      "id": 347,
+      "type": "Venn Diagram Logic",
+      "question": "All students learners. Some learners teachers. Students and teachers?",
+      "options": [
+        "A) All students teachers",
+        "B) Some students teachers",
+        "C) No students teachers",
+        "D) Unclear"
+      ],
+      "answer": "D",
+      "explanation": "Disjoint possibility"
+    },
+    {
+      "id": 348,
+      "type": "Venn Diagram Logic",
+      "question": "No plants animals. All roses plants. Roses?",
+      "options": [
+        "A) Animals",
+        "B) Not animals",
+        "C) Possibly animals",
+        "D) Other"
+      ],
+      "answer": "B",
+      "explanation": "Negation transfer"
+    },
+    {
+      "id": 349,
+      "type": "Venn Diagram Logic",
+      "question": "Some rectangles squares. All squares quadrilaterals. Rectangles?",
+      "options": [
+        "A) Yes quadrilaterals",
+        "B) No",
+        "C) Maybe",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Subset chain"
+    },
+    {
+      "id": 350,
+      "type": "Venn Diagram Logic",
+      "question": "All cricketers athletes. Some athletes professionals. Cricketers?",
+      "options": [
+        "A) Some professional",
+        "B) All professional",
+        "C) No professional",
+        "D) Cannot determine"
+      ],
+      "answer": "D",
+      "explanation": "Conditional membership"
+    },
+    {
+      "id": 351,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 352,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 353,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 354,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 355,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 356,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 357,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 358,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 359,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 360,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 361,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 362,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 363,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 364,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 365,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 366,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 367,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 368,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 369,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 370,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 371,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 372,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 373,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 374,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 375,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 376,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 377,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 378,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 379,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 380,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 381,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 382,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 383,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 384,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 385,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 386,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 387,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 388,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 389,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 390,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 391,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 392,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 393,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 394,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 395,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 396,
+      "type": "Problem Solving",
+      "question": "Man twice age of son. Man is 40. Son age?",
+      "options": [
+        "A) 15",
+        "B) 18",
+        "C) 20",
+        "D) 25"
+      ],
+      "answer": "C",
+      "explanation": "Linear equation"
+    },
+    {
+      "id": 397,
+      "type": "Problem Solving",
+      "question": "30 students: 18 math, 12 science, 5 both. Neither?",
+      "options": [
+        "A) 5",
+        "B) 8",
+        "C) 10",
+        "D) 15"
+      ],
+      "answer": "A",
+      "explanation": "Set theory"
+    },
+    {
+      "id": 398,
+      "type": "Problem Solving",
+      "question": "Red balls 3/5 total. Blue fraction?",
+      "options": [
+        "A) 1/5",
+        "B) 2/5",
+        "C) 3/5",
+        "D) 4/5"
+      ],
+      "answer": "B",
+      "explanation": "Complementary fractions"
+    },
+    {
+      "id": 399,
+      "type": "Problem Solving",
+      "question": "10 days \u00d7 5 workers. For 10 workers?",
+      "options": [
+        "A) 5 days",
+        "B) 8 days",
+        "C) 15 days",
+        "D) 20 days"
+      ],
+      "answer": "A",
+      "explanation": "Inverse proportion"
+    },
+    {
+      "id": 400,
+      "type": "Problem Solving",
+      "question": "60 km/h \u00d7 2hrs + 40 km/h \u00d7 3hrs. Average?",
+      "options": [
+        "A) 45",
+        "B) 48",
+        "C) 50",
+        "D) 52"
+      ],
+      "answer": "B",
+      "explanation": "Weighted average"
+    },
+    {
+      "id": 401,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 402,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 403,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 404,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 405,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 406,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 407,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 408,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 409,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 410,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 411,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 412,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 413,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 414,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 415,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 416,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 417,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 418,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 419,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 420,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 421,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 422,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 423,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 424,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 425,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 426,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 427,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 428,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 429,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 430,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 431,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 432,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 433,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 434,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 435,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 436,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 437,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 438,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 439,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 440,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 441,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 442,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 443,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 444,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 445,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 446,
+      "type": "Conditional Statements",
+      "question": "What is contrapositive of 'If A then B'?",
+      "options": [
+        "A) If B then A",
+        "B) If not B then not A",
+        "C) If A then not B",
+        "D) If B then not A"
+      ],
+      "answer": "B",
+      "explanation": "Logical equivalence"
+    },
+    {
+      "id": 447,
+      "type": "Conditional Statements",
+      "question": "Converse of 'If X then Y'?",
+      "options": [
+        "A) If Y then X",
+        "B) If not Y then X",
+        "C) If X then not Y",
+        "D) If not X then Y"
+      ],
+      "answer": "A",
+      "explanation": "Converse definition"
+    },
+    {
+      "id": 448,
+      "type": "Conditional Statements",
+      "question": "If P\u2192Q false. P and Q?",
+      "options": [
+        "A) P true, Q false",
+        "B) P false, Q true",
+        "C) Both false",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Implication truth"
+    },
+    {
+      "id": 449,
+      "type": "Conditional Statements",
+      "question": "'If P then Q' equivalent to ___?",
+      "options": [
+        "A) P and Q",
+        "B) P or Q",
+        "C) Not P or Q",
+        "D) P and not Q"
+      ],
+      "answer": "C",
+      "explanation": "Material conditional"
+    },
+    {
+      "id": 450,
+      "type": "Conditional Statements",
+      "question": "'P if and only if Q' true. Then ___?",
+      "options": [
+        "A) P\u2192Q only",
+        "B) Q\u2192P only",
+        "C) Both P\u2192Q and Q\u2192P",
+        "D) Neither"
+      ],
+      "answer": "C",
+      "explanation": "Biconditional"
+    },
+    {
+      "id": 451,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 452,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 453,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 454,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 455,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 456,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 457,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 458,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 459,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 460,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 461,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 462,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 463,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 464,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 465,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 466,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 467,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 468,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 469,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 470,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 471,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 472,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 473,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 474,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 475,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 476,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 477,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 478,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 479,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 480,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 481,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 482,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 483,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 484,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 485,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 486,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 487,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 488,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 489,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 490,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 491,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 492,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 493,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 494,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 495,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    },
+    {
+      "id": 496,
+      "type": "Argument Analysis",
+      "question": "Many rich unhappy. Some unhappy criminal. Rich are criminal? Valid?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partially",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Logical form"
+    },
+    {
+      "id": 497,
+      "type": "Argument Analysis",
+      "question": "All birds have wings. Penguins birds. Penguins can't fly. Conclude?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Wings \u2260 flight",
+        "D) Not birds"
+      ],
+      "answer": "C",
+      "explanation": "Valid premises"
+    },
+    {
+      "id": 498,
+      "type": "Argument Analysis",
+      "question": "No pollution reduction \u2192 people sick. People sick. Therefore ___?",
+      "options": [
+        "A) Modus ponens",
+        "B) Modus tollens",
+        "C) Affirming consequent",
+        "D) Denying antecedent"
+      ],
+      "answer": "C",
+      "explanation": "Fallacy type"
+    },
+    {
+      "id": 499,
+      "type": "Argument Analysis",
+      "question": "All passed studied. John didn't study. About John?",
+      "options": [
+        "A) Passed",
+        "B) Didn't pass",
+        "C) Might pass",
+        "D) Cannot determine"
+      ],
+      "answer": "B",
+      "explanation": "Modus tollens"
+    },
+    {
+      "id": 500,
+      "type": "Argument Analysis",
+      "question": "Some cats black. All black absorb heat. Some cats absorb?",
+      "options": [
+        "A) Valid",
+        "B) Invalid",
+        "C) Partial",
+        "D) Cannot determine"
+      ],
+      "answer": "A",
+      "explanation": "Valid syllogism"
+    }
+  ]
+}

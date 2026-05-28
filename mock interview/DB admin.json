@@ -1,0 +1,504 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary role of a Database Administrator (DBA)?",
+      "answer": "The primary role of a DBA is to ensure the availability, performance, integrity, and security of databases, including installation, configuration, backup, recovery, and user management."
+    },
+    {
+      "id": 2,
+      "question": "Explain the difference between a DBA and a Data Architect.",
+      "answer": "A DBA focuses on maintenance, performance, and day-to-day operations of existing databases, while a Data Architect designs the overall structure, models, and standards for databases before they are built."
+    },
+    {
+      "id": 3,
+      "question": "What is ACID in the context of database transactions?",
+      "answer": "ACID stands for Atomicity, Consistency, Isolation, Durability—properties that guarantee reliable processing of database transactions, even in the event of errors or failures."
+    },
+    {
+      "id": 4,
+      "question": "What is a checkpoint in database systems?",
+      "answer": "A checkpoint is a point in time before which all dirty buffers (modified data pages) are written to disk, reducing recovery time after a crash by limiting log replay."
+    },
+    {
+      "id": 5,
+      "question": "Define 'index fragmentation' and its impact on performance.",
+      "answer": "Index fragmentation occurs when logical ordering of index pages does not match physical ordering on disk, leading to additional I/O and slower query performance, especially for range scans."
+    },
+    {
+      "id": 6,
+      "question": "What is the purpose of a transaction log?",
+      "answer": "The transaction log records every modification to the database, enabling rollback of uncommitted transactions and recovery to a point in time after a failure."
+    },
+    {
+      "id": 7,
+      "question": "Explain the difference between a clustered and a non-clustered index.",
+      "answer": "A clustered index determines the physical order of data rows in a table (only one allowed), whereas a non-clustered index is a separate structure pointing to data rows (multiple allowed)."
+    },
+    {
+      "id": 8,
+      "question": "What is a deadlock, and how does a DBA resolve it?",
+      "answer": "A deadlock occurs when two or more transactions each hold locks needed by the others. DBAs resolve it by killing one victim transaction or using deadlock detection and prevention mechanisms in the DBMS."
+    },
+    {
+      "id": 9,
+      "question": "What are the different backup types available in relational databases?",
+      "answer": "Full backup (entire database), differential backup (changes since last full backup), incremental backup (changes since last backup of any type), and transaction log backup."
+    },
+    {
+      "id": 10,
+      "question": "What is a recovery point objective (RPO)?",
+      "answer": "RPO is the maximum acceptable amount of data loss measured in time (e.g., 5 minutes), determining how frequently backups or replication must occur."
+    },
+    {
+      "id": 11,
+      "question": "Define recovery time objective (RTO).",
+      "answer": "RTO is the maximum acceptable downtime after a disaster, dictating how quickly a database must be restored to service."
+    },
+    {
+      "id": 12,
+      "question": "What is database normalization, and why is it important?",
+      "answer": "Normalization is the process of organizing data to reduce redundancy and avoid anomalies (insert/update/delete). It improves data integrity and reduces storage waste."
+    },
+    {
+      "id": 13,
+      "question": "Explain denormalization and when it is used.",
+      "answer": "Denormalization is the intentional introduction of redundancy to improve read performance (e.g., reducing joins). It's used in data warehouses or reporting systems where reads dominate writes."
+    },
+    {
+      "id": 14,
+      "question": "What is a stored procedure, and what are its advantages?",
+      "answer": "A stored procedure is precompiled SQL code stored on the database server. Advantages include reduced network traffic, better performance, code reusability, and centralized security."
+    },
+    {
+      "id": 15,
+      "question": "What is the difference between a view and a materialized view?",
+      "answer": "A view is a virtual table that runs a query each time it is accessed. A materialized view stores query results physically, refreshing periodically, which improves read performance at the cost of storage and refresh overhead."
+    },
+    {
+      "id": 16,
+      "question": "What is a database schema, and how do DBAs manage schema changes?",
+      "answer": "A database schema defines the structure (tables, columns, relationships, constraints). DBAs manage changes through schema migration tools, version control, and planned maintenance windows to avoid disruption."
+    },
+    {
+      "id": 17,
+      "question": "Explain the purpose of a foreign key constraint.",
+      "answer": "A foreign key constraint enforces referential integrity by ensuring that a value in one table matches a primary key value in another table, preventing orphaned rows."
+    },
+    {
+      "id": 18,
+      "question": "What is the difference between a unique constraint and a primary key?",
+      "answer": "Both enforce uniqueness, but a primary key does not allow NULL values and only one per table, while a unique constraint can have multiple per table and allows one NULL (in most DBMS)."
+    },
+    {
+      "id": 19,
+      "question": "What is database sharding, and when would a DBA implement it?",
+      "answer": "Sharding horizontally partitions data across multiple database instances (shards). It is implemented when a single database cannot handle write throughput or data size due to scalability limits."
+    },
+    {
+      "id": 20,
+      "question": "What are the common causes of database performance degradation?",
+      "answer": "Missing indexes, outdated statistics, blocking/locking, fragmentation, insufficient memory or I/O, poorly written queries, and parameter sniffing."
+    },
+    {
+      "id": 21,
+      "question": "What is an execution plan in SQL?",
+      "answer": "An execution plan is a detailed roadmap showing how the database engine will execute a query, including join algorithms, index usage, and operation ordering."
+    },
+    {
+      "id": 22,
+      "question": "How does a DBA interpret a 'table scan' or 'index seek' in an execution plan?",
+      "answer": "A table scan reads all rows (inefficient for large tables). An index seek directly locates specific rows using an index (efficient). DBAs aim to replace scans with seeks for performance."
+    },
+    {
+      "id": 23,
+      "question": "What are database statistics, and why are they important?",
+      "answer": "Statistics describe data distribution (e.g., histogram of column values). The query optimizer uses them to estimate row counts and choose optimal execution plans. Outdated statistics cause poor plan choices."
+    },
+    {
+      "id": 24,
+      "question": "Explain the term 'parameter sniffing'.",
+      "answer": "Parameter sniffing occurs when the optimizer generates a plan based on the first parameter value used, which may be suboptimal for subsequent different parameter values."
+    },
+    {
+      "id": 25,
+      "question": "What is the difference between optimistic and pessimistic locking?",
+      "answer": "Optimistic locking assumes no conflict and checks before commit, while pessimistic locking acquires locks upfront to prevent conflicts, suitable for high-contention workloads."
+    },
+    {
+      "id": 26,
+      "question": "How does a DBA monitor long-running queries?",
+      "answer": "Using DMVs (Dynamic Management Views), system monitoring tools, slow query logs, or performance dashboards to capture queries exceeding a duration threshold."
+    },
+    {
+      "id": 27,
+      "question": "What is the purpose of a database maintenance plan?",
+      "answer": "A maintenance plan automates tasks like index rebuild/reorganize, update statistics, integrity checks (DBCC CHECKDB), and backups to ensure health and performance."
+    },
+    {
+      "id": 28,
+      "question": "Define a warm backup vs. a cold backup.",
+      "answer": "A cold backup is taken when the database is offline/shut down, providing a consistent copy. A warm backup is taken while the database is online and running, often requiring additional logs for consistency."
+    },
+    {
+      "id": 29,
+      "question": "What is the difference between a restore and a recovery process?",
+      "answer": "Restore copies backup files to the database location. Recovery applies transaction logs to bring the database to a consistent state (e.g., roll forward committed, roll back uncommitted transactions)."
+    },
+    {
+      "id": 30,
+      "question": "What is point-in-time recovery (PITR)?",
+      "answer": "PITR allows restoring a database to a specific moment (e.g., just before an accidental DELETE) by applying full backup + transaction logs up to that time."
+    },
+    {
+      "id": 31,
+      "question": "Explain the concept of a database 'mirroring' or 'replication' for high availability.",
+      "answer": "Mirroring maintains a exact copy of the database on a secondary server with automatic failover. Replication copies data asynchronously or synchronously to other nodes for distribution or redundancy."
+    },
+    {
+      "id": 32,
+      "question": "What is a failover cluster in database administration?",
+      "answer": "A failover cluster groups multiple servers to provide high availability; if the active node fails, the database instance moves to a passive node with minimal downtime."
+    },
+    {
+      "id": 33,
+      "question": "What is an Always On Availability Group (SQL Server) or similar technology?",
+      "answer": "It is a high-availability and disaster-recovery feature that replicates databases to multiple replicas, allowing automatic or manual failover and read-only access to secondary replicas."
+    },
+    {
+      "id": 34,
+      "question": "What are the security layers a DBA must manage?",
+      "answer": "Authentication (who can connect), authorization (what they can do/see), encryption (data at rest and in transit), auditing (tracking access), and row/column-level security."
+    },
+    {
+      "id": 35,
+      "question": "What is the principle of least privilege (PoLP) for database users?",
+      "answer": "PoLP means granting users only the minimum permissions necessary to perform their job functions, reducing the risk of accidental or malicious damage."
+    },
+    {
+      "id": 36,
+      "question": "What is Transparent Data Encryption (TDE)?",
+      "answer": "TDE encrypts database files at rest (data and log files) automatically, protecting against unauthorized access to physical storage, without changing application logic."
+    },
+    {
+      "id": 37,
+      "question": "What is a SQL injection attack, and how does a DBA mitigate it?",
+      "answer": "SQL injection injects malicious SQL into queries via user input. Mitigation includes using parameterized queries, stored procedures, input validation, and least privilege accounts."
+    },
+    {
+      "id": 38,
+      "question": "What is the difference between a database role and a user account?",
+      "answer": "A user account authenticates an individual or application. A role is a group of permissions that can be assigned to multiple users, simplifying privilege management."
+    },
+    {
+      "id": 39,
+      "question": "Explain audit logging in databases. What should be audited?",
+      "answer": "Audit logging records database activities. Critical items: schema changes (DDL), privilege changes (GRANT/REVOKE), failed login attempts, access to sensitive tables, and data exports."
+    },
+    {
+      "id": 40,
+      "question": "What is the purpose of a database firewall or activity monitoring?",
+      "answer": "It monitors and blocks suspicious SQL patterns in real-time, detects anomalies, and provides alerting for potential attacks or policy violations without changing application code."
+    },
+    {
+      "id": 41,
+      "question": "How does a DBA handle compliance requirements (e.g., GDPR, HIPAA, PCI-DSS)?",
+      "answer": "By implementing data masking/encryption, audit trails, access controls, data retention policies, and regular security assessments, plus documenting all control measures."
+    },
+    {
+      "id": 42,
+      "question": "What is the difference between horizontal and vertical scaling for databases?",
+      "answer": "Horizontal scaling adds more servers (sharding) to distribute load; vertical scaling adds more resources (CPU, RAM, storage) to a single server. DBAs use both based on workload."
+    },
+    {
+      "id": 43,
+      "question": "Explain the concept of a connection pool.",
+      "answer": "A connection pool caches database connections to reuse them across requests, reducing connection overhead (handshake, authentication), improving scalability and response time."
+    },
+    {
+      "id": 44,
+      "question": "What are database hints, and when might a DBA use them?",
+      "answer": "Hints force the optimizer to use specific join methods, indexes, or parallelism. DBAs use them as a last resort when optimizer chooses a demonstrably bad plan."
+    },
+    {
+      "id": 45,
+      "question": "What is a database 'orphaned user'?",
+      "answer": "An orphaned user exists in the database but has no corresponding login at the server level (or mapping is broken), often after a restore or migration."
+    },
+    {
+      "id": 46,
+      "question": "What is the tempdb database (SQL Server) or equivalent concept in other DBMS?",
+      "answer": "tempdb stores temporary objects, intermediate results for joins/spools, row versioning, and worktables. Performance issues in tempdb affect overall system performance."
+    },
+    {
+      "id": 47,
+      "question": "What is the purpose of a database consistency check (e.g., DBCC CHECKDB in SQL Server)?",
+      "answer": "It validates the physical and logical integrity of all database objects, detecting corruption like page errors, allocation errors, or broken links."
+    },
+    {
+      "id": 48,
+      "question": "What is the difference between a full-text index and a regular B-tree index?",
+      "answer": "A B-tree index works for exact matches, range scans, or equality. A full-text index enables linguistic searches (word forms, proximity, thesaurus) on large text columns."
+    },
+    {
+      "id": 49,
+      "question": "Explain what a composite index is and when to use it.",
+      "answer": "A composite index includes multiple columns (e.g., last_name, first_name). Use it when queries filter or sort by multiple columns in the order the index defines."
+    },
+    {
+      "id": 50,
+      "question": "What is index covering (covered query)?",
+      "answer": "A covered query is one where all required columns are included in the index itself, so the database retrieves data directly from the index without accessing the base table."
+    },
+    {
+      "id": 51,
+      "question": "What are the different isolation levels in SQL (Read Uncommitted, etc.)?",
+      "answer": "Read Uncommitted (dirty reads allowed), Read Committed (default in many DBMS, prevents dirty reads), Repeatable Read (previes non-repeatable reads), Serializable (prevents phantom reads, highest isolation)."
+    },
+    {
+      "id": 52,
+      "question": "What is a phantom read anomaly?",
+      "answer": "A phantom read occurs when a transaction re-executes a query and finds new rows inserted by another transaction that satisfy the WHERE clause, violating serializability."
+    },
+    {
+      "id": 53,
+      "question": "What is the role of a DBA in database capacity planning?",
+      "answer": "Forecasting future storage, memory, CPU, and I/O needs based on historical growth, business projections, and workload patterns to avoid resource exhaustion."
+    },
+    {
+      "id": 54,
+      "question": "Explain the difference between logical and physical database design.",
+      "answer": "Logical design defines tables, relationships, and constraints (business-level). Physical design defines indexes, partitions, filegroups, and storage parameters for performance."
+    },
+    {
+      "id": 55,
+      "question": "What is a partitioned table, and what benefits does it offer?",
+      "answer": "A partitioned table splits large tables into smaller, manageable pieces based on a key (e.g., date). Benefits: faster data load/deletion (partition switching), improved maintenance (rebuild one partition), and query pruning."
+    },
+    {
+      "id": 56,
+      "question": "What is the difference between blocking and deadlocking?",
+      "answer": "Blocking is when one transaction holds a lock that another needs — it can resolve when the first completes. Deadlock is a circular blocking scenario that requires intervention."
+    },
+    {
+      "id": 57,
+      "question": "What are wait statistics, and why does a DBA analyze them?",
+      "answer": "Wait statistics show what resources queries are waiting for (disk I/O, locks, memory, CPU). Analyzing them helps identify bottleneck types and performance tuning targets."
+    },
+    {
+      "id": 58,
+      "question": "What is a change data capture (CDC) feature used for?",
+      "answer": "CDC captures insert, update, and delete activity applied to a table, storing change data for ETL processes, auditing, or replication without triggers."
+    },
+    {
+      "id": 59,
+      "question": "Explain the purpose of a database 'data dictionary' or system catalog.",
+      "answer": "It contains metadata about database objects (tables, columns, indexes, constraints, users). The DBMS uses it to parse and optimize queries; DBAs query it for management."
+    },
+    {
+      "id": 60,
+      "question": "What is the difference between a cross-database query and a federated query?",
+      "answer": "A cross-database query accesses tables within the same server instance. A federated query accesses tables across different database servers (heterogeneous systems)."
+    },
+    {
+      "id": 61,
+      "question": "What is a 'dirty page' in the buffer cache?",
+      "answer": "A dirty page is a data page in memory that has been modified but not yet written to disk. It must be flushed to disk before being evicted or during a checkpoint."
+    },
+    {
+      "id": 62,
+      "question": "What are the common I/O bottlenecks and how can a DBA reduce them?",
+      "answer": "Bottlenecks include slow disk latency, insufficient IOPS, or log file contention. Mitigations: place data/logs on separate physical disks, use SSDs, increase memory caching, and optimize queries."
+    },
+    {
+      "id": 63,
+      "question": "What is the purpose of 'automatic tuning' features in modern databases?",
+      "answer": "Automatic tuning (e.g., automatic index management, plan correction) uses machine learning or rules to detect performance regressions and apply fixes without DBA intervention."
+    },
+    {
+      "id": 64,
+      "question": "What is database as a service (DBaaS), and how does it change the DBA role?",
+      "answer": "DBaaS is a cloud-managed database offering. The DBA role shifts from infrastructure tasks (backups, patching, hardware) to performance tuning, schema design, and data governance."
+    },
+    {
+      "id": 65,
+      "question": "What is a 'runaway query' and what actions should a DBA take?",
+      "answer": "A runaway query consumes excessive resources (CPU, memory, I/O) for a long time. Actions: kill the session, analyze plan, set resource governor/query timeout, guide optimizer with hints."
+    },
+    {
+      "id": 66,
+      "question": "Explain the difference between a database dump and a database snapshot.",
+      "answer": "A dump is a full backup copy at a point in time (usually stored externally). A snapshot is a read-only, point-in-time view stored within the database system, often using copy-on-write technology."
+    },
+    {
+      "id": 67,
+      "question": "What is the purpose of a database revision history or schema versioning?",
+      "answer": "Schema versioning tracks changes to database objects over time using migration scripts, allowing rollbacks, team collaboration, and reproducible deployments across environments."
+    },
+    {
+      "id": 68,
+      "question": "What is a 'database link' or 'linked server'?",
+      "answer": "It is a configuration that allows a database instance to execute queries against another remote database instance, often used for distributed queries without moving data."
+    },
+    {
+      "id": 69,
+      "question": "What are the advantages and disadvantages of using triggers in a database?",
+      "answer": "Advantages: enforce business rules transparently, audit logging, cascading actions. Disadvantages: hidden business logic, performance overhead, debugging complexity, and lock escalation."
+    },
+    {
+      "id": 70,
+      "question": "What is the difference between row-level and statement-level triggers?",
+      "answer": "Row-level triggers fire once per affected row; statement-level triggers fire once per SQL statement regardless of the number of rows. Row-level is more granular but heavier."
+    },
+    {
+      "id": 71,
+      "question": "What is the purpose of database compression (row and page compression)?",
+      "answer": "Compression reduces storage footprint and I/O at the cost of CPU overhead. Row compression stores fixed-length data more efficiently; page compression includes prefix and dictionary compression."
+    },
+    {
+      "id": 72,
+      "question": "Explain the concept of a 'database quarantine' in malware or ransomware response.",
+      "answer": "Quarantine isolates a suspected compromised database by revoking network access, taking it offline, or moving to a secured environment for forensic analysis without affecting other systems."
+    },
+    {
+      "id": 73,
+      "question": "What is a golden image in database patching?",
+      "answer": "A golden image is a pre-configured, patched, and hardened reference database installation used to rapidly deploy consistent, secure environments in production or test."
+    },
+    {
+      "id": 74,
+      "question": "What are the essential steps in a database disaster recovery (DR) drill?",
+      "answer": "1. Trigger failover to DR site, 2. Validate data integrity, 3. Measure RTO/RPO achieved, 4. Test application connectivity, 5. Document gaps, 6. Perform failback."
+    },
+    {
+      "id": 75,
+      "question": "What is the difference between SQL tracing and extended events?",
+      "answer": "Tracing captures query activity but is older and has higher overhead. Extended Events is a lightweight, flexible infrastructure for capturing detailed diagnostic data with less performance impact."
+    },
+    {
+      "id": 76,
+      "question": "How does a DBA troubleshoot a 'log full' error?",
+      "answer": "1. Check log file size and auto-growth settings. 2. Take a log backup (if in full recovery) or switch to simple recovery. 3. Shrink log if appropriate. 4. Investigate long-running open transactions."
+    },
+    {
+      "id": 77,
+      "question": "What is a database maintenance window, and what activities are performed?",
+      "answer": "A maintenance window is a scheduled downtime period. Activities include applying patches, index maintenance, statistics updates, integrity checks, and schema changes."
+    },
+    {
+      "id": 78,
+      "question": "Explain the concept of 'predicate pushdown' in distributed queries.",
+      "answer": "Predicate pushdown moves filtering (WHERE clause) to the remote data source, reducing data transferred across the network, improving distributed query performance."
+    },
+    {
+      "id": 79,
+      "question": "What is the difference between a database role and an application role?",
+      "answer": "A database role is a collection of permissions assigned to users/groups. An application role is a special role activated by an application using a password to grant higher privileges only for that application's session."
+    },
+    {
+      "id": 80,
+      "question": "What is a 'query governor' in databases?",
+      "answer": "A query governor sets limits (e.g., maximum execution time, estimated cost, rows returned) to prevent runaway queries from consuming excessive resources."
+    },
+    {
+      "id": 81,
+      "question": "What is bitemporal database support, and why would a DBA care?",
+      "answer": "Bitemporal databases track both system time (when data was stored) and valid time (real-world period). DBAs care for auditing, compliance, and reconstructing historical states."
+    },
+    {
+      "id": 82,
+      "question": "Explain the difference between a heap-organized table and an index-organized table (IOT).",
+      "answer": "Heap-organized table has no special order; rows are stored in no particular order. Index-organized table (IOT) stores the entire table in a B-tree index, improving access by primary key but slower for full scans."
+    },
+    {
+      "id": 83,
+      "question": "What is a database 'columnstore index' and its use case?",
+      "answer": "A columnstore index stores data column-wise rather than row-wise, providing high compression and fast aggregation for data warehousing and analytical queries (OLAP)."
+    },
+    {
+      "id": 84,
+      "question": "What are the risks of shrinking a database file frequently?",
+      "answer": "Frequent shrinking causes index fragmentation, increases file growth events (performance hit), and wastes I/O because the database will regrow. It should be rare."
+    },
+    {
+      "id": 85,
+      "question": "What is the purpose of a database health check report?",
+      "answer": "A health check report assesses backup status, index fragmentation, statistics freshness, consistency errors, wait statistics, security configurations, and capacity metrics."
+    },
+    {
+      "id": 86,
+      "question": "What is the difference between a 'soft delete' and a 'hard delete'?",
+      "answer": "Hard delete removes rows permanently. Soft delete marks rows as inactive (e.g., 'deleted' flag) for retention or recovery, while appearing deleted to applications."
+    },
+    {
+      "id": 87,
+      "question": "Explain what a database tiering or data archiving strategy involves.",
+      "answer": "It involves moving older, less accessed data to slower, cheaper storage (or archive tables), keeping active data on premium storage. DBAs implement partitioning, archiving jobs, or compression."
+    },
+    {
+      "id": 88,
+      "question": "What is a distributed deadlock, and how is it different from a local deadlock?",
+      "answer": "A distributed deadlock involves transactions across multiple database servers (e.g., linked servers). Local deadlock is within one instance. Distributed requires global lock detection."
+    },
+    {
+      "id": 89,
+      "question": "What is the 'system-versioned temporal table' feature?",
+      "answer": "It automatically tracks full history of row changes using hidden period columns, allowing queries of data as it was at any point in time, with DML to current table only."
+    },
+    {
+      "id": 90,
+      "question": "What is a database 'warm standby' server?",
+      "answer": "A warm standby server is a secondary server that is not actively serving production traffic but can take over with some data loss after manual or semi-automated steps."
+    },
+    {
+      "id": 91,
+      "question": "What is the difference between failover and switchover?",
+      "answer": "Failover is an automatic/unplanned move from primary to secondary due to failure. Switchover is a planned, manual move for maintenance or upgrades with no data loss."
+    },
+    {
+      "id": 92,
+      "question": "How does a DBA test a backup restoration without corrupting production?",
+      "answer": "Restore backups to a separate, non-production environment (sandbox) regularly, then run validation scripts (checksums, row counts, application smoke tests) to verify integrity."
+    },
+    {
+      "id": 93,
+      "question": "What is the purpose of a 'lock escalation' mechanism?",
+      "answer": "Lock escalation converts many fine-grained locks (row, page) into a single table lock to reduce memory overhead, but may reduce concurrency."
+    },
+    {
+      "id": 94,
+      "question": "What are dynamic management views (DMVs) in SQL Server?",
+      "answer": "DMVs are system views that return server state data (e.g., current queries, waits, index usage, missing indexes). They are essential for monitoring and troubleshooting."
+    },
+    {
+      "id": 95,
+      "question": "Explain the concept of a 'RPO violation' in a disaster recovery plan.",
+      "answer": "An RPO violation occurs when actual data loss exceeds the agreed RPO (e.g., lost 1 hour but RPO was 15 minutes), requiring root-cause analysis and process adjustment."
+    },
+    {
+      "id": 96,
+      "question": "What is the difference between a cold, warm, and hot standby database?",
+      "answer": "Cold standby is offline and requires starting services. Warm standby is online but not accepting write traffic, ready with some lag. Hot standby is online, can serve reads, and is ready for immediate failover."
+    },
+    {
+      "id": 97,
+      "question": "What is a database 'throttle' or resource governor?",
+      "answer": "Resource governor limits CPU, memory, and I/O for specific workloads or users, ensuring critical systems get resources and preventing noisy neighbors."
+    },
+    {
+      "id": 98,
+      "question": "What is the purpose of the 'automatic seeding' feature in availability groups?",
+      "answer": "Automatic seeding automatically creates and synchronizes database replicas to secondary nodes without manual backup/restore, simplifying adding replicas in high-availability setup."
+    },
+    {
+      "id": 99,
+      "question": "Explain what a silent database corruption is and how to detect it.",
+      "answer": "Silent corruption occurs when data becomes corrupt without throwing errors immediately. Detection methods: periodic CHECKDB, page checksums, and read-after-write verification."
+    },
+    {
+      "id": 100,
+      "question": "What are the top five skills a production DBA must have?",
+      "answer": "1. Performance tuning and query optimization, 2. Backup and recovery techniques, 3. High availability and disaster recovery design, 4. Security management (encryption, auditing), 5. Automation and scripting (PowerShell, Python, T-SQL)."
+    }
+  ]
+}

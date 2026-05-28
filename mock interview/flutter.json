@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "question": "What is Flutter and how does it differ from other cross-platform frameworks?",
+    "answer": "Flutter is Google's open-source UI toolkit for building natively compiled applications from a single codebase. Unlike React Native (which uses JavaScript bridges), Flutter compiles directly to native ARM code and uses its own rendering engine (Skia), avoiding platform-specific UI components."
+  },
+  {
+    "id": 2,
+    "question": "What is the difference between 'StatelessWidget' and 'StatefulWidget'?",
+    "answer": "StatelessWidget has immutable state that cannot change after build. StatefulWidget maintains mutable state that can change over time, requiring a State object separate from the widget."
+  },
+  {
+    "id": 3,
+    "question": "What is the 'build' method in Flutter?",
+    "answer": "The build method describes the part of the user interface represented by a widget. It returns a widget tree and is called whenever the widget's state or configuration changes."
+  },
+  {
+    "id": 4,
+    "question": "What is the 'widget tree'?",
+    "answer": "A hierarchical structure representing the composition of widgets in a Flutter UI. Each widget has a parent (except the root) and may have children, forming a tree."
+  },
+  {
+    "id": 5,
+    "question": "What is the difference between 'Element' and 'RenderObject'?",
+    "answer": "Element is an instantiation of a widget at a location in the tree, managing lifecycle. RenderObject handles layout, painting, and hit testing; it is the concrete graphical representation."
+  },
+  {
+    "id": 6,
+    "question": "What is 'setState()' and when should it be called?",
+    "answer": "setState() notifies the framework that internal state of a StatefulWidget has changed, triggering a rebuild. It should be called only within State object methods, not after dispose."
+  },
+  {
+    "id": 7,
+    "question": "What is 'InheritedWidget' and when is it useful?",
+    "answer": "InheritedWidget propagates information down the widget tree efficiently. It allows descendant widgets to access data via context.dependOnInheritedWidgetOfExactType(), used for themes, locales, and state management (e.g., Provider)."
+  },
+  {
+    "id": 8,
+    "question": "What is the 'key' parameter in widgets?",
+    "answer": "Keys preserve state when widgets move within the tree (e.g., in lists). They identify widgets uniquely and help the framework differentiate between widgets of the same type."
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between 'GlobalKey' and 'LocalKey'?",
+    "answer": "GlobalKey is unique across entire app, used for accessing widget state from anywhere. LocalKey is unique among siblings; subclasses include ValueKey, ObjectKey, UniqueKey."
+  },
+  {
+    "id": 10,
+    "question": "What is 'buildContext' in Flutter?",
+    "answer": "BuildContext is a handle to the location of a widget in the widget tree. Each widget has its own context, used to find ancestors, inherit widgets, and navigate."
+  },
+  {
+    "id": 11,
+    "question": "What is the difference between 'main()' and 'runApp()'?",
+    "answer": "main() is the entry point of Dart program; inside it, runApp() attaches the root widget to the screen, inflates the widget tree, and starts the rendering pipeline."
+  },
+  {
+    "id": 12,
+    "question": "What is 'MaterialApp' vs 'CupertinoApp'?",
+    "answer": "MaterialApp implements Google's Material Design (Android-style) with specific widgets and navigation. CupertinoApp implements iOS-style design with Cupertino widgets. Both are convenience widgets for app structure."
+  },
+  {
+    "id": 13,
+    "question": "What is the purpose of 'Scaffold' widget?",
+    "answer": "Scaffold provides a basic Material Design layout structure: app bar, body, floating action button, drawer, bottom navigation bar, and snackbar."
+  },
+  {
+    "id": 14,
+    "question": "What is 'Navigator' and how does navigation work in Flutter?",
+    "answer": "Navigator manages a stack of routes (pages). push() adds a route, pop() removes it. It uses declarative or imperative style; routes can be named or anonymous."
+  },
+  {
+    "id": 15,
+    "question": "What is named routes and how to pass arguments?",
+    "answer": "Named routes are registered in MaterialApp.routes (map of name to widget builder). Arguments are passed via arguments parameter, accessed using ModalRoute.of(context).settings.arguments."
+  },
+  {
+    "id": 16,
+    "question": "What is 'onGenerateRoute' and when is it needed?",
+    "answer": "onGenerateRoute is a callback for dynamic route handling, used when named routes are insufficient (e.g., variable routes /user/:id, deep linking)."
+  },
+  {
+    "id": 17,
+    "question": "What is the difference between 'pushReplacement' and 'pushAndRemoveUntil'?",
+    "answer": "pushReplacement replaces the current route with a new one (removes previous). pushAndRemoveUntil removes multiple routes until a predicate returns true, then pushes new route."
+  },
+  {
+    "id": 18,
+    "question": "What is 'Hero' widget and what does it do?",
+    "answer": "Hero widget creates a shared element transition between two routes. When navigating, a hero (e.g., image) flies from source to destination smoothly."
+  },
+  {
+    "id": 19,
+    "question": "What are 'stateless' and 'stateful' widgets in terms of performance?",
+    "answer": "Stateless widgets are lighter because they build once and never update. Stateful widgets are heavier due to separate State object and potential rebuilder overhead."
+  },
+  {
+    "id": 20,
+    "question": "What is 'const' constructor in Flutter widgets?",
+    "answer": "A const constructor creates a compile-time constant widget. If the widget's properties are constant and same, Flutter reuses the instance, improving performance by preventing unnecessary rebuilds."
+  },
+  {
+    "id": 21,
+    "question": "What is 'ListView.builder' and why use it?",
+    "answer": "ListView.builder lazily creates children on-demand as they scroll into view, suitable for large or infinite lists, reducing memory and build time compared to ListView(children: [])."
+  },
+  {
+    "id": 22,
+    "question": "What is the difference between 'Column' and 'ListView'?",
+    "answer": "Column renders all children immediately and is scrollable only inside a SingleChildScrollView. ListView is intrinsically scrollable and lazily builds children if builder is used."
+  },
+  {
+    "id": 23,
+    "question": "What is 'Expanded' and 'Flexible' widgets?",
+    "answer": "Expanded fills available space in a Row/Column/ Flex, proportionally using flex factor. Flexible is similar but allows child to be smaller if needed."
+  },
+  {
+    "id": 24,
+    "question": "What is the 'Container' widget?",
+    "answer": "Container is a convenience widget that combines painting (background, border), positioning (margin, padding), sizing (width height), and child placement."
+  },
+  {
+    "id": 25,
+    "question": "What is 'GestureDetector' vs 'InkWell'?",
+    "answer": "GestureDetector recognizes generic gestures (tap, long press, pan, scale) without ripple effect. InkWell is Material Design ripple effect widget that also handles tap/double-tap."
+  },
+  {
+    "id": 26,
+    "question": "What is the difference between 'Opacity' and 'FadeInImage'?",
+    "answer": "Opacity widget wraps a child to change transparency but still lays out child offscreen, costly. FadeInImage is for image loading with fade transition between placeholder and target."
+  },
+  {
+    "id": 27,
+    "question": "What is the 'FutureBuilder' widget?",
+    "answer": "FutureBuilder builds itself based on the latest snapshot of interaction with a Future (async operation). It handles loading, error, success states declaratively."
+  },
+  {
+    "id": 28,
+    "question": "What is 'StreamBuilder' and how is it different from FutureBuilder?",
+    "answer": "StreamBuilder rebuilds whenever a new event is added to a Stream (multiple events over time). FutureBuilder rebuilds exactly once when the Future completes."
+  },
+  {
+    "id": 29,
+    "question": "What is 'Provider' package in state management?",
+    "answer": "Provider is a wrapper around InheritedWidget, simplifying data propagation and disposal. It offers ChangeNotifierProvider, FutureProvider, StreamProvider, and multi-provider."
+  },
+  {
+    "id": 30,
+    "question": "What is the 'BLoC' pattern?",
+    "answer": "Business Logic Component (BLoC) separates business logic from UI using streams (Sinks/Streams). UI sends events to BLoC; BLoC outputs states; commonly used with rxdart."
+  },
+  {
+    "id": 31,
+    "question": "What is 'Riverpod' and how does it improve on Provider?",
+    "answer": "Riverpod is a reactive state management library. Unlike Provider, it doesn't rely on widget tree, is compile-safe, supports modifiable providers, and avoids BuildContext issues."
+  },
+  {
+    "id": 32,
+    "question": "What is 'GetX' in Flutter?",
+    "answer": "GetX is an all-in-one state management, navigation, and dependency injection solution with high performance (no BuildContext rebuilds) and less boilerplate."
+  },
+  {
+    "id": 33,
+    "question": "What is 'ValueNotifier' and 'ValueListenableBuilder'?",
+    "answer": "ValueNotifier is a simple change notifier for a single value. ValueListenableBuilder rebuilds a widget subtree when the notifier's value changes."
+  },
+  {
+    "id": 34,
+    "question": "What is 'AnimatedContainer'?",
+    "answer": "AnimatedContainer animates changes to its properties (color, width, height, margin, padding) implicitly over a duration, without manual AnimationController."
+  },
+  {
+    "id": 35,
+    "question": "What is 'AnimationController' vs 'Tween'?",
+    "answer": "AnimationController generates values from 0.0 to 1.0 over duration. Tween maps that range to another range (e.g., color, double) and is used with Controller via animate()."
+  },
+  {
+    "id": 36,
+    "question": "What is the difference between 'addPostFrameCallback' and 'addPersistentFrameCallback'?",
+    "answer": "addPostFrameCallback runs once after the current frame completes, used for tasks needing layout dims. addPersistentFrameCallback runs every frame, used for custom animations."
+  },
+  {
+    "id": 37,
+    "question": "What are 'CustomPainter' and 'CustomPaint' widgets?",
+    "answer": "CustomPaint is a widget that delegates painting to a CustomPainter. CustomPainter implements paint() and shouldRepaint() to draw custom shapes, lines, or effects using Canvas API."
+  },
+  {
+    "id": 38,
+    "question": "What is the 'RenderRepaintBoundary' used for?",
+    "answer": "RenderRepaintBoundary isolates a subtree during repaint. If subtree content doesn't change, it's not repainted, improving performance (e.g., complex animations)."
+  },
+  {
+    "id": 39,
+    "question": "What is 'Dart' and how does it relate to Flutter?",
+    "answer": "Dart is the programming language used by Flutter, developed by Google. It supports AOT (ahead-of-time) compilation for native performance and JIT for hot reload."
+  },
+  {
+    "id": 40,
+    "question": "What are 'mixins' in Dart?",
+    "answer": "Mixins are a way to reuse code across multiple class hierarchies using 'with' keyword. They are not classes but code blocks that can be combined, avoiding diamond inheritance issues."
+  },
+  {
+    "id": 41,
+    "question": "What is 'async' / 'await' in Dart?",
+    "answer": "async marks a function as asynchronous, returning a Future. await pauses execution until that Future completes without blocking the thread, used inside async functions."
+  },
+  {
+    "id": 42,
+    "question": "What is 'Future' vs 'Stream' in Dart?",
+    "answer": "Future represents a single asynchronous value or error at some time. Stream represents a sequence of asynchronous events over time (multiple values)."
+  },
+  {
+    "id": 43,
+    "question": "What is 'null safety' in Dart?",
+    "answer": "A language feature where variables are non-nullable by default unless marked with ?. It prevents null pointer exceptions at compile time, improving reliability."
+  },
+  {
+    "id": 44,
+    "question": "What is 'isolates' in Dart?",
+    "answer": "Isolates are independent workers that run in their own memory heap with message passing (send/ receive). Flutter's background tasks use compute() or Isolate.spawn."
+  },
+  {
+    "id": 45,
+    "question": "What is 'hot reload' and how does it work?",
+    "answer": "Hot reload injects updated source code into the running Dart VM (JIT), preserving state. It rebuilds the widget tree (calls build) but does not restart the app."
+  },
+  {
+    "id": 46,
+    "question": "What is 'hot restart' and how is it different?",
+    "answer": "Hot restart destroys the widget tree and resets state to initial, then fully rebuilds. Slower than hot reload; used when changes affect initState() or static fields."
+  },
+  {
+    "id": 47,
+    "question": "What is 'flutter doctor' command used for?",
+    "answer": "It checks Flutter environment and dependencies: Flutter SDK, Android Studio, Xcode, connected devices, VS Code plugins, reporting issues and missing components."
+  },
+  {
+    "id": 48,
+    "question": "What are the differences between 'flutter run' and 'flutter build'?",
+    "answer": "flutter run compiles and runs on connected device/emulator in debug or profile mode with hot reload. flutter build compiles a release binary (APK, IPA, web, windows) without attaching debugger."
+  },
+  {
+    "id": 49,
+    "question": "What is 'pubspec.yaml' in Flutter?",
+    "answer": "A manifest file specifying project metadata, dependencies (packages), assets (images, fonts, JSON), and SDK constraints. Flutter uses pub package manager."
+  },
+  {
+    "id": 50,
+    "question": "What are 'dev_dependencies' vs 'dependencies'?",
+    "answer": "dependencies are required for app runtime (e.g., provider, http). dev_dependencies are only needed during development/testing (e.g., flutter_test, build_runner)."
+  },
+  {
+    "id": 51,
+    "question": "What is 'asset bundling' in Flutter?",
+    "answer": "Placing files (images, fonts, configuration) in specified folders (e.g., assets/images/) and declaring them in pubspec.yaml, so they are bundled into the app package."
+  },
+  {
+    "id": 52,
+    "question": "What is the 'flutter_svg' package used for?",
+    "answer": "Widely used for rendering SVG (Scalable Vector Graphics) files in Flutter, supports scaling without pixelation, unlike raster formats."
+  },
+  {
+    "id": 53,
+    "question": "What is the difference between 'AspectRatio' and 'FractionallySizedBox'?",
+    "answer": "AspectRatio enforces a specific width/height ratio. FractionallySizedBox sizes child as a fraction of available space (e.g., widthFactor:0.5 for 50% width)."
+  },
+  {
+    "id": 54,
+    "question": "What is the 'MediaQuery' class used for?",
+    "answer": "MediaQuery provides screen dimensions (size, devicePixelRatio), orientation, padding (e.g., notch), and text scaling factor. Used for responsive design."
+  },
+  {
+    "id": 55,
+    "question": "What is the 'LayoutBuilder' widget?",
+    "answer": "LayoutBuilder provides parent constraints (maxWidth, maxHeight) during layout phase, allowing widgets to adapt based on available space (e.g., responsive breakpoints)."
+  },
+  {
+    "id": 56,
+    "question": "What is 'OrientationBuilder'?",
+    "answer": "OrientationBuilder rebuilds when device orientation changes (portrait/ landscape), providing orientation parameter to child without using MediaQuery."
+  },
+  {
+    "id": 57,
+    "question": "What is the 'Platform' class in Flutter?",
+    "answer": "Platform class identifies operating system: Android, iOS, Fuchsia, macOS, Windows, Linux, allowing platform-specific UI or behavior checks."
+  },
+  {
+    "id": 58,
+    "question": "What is 'ThemeData' and how to implement dark mode?",
+    "answer": "ThemeData defines color scheme, typography, and component themes. Dark mode is enabled by setting ThemeData.dark() or defining brightness: Brightness.dark, and toggling via ThemeProvider or MediaQuery."
+  },
+  {
+    "id": 59,
+    "question": "What is 'TextTheme' in Flutter?",
+    "answer": "TextTheme defines predefined text styles: headline1 through headline6, bodyText1, bodyText2, caption, button, overline. Accessed via Theme.of(context).textTheme."
+  },
+  {
+    "id": 60,
+    "question": "What is 'showModalBottomSheet' vs 'showBottomSheet'?",
+    "answer": "showModalBottomSheet is a modal bottom sheet that blocks interaction with other UI, dismisses on tap outside. showBottomSheet is persistent, attached to a Scaffold, remains open until explicitly closed."
+  },
+  {
+    "id": 61,
+    "question": "What is 'SnackBar' and how to show it?",
+    "answer": "SnackBar is a temporary message that appears at bottom of screen. Shown using ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('...')))."
+  },
+  {
+    "id": 62,
+    "question": "What is 'showDialog' vs 'showGeneralDialog'?",
+    "answer": "showDialog is a convenience for Material Design dialogs (AlertDialog, SimpleDialog). showGeneralDialog is a lower-level function allowing custom dialogs with any widget."
+  },
+  {
+    "id": 63,
+    "question": "What is 'Form' and 'FormField' widgets?",
+    "answer": "Form groups FormField widgets (TextFormField, DropdownButtonFormField) for validation, saving, resetting, and managing state with a GlobalKey<FormState>."
+  },
+  {
+    "id": 64,
+    "question": "What is 'FocusNode' and 'FocusScope'?",
+    "answer": "FocusNode manages focus state of a widget (TextField). FocusScope defines a focus traversal region, managing focus order among multiple nodes."
+  },
+  {
+    "id": 65,
+    "question": "What is 'TextEditingController' used for?",
+    "answer": "TextEditingController controls text being edited in a TextField or TextFormField: reading value, setting text, clearing, listening to changes."
+  },
+  {
+    "id": 66,
+    "question": "What is 'ScrollController' and why use it?",
+    "answer": "ScrollController controls a scrollable widget (ListView, GridView): reading scroll offset, jumping to position, adding listener for infinite scrolling (loading more)."
+  },
+  {
+    "id": 67,
+    "question": "What is 'Infinite scroll' (pagination) implementation pattern?",
+    "answer": "Using ListView.builder, add a ScrollController listener near end (offset >= maxScrollExtent - threshold) to fetch next page and update list."
+  },
+  {
+    "id": 68,
+    "question": "What is 'dio' package and what does it offer?",
+    "answer": "dio is a powerful HTTP client for Flutter, supporting interceptors, global configuration, FormData, cancellation, retry, and download progress."
+  },
+  {
+    "id": 69,
+    "question": "What is 'sqflite' in Flutter?",
+    "answer": "Sqflite is a SQLite plugin for Flutter, providing local persistent database with CRUD operations, transactions, and raw SQL queries."
+  },
+  {
+    "id": 70,
+    "question": "What is 'Hive' vs 'SharedPreferences'?",
+    "answer": "SharedPreferences stores small key-value data (primitives). Hive is a lightweight, fast NoSQL database storing any Dart object (including lists/maps) with encryption, better for larger structured data."
+  },
+  {
+    "id": 71,
+    "question": "What is 'drift' (formerly moor) package?",
+    "answer": "A reactive persistence library for Flutter and Dart, providing type-safe SQL queries, compile-time verification, and stream-based database observation."
+  },
+  {
+    "id": 72,
+    "question": "What is the 'image_picker' plugin used for?",
+    "answer": "It allows selecting images/videos from camera or gallery, returning File object. Used for profile pictures, document uploads."
+  },
+  {
+    "id": 73,
+    "question": "What is 'geolocator' plugin?",
+    "answer": "A Flutter plugin for location services: get current position, permissions, altitude, speed, continuous position updates, geocoding (address ↔ coordinates)."
+  },
+  {
+    "id": 74,
+    "question": "What is 'permission_handler' plugin used for?",
+    "answer": "Requests and checks runtime permissions (camera, location, storage, contacts) in a cross-platform way, handling Denied/Permanently Denied states."
+  },
+  {
+    "id": 75,
+    "question": "What is 'flutter_local_notifications'?",
+    "answer": "A plugin to display local push notifications with custom sounds, icons, schedules (future, repeating) on Android and iOS"
+  },
+  {
+    "id": 76,
+    "question": "What is 'firebase_core' and why is it required for other Firebase services?",
+    "answer": "firebase_core is the core plugin that initializes Firebase app for Flutter; it must be called before using any other firebase plugins (auth, firestore, analytics)."
+  },
+  {
+    "id": 77,
+    "question": "What is 'cloud_firestore' main feature?",
+    "answer": "cloud_firestore is a NoSQL real-time database. Listeners are notified when data changes (snapshots), supporting offline persistence and complex queries."
+  },
+  {
+    "id": 78,
+    "question": "What is 'StreamBuilder' commonly used with Firestore?",
+    "answer": "Firestore queries return a Stream<QuerySnapshot>. StreamBuilder listens to that stream, rebuilding UI when data changes in real-time (live updates)."
+  },
+  {
+    "id": 79,
+    "question": "How to handle deep linking in Flutter?",
+    "answer": "Using go_router or named routes with onGenerateRoute, parse incoming link in main() with getInitialLink or using app_links package to handle custom schemes and web links."
+  },
+  {
+    "id": 80,
+    "question": "What is 'go_router' package?",
+    "answer": "A declarative routing package supporting nested routes, path parameters, redirections, and deep linking with fewer context dependencies than Navigator."
+  },
+  {
+    "id": 81,
+    "question": "What is 'flutter_native_splash'?",
+    "answer": "A package to generate native splash screens (launch screens) for Android, iOS, Web, configuring background color, image, and duration programmatically."
+  },
+  {
+    "id": 82,
+    "question": "What is the difference between 'WidgetsFlutterBinding.ensureInitialized()' and 'runApp'?",
+    "answer": "WidgetsFlutterBinding.ensureInitialized() initializes the binding without starting the app, needed for plugins before runApp (e.g., Firebase). runApp starts the app UI."
+  },
+  {
+    "id": 83,
+    "question": "What are 'Isolate' vs 'compute' in Flutter?",
+    "answer": "compute() is a helper that spawns an isolate, runs a function, returns result, then closes isolate. Isolate.spawn gives more control over long-running isolates."
+  },
+  {
+    "id": 84,
+    "question": "What is the 'Dart DevTools' suite?",
+    "answer": "Performance, UI, and debugging tools for Flutter: widget inspector, CPU profiler, memory view, network logger, logging."
+  },
+  {
+    "id": 85,
+    "question": "What is 'flutter_driver' vs 'integration_test'?",
+    "answer": "flutter_driver (deprecated) was for integration tests. integration_test is the current recommended package for widget integration and end-to-end tests running on devices."
+  },
+  {
+    "id": 86,
+    "question": "What is 'flutter_test' package?",
+    "answer": "flutter_test provides testing utilities for unit tests and widget tests (testWidgets), including finders, matchers, and PumpWidget to build test environment."
+  },
+  {
+    "id": 87,
+    "question": "What is 'Mocktail' or 'Mockito' used for?",
+    "answer": "Mocking packages for unit tests: create fake implementations of dependencies (HTTP client, database) to test logic without real services."
+  },
+  {
+    "id": 88,
+    "question": "What is 'golden test' in Flutter?",
+    "answer": "A widget test that compares a rendered widget's appearance against a stored image (golden file) to detect unintended visual changes."
+  },
+  {
+    "id": 89,
+    "question": "What is the difference between 'pub get' and 'pub upgrade'?",
+    "answer": "pub get downloads packages locked in pubspec.lock. pub upgrade fetches latest versions matching pubspec.yaml constraints, updating lock file."
+  },
+  {
+    "id": 90,
+    "question": "What is 'flutter clean' used for?",
+    "answer": "Deletes build/ directory and .dart_tool/, forcing full recompilation. Useful when encountering build errors due to stale cache."
+  },
+  {
+    "id": 91,
+    "question": "What is 'build_runner' used for?",
+    "answer": "Runs code generation tasks: building json_serializable, freezed, drift, and other packages generating Dart code (e.g., *.g.dart files)."
+  },
+  {
+    "id": 92,
+    "question": "What is the difference between 'debugPrint' and 'print'?",
+    "answer": "debugPrint throttles output to avoid overflow on Android logcat. print prints without throttling, could overflow."
+  },
+  {
+    "id": 93,
+    "question": "What does 'repaintBoundary' property do in widgets?",
+    "answer": "If true, widget creates a new layer (repaint boundary) to prevent its children from repainting when ancestors repaint, improving performance for animations."
+  },
+  {
+    "id": 94,
+    "question": "What are 'Shimmer' effects in Flutter?",
+    "answer": "Skeleton loading placeholders that simulate loading animation. Implemented via 'shimmer' package, wrapping container to animate linear gradient."
+  },
+  {
+    "id": 95,
+    "question": "What is 'Sliver' widget in Flutter?",
+    "answer": "Slivers are scrollable areas with custom scroll effects (app bar collapsing, parallax). Used inside CustomScrollView with slivers: SliverAppBar, SliverList, SliverGrid."
+  },
+  {
+    "id": 96,
+    "question": "What is 'NestedScrollView'?",
+    "answer": "A scroll view containing other scroll views (inner and outer), allowing coordinated scrolling like collapsing header with tab bar."
+  },
+  {
+    "id": 97,
+    "question": "What is 'ElevatedButton' vs 'TextButton' vs 'OutlinedButton'?",
+    "answer": "ElevatedButton has shadow and filled background (primary action). TextButton is flat (minimal). OutlinedButton has border without fill (secondary). All replaced old RaisedButton/FlatButton."
+  },
+  {
+    "id": 98,
+    "question": "What is the 'PageView' widget?",
+    "answer": "A scrollable list that snaps to pages, used for carousels, onboarding screens, or tabbed views. Supports horizontal/vertical scrolling and controller."
+  },
+  {
+    "id": 99,
+    "question": "What is 'CustomScrollView' use case?",
+    "answer": "Combines multiple slivers with different scroll behaviors (app bar shrinking + list + grid) in one scrollable view, avoiding nested scrolling conflicts."
+  },
+  {
+    "id": 100,
+    "question": "What is 'Semantics' widget and why is it important?",
+    "answer": "Semantics provides accessibility information to screen readers (TalkBack, VoiceOver). Helps Flutter describe UI to visually impaired users, improving app inclusivity."
+  }
+]

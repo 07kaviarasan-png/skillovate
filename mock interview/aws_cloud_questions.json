@@ -1,0 +1,504 @@
+{
+  "aws_cloud_questions": [
+    {
+      "id": 1,
+      "question": "What is AWS and what services does it provide?",
+      "answer": "AWS (Amazon Web Services) is a comprehensive cloud platform offering compute, storage, database, networking, analytics, machine learning, and other services on demand with pay-as-you-go pricing."
+    },
+    {
+      "id": 2,
+      "question": "Explain AWS regions and availability zones.",
+      "answer": "Regions are geographic areas with multiple data centers, while Availability Zones are isolated data centers within regions. Multiple AZs in a region provide high availability and disaster recovery."
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between EC2 and Elastic Beanstalk?",
+      "answer": "EC2 provides virtual machine instances with full control over infrastructure, while Elastic Beanstalk is a Platform-as-a-Service for easy application deployment with automated scaling and management."
+    },
+    {
+      "id": 4,
+      "question": "Describe the EC2 instance types and their use cases.",
+      "answer": "EC2 instance types include General Purpose (balanced), Compute Optimized (CPU intensive), Memory Optimized (RAM intensive), Storage Optimized (I/O intensive), and Accelerated Computing for specialized workloads."
+    },
+    {
+      "id": 5,
+      "question": "What is Amazon S3 and its key features?",
+      "answer": "S3 (Simple Storage Service) is object storage for any data type, offering durability, high availability, scalability, various storage classes, and lifecycle policies for cost optimization."
+    },
+    {
+      "id": 6,
+      "question": "Explain S3 storage classes and their differences.",
+      "answer": "S3 classes include Standard (frequent access), Intelligent-Tiering (automatic optimization), Standard-IA (infrequent access), One Zone-IA, Glacier (archival), and Deep Archive for varying cost and access patterns."
+    },
+    {
+      "id": 7,
+      "question": "What is S3 versioning and why is it useful?",
+      "answer": "Versioning maintains multiple versions of objects in S3, enabling recovery from accidental deletions or overwrites, and maintaining data history for compliance."
+    },
+    {
+      "id": 8,
+      "question": "Describe S3 lifecycle policies.",
+      "answer": "Lifecycle policies automatically transition objects between storage classes based on age or delete them, optimizing costs by moving old data to cheaper storage."
+    },
+    {
+      "id": 9,
+      "question": "What is Amazon RDS and its benefits?",
+      "answer": "RDS (Relational Database Service) manages relational databases with automated backups, patches, high availability, read replicas, and multi-AZ deployments for production workloads."
+    },
+    {
+      "id": 10,
+      "question": "Explain RDS Multi-AZ deployment.",
+      "answer": "Multi-AZ synchronously replicates database to standby instance in different AZ, providing automatic failover for high availability and disaster recovery."
+    },
+    {
+      "id": 11,
+      "question": "What are RDS read replicas?",
+      "answer": "Read replicas are asynchronous copies of RDS database across regions or AZs, scaling read capacity and enabling reports without impacting production database."
+    },
+    {
+      "id": 12,
+      "question": "Describe Amazon DynamoDB.",
+      "answer": "DynamoDB is a fully managed NoSQL database offering millisecond latency, automatic scaling, strong consistency, and global tables for distributed applications."
+    },
+    {
+      "id": 13,
+      "question": "What is DynamoDB provisioned vs on-demand capacity?",
+      "answer": "Provisioned capacity requires predefined read/write units with discounts for predictable workloads, while on-demand scales automatically paying per request for unpredictable traffic."
+    },
+    {
+      "id": 14,
+      "question": "Explain Amazon ElastiCache.",
+      "answer": "ElastiCache is managed in-memory cache using Redis or Memcached, improving application performance by reducing database load and providing fast data access."
+    },
+    {
+      "id": 15,
+      "question": "What is Amazon CloudFront?",
+      "answer": "CloudFront is AWS CDN (Content Delivery Network) distributing content globally via edge locations, reducing latency and improving user experience."
+    },
+    {
+      "id": 16,
+      "question": "Describe CloudFront cache invalidation.",
+      "answer": "Cache invalidation removes cached content before expiry, forcing CloudFront to retrieve updated content from origin, ensuring users get latest versions."
+    },
+    {
+      "id": 17,
+      "question": "What is AWS Lambda and its advantages?",
+      "answer": "Lambda is serverless compute executing code without managing servers, auto-scaling, charging only for execution time, ideal for event-driven architectures."
+    },
+    {
+      "id": 18,
+      "question": "Explain Lambda functions and their triggers.",
+      "answer": "Lambda functions execute code in response to events from S3, DynamoDB, API Gateway, SNS, SQS, CloudWatch, and other AWS services."
+    },
+    {
+      "id": 19,
+      "question": "What is AWS API Gateway?",
+      "answer": "API Gateway creates, publishes, and manages APIs, handling authentication, rate limiting, logging, request transformation, and routing to backend services."
+    },
+    {
+      "id": 20,
+      "question": "Describe API Gateway stages and deployment.",
+      "answer": "Stages represent API versions (dev, test, prod) with separate configurations, endpoints, and throttling. Deployments create immutable snapshots of API versions."
+    },
+    {
+      "id": 21,
+      "question": "What is AWS SQS (Simple Queue Service)?",
+      "answer": "SQS is managed message queue decoupling application components, enabling asynchronous communication with durability, at-least-once delivery, and automatic scaling."
+    },
+    {
+      "id": 22,
+      "question": "Explain SQS FIFO vs Standard queues.",
+      "answer": "Standard queues offer best-effort ordering and high throughput, while FIFO guarantees message order and exactly-once delivery for critical workflows."
+    },
+    {
+      "id": 23,
+      "question": "What is AWS SNS (Simple Notification Service)?",
+      "answer": "SNS is publish-subscribe messaging sending notifications to multiple subscribers via email, SMS, HTTP, Lambda, SQS, enabling broadcast communication patterns."
+    },
+    {
+      "id": 24,
+      "question": "Describe difference between SNS and SQS.",
+      "answer": "SNS is push-based pub-sub for broadcasting, while SQS is pull-based queue for point-to-point messaging. SNS suitable for notifications, SQS for decoupling."
+    },
+    {
+      "id": 25,
+      "question": "What is AWS CloudWatch?",
+      "answer": "CloudWatch monitors AWS resources and applications, collecting metrics, logs, and events, enabling alarms, dashboards, and insights for operational visibility."
+    },
+    {
+      "id": 26,
+      "question": "Explain CloudWatch alarms and actions.",
+      "answer": "Alarms monitor metrics and trigger actions when thresholds are breached, executing SNS notifications, scaling policies, or remediation actions automatically."
+    },
+    {
+      "id": 27,
+      "question": "What is AWS CloudTrail?",
+      "answer": "CloudTrail logs API calls and actions across AWS account, providing audit trails, compliance evidence, and security analysis for governance."
+    },
+    {
+      "id": 28,
+      "question": "Describe AWS CloudFormation.",
+      "answer": "CloudFormation provisions infrastructure as code using templates defining AWS resources, enabling reproducible deployments, version control, and stack management."
+    },
+    {
+      "id": 29,
+      "question": "What are CloudFormation stacks?",
+      "answer": "Stacks are collections of resources created from templates, managing lifecycle of resources together, enabling easy creation, updates, and deletion."
+    },
+    {
+      "id": 30,
+      "question": "Explain CloudFormation parameters and outputs.",
+      "answer": "Parameters accept input values customizing templates, while outputs expose important values like endpoints to users for easy resource access."
+    },
+    {
+      "id": 31,
+      "question": "What is AWS VPC (Virtual Private Cloud)?",
+      "answer": "VPC provides isolated virtual network in AWS, allowing customization of IP ranges, subnets, route tables, and security groups for network isolation."
+    },
+    {
+      "id": 32,
+      "question": "Describe subnets and their types.",
+      "answer": "Subnets partition VPC into smaller networks across AZs. Public subnets route to internet via Internet Gateway, private subnets use NAT Gateway or Bastion hosts."
+    },
+    {
+      "id": 33,
+      "question": "What is an Internet Gateway?",
+      "answer": "Internet Gateway enables communication between VPC instances and internet, allowing instances with public IPs to receive inbound traffic and initiate outbound connections."
+    },
+    {
+      "id": 34,
+      "question": "Explain NAT Gateway and NAT Instance.",
+      "answer": "NAT Gateway is AWS-managed service allowing private instances to access internet while remaining unreachable from outside, while NAT Instance is EC2-based alternative."
+    },
+    {
+      "id": 35,
+      "question": "What are Security Groups?",
+      "answer": "Security Groups act as virtual firewalls controlling inbound and outbound traffic at instance level, using allow rules (no explicit deny rules)."
+    },
+    {
+      "id": 36,
+      "question": "Describe Network ACLs (NACLs).",
+      "answer": "NACLs are stateless firewalls at subnet level, containing allow and deny rules evaluated in order, controlling traffic entering and leaving subnet."
+    },
+    {
+      "id": 37,
+      "question": "What is the difference between Security Groups and NACLs?",
+      "answer": "Security Groups are stateful, operate at instance level, have only allow rules. NACLs are stateless, operate at subnet level, have allow and deny rules."
+    },
+    {
+      "id": 38,
+      "question": "Explain VPC Peering.",
+      "answer": "VPC Peering connects two VPCs allowing instances to communicate privately using private IPs, useful for multi-account or multi-region architectures."
+    },
+    {
+      "id": 39,
+      "question": "What is AWS VPN (Virtual Private Network)?",
+      "answer": "VPN establishes encrypted tunnel connecting on-premises network to VPC, enabling secure access to AWS resources over internet."
+    },
+    {
+      "id": 40,
+      "question": "Describe AWS Direct Connect.",
+      "answer": "Direct Connect establishes dedicated network connection from on-premises to AWS, providing consistent bandwidth, lower latency than VPN, and enhanced security."
+    },
+    {
+      "id": 41,
+      "question": "What is AWS IAM (Identity and Access Management)?",
+      "answer": "IAM manages users, groups, roles, and permissions controlling access to AWS resources, following principle of least privilege for security."
+    },
+    {
+      "id": 42,
+      "question": "Explain IAM users, groups, and roles.",
+      "answer": "Users represent individuals with credentials, groups organize users for permission management, roles are temporary credentials for services or cross-account access."
+    },
+    {
+      "id": 43,
+      "question": "What are IAM policies?",
+      "answer": "Policies are JSON documents defining permissions, specifying actions allowed or denied on specific resources, attached to users, groups, or roles."
+    },
+    {
+      "id": 44,
+      "question": "Describe managed vs inline policies.",
+      "answer": "Managed policies are standalone reusable policies maintained by AWS or customers, while inline policies are embedded directly in user/role for specific relationships."
+    },
+    {
+      "id": 45,
+      "question": "What is AWS KMS (Key Management Service)?",
+      "answer": "KMS manages encryption keys for protecting data at rest, supporting envelope encryption, automatic key rotation, and audit logging for compliance."
+    },
+    {
+      "id": 46,
+      "question": "Explain envelope encryption in KMS.",
+      "answer": "Envelope encryption encrypts data with data key, then encrypts data key with master key, enabling efficient large-file encryption and key management."
+    },
+    {
+      "id": 47,
+      "question": "What is AWS Secrets Manager?",
+      "answer": "Secrets Manager securely stores and rotates database passwords, API keys, and secrets, integrating with applications and enforcing access policies."
+    },
+    {
+      "id": 48,
+      "question": "Describe AWS Certificate Manager (ACM).",
+      "answer": "ACM provisions, manages, and deploys SSL/TLS certificates for HTTPS, automating renewal and providing at no additional cost for AWS services."
+    },
+    {
+      "id": 49,
+      "question": "What is AWS WAF (Web Application Firewall)?",
+      "answer": "WAF protects web applications from common attacks like SQL injection and XSS, defining rules to allow/block traffic at CloudFront or ALB level."
+    },
+    {
+      "id": 50,
+      "question": "Explain AWS Shield.",
+      "answer": "Shield provides DDoS protection, with Shield Standard automatic for all customers and Shield Advanced offering enhanced protection and AWS support."
+    },
+    {
+      "id": 51,
+      "question": "What is AWS Auto Scaling?",
+      "answer": "Auto Scaling automatically adjusts resources based on demand, maintaining performance and cost optimization through scaling policies and CloudWatch metrics."
+    },
+    {
+      "id": 52,
+      "question": "Describe AWS Auto Scaling Group (ASG).",
+      "answer": "ASG maintains desired number of EC2 instances, automatically replacing unhealthy instances, scaling based on policies, and distributing across AZs."
+    },
+    {
+      "id": 53,
+      "question": "What is AWS Elastic Load Balancer (ELB)?",
+      "answer": "ELB distributes incoming traffic across multiple targets, providing high availability, automatic scaling trigger, and health checks for fault tolerance."
+    },
+    {
+      "id": 54,
+      "question": "Explain Application Load Balancer (ALB) vs Network Load Balancer (NLB).",
+      "answer": "ALB operates at Layer 7 (application), routing based on hostnames/paths/HTTP headers, suitable for web apps. NLB operates at Layer 4 (transport), ultra-high performance for extreme throughput."
+    },
+    {
+      "id": 55,
+      "question": "What is AWS Elastic IP?",
+      "answer": "Elastic IP is static public IP remaining associated with instance across stop/start, useful for applications requiring fixed IPs or DNS pointing."
+    },
+    {
+      "id": 56,
+      "question": "Describe AWS Route 53.",
+      "answer": "Route 53 is DNS web service routing traffic to resources, supporting health checks, failover, weighted routing, and domain registration."
+    },
+    {
+      "id": 57,
+      "question": "What is Route 53 health checking?",
+      "answer": "Health checks monitor endpoints and automatically remove unhealthy targets from routing, enabling active-active failover and high availability."
+    },
+    {
+      "id": 58,
+      "question": "Explain weighted routing in Route 53.",
+      "answer": "Weighted routing distributes traffic across resources based on assigned weights, useful for gradual traffic shifting and A/B testing."
+    },
+    {
+      "id": 59,
+      "question": "What is AWS ECS (Elastic Container Service)?",
+      "answer": "ECS is managed container orchestration running Docker containers on EC2 or Fargate, handling scheduling, placement, and scaling automatically."
+    },
+    {
+      "id": 60,
+      "question": "Describe ECS clusters, tasks, and services.",
+      "answer": "Clusters group resources, tasks are running container instances, services maintain desired task count with load balancing and auto-scaling."
+    },
+    {
+      "id": 61,
+      "question": "What is AWS Fargate?",
+      "answer": "Fargate is serverless container compute eliminating EC2 management, charging per CPU/memory usage, ideal for containerized applications without infrastructure overhead."
+    },
+    {
+      "id": 62,
+      "question": "Explain AWS ECR (Elastic Container Registry).",
+      "answer": "ECR manages Docker images securely, integrating with ECS/EKS/Lambda, supporting image scanning, access policies, and lifecycle management."
+    },
+    {
+      "id": 63,
+      "question": "What is AWS EKS (Elastic Kubernetes Service)?",
+      "answer": "EKS is managed Kubernetes service handling control plane, enabling running containerized applications with Kubernetes orchestration and AWS integration."
+    },
+    {
+      "id": 64,
+      "question": "Describe AWS S3 bucket policies.",
+      "answer": "Bucket policies control access to S3 buckets and objects, written in JSON, allowing/denying actions to specific principals on bucket level."
+    },
+    {
+      "id": 65,
+      "question": "What is S3 Block Public Access?",
+      "answer": "Block Public Access prevents accidental public exposure by blocking all public access at account or bucket level, important security control for sensitive data."
+    },
+    {
+      "id": 66,
+      "question": "Explain S3 server-side encryption (SSE).",
+      "answer": "SSE encrypts data at rest using S3-managed keys (SSE-S3), KMS keys (SSE-KMS), or customer-provided keys (SSE-C), transparent to users."
+    },
+    {
+      "id": 67,
+      "question": "What is AWS Backup?",
+      "answer": "Backup is centralized backup service protecting AWS resources across services, automating backup policies, and managing compliance with retention policies."
+    },
+    {
+      "id": 68,
+      "question": "Describe AWS DataSync.",
+      "answer": "DataSync automates large-scale data transfer between on-premises storage and AWS, handling encryption, validation, and bandwidth optimization."
+    },
+    {
+      "id": 69,
+      "question": "What is AWS Snowball?",
+      "answer": "Snowball transfers large data volumes using physical appliances shipped by AWS, suitable for scenarios where network transfer is impractical."
+    },
+    {
+      "id": 70,
+      "question": "Explain AWS Storage Gateway.",
+      "answer": "Storage Gateway connects on-premises systems to AWS storage, supporting file, tape, and volume gateways for hybrid architectures."
+    },
+    {
+      "id": 71,
+      "question": "What is AWS Glue?",
+      "answer": "Glue is fully managed extract-transform-load (ETL) service, discovering data, generating code, and executing data integration jobs at scale."
+    },
+    {
+      "id": 72,
+      "question": "Describe AWS Redshift.",
+      "answer": "Redshift is fully managed data warehouse enabling fast queries on large datasets, using columnar storage, compression, and distributed processing."
+    },
+    {
+      "id": 73,
+      "question": "What is AWS Athena?",
+      "answer": "Athena queries data in S3 directly using SQL without loading, pay per query, serverless, ideal for one-time analysis and exploration."
+    },
+    {
+      "id": 74,
+      "question": "Explain AWS EMR (Elastic MapReduce).",
+      "answer": "EMR processes big data using Spark, Hadoop, Hive on EC2 clusters, auto-scaling based on workload, suitable for batch processing and analytics."
+    },
+    {
+      "id": 75,
+      "question": "What is AWS Kinesis?",
+      "answer": "Kinesis ingests and processes streaming data at scale, supporting real-time analytics, log processing, and event-driven applications."
+    },
+    {
+      "id": 76,
+      "question": "Describe Kinesis Data Streams vs Firehose.",
+      "answer": "Data Streams handles real-time data intake with custom processing, Firehose automatically loads streaming data to S3/Redshift/Elasticsearch."
+    },
+    {
+      "id": 77,
+      "question": "What is AWS Lambda concurrency?",
+      "answer": "Concurrency controls simultaneous function executions, with reserved concurrency guaranteeing capacity and provisioned concurrency for faster warm starts."
+    },
+    {
+      "id": 78,
+      "question": "Explain Lambda cold starts and warm starts.",
+      "answer": "Cold start initializes new container and loads code, adding latency. Warm start reuses initialized container for faster execution."
+    },
+    {
+      "id": 79,
+      "question": "What is AWS Step Functions?",
+      "answer": "Step Functions orchestrates distributed workflows using state machines, coordinating Lambda, ECS, and other services with error handling and retries."
+    },
+    {
+      "id": 80,
+      "question": "Describe AWS EventBridge.",
+      "answer": "EventBridge routes events from AWS services, partners, and custom apps to targets, enabling event-driven architectures and serverless workflows."
+    },
+    {
+      "id": 81,
+      "question": "What is AWS Systems Manager?",
+      "answer": "Systems Manager provides operational tools managing EC2 instances and on-premises servers, including patch management, configuration, and automation."
+    },
+    {
+      "id": 82,
+      "question": "Explain AWS OpsWorks.",
+      "answer": "OpsWorks automates application lifecycle using Chef or Puppet, managing configuration, deployment, and scaling of application stacks."
+    },
+    {
+      "id": 83,
+      "question": "What is AWS CodePipeline?",
+      "answer": "CodePipeline is continuous delivery service orchestrating release workflows from source to deployment, supporting multiple sources and deployment targets."
+    },
+    {
+      "id": 84,
+      "question": "Describe AWS CodeBuild.",
+      "answer": "CodeBuild compiles source, runs tests, produces deployable artifacts, scaling automatically without managing build servers."
+    },
+    {
+      "id": 85,
+      "question": "What is AWS CodeDeploy?",
+      "answer": "CodeDeploy automates application deployment to EC2, on-premises servers, Lambda, handling rollbacks and traffic shifting for safe deployments."
+    },
+    {
+      "id": 86,
+      "question": "Explain AWS X-Ray.",
+      "answer": "X-Ray traces requests through applications, visualizing service interactions, identifying bottlenecks, analyzing latency for performance optimization."
+    },
+    {
+      "id": 87,
+      "question": "What is AWS Application Performance Monitoring (APM)?",
+      "answer": "APM tools like X-Ray and CloudWatch provide visibility into application performance, identifying issues and optimizing user experience."
+    },
+    {
+      "id": 88,
+      "question": "Describe AWS Config.",
+      "answer": "Config tracks AWS resource configurations, compliance status, and changes over time, enabling compliance auditing and governance."
+    },
+    {
+      "id": 89,
+      "question": "What is AWS GuardDuty?",
+      "answer": "GuardDuty is threat detection service analyzing CloudTrail, DNS logs, VPC flow logs to identify malicious activity and unauthorized behavior."
+    },
+    {
+      "id": 90,
+      "question": "Explain AWS Security Hub.",
+      "answer": "Security Hub aggregates security findings from AWS services and partners, providing centralized security posture management and compliance monitoring."
+    },
+    {
+      "id": 91,
+      "question": "What is AWS Cost Explorer?",
+      "answer": "Cost Explorer visualizes AWS spending patterns, forecasts costs, identifies optimization opportunities, and manages budgets across services."
+    },
+    {
+      "id": 92,
+      "question": "Describe AWS Budgets.",
+      "answer": "Budgets set spending limits on AWS services, sending alerts when approaching thresholds, enabling cost control and budget management."
+    },
+    {
+      "id": 93,
+      "question": "What is AWS Reserved Instances (RIs)?",
+      "answer": "RIs provide significant discounts on EC2 and RDS for 1 or 3-year commitments, reducing costs for predictable workloads."
+    },
+    {
+      "id": 94,
+      "question": "Explain AWS Savings Plans.",
+      "answer": "Savings Plans offer flexible discounts on compute services (EC2, Lambda, Fargate) across instance types and regions for committed usage."
+    },
+    {
+      "id": 95,
+      "question": "What is AWS Spot Instances?",
+      "answer": "Spot Instances offer significant discounts on unused EC2 capacity, suitable for fault-tolerant workloads accepting interruptions."
+    },
+    {
+      "id": 96,
+      "question": "Describe AWS Organizations.",
+      "answer": "Organizations manages multiple AWS accounts, centralizing billing, applying policies across accounts, and organizing for governance."
+    },
+    {
+      "id": 97,
+      "question": "What is AWS Service Control Policies (SCPs)?",
+      "answer": "SCPs set permissions boundaries on AWS accounts in Organizations, preventing actions across accounts regardless of IAM policies."
+    },
+    {
+      "id": 98,
+      "question": "Explain AWS Well-Architected Framework.",
+      "answer": "Framework provides best practices across five pillars: operational excellence, security, reliability, performance efficiency, and cost optimization."
+    },
+    {
+      "id": 99,
+      "question": "What is AWS Trusted Advisor?",
+      "answer": "Trusted Advisor checks AWS usage against best practices, providing recommendations for cost optimization, security, performance, and service limits."
+    },
+    {
+      "id": 100,
+      "question": "Describe high availability vs disaster recovery.",
+      "answer": "High availability minimizes downtime through redundancy and failover mechanisms, while disaster recovery restores service after major failures through backup and recovery procedures."
+    }
+  ]
+}

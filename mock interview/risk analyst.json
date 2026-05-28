@@ -1,0 +1,504 @@
+{
+  "risk_analyst_questions": [
+    {
+      "id": 1,
+      "question": "What is risk in the context of financial analysis?",
+      "answer": "The possibility that an actual outcome will differ from the expected outcome, particularly the potential for financial loss or adverse consequences."
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between systematic and unsystematic risk?",
+      "answer": "Systematic risk affects the entire market (e.g., inflation, interest rates) and cannot be diversified; unsystematic risk is specific to a company or industry and can be reduced through diversification."
+    },
+    {
+      "id": 3,
+      "question": "What is Value at Risk (VaR)?",
+      "answer": "A statistical measure that estimates the maximum potential loss of an investment or portfolio over a specified time horizon at a given confidence level (e.g., 95% or 99%)."
+    },
+    {
+      "id": 4,
+      "question": "What are the three main types of financial risk?",
+      "answer": "Market risk, credit risk, and operational risk."
+    },
+    {
+      "id": 5,
+      "question": "What is credit risk?",
+      "answer": "The risk that a borrower or counterparty will fail to meet its obligations in accordance with agreed terms, resulting in financial loss."
+    },
+    {
+      "id": 6,
+      "question": "What is market risk?",
+      "answer": "The risk of losses in on- and off-balance sheet positions arising from adverse movements in market prices, including interest rates, foreign exchange rates, equity prices, and commodity prices."
+    },
+    {
+      "id": 7,
+      "question": "What is operational risk?",
+      "answer": "The risk of loss resulting from inadequate or failed internal processes, people, systems, or external events (includes legal risk but excludes strategic and reputational risk)."
+    },
+    {
+      "id": 8,
+      "question": "What is liquidity risk?",
+      "answer": "The risk that an entity cannot meet its short-term financial obligations due to inability to convert assets into cash quickly without significant loss."
+    },
+    {
+      "id": 9,
+      "question": "What is the difference between systematic and systemic risk?",
+      "answer": "Systematic risk is market-wide and non-diversifiable; systemic risk is the risk that failure of one institution or part of the system causes collapse of the entire financial system."
+    },
+    {
+      "id": 10,
+      "question": "What is the expected loss (EL) formula in credit risk?",
+      "answer": "EL = Probability of Default (PD) × Exposure at Default (EAD) × Loss Given Default (LGD)."
+    },
+    {
+      "id": 11,
+      "question": "What is Probability of Default (PD)?",
+      "answer": "The likelihood that a borrower will default on its debt obligations within a specific time horizon (usually one year)."
+    },
+    {
+      "id": 12,
+      "question": "What is Loss Given Default (LGD)?",
+      "answer": "The estimated percentage of exposure that a lender will lose if a borrower defaults, after accounting for recoveries (e.g., collateral, guarantees)."
+    },
+    {
+      "id": 13,
+      "question": "What is Exposure at Default (EAD)?",
+      "answer": "The total value of a lender's exposure to a borrower at the time of default, including drawn and undrawn committed amounts."
+    },
+    {
+      "id": 14,
+      "question": "What is a credit rating?",
+      "answer": "An assessment of a borrower's creditworthiness, expressed as a grade (e.g., AAA, BB, C) assigned by a credit rating agency based on financial and non-financial factors."
+    },
+    {
+      "id": 15,
+      "question": "What is a credit default swap (CDS)?",
+      "answer": "A financial derivative contract that allows an investor to transfer credit risk to a counterparty, where the seller compensates the buyer if a reference entity defaults."
+    },
+    {
+      "id": 16,
+      "question": "What is risk appetite?",
+      "answer": "The amount and type of risk an organization is willing to accept in pursuit of its strategic objectives, often quantified through thresholds or limits."
+    },
+    {
+      "id": 17,
+      "question": "What is risk tolerance?",
+      "answer": "The specific maximum level of risk that an organization can accept for each risk category, often expressed as ranges or variances from risk appetite."
+    },
+    {
+      "id": 18,
+      "question": "What is the difference between risk management and risk measurement?",
+      "answer": "Risk measurement quantifies risk exposure using models and metrics; risk management includes identification, assessment, mitigation, monitoring, and governance of risks."
+    },
+    {
+      "id": 19,
+      "question": "What is scenario analysis?",
+      "answer": "A forward-looking risk assessment technique that evaluates the impact of hypothetical events or changes in economic conditions on a portfolio or organization."
+    },
+    {
+      "id": 20,
+      "question": "What is stress testing?",
+      "answer": "A form of scenario analysis that examines severe but plausible adverse conditions (e.g., financial crisis, sharp rate hikes) to assess an entity's resilience."
+    },
+    {
+      "id": 21,
+      "question": "What is sensitivity analysis?",
+      "answer": "A technique that measures how changes in a single input variable (e.g., interest rate, exchange rate) affect an output, holding other variables constant."
+    },
+    {
+      "id": 22,
+      "question": "What is the difference between VaR and Expected Shortfall (ES)?",
+      "answer": "VaR gives the maximum loss at a confidence level; ES (or Conditional VaR) measures the average loss beyond the VaR threshold, capturing tail risk."
+    },
+    {
+      "id": 23,
+      "question": "What is the Basel framework?",
+      "answer": "A set of international banking regulations issued by the Basel Committee on Banking Supervision to strengthen bank capital requirements, liquidity, and risk management."
+    },
+    {
+      "id": 24,
+      "question": "What is the minimum capital requirement under Basel III?",
+      "answer": "Common Equity Tier 1 (CET1) capital must be at least 4.5% of Risk-Weighted Assets, with total Tier 1 capital at 6%, and total capital at 8%."
+    },
+    {
+      "id": 25,
+      "question": "What is the countercyclical capital buffer?",
+      "answer": "An additional capital requirement under Basel III that varies with macroeconomic conditions, requiring banks to build capital in good times to absorb losses in downturns."
+    },
+    {
+      "id": 26,
+      "question": "What is the leverage ratio under Basel III?",
+      "answer": "A non-risk-based backstop measure requiring Tier 1 capital to be at least 3% of total exposure (on- and off-balance sheet)."
+    },
+    {
+      "id": 27,
+      "question": "What is the Liquidity Coverage Ratio (LCR)?",
+      "answer": "A Basel III standard requiring banks to hold sufficient high-quality liquid assets to cover net cash outflows over a 30-day stress period (minimum 100%)."
+    },
+    {
+      "id": 28,
+      "question": "What is the Net Stable Funding Ratio (NSFR)?",
+      "answer": "A long-term liquidity standard requiring available stable funding to exceed required stable funding over a one-year period (minimum 100%)."
+    },
+    {
+      "id": 29,
+      "question": "What is risk-weighted asset (RWA)?",
+      "answer": "A bank's assets weighted by risk coefficients (e.g., 0% for government bonds, 100% for unsecured corporate loans) to determine minimum capital requirements."
+    },
+    {
+      "id": 30,
+      "question": "What is the Internal Ratings-Based (IRB) approach?",
+      "answer": "A Basel method allowing banks to use their own internal estimates of PD, LGD, and EAD for credit risk, subject to supervisory approval."
+    },
+    {
+      "id": 31,
+      "question": "What is the standardized approach for credit risk?",
+      "answer": "A method where external credit ratings determine risk weights for exposures, with fixed percentages prescribed by regulators."
+    },
+    {
+      "id": 32,
+      "question": "What is a risk control self-assessment (RCSA)?",
+      "answer": "A process where business units identify, assess, and evaluate the effectiveness of controls for their inherent and residual risks, often used in operational risk."
+    },
+    {
+      "id": 33,
+      "question": "What is key risk indicator (KRI)?",
+      "answer": "A metric used to monitor the level of risk exposure over time, providing early warning signals for increasing risk trends (e.g., staff turnover, failed transactions)."
+    },
+    {
+      "id": 34,
+      "question": "What is the difference between inherent risk and residual risk?",
+      "answer": "Inherent risk is the risk level before controls; residual risk is the risk remaining after applying mitigation controls."
+    },
+    {
+      "id": 35,
+      "question": "What is a risk register?",
+      "answer": "A documented list of identified risks, including their description, likelihood, impact, ownership, mitigation actions, and status."
+    },
+    {
+      "id": 36,
+      "question": "What is heat map (risk matrix)?",
+      "answer": "A visual tool that plots risks based on their likelihood and impact, using color coding (e.g., red for high, yellow for medium, green for low) to prioritize actions."
+    },
+    {
+      "id": 37,
+      "question": "What is the three lines of defense model in risk management?",
+      "answer": "First line: operational management (owns risk). Second line: risk and compliance functions (oversight). Third line: internal audit (independent assurance)."
+    },
+    {
+      "id": 38,
+      "question": "What is risk mitigation?",
+      "answer": "Actions taken to reduce risk exposure to an acceptable level, including avoiding, transferring, accepting, or controlling the risk."
+    },
+    {
+      "id": 39,
+      "question": "What is risk hedging?",
+      "answer": "Using financial instruments (e.g., options, futures, swaps) to offset or reduce exposure to adverse price movements, such as currency or interest rate changes."
+    },
+    {
+      "id": 40,
+      "question": "What is tail risk?",
+      "answer": "The risk of extreme losses occurring in the far ends (tails) of a probability distribution, often underestimated by normal distribution models."
+    },
+    {
+      "id": 41,
+      "question": "What is Monte Carlo simulation in risk analysis?",
+      "answer": "A computational technique that runs thousands of random simulations using probability distributions for inputs to model the range and likelihood of possible outcomes."
+    },
+    {
+      "id": 42,
+      "question": "What is the Risk Management Process (ISO 31000)?",
+      "answer": "A framework including establishing scope, risk identification, risk analysis, risk evaluation, risk treatment, monitoring & review, and communication & consultation."
+    },
+    {
+      "id": 43,
+      "question": "What is country risk?",
+      "answer": "The risk of loss due to economic, political, or social events in a foreign country, including transfer risk, sovereign default, currency inconvertibility, and political violence."
+    },
+    {
+      "id": 44,
+      "question": "What is transfer risk?",
+      "answer": "A component of country risk where a foreign borrower cannot convert local currency into foreign currency to service debt due to government restrictions or lack of reserves."
+    },
+    {
+      "id": 45,
+      "question": "What is settlement risk (Herstatt risk)?",
+      "answer": "The risk that one party delivers payment or assets but the counterparty fails to deliver its obligation in a settlement process, often due to time zone differences."
+    },
+    {
+      "id": 46,
+      "question": "What is model risk?",
+      "answer": "The potential for adverse consequences from decisions based on incorrect or misused model outputs, due to flawed assumptions, data errors, or implementation mistakes."
+    },
+    {
+      "id": 47,
+      "question": "What is diversification benefit in portfolio risk?",
+      "answer": "The reduction in overall portfolio risk achieved by combining assets with low or negative correlations, as unsystematic risks cancel each other."
+    },
+    {
+      "id": 48,
+      "question": "What is the efficient frontier?",
+      "answer": "A curve in modern portfolio theory showing the set of optimal portfolios that offer the highest expected return for a given level of risk or lowest risk for a given return."
+    },
+    {
+      "id": 49,
+      "question": "What is beta in market risk measurement?",
+      "answer": "A measure of a security's volatility relative to the overall market (beta = 1 means same volatility as market; beta >1 more volatile, <1 less volatile)."
+    },
+    {
+      "id": 50,
+      "question": "What is duration in interest rate risk?",
+      "answer": "A measure of a fixed income instrument's price sensitivity to changes in interest rates, expressed in years; higher duration means greater sensitivity."
+    },
+    {
+      "id": 51,
+      "question": "What is convexity in bond risk analysis?",
+      "answer": "A measure of the curvature in the relationship between bond prices and yields, which improves duration-based estimates of price changes for large yield movements."
+    },
+    {
+      "id": 52,
+      "question": "What is counterparty credit risk?",
+      "answer": "The risk that the counterparty to a derivative or securities financing transaction defaults before the final settlement of cash flows."
+    },
+    {
+      "id": 53,
+      "question": "What is Credit Valuation Adjustment (CVA)?",
+      "answer": "An adjustment to the fair value of a derivative to reflect the counterparty's credit risk, representing the market price of counterparty risk."
+    },
+    {
+      "id": 54,
+      "question": "What is Wrong-Way Risk?",
+      "answer": "A risk where exposure to a counterparty increases at the same time the counterparty's credit quality deteriorates, worsening potential loss."
+    },
+    {
+      "id": 55,
+      "question": "What is the difference between specific risk and general market risk?",
+      "answer": "Specific risk affects an individual issuer (e.g., stock plunge due to scandal); general market risk affects the entire market (e.g., interest rate change)."
+    },
+    {
+      "id": 56,
+      "question": "What is the Sharpe ratio?",
+      "answer": "A measure of risk-adjusted return: (Portfolio Return - Risk-Free Rate) / Standard Deviation of Excess Returns. Higher Sharpe indicates better risk-adjusted performance."
+    },
+    {
+      "id": 57,
+      "question": "What is the Sortino ratio?",
+      "answer": "Similar to Sharpe but uses downside deviation (negative volatility) instead of total standard deviation, focusing only on harmful volatility."
+    },
+    {
+      "id": 58,
+      "question": "What is a risk limit?",
+      "answer": "A defined boundary (e.g., VaR limit, notional amount, stop-loss) that risk-taking units must not exceed, monitored by risk management."
+    },
+    {
+      "id": 59,
+      "question": "What is stop-loss limit?",
+      "answer": "A risk limit that automatically triggers action (e.g., closing a position) when cumulative losses reach a predetermined threshold."
+    },
+    {
+      "id": 60,
+      "question": "What is a risk data aggregation?",
+      "answer": "The process of collecting and combining risk data from across an organization to provide a complete, accurate, and timely view of risk exposures."
+    },
+    {
+      "id": 61,
+      "question": "What are the BCBS 239 principles?",
+      "answer": "Basel principles for effective risk data aggregation and risk reporting, including governance, data accuracy, completeness, timeliness, adaptability, and regulatory reporting."
+    },
+    {
+      "id": 62,
+      "question": "What is reputational risk?",
+      "answer": "The risk that negative publicity, whether true or false, will damage an organization's brand, customer trust, or revenue."
+    },
+    {
+      "id": 63,
+      "question": "What is compliance risk?",
+      "answer": "The risk of legal or regulatory sanctions, financial loss, or reputational damage due to failure to comply with laws, regulations, or codes of conduct."
+    },
+    {
+      "id": 64,
+      "question": "What is enterprise risk management (ERM)?",
+      "answer": "A comprehensive framework for identifying, assessing, managing, and monitoring all types of risks across an entire organization, integrated with strategy."
+    },
+    {
+      "id": 65,
+      "question": "What is the COSO ERM framework?",
+      "answer": "A widely used ERM model by the Committee of Sponsoring Organizations, including governance, strategy & objective-setting, performance, review & revision, and information & communication."
+    },
+    {
+      "id": 66,
+      "question": "What is risk aggregation?",
+      "answer": "The process of combining individual risk exposures across business lines, asset classes, or risk types to understand total portfolio risk, considering correlations."
+    },
+    {
+      "id": 67,
+      "question": "What is diversification benefit?",
+      "answer": "The reduction in total portfolio risk (measured by VaR or standard deviation) compared to the sum of individual risks, due to imperfect correlations."
+    },
+    {
+      "id": 68,
+      "question": "What is risk culture?",
+      "answer": "The shared values, attitudes, and behaviors regarding risk management within an organization, influencing how risk is considered in decision-making."
+    },
+    {
+      "id": 69,
+      "question": "What is operational risk scenario analysis?",
+      "answer": "A qualitative and quantitative method where experts define plausible severe operational loss events (e.g., cyberattack, fraud) to assess capital and mitigation needs."
+    },
+    {
+      "id": 70,
+      "question": "What is the loss distribution approach (LDA)?",
+      "answer": "An advanced measurement approach for operational risk capital where frequency and severity distributions of loss events are modeled to estimate unexpected losses."
+    },
+    {
+      "id": 71,
+      "question": "What is the difference between expected loss and unexpected loss?",
+      "answer": "Expected loss is the average loss anticipated over time (covered by provisions/pricing); unexpected loss is the volatility around expected loss (covered by capital)."
+    },
+    {
+      "id": 72,
+      "question": "What is economic capital?",
+      "answer": "The amount of capital a financial institution needs to remain solvent (e.g., at a 99.9% confidence level) over a one-year horizon, based on internal risk models."
+    },
+    {
+      "id": 73,
+      "question": "What is regulatory capital?",
+      "answer": "Minimum capital required by regulators (e.g., Basel rules), which may be higher or lower than economic capital depending on the institution."
+    },
+    {
+      "id": 74,
+      "question": "What is a risk dashboard?",
+      "answer": "A visual management tool presenting key risk metrics, limits usage, and trends for executives and board members, enabling quick risk oversight."
+    },
+    {
+      "id": 75,
+      "question": "What is concentration risk?",
+      "answer": "The risk arising from lack of diversification in a portfolio, such as large exposure to a single borrower, industry, region, or asset class."
+    },
+    {
+      "id": 76,
+      "question": "What are the Herfindahl-Hirschman Index (HHI) and concentration measures?",
+      "answer": "A measure of market or portfolio concentration calculated as the sum of squared market shares (or exposure shares), ranging from near 0 to 10,000."
+    },
+    {
+      "id": 77,
+      "question": "What is stress loss?",
+      "answer": "The estimated loss a portfolio would incur under a specific stress scenario (e.g., 2008 financial crisis, 2020 pandemic), used to assess resilience."
+    },
+    {
+      "id": 78,
+      "question": "What is reverse stress testing?",
+      "answer": "A methodology that identifies the scenario that would cause an entity to fail (e.g., become insolvent), working backwards to find vulnerabilities."
+    },
+    {
+      "id": 79,
+      "question": "What is risk appetite statement (RAS)?",
+      "answer": "A formal document articulating an organization's risk appetite and tolerances, approved by the board, guiding risk-taking decisions."
+    },
+    {
+      "id": 80,
+      "question": "What is a risk owner?",
+      "answer": "An individual accountable for managing a specific risk, including implementing mitigation actions and monitoring changes in risk level."
+    },
+    {
+      "id": 81,
+      "question": "What is a control environment?",
+      "answer": "The set of standards, processes, and structures that provide the foundation for internal controls across an organization, including integrity and governance."
+    },
+    {
+      "id": 82,
+      "question": "What is fraud risk?",
+      "answer": "The risk of intentional misrepresentation, concealment, or deception to obtain unlawful gain, including asset misappropriation, corruption, and financial statement fraud."
+    },
+    {
+      "id": 83,
+      "question": "What is the fraud triangle?",
+      "answer": "Three conditions present when fraud occurs: pressure (incentive), opportunity (weak controls), and rationalization (justification)."
+    },
+    {
+      "id": 84,
+      "question": "What is cyber risk?",
+      "answer": "The risk of financial, operational, or reputational loss from failure, disruption, or unauthorized access to information technology systems."
+    },
+    {
+      "id": 85,
+      "question": "What is business continuity risk?",
+      "answer": "The risk that critical business functions will be disrupted due to events like natural disasters, pandemics, or system failures, requiring recovery plans."
+    },
+    {
+      "id": 86,
+      "question": "What is regulatory risk?",
+      "answer": "The risk that changes in laws or regulations will negatively affect an organization's business model, profitability, or compliance obligations."
+    },
+    {
+      "id": 87,
+      "question": "What is model validation?",
+      "answer": "The independent review and testing of risk models to assess conceptual soundness, data quality, parameter estimation, and performance, ensuring fitness for use."
+    },
+    {
+      "id": 88,
+      "question": "What is backtesting in risk models?",
+      "answer": "A validation technique comparing model predictions (e.g., VaR forecasts) with actual outcomes over historical periods to evaluate accuracy."
+    },
+    {
+      "id": 89,
+      "question": "What is a risk event?",
+      "answer": "An occurrence that results in a risk materializing, causing actual loss or adverse impact (e.g., loan default, system outage, regulatory fine)."
+    },
+    {
+      "id": 90,
+      "question": "What is loss event type classification under Basel?",
+      "answer": "Seven operational risk categories: internal fraud, external fraud, employment practices, clients/products/business practices, damage to physical assets, business disruption, and execution/delivery/process management."
+    },
+    {
+      "id": 91,
+      "question": "What is the difference between primary and secondary risk metrics?",
+      "answer": "Primary metrics are core measures (e.g., VaR, PD); secondary metrics support interpretation (e.g., stress test add-ons, model uncertainty bands)."
+    },
+    {
+      "id": 92,
+      "question": "What is risk budgeting?",
+      "answer": "A process of allocating risk limits (e.g., VaR, tracking error) across business units or strategies to optimize overall risk-return trade-off."
+    },
+    {
+      "id": 93,
+      "question": "What is marginal risk contribution?",
+      "answer": "The additional risk a specific position or sub-portfolio adds to the total portfolio, used for risk allocation and performance measurement."
+    },
+    {
+      "id": 94,
+      "question": "What is the risk-return trade-off?",
+      "answer": "The principle that higher potential returns come with higher levels of risk; investors expect compensation for bearing additional risk through risk premiums."
+    },
+    {
+      "id": 95,
+      "question": "What is climate risk?",
+      "answer": "Risk from climate change, including physical risk (extreme weather, sea-level rise) and transition risk (policy, technology, market shifts toward low-carbon economy)."
+    },
+    {
+      "id": 96,
+      "question": "What is environmental, social, and governance (ESG) risk?",
+      "answer": "Risks related to an organization's impact on or dependence on environmental factors, social relationships, and governance practices, increasingly integrated into ERM."
+    },
+    {
+      "id": 97,
+      "question": "What is risk mapping?",
+      "answer": "A process of visually linking risks to business processes, objectives, controls, and financial impacts to understand risk interconnections."
+    },
+    {
+      "id": 98,
+      "question": "What is a risk statement?",
+      "answer": "A clear, structured description of a risk, typically including: 'There is a risk that [event] occurs, causing [impact], driven by [cause].'"
+    },
+    {
+      "id": 99,
+      "question": "What is the difference between risk assessment and risk analysis?",
+      "answer": "Risk analysis is the systematic use of information to understand risk (likelihood and impact); risk assessment includes analysis, evaluation against criteria, and prioritization."
+    },
+    {
+      "id": 100,
+      "question": "What is risk governance?",
+      "answer": "The framework of policies, roles, responsibilities, and decision-making structures established by the board and senior management to oversee risk management."
+    }
+  ]
+}

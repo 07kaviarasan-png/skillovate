@@ -1,0 +1,6004 @@
+{
+  "total_questions": 500,
+  "questions": [
+    {
+      "id": 1,
+      "question": "If a book costs $15 and is discounted by 20%, what is the final price?",
+      "options": [
+        "$12",
+        "$10",
+        "$11",
+        "$13"
+      ],
+      "correct_answer": "$12",
+      "explanation": "20% of $15 = 0.20 \u00d7 $15 = $3. Final price = $15 - $3 = $12"
+    },
+    {
+      "id": 2,
+      "question": "What is 15% of 240?",
+      "options": [
+        "30",
+        "36",
+        "40",
+        "45"
+      ],
+      "correct_answer": "36",
+      "explanation": "15% of 240 = 0.15 \u00d7 240 = 36"
+    },
+    {
+      "id": 3,
+      "question": "If x + 5 = 12, what is the value of x?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "x = 12 - 5 = 7"
+    },
+    {
+      "id": 4,
+      "question": "A train travels 120 km in 2 hours. What is its speed?",
+      "options": [
+        "50 km/h",
+        "60 km/h",
+        "70 km/h",
+        "80 km/h"
+      ],
+      "correct_answer": "60 km/h",
+      "explanation": "Speed = Distance / Time = 120 / 2 = 60 km/h"
+    },
+    {
+      "id": 5,
+      "question": "What is the area of a rectangle with length 8 cm and width 5 cm?",
+      "options": [
+        "30 cm\u00b2",
+        "40 cm\u00b2",
+        "50 cm\u00b2",
+        "60 cm\u00b2"
+      ],
+      "correct_answer": "40 cm\u00b2",
+      "explanation": "Area = Length \u00d7 Width = 8 \u00d7 5 = 40 cm\u00b2"
+    },
+    {
+      "id": 6,
+      "question": "If 3x - 2 = 10, what is x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "4",
+      "explanation": "3x = 10 + 2 = 12, so x = 12/3 = 4"
+    },
+    {
+      "id": 7,
+      "question": "A person buys 5 pens at $2 each. How much does he spend?",
+      "options": [
+        "$8",
+        "$9",
+        "$10",
+        "$11"
+      ],
+      "correct_answer": "$10",
+      "explanation": "Total cost = 5 \u00d7 $2 = $10"
+    },
+    {
+      "id": 8,
+      "question": "What is 25% of 200?",
+      "options": [
+        "40",
+        "45",
+        "50",
+        "55"
+      ],
+      "correct_answer": "50",
+      "explanation": "25% of 200 = 0.25 \u00d7 200 = 50"
+    },
+    {
+      "id": 9,
+      "question": "If a shirt costs $40 and is on sale for 30% off, what is the sale price?",
+      "options": [
+        "$25",
+        "$28",
+        "$30",
+        "$32"
+      ],
+      "correct_answer": "$28",
+      "explanation": "30% of $40 = 0.30 \u00d7 $40 = $12. Sale price = $40 - $12 = $28"
+    },
+    {
+      "id": 10,
+      "question": "A bag contains 20 red balls and 30 blue balls. What is the probability of picking a red ball?",
+      "options": [
+        "2/5",
+        "1/2",
+        "3/5",
+        "1/3"
+      ],
+      "correct_answer": "2/5",
+      "explanation": "Total balls = 50. Probability = 20/50 = 2/5"
+    },
+    {
+      "id": 11,
+      "question": "What is the average of 10, 20, 30, 40?",
+      "options": [
+        "20",
+        "25",
+        "30",
+        "35"
+      ],
+      "correct_answer": "25",
+      "explanation": "Average = (10 + 20 + 30 + 40)/4 = 100/4 = 25"
+    },
+    {
+      "id": 12,
+      "question": "If 2x + 3 = 11, what is x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "4",
+      "explanation": "2x = 11 - 3 = 8, so x = 8/2 = 4"
+    },
+    {
+      "id": 13,
+      "question": "A car travels 300 km in 5 hours. What is the average speed?",
+      "options": [
+        "50 km/h",
+        "55 km/h",
+        "60 km/h",
+        "65 km/h"
+      ],
+      "correct_answer": "60 km/h",
+      "explanation": "Speed = 300/5 = 60 km/h"
+    },
+    {
+      "id": 14,
+      "question": "What is the perimeter of a square with side 6 cm?",
+      "options": [
+        "20 cm",
+        "24 cm",
+        "28 cm",
+        "32 cm"
+      ],
+      "correct_answer": "24 cm",
+      "explanation": "Perimeter = 4 \u00d7 side = 4 \u00d7 6 = 24 cm"
+    },
+    {
+      "id": 15,
+      "question": "If x/2 = 8, what is x?",
+      "options": [
+        "12",
+        "14",
+        "16",
+        "18"
+      ],
+      "correct_answer": "16",
+      "explanation": "x = 8 \u00d7 2 = 16"
+    },
+    {
+      "id": 16,
+      "question": "A shirt originally costs $50. After a 40% discount, what is the new price?",
+      "options": [
+        "$28",
+        "$30",
+        "$32",
+        "$35"
+      ],
+      "correct_answer": "$30",
+      "explanation": "40% of $50 = $20. New price = $50 - $20 = $30"
+    },
+    {
+      "id": 17,
+      "question": "What is 12% of 350?",
+      "options": [
+        "38",
+        "40",
+        "42",
+        "45"
+      ],
+      "correct_answer": "42",
+      "explanation": "12% of 350 = 0.12 \u00d7 350 = 42"
+    },
+    {
+      "id": 18,
+      "question": "If a student scores 75, 85, and 95 in three tests, what is the average score?",
+      "options": [
+        "80",
+        "82",
+        "85",
+        "88"
+      ],
+      "correct_answer": "85",
+      "explanation": "Average = (75 + 85 + 95)/3 = 255/3 = 85"
+    },
+    {
+      "id": 19,
+      "question": "A container holds 2.5 liters of water. How many milliliters is that?",
+      "options": [
+        "250 ml",
+        "500 ml",
+        "2500 ml",
+        "5000 ml"
+      ],
+      "correct_answer": "2500 ml",
+      "explanation": "1 liter = 1000 ml, so 2.5 liters = 2.5 \u00d7 1000 = 2500 ml"
+    },
+    {
+      "id": 20,
+      "question": "If 5x = 45, what is x?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct_answer": "9",
+      "explanation": "x = 45/5 = 9"
+    },
+    {
+      "id": 21,
+      "question": "What is the circumference of a circle with radius 7 cm? (Use \u03c0 \u2248 3.14)",
+      "options": [
+        "43.96 cm",
+        "44.96 cm",
+        "45.96 cm",
+        "46.96 cm"
+      ],
+      "correct_answer": "43.96 cm",
+      "explanation": "Circumference = 2\u03c0r = 2 \u00d7 3.14 \u00d7 7 = 43.96 cm"
+    },
+    {
+      "id": 22,
+      "question": "A recipe requires 2 cups of flour for 8 servings. How much flour is needed for 12 servings?",
+      "options": [
+        "2.5 cups",
+        "2.75 cups",
+        "3 cups",
+        "3.25 cups"
+      ],
+      "correct_answer": "3 cups",
+      "explanation": "2 cups for 8 servings = 0.25 cups per serving. For 12 servings = 0.25 \u00d7 12 = 3 cups"
+    },
+    {
+      "id": 23,
+      "question": "If y - 7 = 15, what is y?",
+      "options": [
+        "20",
+        "22",
+        "24",
+        "26"
+      ],
+      "correct_answer": "22",
+      "explanation": "y = 15 + 7 = 22"
+    },
+    {
+      "id": 24,
+      "question": "What is 8% of 1250?",
+      "options": [
+        "90",
+        "95",
+        "100",
+        "105"
+      ],
+      "correct_answer": "100",
+      "explanation": "8% of 1250 = 0.08 \u00d7 1250 = 100"
+    },
+    {
+      "id": 25,
+      "question": "A worker earns $15 per hour. How much does he earn in 8 hours?",
+      "options": [
+        "$110",
+        "$115",
+        "$120",
+        "$125"
+      ],
+      "correct_answer": "$120",
+      "explanation": "Earnings = $15 \u00d7 8 = $120"
+    },
+    {
+      "id": 26,
+      "question": "If a number is multiplied by 3 and then 5 is added, the result is 20. What is the number?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "3x + 5 = 20, so 3x = 15, x = 5"
+    },
+    {
+      "id": 27,
+      "question": "What is the area of a triangle with base 10 cm and height 6 cm?",
+      "options": [
+        "30 cm\u00b2",
+        "40 cm\u00b2",
+        "50 cm\u00b2",
+        "60 cm\u00b2"
+      ],
+      "correct_answer": "30 cm\u00b2",
+      "explanation": "Area = (1/2) \u00d7 base \u00d7 height = (1/2) \u00d7 10 \u00d7 6 = 30 cm\u00b2"
+    },
+    {
+      "id": 28,
+      "question": "A bike costs $300. After a 15% increase in price, what is the new cost?",
+      "options": [
+        "$335",
+        "$340",
+        "$345",
+        "$350"
+      ],
+      "correct_answer": "$345",
+      "explanation": "15% of $300 = $45. New cost = $300 + $45 = $345"
+    },
+    {
+      "id": 29,
+      "question": "If 4x - 3 = 13, what is x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "4",
+      "explanation": "4x = 13 + 3 = 16, so x = 16/4 = 4"
+    },
+    {
+      "id": 30,
+      "question": "What is 35% of 500?",
+      "options": [
+        "155",
+        "160",
+        "165",
+        "175"
+      ],
+      "correct_answer": "175",
+      "explanation": "35% of 500 = 0.35 \u00d7 500 = 175"
+    },
+    {
+      "id": 31,
+      "question": "A store sells 240 items in 3 days. How many items does it sell per day on average?",
+      "options": [
+        "75",
+        "80",
+        "85",
+        "90"
+      ],
+      "correct_answer": "80",
+      "explanation": "Items per day = 240/3 = 80"
+    },
+    {
+      "id": 32,
+      "question": "If 6y = 54, what is y?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct_answer": "9",
+      "explanation": "y = 54/6 = 9"
+    },
+    {
+      "id": 33,
+      "question": "What is the volume of a cube with side 4 cm?",
+      "options": [
+        "48 cm\u00b3",
+        "54 cm\u00b3",
+        "60 cm\u00b3",
+        "64 cm\u00b3"
+      ],
+      "correct_answer": "64 cm\u00b3",
+      "explanation": "Volume = side\u00b3 = 4\u00b3 = 64 cm\u00b3"
+    },
+    {
+      "id": 34,
+      "question": "A phone costs $400. If it's discounted by 25%, what is the final price?",
+      "options": [
+        "$280",
+        "$290",
+        "$300",
+        "$310"
+      ],
+      "correct_answer": "$300",
+      "explanation": "25% of $400 = $100. Final price = $400 - $100 = $300"
+    },
+    {
+      "id": 35,
+      "question": "What is 18% of 450?",
+      "options": [
+        "78",
+        "80",
+        "81",
+        "84"
+      ],
+      "correct_answer": "81",
+      "explanation": "18% of 450 = 0.18 \u00d7 450 = 81"
+    },
+    {
+      "id": 36,
+      "question": "If x + 12 = 25, what is x?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "correct_answer": "13",
+      "explanation": "x = 25 - 12 = 13"
+    },
+    {
+      "id": 37,
+      "question": "A runner completes 10 km in 1 hour 15 minutes. What is the average speed?",
+      "options": [
+        "7 km/h",
+        "8 km/h",
+        "9 km/h",
+        "10 km/h"
+      ],
+      "correct_answer": "8 km/h",
+      "explanation": "Time = 1.25 hours. Speed = 10/1.25 = 8 km/h"
+    },
+    {
+      "id": 38,
+      "question": "What is the simple interest on $500 at 10% per annum for 2 years?",
+      "options": [
+        "$80",
+        "$90",
+        "$100",
+        "$110"
+      ],
+      "correct_answer": "$100",
+      "explanation": "SI = (Principal \u00d7 Rate \u00d7 Time)/100 = (500 \u00d7 10 \u00d7 2)/100 = $100"
+    },
+    {
+      "id": 39,
+      "question": "If 3y + 4 = 16, what is y?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "4",
+      "explanation": "3y = 16 - 4 = 12, so y = 12/3 = 4"
+    },
+    {
+      "id": 40,
+      "question": "What is 22% of 350?",
+      "options": [
+        "75",
+        "77",
+        "79",
+        "81"
+      ],
+      "correct_answer": "77",
+      "explanation": "22% of 350 = 0.22 \u00d7 350 = 77"
+    },
+    {
+      "id": 41,
+      "question": "A box contains 15 chocolates. If 40% are dark chocolates, how many are dark?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "6",
+      "explanation": "40% of 15 = 0.40 \u00d7 15 = 6"
+    },
+    {
+      "id": 42,
+      "question": "If 2x - 5 = 7, what is x?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "6",
+      "explanation": "2x = 7 + 5 = 12, so x = 12/2 = 6"
+    },
+    {
+      "id": 43,
+      "question": "What is the area of a circle with radius 5 cm? (Use \u03c0 \u2248 3.14)",
+      "options": [
+        "70.5 cm\u00b2",
+        "75 cm\u00b2",
+        "78.5 cm\u00b2",
+        "85 cm\u00b2"
+      ],
+      "correct_answer": "78.5 cm\u00b2",
+      "explanation": "Area = \u03c0r\u00b2 = 3.14 \u00d7 5\u00b2 = 3.14 \u00d7 25 = 78.5 cm\u00b2"
+    },
+    {
+      "id": 44,
+      "question": "A student needs 60% to pass. If the total marks are 150, how many marks are needed to pass?",
+      "options": [
+        "80",
+        "85",
+        "90",
+        "95"
+      ],
+      "correct_answer": "90",
+      "explanation": "Passing marks = 60% of 150 = 0.60 \u00d7 150 = 90"
+    },
+    {
+      "id": 45,
+      "question": "What is x if x/3 + 2 = 6?",
+      "options": [
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "correct_answer": "12",
+      "explanation": "x/3 = 6 - 2 = 4, so x = 4 \u00d7 3 = 12"
+    },
+    {
+      "id": 46,
+      "question": "If a product's price increases from $80 to $100, what is the percentage increase?",
+      "options": [
+        "20%",
+        "22.5%",
+        "25%",
+        "28%"
+      ],
+      "correct_answer": "25%",
+      "explanation": "Increase = $100 - $80 = $20. Percentage = (20/80) \u00d7 100 = 25%"
+    },
+    {
+      "id": 47,
+      "question": "What is 45% of 180?",
+      "options": [
+        "78",
+        "80",
+        "81",
+        "84"
+      ],
+      "correct_answer": "81",
+      "explanation": "45% of 180 = 0.45 \u00d7 180 = 81"
+    },
+    {
+      "id": 48,
+      "question": "A rectangular field has length 50 m and width 30 m. What is its area?",
+      "options": [
+        "1400 m\u00b2",
+        "1500 m\u00b2",
+        "1600 m\u00b2",
+        "1700 m\u00b2"
+      ],
+      "correct_answer": "1500 m\u00b2",
+      "explanation": "Area = 50 \u00d7 30 = 1500 m\u00b2"
+    },
+    {
+      "id": 49,
+      "question": "If 5x + 2 = 22, what is x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "4",
+      "explanation": "5x = 22 - 2 = 20, so x = 20/5 = 4"
+    },
+    {
+      "id": 50,
+      "question": "What is 32% of 250?",
+      "options": [
+        "75",
+        "78",
+        "80",
+        "82"
+      ],
+      "correct_answer": "80",
+      "explanation": "32% of 250 = 0.32 \u00d7 250 = 80"
+    },
+    {
+      "id": 51,
+      "question": "A company has 120 employees. If 35% are in sales, how many are in sales?",
+      "options": [
+        "38",
+        "40",
+        "42",
+        "45"
+      ],
+      "correct_answer": "42",
+      "explanation": "35% of 120 = 0.35 \u00d7 120 = 42"
+    },
+    {
+      "id": 52,
+      "question": "If x - 8 = 19, what is x?",
+      "options": [
+        "25",
+        "26",
+        "27",
+        "28"
+      ],
+      "correct_answer": "27",
+      "explanation": "x = 19 + 8 = 27"
+    },
+    {
+      "id": 53,
+      "question": "What is the perimeter of a rectangle with length 12 m and width 8 m?",
+      "options": [
+        "38 m",
+        "40 m",
+        "42 m",
+        "44 m"
+      ],
+      "correct_answer": "40 m",
+      "explanation": "Perimeter = 2(length + width) = 2(12 + 8) = 40 m"
+    },
+    {
+      "id": 54,
+      "question": "If 7y = 84, what is y?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correct_answer": "12",
+      "explanation": "y = 84/7 = 12"
+    },
+    {
+      "id": 55,
+      "question": "What is 58% of 300?",
+      "options": [
+        "170",
+        "172",
+        "174",
+        "176"
+      ],
+      "correct_answer": "174",
+      "explanation": "58% of 300 = 0.58 \u00d7 300 = 174"
+    },
+    {
+      "id": 56,
+      "question": "A jacket costs $120. After a 35% discount, what is the sale price?",
+      "options": [
+        "72",
+        "74",
+        "76",
+        "78"
+      ],
+      "correct_answer": "78",
+      "explanation": "35% of $120 = $42. Sale price = $120 - $42 = $78"
+    },
+    {
+      "id": 57,
+      "question": "If 3x + 7 = 25, what is x?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "6",
+      "explanation": "3x = 25 - 7 = 18, so x = 18/3 = 6"
+    },
+    {
+      "id": 58,
+      "question": "What is 64% of 400?",
+      "options": [
+        "250",
+        "254",
+        "256",
+        "260"
+      ],
+      "correct_answer": "256",
+      "explanation": "64% of 400 = 0.64 \u00d7 400 = 256"
+    },
+    {
+      "id": 59,
+      "question": "A person walks 15 km in 3 hours. What is the average speed?",
+      "options": [
+        "4 km/h",
+        "4.5 km/h",
+        "5 km/h",
+        "5.5 km/h"
+      ],
+      "correct_answer": "5 km/h",
+      "explanation": "Speed = 15/3 = 5 km/h"
+    },
+    {
+      "id": 60,
+      "question": "If x/4 = 9, what is x?",
+      "options": [
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
+      "correct_answer": "36",
+      "explanation": "x = 9 \u00d7 4 = 36"
+    },
+    {
+      "id": 61,
+      "question": "A student scored 280 out of 400 marks. What is the percentage score?",
+      "options": [
+        "65%",
+        "68%",
+        "70%",
+        "72%"
+      ],
+      "correct_answer": "70%",
+      "explanation": "Percentage = (280/400) \u00d7 100 = 70%"
+    },
+    {
+      "id": 62,
+      "question": "What is 48% of 275?",
+      "options": [
+        "130",
+        "132",
+        "134",
+        "136"
+      ],
+      "correct_answer": "132",
+      "explanation": "48% of 275 = 0.48 \u00d7 275 = 132"
+    },
+    {
+      "id": 63,
+      "question": "If a number is divided by 5 and then 3 is subtracted, the result is 7. What is the number?",
+      "options": [
+        "45",
+        "50",
+        "55",
+        "60"
+      ],
+      "correct_answer": "50",
+      "explanation": "x/5 - 3 = 7, so x/5 = 10, x = 50"
+    },
+    {
+      "id": 64,
+      "question": "What is the volume of a rectangular box with dimensions 5 cm \u00d7 4 cm \u00d7 3 cm?",
+      "options": [
+        "55 cm\u00b3",
+        "58 cm\u00b3",
+        "60 cm\u00b3",
+        "65 cm\u00b3"
+      ],
+      "correct_answer": "60 cm\u00b3",
+      "explanation": "Volume = length \u00d7 width \u00d7 height = 5 \u00d7 4 \u00d7 3 = 60 cm\u00b3"
+    },
+    {
+      "id": 65,
+      "question": "If 4y + 5 = 21, what is y?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "4",
+      "explanation": "4y = 21 - 5 = 16, so y = 16/4 = 4"
+    },
+    {
+      "id": 66,
+      "question": "What is 71% of 500?",
+      "options": [
+        "350",
+        "352.5",
+        "355",
+        "360"
+      ],
+      "correct_answer": "355",
+      "explanation": "71% of 500 = 0.71 \u00d7 500 = 355"
+    },
+    {
+      "id": 67,
+      "question": "A store originally had 500 items. After selling 30%, how many items remain?",
+      "options": [
+        "340",
+        "345",
+        "350",
+        "355"
+      ],
+      "correct_answer": "350",
+      "explanation": "30% of 500 = 150. Remaining = 500 - 150 = 350"
+    },
+    {
+      "id": 68,
+      "question": "If x + 3x = 20, what is x?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "5",
+      "explanation": "4x = 20, so x = 20/4 = 5"
+    },
+    {
+      "id": 69,
+      "question": "What is the simple interest on $1000 at 5% per annum for 3 years?",
+      "options": [
+        "$150",
+        "$160",
+        "$170",
+        "$180"
+      ],
+      "correct_answer": "$150",
+      "explanation": "SI = (1000 \u00d7 5 \u00d7 3)/100 = $150"
+    },
+    {
+      "id": 70,
+      "question": "A recipe requires 3 eggs for 6 cupcakes. How many eggs for 18 cupcakes?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct_answer": "9",
+      "explanation": "3 eggs for 6 = 0.5 eggs per cupcake. For 18: 0.5 \u00d7 18 = 9"
+    },
+    {
+      "id": 71,
+      "question": "A product costs $100. After a 5% price increase, what is the new price?",
+      "options": [
+        "$100.0",
+        "$105.0",
+        "$110.0",
+        "$103.0"
+      ],
+      "correct_answer": "$105.0",
+      "explanation": "5% of $100 = $5.0. New price = $100 + $5.0 = $105.0"
+    },
+    {
+      "id": 72,
+      "question": "A product costs $100. After a 10% price increase, what is the new price?",
+      "options": [
+        "$105.0",
+        "$110.0",
+        "$115.0",
+        "$108.0"
+      ],
+      "correct_answer": "$110.0",
+      "explanation": "10% of $100 = $10.0. New price = $100 + $10.0 = $110.0"
+    },
+    {
+      "id": 73,
+      "question": "A product costs $100. After a 15% price increase, what is the new price?",
+      "options": [
+        "$110.0",
+        "$115.0",
+        "$120.0",
+        "$113.0"
+      ],
+      "correct_answer": "$115.0",
+      "explanation": "15% of $100 = $15.0. New price = $100 + $15.0 = $115.0"
+    },
+    {
+      "id": 74,
+      "question": "A product costs $100. After a 20% price increase, what is the new price?",
+      "options": [
+        "$115.0",
+        "$120.0",
+        "$125.0",
+        "$118.0"
+      ],
+      "correct_answer": "$120.0",
+      "explanation": "20% of $100 = $20.0. New price = $100 + $20.0 = $120.0"
+    },
+    {
+      "id": 75,
+      "question": "A product costs $100. After a 25% price increase, what is the new price?",
+      "options": [
+        "$120.0",
+        "$125.0",
+        "$130.0",
+        "$123.0"
+      ],
+      "correct_answer": "$125.0",
+      "explanation": "25% of $100 = $25.0. New price = $100 + $25.0 = $125.0"
+    },
+    {
+      "id": 76,
+      "question": "A product costs $100. After a 30% price increase, what is the new price?",
+      "options": [
+        "$125.0",
+        "$130.0",
+        "$135.0",
+        "$128.0"
+      ],
+      "correct_answer": "$130.0",
+      "explanation": "30% of $100 = $30.0. New price = $100 + $30.0 = $130.0"
+    },
+    {
+      "id": 77,
+      "question": "A product costs $200. After a 5% price increase, what is the new price?",
+      "options": [
+        "$200.0",
+        "$210.0",
+        "$220.0",
+        "$206.0"
+      ],
+      "correct_answer": "$210.0",
+      "explanation": "5% of $200 = $10.0. New price = $200 + $10.0 = $210.0"
+    },
+    {
+      "id": 78,
+      "question": "A product costs $200. After a 10% price increase, what is the new price?",
+      "options": [
+        "$210.0",
+        "$220.0",
+        "$230.0",
+        "$216.0"
+      ],
+      "correct_answer": "$220.0",
+      "explanation": "10% of $200 = $20.0. New price = $200 + $20.0 = $220.0"
+    },
+    {
+      "id": 79,
+      "question": "A product costs $200. After a 15% price increase, what is the new price?",
+      "options": [
+        "$220.0",
+        "$230.0",
+        "$240.0",
+        "$226.0"
+      ],
+      "correct_answer": "$230.0",
+      "explanation": "15% of $200 = $30.0. New price = $200 + $30.0 = $230.0"
+    },
+    {
+      "id": 80,
+      "question": "A product costs $200. After a 20% price increase, what is the new price?",
+      "options": [
+        "$230.0",
+        "$240.0",
+        "$250.0",
+        "$236.0"
+      ],
+      "correct_answer": "$240.0",
+      "explanation": "20% of $200 = $40.0. New price = $200 + $40.0 = $240.0"
+    },
+    {
+      "id": 81,
+      "question": "A product costs $200. After a 25% price increase, what is the new price?",
+      "options": [
+        "$240.0",
+        "$250.0",
+        "$260.0",
+        "$246.0"
+      ],
+      "correct_answer": "$250.0",
+      "explanation": "25% of $200 = $50.0. New price = $200 + $50.0 = $250.0"
+    },
+    {
+      "id": 82,
+      "question": "A product costs $200. After a 30% price increase, what is the new price?",
+      "options": [
+        "$250.0",
+        "$260.0",
+        "$270.0",
+        "$256.0"
+      ],
+      "correct_answer": "$260.0",
+      "explanation": "30% of $200 = $60.0. New price = $200 + $60.0 = $260.0"
+    },
+    {
+      "id": 83,
+      "question": "A product costs $300. After a 5% price increase, what is the new price?",
+      "options": [
+        "$300.0",
+        "$315.0",
+        "$330.0",
+        "$309.0"
+      ],
+      "correct_answer": "$315.0",
+      "explanation": "5% of $300 = $15.0. New price = $300 + $15.0 = $315.0"
+    },
+    {
+      "id": 84,
+      "question": "A product costs $300. After a 10% price increase, what is the new price?",
+      "options": [
+        "$315.0",
+        "$330.0",
+        "$345.0",
+        "$324.0"
+      ],
+      "correct_answer": "$330.0",
+      "explanation": "10% of $300 = $30.0. New price = $300 + $30.0 = $330.0"
+    },
+    {
+      "id": 85,
+      "question": "A product costs $300. After a 15% price increase, what is the new price?",
+      "options": [
+        "$330.0",
+        "$345.0",
+        "$360.0",
+        "$339.0"
+      ],
+      "correct_answer": "$345.0",
+      "explanation": "15% of $300 = $45.0. New price = $300 + $45.0 = $345.0"
+    },
+    {
+      "id": 86,
+      "question": "A product costs $300. After a 20% price increase, what is the new price?",
+      "options": [
+        "$345.0",
+        "$360.0",
+        "$375.0",
+        "$354.0"
+      ],
+      "correct_answer": "$360.0",
+      "explanation": "20% of $300 = $60.0. New price = $300 + $60.0 = $360.0"
+    },
+    {
+      "id": 87,
+      "question": "A product costs $300. After a 25% price increase, what is the new price?",
+      "options": [
+        "$360.0",
+        "$375.0",
+        "$390.0",
+        "$369.0"
+      ],
+      "correct_answer": "$375.0",
+      "explanation": "25% of $300 = $75.0. New price = $300 + $75.0 = $375.0"
+    },
+    {
+      "id": 88,
+      "question": "A product costs $300. After a 30% price increase, what is the new price?",
+      "options": [
+        "$375.0",
+        "$390.0",
+        "$405.0",
+        "$384.0"
+      ],
+      "correct_answer": "$390.0",
+      "explanation": "30% of $300 = $90.0. New price = $300 + $90.0 = $390.0"
+    },
+    {
+      "id": 89,
+      "question": "A product costs $400. After a 5% price increase, what is the new price?",
+      "options": [
+        "$400.0",
+        "$420.0",
+        "$440.0",
+        "$412.0"
+      ],
+      "correct_answer": "$420.0",
+      "explanation": "5% of $400 = $20.0. New price = $400 + $20.0 = $420.0"
+    },
+    {
+      "id": 90,
+      "question": "A product costs $400. After a 10% price increase, what is the new price?",
+      "options": [
+        "$420.0",
+        "$440.0",
+        "$460.0",
+        "$432.0"
+      ],
+      "correct_answer": "$440.0",
+      "explanation": "10% of $400 = $40.0. New price = $400 + $40.0 = $440.0"
+    },
+    {
+      "id": 91,
+      "question": "A product costs $400. After a 15% price increase, what is the new price?",
+      "options": [
+        "$440.0",
+        "$460.0",
+        "$480.0",
+        "$452.0"
+      ],
+      "correct_answer": "$460.0",
+      "explanation": "15% of $400 = $60.0. New price = $400 + $60.0 = $460.0"
+    },
+    {
+      "id": 92,
+      "question": "A product costs $400. After a 20% price increase, what is the new price?",
+      "options": [
+        "$460.0",
+        "$480.0",
+        "$500.0",
+        "$472.0"
+      ],
+      "correct_answer": "$480.0",
+      "explanation": "20% of $400 = $80.0. New price = $400 + $80.0 = $480.0"
+    },
+    {
+      "id": 93,
+      "question": "A product costs $400. After a 25% price increase, what is the new price?",
+      "options": [
+        "$480.0",
+        "$500.0",
+        "$520.0",
+        "$492.0"
+      ],
+      "correct_answer": "$500.0",
+      "explanation": "25% of $400 = $100.0. New price = $400 + $100.0 = $500.0"
+    },
+    {
+      "id": 94,
+      "question": "A product costs $400. After a 30% price increase, what is the new price?",
+      "options": [
+        "$500.0",
+        "$520.0",
+        "$540.0",
+        "$512.0"
+      ],
+      "correct_answer": "$520.0",
+      "explanation": "30% of $400 = $120.0. New price = $400 + $120.0 = $520.0"
+    },
+    {
+      "id": 95,
+      "question": "A product costs $500. After a 5% price increase, what is the new price?",
+      "options": [
+        "$500.0",
+        "$525.0",
+        "$550.0",
+        "$515.0"
+      ],
+      "correct_answer": "$525.0",
+      "explanation": "5% of $500 = $25.0. New price = $500 + $25.0 = $525.0"
+    },
+    {
+      "id": 96,
+      "question": "A product costs $500. After a 10% price increase, what is the new price?",
+      "options": [
+        "$525.0",
+        "$550.0",
+        "$575.0",
+        "$540.0"
+      ],
+      "correct_answer": "$550.0",
+      "explanation": "10% of $500 = $50.0. New price = $500 + $50.0 = $550.0"
+    },
+    {
+      "id": 97,
+      "question": "A product costs $500. After a 15% price increase, what is the new price?",
+      "options": [
+        "$550.0",
+        "$575.0",
+        "$600.0",
+        "$565.0"
+      ],
+      "correct_answer": "$575.0",
+      "explanation": "15% of $500 = $75.0. New price = $500 + $75.0 = $575.0"
+    },
+    {
+      "id": 98,
+      "question": "A product costs $500. After a 20% price increase, what is the new price?",
+      "options": [
+        "$575.0",
+        "$600.0",
+        "$625.0",
+        "$590.0"
+      ],
+      "correct_answer": "$600.0",
+      "explanation": "20% of $500 = $100.0. New price = $500 + $100.0 = $600.0"
+    },
+    {
+      "id": 99,
+      "question": "A product costs $500. After a 25% price increase, what is the new price?",
+      "options": [
+        "$600.0",
+        "$625.0",
+        "$650.0",
+        "$615.0"
+      ],
+      "correct_answer": "$625.0",
+      "explanation": "25% of $500 = $125.0. New price = $500 + $125.0 = $625.0"
+    },
+    {
+      "id": 100,
+      "question": "A product costs $500. After a 30% price increase, what is the new price?",
+      "options": [
+        "$625.0",
+        "$650.0",
+        "$675.0",
+        "$640.0"
+      ],
+      "correct_answer": "$650.0",
+      "explanation": "30% of $500 = $150.0. New price = $500 + $150.0 = $650.0"
+    },
+    {
+      "id": 101,
+      "question": "If 1x + 5 = 10, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "1x = 10 - 5 = 5, so x = 5/1 = 5"
+    },
+    {
+      "id": 102,
+      "question": "If 1x + 5 = 20, what is x?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "18"
+      ],
+      "correct_answer": "15",
+      "explanation": "1x = 20 - 5 = 15, so x = 15/1 = 15"
+    },
+    {
+      "id": 103,
+      "question": "If 1x + 5 = 30, what is x?",
+      "options": [
+        "23",
+        "25",
+        "27",
+        "28"
+      ],
+      "correct_answer": "25",
+      "explanation": "1x = 30 - 5 = 25, so x = 25/1 = 25"
+    },
+    {
+      "id": 104,
+      "question": "If 1x + 5 = 40, what is x?",
+      "options": [
+        "33",
+        "35",
+        "37",
+        "38"
+      ],
+      "correct_answer": "35",
+      "explanation": "1x = 40 - 5 = 35, so x = 35/1 = 35"
+    },
+    {
+      "id": 105,
+      "question": "If 1x + 5 = 50, what is x?",
+      "options": [
+        "43",
+        "45",
+        "47",
+        "48"
+      ],
+      "correct_answer": "45",
+      "explanation": "1x = 50 - 5 = 45, so x = 45/1 = 45"
+    },
+    {
+      "id": 106,
+      "question": "If 1x + 10 = 20, what is x?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": "10",
+      "explanation": "1x = 20 - 10 = 10, so x = 10/1 = 10"
+    },
+    {
+      "id": 107,
+      "question": "If 1x + 10 = 30, what is x?",
+      "options": [
+        "18",
+        "20",
+        "22",
+        "23"
+      ],
+      "correct_answer": "20",
+      "explanation": "1x = 30 - 10 = 20, so x = 20/1 = 20"
+    },
+    {
+      "id": 108,
+      "question": "If 1x + 10 = 40, what is x?",
+      "options": [
+        "28",
+        "30",
+        "32",
+        "33"
+      ],
+      "correct_answer": "30",
+      "explanation": "1x = 40 - 10 = 30, so x = 30/1 = 30"
+    },
+    {
+      "id": 109,
+      "question": "If 1x + 10 = 50, what is x?",
+      "options": [
+        "38",
+        "40",
+        "42",
+        "43"
+      ],
+      "correct_answer": "40",
+      "explanation": "1x = 50 - 10 = 40, so x = 40/1 = 40"
+    },
+    {
+      "id": 110,
+      "question": "If 1x + 15 = 20, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "1x = 20 - 15 = 5, so x = 5/1 = 5"
+    },
+    {
+      "id": 111,
+      "question": "If 1x + 15 = 30, what is x?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "18"
+      ],
+      "correct_answer": "15",
+      "explanation": "1x = 30 - 15 = 15, so x = 15/1 = 15"
+    },
+    {
+      "id": 112,
+      "question": "If 1x + 15 = 40, what is x?",
+      "options": [
+        "23",
+        "25",
+        "27",
+        "28"
+      ],
+      "correct_answer": "25",
+      "explanation": "1x = 40 - 15 = 25, so x = 25/1 = 25"
+    },
+    {
+      "id": 113,
+      "question": "If 1x + 15 = 50, what is x?",
+      "options": [
+        "33",
+        "35",
+        "37",
+        "38"
+      ],
+      "correct_answer": "35",
+      "explanation": "1x = 50 - 15 = 35, so x = 35/1 = 35"
+    },
+    {
+      "id": 114,
+      "question": "If 1x + 20 = 30, what is x?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": "10",
+      "explanation": "1x = 30 - 20 = 10, so x = 10/1 = 10"
+    },
+    {
+      "id": 115,
+      "question": "If 1x + 20 = 40, what is x?",
+      "options": [
+        "18",
+        "20",
+        "22",
+        "23"
+      ],
+      "correct_answer": "20",
+      "explanation": "1x = 40 - 20 = 20, so x = 20/1 = 20"
+    },
+    {
+      "id": 116,
+      "question": "If 1x + 20 = 50, what is x?",
+      "options": [
+        "28",
+        "30",
+        "32",
+        "33"
+      ],
+      "correct_answer": "30",
+      "explanation": "1x = 50 - 20 = 30, so x = 30/1 = 30"
+    },
+    {
+      "id": 117,
+      "question": "If 1x + 25 = 30, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "1x = 30 - 25 = 5, so x = 5/1 = 5"
+    },
+    {
+      "id": 118,
+      "question": "If 1x + 25 = 40, what is x?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "18"
+      ],
+      "correct_answer": "15",
+      "explanation": "1x = 40 - 25 = 15, so x = 15/1 = 15"
+    },
+    {
+      "id": 119,
+      "question": "If 1x + 25 = 50, what is x?",
+      "options": [
+        "23",
+        "25",
+        "27",
+        "28"
+      ],
+      "correct_answer": "25",
+      "explanation": "1x = 50 - 25 = 25, so x = 25/1 = 25"
+    },
+    {
+      "id": 120,
+      "question": "If 2x + 10 = 20, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "2x = 20 - 10 = 10, so x = 10/2 = 5"
+    },
+    {
+      "id": 121,
+      "question": "If 2x + 10 = 30, what is x?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": "10",
+      "explanation": "2x = 30 - 10 = 20, so x = 20/2 = 10"
+    },
+    {
+      "id": 122,
+      "question": "If 2x + 10 = 40, what is x?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "18"
+      ],
+      "correct_answer": "15",
+      "explanation": "2x = 40 - 10 = 30, so x = 30/2 = 15"
+    },
+    {
+      "id": 123,
+      "question": "If 2x + 10 = 50, what is x?",
+      "options": [
+        "18",
+        "20",
+        "22",
+        "23"
+      ],
+      "correct_answer": "20",
+      "explanation": "2x = 50 - 10 = 40, so x = 40/2 = 20"
+    },
+    {
+      "id": 124,
+      "question": "If 2x + 20 = 30, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "2x = 30 - 20 = 10, so x = 10/2 = 5"
+    },
+    {
+      "id": 125,
+      "question": "If 2x + 20 = 40, what is x?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": "10",
+      "explanation": "2x = 40 - 20 = 20, so x = 20/2 = 10"
+    },
+    {
+      "id": 126,
+      "question": "If 2x + 20 = 50, what is x?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "18"
+      ],
+      "correct_answer": "15",
+      "explanation": "2x = 50 - 20 = 30, so x = 30/2 = 15"
+    },
+    {
+      "id": 127,
+      "question": "If 3x + 5 = 20, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "3x = 20 - 5 = 15, so x = 15/3 = 5"
+    },
+    {
+      "id": 128,
+      "question": "If 3x + 5 = 50, what is x?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "18"
+      ],
+      "correct_answer": "15",
+      "explanation": "3x = 50 - 5 = 45, so x = 45/3 = 15"
+    },
+    {
+      "id": 129,
+      "question": "If 3x + 10 = 40, what is x?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": "10",
+      "explanation": "3x = 40 - 10 = 30, so x = 30/3 = 10"
+    },
+    {
+      "id": 130,
+      "question": "If 3x + 15 = 30, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "3x = 30 - 15 = 15, so x = 15/3 = 5"
+    },
+    {
+      "id": 131,
+      "question": "If 3x + 20 = 50, what is x?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": "10",
+      "explanation": "3x = 50 - 20 = 30, so x = 30/3 = 10"
+    },
+    {
+      "id": 132,
+      "question": "If 3x + 25 = 40, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "3x = 40 - 25 = 15, so x = 15/3 = 5"
+    },
+    {
+      "id": 133,
+      "question": "If 4x + 10 = 30, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "4x = 30 - 10 = 20, so x = 20/4 = 5"
+    },
+    {
+      "id": 134,
+      "question": "If 4x + 10 = 50, what is x?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "13"
+      ],
+      "correct_answer": "10",
+      "explanation": "4x = 50 - 10 = 40, so x = 40/4 = 10"
+    },
+    {
+      "id": 135,
+      "question": "If 4x + 20 = 40, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "4x = 40 - 20 = 20, so x = 20/4 = 5"
+    },
+    {
+      "id": 136,
+      "question": "If 5x + 5 = 10, what is x?",
+      "options": [
+        "-1",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct_answer": "1",
+      "explanation": "5x = 10 - 5 = 5, so x = 5/5 = 1"
+    },
+    {
+      "id": 137,
+      "question": "If 5x + 5 = 20, what is x?",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": "3",
+      "explanation": "5x = 20 - 5 = 15, so x = 15/5 = 3"
+    },
+    {
+      "id": 138,
+      "question": "If 5x + 5 = 30, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "5x = 30 - 5 = 25, so x = 25/5 = 5"
+    },
+    {
+      "id": 139,
+      "question": "If 5x + 5 = 40, what is x?",
+      "options": [
+        "5",
+        "7",
+        "9",
+        "10"
+      ],
+      "correct_answer": "7",
+      "explanation": "5x = 40 - 5 = 35, so x = 35/5 = 7"
+    },
+    {
+      "id": 140,
+      "question": "If 5x + 5 = 50, what is x?",
+      "options": [
+        "7",
+        "9",
+        "11",
+        "12"
+      ],
+      "correct_answer": "9",
+      "explanation": "5x = 50 - 5 = 45, so x = 45/5 = 9"
+    },
+    {
+      "id": 141,
+      "question": "If 5x + 10 = 20, what is x?",
+      "options": [
+        "0",
+        "2",
+        "4",
+        "5"
+      ],
+      "correct_answer": "2",
+      "explanation": "5x = 20 - 10 = 10, so x = 10/5 = 2"
+    },
+    {
+      "id": 142,
+      "question": "If 5x + 10 = 30, what is x?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "7"
+      ],
+      "correct_answer": "4",
+      "explanation": "5x = 30 - 10 = 20, so x = 20/5 = 4"
+    },
+    {
+      "id": 143,
+      "question": "If 5x + 10 = 40, what is x?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "9"
+      ],
+      "correct_answer": "6",
+      "explanation": "5x = 40 - 10 = 30, so x = 30/5 = 6"
+    },
+    {
+      "id": 144,
+      "question": "If 5x + 10 = 50, what is x?",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "11"
+      ],
+      "correct_answer": "8",
+      "explanation": "5x = 50 - 10 = 40, so x = 40/5 = 8"
+    },
+    {
+      "id": 145,
+      "question": "If 5x + 15 = 20, what is x?",
+      "options": [
+        "-1",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct_answer": "1",
+      "explanation": "5x = 20 - 15 = 5, so x = 5/5 = 1"
+    },
+    {
+      "id": 146,
+      "question": "If 5x + 15 = 30, what is x?",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": "3",
+      "explanation": "5x = 30 - 15 = 15, so x = 15/5 = 3"
+    },
+    {
+      "id": 147,
+      "question": "If 5x + 15 = 40, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "5x = 40 - 15 = 25, so x = 25/5 = 5"
+    },
+    {
+      "id": 148,
+      "question": "If 5x + 15 = 50, what is x?",
+      "options": [
+        "5",
+        "7",
+        "9",
+        "10"
+      ],
+      "correct_answer": "7",
+      "explanation": "5x = 50 - 15 = 35, so x = 35/5 = 7"
+    },
+    {
+      "id": 149,
+      "question": "If 5x + 20 = 30, what is x?",
+      "options": [
+        "0",
+        "2",
+        "4",
+        "5"
+      ],
+      "correct_answer": "2",
+      "explanation": "5x = 30 - 20 = 10, so x = 10/5 = 2"
+    },
+    {
+      "id": 150,
+      "question": "If 5x + 20 = 40, what is x?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "7"
+      ],
+      "correct_answer": "4",
+      "explanation": "5x = 40 - 20 = 20, so x = 20/5 = 4"
+    },
+    {
+      "id": 151,
+      "question": "If 5x + 20 = 50, what is x?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "9"
+      ],
+      "correct_answer": "6",
+      "explanation": "5x = 50 - 20 = 30, so x = 30/5 = 6"
+    },
+    {
+      "id": 152,
+      "question": "If 5x + 25 = 30, what is x?",
+      "options": [
+        "-1",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct_answer": "1",
+      "explanation": "5x = 30 - 25 = 5, so x = 5/5 = 1"
+    },
+    {
+      "id": 153,
+      "question": "If 5x + 25 = 40, what is x?",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": "3",
+      "explanation": "5x = 40 - 25 = 15, so x = 15/5 = 3"
+    },
+    {
+      "id": 154,
+      "question": "If 5x + 25 = 50, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "5x = 50 - 25 = 25, so x = 25/5 = 5"
+    },
+    {
+      "id": 155,
+      "question": "If 6x + 10 = 40, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "6x = 40 - 10 = 30, so x = 30/6 = 5"
+    },
+    {
+      "id": 156,
+      "question": "If 6x + 20 = 50, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "6x = 50 - 20 = 30, so x = 30/6 = 5"
+    },
+    {
+      "id": 157,
+      "question": "If 7x + 5 = 40, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "7x = 40 - 5 = 35, so x = 35/7 = 5"
+    },
+    {
+      "id": 158,
+      "question": "If 7x + 15 = 50, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "7x = 50 - 15 = 35, so x = 35/7 = 5"
+    },
+    {
+      "id": 159,
+      "question": "If 8x + 10 = 50, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "8x = 50 - 10 = 40, so x = 40/8 = 5"
+    },
+    {
+      "id": 160,
+      "question": "If 9x + 5 = 50, what is x?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "5",
+      "explanation": "9x = 50 - 5 = 45, so x = 45/9 = 5"
+    },
+    {
+      "id": 161,
+      "question": "If 10x + 10 = 20, what is x?",
+      "options": [
+        "-1",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct_answer": "1",
+      "explanation": "10x = 20 - 10 = 10, so x = 10/10 = 1"
+    },
+    {
+      "id": 162,
+      "question": "If 10x + 10 = 30, what is x?",
+      "options": [
+        "0",
+        "2",
+        "4",
+        "5"
+      ],
+      "correct_answer": "2",
+      "explanation": "10x = 30 - 10 = 20, so x = 20/10 = 2"
+    },
+    {
+      "id": 163,
+      "question": "If 10x + 10 = 40, what is x?",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": "3",
+      "explanation": "10x = 40 - 10 = 30, so x = 30/10 = 3"
+    },
+    {
+      "id": 164,
+      "question": "If 10x + 10 = 50, what is x?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "7"
+      ],
+      "correct_answer": "4",
+      "explanation": "10x = 50 - 10 = 40, so x = 40/10 = 4"
+    },
+    {
+      "id": 165,
+      "question": "If 10x + 20 = 30, what is x?",
+      "options": [
+        "-1",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct_answer": "1",
+      "explanation": "10x = 30 - 20 = 10, so x = 10/10 = 1"
+    },
+    {
+      "id": 166,
+      "question": "If 10x + 20 = 40, what is x?",
+      "options": [
+        "0",
+        "2",
+        "4",
+        "5"
+      ],
+      "correct_answer": "2",
+      "explanation": "10x = 40 - 20 = 20, so x = 20/10 = 2"
+    },
+    {
+      "id": 167,
+      "question": "If 10x + 20 = 50, what is x?",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": "3",
+      "explanation": "10x = 50 - 20 = 30, so x = 30/10 = 3"
+    },
+    {
+      "id": 168,
+      "question": "What is the average of 10 and 15?",
+      "options": [
+        "7.5",
+        "12.5",
+        "17.5",
+        "22.5"
+      ],
+      "correct_answer": "12.5",
+      "explanation": "Average = (10 + 15)/2 = 25/2 = 12.5"
+    },
+    {
+      "id": 169,
+      "question": "What is the average of 10 and 25?",
+      "options": [
+        "12.5",
+        "17.5",
+        "22.5",
+        "27.5"
+      ],
+      "correct_answer": "17.5",
+      "explanation": "Average = (10 + 25)/2 = 35/2 = 17.5"
+    },
+    {
+      "id": 170,
+      "question": "What is the average of 10 and 35?",
+      "options": [
+        "17.5",
+        "22.5",
+        "27.5",
+        "32.5"
+      ],
+      "correct_answer": "22.5",
+      "explanation": "Average = (10 + 35)/2 = 45/2 = 22.5"
+    },
+    {
+      "id": 171,
+      "question": "What is the average of 10 and 45?",
+      "options": [
+        "22.5",
+        "27.5",
+        "32.5",
+        "37.5"
+      ],
+      "correct_answer": "27.5",
+      "explanation": "Average = (10 + 45)/2 = 55/2 = 27.5"
+    },
+    {
+      "id": 172,
+      "question": "What is the average of 20 and 15?",
+      "options": [
+        "12.5",
+        "17.5",
+        "22.5",
+        "27.5"
+      ],
+      "correct_answer": "17.5",
+      "explanation": "Average = (20 + 15)/2 = 35/2 = 17.5"
+    },
+    {
+      "id": 173,
+      "question": "What is the average of 20 and 25?",
+      "options": [
+        "17.5",
+        "22.5",
+        "27.5",
+        "32.5"
+      ],
+      "correct_answer": "22.5",
+      "explanation": "Average = (20 + 25)/2 = 45/2 = 22.5"
+    },
+    {
+      "id": 174,
+      "question": "What is the average of 20 and 35?",
+      "options": [
+        "22.5",
+        "27.5",
+        "32.5",
+        "37.5"
+      ],
+      "correct_answer": "27.5",
+      "explanation": "Average = (20 + 35)/2 = 55/2 = 27.5"
+    },
+    {
+      "id": 175,
+      "question": "What is the average of 20 and 45?",
+      "options": [
+        "27.5",
+        "32.5",
+        "37.5",
+        "42.5"
+      ],
+      "correct_answer": "32.5",
+      "explanation": "Average = (20 + 45)/2 = 65/2 = 32.5"
+    },
+    {
+      "id": 176,
+      "question": "What is the average of 30 and 15?",
+      "options": [
+        "17.5",
+        "22.5",
+        "27.5",
+        "32.5"
+      ],
+      "correct_answer": "22.5",
+      "explanation": "Average = (30 + 15)/2 = 45/2 = 22.5"
+    },
+    {
+      "id": 177,
+      "question": "What is the average of 30 and 25?",
+      "options": [
+        "22.5",
+        "27.5",
+        "32.5",
+        "37.5"
+      ],
+      "correct_answer": "27.5",
+      "explanation": "Average = (30 + 25)/2 = 55/2 = 27.5"
+    },
+    {
+      "id": 178,
+      "question": "What is the average of 30 and 35?",
+      "options": [
+        "27.5",
+        "32.5",
+        "37.5",
+        "42.5"
+      ],
+      "correct_answer": "32.5",
+      "explanation": "Average = (30 + 35)/2 = 65/2 = 32.5"
+    },
+    {
+      "id": 179,
+      "question": "What is the average of 30 and 45?",
+      "options": [
+        "32.5",
+        "37.5",
+        "42.5",
+        "47.5"
+      ],
+      "correct_answer": "37.5",
+      "explanation": "Average = (30 + 45)/2 = 75/2 = 37.5"
+    },
+    {
+      "id": 180,
+      "question": "What is the average of 40 and 15?",
+      "options": [
+        "22.5",
+        "27.5",
+        "32.5",
+        "37.5"
+      ],
+      "correct_answer": "27.5",
+      "explanation": "Average = (40 + 15)/2 = 55/2 = 27.5"
+    },
+    {
+      "id": 181,
+      "question": "What is the average of 40 and 25?",
+      "options": [
+        "27.5",
+        "32.5",
+        "37.5",
+        "42.5"
+      ],
+      "correct_answer": "32.5",
+      "explanation": "Average = (40 + 25)/2 = 65/2 = 32.5"
+    },
+    {
+      "id": 182,
+      "question": "What is the average of 40 and 35?",
+      "options": [
+        "32.5",
+        "37.5",
+        "42.5",
+        "47.5"
+      ],
+      "correct_answer": "37.5",
+      "explanation": "Average = (40 + 35)/2 = 75/2 = 37.5"
+    },
+    {
+      "id": 183,
+      "question": "What is the average of 40 and 45?",
+      "options": [
+        "37.5",
+        "42.5",
+        "47.5",
+        "52.5"
+      ],
+      "correct_answer": "42.5",
+      "explanation": "Average = (40 + 45)/2 = 85/2 = 42.5"
+    },
+    {
+      "id": 184,
+      "question": "What is 10% of 100?",
+      "options": [
+        "0.0",
+        "10.0",
+        "20.0",
+        "25.0"
+      ],
+      "correct_answer": "10.0",
+      "explanation": "10% of 100 = 0.10 \u00d7 100 = 10.0"
+    },
+    {
+      "id": 185,
+      "question": "What is 15% of 100?",
+      "options": [
+        "5.0",
+        "15.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "15.0",
+      "explanation": "15% of 100 = 0.15 \u00d7 100 = 15.0"
+    },
+    {
+      "id": 186,
+      "question": "What is 20% of 100?",
+      "options": [
+        "10.0",
+        "20.0",
+        "30.0",
+        "35.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "20% of 100 = 0.20 \u00d7 100 = 20.0"
+    },
+    {
+      "id": 187,
+      "question": "What is 25% of 100?",
+      "options": [
+        "15.0",
+        "25.0",
+        "35.0",
+        "40.0"
+      ],
+      "correct_answer": "25.0",
+      "explanation": "25% of 100 = 0.25 \u00d7 100 = 25.0"
+    },
+    {
+      "id": 188,
+      "question": "What is 30% of 100?",
+      "options": [
+        "20.0",
+        "30.0",
+        "40.0",
+        "45.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "30% of 100 = 0.30 \u00d7 100 = 30.0"
+    },
+    {
+      "id": 189,
+      "question": "What is 35% of 100?",
+      "options": [
+        "25.0",
+        "35.0",
+        "45.0",
+        "50.0"
+      ],
+      "correct_answer": "35.0",
+      "explanation": "35% of 100 = 0.35 \u00d7 100 = 35.0"
+    },
+    {
+      "id": 190,
+      "question": "What is 40% of 100?",
+      "options": [
+        "30.0",
+        "40.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "40% of 100 = 0.40 \u00d7 100 = 40.0"
+    },
+    {
+      "id": 191,
+      "question": "What is 45% of 100?",
+      "options": [
+        "35.0",
+        "45.0",
+        "55.0",
+        "60.0"
+      ],
+      "correct_answer": "45.0",
+      "explanation": "45% of 100 = 0.45 \u00d7 100 = 45.0"
+    },
+    {
+      "id": 192,
+      "question": "What is 50% of 100?",
+      "options": [
+        "40.0",
+        "50.0",
+        "60.0",
+        "65.0"
+      ],
+      "correct_answer": "50.0",
+      "explanation": "50% of 100 = 0.50 \u00d7 100 = 50.0"
+    },
+    {
+      "id": 193,
+      "question": "What is 10% of 200?",
+      "options": [
+        "10.0",
+        "20.0",
+        "30.0",
+        "35.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "10% of 200 = 0.10 \u00d7 200 = 20.0"
+    },
+    {
+      "id": 194,
+      "question": "What is 15% of 200?",
+      "options": [
+        "20.0",
+        "30.0",
+        "40.0",
+        "45.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "15% of 200 = 0.15 \u00d7 200 = 30.0"
+    },
+    {
+      "id": 195,
+      "question": "What is 20% of 200?",
+      "options": [
+        "30.0",
+        "40.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "20% of 200 = 0.20 \u00d7 200 = 40.0"
+    },
+    {
+      "id": 196,
+      "question": "What is 30% of 200?",
+      "options": [
+        "50.0",
+        "60.0",
+        "70.0",
+        "75.0"
+      ],
+      "correct_answer": "60.0",
+      "explanation": "30% of 200 = 0.30 \u00d7 200 = 60.0"
+    },
+    {
+      "id": 197,
+      "question": "What is 35% of 200?",
+      "options": [
+        "60.0",
+        "70.0",
+        "80.0",
+        "85.0"
+      ],
+      "correct_answer": "70.0",
+      "explanation": "35% of 200 = 0.35 \u00d7 200 = 70.0"
+    },
+    {
+      "id": 198,
+      "question": "What is 40% of 200?",
+      "options": [
+        "70.0",
+        "80.0",
+        "90.0",
+        "95.0"
+      ],
+      "correct_answer": "80.0",
+      "explanation": "40% of 200 = 0.40 \u00d7 200 = 80.0"
+    },
+    {
+      "id": 199,
+      "question": "What is 45% of 200?",
+      "options": [
+        "80.0",
+        "90.0",
+        "100.0",
+        "105.0"
+      ],
+      "correct_answer": "90.0",
+      "explanation": "45% of 200 = 0.45 \u00d7 200 = 90.0"
+    },
+    {
+      "id": 200,
+      "question": "What is 50% of 200?",
+      "options": [
+        "90.0",
+        "100.0",
+        "110.0",
+        "115.0"
+      ],
+      "correct_answer": "100.0",
+      "explanation": "50% of 200 = 0.50 \u00d7 200 = 100.0"
+    },
+    {
+      "id": 201,
+      "question": "What is 10% of 300?",
+      "options": [
+        "20.0",
+        "30.0",
+        "40.0",
+        "45.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "10% of 300 = 0.10 \u00d7 300 = 30.0"
+    },
+    {
+      "id": 202,
+      "question": "What is 15% of 300?",
+      "options": [
+        "35.0",
+        "45.0",
+        "55.0",
+        "60.0"
+      ],
+      "correct_answer": "45.0",
+      "explanation": "15% of 300 = 0.15 \u00d7 300 = 45.0"
+    },
+    {
+      "id": 203,
+      "question": "What is 20% of 300?",
+      "options": [
+        "50.0",
+        "60.0",
+        "70.0",
+        "75.0"
+      ],
+      "correct_answer": "60.0",
+      "explanation": "20% of 300 = 0.20 \u00d7 300 = 60.0"
+    },
+    {
+      "id": 204,
+      "question": "What is 25% of 300?",
+      "options": [
+        "65.0",
+        "75.0",
+        "85.0",
+        "90.0"
+      ],
+      "correct_answer": "75.0",
+      "explanation": "25% of 300 = 0.25 \u00d7 300 = 75.0"
+    },
+    {
+      "id": 205,
+      "question": "What is 30% of 300?",
+      "options": [
+        "80.0",
+        "90.0",
+        "100.0",
+        "105.0"
+      ],
+      "correct_answer": "90.0",
+      "explanation": "30% of 300 = 0.30 \u00d7 300 = 90.0"
+    },
+    {
+      "id": 206,
+      "question": "What is 35% of 300?",
+      "options": [
+        "95.0",
+        "105.0",
+        "115.0",
+        "120.0"
+      ],
+      "correct_answer": "105.0",
+      "explanation": "35% of 300 = 0.35 \u00d7 300 = 105.0"
+    },
+    {
+      "id": 207,
+      "question": "What is 40% of 300?",
+      "options": [
+        "110.0",
+        "120.0",
+        "130.0",
+        "135.0"
+      ],
+      "correct_answer": "120.0",
+      "explanation": "40% of 300 = 0.40 \u00d7 300 = 120.0"
+    },
+    {
+      "id": 208,
+      "question": "What is 45% of 300?",
+      "options": [
+        "125.0",
+        "135.0",
+        "145.0",
+        "150.0"
+      ],
+      "correct_answer": "135.0",
+      "explanation": "45% of 300 = 0.45 \u00d7 300 = 135.0"
+    },
+    {
+      "id": 209,
+      "question": "What is 50% of 300?",
+      "options": [
+        "140.0",
+        "150.0",
+        "160.0",
+        "165.0"
+      ],
+      "correct_answer": "150.0",
+      "explanation": "50% of 300 = 0.50 \u00d7 300 = 150.0"
+    },
+    {
+      "id": 210,
+      "question": "What is 10% of 400?",
+      "options": [
+        "30.0",
+        "40.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "10% of 400 = 0.10 \u00d7 400 = 40.0"
+    },
+    {
+      "id": 211,
+      "question": "What is 15% of 400?",
+      "options": [
+        "50.0",
+        "60.0",
+        "70.0",
+        "75.0"
+      ],
+      "correct_answer": "60.0",
+      "explanation": "15% of 400 = 0.15 \u00d7 400 = 60.0"
+    },
+    {
+      "id": 212,
+      "question": "What is 20% of 400?",
+      "options": [
+        "70.0",
+        "80.0",
+        "90.0",
+        "95.0"
+      ],
+      "correct_answer": "80.0",
+      "explanation": "20% of 400 = 0.20 \u00d7 400 = 80.0"
+    },
+    {
+      "id": 213,
+      "question": "What is 25% of 400?",
+      "options": [
+        "90.0",
+        "100.0",
+        "110.0",
+        "115.0"
+      ],
+      "correct_answer": "100.0",
+      "explanation": "25% of 400 = 0.25 \u00d7 400 = 100.0"
+    },
+    {
+      "id": 214,
+      "question": "What is 30% of 400?",
+      "options": [
+        "110.0",
+        "120.0",
+        "130.0",
+        "135.0"
+      ],
+      "correct_answer": "120.0",
+      "explanation": "30% of 400 = 0.30 \u00d7 400 = 120.0"
+    },
+    {
+      "id": 215,
+      "question": "What is 35% of 400?",
+      "options": [
+        "130.0",
+        "140.0",
+        "150.0",
+        "155.0"
+      ],
+      "correct_answer": "140.0",
+      "explanation": "35% of 400 = 0.35 \u00d7 400 = 140.0"
+    },
+    {
+      "id": 216,
+      "question": "What is 40% of 400?",
+      "options": [
+        "150.0",
+        "160.0",
+        "170.0",
+        "175.0"
+      ],
+      "correct_answer": "160.0",
+      "explanation": "40% of 400 = 0.40 \u00d7 400 = 160.0"
+    },
+    {
+      "id": 217,
+      "question": "What is 45% of 400?",
+      "options": [
+        "170.0",
+        "180.0",
+        "190.0",
+        "195.0"
+      ],
+      "correct_answer": "180.0",
+      "explanation": "45% of 400 = 0.45 \u00d7 400 = 180.0"
+    },
+    {
+      "id": 218,
+      "question": "What is 50% of 400?",
+      "options": [
+        "190.0",
+        "200.0",
+        "210.0",
+        "215.0"
+      ],
+      "correct_answer": "200.0",
+      "explanation": "50% of 400 = 0.50 \u00d7 400 = 200.0"
+    },
+    {
+      "id": 219,
+      "question": "What is 10% of 500?",
+      "options": [
+        "40.0",
+        "50.0",
+        "60.0",
+        "65.0"
+      ],
+      "correct_answer": "50.0",
+      "explanation": "10% of 500 = 0.10 \u00d7 500 = 50.0"
+    },
+    {
+      "id": 220,
+      "question": "What is 15% of 500?",
+      "options": [
+        "65.0",
+        "75.0",
+        "85.0",
+        "90.0"
+      ],
+      "correct_answer": "75.0",
+      "explanation": "15% of 500 = 0.15 \u00d7 500 = 75.0"
+    },
+    {
+      "id": 221,
+      "question": "What is 20% of 500?",
+      "options": [
+        "90.0",
+        "100.0",
+        "110.0",
+        "115.0"
+      ],
+      "correct_answer": "100.0",
+      "explanation": "20% of 500 = 0.20 \u00d7 500 = 100.0"
+    },
+    {
+      "id": 222,
+      "question": "What is 25% of 500?",
+      "options": [
+        "115.0",
+        "125.0",
+        "135.0",
+        "140.0"
+      ],
+      "correct_answer": "125.0",
+      "explanation": "25% of 500 = 0.25 \u00d7 500 = 125.0"
+    },
+    {
+      "id": 223,
+      "question": "What is 30% of 500?",
+      "options": [
+        "140.0",
+        "150.0",
+        "160.0",
+        "165.0"
+      ],
+      "correct_answer": "150.0",
+      "explanation": "30% of 500 = 0.30 \u00d7 500 = 150.0"
+    },
+    {
+      "id": 224,
+      "question": "What is 40% of 500?",
+      "options": [
+        "190.0",
+        "200.0",
+        "210.0",
+        "215.0"
+      ],
+      "correct_answer": "200.0",
+      "explanation": "40% of 500 = 0.40 \u00d7 500 = 200.0"
+    },
+    {
+      "id": 225,
+      "question": "What is 45% of 500?",
+      "options": [
+        "215.0",
+        "225.0",
+        "235.0",
+        "240.0"
+      ],
+      "correct_answer": "225.0",
+      "explanation": "45% of 500 = 0.45 \u00d7 500 = 225.0"
+    },
+    {
+      "id": 226,
+      "question": "What is 50% of 500?",
+      "options": [
+        "240.0",
+        "250.0",
+        "260.0",
+        "265.0"
+      ],
+      "correct_answer": "250.0",
+      "explanation": "50% of 500 = 0.50 \u00d7 500 = 250.0"
+    },
+    {
+      "id": 227,
+      "question": "A vehicle travels 100 km in 2 hours. What is its speed?",
+      "options": [
+        "40.0 km/h",
+        "50.0 km/h",
+        "60.0 km/h",
+        "65.0 km/h"
+      ],
+      "correct_answer": "50.0 km/h",
+      "explanation": "Speed = Distance/Time = 100/2 = 50.0 km/h"
+    },
+    {
+      "id": 228,
+      "question": "A vehicle travels 100 km in 2.5 hours. What is its speed?",
+      "options": [
+        "30.0 km/h",
+        "40.0 km/h",
+        "50.0 km/h",
+        "55.0 km/h"
+      ],
+      "correct_answer": "40.0 km/h",
+      "explanation": "Speed = Distance/Time = 100/2.5 = 40.0 km/h"
+    },
+    {
+      "id": 229,
+      "question": "A vehicle travels 100 km in 3 hours. What is its speed?",
+      "options": [
+        "23.333333333333336 km/h",
+        "33.333333333333336 km/h",
+        "43.333333333333336 km/h",
+        "48.333333333333336 km/h"
+      ],
+      "correct_answer": "33.333333333333336 km/h",
+      "explanation": "Speed = Distance/Time = 100/3 = 33.333333333333336 km/h"
+    },
+    {
+      "id": 230,
+      "question": "A vehicle travels 100 km in 4 hours. What is its speed?",
+      "options": [
+        "15.0 km/h",
+        "25.0 km/h",
+        "35.0 km/h",
+        "40.0 km/h"
+      ],
+      "correct_answer": "25.0 km/h",
+      "explanation": "Speed = Distance/Time = 100/4 = 25.0 km/h"
+    },
+    {
+      "id": 231,
+      "question": "A vehicle travels 100 km in 5 hours. What is its speed?",
+      "options": [
+        "10.0 km/h",
+        "20.0 km/h",
+        "30.0 km/h",
+        "35.0 km/h"
+      ],
+      "correct_answer": "20.0 km/h",
+      "explanation": "Speed = Distance/Time = 100/5 = 20.0 km/h"
+    },
+    {
+      "id": 232,
+      "question": "A vehicle travels 120 km in 2 hours. What is its speed?",
+      "options": [
+        "50.0 km/h",
+        "60.0 km/h",
+        "70.0 km/h",
+        "75.0 km/h"
+      ],
+      "correct_answer": "60.0 km/h",
+      "explanation": "Speed = Distance/Time = 120/2 = 60.0 km/h"
+    },
+    {
+      "id": 233,
+      "question": "A vehicle travels 120 km in 2.5 hours. What is its speed?",
+      "options": [
+        "38.0 km/h",
+        "48.0 km/h",
+        "58.0 km/h",
+        "63.0 km/h"
+      ],
+      "correct_answer": "48.0 km/h",
+      "explanation": "Speed = Distance/Time = 120/2.5 = 48.0 km/h"
+    },
+    {
+      "id": 234,
+      "question": "A vehicle travels 120 km in 3 hours. What is its speed?",
+      "options": [
+        "30.0 km/h",
+        "40.0 km/h",
+        "50.0 km/h",
+        "55.0 km/h"
+      ],
+      "correct_answer": "40.0 km/h",
+      "explanation": "Speed = Distance/Time = 120/3 = 40.0 km/h"
+    },
+    {
+      "id": 235,
+      "question": "A vehicle travels 120 km in 4 hours. What is its speed?",
+      "options": [
+        "20.0 km/h",
+        "30.0 km/h",
+        "40.0 km/h",
+        "45.0 km/h"
+      ],
+      "correct_answer": "30.0 km/h",
+      "explanation": "Speed = Distance/Time = 120/4 = 30.0 km/h"
+    },
+    {
+      "id": 236,
+      "question": "A vehicle travels 120 km in 5 hours. What is its speed?",
+      "options": [
+        "14.0 km/h",
+        "24.0 km/h",
+        "34.0 km/h",
+        "39.0 km/h"
+      ],
+      "correct_answer": "24.0 km/h",
+      "explanation": "Speed = Distance/Time = 120/5 = 24.0 km/h"
+    },
+    {
+      "id": 237,
+      "question": "A vehicle travels 150 km in 2 hours. What is its speed?",
+      "options": [
+        "65.0 km/h",
+        "75.0 km/h",
+        "85.0 km/h",
+        "90.0 km/h"
+      ],
+      "correct_answer": "75.0 km/h",
+      "explanation": "Speed = Distance/Time = 150/2 = 75.0 km/h"
+    },
+    {
+      "id": 238,
+      "question": "A vehicle travels 150 km in 2.5 hours. What is its speed?",
+      "options": [
+        "50.0 km/h",
+        "60.0 km/h",
+        "70.0 km/h",
+        "75.0 km/h"
+      ],
+      "correct_answer": "60.0 km/h",
+      "explanation": "Speed = Distance/Time = 150/2.5 = 60.0 km/h"
+    },
+    {
+      "id": 239,
+      "question": "A vehicle travels 150 km in 3 hours. What is its speed?",
+      "options": [
+        "40.0 km/h",
+        "50.0 km/h",
+        "60.0 km/h",
+        "65.0 km/h"
+      ],
+      "correct_answer": "50.0 km/h",
+      "explanation": "Speed = Distance/Time = 150/3 = 50.0 km/h"
+    },
+    {
+      "id": 240,
+      "question": "A vehicle travels 150 km in 4 hours. What is its speed?",
+      "options": [
+        "27.5 km/h",
+        "37.5 km/h",
+        "47.5 km/h",
+        "52.5 km/h"
+      ],
+      "correct_answer": "37.5 km/h",
+      "explanation": "Speed = Distance/Time = 150/4 = 37.5 km/h"
+    },
+    {
+      "id": 241,
+      "question": "A vehicle travels 150 km in 5 hours. What is its speed?",
+      "options": [
+        "20.0 km/h",
+        "30.0 km/h",
+        "40.0 km/h",
+        "45.0 km/h"
+      ],
+      "correct_answer": "30.0 km/h",
+      "explanation": "Speed = Distance/Time = 150/5 = 30.0 km/h"
+    },
+    {
+      "id": 242,
+      "question": "A vehicle travels 200 km in 2 hours. What is its speed?",
+      "options": [
+        "90.0 km/h",
+        "100.0 km/h",
+        "110.0 km/h",
+        "115.0 km/h"
+      ],
+      "correct_answer": "100.0 km/h",
+      "explanation": "Speed = Distance/Time = 200/2 = 100.0 km/h"
+    },
+    {
+      "id": 243,
+      "question": "A vehicle travels 200 km in 2.5 hours. What is its speed?",
+      "options": [
+        "70.0 km/h",
+        "80.0 km/h",
+        "90.0 km/h",
+        "95.0 km/h"
+      ],
+      "correct_answer": "80.0 km/h",
+      "explanation": "Speed = Distance/Time = 200/2.5 = 80.0 km/h"
+    },
+    {
+      "id": 244,
+      "question": "A vehicle travels 200 km in 3 hours. What is its speed?",
+      "options": [
+        "56.66666666666667 km/h",
+        "66.66666666666667 km/h",
+        "76.66666666666667 km/h",
+        "81.66666666666667 km/h"
+      ],
+      "correct_answer": "66.66666666666667 km/h",
+      "explanation": "Speed = Distance/Time = 200/3 = 66.66666666666667 km/h"
+    },
+    {
+      "id": 245,
+      "question": "A vehicle travels 200 km in 4 hours. What is its speed?",
+      "options": [
+        "40.0 km/h",
+        "50.0 km/h",
+        "60.0 km/h",
+        "65.0 km/h"
+      ],
+      "correct_answer": "50.0 km/h",
+      "explanation": "Speed = Distance/Time = 200/4 = 50.0 km/h"
+    },
+    {
+      "id": 246,
+      "question": "A vehicle travels 200 km in 5 hours. What is its speed?",
+      "options": [
+        "30.0 km/h",
+        "40.0 km/h",
+        "50.0 km/h",
+        "55.0 km/h"
+      ],
+      "correct_answer": "40.0 km/h",
+      "explanation": "Speed = Distance/Time = 200/5 = 40.0 km/h"
+    },
+    {
+      "id": 247,
+      "question": "A vehicle travels 250 km in 2 hours. What is its speed?",
+      "options": [
+        "115.0 km/h",
+        "125.0 km/h",
+        "135.0 km/h",
+        "140.0 km/h"
+      ],
+      "correct_answer": "125.0 km/h",
+      "explanation": "Speed = Distance/Time = 250/2 = 125.0 km/h"
+    },
+    {
+      "id": 248,
+      "question": "A vehicle travels 250 km in 2.5 hours. What is its speed?",
+      "options": [
+        "90.0 km/h",
+        "100.0 km/h",
+        "110.0 km/h",
+        "115.0 km/h"
+      ],
+      "correct_answer": "100.0 km/h",
+      "explanation": "Speed = Distance/Time = 250/2.5 = 100.0 km/h"
+    },
+    {
+      "id": 249,
+      "question": "A vehicle travels 250 km in 3 hours. What is its speed?",
+      "options": [
+        "73.33333333333333 km/h",
+        "83.33333333333333 km/h",
+        "93.33333333333333 km/h",
+        "98.33333333333333 km/h"
+      ],
+      "correct_answer": "83.33333333333333 km/h",
+      "explanation": "Speed = Distance/Time = 250/3 = 83.33333333333333 km/h"
+    },
+    {
+      "id": 250,
+      "question": "A vehicle travels 250 km in 4 hours. What is its speed?",
+      "options": [
+        "52.5 km/h",
+        "62.5 km/h",
+        "72.5 km/h",
+        "77.5 km/h"
+      ],
+      "correct_answer": "62.5 km/h",
+      "explanation": "Speed = Distance/Time = 250/4 = 62.5 km/h"
+    },
+    {
+      "id": 251,
+      "question": "A vehicle travels 250 km in 5 hours. What is its speed?",
+      "options": [
+        "40.0 km/h",
+        "50.0 km/h",
+        "60.0 km/h",
+        "65.0 km/h"
+      ],
+      "correct_answer": "50.0 km/h",
+      "explanation": "Speed = Distance/Time = 250/5 = 50.0 km/h"
+    },
+    {
+      "id": 252,
+      "question": "A vehicle travels 300 km in 2 hours. What is its speed?",
+      "options": [
+        "140.0 km/h",
+        "150.0 km/h",
+        "160.0 km/h",
+        "165.0 km/h"
+      ],
+      "correct_answer": "150.0 km/h",
+      "explanation": "Speed = Distance/Time = 300/2 = 150.0 km/h"
+    },
+    {
+      "id": 253,
+      "question": "A vehicle travels 300 km in 2.5 hours. What is its speed?",
+      "options": [
+        "110.0 km/h",
+        "120.0 km/h",
+        "130.0 km/h",
+        "135.0 km/h"
+      ],
+      "correct_answer": "120.0 km/h",
+      "explanation": "Speed = Distance/Time = 300/2.5 = 120.0 km/h"
+    },
+    {
+      "id": 254,
+      "question": "A vehicle travels 300 km in 3 hours. What is its speed?",
+      "options": [
+        "90.0 km/h",
+        "100.0 km/h",
+        "110.0 km/h",
+        "115.0 km/h"
+      ],
+      "correct_answer": "100.0 km/h",
+      "explanation": "Speed = Distance/Time = 300/3 = 100.0 km/h"
+    },
+    {
+      "id": 255,
+      "question": "A vehicle travels 300 km in 4 hours. What is its speed?",
+      "options": [
+        "65.0 km/h",
+        "75.0 km/h",
+        "85.0 km/h",
+        "90.0 km/h"
+      ],
+      "correct_answer": "75.0 km/h",
+      "explanation": "Speed = Distance/Time = 300/4 = 75.0 km/h"
+    },
+    {
+      "id": 256,
+      "question": "A vehicle travels 300 km in 5 hours. What is its speed?",
+      "options": [
+        "50.0 km/h",
+        "60.0 km/h",
+        "70.0 km/h",
+        "75.0 km/h"
+      ],
+      "correct_answer": "60.0 km/h",
+      "explanation": "Speed = Distance/Time = 300/5 = 60.0 km/h"
+    },
+    {
+      "id": 257,
+      "question": "An item costs $100 and is sold at 10% profit. What is the selling price?",
+      "options": [
+        "$100.0",
+        "$110.0",
+        "$120.0",
+        "$125.0"
+      ],
+      "correct_answer": "$110.0",
+      "explanation": "Profit = 10% of $100 = $10.0. Selling price = $100 + $10.0 = $110.0"
+    },
+    {
+      "id": 258,
+      "question": "An item costs $100 and is sold at 15% profit. What is the selling price?",
+      "options": [
+        "$105.0",
+        "$115.0",
+        "$125.0",
+        "$130.0"
+      ],
+      "correct_answer": "$115.0",
+      "explanation": "Profit = 15% of $100 = $15.0. Selling price = $100 + $15.0 = $115.0"
+    },
+    {
+      "id": 259,
+      "question": "An item costs $100 and is sold at 20% profit. What is the selling price?",
+      "options": [
+        "$110.0",
+        "$120.0",
+        "$130.0",
+        "$135.0"
+      ],
+      "correct_answer": "$120.0",
+      "explanation": "Profit = 20% of $100 = $20.0. Selling price = $100 + $20.0 = $120.0"
+    },
+    {
+      "id": 260,
+      "question": "An item costs $100 and is sold at 25% profit. What is the selling price?",
+      "options": [
+        "$115.0",
+        "$125.0",
+        "$135.0",
+        "$140.0"
+      ],
+      "correct_answer": "$125.0",
+      "explanation": "Profit = 25% of $100 = $25.0. Selling price = $100 + $25.0 = $125.0"
+    },
+    {
+      "id": 261,
+      "question": "An item costs $100 and is sold at 30% profit. What is the selling price?",
+      "options": [
+        "$120.0",
+        "$130.0",
+        "$140.0",
+        "$145.0"
+      ],
+      "correct_answer": "$130.0",
+      "explanation": "Profit = 30% of $100 = $30.0. Selling price = $100 + $30.0 = $130.0"
+    },
+    {
+      "id": 262,
+      "question": "An item costs $150 and is sold at 10% profit. What is the selling price?",
+      "options": [
+        "$155.0",
+        "$165.0",
+        "$175.0",
+        "$180.0"
+      ],
+      "correct_answer": "$165.0",
+      "explanation": "Profit = 10% of $150 = $15.0. Selling price = $150 + $15.0 = $165.0"
+    },
+    {
+      "id": 263,
+      "question": "An item costs $150 and is sold at 15% profit. What is the selling price?",
+      "options": [
+        "$162.5",
+        "$172.5",
+        "$182.5",
+        "$187.5"
+      ],
+      "correct_answer": "$172.5",
+      "explanation": "Profit = 15% of $150 = $22.5. Selling price = $150 + $22.5 = $172.5"
+    },
+    {
+      "id": 264,
+      "question": "An item costs $150 and is sold at 20% profit. What is the selling price?",
+      "options": [
+        "$170.0",
+        "$180.0",
+        "$190.0",
+        "$195.0"
+      ],
+      "correct_answer": "$180.0",
+      "explanation": "Profit = 20% of $150 = $30.0. Selling price = $150 + $30.0 = $180.0"
+    },
+    {
+      "id": 265,
+      "question": "An item costs $150 and is sold at 25% profit. What is the selling price?",
+      "options": [
+        "$177.5",
+        "$187.5",
+        "$197.5",
+        "$202.5"
+      ],
+      "correct_answer": "$187.5",
+      "explanation": "Profit = 25% of $150 = $37.5. Selling price = $150 + $37.5 = $187.5"
+    },
+    {
+      "id": 266,
+      "question": "An item costs $150 and is sold at 30% profit. What is the selling price?",
+      "options": [
+        "$185.0",
+        "$195.0",
+        "$205.0",
+        "$210.0"
+      ],
+      "correct_answer": "$195.0",
+      "explanation": "Profit = 30% of $150 = $45.0. Selling price = $150 + $45.0 = $195.0"
+    },
+    {
+      "id": 267,
+      "question": "An item costs $200 and is sold at 10% profit. What is the selling price?",
+      "options": [
+        "$210.0",
+        "$220.0",
+        "$230.0",
+        "$235.0"
+      ],
+      "correct_answer": "$220.0",
+      "explanation": "Profit = 10% of $200 = $20.0. Selling price = $200 + $20.0 = $220.0"
+    },
+    {
+      "id": 268,
+      "question": "An item costs $200 and is sold at 15% profit. What is the selling price?",
+      "options": [
+        "$220.0",
+        "$230.0",
+        "$240.0",
+        "$245.0"
+      ],
+      "correct_answer": "$230.0",
+      "explanation": "Profit = 15% of $200 = $30.0. Selling price = $200 + $30.0 = $230.0"
+    },
+    {
+      "id": 269,
+      "question": "An item costs $200 and is sold at 20% profit. What is the selling price?",
+      "options": [
+        "$230.0",
+        "$240.0",
+        "$250.0",
+        "$255.0"
+      ],
+      "correct_answer": "$240.0",
+      "explanation": "Profit = 20% of $200 = $40.0. Selling price = $200 + $40.0 = $240.0"
+    },
+    {
+      "id": 270,
+      "question": "An item costs $200 and is sold at 25% profit. What is the selling price?",
+      "options": [
+        "$240.0",
+        "$250.0",
+        "$260.0",
+        "$265.0"
+      ],
+      "correct_answer": "$250.0",
+      "explanation": "Profit = 25% of $200 = $50.0. Selling price = $200 + $50.0 = $250.0"
+    },
+    {
+      "id": 271,
+      "question": "An item costs $200 and is sold at 30% profit. What is the selling price?",
+      "options": [
+        "$250.0",
+        "$260.0",
+        "$270.0",
+        "$275.0"
+      ],
+      "correct_answer": "$260.0",
+      "explanation": "Profit = 30% of $200 = $60.0. Selling price = $200 + $60.0 = $260.0"
+    },
+    {
+      "id": 272,
+      "question": "An item costs $250 and is sold at 10% profit. What is the selling price?",
+      "options": [
+        "$265.0",
+        "$275.0",
+        "$285.0",
+        "$290.0"
+      ],
+      "correct_answer": "$275.0",
+      "explanation": "Profit = 10% of $250 = $25.0. Selling price = $250 + $25.0 = $275.0"
+    },
+    {
+      "id": 273,
+      "question": "An item costs $250 and is sold at 15% profit. What is the selling price?",
+      "options": [
+        "$277.5",
+        "$287.5",
+        "$297.5",
+        "$302.5"
+      ],
+      "correct_answer": "$287.5",
+      "explanation": "Profit = 15% of $250 = $37.5. Selling price = $250 + $37.5 = $287.5"
+    },
+    {
+      "id": 274,
+      "question": "An item costs $250 and is sold at 20% profit. What is the selling price?",
+      "options": [
+        "$290.0",
+        "$300.0",
+        "$310.0",
+        "$315.0"
+      ],
+      "correct_answer": "$300.0",
+      "explanation": "Profit = 20% of $250 = $50.0. Selling price = $250 + $50.0 = $300.0"
+    },
+    {
+      "id": 275,
+      "question": "An item costs $250 and is sold at 25% profit. What is the selling price?",
+      "options": [
+        "$302.5",
+        "$312.5",
+        "$322.5",
+        "$327.5"
+      ],
+      "correct_answer": "$312.5",
+      "explanation": "Profit = 25% of $250 = $62.5. Selling price = $250 + $62.5 = $312.5"
+    },
+    {
+      "id": 276,
+      "question": "An item costs $250 and is sold at 30% profit. What is the selling price?",
+      "options": [
+        "$315.0",
+        "$325.0",
+        "$335.0",
+        "$340.0"
+      ],
+      "correct_answer": "$325.0",
+      "explanation": "Profit = 30% of $250 = $75.0. Selling price = $250 + $75.0 = $325.0"
+    },
+    {
+      "id": 277,
+      "question": "A rectangle has length 5 cm and width 4 cm. What is its area?",
+      "options": [
+        "15 cm\u00b2",
+        "20 cm\u00b2",
+        "25 cm\u00b2",
+        "30 cm\u00b2"
+      ],
+      "correct_answer": "20 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 5 \u00d7 4 = 20 cm\u00b2"
+    },
+    {
+      "id": 278,
+      "question": "A rectangle has length 5 cm and width 6 cm. What is its area?",
+      "options": [
+        "25 cm\u00b2",
+        "30 cm\u00b2",
+        "35 cm\u00b2",
+        "40 cm\u00b2"
+      ],
+      "correct_answer": "30 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 5 \u00d7 6 = 30 cm\u00b2"
+    },
+    {
+      "id": 279,
+      "question": "A rectangle has length 5 cm and width 8 cm. What is its area?",
+      "options": [
+        "35 cm\u00b2",
+        "40 cm\u00b2",
+        "45 cm\u00b2",
+        "50 cm\u00b2"
+      ],
+      "correct_answer": "40 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 5 \u00d7 8 = 40 cm\u00b2"
+    },
+    {
+      "id": 280,
+      "question": "A rectangle has length 5 cm and width 10 cm. What is its area?",
+      "options": [
+        "45 cm\u00b2",
+        "50 cm\u00b2",
+        "55 cm\u00b2",
+        "60 cm\u00b2"
+      ],
+      "correct_answer": "50 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 5 \u00d7 10 = 50 cm\u00b2"
+    },
+    {
+      "id": 281,
+      "question": "A rectangle has length 8 cm and width 4 cm. What is its area?",
+      "options": [
+        "27 cm\u00b2",
+        "32 cm\u00b2",
+        "37 cm\u00b2",
+        "42 cm\u00b2"
+      ],
+      "correct_answer": "32 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 8 \u00d7 4 = 32 cm\u00b2"
+    },
+    {
+      "id": 282,
+      "question": "A rectangle has length 8 cm and width 6 cm. What is its area?",
+      "options": [
+        "43 cm\u00b2",
+        "48 cm\u00b2",
+        "53 cm\u00b2",
+        "58 cm\u00b2"
+      ],
+      "correct_answer": "48 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 8 \u00d7 6 = 48 cm\u00b2"
+    },
+    {
+      "id": 283,
+      "question": "A rectangle has length 8 cm and width 8 cm. What is its area?",
+      "options": [
+        "59 cm\u00b2",
+        "64 cm\u00b2",
+        "69 cm\u00b2",
+        "74 cm\u00b2"
+      ],
+      "correct_answer": "64 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 8 \u00d7 8 = 64 cm\u00b2"
+    },
+    {
+      "id": 284,
+      "question": "A rectangle has length 8 cm and width 10 cm. What is its area?",
+      "options": [
+        "75 cm\u00b2",
+        "80 cm\u00b2",
+        "85 cm\u00b2",
+        "90 cm\u00b2"
+      ],
+      "correct_answer": "80 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 8 \u00d7 10 = 80 cm\u00b2"
+    },
+    {
+      "id": 285,
+      "question": "A rectangle has length 10 cm and width 4 cm. What is its area?",
+      "options": [
+        "35 cm\u00b2",
+        "40 cm\u00b2",
+        "45 cm\u00b2",
+        "50 cm\u00b2"
+      ],
+      "correct_answer": "40 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 10 \u00d7 4 = 40 cm\u00b2"
+    },
+    {
+      "id": 286,
+      "question": "A rectangle has length 10 cm and width 6 cm. What is its area?",
+      "options": [
+        "55 cm\u00b2",
+        "60 cm\u00b2",
+        "65 cm\u00b2",
+        "70 cm\u00b2"
+      ],
+      "correct_answer": "60 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 10 \u00d7 6 = 60 cm\u00b2"
+    },
+    {
+      "id": 287,
+      "question": "A rectangle has length 10 cm and width 8 cm. What is its area?",
+      "options": [
+        "75 cm\u00b2",
+        "80 cm\u00b2",
+        "85 cm\u00b2",
+        "90 cm\u00b2"
+      ],
+      "correct_answer": "80 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 10 \u00d7 8 = 80 cm\u00b2"
+    },
+    {
+      "id": 288,
+      "question": "A rectangle has length 10 cm and width 10 cm. What is its area?",
+      "options": [
+        "95 cm\u00b2",
+        "100 cm\u00b2",
+        "105 cm\u00b2",
+        "110 cm\u00b2"
+      ],
+      "correct_answer": "100 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 10 \u00d7 10 = 100 cm\u00b2"
+    },
+    {
+      "id": 289,
+      "question": "A rectangle has length 12 cm and width 4 cm. What is its area?",
+      "options": [
+        "43 cm\u00b2",
+        "48 cm\u00b2",
+        "53 cm\u00b2",
+        "58 cm\u00b2"
+      ],
+      "correct_answer": "48 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 12 \u00d7 4 = 48 cm\u00b2"
+    },
+    {
+      "id": 290,
+      "question": "A rectangle has length 12 cm and width 6 cm. What is its area?",
+      "options": [
+        "67 cm\u00b2",
+        "72 cm\u00b2",
+        "77 cm\u00b2",
+        "82 cm\u00b2"
+      ],
+      "correct_answer": "72 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 12 \u00d7 6 = 72 cm\u00b2"
+    },
+    {
+      "id": 291,
+      "question": "A rectangle has length 12 cm and width 8 cm. What is its area?",
+      "options": [
+        "91 cm\u00b2",
+        "96 cm\u00b2",
+        "101 cm\u00b2",
+        "106 cm\u00b2"
+      ],
+      "correct_answer": "96 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 12 \u00d7 8 = 96 cm\u00b2"
+    },
+    {
+      "id": 292,
+      "question": "A rectangle has length 12 cm and width 10 cm. What is its area?",
+      "options": [
+        "115 cm\u00b2",
+        "120 cm\u00b2",
+        "125 cm\u00b2",
+        "130 cm\u00b2"
+      ],
+      "correct_answer": "120 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 12 \u00d7 10 = 120 cm\u00b2"
+    },
+    {
+      "id": 293,
+      "question": "A rectangle has length 15 cm and width 4 cm. What is its area?",
+      "options": [
+        "55 cm\u00b2",
+        "60 cm\u00b2",
+        "65 cm\u00b2",
+        "70 cm\u00b2"
+      ],
+      "correct_answer": "60 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 15 \u00d7 4 = 60 cm\u00b2"
+    },
+    {
+      "id": 294,
+      "question": "A rectangle has length 15 cm and width 6 cm. What is its area?",
+      "options": [
+        "85 cm\u00b2",
+        "90 cm\u00b2",
+        "95 cm\u00b2",
+        "100 cm\u00b2"
+      ],
+      "correct_answer": "90 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 15 \u00d7 6 = 90 cm\u00b2"
+    },
+    {
+      "id": 295,
+      "question": "A rectangle has length 15 cm and width 8 cm. What is its area?",
+      "options": [
+        "115 cm\u00b2",
+        "120 cm\u00b2",
+        "125 cm\u00b2",
+        "130 cm\u00b2"
+      ],
+      "correct_answer": "120 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 15 \u00d7 8 = 120 cm\u00b2"
+    },
+    {
+      "id": 296,
+      "question": "A rectangle has length 15 cm and width 10 cm. What is its area?",
+      "options": [
+        "145 cm\u00b2",
+        "150 cm\u00b2",
+        "155 cm\u00b2",
+        "160 cm\u00b2"
+      ],
+      "correct_answer": "150 cm\u00b2",
+      "explanation": "Area = length \u00d7 width = 15 \u00d7 10 = 150 cm\u00b2"
+    },
+    {
+      "id": 297,
+      "question": "What is 1/4 of 20?",
+      "options": [
+        "0.0",
+        "5.0",
+        "10.0",
+        "15.0"
+      ],
+      "correct_answer": "5.0",
+      "explanation": "1/4 of 20 = (1/4) \u00d7 20 = 5.0"
+    },
+    {
+      "id": 298,
+      "question": "What is 1/3 of 30?",
+      "options": [
+        "5.0",
+        "10.0",
+        "15.0",
+        "20.0"
+      ],
+      "correct_answer": "10.0",
+      "explanation": "1/3 of 30 = (1/3) \u00d7 30 = 10.0"
+    },
+    {
+      "id": 299,
+      "question": "What is 2/5 of 40?",
+      "options": [
+        "11.0",
+        "16.0",
+        "21.0",
+        "26.0"
+      ],
+      "correct_answer": "16.0",
+      "explanation": "2/5 of 40 = (2/5) \u00d7 40 = 16.0"
+    },
+    {
+      "id": 300,
+      "question": "What is 3/4 of 50?",
+      "options": [
+        "32.5",
+        "37.5",
+        "42.5",
+        "47.5"
+      ],
+      "correct_answer": "37.5",
+      "explanation": "3/4 of 50 = (3/4) \u00d7 50 = 37.5"
+    },
+    {
+      "id": 301,
+      "question": "What is 2/3 of 60?",
+      "options": [
+        "35.0",
+        "40.0",
+        "45.0",
+        "50.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "2/3 of 60 = (2/3) \u00d7 60 = 40.0"
+    },
+    {
+      "id": 302,
+      "question": "What is 3/5 of 80?",
+      "options": [
+        "43.0",
+        "48.0",
+        "53.0",
+        "58.0"
+      ],
+      "correct_answer": "48.0",
+      "explanation": "3/5 of 80 = (3/5) \u00d7 80 = 48.0"
+    },
+    {
+      "id": 303,
+      "question": "What is 4/5 of 100?",
+      "options": [
+        "75.0",
+        "80.0",
+        "85.0",
+        "90.0"
+      ],
+      "correct_answer": "80.0",
+      "explanation": "4/5 of 100 = (4/5) \u00d7 100 = 80.0"
+    },
+    {
+      "id": 304,
+      "question": "What is 1/4 of 120?",
+      "options": [
+        "25.0",
+        "30.0",
+        "35.0",
+        "40.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "1/4 of 120 = (1/4) \u00d7 120 = 30.0"
+    },
+    {
+      "id": 305,
+      "question": "What is 1/3 of 20?",
+      "options": [
+        "1.666666666666666",
+        "6.666666666666666",
+        "11.666666666666666",
+        "16.666666666666664"
+      ],
+      "correct_answer": "6.666666666666666",
+      "explanation": "1/3 of 20 = (1/3) \u00d7 20 = 6.666666666666666"
+    },
+    {
+      "id": 306,
+      "question": "What is 2/5 of 30?",
+      "options": [
+        "7.0",
+        "12.0",
+        "17.0",
+        "22.0"
+      ],
+      "correct_answer": "12.0",
+      "explanation": "2/5 of 30 = (2/5) \u00d7 30 = 12.0"
+    },
+    {
+      "id": 307,
+      "question": "What is 3/4 of 40?",
+      "options": [
+        "25.0",
+        "30.0",
+        "35.0",
+        "40.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "3/4 of 40 = (3/4) \u00d7 40 = 30.0"
+    },
+    {
+      "id": 308,
+      "question": "What is 2/3 of 50?",
+      "options": [
+        "28.33333333333333",
+        "33.33333333333333",
+        "38.33333333333333",
+        "43.33333333333333"
+      ],
+      "correct_answer": "33.33333333333333",
+      "explanation": "2/3 of 50 = (2/3) \u00d7 50 = 33.33333333333333"
+    },
+    {
+      "id": 309,
+      "question": "What is 3/5 of 60?",
+      "options": [
+        "31.0",
+        "36.0",
+        "41.0",
+        "46.0"
+      ],
+      "correct_answer": "36.0",
+      "explanation": "3/5 of 60 = (3/5) \u00d7 60 = 36.0"
+    },
+    {
+      "id": 310,
+      "question": "What is 4/5 of 80?",
+      "options": [
+        "59.0",
+        "64.0",
+        "69.0",
+        "74.0"
+      ],
+      "correct_answer": "64.0",
+      "explanation": "4/5 of 80 = (4/5) \u00d7 80 = 64.0"
+    },
+    {
+      "id": 311,
+      "question": "What is 1/4 of 100?",
+      "options": [
+        "20.0",
+        "25.0",
+        "30.0",
+        "35.0"
+      ],
+      "correct_answer": "25.0",
+      "explanation": "1/4 of 100 = (1/4) \u00d7 100 = 25.0"
+    },
+    {
+      "id": 312,
+      "question": "What is 1/3 of 120?",
+      "options": [
+        "35.0",
+        "40.0",
+        "45.0",
+        "50.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "1/3 of 120 = (1/3) \u00d7 120 = 40.0"
+    },
+    {
+      "id": 313,
+      "question": "What is 2/5 of 20?",
+      "options": [
+        "3.0",
+        "8.0",
+        "13.0",
+        "18.0"
+      ],
+      "correct_answer": "8.0",
+      "explanation": "2/5 of 20 = (2/5) \u00d7 20 = 8.0"
+    },
+    {
+      "id": 314,
+      "question": "What is 3/4 of 30?",
+      "options": [
+        "17.5",
+        "22.5",
+        "27.5",
+        "32.5"
+      ],
+      "correct_answer": "22.5",
+      "explanation": "3/4 of 30 = (3/4) \u00d7 30 = 22.5"
+    },
+    {
+      "id": 315,
+      "question": "What is 2/3 of 40?",
+      "options": [
+        "21.666666666666664",
+        "26.666666666666664",
+        "31.666666666666664",
+        "36.666666666666664"
+      ],
+      "correct_answer": "26.666666666666664",
+      "explanation": "2/3 of 40 = (2/3) \u00d7 40 = 26.666666666666664"
+    },
+    {
+      "id": 316,
+      "question": "What is 3/5 of 50?",
+      "options": [
+        "25.0",
+        "30.0",
+        "35.0",
+        "40.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "3/5 of 50 = (3/5) \u00d7 50 = 30.0"
+    },
+    {
+      "id": 317,
+      "question": "What is 4/5 of 60?",
+      "options": [
+        "43.0",
+        "48.0",
+        "53.0",
+        "58.0"
+      ],
+      "correct_answer": "48.0",
+      "explanation": "4/5 of 60 = (4/5) \u00d7 60 = 48.0"
+    },
+    {
+      "id": 318,
+      "question": "What is 1/4 of 80?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "1/4 of 80 = (1/4) \u00d7 80 = 20.0"
+    },
+    {
+      "id": 319,
+      "question": "What is 1/3 of 100?",
+      "options": [
+        "28.33333333333333",
+        "33.33333333333333",
+        "38.33333333333333",
+        "43.33333333333333"
+      ],
+      "correct_answer": "33.33333333333333",
+      "explanation": "1/3 of 100 = (1/3) \u00d7 100 = 33.33333333333333"
+    },
+    {
+      "id": 320,
+      "question": "What is 2/5 of 120?",
+      "options": [
+        "43.0",
+        "48.0",
+        "53.0",
+        "58.0"
+      ],
+      "correct_answer": "48.0",
+      "explanation": "2/5 of 120 = (2/5) \u00d7 120 = 48.0"
+    },
+    {
+      "id": 321,
+      "question": "What is 3/4 of 20?",
+      "options": [
+        "10.0",
+        "15.0",
+        "20.0",
+        "25.0"
+      ],
+      "correct_answer": "15.0",
+      "explanation": "3/4 of 20 = (3/4) \u00d7 20 = 15.0"
+    },
+    {
+      "id": 322,
+      "question": "What is 2/3 of 30?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "2/3 of 30 = (2/3) \u00d7 30 = 20.0"
+    },
+    {
+      "id": 323,
+      "question": "What is 3/5 of 40?",
+      "options": [
+        "19.0",
+        "24.0",
+        "29.0",
+        "34.0"
+      ],
+      "correct_answer": "24.0",
+      "explanation": "3/5 of 40 = (3/5) \u00d7 40 = 24.0"
+    },
+    {
+      "id": 324,
+      "question": "What is 4/5 of 50?",
+      "options": [
+        "35.0",
+        "40.0",
+        "45.0",
+        "50.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "4/5 of 50 = (4/5) \u00d7 50 = 40.0"
+    },
+    {
+      "id": 325,
+      "question": "What is 1/4 of 60?",
+      "options": [
+        "10.0",
+        "15.0",
+        "20.0",
+        "25.0"
+      ],
+      "correct_answer": "15.0",
+      "explanation": "1/4 of 60 = (1/4) \u00d7 60 = 15.0"
+    },
+    {
+      "id": 326,
+      "question": "What is 1/3 of 80?",
+      "options": [
+        "21.666666666666664",
+        "26.666666666666664",
+        "31.666666666666664",
+        "36.666666666666664"
+      ],
+      "correct_answer": "26.666666666666664",
+      "explanation": "1/3 of 80 = (1/3) \u00d7 80 = 26.666666666666664"
+    },
+    {
+      "id": 327,
+      "question": "What is 2/5 of 100?",
+      "options": [
+        "35.0",
+        "40.0",
+        "45.0",
+        "50.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "2/5 of 100 = (2/5) \u00d7 100 = 40.0"
+    },
+    {
+      "id": 328,
+      "question": "What is 3/4 of 120?",
+      "options": [
+        "85.0",
+        "90.0",
+        "95.0",
+        "100.0"
+      ],
+      "correct_answer": "90.0",
+      "explanation": "3/4 of 120 = (3/4) \u00d7 120 = 90.0"
+    },
+    {
+      "id": 329,
+      "question": "What is 2/3 of 20?",
+      "options": [
+        "8.333333333333332",
+        "13.333333333333332",
+        "18.333333333333332",
+        "23.333333333333332"
+      ],
+      "correct_answer": "13.333333333333332",
+      "explanation": "2/3 of 20 = (2/3) \u00d7 20 = 13.333333333333332"
+    },
+    {
+      "id": 330,
+      "question": "What is 3/5 of 30?",
+      "options": [
+        "13.0",
+        "18.0",
+        "23.0",
+        "28.0"
+      ],
+      "correct_answer": "18.0",
+      "explanation": "3/5 of 30 = (3/5) \u00d7 30 = 18.0"
+    },
+    {
+      "id": 331,
+      "question": "What is 4/5 of 40?",
+      "options": [
+        "27.0",
+        "32.0",
+        "37.0",
+        "42.0"
+      ],
+      "correct_answer": "32.0",
+      "explanation": "4/5 of 40 = (4/5) \u00d7 40 = 32.0"
+    },
+    {
+      "id": 332,
+      "question": "What is 1/4 of 50?",
+      "options": [
+        "7.5",
+        "12.5",
+        "17.5",
+        "22.5"
+      ],
+      "correct_answer": "12.5",
+      "explanation": "1/4 of 50 = (1/4) \u00d7 50 = 12.5"
+    },
+    {
+      "id": 333,
+      "question": "What is 1/3 of 60?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "1/3 of 60 = (1/3) \u00d7 60 = 20.0"
+    },
+    {
+      "id": 334,
+      "question": "What is 2/5 of 80?",
+      "options": [
+        "27.0",
+        "32.0",
+        "37.0",
+        "42.0"
+      ],
+      "correct_answer": "32.0",
+      "explanation": "2/5 of 80 = (2/5) \u00d7 80 = 32.0"
+    },
+    {
+      "id": 335,
+      "question": "What is 3/4 of 100?",
+      "options": [
+        "70.0",
+        "75.0",
+        "80.0",
+        "85.0"
+      ],
+      "correct_answer": "75.0",
+      "explanation": "3/4 of 100 = (3/4) \u00d7 100 = 75.0"
+    },
+    {
+      "id": 336,
+      "question": "What is 2/3 of 120?",
+      "options": [
+        "75.0",
+        "80.0",
+        "85.0",
+        "90.0"
+      ],
+      "correct_answer": "80.0",
+      "explanation": "2/3 of 120 = (2/3) \u00d7 120 = 80.0"
+    },
+    {
+      "id": 337,
+      "question": "What is 3/5 of 20?",
+      "options": [
+        "7.0",
+        "12.0",
+        "17.0",
+        "22.0"
+      ],
+      "correct_answer": "12.0",
+      "explanation": "3/5 of 20 = (3/5) \u00d7 20 = 12.0"
+    },
+    {
+      "id": 338,
+      "question": "What is 4/5 of 30?",
+      "options": [
+        "19.0",
+        "24.0",
+        "29.0",
+        "34.0"
+      ],
+      "correct_answer": "24.0",
+      "explanation": "4/5 of 30 = (4/5) \u00d7 30 = 24.0"
+    },
+    {
+      "id": 339,
+      "question": "What is 1/4 of 40?",
+      "options": [
+        "5.0",
+        "10.0",
+        "15.0",
+        "20.0"
+      ],
+      "correct_answer": "10.0",
+      "explanation": "1/4 of 40 = (1/4) \u00d7 40 = 10.0"
+    },
+    {
+      "id": 340,
+      "question": "What is 1/3 of 50?",
+      "options": [
+        "11.666666666666664",
+        "16.666666666666664",
+        "21.666666666666664",
+        "26.666666666666664"
+      ],
+      "correct_answer": "16.666666666666664",
+      "explanation": "1/3 of 50 = (1/3) \u00d7 50 = 16.666666666666664"
+    },
+    {
+      "id": 341,
+      "question": "What is 2/5 of 60?",
+      "options": [
+        "19.0",
+        "24.0",
+        "29.0",
+        "34.0"
+      ],
+      "correct_answer": "24.0",
+      "explanation": "2/5 of 60 = (2/5) \u00d7 60 = 24.0"
+    },
+    {
+      "id": 342,
+      "question": "What is 3/4 of 80?",
+      "options": [
+        "55.0",
+        "60.0",
+        "65.0",
+        "70.0"
+      ],
+      "correct_answer": "60.0",
+      "explanation": "3/4 of 80 = (3/4) \u00d7 80 = 60.0"
+    },
+    {
+      "id": 343,
+      "question": "What is 2/3 of 100?",
+      "options": [
+        "61.66666666666666",
+        "66.66666666666666",
+        "71.66666666666666",
+        "76.66666666666666"
+      ],
+      "correct_answer": "66.66666666666666",
+      "explanation": "2/3 of 100 = (2/3) \u00d7 100 = 66.66666666666666"
+    },
+    {
+      "id": 344,
+      "question": "What is 3/5 of 120?",
+      "options": [
+        "67.0",
+        "72.0",
+        "77.0",
+        "82.0"
+      ],
+      "correct_answer": "72.0",
+      "explanation": "3/5 of 120 = (3/5) \u00d7 120 = 72.0"
+    },
+    {
+      "id": 345,
+      "question": "What is 4/5 of 20?",
+      "options": [
+        "11.0",
+        "16.0",
+        "21.0",
+        "26.0"
+      ],
+      "correct_answer": "16.0",
+      "explanation": "4/5 of 20 = (4/5) \u00d7 20 = 16.0"
+    },
+    {
+      "id": 346,
+      "question": "What is 1/4 of 30?",
+      "options": [
+        "2.5",
+        "7.5",
+        "12.5",
+        "17.5"
+      ],
+      "correct_answer": "7.5",
+      "explanation": "1/4 of 30 = (1/4) \u00d7 30 = 7.5"
+    },
+    {
+      "id": 347,
+      "question": "What is 1/3 of 40?",
+      "options": [
+        "8.333333333333332",
+        "13.333333333333332",
+        "18.333333333333332",
+        "23.333333333333332"
+      ],
+      "correct_answer": "13.333333333333332",
+      "explanation": "1/3 of 40 = (1/3) \u00d7 40 = 13.333333333333332"
+    },
+    {
+      "id": 348,
+      "question": "What is 2/5 of 50?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "2/5 of 50 = (2/5) \u00d7 50 = 20.0"
+    },
+    {
+      "id": 349,
+      "question": "What is 3/4 of 60?",
+      "options": [
+        "40.0",
+        "45.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "45.0",
+      "explanation": "3/4 of 60 = (3/4) \u00d7 60 = 45.0"
+    },
+    {
+      "id": 350,
+      "question": "What is 2/3 of 80?",
+      "options": [
+        "48.33333333333333",
+        "53.33333333333333",
+        "58.33333333333333",
+        "63.33333333333333"
+      ],
+      "correct_answer": "53.33333333333333",
+      "explanation": "2/3 of 80 = (2/3) \u00d7 80 = 53.33333333333333"
+    },
+    {
+      "id": 351,
+      "question": "What is 3/5 of 100?",
+      "options": [
+        "55.0",
+        "60.0",
+        "65.0",
+        "70.0"
+      ],
+      "correct_answer": "60.0",
+      "explanation": "3/5 of 100 = (3/5) \u00d7 100 = 60.0"
+    },
+    {
+      "id": 352,
+      "question": "What is 4/5 of 120?",
+      "options": [
+        "91.0",
+        "96.0",
+        "101.0",
+        "106.0"
+      ],
+      "correct_answer": "96.0",
+      "explanation": "4/5 of 120 = (4/5) \u00d7 120 = 96.0"
+    },
+    {
+      "id": 353,
+      "question": "If 2 workers can complete a task in 5 days, in how many days can 4 workers complete it?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": "2",
+      "explanation": "Work = 2 \u00d7 5 = 10. New time = 10/4 = 2 days"
+    },
+    {
+      "id": 354,
+      "question": "If 2 workers can complete a task in 8 days, in how many days can 4 workers complete it?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "4",
+      "explanation": "Work = 2 \u00d7 8 = 16. New time = 16/4 = 4 days"
+    },
+    {
+      "id": 355,
+      "question": "If 2 workers can complete a task in 10 days, in how many days can 4 workers complete it?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "Work = 2 \u00d7 10 = 20. New time = 20/4 = 5 days"
+    },
+    {
+      "id": 356,
+      "question": "If 2 workers can complete a task in 12 days, in how many days can 4 workers complete it?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "Work = 2 \u00d7 12 = 24. New time = 24/4 = 6 days"
+    },
+    {
+      "id": 357,
+      "question": "If 2 workers can complete a task in 15 days, in how many days can 4 workers complete it?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "Work = 2 \u00d7 15 = 30. New time = 30/4 = 7 days"
+    },
+    {
+      "id": 358,
+      "question": "If 3 workers can complete a task in 5 days, in how many days can 6 workers complete it?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": "2",
+      "explanation": "Work = 3 \u00d7 5 = 15. New time = 15/6 = 2 days"
+    },
+    {
+      "id": 359,
+      "question": "If 3 workers can complete a task in 8 days, in how many days can 6 workers complete it?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "4",
+      "explanation": "Work = 3 \u00d7 8 = 24. New time = 24/6 = 4 days"
+    },
+    {
+      "id": 360,
+      "question": "If 3 workers can complete a task in 10 days, in how many days can 6 workers complete it?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "Work = 3 \u00d7 10 = 30. New time = 30/6 = 5 days"
+    },
+    {
+      "id": 361,
+      "question": "If 3 workers can complete a task in 12 days, in how many days can 6 workers complete it?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "Work = 3 \u00d7 12 = 36. New time = 36/6 = 6 days"
+    },
+    {
+      "id": 362,
+      "question": "If 3 workers can complete a task in 15 days, in how many days can 6 workers complete it?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "Work = 3 \u00d7 15 = 45. New time = 45/6 = 7 days"
+    },
+    {
+      "id": 363,
+      "question": "If 4 workers can complete a task in 5 days, in how many days can 8 workers complete it?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": "2",
+      "explanation": "Work = 4 \u00d7 5 = 20. New time = 20/8 = 2 days"
+    },
+    {
+      "id": 364,
+      "question": "If 4 workers can complete a task in 8 days, in how many days can 8 workers complete it?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "4",
+      "explanation": "Work = 4 \u00d7 8 = 32. New time = 32/8 = 4 days"
+    },
+    {
+      "id": 365,
+      "question": "If 4 workers can complete a task in 10 days, in how many days can 8 workers complete it?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "Work = 4 \u00d7 10 = 40. New time = 40/8 = 5 days"
+    },
+    {
+      "id": 366,
+      "question": "If 4 workers can complete a task in 12 days, in how many days can 8 workers complete it?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "Work = 4 \u00d7 12 = 48. New time = 48/8 = 6 days"
+    },
+    {
+      "id": 367,
+      "question": "If 4 workers can complete a task in 15 days, in how many days can 8 workers complete it?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "Work = 4 \u00d7 15 = 60. New time = 60/8 = 7 days"
+    },
+    {
+      "id": 368,
+      "question": "If 5 workers can complete a task in 5 days, in how many days can 10 workers complete it?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": "2",
+      "explanation": "Work = 5 \u00d7 5 = 25. New time = 25/10 = 2 days"
+    },
+    {
+      "id": 369,
+      "question": "If 5 workers can complete a task in 8 days, in how many days can 10 workers complete it?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "4",
+      "explanation": "Work = 5 \u00d7 8 = 40. New time = 40/10 = 4 days"
+    },
+    {
+      "id": 370,
+      "question": "If 5 workers can complete a task in 10 days, in how many days can 10 workers complete it?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "Work = 5 \u00d7 10 = 50. New time = 50/10 = 5 days"
+    },
+    {
+      "id": 371,
+      "question": "If 5 workers can complete a task in 12 days, in how many days can 10 workers complete it?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "Work = 5 \u00d7 12 = 60. New time = 60/10 = 6 days"
+    },
+    {
+      "id": 372,
+      "question": "If 5 workers can complete a task in 15 days, in how many days can 10 workers complete it?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "Work = 5 \u00d7 15 = 75. New time = 75/10 = 7 days"
+    },
+    {
+      "id": 373,
+      "question": "If 6 workers can complete a task in 5 days, in how many days can 12 workers complete it?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": "2",
+      "explanation": "Work = 6 \u00d7 5 = 30. New time = 30/12 = 2 days"
+    },
+    {
+      "id": 374,
+      "question": "If 6 workers can complete a task in 8 days, in how many days can 12 workers complete it?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "4",
+      "explanation": "Work = 6 \u00d7 8 = 48. New time = 48/12 = 4 days"
+    },
+    {
+      "id": 375,
+      "question": "If 6 workers can complete a task in 10 days, in how many days can 12 workers complete it?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "Work = 6 \u00d7 10 = 60. New time = 60/12 = 5 days"
+    },
+    {
+      "id": 376,
+      "question": "If 6 workers can complete a task in 12 days, in how many days can 12 workers complete it?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "Work = 6 \u00d7 12 = 72. New time = 72/12 = 6 days"
+    },
+    {
+      "id": 377,
+      "question": "If 6 workers can complete a task in 15 days, in how many days can 12 workers complete it?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "Work = 6 \u00d7 15 = 90. New time = 90/12 = 7 days"
+    },
+    {
+      "id": 378,
+      "question": "If 2(x + 1) - 0 = 8, what is x?",
+      "options": [
+        "-1",
+        "0",
+        "1",
+        "2"
+      ],
+      "correct_answer": "1",
+      "explanation": "2(x + 1) - 0 = 8, 2x + 2 - 0 = 8, 2x = 6, x = 1"
+    },
+    {
+      "id": 379,
+      "question": "If 2(x + 1) - 0 = 11, what is x?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "4",
+      "explanation": "2(x + 1) - 0 = 11, 2x + 2 - 0 = 11, 2x = 9, x = 4"
+    },
+    {
+      "id": 380,
+      "question": "If 2(x + 1) - 0 = 13, what is x?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "2(x + 1) - 0 = 13, 2x + 2 - 0 = 13, 2x = 11, x = 6"
+    },
+    {
+      "id": 381,
+      "question": "If 2(x + 1) - 2 = 8, what is x?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": "3",
+      "explanation": "2(x + 1) - 2 = 8, 2x + 2 - 2 = 8, 2x = 8, x = 3"
+    },
+    {
+      "id": 382,
+      "question": "If 2(x + 1) - 2 = 11, what is x?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "2(x + 1) - 2 = 11, 2x + 2 - 2 = 11, 2x = 11, x = 6"
+    },
+    {
+      "id": 383,
+      "question": "If 2(x + 1) - 2 = 13, what is x?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": "8",
+      "explanation": "2(x + 1) - 2 = 13, 2x + 2 - 2 = 13, 2x = 13, x = 8"
+    },
+    {
+      "id": 384,
+      "question": "If 2(x + 1) - 4 = 8, what is x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "2(x + 1) - 4 = 8, 2x + 2 - 4 = 8, 2x = 10, x = 5"
+    },
+    {
+      "id": 385,
+      "question": "If 2(x + 1) - 4 = 11, what is x?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": "8",
+      "explanation": "2(x + 1) - 4 = 11, 2x + 2 - 4 = 11, 2x = 13, x = 8"
+    },
+    {
+      "id": 386,
+      "question": "If 2(x + 1) - 4 = 13, what is x?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct_answer": "10",
+      "explanation": "2(x + 1) - 4 = 13, 2x + 2 - 4 = 13, 2x = 15, x = 10"
+    },
+    {
+      "id": 387,
+      "question": "If 2(x + 2) - 0 = 8, what is x?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": "2",
+      "explanation": "2(x + 2) - 0 = 8, 2x + 4 - 0 = 8, 2x = 4, x = 2"
+    },
+    {
+      "id": 388,
+      "question": "If 2(x + 2) - 0 = 11, what is x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "2(x + 2) - 0 = 11, 2x + 4 - 0 = 11, 2x = 7, x = 5"
+    },
+    {
+      "id": 389,
+      "question": "If 2(x + 2) - 0 = 13, what is x?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "2(x + 2) - 0 = 13, 2x + 4 - 0 = 13, 2x = 9, x = 7"
+    },
+    {
+      "id": 390,
+      "question": "If 2(x + 2) - 2 = 8, what is x?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "4",
+      "explanation": "2(x + 2) - 2 = 8, 2x + 4 - 2 = 8, 2x = 6, x = 4"
+    },
+    {
+      "id": 391,
+      "question": "If 2(x + 2) - 2 = 11, what is x?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "2(x + 2) - 2 = 11, 2x + 4 - 2 = 11, 2x = 9, x = 7"
+    },
+    {
+      "id": 392,
+      "question": "If 2(x + 2) - 2 = 13, what is x?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct_answer": "9",
+      "explanation": "2(x + 2) - 2 = 13, 2x + 4 - 2 = 13, 2x = 11, x = 9"
+    },
+    {
+      "id": 393,
+      "question": "If 2(x + 2) - 4 = 8, what is x?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "2(x + 2) - 4 = 8, 2x + 4 - 4 = 8, 2x = 8, x = 6"
+    },
+    {
+      "id": 394,
+      "question": "If 2(x + 2) - 4 = 11, what is x?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct_answer": "9",
+      "explanation": "2(x + 2) - 4 = 11, 2x + 4 - 4 = 11, 2x = 11, x = 9"
+    },
+    {
+      "id": 395,
+      "question": "If 2(x + 2) - 4 = 13, what is x?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "correct_answer": "11",
+      "explanation": "2(x + 2) - 4 = 13, 2x + 4 - 4 = 13, 2x = 13, x = 11"
+    },
+    {
+      "id": 396,
+      "question": "If 2(x + 3) - 0 = 8, what is x?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": "3",
+      "explanation": "2(x + 3) - 0 = 8, 2x + 6 - 0 = 8, 2x = 2, x = 3"
+    },
+    {
+      "id": 397,
+      "question": "If 2(x + 3) - 0 = 11, what is x?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation": "2(x + 3) - 0 = 11, 2x + 6 - 0 = 11, 2x = 5, x = 6"
+    },
+    {
+      "id": 398,
+      "question": "If 2(x + 3) - 0 = 13, what is x?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": "8",
+      "explanation": "2(x + 3) - 0 = 13, 2x + 6 - 0 = 13, 2x = 7, x = 8"
+    },
+    {
+      "id": 399,
+      "question": "If 2(x + 3) - 2 = 8, what is x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "5",
+      "explanation": "2(x + 3) - 2 = 8, 2x + 6 - 2 = 8, 2x = 4, x = 5"
+    },
+    {
+      "id": 400,
+      "question": "If 2(x + 3) - 2 = 11, what is x?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": "8",
+      "explanation": "2(x + 3) - 2 = 11, 2x + 6 - 2 = 11, 2x = 7, x = 8"
+    },
+    {
+      "id": 401,
+      "question": "If 2(x + 3) - 2 = 13, what is x?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct_answer": "10",
+      "explanation": "2(x + 3) - 2 = 13, 2x + 6 - 2 = 13, 2x = 9, x = 10"
+    },
+    {
+      "id": 402,
+      "question": "If 2(x + 3) - 4 = 8, what is x?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation": "2(x + 3) - 4 = 8, 2x + 6 - 4 = 8, 2x = 6, x = 7"
+    },
+    {
+      "id": 403,
+      "question": "If 2(x + 3) - 4 = 11, what is x?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct_answer": "10",
+      "explanation": "2(x + 3) - 4 = 11, 2x + 6 - 4 = 11, 2x = 9, x = 10"
+    },
+    {
+      "id": 404,
+      "question": "If 2(x + 3) - 4 = 13, what is x?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correct_answer": "12",
+      "explanation": "2(x + 3) - 4 = 13, 2x + 6 - 4 = 13, 2x = 11, x = 12"
+    },
+    {
+      "id": 405,
+      "question": "If a quantity is divided in the ratio 1:2 and the total is 50, what is the first part?",
+      "options": [
+        "6.666666666666664",
+        "11.666666666666664",
+        "16.666666666666664",
+        "21.666666666666664"
+      ],
+      "correct_answer": "16.666666666666664",
+      "explanation": "First part = (1/3) \u00d7 50 = 16.666666666666664"
+    },
+    {
+      "id": 406,
+      "question": "If a quantity is divided in the ratio 1:2 and the total is 75, what is the first part?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "25.0",
+      "explanation": "First part = (1/3) \u00d7 75 = 25.0"
+    },
+    {
+      "id": 407,
+      "question": "If a quantity is divided in the ratio 1:2 and the total is 100, what is the first part?",
+      "options": [
+        "23.33333333333333",
+        "28.33333333333333",
+        "33.33333333333333",
+        "38.33333333333333"
+      ],
+      "correct_answer": "33.33333333333333",
+      "explanation": "First part = (1/3) \u00d7 100 = 33.33333333333333"
+    },
+    {
+      "id": 408,
+      "question": "If a quantity is divided in the ratio 1:2 and the total is 150, what is the first part?",
+      "options": [
+        "40.0",
+        "45.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "50.0",
+      "explanation": "First part = (1/3) \u00d7 150 = 50.0"
+    },
+    {
+      "id": 409,
+      "question": "If a quantity is divided in the ratio 1:3 and the total is 50, what is the first part?",
+      "options": [
+        "2.5",
+        "7.5",
+        "12.5",
+        "17.5"
+      ],
+      "correct_answer": "12.5",
+      "explanation": "First part = (1/4) \u00d7 50 = 12.5"
+    },
+    {
+      "id": 410,
+      "question": "If a quantity is divided in the ratio 1:3 and the total is 75, what is the first part?",
+      "options": [
+        "8.75",
+        "13.75",
+        "18.75",
+        "23.75"
+      ],
+      "correct_answer": "18.75",
+      "explanation": "First part = (1/4) \u00d7 75 = 18.75"
+    },
+    {
+      "id": 411,
+      "question": "If a quantity is divided in the ratio 1:3 and the total is 100, what is the first part?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "25.0",
+      "explanation": "First part = (1/4) \u00d7 100 = 25.0"
+    },
+    {
+      "id": 412,
+      "question": "If a quantity is divided in the ratio 1:3 and the total is 150, what is the first part?",
+      "options": [
+        "27.5",
+        "32.5",
+        "37.5",
+        "42.5"
+      ],
+      "correct_answer": "37.5",
+      "explanation": "First part = (1/4) \u00d7 150 = 37.5"
+    },
+    {
+      "id": 413,
+      "question": "If a quantity is divided in the ratio 1:4 and the total is 50, what is the first part?",
+      "options": [
+        "0.0",
+        "5.0",
+        "10.0",
+        "15.0"
+      ],
+      "correct_answer": "10.0",
+      "explanation": "First part = (1/5) \u00d7 50 = 10.0"
+    },
+    {
+      "id": 414,
+      "question": "If a quantity is divided in the ratio 1:4 and the total is 75, what is the first part?",
+      "options": [
+        "5.0",
+        "10.0",
+        "15.0",
+        "20.0"
+      ],
+      "correct_answer": "15.0",
+      "explanation": "First part = (1/5) \u00d7 75 = 15.0"
+    },
+    {
+      "id": 415,
+      "question": "If a quantity is divided in the ratio 1:4 and the total is 100, what is the first part?",
+      "options": [
+        "10.0",
+        "15.0",
+        "20.0",
+        "25.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "First part = (1/5) \u00d7 100 = 20.0"
+    },
+    {
+      "id": 416,
+      "question": "If a quantity is divided in the ratio 1:4 and the total is 150, what is the first part?",
+      "options": [
+        "20.0",
+        "25.0",
+        "30.0",
+        "35.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "First part = (1/5) \u00d7 150 = 30.0"
+    },
+    {
+      "id": 417,
+      "question": "If a quantity is divided in the ratio 2:2 and the total is 50, what is the first part?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "25.0",
+      "explanation": "First part = (2/4) \u00d7 50 = 25.0"
+    },
+    {
+      "id": 418,
+      "question": "If a quantity is divided in the ratio 2:2 and the total is 75, what is the first part?",
+      "options": [
+        "27.5",
+        "32.5",
+        "37.5",
+        "42.5"
+      ],
+      "correct_answer": "37.5",
+      "explanation": "First part = (2/4) \u00d7 75 = 37.5"
+    },
+    {
+      "id": 419,
+      "question": "If a quantity is divided in the ratio 2:2 and the total is 100, what is the first part?",
+      "options": [
+        "40.0",
+        "45.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "50.0",
+      "explanation": "First part = (2/4) \u00d7 100 = 50.0"
+    },
+    {
+      "id": 420,
+      "question": "If a quantity is divided in the ratio 2:2 and the total is 150, what is the first part?",
+      "options": [
+        "65.0",
+        "70.0",
+        "75.0",
+        "80.0"
+      ],
+      "correct_answer": "75.0",
+      "explanation": "First part = (2/4) \u00d7 150 = 75.0"
+    },
+    {
+      "id": 421,
+      "question": "If a quantity is divided in the ratio 2:3 and the total is 50, what is the first part?",
+      "options": [
+        "10.0",
+        "15.0",
+        "20.0",
+        "25.0"
+      ],
+      "correct_answer": "20.0",
+      "explanation": "First part = (2/5) \u00d7 50 = 20.0"
+    },
+    {
+      "id": 422,
+      "question": "If a quantity is divided in the ratio 2:3 and the total is 75, what is the first part?",
+      "options": [
+        "20.0",
+        "25.0",
+        "30.0",
+        "35.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "First part = (2/5) \u00d7 75 = 30.0"
+    },
+    {
+      "id": 423,
+      "question": "If a quantity is divided in the ratio 2:3 and the total is 100, what is the first part?",
+      "options": [
+        "30.0",
+        "35.0",
+        "40.0",
+        "45.0"
+      ],
+      "correct_answer": "40.0",
+      "explanation": "First part = (2/5) \u00d7 100 = 40.0"
+    },
+    {
+      "id": 424,
+      "question": "If a quantity is divided in the ratio 2:3 and the total is 150, what is the first part?",
+      "options": [
+        "50.0",
+        "55.0",
+        "60.0",
+        "65.0"
+      ],
+      "correct_answer": "60.0",
+      "explanation": "First part = (2/5) \u00d7 150 = 60.0"
+    },
+    {
+      "id": 425,
+      "question": "If a quantity is divided in the ratio 2:4 and the total is 50, what is the first part?",
+      "options": [
+        "6.666666666666664",
+        "11.666666666666664",
+        "16.666666666666664",
+        "21.666666666666664"
+      ],
+      "correct_answer": "16.666666666666664",
+      "explanation": "First part = (2/6) \u00d7 50 = 16.666666666666664"
+    },
+    {
+      "id": 426,
+      "question": "If a quantity is divided in the ratio 2:4 and the total is 75, what is the first part?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "25.0",
+      "explanation": "First part = (2/6) \u00d7 75 = 25.0"
+    },
+    {
+      "id": 427,
+      "question": "If a quantity is divided in the ratio 2:4 and the total is 100, what is the first part?",
+      "options": [
+        "23.33333333333333",
+        "28.33333333333333",
+        "33.33333333333333",
+        "38.33333333333333"
+      ],
+      "correct_answer": "33.33333333333333",
+      "explanation": "First part = (2/6) \u00d7 100 = 33.33333333333333"
+    },
+    {
+      "id": 428,
+      "question": "If a quantity is divided in the ratio 2:4 and the total is 150, what is the first part?",
+      "options": [
+        "40.0",
+        "45.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "50.0",
+      "explanation": "First part = (2/6) \u00d7 150 = 50.0"
+    },
+    {
+      "id": 429,
+      "question": "If a quantity is divided in the ratio 3:2 and the total is 50, what is the first part?",
+      "options": [
+        "20.0",
+        "25.0",
+        "30.0",
+        "35.0"
+      ],
+      "correct_answer": "30.0",
+      "explanation": "First part = (3/5) \u00d7 50 = 30.0"
+    },
+    {
+      "id": 430,
+      "question": "If a quantity is divided in the ratio 3:2 and the total is 75, what is the first part?",
+      "options": [
+        "35.0",
+        "40.0",
+        "45.0",
+        "50.0"
+      ],
+      "correct_answer": "45.0",
+      "explanation": "First part = (3/5) \u00d7 75 = 45.0"
+    },
+    {
+      "id": 431,
+      "question": "If a quantity is divided in the ratio 3:2 and the total is 100, what is the first part?",
+      "options": [
+        "50.0",
+        "55.0",
+        "60.0",
+        "65.0"
+      ],
+      "correct_answer": "60.0",
+      "explanation": "First part = (3/5) \u00d7 100 = 60.0"
+    },
+    {
+      "id": 432,
+      "question": "If a quantity is divided in the ratio 3:2 and the total is 150, what is the first part?",
+      "options": [
+        "80.0",
+        "85.0",
+        "90.0",
+        "95.0"
+      ],
+      "correct_answer": "90.0",
+      "explanation": "First part = (3/5) \u00d7 150 = 90.0"
+    },
+    {
+      "id": 433,
+      "question": "If a quantity is divided in the ratio 3:3 and the total is 50, what is the first part?",
+      "options": [
+        "15.0",
+        "20.0",
+        "25.0",
+        "30.0"
+      ],
+      "correct_answer": "25.0",
+      "explanation": "First part = (3/6) \u00d7 50 = 25.0"
+    },
+    {
+      "id": 434,
+      "question": "If a quantity is divided in the ratio 3:3 and the total is 75, what is the first part?",
+      "options": [
+        "27.5",
+        "32.5",
+        "37.5",
+        "42.5"
+      ],
+      "correct_answer": "37.5",
+      "explanation": "First part = (3/6) \u00d7 75 = 37.5"
+    },
+    {
+      "id": 435,
+      "question": "If a quantity is divided in the ratio 3:3 and the total is 100, what is the first part?",
+      "options": [
+        "40.0",
+        "45.0",
+        "50.0",
+        "55.0"
+      ],
+      "correct_answer": "50.0",
+      "explanation": "First part = (3/6) \u00d7 100 = 50.0"
+    },
+    {
+      "id": 436,
+      "question": "If a quantity is divided in the ratio 3:3 and the total is 150, what is the first part?",
+      "options": [
+        "65.0",
+        "70.0",
+        "75.0",
+        "80.0"
+      ],
+      "correct_answer": "75.0",
+      "explanation": "First part = (3/6) \u00d7 150 = 75.0"
+    },
+    {
+      "id": 437,
+      "question": "If a quantity is divided in the ratio 3:4 and the total is 50, what is the first part?",
+      "options": [
+        "11.428571428571427",
+        "16.428571428571427",
+        "21.428571428571427",
+        "26.428571428571427"
+      ],
+      "correct_answer": "21.428571428571427",
+      "explanation": "First part = (3/7) \u00d7 50 = 21.428571428571427"
+    },
+    {
+      "id": 438,
+      "question": "If a quantity is divided in the ratio 3:4 and the total is 75, what is the first part?",
+      "options": [
+        "22.14285714285714",
+        "27.14285714285714",
+        "32.14285714285714",
+        "37.14285714285714"
+      ],
+      "correct_answer": "32.14285714285714",
+      "explanation": "First part = (3/7) \u00d7 75 = 32.14285714285714"
+    },
+    {
+      "id": 439,
+      "question": "If a quantity is divided in the ratio 3:4 and the total is 100, what is the first part?",
+      "options": [
+        "32.857142857142854",
+        "37.857142857142854",
+        "42.857142857142854",
+        "47.857142857142854"
+      ],
+      "correct_answer": "42.857142857142854",
+      "explanation": "First part = (3/7) \u00d7 100 = 42.857142857142854"
+    },
+    {
+      "id": 440,
+      "question": "If a quantity is divided in the ratio 3:4 and the total is 150, what is the first part?",
+      "options": [
+        "54.28571428571428",
+        "59.28571428571428",
+        "64.28571428571428",
+        "69.28571428571428"
+      ],
+      "correct_answer": "64.28571428571428",
+      "explanation": "First part = (3/7) \u00d7 150 = 64.28571428571428"
+    },
+    {
+      "id": 441,
+      "question": "If we mix 10 liters of solution with 10% strength and 10 liters with 40% strength, what is the final strength?",
+      "options": [
+        "20.0%",
+        "25.0%",
+        "30.0%",
+        "35.0%"
+      ],
+      "correct_answer": "25.0%",
+      "explanation": "Final strength = ((10 \u00d7 10) + (10 \u00d7 40)) / (20) = 25.0%"
+    },
+    {
+      "id": 442,
+      "question": "If we mix 10 liters of solution with 10% strength and 10 liters with 50% strength, what is the final strength?",
+      "options": [
+        "25.0%",
+        "30.0%",
+        "35.0%",
+        "40.0%"
+      ],
+      "correct_answer": "30.0%",
+      "explanation": "Final strength = ((10 \u00d7 10) + (10 \u00d7 50)) / (20) = 30.0%"
+    },
+    {
+      "id": 443,
+      "question": "If we mix 10 liters of solution with 10% strength and 10 liters with 60% strength, what is the final strength?",
+      "options": [
+        "30.0%",
+        "35.0%",
+        "40.0%",
+        "45.0%"
+      ],
+      "correct_answer": "35.0%",
+      "explanation": "Final strength = ((10 \u00d7 10) + (10 \u00d7 60)) / (20) = 35.0%"
+    },
+    {
+      "id": 444,
+      "question": "If we mix 10 liters of solution with 20% strength and 10 liters with 40% strength, what is the final strength?",
+      "options": [
+        "25.0%",
+        "30.0%",
+        "35.0%",
+        "40.0%"
+      ],
+      "correct_answer": "30.0%",
+      "explanation": "Final strength = ((10 \u00d7 20) + (10 \u00d7 40)) / (20) = 30.0%"
+    },
+    {
+      "id": 445,
+      "question": "If we mix 10 liters of solution with 20% strength and 10 liters with 50% strength, what is the final strength?",
+      "options": [
+        "30.0%",
+        "35.0%",
+        "40.0%",
+        "45.0%"
+      ],
+      "correct_answer": "35.0%",
+      "explanation": "Final strength = ((10 \u00d7 20) + (10 \u00d7 50)) / (20) = 35.0%"
+    },
+    {
+      "id": 446,
+      "question": "If we mix 10 liters of solution with 20% strength and 10 liters with 60% strength, what is the final strength?",
+      "options": [
+        "35.0%",
+        "40.0%",
+        "45.0%",
+        "50.0%"
+      ],
+      "correct_answer": "40.0%",
+      "explanation": "Final strength = ((10 \u00d7 20) + (10 \u00d7 60)) / (20) = 40.0%"
+    },
+    {
+      "id": 447,
+      "question": "If we mix 10 liters of solution with 30% strength and 10 liters with 40% strength, what is the final strength?",
+      "options": [
+        "30.0%",
+        "35.0%",
+        "40.0%",
+        "45.0%"
+      ],
+      "correct_answer": "35.0%",
+      "explanation": "Final strength = ((10 \u00d7 30) + (10 \u00d7 40)) / (20) = 35.0%"
+    },
+    {
+      "id": 448,
+      "question": "If we mix 10 liters of solution with 30% strength and 10 liters with 50% strength, what is the final strength?",
+      "options": [
+        "35.0%",
+        "40.0%",
+        "45.0%",
+        "50.0%"
+      ],
+      "correct_answer": "40.0%",
+      "explanation": "Final strength = ((10 \u00d7 30) + (10 \u00d7 50)) / (20) = 40.0%"
+    },
+    {
+      "id": 449,
+      "question": "If we mix 10 liters of solution with 30% strength and 10 liters with 60% strength, what is the final strength?",
+      "options": [
+        "40.0%",
+        "45.0%",
+        "50.0%",
+        "55.0%"
+      ],
+      "correct_answer": "45.0%",
+      "explanation": "Final strength = ((10 \u00d7 30) + (10 \u00d7 60)) / (20) = 45.0%"
+    },
+    {
+      "id": 450,
+      "question": "What is the compound interest on $100 at 5% per annum for 2 years?",
+      "options": [
+        "$60",
+        "$90",
+        "$110",
+        "$130"
+      ],
+      "correct_answer": "$110",
+      "explanation": "A = P(1 + r/100)^n = 100(1 + 5/100)^2 = $110"
+    },
+    {
+      "id": 451,
+      "question": "What is the compound interest on $100 at 5% per annum for 3 years?",
+      "options": [
+        "$66",
+        "$96",
+        "$116",
+        "$136"
+      ],
+      "correct_answer": "$116",
+      "explanation": "A = P(1 + r/100)^n = 100(1 + 5/100)^3 = $116"
+    },
+    {
+      "id": 452,
+      "question": "A train travels at 70 km/h. How far does it travel in 2 hours?",
+      "options": [
+        "130 km",
+        "135 km",
+        "145 km",
+        "140 km"
+      ],
+      "correct_answer": "140 km",
+      "explanation": "Calculated using the given parameters: 140 km"
+    },
+    {
+      "id": 453,
+      "question": "A train travels at 70 km/h. How far does it travel in 4 hours?",
+      "options": [
+        "270 km",
+        "280 km",
+        "275 km",
+        "290 km"
+      ],
+      "correct_answer": "280 km",
+      "explanation": "Calculated using the given parameters: 280 km"
+    },
+    {
+      "id": 454,
+      "question": "A train travels at 50 km/h. How far does it travel in 4 hours?",
+      "options": [
+        "210 km",
+        "195 km",
+        "205 km",
+        "190 km"
+      ],
+      "correct_answer": "200 km",
+      "explanation": "Calculated using the given parameters: 200 km"
+    },
+    {
+      "id": 455,
+      "question": "A train travels at 40 km/h. How far does it travel in 3 hours?",
+      "options": [
+        "125 km",
+        "110 km",
+        "130 km",
+        "120 km"
+      ],
+      "correct_answer": "120 km",
+      "explanation": "Calculated using the given parameters: 120 km"
+    },
+    {
+      "id": 456,
+      "question": "A train travels at 50 km/h. How far does it travel in 3 hours?",
+      "options": [
+        "150 km",
+        "155 km",
+        "140 km",
+        "160 km"
+      ],
+      "correct_answer": "150 km",
+      "explanation": "Calculated using the given parameters: 150 km"
+    },
+    {
+      "id": 457,
+      "question": "A train travels at 40 km/h. How far does it travel in 4 hours?",
+      "options": [
+        "165 km",
+        "150 km",
+        "155 km",
+        "170 km"
+      ],
+      "correct_answer": "160 km",
+      "explanation": "Calculated using the given parameters: 160 km"
+    },
+    {
+      "id": 458,
+      "question": "A train travels at 60 km/h. How far does it travel in 2 hours?",
+      "options": [
+        "115 km",
+        "110 km",
+        "125 km",
+        "120 km"
+      ],
+      "correct_answer": "120 km",
+      "explanation": "Calculated using the given parameters: 120 km"
+    },
+    {
+      "id": 459,
+      "question": "A train travels at 50 km/h. How far does it travel in 2 hours?",
+      "options": [
+        "110 km",
+        "100 km",
+        "95 km",
+        "90 km"
+      ],
+      "correct_answer": "100 km",
+      "explanation": "Calculated using the given parameters: 100 km"
+    },
+    {
+      "id": 460,
+      "question": "A train travels at 40 km/h. How far does it travel in 5 hours?",
+      "options": [
+        "195 km",
+        "205 km",
+        "200 km",
+        "190 km"
+      ],
+      "correct_answer": "200 km",
+      "explanation": "Calculated using the given parameters: 200 km"
+    },
+    {
+      "id": 461,
+      "question": "A train travels at 60 km/h. How far does it travel in 3 hours?",
+      "options": [
+        "180 km",
+        "185 km",
+        "175 km",
+        "170 km"
+      ],
+      "correct_answer": "180 km",
+      "explanation": "Calculated using the given parameters: 180 km"
+    },
+    {
+      "id": 462,
+      "question": "A train travels at 60 km/h. How far does it travel in 5 hours?",
+      "options": [
+        "310 km",
+        "305 km",
+        "295 km",
+        "290 km"
+      ],
+      "correct_answer": "300 km",
+      "explanation": "Calculated using the given parameters: 300 km"
+    },
+    {
+      "id": 463,
+      "question": "A train travels at 40 km/h. How far does it travel in 2 hours?",
+      "options": [
+        "70 km",
+        "75 km",
+        "80 km",
+        "85 km"
+      ],
+      "correct_answer": "80 km",
+      "explanation": "Calculated using the given parameters: 80 km"
+    },
+    {
+      "id": 464,
+      "question": "A train travels at 50 km/h. How far does it travel in 5 hours?",
+      "options": [
+        "245 km",
+        "250 km",
+        "260 km",
+        "240 km"
+      ],
+      "correct_answer": "250 km",
+      "explanation": "Calculated using the given parameters: 250 km"
+    },
+    {
+      "id": 465,
+      "question": "A train travels at 70 km/h. How far does it travel in 3 hours?",
+      "options": [
+        "220 km",
+        "205 km",
+        "215 km",
+        "200 km"
+      ],
+      "correct_answer": "210 km",
+      "explanation": "Calculated using the given parameters: 210 km"
+    },
+    {
+      "id": 466,
+      "question": "A train travels at 60 km/h. How far does it travel in 4 hours?",
+      "options": [
+        "245 km",
+        "235 km",
+        "250 km",
+        "240 km"
+      ],
+      "correct_answer": "240 km",
+      "explanation": "Calculated using the given parameters: 240 km"
+    },
+    {
+      "id": 467,
+      "question": "A train travels at 70 km/h. How far does it travel in 5 hours?",
+      "options": [
+        "360 km",
+        "350 km",
+        "340 km",
+        "345 km"
+      ],
+      "correct_answer": "350 km",
+      "explanation": "Calculated using the given parameters: 350 km"
+    },
+    {
+      "id": 468,
+      "question": "The ratio of A to B is 2:3. If A is 12, what is B?",
+      "options": [
+        "28",
+        "8",
+        "18",
+        "13"
+      ],
+      "correct_answer": "18",
+      "explanation": "Calculated using the given parameters: 18"
+    },
+    {
+      "id": 469,
+      "question": "The ratio of A to B is 4:4. If A is 6, what is B?",
+      "options": [
+        "16",
+        "11",
+        "6",
+        "1"
+      ],
+      "correct_answer": "6",
+      "explanation": "Calculated using the given parameters: 6"
+    },
+    {
+      "id": 470,
+      "question": "The ratio of A to B is 4:5. If A is 20, what is B?",
+      "options": [
+        "35",
+        "15",
+        "20",
+        "30"
+      ],
+      "correct_answer": "25",
+      "explanation": "Calculated using the given parameters: 25"
+    },
+    {
+      "id": 471,
+      "question": "The ratio of A to B is 4:4. If A is 12, what is B?",
+      "options": [
+        "22",
+        "17",
+        "7",
+        "12"
+      ],
+      "correct_answer": "12",
+      "explanation": "Calculated using the given parameters: 12"
+    },
+    {
+      "id": 472,
+      "question": "The ratio of A to B is 4:5. If A is 9, what is B?",
+      "options": [
+        "16",
+        "6",
+        "11",
+        "1"
+      ],
+      "correct_answer": "11",
+      "explanation": "Calculated using the given parameters: 11"
+    },
+    {
+      "id": 473,
+      "question": "The ratio of A to B is 4:3. If A is 15, what is B?",
+      "options": [
+        "16",
+        "6",
+        "1",
+        "21"
+      ],
+      "correct_answer": "11",
+      "explanation": "Calculated using the given parameters: 11"
+    },
+    {
+      "id": 474,
+      "question": "The ratio of A to B is 2:4. If A is 15, what is B?",
+      "options": [
+        "25",
+        "20",
+        "35",
+        "30"
+      ],
+      "correct_answer": "30",
+      "explanation": "Calculated using the given parameters: 30"
+    },
+    {
+      "id": 475,
+      "question": "The ratio of A to B is 2:5. If A is 9, what is B?",
+      "options": [
+        "22",
+        "12",
+        "27",
+        "32"
+      ],
+      "correct_answer": "22",
+      "explanation": "Calculated using the given parameters: 22"
+    },
+    {
+      "id": 476,
+      "question": "The ratio of A to B is 3:4. If A is 15, what is B?",
+      "options": [
+        "30",
+        "20",
+        "25",
+        "10"
+      ],
+      "correct_answer": "20",
+      "explanation": "Calculated using the given parameters: 20"
+    },
+    {
+      "id": 477,
+      "question": "The ratio of A to B is 3:3. If A is 6, what is B?",
+      "options": [
+        "6",
+        "1",
+        "11",
+        "16"
+      ],
+      "correct_answer": "6",
+      "explanation": "Calculated using the given parameters: 6"
+    },
+    {
+      "id": 478,
+      "question": "The ratio of A to B is 3:3. If A is 12, what is B?",
+      "options": [
+        "22",
+        "7",
+        "12",
+        "17"
+      ],
+      "correct_answer": "12",
+      "explanation": "Calculated using the given parameters: 12"
+    },
+    {
+      "id": 479,
+      "question": "The ratio of A to B is 2:3. If A is 9, what is B?",
+      "options": [
+        "23",
+        "3",
+        "8",
+        "13"
+      ],
+      "correct_answer": "13",
+      "explanation": "Calculated using the given parameters: 13"
+    },
+    {
+      "id": 480,
+      "question": "The ratio of A to B is 2:5. If A is 20, what is B?",
+      "options": [
+        "45",
+        "60",
+        "50",
+        "40"
+      ],
+      "correct_answer": "50",
+      "explanation": "Calculated using the given parameters: 50"
+    },
+    {
+      "id": 481,
+      "question": "The ratio of A to B is 3:5. If A is 15, what is B?",
+      "options": [
+        "20",
+        "25",
+        "35",
+        "30"
+      ],
+      "correct_answer": "25",
+      "explanation": "Calculated using the given parameters: 25"
+    },
+    {
+      "id": 482,
+      "question": "The ratio of A to B is 3:5. If A is 20, what is B?",
+      "options": [
+        "43",
+        "33",
+        "38",
+        "28"
+      ],
+      "correct_answer": "33",
+      "explanation": "Calculated using the given parameters: 33"
+    },
+    {
+      "id": 483,
+      "question": "The ratio of A to B is 4:5. If A is 6, what is B?",
+      "options": [
+        "17",
+        "2",
+        "12",
+        "7"
+      ],
+      "correct_answer": "7",
+      "explanation": "Calculated using the given parameters: 7"
+    },
+    {
+      "id": 484,
+      "question": "The ratio of A to B is 4:5. If A is 15, what is B?",
+      "options": [
+        "28",
+        "13",
+        "23",
+        "18"
+      ],
+      "correct_answer": "18",
+      "explanation": "Calculated using the given parameters: 18"
+    },
+    {
+      "id": 485,
+      "question": "The ratio of A to B is 2:3. If A is 15, what is B?",
+      "options": [
+        "22",
+        "32",
+        "17",
+        "27"
+      ],
+      "correct_answer": "22",
+      "explanation": "Calculated using the given parameters: 22"
+    },
+    {
+      "id": 486,
+      "question": "The ratio of A to B is 2:4. If A is 6, what is B?",
+      "options": [
+        "22",
+        "17",
+        "7",
+        "12"
+      ],
+      "correct_answer": "12",
+      "explanation": "Calculated using the given parameters: 12"
+    },
+    {
+      "id": 487,
+      "question": "The ratio of A to B is 4:3. If A is 12, what is B?",
+      "options": [
+        "4",
+        "9",
+        "19",
+        "14"
+      ],
+      "correct_answer": "9",
+      "explanation": "Calculated using the given parameters: 9"
+    },
+    {
+      "id": 488,
+      "question": "The ratio of A to B is 4:3. If A is 9, what is B?",
+      "options": [
+        "16",
+        "1",
+        "11",
+        "6"
+      ],
+      "correct_answer": "6",
+      "explanation": "Calculated using the given parameters: 6"
+    },
+    {
+      "id": 489,
+      "question": "The ratio of A to B is 2:4. If A is 12, what is B?",
+      "options": [
+        "19",
+        "34",
+        "29",
+        "24"
+      ],
+      "correct_answer": "24",
+      "explanation": "Calculated using the given parameters: 24"
+    },
+    {
+      "id": 490,
+      "question": "The ratio of A to B is 2:5. If A is 12, what is B?",
+      "options": [
+        "20",
+        "35",
+        "30",
+        "25"
+      ],
+      "correct_answer": "30",
+      "explanation": "Calculated using the given parameters: 30"
+    },
+    {
+      "id": 491,
+      "question": "The ratio of A to B is 2:5. If A is 6, what is B?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "correct_answer": "15",
+      "explanation": "Calculated using the given parameters: 15"
+    },
+    {
+      "id": 492,
+      "question": "The ratio of A to B is 3:4. If A is 12, what is B?",
+      "options": [
+        "16",
+        "26",
+        "21",
+        "6"
+      ],
+      "correct_answer": "16",
+      "explanation": "Calculated using the given parameters: 16"
+    },
+    {
+      "id": 493,
+      "question": "The ratio of A to B is 3:4. If A is 9, what is B?",
+      "options": [
+        "7",
+        "22",
+        "17",
+        "2"
+      ],
+      "correct_answer": "12",
+      "explanation": "Calculated using the given parameters: 12"
+    },
+    {
+      "id": 494,
+      "question": "The ratio of A to B is 4:3. If A is 6, what is B?",
+      "options": [
+        "9",
+        "4",
+        "14"
+      ],
+      "correct_answer": "4",
+      "explanation": "Calculated using the given parameters: 4"
+    },
+    {
+      "id": 495,
+      "question": "The ratio of A to B is 3:5. If A is 12, what is B?",
+      "options": [
+        "15",
+        "25",
+        "10",
+        "20"
+      ],
+      "correct_answer": "20",
+      "explanation": "Calculated using the given parameters: 20"
+    },
+    {
+      "id": 496,
+      "question": "The ratio of A to B is 3:3. If A is 20, what is B?",
+      "options": [
+        "15",
+        "20",
+        "25",
+        "10"
+      ],
+      "correct_answer": "20",
+      "explanation": "Calculated using the given parameters: 20"
+    },
+    {
+      "id": 497,
+      "question": "The ratio of A to B is 2:4. If A is 9, what is B?",
+      "options": [
+        "8",
+        "13",
+        "18",
+        "23"
+      ],
+      "correct_answer": "18",
+      "explanation": "Calculated using the given parameters: 18"
+    },
+    {
+      "id": 498,
+      "question": "The ratio of A to B is 3:3. If A is 9, what is B?",
+      "options": [
+        "14",
+        "4",
+        "19",
+        "9"
+      ],
+      "correct_answer": "9",
+      "explanation": "Calculated using the given parameters: 9"
+    },
+    {
+      "id": 499,
+      "question": "The ratio of A to B is 4:3. If A is 20, what is B?",
+      "options": [
+        "10",
+        "5",
+        "20",
+        "15"
+      ],
+      "correct_answer": "15",
+      "explanation": "Calculated using the given parameters: 15"
+    },
+    {
+      "id": 500,
+      "question": "A fruit seller has 100 apples. 20 of them are rotten. What percentage are rotten?",
+      "options": [
+        "30.0%",
+        "20.0%",
+        "10.0%",
+        "25.0%"
+      ],
+      "correct_answer": "20.0%",
+      "explanation": "Calculated using the given parameters: 20.0%"
+    }
+  ]
+}

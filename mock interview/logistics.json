@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between 'logistics' and 'supply chain management'?",
+    "answer": "Logistics focuses on the efficient movement and storage of goods within a single organization. Supply chain management encompasses logistics plus coordination across multiple entities (suppliers, manufacturers, distributors, customers)."
+  },
+  {
+    "id": 2,
+    "question": "What are the primary modes of transportation in logistics?",
+    "answer": "Road, rail, air, sea (water), and pipeline. Each has trade-offs between cost, speed, capacity, and reliability."
+  },
+  {
+    "id": 3,
+    "question": "What is 'intermodal transportation'?",
+    "answer": "Using two or more different modes of transport (e.g., rail + truck) to move a single shipment, typically in the same container without handling the freight itself during mode transfer."
+  },
+  {
+    "id": 4,
+    "question": "What is the advantage of air freight over ocean freight?",
+    "answer": "Air freight is significantly faster (days vs weeks), has better security, and lower inventory carrying cost, but much higher cost per kilogram."
+  },
+  {
+    "id": 5,
+    "question": "What is 'less than truckload' (LTL) shipping?",
+    "answer": "LTL transports smaller freight that doesn't require a full truck trailer. Shippers pay only for the space used, with multiple LTL shipments consolidated in one truck."
+  },
+  {
+    "id": 6,
+    "question": "What is a 'hub and spoke' distribution network?",
+    "answer": "A centralized logistics network where shipments from multiple origins (spokes) are consolidated at a central hub for sorting and redistribution to final destinations, improving efficiency."
+  },
+  {
+    "id": 7,
+    "question": "What is the difference between 'distribution center' (DC) and 'fulfillment center' (FC)?",
+    "answer": "DC stores inventory for bulk distribution to stores or other DCs. FC handles individual customer orders (direct-to-consumer), including picking, packing, and shipping."
+  },
+  {
+    "id": 8,
+    "question": "What is 'cross-docking' in warehousing?",
+    "answer": "Inbound goods are unloaded from incoming trucks and directly loaded onto outbound vehicles with minimal or no storage time, reducing handling and inventory costs."
+  },
+  {
+    "id": 9,
+    "question": "What is 'dark store' in logistics?",
+    "answer": "A retail store closed to walk-in customers, converted into a micro-fulfillment center dedicated to online order processing and last-mile delivery."
+  },
+  {
+    "id": 10,
+    "question": "What is the concept of 'last mile delivery'?",
+    "answer": "The final leg of the delivery journey from distribution hub to the end customer's doorstep. It is the most expensive and complex part, often accounting for 30-50% of total logistics cost."
+  },
+  {
+    "id": 11,
+    "question": "What is 'reverse logistics'?",
+    "answer": "The process of moving goods from their final destination back to the origin for return, repair, recycling, or disposal. Includes customer returns, recalls, and packaging reuse."
+  },
+  {
+    "id": 12,
+    "question": "What is 'order picking' and name two methods?",
+    "answer": "Order picking is retrieving products from warehouse locations to fulfill customer orders. Methods: piece picking (single items), case picking (full boxes), pallet picking, zone picking, wave picking."
+  },
+  {
+    "id": 13,
+    "question": "What is 'slotting optimization' in a warehouse?",
+    "answer": "Strategically assigning storage locations to SKUs based on velocity, size, weight, and seasonality to minimize travel time and maximize storage density."
+  },
+  {
+    "id": 14,
+    "question": "What is the difference between 'FIFO' (First-In-First-Out) and 'FEFO' (First-Expired-First-Out)?",
+    "answer": "FIFO removes oldest inventory first based on receipt date. FEFO removes inventory with earliest expiration date, critical for pharmaceuticals and food."
+  },
+  {
+    "id": 15,
+    "question": "What is 'ABC analysis' in warehouse inventory control?",
+    "answer": "Classifying inventory into A (high value, low volume, 70-80% of value), B (moderate), and C (low value, high volume) to apply different control levels and storage locations."
+  },
+  {
+    "id": 16,
+    "question": "What is 'cycle counting' vs physical inventory?",
+    "answer": "Cycle counting counts a subset of inventory daily/weekly throughout the year. Physical inventory counts everything at once (e.g., annually). Cycle counting causes less disruption."
+  },
+  {
+    "id": 17,
+    "question": "What is 'safety stock'?",
+    "answer": "Extra inventory held to protect against demand variability, supply delays, or forecast errors. Higher safety stock reduces stockout risk but increases carrying cost."
+  },
+  {
+    "id": 18,
+    "question": "What is 'dock to stock' time?",
+    "answer": "The time from when a shipment arrives at the receiving dock until it is put away in storage and available for order picking. Shorter times improve throughput."
+  },
+  {
+    "id": 19,
+    "question": "What is 'cubic capacity utilization' in transportation?",
+    "answer": "The percentage of available volume space in a truck/container actually used, considering both weight and dimensions. Low cube utilization increases cost per unit."
+  },
+  {
+    "id": 20,
+    "question": "What is 'deadhead' in trucking?",
+    "answer": "Empty or partially loaded miles driven by a truck after delivering freight, without revenue-generating cargo. Reducing deadhead improves fleet efficiency."
+  },
+  {
+    "id": 21,
+    "question": "What is 'demurrage' in shipping?",
+    "answer": "A fee charged when a shipper or consignee holds a container or vessel beyond the free time allotted for loading/unloading at port."
+  },
+  {
+    "id": 22,
+    "question": "What is 'detention' in trucking?",
+    "answer": "A fee charged when a truck is delayed beyond allowed loading/unloading time at shipper or receiver facility, reducing driver productivity."
+  },
+  {
+    "id": 23,
+    "question": "What is a 'bill of lading' (B/L)?",
+    "answer": "A legal document issued by carrier to shipper, serving as: 1) receipt of goods, 2) evidence of contract of carriage, and 3) document of title (ownership)."
+  },
+  {
+    "id": 24,
+    "question": "What is a 'packing list' and how is it different from a BOL?",
+    "answer": "A packing list details contents, quantities, weights, and dimensions of each package within a shipment. BOL is legal title; packing list is for inventory verification."
+  },
+  {
+    "id": 25,
+    "question": "What are 'Incoterms'? Give one example.",
+    "answer": "International commercial terms defining buyer/seller responsibilities for costs, risk, and insurance. Example: FOB (Free On Board) – seller delivers goods onto vessel, risk transfers then."
+  },
+  {
+    "id": 26,
+    "question": "What is a 'freight forwarder'?",
+    "answer": "An intermediary that arranges shipment for shippers, consolidating cargo, booking carrier space, handling customs documentation, and often offering door-to-door service."
+  },
+  {
+    "id": 27,
+    "question": "What is a '3PL' (Third-Party Logistics) provider?",
+    "answer": "A company that outsourced logistics services such as warehousing, transportation, freight forwarding, and order fulfillment for other businesses."
+  },
+  {
+    "id": 28,
+    "question": "What is a '4PL' (Fourth-Party Logistics) or lead logistics provider?",
+    "answer": "A 4PL manages multiple 3PLs and owns the entire supply chain solution for the client, acting as a single interface with broader strategic responsibility."
+  },
+  {
+    "id": 29,
+    "question": "What is 'TMS' (Transportation Management System)?",
+    "answer": "Software to plan, execute, and optimize freight movements, including carrier selection, route optimization, load consolidation, freight audit, and tracking."
+  },
+  {
+    "id": 30,
+    "question": "What is 'WMS' (Warehouse Management System)?",
+    "answer": "Software that controls and optimizes warehouse operations: receiving, put-away, inventory tracking, order picking, packing, shipping, and labor management."
+  },
+  {
+    "id": 31,
+    "question": "What is a 'cold chain'?",
+    "answer": "A temperature-controlled supply chain for perishable goods (pharmaceuticals, fresh food, vaccines), requiring refrigerated transport, cold storage, and temperature monitoring."
+  },
+  {
+    "id": 32,
+    "question": "What is 'hazmat' (dangerous goods) in logistics?",
+    "answer": "Materials that pose risk to health, safety, property, or environment (explosives, flammable liquids, toxic substances). Require special packaging, labeling, documentation, and carrier training."
+  },
+  {
+    "id": 33,
+    "question": "What is 'cargo insurance'?",
+    "answer": "Insurance covering loss or damage to goods during transit, including perils like theft, accident, fire, or weather. Shippers or carriers may purchase it."
+  },
+  {
+    "id": 34,
+    "question": "What is 'bonded warehouse'?",
+    "answer": "A secure warehouse authorized by customs for storing imported goods without paying customs duties until goods are removed for domestic sale or re-export."
+  },
+  {
+    "id": 35,
+    "question": "What is 'FTZ' (Foreign Trade Zone) or SEZ?",
+    "answer": "A designated geographic area where goods can be imported, stored, manufactured, or re-exported without paying customs duties until they enter the domestic market."
+  },
+  {
+    "id": 36,
+    "question": "What is a 'letter of credit' (LC) in international logistics?",
+    "answer": "A bank's commitment to pay the exporter upon presentation of documents proving shipment, reducing payment risk. Logistics must ensure documents (B/L, invoice) comply with LC terms."
+  },
+  {
+    "id": 37,
+    "question": "What is 'customs clearance'?",
+    "answer": "The process of submitting documentation (commercial invoice, packing list, BOL, import/export license) to customs authorities to allow goods to enter or leave a country legally."
+  },
+  {
+    "id": 38,
+    "question": "What is 'HS code' (Harmonized System code)?",
+    "answer": "A standardized international numerical code (6-10 digits) for classifying traded products, used for customs duties, trade statistics, and documentation."
+  },
+  {
+    "id": 39,
+    "question": "What is 'duty drawback'?",
+    "answer": "A refund of customs duties paid on imported materials when the finished product is later exported, encouraging local manufacturing for export."
+  },
+  {
+    "id": 40,
+    "question": "What is 'order lead time' in logistics?",
+    "answer": "The total time from when a customer places an order until the order is delivered. It includes order processing, picking, packing, transit, and last-mile delivery."
+  },
+  {
+    "id": 41,
+    "question": "What is 'perfect order rate'?",
+    "answer": "The percentage of orders delivered on time, complete, damage-free, and with accurate documentation. A key logistics quality metric."
+  },
+  {
+    "id": 42,
+    "question": "What is 'fill rate'?",
+    "answer": "The percentage of customer demand that is satisfied from available stock without backorder. Can be calculated at order line, SKU, or unit level."
+  },
+  {
+    "id": 43,
+    "question": "What is 'on-time in-full' (OTIF) metric?",
+    "answer": "Percentage of deliveries that arrive at the customer within the promised time window and with complete ordered quantity. A common logistics KPI."
+  },
+  {
+    "id": 44,
+    "question": "What is 'freight cost as percentage of sales'?",
+    "answer": "Total freight cost divided by total sales revenue. Used to benchmark logistics efficiency across periods or against industry averages."
+  },
+  {
+    "id": 45,
+    "question": "What is 'cost per order' in logistics?",
+    "answer": "Total logistics costs (warehousing, picking, packing, shipping) divided by number of orders fulfilled. Lower cost per order indicates efficiency."
+  },
+  {
+    "id": 46,
+    "question": "What is 'cube utilization rate'?",
+    "answer": "The percentage of a vehicle/container's available cubic volume actually occupied by cargo. Low cube utilization means wasted space (air freight)."
+  },
+  {
+    "id": 47,
+    "question": "What is 'dock-to-dock time'?",
+    "answer": "Total elapsed time from when a truck arrives at shipping dock to when it arrives at receiving dock, inclusive of loading, transit, unloading."
+  },
+  {
+    "id": 48,
+    "question": "What is 'transit time variability'?",
+    "answer": "The inconsistency in delivery times for the same lane and mode. High variability forces shippers to hold higher safety stock."
+  },
+  {
+    "id": 49,
+    "question": "What is 'cash-to-cash cycle time' in logistics context?",
+    "answer": "Days inventory + days receivables - days payables. Shorter cycle means less capital tied up in logistics and inventory."
+  },
+  {
+    "id": 50,
+    "question": "What is 'inventory turns' (turnover ratio)?",
+    "answer": "Cost of goods sold divided by average inventory value. Higher turns indicate efficient inventory management and lower carrying costs."
+  },
+  {
+    "id": 51,
+    "question": "What is 'parcel vs less-than-truckload' shipping?",
+    "answer": "Parcel is small packages (<70 kg, usually via UPS/FedEx/Post). LTL is palletized freight (70-6,000 kg). Thresholds vary by carrier."
+  },
+  {
+    "id": 52,
+    "question": "What is 'dimensional weight' (DIM weight)?",
+    "answer": "A pricing technique where freight cost is based on volume (length×width×height / DIM factor) rather than actual weight, preventing light but bulky shipments from underpaying."
+  },
+  {
+    "id": 53,
+    "question": "What is 'pool distribution'?",
+    "answer": "Consolidating multiple LTL shipments destined for the same geographic region into a full truckload to a regional hub, then distributing locally via LTL."
+  },
+  {
+    "id": 54,
+    "question": "What is 'milk run' in logistics?",
+    "answer": "A delivery route that collects from multiple suppliers or delivers to multiple customers in a single trip, optimizing transport efficiency."
+  },
+  {
+    "id": 55,
+    "question": "What is 'drop trailer' program?",
+    "answer": "A driver leaves a loaded trailer at a customer location and picks up an empty or pre-loaded trailer, reducing waiting time and improving asset utilization."
+  },
+  {
+    "id": 56,
+    "question": "What is 'truckload' (TL) vs 'full truckload' (FTL)?",
+    "answer": "TL/FTL means a shipment occupies an entire trailer (typically >12,000 kg or 26 pallets). Shipper pays for whole truck, often cheaper per unit than LTL."
+  },
+  {
+    "id": 57,
+    "question": "What is 'line haul' vs 'local delivery'?",
+    "answer": "Line haul is long-distance transport between cities/centers. Local delivery is final distribution within a metropolitan area (last mile)."
+  },
+  {
+    "id": 58,
+    "question": "What is 'Yard management system' (YMS)?",
+    "answer": "Software that tracks trailers, dock doors, and movement in a distribution center's yard, improving gate efficiency and reducing driver wait time."
+  },
+  {
+    "id": 59,
+    "question": "What is 'voice picking' in warehousing?",
+    "answer": "A hands-free, eyes-free picking technology where the worker wears a headset and receives verbal instructions, confirming picks by voice, improving accuracy and productivity."
+  },
+  {
+    "id": 60,
+    "question": "What is 'put-to-light' system?",
+    "answer": "A light-directed system where operators scan an item and lights indicate which shelf bin to place it in, used for sorting or kitting operations."
+  },
+  {
+    "id": 61,
+    "question": "What is 'goods-to-person' (GTP) technology?",
+    "answer": "Automated systems (e.g., vertical lift modules, autonomous mobile robots) bring storage shelves to a stationary picker, reducing travel time."
+  },
+  {
+    "id": 62,
+    "question": "What is an 'autonomous mobile robot' (AMR) in logistics?",
+    "answer": "A robot that navigates dynamically using sensors/maps to move inventory, pallets, or carts within a warehouse without fixed paths (vs AGV's fixed guidance)."
+  },
+  {
+    "id": 63,
+    "question": "What is 'ASRS' (Automated Storage & Retrieval System)?",
+    "answer": "A computer-controlled system that automatically places and retrieves loads from designated storage locations using cranes, shuttles, or vertical carousels."
+  },
+  {
+    "id": 64,
+    "question": "What is an 'IoT' (Internet of Things) sensor in logistics?",
+    "answer": "Connected devices (GPS, temperature, humidity, shock sensors) attached to shipments or assets providing real-time tracking and condition monitoring."
+  },
+  {
+    "id": 65,
+    "question": "What is 'RFID' (Radio Frequency Identification) in logistics?",
+    "answer": "Technology using electromagnetic fields to automatically identify and track tags attached to pallets or cases, enabling batch reading without line of sight (unlike barcodes)."
+  },
+  {
+    "id": 66,
+    "question": "What is a 'digital twin' in logistics?",
+    "answer": "A virtual replica of a physical logistics network (warehouse, fleet) used for simulation, scenario testing, and optimization without disrupting real operations."
+  },
+  {
+    "id": 67,
+    "question": "What is 'blockchain' in logistics?",
+    "answer": "A decentralized, immutable ledger that records transactions (e.g., bill of lading, proof of delivery) across a network, increasing trust and reducing fraud."
+  },
+  {
+    "id": 68,
+    "question": "What is 'route optimization'?",
+    "answer": "Algorithmic determination of the most efficient vehicle routes considering constraints like delivery windows, vehicle capacity, traffic, and driver hours."
+  },
+  {
+    "id": 69,
+    "question": "What is 'dynamic routing' vs 'static routing'?",
+    "answer": "Static routing is pre-planned, daily fixed routes. Dynamic routing continuously adjusts in real-time based on new orders, traffic, or driver status, used in on-demand delivery."
+  },
+  {
+    "id": 70,
+    "question": "What is 'pallet' and common pallet types?",
+    "answer": "A flat transport structure supporting goods for mechanical handling (forklift). Common types: GMA (48x40 inch), Euro pallet (1200x800mm), plastic pallets, block pallets."
+  },
+  {
+    "id": 71,
+    "question": "What is 'shrink wrapping' (stretch wrap)?",
+    "answer": "A method of securing palletized loads using stretchable plastic film to stabilize products, prevent shifting, and reduce dust/ moisture ingress."
+  },
+  {
+    "id": 72,
+    "question": "What is 'corrugated box' and its purpose?",
+    "answer": "A strong, lightweight box made from fluted corrugated fiberboard, used for shipping individual orders, providing cushioning and stacking strength."
+  },
+  {
+    "id": 73,
+    "question": "What is 'dunnage' in packaging?",
+    "answer": "Cushioning, blocking, or bracing material (air pillows, foam, paper) inside a package to prevent product movement and damage during transit."
+  },
+  {
+    "id": 74,
+    "question": "What is 'right-sizing' in packaging?",
+    "answer": "Designing package dimensions to match product size as closely as possible, reducing material waste, dimensional weight fees, and shipping cost."
+  },
+  {
+    "id": 75,
+    "question": "What is a 'collapsible container'?",
+    "answer": "A reusable shipping container that can be folded flat when empty, reducing return transport volume and storage space."
+  },
+  {
+    "id": 76,
+    "question": "What is 'vendor compliance' in logistics?",
+    "answer": "Suppliers must follow buyer's specific shipping and labeling rules (e.g., ASN, GS1 labels, carton weight limits) to avoid chargebacks or penalties."
+  },
+  {
+    "id": 77,
+    "question": "What is 'ASN' (Advanced Shipping Notice)?",
+    "answer": "An electronic notification sent by supplier to receiver before shipment arrival, detailing contents, carton IDs, and expected delivery time, enabling automated receiving."
+  },
+  {
+    "id": 78,
+    "question": "What is 'UCC-128' or 'GS1-128' label?",
+    "answer": "A standardized logistics barcode label containing SSCC (Serial Shipping Container Code), used for tracking individual cartons or pallets throughout the supply chain."
+  },
+  {
+    "id": 79,
+    "question": "What is 'LTL class' (NMFC classification)?",
+    "answer": "A National Motor Freight Classification code (class 50-500) based on density, stowability, handling, and liability, affecting LTL freight rates."
+  },
+  {
+    "id": 80,
+    "question": "What is 'density-based freight pricing'?",
+    "answer": "Freight rate based on cargo density (weight per cubic foot). Denser cargo = lower freight class = lower rate per pound."
+  },
+  {
+    "id": 81,
+    "question": "What is 'freight audit and payment' (FAP)?",
+    "answer": "A service (in-house or outsourced) that verifies carrier invoices against contract rates, checks for duplicate billing, and pays correct amount, saving 3-7% of freight spend."
+  },
+  {
+    "id": 82,
+    "question": "What is 'spot rate' vs 'contract rate'?",
+    "answer": "Spot rate is a one-time price for immediate shipment, usually higher and volatile. Contract rate is negotiated long-term rate with minimum volume commitments, lower and stable."
+  },
+  {
+    "id": 83,
+    "question": "What is 'backhaul' in logistics?",
+    "answer": "The return trip of a truck from delivery point back to origin or another location, ideally carrying revenue freight to avoid deadhead."
+  },
+  {
+    "id": 84,
+    "question": "What is 'co-loading'?",
+    "answer": "Combining LTL shipments from multiple shippers into one full truckload to lower per-unit cost through shared transportation."
+  },
+  {
+    "id": 85,
+    "question": "What is 'port congestion' impact on logistics?",
+    "answer": "Delays at ports due to high volume, labor shortages, or infrastructure, causing demurrage, detention, missed vessel schedules, and increased inventory carrying cost."
+  },
+  {
+    "id": 86,
+    "question": "What is 'drop shipping' in e-commerce logistics?",
+    "answer": "Retailer takes customer order but supplier ships directly to customer. Retailer never holds inventory; logistics is handled by supplier or 3PL."
+  },
+  {
+    "id": 87,
+    "question": "What is 'ship from store'?",
+    "answer": "Using retail store inventory to fulfill online orders, enabling faster delivery and clearing store stock, but requires store-level picking and packing."
+  },
+  {
+    "id": 88,
+    "question": "What is 'click and collect' (BOPIS)?",
+    "answer": "Buy online, pick up in store. Customer orders online and picks up at a physical location, saving last-mile delivery cost for retailer."
+  },
+  {
+    "id": 89,
+    "question": "What is 'omni-channel logistics'?",
+    "answer": "An integrated logistics system serving multiple sales channels (store, e-commerce, mobile) from unified inventory, enabling cross-channel fulfillment."
+  },
+  {
+    "id": 90,
+    "question": "What is 'green logistics'?",
+    "answer": "Environmentally friendly logistics practices: route optimization (reduce fuel), alternative fuels (electric trucks), reusable packaging, backhauling, and carbon offset programs."
+  },
+  {
+    "id": 91,
+    "question": "What is 'carbon footprint calculation' in logistics?",
+    "answer": "Measuring total CO2 equivalent emissions from transport, warehousing, and packaging, usually in kg CO2 per ton-km or per shipment."
+  },
+  {
+    "id": 92,
+    "question": "What is 'last mile' sustainability challenge?",
+    "answer": "High cost and emissions per package due to many stops, failed deliveries (re-attempts), and urban congestion. Solutions: electric vans, lockers, route optimization."
+  },
+  {
+    "id": 93,
+    "question": "What is 'circular logistics'?",
+    "answer": "Logistics supporting circular economy: collecting used products for remanufacturing, refurbishing, or recycling, minimizing waste and virgin material use."
+  },
+  {
+    "id": 94,
+    "question": "What is 'resilience' in logistics?",
+    "answer": "Ability to quickly adapt and recover from disruptions (natural disaster, port strike, pandemic) through diversification, buffer capacity, and contingency planning."
+  },
+  {
+    "id": 95,
+    "question": "What is 'logistics risk management'?",
+    "answer": "Identifying, assessing, and mitigating risks: carrier failure, theft, damage, customs delays, geopolitical events. Includes insurance, dual sourcing, and tracking."
+  },
+  {
+    "id": 96,
+    "question": "What is 'control tower' in logistics?",
+    "answer": "A centralized, real-time visibility platform that monitors, analyzes, and orchestrates exceptions across the end-to-end logistics network."
+  },
+  {
+    "id": 97,
+    "question": "What is 'peer-to-peer (P2P) delivery' concept?",
+    "answer": "Crowd-sourced delivery where local individuals deliver packages using their own vehicles for a fee, enabled by platforms (e.g., Uber Direct, Roadie)."
+  },
+  {
+    "id": 98,
+    "question": "What is 'automated parcel locker'?",
+    "answer": "A secure, self-service kiosk where customers pick up packages 24/7, reducing failed deliveries and last-mile cost. Common in apartments and retail locations."
+  },
+  {
+    "id": 99,
+    "question": "What is 'drones for delivery'?",
+    "answer": "Unmanned aerial vehicles for last-mile delivery of small packages (medicines, documents) in low-density areas, fast but limited by battery, regulation, weather."
+  },
+  {
+    "id": 100,
+    "question": "What is the 'logistics performance index' (LPI) published by World Bank?",
+    "answer": "A benchmarking tool ranking countries on logistics friendliness: customs, infrastructure, ease of shipments, tracking, timeliness, and competence."
+  }
+]

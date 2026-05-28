@@ -1,0 +1,504 @@
+{
+  "sales_executive_questions": [
+    {
+      "id": 1,
+      "question": "What is the primary goal of a sales executive?",
+      "answer": "To generate revenue by acquiring new customers, retaining existing ones, and growing account value while meeting or exceeding sales targets."
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between selling and consultative selling?",
+      "answer": "Traditional selling focuses on product features; consultative selling focuses on diagnosing customer problems and offering solutions that address their specific needs."
+    },
+    {
+      "id": 3,
+      "question": "What is a sales pipeline?",
+      "answer": "A visual representation of where prospects are in the sales process, from initial contact to closed deal, with stages like prospecting, qualification, proposal, and closing."
+    },
+    {
+      "id": 4,
+      "question": "What is a sales funnel?",
+      "answer": "A model showing the customer journey from awareness to purchase, with narrowing prospects at each stage, similar to pipeline but often more marketing-focused."
+    },
+    {
+      "id": 5,
+      "question": "What is lead qualification?",
+      "answer": "The process of determining whether a prospect has the need, budget, authority, and timeline (BANT) to become a viable sales opportunity."
+    },
+    {
+      "id": 6,
+      "question": "What does BANT stand for in sales qualification?",
+      "answer": "Budget (can they afford it), Authority (decision maker), Need (problem your product solves), Timeline (purchase timeframe)."
+    },
+    {
+      "id": 7,
+      "question": "What is the SPIN selling methodology?",
+      "answer": "A consultative framework using Situation, Problem, Implication, Need-Payoff questions to uncover customer needs and build value before presenting solutions."
+    },
+    {
+      "id": 8,
+      "question": "What is the difference between a lead and a prospect?",
+      "answer": "A lead is an unqualified potential customer; a prospect is a qualified lead who has shown interest, fits the target profile, and has buying potential."
+    },
+    {
+      "id": 9,
+      "question": "What is a sales quota?",
+      "answer": "A minimum sales target assigned to a sales executive for a specific period (monthly, quarterly, annually), often tied to commission earnings."
+    },
+    {
+      "id": 10,
+      "question": "What is the difference between a sales target and a sales forecast?",
+      "answer": "A target is a goal set by management; a forecast is an evidence-based prediction of expected sales based on pipeline, historical data, and market conditions."
+    },
+    {
+      "id": 11,
+      "question": "What is a sales script?",
+      "answer": "A written guide outlining conversation flow, key questions, value statements, and objection handlers for sales calls or meetings."
+    },
+    {
+      "id": 12,
+      "question": "What is a value proposition in sales?",
+      "answer": "A clear statement explaining how your product solves a customer's problem, delivers specific benefits, and why they should buy from you over competitors."
+    },
+    {
+      "id": 13,
+      "question": "What is objection handling in sales?",
+      "answer": "The skill of responding to customer concerns or resistance (price, trust, timing) without being defensive, by acknowledging and reframing the objection."
+    },
+    {
+      "id": 14,
+      "question": "What is the LAER objection handling model?",
+      "answer": "Listen to the full objection, Acknowledge the customer's concern, Explore the real issue, Respond with a solution and confirm resolution."
+    },
+    {
+      "id": 15,
+      "question": "What is closing in sales?",
+      "answer": "The step where the sales executive asks for the customer's commitment to purchase, including signing a contract, placing an order, or agreeing to next steps."
+    },
+    {
+      "id": 16,
+      "question": "What is the assumptive close technique?",
+      "answer": "A closing method where the sales executive acts as if the customer has already decided to buy, asking implementation or delivery questions (e.g., 'Would you prefer shipping in 2 days or 5?')."
+    },
+    {
+      "id": 17,
+      "question": "What is the urgency close?",
+      "answer": "Using time-sensitive incentives (e.g., limited discount, expiring stock) to motivate the customer to make a decision now rather than delaying."
+    },
+    {
+      "id": 18,
+      "question": "What is a sales cycle?",
+      "answer": "The total time from first contact with a prospect to closing the deal, including all steps like discovery, presentation, negotiation, and contracting."
+    },
+    {
+      "id": 19,
+      "question": "What is the difference between inside sales and outside sales?",
+      "answer": "Inside sales is remote selling via phone, email, and video; outside sales involves face-to-face meetings at customer locations or events."
+    },
+    {
+      "id": 20,
+      "question": "What is a CRM in sales?",
+      "answer": "Customer Relationship Management software that tracks interactions, manages pipeline, stores contact data, and automates sales activities."
+    },
+    {
+      "id": 21,
+      "question": "What is a sales activity metric?",
+      "answer": "Measurable actions taken by sales executives, such as number of calls made, meetings booked, proposals sent, or emails opened."
+    },
+    {
+      "id": 22,
+      "question": "What is a win rate in sales?",
+      "answer": "The percentage of opportunities that convert into closed-won deals: (Closed-Won Deals / Total Closed Opportunities) × 100."
+    },
+    {
+      "id": 23,
+      "question": "What is average deal size?",
+      "answer": "The average revenue generated per closed-won deal, calculated as Total Revenue from Closed Deals / Number of Closed Deals."
+    },
+    {
+      "id": 24,
+      "question": "What is sales velocity?",
+      "answer": "A metric measuring how quickly revenue moves through the pipeline: (Number of Opportunities × Deal Value × Win Rate) / Sales Cycle Length."
+    },
+    {
+      "id": 25,
+      "question": "What is a cold call?",
+      "answer": "Contacting a prospect who has had no prior interaction with your company, aiming to introduce your product and qualify interest."
+    },
+    {
+      "id": 26,
+      "question": "What is a warm lead?",
+      "answer": "A prospect who has shown some interest or engagement (e.g., downloaded content, attended webinar) before sales contact."
+    },
+    {
+      "id": 27,
+      "question": "What is the difference between upselling and cross-selling?",
+      "answer": "Upselling encourages a higher-tier or larger version of the same product; cross-selling suggests complementary or additional products."
+    },
+    {
+      "id": 28,
+      "question": "What is a sales proposal?",
+      "answer": "A formal document sent to a prospect detailing the solution, pricing, terms, and implementation plan, requesting a buying decision."
+    },
+    {
+      "id": 29,
+      "question": "What is a sales presentation?",
+      "answer": "A structured delivery of product benefits, value proof, and solution fit to a prospect, often using slides or demos, aimed at moving them toward purchase."
+    },
+    {
+      "id": 30,
+      "question": "What is the 'elevator pitch' in sales?",
+      "answer": "A concise, compelling 30-60 second summary of who you are, what you sell, the value you provide, and why it matters to the listener."
+    },
+    {
+      "id": 31,
+      "question": "What is a discovery call?",
+      "answer": "An initial call where the sales executive asks open-ended questions to understand the prospect's needs, pain points, goals, and decision process."
+    },
+    {
+      "id": 32,
+      "question": "What are open-ended questions in sales?",
+      "answer": "Questions that cannot be answered with 'yes' or 'no', encouraging the prospect to elaborate (e.g., 'What challenges are you facing with your current process?')."
+    },
+    {
+      "id": 33,
+      "question": "What are closed-ended questions?",
+      "answer": "Questions that elicit a short, specific answer (often yes/no or a fact), used for confirmation and qualifying details (e.g., 'Are you the decision maker?')."
+    },
+    {
+      "id": 34,
+      "question": "What is a sales follow-up?",
+      "answer": "Post-meeting communication (email, call) to reinforce value, answer outstanding questions, share requested information, and advance the deal."
+    },
+    {
+      "id": 35,
+      "question": "What is the ideal follow-up cadence?",
+      "answer": "A planned sequence of contacts (e.g., call + email + voicemail) spaced over time to stay top-of-mind without being intrusive, typically 5-8 touches over 2-3 weeks."
+    },
+    {
+      "id": 36,
+      "question": "What is a sales territory?",
+      "answer": "A defined geographic area, industry vertical, or account segment assigned to a sales executive to manage and pursue opportunities."
+    },
+    {
+      "id": 37,
+      "question": "What is key account management?",
+      "answer": "A strategic approach to managing and growing the most valuable, high-revenue customer accounts through dedicated relationship and service."
+    },
+    {
+      "id": 38,
+      "question": "What is a negotiation in sales?",
+      "answer": "A dialogue between buyer and seller to reach agreement on price, terms, scope, or conditions, aiming for a mutually beneficial outcome."
+    },
+    {
+      "id": 39,
+      "question": "What is BATNA in negotiation?",
+      "answer": "Best Alternative to a Negotiated Agreement – the best outcome a party can achieve if negotiation fails; knowing your BATNA strengthens your position."
+    },
+    {
+      "id": 40,
+      "question": "What is a sales contract?",
+      "answer": "A legally binding agreement specifying product/service scope, price, delivery, payment terms, warranties, and obligations of both parties."
+    },
+    {
+      "id": 41,
+      "question": "What is a purchase order (PO)?",
+      "answer": "A document issued by a buyer to a seller committing to purchase a specified quantity of goods or services at an agreed price."
+    },
+    {
+      "id": 42,
+      "question": "What is a sales order?",
+      "answer": "An internal document created by the seller confirming the details of a customer purchase, used for fulfillment and invoicing."
+    },
+    {
+      "id": 43,
+      "question": "What is a sales commission?",
+      "answer": "Variable pay based on sales performance, typically a percentage of revenue or gross profit generated from closed deals."
+    },
+    {
+      "id": 44,
+      "question": "What is a residual commission?",
+      "answer": "Recurring commission paid on subscription renewals or repeat purchases as long as the customer remains active."
+    },
+    {
+      "id": 45,
+      "question": "What is a sales accelerator?",
+      "answer": "A higher commission rate paid on sales exceeding quota, incentivizing over-performance."
+    },
+    {
+      "id": 46,
+      "question": "What is a sales decelerator or clawback?",
+      "answer": "A reduction or reversal of commission if a sale is canceled, returned, or the customer defaults within a defined period."
+    },
+    {
+      "id": 47,
+      "question": "What is a sales playbook?",
+      "answer": "A standardized document containing battle cards, objection handlers, scripts, product guides, and proven processes for consistent sales execution."
+    },
+    {
+      "id": 48,
+      "question": "What is a competitive battle card?",
+      "answer": "A one-page reference comparing your product against a specific competitor on features, pricing, weaknesses, and winning strategies."
+    },
+    {
+      "id": 49,
+      "question": "What is social selling?",
+      "answer": "Using social media platforms (LinkedIn, Twitter) to identify, connect with, and nurture prospects by sharing valuable content and insights."
+    },
+    {
+      "id": 50,
+      "question": "What is sales enablement?",
+      "answer": "Providing sales teams with the content, tools, training, and data they need to engage buyers effectively and close more deals."
+    },
+    {
+      "id": 51,
+      "question": "What is a sales forecast accuracy metric?",
+      "answer": "How close predicted sales are to actual results, measured as 1 - (|Actual - Forecast| / Actual) × 100."
+    },
+    {
+      "id": 52,
+      "question": "What is a sales dashboard?",
+      "answer": "A visual display showing real-time sales metrics (pipeline value, quota attainment, conversion rates, activity counts) for monitoring and coaching."
+    },
+    {
+      "id": 53,
+      "question": "What is a sales cadence?",
+      "answer": "A structured sequence of multi-channel touches (calls, emails, social) timed across days or weeks to maximize prospect engagement."
+    },
+    {
+      "id": 54,
+      "question": "What is a voicemail drop (VM drop)?",
+      "answer": "A pre-recorded voicemail message used in outbound calling when the prospect does not answer, saving time while delivering value."
+    },
+    {
+      "id": 55,
+      "question": "What is a sales-qualified lead (SQL)?",
+      "answer": "A lead that has been vetted by sales as ready for direct sales follow-up, having met criteria like budget, authority, need, and timing."
+    },
+    {
+      "id": 56,
+      "question": "What is a product-qualified lead (PQL)?",
+      "answer": "A user of a free trial or freemium product who has demonstrated product usage behavior (e.g., reached usage limits) indicating purchase intent."
+    },
+    {
+      "id": 57,
+      "question": "What is churn in sales (customer perspective)?",
+      "answer": "The loss of customers who cancel or do not renew their subscription or contract, measured as a percentage over a period."
+    },
+    {
+      "id": 58,
+      "question": "What is net revenue retention (NRR)?",
+      "answer": "A metric measuring revenue change from existing customers including upgrades, downgrades, and churn: (Starting Revenue + Upgrades - Downgrades - Churn) / Starting Revenue."
+    },
+    {
+      "id": 59,
+      "question": "What is a sales methodology?",
+      "answer": "A structured framework (e.g., Challenger, Sandler, MEDDIC) that defines principles, stages, and behaviors for successful selling."
+    },
+    {
+      "id": 60,
+      "question": "What is the Challenger Sale methodology?",
+      "answer": "A method where sellers teach customers new insights, tailor messages to specific customer contexts, and take control of the sale by constructively challenging assumptions."
+    },
+    {
+      "id": 61,
+      "question": "What is the Sandler Selling System?",
+      "answer": "A methodology emphasizing mutual respect, up-front contracts, negative reverse selling (call out buying signals), and eliminating 'mind-reading'."
+    },
+    {
+      "id": 62,
+      "question": "What is MEDDIC in sales qualification?",
+      "answer": "A complex qualification framework: Metrics (quantifiable value), Economic Buyer (decision maker with budget), Decision Criteria, Decision Process, Identify Pain, Champion."
+    },
+    {
+      "id": 63,
+      "question": "What is a sales champion?",
+      "answer": "An internal advocate within the prospect's organization who believes in your solution and actively influences others to buy."
+    },
+    {
+      "id": 64,
+      "question": "What is the economic buyer in B2B sales?",
+      "answer": "The person with final budget authority and ability to approve the purchase, typically a senior executive with P&L responsibility."
+    },
+    {
+      "id": 65,
+      "question": "What is the concept of 'mutual close plan'?",
+      "answer": "A shared timeline and action plan between sales executive and prospect, clarifying next steps, owners, and dates for both parties."
+    },
+    {
+      "id": 66,
+      "question": "What is a proof of concept (POC) in sales?",
+      "answer": "A trial or demonstration showing that your solution works in the prospect's environment with their data, mitigating purchase risk."
+    },
+    {
+      "id": 67,
+      "question": "What is a request for proposal (RFP)?",
+      "answer": "A formal document from a buyer inviting qualified vendors to submit proposals meeting specified requirements; the sales executive crafts a response to win."
+    },
+    {
+      "id": 68,
+      "question": "What is a no-decision loss?",
+      "answer": "A lost opportunity where the prospect does not purchase from any vendor, often because of indecision, internal changes, or status quo bias."
+    },
+    {
+      "id": 69,
+      "question": "What is the cost of inaction in sales?",
+      "answer": "A construct helping prospects realize the financial or operational consequences of not changing (versus cost of buying) to motivate decision."
+    },
+    {
+      "id": 70,
+      "question": "What is a sales battle card?",
+      "answer": "A quick-reference guide equipping sales executives with competitive differentiators, objection responses, and proof points for live conversations."
+    },
+    {
+      "id": 71,
+      "question": "What is a product demo in sales?",
+      "answer": "A live or recorded showing of your product's features, tailored to the prospect's use cases, to prove capability and value."
+    },
+    {
+      "id": 72,
+      "question": "What is the difference between a feature and a benefit?",
+      "answer": "A feature is what a product does (specification); a benefit is what that feature means for the customer (outcome, saving, gain)."
+    },
+    {
+      "id": 73,
+      "question": "What is a sales quote?",
+      "answer": "A formal pricing document provided to a prospect, including product/service breakdown, total cost, discounts, and validity period."
+    },
+    {
+      "id": 74,
+      "question": "What is a sales order form?",
+      "answer": "A document customers sign to authorize purchase, capturing product details, pricing, quantity, and terms before order processing."
+    },
+    {
+      "id": 75,
+      "question": "What is a lead response time?",
+      "answer": "The time taken by a sales executive to reply to an inbound lead; faster response (minutes vs hours) dramatically increases conversion rates."
+    },
+    {
+      "id": 76,
+      "question": "What is a sales AI tool?",
+      "answer": "Software using artificial intelligence to prioritize leads (scoring), suggest next actions, transcribe calls, or forecast deals."
+    },
+    {
+      "id": 77,
+      "question": "What is the difference between transactional and relationship selling?",
+      "answer": "Transactional selling focuses on single, high-volume, low-complexity sales; relationship selling builds long-term trust for recurring, high-value accounts."
+    },
+    {
+      "id": 78,
+      "question": "What is a sales funnel leak?",
+      "answer": "Prospects dropping out at a particular stage (e.g., after demo), indicating a process or messaging problem that needs fixing."
+    },
+    {
+      "id": 79,
+      "question": "What is a sales stage conversion rate?",
+      "answer": "The percentage of opportunities moving from one pipeline stage (e.g., Qualification) to the next (e.g., Proposal)."
+    },
+    {
+      "id": 80,
+      "question": "What is a sales MQL-to-SQL conversion rate?",
+      "answer": "The percentage of marketing qualified leads that become sales qualified leads, indicating lead quality and alignment."
+    },
+    {
+      "id": 81,
+      "question": "What is ABM (Account-Based Marketing) from a sales perspective?",
+      "answer": "A strategic approach where sales and marketing target specific high-value accounts as unified markets, personalizing outreach for each account."
+    },
+    {
+      "id": 82,
+      "question": "What is a reference call in sales?",
+      "answer": "A conversation facilitated between a prospect and an existing customer to validate claims, build trust, and reduce perceived risk."
+    },
+    {
+      "id": 83,
+      "question": "What is a letter of intent (LOI) in sales?",
+      "answer": "A non-binding document expressing a prospect's serious intention to purchase, often preceding a formal contract."
+    },
+    {
+      "id": 84,
+      "question": "What is the 'pilot' approach in sales?",
+      "answer": "Offering a limited, low-risk trial of your product to a small user group within a prospective company to prove value before full purchase."
+    },
+    {
+      "id": 85,
+      "question": "What is a sales kickoff (SKO)?",
+      "answer": "An annual event for launching new sales strategies, product releases, training, and motivation, often with recognition awards."
+    },
+    {
+      "id": 86,
+      "question": "What is sales spiff (SPIF)?",
+      "answer": "A short-term, special incentive (bonus, prize) for selling a particular product, hitting a stretch goal, or achieving a behavior (e.g., demos)."
+    },
+    {
+      "id": 87,
+      "question": "What is territory planning in sales?",
+      "answer": "Allocating accounts, leads, and resources across sales executives to maximize coverage, avoid overlap, and balance earning potential."
+    },
+    {
+      "id": 88,
+      "question": "What is a sales portfolio?",
+      "answer": "The collection of products, services, or solutions a sales executive represents, each with different margins, cycles, and target customers."
+    },
+    {
+      "id": 89,
+      "question": "What is value selling?",
+      "answer": "A sales approach focusing on quantifying the economic impact (ROI, cost savings, revenue lift) of your solution rather than comparing features."
+    },
+    {
+      "id": 90,
+      "question": "What is a sales script personalization?",
+      "answer": "Adapting a standard sales script with prospect-specific details (industry, recent news, role) to increase relevance and response rates."
+    },
+    {
+      "id": 91,
+      "question": "What is a discovery deck?",
+      "answer": "A presentation used in early sales calls to ask diagnostic questions and understand customer challenges, not to present product."
+    },
+    {
+      "id": 92,
+      "question": "What is the 'takeaway' closing technique?",
+      "answer": "Playfully withdrawing the offer or creating scarcity ('I'm not sure we can fit you in this quarter') to trigger buyer's fear of missing out."
+    },
+    {
+      "id": 93,
+      "question": "What is the 'Colombo' closing method?",
+      "answer": "Leaving a sales call then returning with 'just one more question' to raise an important point or overcome a hidden objection."
+    },
+    {
+      "id": 94,
+      "question": "What is the difference between a seller-doer and an executive seller?",
+      "answer": "Seller-doer is hands-on closing deals; executive seller focuses on strategy, coaching, and key account relationships at C-level."
+    },
+    {
+      "id": 95,
+      "question": "What is a sales stage probability weighting?",
+      "answer": "Assigning percentage likelihood of closing to each pipeline stage (e.g., 20% for Discovery, 60% for Proposal) for forecast calculation."
+    },
+    {
+      "id": 96,
+      "question": "What is deal slippage?",
+      "answer": "When a deal's expected close date moves into a future period (month/quarter), often due to customer delays, missing approvals, or unhandled objections."
+    },
+    {
+      "id": 97,
+      "question": "What is an 'internal champion' in sales?",
+      "answer": "A person within the customer's organization who actively sells your solution internally, coaches you on politics, and helps navigate decision processes."
+    },
+    {
+      "id": 98,
+      "question": "What is a mutual evaluation plan (MEP)?",
+      "answer": "A structured, jointly created document outlining success criteria, timelines, success measures, and checkpoints for a trial or evaluation."
+    },
+    {
+      "id": 99,
+      "question": "What is the concept of 'selling the problem before the solution'?",
+      "answer": "Spending more time diagnosing and building awareness of the customer's pain points before introducing your product, making your solution more compelling."
+    },
+    {
+      "id": 100,
+      "question": "What is a sales funnel velocity?",
+      "answer": "The speed at which leads progress through the funnel, calculated as (Number of leads entering × Conversion rate to opportunity × Average deal value) / Days in funnel."
+    }
+  ]
+}

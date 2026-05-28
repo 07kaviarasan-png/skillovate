@@ -1,0 +1,504 @@
+{
+  "marketing_manager_questions": [
+    {
+      "id": 1,
+      "question": "What is marketing?",
+      "answer": "The activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large."
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between marketing and selling?",
+      "answer": "Selling focuses on the seller's need to convert product into cash; marketing focuses on identifying and satisfying customer needs through the entire product lifecycle."
+    },
+    {
+      "id": 3,
+      "question": "What are the 4 Ps of the marketing mix?",
+      "answer": "Product, Price, Place, Promotion."
+    },
+    {
+      "id": 4,
+      "question": "What are the extended 7 Ps of services marketing?",
+      "answer": "Product, Price, Place, Promotion, People, Process, Physical Evidence."
+    },
+    {
+      "id": 5,
+      "question": "What are the 4 Cs of marketing (modern view)?",
+      "answer": "Customer solution (vs Product), Customer cost (vs Price), Convenience (vs Place), Communication (vs Promotion)."
+    },
+    {
+      "id": 6,
+      "question": "What is market segmentation?",
+      "answer": "The process of dividing a broad consumer or business market into sub-groups of consumers with shared characteristics, needs, or behaviors."
+    },
+    {
+      "id": 7,
+      "question": "What are the main types of market segmentation?",
+      "answer": "Demographic, geographic, psychographic (lifestyle/personality), and behavioral (usage/purchase patterns)."
+    },
+    {
+      "id": 8,
+      "question": "What is a target market?",
+      "answer": "A specific group of consumers at which a company aims its products and marketing activities, selected based on segmentation attractiveness."
+    },
+    {
+      "id": 9,
+      "question": "What is product positioning?",
+      "answer": "The process of creating a distinct image and identity for a product in the minds of the target market relative to competing products."
+    },
+    {
+      "id": 10,
+      "question": "What is a value proposition?",
+      "answer": "A clear statement explaining how a product solves customer pain points, delivers specific benefits, and why it is better than alternatives."
+    },
+    {
+      "id": 11,
+      "question": "What is a Unique Selling Proposition (USP)?",
+      "answer": "A distinctive product benefit that competitors cannot or do not offer, forming the core of the brand's competitive advantage."
+    },
+    {
+      "id": 12,
+      "question": "What is brand equity?",
+      "answer": "The commercial value derived from consumer perception of the brand name, including brand loyalty, awareness, associations, and perceived quality."
+    },
+    {
+      "id": 13,
+      "question": "What is the difference between a brand and a product?",
+      "answer": "A product is anything that can be offered to satisfy a need; a brand is a unique identity (name, design, emotion) that distinguishes one seller's product from another."
+    },
+    {
+      "id": 14,
+      "question": "What is brand positioning?",
+      "answer": "The strategy to occupy a distinct, valued, and defensible place in the consumer's mind relative to competitive brands."
+    },
+    {
+      "id": 15,
+      "question": "What is a brand promise?",
+      "answer": "The brand's commitment to deliver a specific experience, benefit, or solution to customers consistently."
+    },
+    {
+      "id": 16,
+      "question": "What is the AIDA model?",
+      "answer": "A communication model representing four stages of customer engagement: Attention, Interest, Desire, Action."
+    },
+    {
+      "id": 17,
+      "question": "What is the customer journey?",
+      "answer": "The complete sum of experiences a customer has with a brand, from initial awareness through purchase, usage, and post-purchase advocacy."
+    },
+    {
+      "id": 18,
+      "question": "What is a buyer persona?",
+      "answer": "A semi-fictional, research-based profile representing a key segment of target customers, including demographics, goals, pain points, and buying behavior."
+    },
+    {
+      "id": 19,
+      "question": "What is the difference between B2B and B2C marketing?",
+      "answer": "B2B targets businesses with longer sales cycles, rational buying criteria, and smaller audiences; B2C targets individual consumers with emotional drivers, mass media, and faster purchases."
+    },
+    {
+      "id": 20,
+      "question": "What is the marketing funnel?",
+      "answer": "A model illustrating the customer journey from initial awareness (top of funnel) to conversion (bottom of funnel), with narrowing prospects at each stage."
+    },
+    {
+      "id": 21,
+      "question": "What is customer lifetime value (CLV/LTV)?",
+      "answer": "The total net profit a company can expect from a customer over the entire duration of their relationship, used to guide acquisition spending."
+    },
+    {
+      "id": 22,
+      "question": "What is customer acquisition cost (CAC)?",
+      "answer": "The total cost of sales and marketing activities required to acquire a new customer (total marketing spend / number of new customers)."
+    },
+    {
+      "id": 23,
+      "question": "What is ROI in marketing?",
+      "answer": "Return on Investment = (Marketing Revenue Contribution – Marketing Investment) / Marketing Investment × 100."
+    },
+    {
+      "id": 24,
+      "question": "What is a marketing plan?",
+      "answer": "A strategic document outlining marketing objectives, strategies, tactics, budget, and metrics for a specific period (usually one year)."
+    },
+    {
+      "id": 25,
+      "question": "What is a SWOT analysis in marketing?",
+      "answer": "An assessment of Strengths, Weaknesses (internal), Opportunities, and Threats (external), used to guide marketing strategy."
+    },
+    {
+      "id": 26,
+      "question": "What is a PESTLE analysis?",
+      "answer": "A macro-environmental analysis tool covering Political, Economic, Social, Technological, Legal, and Environmental factors affecting marketing."
+    },
+    {
+      "id": 27,
+      "question": "What is a GTM (Go-to-Market) strategy?",
+      "answer": "A tactical plan that outlines how a company will launch a product to market, including target audience, pricing, distribution, and promotional channels."
+    },
+    {
+      "id": 28,
+      "question": "What is product lifecycle (PLC)?",
+      "answer": "The stages a product goes through: Introduction, Growth, Maturity, Decline – each requiring different marketing strategies."
+    },
+    {
+      "id": 29,
+      "question": "What marketing strategy is recommended in the growth stage of PLC?",
+      "answer": "Build brand preference, expand distribution, differentiate features, and optimize pricing to maximize market share."
+    },
+    {
+      "id": 30,
+      "question": "What is a BCG matrix?",
+      "answer": "A portfolio planning tool categorizing products/business units into Stars (high growth, high share), Cash Cows (low growth, high share), Question Marks (high growth, low share), and Dogs (low growth, low share)."
+    },
+    {
+      "id": 31,
+      "question": "What is a competitive advantage?",
+      "answer": "An attribute or condition that allows a company to produce goods or services better or cheaper than rivals, leading to superior performance."
+    },
+    {
+      "id": 32,
+      "question": "What are Porter's Five Forces?",
+      "answer": "A framework analyzing industry competition: threat of new entrants, bargaining power of suppliers, bargaining power of buyers, threat of substitutes, and rivalry among existing competitors."
+    },
+    {
+      "id": 33,
+      "question": "What is a generic competitive strategy (Porter)?",
+      "answer": "Cost leadership (lowest cost), differentiation (unique product/value), or focus (niche market)."
+    },
+    {
+      "id": 34,
+      "question": "What is digital marketing?",
+      "answer": "The promotion of products or brands using electronic media, including search engines, social media, email, websites, and mobile apps."
+    },
+    {
+      "id": 35,
+      "question": "What is search engine optimization (SEO)?",
+      "answer": "The practice of improving website visibility in organic (non-paid) search engine results through content relevance, technical structure, and backlinks."
+    },
+    {
+      "id": 36,
+      "question": "What is the difference between SEO and SEM?",
+      "answer": "SEO focuses on organic search rankings; SEM (Search Engine Marketing) includes paid search advertising (PPC) plus SEO."
+    },
+    {
+      "id": 37,
+      "question": "What is PPC (Pay-Per-Click) advertising?",
+      "answer": "An online advertising model where advertisers pay each time a user clicks on their ad, commonly used on search engines (Google Ads)."
+    },
+    {
+      "id": 38,
+      "question": "What is a click-through rate (CTR)?",
+      "answer": "The percentage of impressions that result in a click: (Total Clicks / Total Impressions) × 100."
+    },
+    {
+      "id": 39,
+      "question": "What is conversion rate?",
+      "answer": "The percentage of users who complete a desired action (purchase, sign-up, download) out of total visitors or interactions."
+    },
+    {
+      "id": 40,
+      "question": "What is a landing page?",
+      "answer": "A standalone web page created specifically for a marketing campaign where a visitor 'lands' after clicking an ad or link, designed to convert."
+    },
+    {
+      "id": 41,
+      "question": "What is A/B testing (split testing)?",
+      "answer": "A method comparing two versions (A vs B) of a marketing asset (e.g., email, landing page) to determine which performs better on a specific metric."
+    },
+    {
+      "id": 42,
+      "question": "What is email marketing automation?",
+      "answer": "Using software to send targeted, triggered emails automatically based on user behavior (e.g., abandoned cart, welcome series) to nurture leads."
+    },
+    {
+      "id": 43,
+      "question": "What is a CRM in marketing?",
+      "answer": "Customer Relationship Management – a system that manages a company's interactions with current and potential customers, tracking data, touchpoints, and sales."
+    },
+    {
+      "id": 44,
+      "question": "What is social media marketing?",
+      "answer": "Using platforms like LinkedIn, Instagram, Facebook, and TikTok to build brand awareness, engage audiences, drive traffic, and generate leads."
+    },
+    {
+      "id": 45,
+      "question": "What is influencer marketing?",
+      "answer": "Partnering with individuals who have social or professional influence over a target audience to promote brand messages, products, or campaigns."
+    },
+    {
+      "id": 46,
+      "question": "What is content marketing?",
+      "answer": "A strategic approach creating and distributing valuable, relevant content (blogs, videos, e-books) to attract and retain a defined audience, driving profitable action."
+    },
+    {
+      "id": 47,
+      "question": "What is a content strategy?",
+      "answer": "The planning, creation, delivery, and governance of useful, usable content that meets audience needs and business goals."
+    },
+    {
+      "id": 48,
+      "question": "What is an editorial calendar?",
+      "answer": "A schedule that plans content publication across channels (blog, social, email) including topics, dates, authors, and promotion tactics."
+    },
+    {
+      "id": 49,
+      "question": "What is a marketing qualified lead (MQL)?",
+      "answer": "A lead who has shown engagement with marketing efforts (e.g., downloaded content, attended webinar) and is ready for sales follow-up."
+    },
+    {
+      "id": 50,
+      "question": "What is the difference between MQL and SQL?",
+      "answer": "MQL is marketing-qualified based on engagement; SQL (Sales Qualified Lead) is validated by sales as ready for direct sales outreach."
+    },
+    {
+      "id": 51,
+      "question": "What is a lead magnet?",
+      "answer": "An incentive (e-book, checklist, discount) offered to potential customers in exchange for their contact information."
+    },
+    {
+      "id": 52,
+      "question": "What is omnichannel marketing?",
+      "answer": "Integrating marketing across all channels (web, mobile, store, social) to provide a seamless, consistent customer experience."
+    },
+    {
+      "id": 53,
+      "question": "What is the difference between multichannel and omnichannel?",
+      "answer": "Multichannel uses multiple channels independently; omnichannel integrates channels so customers can switch seamlessly (e.g., buy online, return in-store)."
+    },
+    {
+      "id": 54,
+      "question": "What is pricing strategy?",
+      "answer": "The method a company uses to set the price of its products, considering costs, competition, value perception, and business objectives."
+    },
+    {
+      "id": 55,
+      "question": "What is value-based pricing?",
+      "answer": "Setting price primarily based on the perceived value to the customer, rather than production cost or competitor prices."
+    },
+    {
+      "id": 56,
+      "question": "What is price skimming?",
+      "answer": "Setting a high initial price for a new product to 'skim' revenue from early adopters, then gradually lowering the price."
+    },
+    {
+      "id": 57,
+      "question": "What is penetration pricing?",
+      "answer": "Setting a low initial price to quickly gain market share, then raising prices once established."
+    },
+    {
+      "id": 58,
+      "question": "What is psychological pricing?",
+      "answer": "Pricing tactics that influence perception, such as charm pricing ($9.99 vs $10) or prestige pricing (higher price signals higher quality)."
+    },
+    {
+      "id": 59,
+      "question": "What is distribution channel (Place)?",
+      "answer": "The path a product takes from producer to end-user, including direct (D2C), retail, wholesale, and digital channels."
+    },
+    {
+      "id": 60,
+      "question": "What is intensive distribution?",
+      "answer": "Placing products in as many outlets as possible (e.g., soft drinks) to maximize availability and impulse buying."
+    },
+    {
+      "id": 61,
+      "question": "What is selective distribution?",
+      "answer": "Using a limited number of outlets in a specific area (e.g., electronics, specialty goods) for balance of coverage and control."
+    },
+    {
+      "id": 62,
+      "question": "What is exclusive distribution?",
+      "answer": "Giving a single retailer the right to sell a product in a territory (e.g., luxury cars) to enhance brand prestige and control."
+    },
+    {
+      "id": 63,
+      "question": "What is a pull marketing strategy?",
+      "answer": "Creating consumer demand that 'pulls' products through the channel (e.g., advertising direct to consumers), causing retailers to stock the product."
+    },
+    {
+      "id": 64,
+      "question": "What is a push marketing strategy?",
+      "answer": "‘Pushing’ products through the channel by incentivizing wholesalers and retailers to stock and promote the product (e.g., trade discounts)."
+    },
+    {
+      "id": 65,
+      "question": "What is above-the-line (ATL) marketing?",
+      "answer": "Mass media advertising with broad reach (TV, radio, print, outdoor) for brand awareness, typically untargeted."
+    },
+    {
+      "id": 66,
+      "question": "What is below-the-line (BTL) marketing?",
+      "answer": "Targeted, measurable promotional activities (direct mail, email, in-store, events) aimed at specific audiences."
+    },
+    {
+      "id": 67,
+      "question": "What is a marketing budget?",
+      "answer": "A financial plan allocating resources across marketing activities (advertising, content, tools, staff) to achieve strategic objectives."
+    },
+    {
+      "id": 68,
+      "question": "What are vanity metrics in marketing?",
+      "answer": "Metrics that look impressive but do not correlate with business success, such as followers, page views, or impressions without engagement or conversion context."
+    },
+    {
+      "id": 69,
+      "question": "What is a North Star Metric (NSM) in marketing?",
+      "answer": "A single, leading indicator of long-term customer value, such as 'Daily Active Users' for a SaaS company."
+    },
+    {
+      "id": 70,
+      "question": "What is attribution modeling?",
+      "answer": "The rule or method for assigning credit for a conversion to one or more marketing touchpoints along the customer journey (e.g., last-click, linear, time-decay)."
+    },
+    {
+      "id": 71,
+      "question": "What is the difference between brand awareness and brand recall?",
+      "answer": "Brand awareness is recognition when cued (aided); brand recall is remembering a brand without prompts (unaided, e.g., 'name a cola brand')."
+    },
+    {
+      "id": 72,
+      "question": "What is brand loyalty?",
+      "answer": "The tendency of customers to consistently purchase the same brand despite price or availability alternatives, driven by positive experience and emotional connection."
+    },
+    {
+      "id": 73,
+      "question": "What is a brand audit?",
+      "answer": "A systematic examination of a brand's current market position, strengths, weaknesses, and consistency against its strategy."
+    },
+    {
+      "id": 74,
+      "question": "What is a NPS (Net Promoter Score)?",
+      "answer": "A measure of customer loyalty based on 'How likely are you to recommend our brand to others?' (0-10 scale). Promoters (9-10) minus Detractors (0-6)."
+    },
+    {
+      "id": 75,
+      "question": "What is customer satisfaction (CSAT)?",
+      "answer": "A metric measuring how products or services meet/exceed customer expectations, often rated on a Likert scale (e.g., 'How satisfied are you?')."
+    },
+    {
+      "id": 76,
+      "question": "What is customer churn rate?",
+      "answer": "The percentage of customers who stop doing business with a company over a given period: (Customers lost / Total customers at start) × 100."
+    },
+    {
+      "id": 77,
+      "question": "What is a marketing dashboard?",
+      "answer": "A visual interface displaying key marketing metrics (CAC, ROAS, conversion rate) in real-time for performance monitoring and decision-making."
+    },
+    {
+      "id": 78,
+      "question": "What is growth hacking?",
+      "answer": "A data-driven, experimental marketing approach focusing on rapid, low-cost, scalable growth tactics, often used by startups."
+    },
+    {
+      "id": 79,
+      "question": "What is the difference between inbound and outbound marketing?",
+      "answer": "Inbound marketing attracts customers via valuable content (SEO, blogs, social); outbound pushes messages out (TV ads, cold calls, banners)."
+    },
+    {
+      "id": 80,
+      "question": "What is account-based marketing (ABM)?",
+      "answer": "A B2B strategy targeting specific high-value accounts as individual markets, with personalized campaigns for each account."
+    },
+    {
+      "id": 81,
+      "question": "What is a Unique Value Proposition (UVP)?",
+      "answer": "A clear, concise statement explaining how your product solves a problem, delivers benefits, and why a customer should choose you over competition."
+    },
+    {
+      "id": 82,
+      "question": "What is market research?",
+      "answer": "The systematic gathering, recording, and analysis of qualitative and quantitative data about target markets, customers, and competitors."
+    },
+    {
+      "id": 83,
+      "question": "What is primary vs secondary market research?",
+      "answer": "Primary research is new data collected directly (surveys, interviews); secondary research uses existing data (reports, government stats, studies)."
+    },
+    {
+      "id": 84,
+      "question": "What is a focus group?",
+      "answer": "A qualitative research method where a small group of target customers discusses a product, concept, or campaign guided by a moderator."
+    },
+    {
+      "id": 85,
+      "question": "What is a marketing KPI dashboard?",
+      "answer": "A curated set of metrics tracking marketing performance against goals, often including ROI, CAC, conversion rates, and traffic sources."
+    },
+    {
+      "id": 86,
+      "question": "What is a product launch?",
+      "answer": "The planned process of introducing a new product to market, including pre-launch hype, launch day activations, and post-launch support."
+    },
+    {
+      "id": 87,
+      "question": "What is a sales enablement tool?",
+      "answer": "Content, training, and technology (e.g., case studies, pitch decks, CRM) provided to sales teams to help them close deals effectively."
+    },
+    {
+      "id": 88,
+      "question": "What is remarketing (retargeting)?",
+      "answer": "Showing ads to users who have previously visited your website or app but did not convert, encouraging them to return and complete an action."
+    },
+    {
+      "id": 89,
+      "question": "What is organic reach vs paid reach?",
+      "answer": "Organic reach is free visibility from content distribution (shares, SEO); paid reach is visibility purchased via ads."
+    },
+    {
+      "id": 90,
+      "question": "What is a social media algorithm?",
+      "answer": "Rules and calculations used by platforms (Facebook, Instagram, LinkedIn) to determine what content users see and in what order."
+    },
+    {
+      "id": 91,
+      "question": "What is engagement rate in social media?",
+      "answer": "The percentage of followers or impressions who interact (likes, comments, shares) with a post: (Total Engagements / Total Reach) × 100."
+    },
+    {
+      "id": 92,
+      "question": "What is a marketing playbook?",
+      "answer": "A standardized document outlining repeatable marketing processes, templates, campaigns, and best practices for consistency and scalability."
+    },
+    {
+      "id": 93,
+      "question": "What is neuromarketing?",
+      "answer": "Applying neuroscience methods (eye tracking, brain imaging, biometrics) to understand subconscious consumer responses to marketing stimuli."
+    },
+    {
+      "id": 94,
+      "question": "What is a white paper in B2B marketing?",
+      "answer": "An authoritative, in-depth report on a specific problem or solution, used to generate leads and establish thought leadership."
+    },
+    {
+      "id": 95,
+      "question": "What is earned media?",
+      "answer": "Free, organic exposure gained through public relations, word-of-mouth, customer reviews, press mentions, or social shares."
+    },
+    {
+      "id": 96,
+      "question": "What is owned media?",
+      "answer": "Channels completely controlled by the brand, such as company website, blog, email list, and social media accounts."
+    },
+    {
+      "id": 97,
+      "question": "What is paid media?",
+      "answer": "Marketing channels that require payment to access audience reach, including PPC ads, sponsored posts, and display ads."
+    },
+    {
+      "id": 98,
+      "question": "What is a marketing attribution window?",
+      "answer": "The period of time after a user's interaction with a marketing piece during which a conversion will be credited to that touchpoint."
+    },
+    {
+      "id": 99,
+      "question": "What is share of voice (SOV)?",
+      "answer": "A brand’s share of total advertising or conversation within a market versus competitors: (Brand’s ad impressions / Total market impressions) × 100."
+    },
+    {
+      "id": 100,
+      "question": "What is a marketing operations (MarkOps) role?",
+      "answer": "The function responsible for managing marketing technology, data, analytics, process optimization, and infrastructure to enable efficient campaign execution and measurement."
+    }
+  ]
+}

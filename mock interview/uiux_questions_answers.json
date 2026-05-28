@@ -1,0 +1,504 @@
+{
+  "uiux_questions_answers": [
+    {
+      "id": 1,
+      "question": "What is UI (User Interface)?",
+      "answer": "UI refers to the visual elements and interactive components of a digital product. It includes buttons, icons, typography, colors, layouts, and all visual touchpoints users interact with. UI focuses on how the product looks."
+    },
+    {
+      "id": 2,
+      "question": "What is UX (User Experience)?",
+      "answer": "UX encompasses the overall experience users have when interacting with a product. It includes usability, accessibility, performance, and emotional responses. UX focuses on how the product feels and functions."
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between UI and UX?",
+      "answer": "UI is the visual and interactive elements; UX is the overall experience. UI is about aesthetics and design; UX is about functionality and satisfaction. UI is a component of UX. Both are essential for successful products."
+    },
+    {
+      "id": 4,
+      "question": "What is User Research in UX?",
+      "answer": "User Research involves gathering insights about target users through interviews, surveys, observation, and testing. It reveals user behaviors, needs, pain points, and preferences. Informs design decisions and validates assumptions."
+    },
+    {
+      "id": 5,
+      "question": "What are User Personas?",
+      "answer": "User Personas are fictional representations of target users based on research. Include demographics, goals, behaviors, pain points, and motivations. Help teams understand and empathize with users. Guide design decisions."
+    },
+    {
+      "id": 6,
+      "question": "What is User Journey Mapping?",
+      "answer": "User Journey Mapping visualizes the complete user experience from initial contact through purchase and beyond. Shows touchpoints, emotions, pain points, and opportunities. Identifies gaps and improvements."
+    },
+    {
+      "id": 7,
+      "question": "What is a User Story in UX?",
+      "answer": "A User Story describes a feature from the user's perspective. Format: 'As a [user type], I want [action], so that [benefit]'. Focuses on user needs and value. Guides development and design."
+    },
+    {
+      "id": 8,
+      "question": "What is Wireframing?",
+      "answer": "Wireframing creates low-fidelity layouts showing structure and content arrangement. Sketches basic elements without visual design. Used early in design process. Facilitates quick iteration and collaboration."
+    },
+    {
+      "id": 9,
+      "question": "What is the difference between wireframe and mockup?",
+      "answer": "Wireframe is low-fidelity, showing structure and content placement. Mockup is high-fidelity, includes visual design, colors, typography. Wireframe is early-stage; mockup is detailed. Both are prototypes."
+    },
+    {
+      "id": 10,
+      "question": "What is Prototyping in UX?",
+      "answer": "Prototyping creates interactive representations of designs. Ranges from low-fidelity to high-fidelity. Enables user testing and stakeholder feedback. Identifies design issues early before development."
+    },
+    {
+      "id": 11,
+      "question": "What is an Information Architecture (IA)?",
+      "answer": "IA organizes and structures content logically. Defines hierarchy, navigation, and relationships between pages. Creates mental models matching user expectations. Foundation for effective navigation and findability."
+    },
+    {
+      "id": 12,
+      "question": "What is a Sitemap in IA?",
+      "answer": "A Sitemap visualizes the hierarchy and organization of a website. Shows relationships between pages and sections. Guides both users and developers. Essential documentation for large websites."
+    },
+    {
+      "id": 13,
+      "question": "What is Navigation in UX?",
+      "answer": "Navigation enables users to move through a product. Types: primary (main menu), secondary (subcategories), breadcrumb (location indicator), footer (global links). Should be intuitive and consistent."
+    },
+    {
+      "id": 14,
+      "question": "What are Heuristics in UX?",
+      "answer": "Heuristics are design principles for usability. Nielsen's 10 Usability Heuristics include visibility, user control, error prevention, consistency. Used for evaluating and improving designs."
+    },
+    {
+      "id": 15,
+      "question": "What is Usability Testing?",
+      "answer": "Usability Testing involves real users performing tasks to evaluate design effectiveness. Methods: moderated, unmoderated, remote, in-person. Reveals usability issues and user behaviors. Iterative improvement tool."
+    },
+    {
+      "id": 16,
+      "question": "What is the Think-Aloud Protocol in testing?",
+      "answer": "Think-Aloud Protocol asks users to verbalize thoughts while using a product. Reveals user reasoning, confusion, and expectations. Provides rich qualitative data. Moderator observes and takes notes."
+    },
+    {
+      "id": 17,
+      "question": "What is A/B Testing?",
+      "answer": "A/B Testing compares two versions (A and B) with different variables to determine which performs better. Measures conversion rates, engagement, or other metrics. Data-driven approach to optimization."
+    },
+    {
+      "id": 18,
+      "question": "What is Multivariate Testing?",
+      "answer": "Multivariate Testing tests multiple variables simultaneously. Shows interactions between variables. More complex than A/B testing but provides deeper insights. Requires more traffic for statistical significance."
+    },
+    {
+      "id": 19,
+      "question": "What is Heat Mapping?",
+      "answer": "Heat Mapping visualizes where users click, move, and spend time on a page. Color gradients show intensity. Tools: Hotjar, Crazy Egg. Reveals user behavior patterns and attention areas."
+    },
+    {
+      "id": 20,
+      "question": "What is Session Recording in UX analytics?",
+      "answer": "Session Recording captures video of user interactions with a product. Reveals behavior patterns, navigation paths, and pain points. Helps identify usability issues. Privacy and consent are important."
+    },
+    {
+      "id": 21,
+      "question": "What are Accessibility Standards?",
+      "answer": "Accessibility standards (WCAG) ensure products are usable by people with disabilities. Guidelines: perceivable, operable, understandable, robust. Levels: A (minimum), AA (recommended), AAA (enhanced)."
+    },
+    {
+      "id": 22,
+      "question": "What is WCAG (Web Content Accessibility Guidelines)?",
+      "answer": "WCAG are internationally recognized guidelines for web accessibility. Provide technical standards for accessible content. Version 2.1 is current standard. Address visual, auditory, motor, and cognitive disabilities."
+    },
+    {
+      "id": 23,
+      "question": "What is Color Contrast in accessibility?",
+      "answer": "Color contrast ratio measures difference between foreground and background colors. WCAG recommends 4.5:1 for normal text, 3:1 for large text. Ensures readability for people with low vision."
+    },
+    {
+      "id": 24,
+      "question": "What is Alt Text in web design?",
+      "answer": "Alt Text describes images for screen readers and when images fail to load. Should be concise and descriptive. Essential for accessibility and SEO. Example: 'User clicking the sign-up button'."
+    },
+    {
+      "id": 25,
+      "question": "What is keyboard Navigation?",
+      "answer": "Keyboard Navigation allows users to navigate without a mouse using Tab, Enter, Arrow keys. Essential for accessibility. All interactive elements must be keyboard accessible. Focus indicators must be visible."
+    },
+    {
+      "id": 26,
+      "question": "What is Visual Hierarchy?",
+      "answer": "Visual Hierarchy organizes elements by importance using size, color, contrast, spacing. Guides user attention to key elements. Improves scannability and comprehension. Foundation of effective design."
+    },
+    {
+      "id": 27,
+      "question": "What is Typography in UI design?",
+      "answer": "Typography involves selection and arrangement of text. Includes font choice, size, spacing, line height, weight. Affects readability and aesthetics. Should align with brand and content hierarchy."
+    },
+    {
+      "id": 28,
+      "question": "What is Kerning and Leading?",
+      "answer": "Kerning adjusts space between specific letter pairs for visual balance. Leading is space between lines of text. Both affect readability and aesthetic appeal. Proper values improve user experience."
+    },
+    {
+      "id": 29,
+      "question": "What is Serif and Sans-Serif typeface?",
+      "answer": "Serif typefaces have small lines at ends of letters (traditional, formal). Sans-Serif lacks serifs (modern, clean). For digital products, Sans-Serif is preferred for readability on screens."
+    },
+    {
+      "id": 30,
+      "question": "What is Color Theory in design?",
+      "answer": "Color Theory explains relationships and effects of colors. Includes: hue, saturation, value. Guides color selection for harmony and meaning. Psychology: colors evoke emotions and associations."
+    },
+    {
+      "id": 31,
+      "question": "What are Color Schemes?",
+      "answer": "Color Schemes define color combinations. Types: complementary (opposite colors), analogous (adjacent colors), triadic (equidistant), monochromatic (same hue variations). Create visual harmony and guide mood."
+    },
+    {
+      "id": 32,
+      "question": "What is the 60-30-10 Color Rule?",
+      "answer": "Design uses 60% dominant color, 30% secondary color, 10% accent color. Creates balanced, harmonious color palette. Dominant color sets mood; accent adds visual interest. Popular in interior and graphic design."
+    },
+    {
+      "id": 33,
+      "question": "What is White Space (Negative Space) in design?",
+      "answer": "White Space is empty area around elements. Improves readability and reduces cognitive load. Creates visual breathing room. Essential for elegant, professional design. Not necessarily white in color."
+    },
+    {
+      "id": 34,
+      "question": "What is Gestalt Principles in UX design?",
+      "answer": "Gestalt Principles explain how humans perceive visual elements: proximity, similarity, continuity, closure, figure-ground. Inform layout and grouping decisions. Help users mentally organize information."
+    },
+    {
+      "id": 35,
+      "question": "What is the Proximity Principle?",
+      "answer": "Proximity Principle states that elements placed close together are perceived as related. Grouping related items improves understanding. Spacing separates unrelated items. Guides visual organization."
+    },
+    {
+      "id": 36,
+      "question": "What is Affordance in interaction design?",
+      "answer": "Affordance indicates what actions are possible with an object. Visual cues suggest functionality (clickable buttons appear pressable). Good affordances make design intuitive and self-explanatory."
+    },
+    {
+      "id": 37,
+      "question": "What is Feedback in UX design?",
+      "answer": "Feedback provides users with response to their actions. Types: visual (highlighting), auditory (sounds), haptic (vibration). Confirms actions are registered. Reduces uncertainty and improves confidence."
+    },
+    {
+      "id": 38,
+      "question": "What are Microinteractions?",
+      "answer": "Microinteractions are small, delightful interactions in response to user actions. Examples: button hover states, loading animations, success messages. Enhance user experience and provide feedback without overwhelming."
+    },
+    {
+      "id": 39,
+      "question": "What is the Principle of Least Astonishment?",
+      "answer": "Users should never be surprised by system behavior. Design should meet user expectations based on previous experience. Consistent interactions and patterns prevent confusion. Predictability builds trust."
+    },
+    {
+      "id": 40,
+      "question": "What is Error Prevention and Recovery?",
+      "answer": "Error Prevention stops problems before they occur (confirmation dialogs, validation). Error Recovery helps users fix mistakes (clear error messages, undo options). Reduces user frustration and improves satisfaction."
+    },
+    {
+      "id": 41,
+      "question": "What is Cognitive Load in UX?",
+      "answer": "Cognitive Load is the mental effort needed to use a product. Intrinsic load comes from task complexity. Extraneous load comes from poor design. Minimize unnecessary load through simplification and clear design."
+    },
+    {
+      "id": 42,
+      "question": "What is the Paradox of Choice?",
+      "answer": "Paradox of Choice states that too many options overwhelm users and reduce satisfaction. More options increase decision difficulty and anxiety. Limit choices to improve user satisfaction. Present progressive disclosure."
+    },
+    {
+      "id": 43,
+      "question": "What is Progressive Disclosure?",
+      "answer": "Progressive Disclosure reveals advanced features gradually as users need them. Simplifies initial interface with basic features. Advanced options appear on demand. Reduces cognitive load for new users."
+    },
+    {
+      "id": 44,
+      "question": "What is Consistency in UI design?",
+      "answer": "Consistency ensures similar elements look and function similarly throughout the product. Types: visual (styling), functional (behavior), internal (within product), external (across industry). Reduces learning curve and builds familiarity."
+    },
+    {
+      "id": 45,
+      "question": "What is Pattern Library in design?",
+      "answer": "Pattern Library documents reusable UI components and design patterns. Ensures consistency across products. Includes guidelines for usage. Speeds up design and development. Single source of truth."
+    },
+    {
+      "id": 46,
+      "question": "What is Design System?",
+      "answer": "Design System is comprehensive collection of reusable components, patterns, and guidelines. Ensures consistency and efficiency across large products. Includes UI kit, design tokens, documentation. Scalable design approach."
+    },
+    {
+      "id": 47,
+      "question": "What is Responsive Design?",
+      "answer": "Responsive Design adapts layouts to different screen sizes. Uses flexible grids, flexible images, and media queries. Works seamlessly on mobile, tablet, desktop. Essential for modern web design."
+    },
+    {
+      "id": 48,
+      "question": "What is Mobile-First Design?",
+      "answer": "Mobile-First approach designs for mobile devices first, then scales to larger screens. Considers mobile constraints: small screens, touch interaction, varied networks. Increasingly important as mobile usage grows."
+    },
+    {
+      "id": 49,
+      "question": "What are Breakpoints in responsive design?",
+      "answer": "Breakpoints are screen widths where layout changes. Common: 320px (mobile), 768px (tablet), 1024px (desktop). Defined in CSS media queries. Enable fluid, responsive layouts."
+    },
+    {
+      "id": 50,
+      "question": "What is Touch Targets in mobile UX?",
+      "answer": "Touch Targets are clickable areas for touch interaction. Recommended size: 44x44 pixels minimum. Affects usability and accessibility. Larger targets reduce errors and frustration, especially for elderly users."
+    },
+    {
+      "id": 51,
+      "question": "What is Scrolling in UX?",
+      "answer": "Scrolling is natural navigation on mobile and web. Reduces reliance on above-the-fold content. Infinite scroll vs pagination both have trade-offs. Consider context and content type for optimal approach."
+    },
+    {
+      "id": 52,
+      "question": "What is the Fold in web design?",
+      "answer": "The Fold is the point where users must scroll to see more content. Important content should be visible above fold. However, users expect to scroll; fold is less critical than previously thought."
+    },
+    {
+      "id": 53,
+      "question": "What are Form Design principles?",
+      "answer": "Form principles: minimize fields, single column layout, clear labels, logical grouping, inline validation, progress indicators, clear CTAs. Reduce friction and improve completion rates."
+    },
+    {
+      "id": 54,
+      "question": "What is CTA (Call-To-Action)?",
+      "answer": "CTA is a button or link prompting user action. Should be prominent, clear, and actionable. Text should describe outcome (not just 'Click Here'). Example: 'Sign Up Now', 'Learn More'. Drives conversions."
+    },
+    {
+      "id": 55,
+      "question": "What is Conversion Rate Optimization (CRO)?",
+      "answer": "CRO improves percentage of users completing desired actions. Techniques: A/B testing, form optimization, UX improvement, copywriting. Increases revenue without increasing traffic. Data-driven approach."
+    },
+    {
+      "id": 56,
+      "question": "What is Dark Mode in UI design?",
+      "answer": "Dark Mode uses dark backgrounds with light text. Benefits: reduces eye strain, saves battery on OLED screens, preferred by many users. Challenges: requires careful color choices for contrast and readability."
+    },
+    {
+      "id": 57,
+      "question": "What is Material Design?",
+      "answer": "Material Design is Google's design system using metaphors from physical materials. Emphasizes depth, motion, and color. Provides comprehensive guidelines for UI components. Widely adopted in Android and web design."
+    },
+    {
+      "id": 58,
+      "question": "What is Skeuomorphism in UI design?",
+      "answer": "Skeuomorphism designs digital objects to resemble physical equivalents (leather textures, shadows, depth). Creates familiarity but can appear dated. Opposite of flat design. Less popular now."
+    },
+    {
+      "id": 59,
+      "question": "What is Flat Design?",
+      "answer": "Flat Design uses minimalist, two-dimensional elements without depth or shadows. Emphasizes typography and color. Appears modern and clean. Faster loading but less tactile feedback."
+    },
+    {
+      "id": 60,
+      "question": "What is Neumorphism in design?",
+      "answer": "Neumorphism blends skeuomorphism and flat design using subtle shadows and highlights. Creates soft, embossed appearance. Trendy but can reduce contrast and accessibility. Use carefully."
+    },
+    {
+      "id": 61,
+      "question": "What are Design Trends?",
+      "answer": "Design Trends are popular styles and techniques (gradients, animations, bold colors). Change over time. Provide inspiration but shouldn't override usability. Balance trends with timeless design principles."
+    },
+    {
+      "id": 62,
+      "question": "What is Animation in UX?",
+      "answer": "Animation adds motion to interfaces. Purposes: provide feedback, guide attention, indicate state changes, delight users. Should be purposeful and not distract. Improves perceived performance."
+    },
+    {
+      "id": 63,
+      "question": "What is Loading State in UI?",
+      "answer": "Loading State indicates that content is loading. Includes spinners, progress bars, skeleton screens. Reduces perceived wait time. Keeps users informed and prevents repeated clicks."
+    },
+    {
+      "id": 64,
+      "question": "What are Skeleton Screens?",
+      "answer": "Skeleton Screens show placeholder layouts while content loads. Mimics final layout structure. Reduces perceived loading time. More engaging than blank screens or spinners."
+    },
+    {
+      "id": 65,
+      "question": "What is Empty State in UI?",
+      "answer": "Empty State occurs when no data is available to display. Should be informative and contextual. Include messaging and suggested actions. Opportunity for helpful guidance and onboarding."
+    },
+    {
+      "id": 66,
+      "question": "What are Modals and Dialogs?",
+      "answer": "Modals block background interaction; Dialogs may not. Both request user attention. Should be used sparingly for important messages. Mobile usage can be problematic. Consider alternatives."
+    },
+    {
+      "id": 67,
+      "question": "What is Toast Notification?",
+      "answer": "Toast is a non-blocking notification appearing temporarily. Used for confirmations, warnings, or info. Dismisses automatically or when clicked. Less intrusive than modals. Common in mobile and web apps."
+    },
+    {
+      "id": 68,
+      "question": "What are Tooltips in UX?",
+      "answer": "Tooltips display additional information on hover. Help users understand icons or actions. Should be concise. Problematic on touch devices (no hover). Shouldn't contain essential information."
+    },
+    {
+      "id": 69,
+      "question": "What is Onboarding in UX?",
+      "answer": "Onboarding introduces new users to a product. Teaches features and establishes value quickly. Methods: tutorials, walkthroughs, interactive guides. First impression affects retention. Keep it brief."
+    },
+    {
+      "id": 70,
+      "question": "What is the Principle of Least Resistance?",
+      "answer": "Users follow path of least resistance. Design should make desired actions easiest. Remove friction and obstacles. Makes positive actions natural and default behaviors obvious."
+    },
+    {
+      "id": 71,
+      "question": "What is Dark Patterns in UX?",
+      "answer": "Dark Patterns deliberately deceive users or manipulate behavior. Examples: hidden costs, difficult cancellation, false scarcity. Unethical and damages trust. Should be avoided. Opposite of ethical design."
+    },
+    {
+      "id": 72,
+      "question": "What is Ethical Design?",
+      "answer": "Ethical Design prioritizes user wellbeing over profit. Respects privacy, provides transparency, prevents manipulation. Builds long-term trust. Increasing demand for responsible, sustainable design."
+    },
+    {
+      "id": 73,
+      "question": "What is Inclusive Design?",
+      "answer": "Inclusive Design considers diverse user needs from the start. Addresses disabilities, age, language, technology access. Broader than accessibility. Benefits all users, not just people with disabilities."
+    },
+    {
+      "id": 74,
+      "question": "What is Universal Design?",
+      "answer": "Universal Design creates products usable by everyone without adaptation. Seven principles: equitable, flexible, simple, intuitive, perceptible, forgiving, low physical effort. Ideal but challenging."
+    },
+    {
+      "id": 75,
+      "question": "What is the Jobs to be Done framework?",
+      "answer": "Jobs to be Done focuses on what users are trying to accomplish, not demographics. Identifies underlying motivations. More insightful than personas. Helps prioritize features and innovations."
+    },
+    {
+      "id": 76,
+      "question": "What is Design Thinking?",
+      "answer": "Design Thinking is problem-solving approach: empathize (understand users), define (problem), ideate (solutions), prototype, test. Iterative and human-centered. Used beyond design in business and education."
+    },
+    {
+      "id": 77,
+      "question": "What is the Double Diamond Model?",
+      "answer": "Double Diamond divides design into four phases: discover (problem exploration), define (clarify challenge), develop (generate solutions), deliver (finalize solution). Structure for design thinking process."
+    },
+    {
+      "id": 78,
+      "question": "What is Mood Board in design?",
+      "answer": "Mood Board is collection of images, colors, textures, and references capturing design direction. Communicates aesthetic vision. Used for inspiration and team alignment. Precedes detailed design work."
+    },
+    {
+      "id": 79,
+      "question": "What is Design Rationale?",
+      "answer": "Design Rationale documents why design decisions were made. Includes research, constraints, alternatives considered. Helps stakeholders understand choices. Valuable for design review and future iterations."
+    },
+    {
+      "id": 80,
+      "question": "What are Design Reviews?",
+      "answer": "Design Reviews are structured feedback sessions on designs. Participants evaluate against criteria and provide critique. Improves quality through diverse perspectives. Identify issues before development."
+    },
+    {
+      "id": 81,
+      "question": "What is Interaction Design?",
+      "answer": "Interaction Design focuses on how users interact with products. Defines behavior, feedback, and flow. Goes beyond aesthetics to functionality. Creates intuitive, delightful experiences."
+    },
+    {
+      "id": 82,
+      "question": "What is Voice and Tone in copywriting?",
+      "answer": "Voice is consistent personality and values. Tone adapts to context and emotion. Both affect user perception. Clear, friendly copy improves UX. Brand voice should be distinctive."
+    },
+    {
+      "id": 83,
+      "question": "What is Microcopy?",
+      "answer": "Microcopy is small text snippets: labels, placeholders, error messages, button text. Often overlooked but impacts user experience significantly. Should be clear, concise, helpful."
+    },
+    {
+      "id": 84,
+      "question": "What is SEO impact on UX?",
+      "answer": "SEO and UX align on many principles: site speed, mobile-friendly, clear navigation, quality content. Good UX supports better search rankings. Design should balance SEO keywords with readability."
+    },
+    {
+      "id": 85,
+      "question": "What are Web Accessibility Tools?",
+      "answer": "Tools: WAVE, Axe, Lighthouse (Chrome), NVDA (screen reader), JAWS. Help identify accessibility issues. Automated tools catch some issues; manual testing necessary. Regular audits essential."
+    },
+    {
+      "id": 86,
+      "question": "What is the Design Critique process?",
+      "answer": "Design Critique is structured discussion evaluating designs. Focus on work, not person. Specific, constructive feedback. Improves quality and team learning. Different from casual feedback."
+    },
+    {
+      "id": 87,
+      "question": "What is Conversion Funnel?",
+      "answer": "Conversion Funnel maps user journey from awareness to action. Shows where users drop off. Stages: awareness, interest, consideration, decision. Identify bottlenecks and optimize each stage."
+    },
+    {
+      "id": 88,
+      "question": "What are User Flows in design?",
+      "answer": "User Flows diagram paths users take to accomplish goals. Show decisions, screens, and outcomes. Identify edge cases and improvements. Essential for planning application structure."
+    },
+    {
+      "id": 89,
+      "question": "What is the 5-Second Rule?",
+      "answer": "5-Second Rule states users decide in 5 seconds if they'll stay on a page. Requires immediate clarity of value proposition. First impression is critical. Applies to landing pages and homepages."
+    },
+    {
+      "id": 90,
+      "question": "What is Usability vs Usefulness?",
+      "answer": "Usability is ease of use (how well product works). Usefulness is whether it solves user problems (does it matter). Both essential. A usable but useless product won't succeed."
+    },
+    {
+      "id": 91,
+      "question": "What is the Norman Doors phenomenon?",
+      "answer": "Norman Doors are poorly designed doors confusing users about push/pull direction. Named after Don Norman. Illustrates importance of intuitive design. Teaches that design failures are often design failures, not user failures."
+    },
+    {
+      "id": 92,
+      "question": "What is Human-Centered Design?",
+      "answer": "Human-Centered Design places users' needs at the center of design process. Emphasizes empathy and understanding user context. Iterative approach with user feedback. Creates more successful products."
+    },
+    {
+      "id": 93,
+      "question": "What is Design Debt?",
+      "answer": "Design Debt accumulates from deferred design improvements and shortcuts. Increases future costs (fixing usability issues). Similar to technical debt. Should be actively managed and paid down."
+    },
+    {
+      "id": 94,
+      "question": "What is the Kano Model?",
+      "answer": "Kano Model categorizes features: basic (expected), performance (more is better), delighters (unexpected surprises). Helps prioritize features. Shows what drives satisfaction vs dissatisfaction."
+    },
+    {
+      "id": 95,
+      "question": "What is Retention in UX?",
+      "answer": "Retention measures users returning to product over time. Affected by experience quality, value delivery, habit formation. More important than acquisition for sustainable growth."
+    },
+    {
+      "id": 96,
+      "question": "What is Habit Formation and UI?",
+      "answer": "Habit Formation loops: cue (trigger), routine (behavior), reward. Design should encourage habit loops for desired behaviors. Requires consistency and positive reinforcement. Habit-forming products have high retention."
+    },
+    {
+      "id": 97,
+      "question": "What is Design for Emotion?",
+      "answer": "Design for Emotion creates connections through emotional resonance. Uses color, imagery, tone, animation. Goes beyond functionality to create delightful experiences. Increases engagement and loyalty."
+    },
+    {
+      "id": 98,
+      "question": "What is Storytelling in UX?",
+      "answer": "Storytelling in UX creates narrative around products. Makes information memorable and engaging. Uses characters, conflict, resolution. More effective than facts alone for communication."
+    },
+    {
+      "id": 99,
+      "question": "What is Design Handoff?",
+      "answer": "Design Handoff transfers designs from designers to developers. Requires clear documentation, specs, assets. Tools: Figma, Zeplin, Adobe XD. Good handoffs prevent misinterpretation and rework."
+    },
+    {
+      "id": 100,
+      "question": "What are UI/UX best practices?",
+      "answer": "Best practices: conduct user research, prioritize accessibility, maintain consistency, simplify complexity, test frequently, iterate based on feedback, document decisions, balance aesthetics with function, consider performance, stay current with standards, and always put user needs first."
+    }
+  ]
+}

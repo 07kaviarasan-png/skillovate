@@ -1,0 +1,504 @@
+{
+  "frontend_questions": [
+    {
+      "id": 1,
+      "question": "What is the difference between var, let, and const in JavaScript?",
+      "answer": "var is function-scoped and hoisted with undefined. let is block-scoped and hoisted as uninitialized (temporal dead zone). const is block-scoped, hoisted as uninitialized, and cannot be reassigned (but object properties can be modified). const is preferred for preventing accidental reassignment."
+    },
+    {
+      "id": 2,
+      "question": "Explain the concept of the Virtual DOM in React.",
+      "answer": "The Virtual DOM is an in-memory representation of the actual DOM. React uses it to optimize rendering by comparing (diffing) the new Virtual DOM with the previous version and only updating the actual DOM elements that changed. This improves performance by reducing expensive DOM manipulations."
+    },
+    {
+      "id": 3,
+      "question": "What is event delegation in JavaScript?",
+      "answer": "Event delegation is attaching a single event listener to a parent element instead of multiple listeners on child elements. Events bubble up, allowing parent to handle them. Improves performance with many elements and handles dynamically added elements without rebinding listeners."
+    },
+    {
+      "id": 4,
+      "question": "What is a closure in JavaScript and provide an example?",
+      "answer": "A closure is a function that has access to variables from its outer function scope even after the outer function returns. Closures are created every time a function is created. Example: function outer() { let count = 0; return function() { count++; return count; } }. Enables private data and function factories."
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between == and === in JavaScript?",
+      "answer": "== performs type coercion before comparison (loose equality), potentially converting types. === compares both value and type without coercion (strict equality). Example: 5 == '5' is true, but 5 === '5' is false. Always use === to prevent unexpected behavior."
+    },
+    {
+      "id": 6,
+      "question": "Explain the event loop in JavaScript.",
+      "answer": "The event loop manages execution of code in single-threaded JavaScript. It checks the call stack and callback queue: if stack is empty, it moves callbacks from the queue to stack. This enables asynchronous operations. Microtask queue (Promises) executes before macrotask queue (setTimeout)."
+    },
+    {
+      "id": 7,
+      "question": "What is the purpose of the spread operator in JavaScript?",
+      "answer": "The spread operator (...) expands iterables (arrays, strings) or objects in contexts where zero or more elements are expected. For arrays: [...arr1, ...arr2] combines arrays. For objects: {...obj1, ...obj2} merges objects. Enables non-mutating updates."
+    },
+    {
+      "id": 8,
+      "question": "What is destructuring in JavaScript and why is it useful?",
+      "answer": "Destructuring extracts values from objects or arrays into variables. Array: const [a, b] = [1, 2]. Object: const {name, age} = {name: 'John', age: 30}. Reduces code verbosity, improves readability, especially for function parameters and importing multiple exports."
+    },
+    {
+      "id": 9,
+      "question": "Explain the concept of hoisting in JavaScript.",
+      "answer": "Hoisting moves declarations to the top of scope before code execution. var is hoisted with undefined initialization. let/const are hoisted but not initialized (temporal dead zone). Function declarations are fully hoisted. Understanding hoisting prevents errors with accessing variables before declaration."
+    },
+    {
+      "id": 10,
+      "question": "What is the difference between Promise and async/await?",
+      "answer": "Promise uses .then().catch() for handling async operations. Async/await is syntactic sugar making async code look synchronous. Async function returns Promise; await pauses execution until Promise resolves. Async/await is more readable, easier to debug, and handles multiple sequential operations better."
+    },
+    {
+      "id": 11,
+      "question": "What is CSS specificity and how is it calculated?",
+      "answer": "CSS specificity determines which style rule applies when multiple rules target the same element. Calculated as: inline styles (1000), IDs (100), classes/attributes/pseudo-classes (10), elements (1). Higher specificity wins. !important overrides all specificity. Example: div.class has specificity 11."
+    },
+    {
+      "id": 12,
+      "question": "Explain the CSS Box Model.",
+      "answer": "The CSS Box Model describes element layout from inside to outside: content (actual element), padding (inside space), border (wraps padding), margin (outside space). Width/height properties only affect content. Understanding box model is crucial for layouts, spacing, and preventing overflow issues."
+    },
+    {
+      "id": 13,
+      "question": "What is the difference between position absolute, relative, fixed, and sticky in CSS?",
+      "answer": "relative: positioned relative to normal position; original space reserved. absolute: removed from flow; positioned relative to nearest positioned ancestor. fixed: removed from flow; positioned relative to viewport. sticky: toggles between relative and fixed based on scroll position. Each has specific use cases."
+    },
+    {
+      "id": 14,
+      "question": "What is the purpose of z-index in CSS?",
+      "answer": "z-index controls stacking order of positioned elements (z-axis depth). Higher values appear in front. Only applies to positioned elements (position != static). Creates stacking context affecting all children. Can cause issues with unexpected layering if values are extreme."
+    },
+    {
+      "id": 15,
+      "question": "Explain the concept of Flexbox in CSS.",
+      "answer": "Flexbox (Flexible Box) is a one-dimensional layout model for arranging items in rows/columns. Container uses display: flex. Main properties: flex-direction, justify-content, align-items, flex-wrap, gap. Items can grow/shrink. Simplifies alignment and distribution of space."
+    },
+    {
+      "id": 16,
+      "question": "What is the difference between Flexbox and CSS Grid?",
+      "answer": "Flexbox is one-dimensional (rows or columns). Grid is two-dimensional (rows and columns simultaneously). Flexbox content-driven; Grid layout-driven. Use Flexbox for navigation, toolbars. Use Grid for page layouts, dashboards. Can combine both for complex layouts."
+    },
+    {
+      "id": 17,
+      "question": "Explain CSS Grid and its main properties.",
+      "answer": "CSS Grid is two-dimensional layout system. Container: display: grid, grid-template-columns, grid-template-rows, gap. Items: grid-column, grid-row, grid-area. Supports fr units for flexible sizing. Powerful for complex layouts but steeper learning curve than Flexbox."
+    },
+    {
+      "id": 18,
+      "question": "What is the difference between display inline, inline-block, and block?",
+      "answer": "block: takes full width, starts new line (div, p). inline: only takes necessary width, stays on line (span, a). inline-block: stays inline but respects width/height/margins (img, button). Control with CSS display property. Each affects layout differently."
+    },
+    {
+      "id": 19,
+      "question": "What is the difference between margin and padding?",
+      "answer": "margin is outside space between elements. padding is inside space between content and border. margin doesn't have background color; padding inherits element's background. Use margin for element spacing, padding for internal spacing."
+    },
+    {
+      "id": 20,
+      "question": "Explain the concept of margin collapse in CSS.",
+      "answer": "Margin collapse combines adjacent vertical margins into single margin (only vertical, not horizontal). Two 20px margins collapse to 20px, not 40px. Prevents excessive spacing between elements. Doesn't apply to inline, inline-block, floated elements, or flex/grid containers."
+    },
+    {
+      "id": 21,
+      "question": "What are CSS media queries and how do you use them?",
+      "answer": "Media queries apply CSS rules based on device characteristics (screen size, orientation). Syntax: @media (max-width: 768px) { /* rules */ }. Enable responsive design adapting to different viewports. Common breakpoints: mobile (320px), tablet (768px), desktop (1024px)."
+    },
+    {
+      "id": 22,
+      "question": "What is the difference between responsive and adaptive design?",
+      "answer": "Responsive design uses flexible layouts and media queries adapting fluidly to any screen size. Adaptive design uses fixed breakpoints with predefined layouts for specific devices. Responsive is more modern and flexible; adaptive provides more control but requires more effort."
+    },
+    {
+      "id": 23,
+      "question": "Explain the concept of semantic HTML.",
+      "answer": "Semantic HTML uses meaningful tags (header, nav, article, footer, section) instead of generic divs. Improves accessibility for screen readers, SEO, and code readability. Conveys content meaning to browsers and developers. Examples: <button> over <div class='btn'>, <nav> for navigation."
+    },
+    {
+      "id": 24,
+      "question": "What is the purpose of the 'this' keyword in JavaScript?",
+      "answer": "'this' refers to the object executing the current function. In object methods, 'this' is the object. In regular functions, 'this' is global object (window in browsers, global in Node.js). Arrow functions inherit 'this' from enclosing scope. Use .call(), .apply(), .bind() to explicitly set 'this'."
+    },
+    {
+      "id": 25,
+      "question": "What is the difference between arrow functions and regular functions?",
+      "answer": "Arrow functions (=>) have concise syntax and inherit 'this' from enclosing scope. Regular functions have their own 'this' determined by how they're called. Arrow functions can't be constructors or use arguments object. Regular functions have more flexibility. Choose based on 'this' binding needs."
+    },
+    {
+      "id": 26,
+      "question": "What is a callback function in JavaScript?",
+      "answer": "A callback is a function passed as argument to another function. Called later, usually after async operation completes. Example: setTimeout(callback, 1000). Callbacks enable handling async operations but can lead to callback hell. Promises and async/await are modern alternatives."
+    },
+    {
+      "id": 27,
+      "question": "Explain the concept of Promise in JavaScript.",
+      "answer": "Promise represents eventual completion of async operation. States: pending (initial), fulfilled (resolved with value), rejected (error). Use .then() for success, .catch() for errors, .finally() for cleanup. Chains multiple operations. Better than callbacks for readability."
+    },
+    {
+      "id": 28,
+      "question": "What is the difference between .then().catch() and try-catch with async/await?",
+      "answer": ".then().catch() chains methods, can be harder to read. try-catch with async/await looks synchronous, easier to read and debug. Both handle errors; try-catch is more familiar to synchronous code writers. Error handling differs: .catch() catches promise rejections, try-catch catches thrown errors."
+    },
+    {
+      "id": 29,
+      "question": "What is the purpose of Array methods like map, filter, and reduce?",
+      "answer": "map() transforms each element and returns new array. filter() selects elements matching condition and returns new array. reduce() accumulates values into single result. All return new arrays (except reduce). Enable functional programming style, avoid loops, improve readability."
+    },
+    {
+      "id": 30,
+      "question": "Explain the concept of immutability in JavaScript.",
+      "answer": "Immutability means data cannot be modified after creation. Benefits: predictability, easier debugging, prevents unintended side effects. Achieve with: const, Object.freeze(), spread operator for copies. Functional programming emphasis immutability. Especially important in React for state management."
+    },
+    {
+      "id": 31,
+      "question": "What is the difference between shallow copy and deep copy?",
+      "answer": "Shallow copy copies only first level; nested objects/arrays still reference originals. Deep copy recursively copies all levels creating independent copies. Shallow: {...obj}, [...arr]. Deep: structuredClone(), JSON.parse(JSON.stringify()), libraries. Important for preventing unintended mutations."
+    },
+    {
+      "id": 32,
+      "question": "What are React hooks and why are they useful?",
+      "answer": "Hooks are functions letting you use state and other React features in functional components. Common: useState (state), useEffect (side effects), useContext (context), useReducer (complex state), useMemo (memoization), useCallback (memoized callbacks). Enable functional components to have features previously only available to class components."
+    },
+    {
+      "id": 33,
+      "question": "Explain useState hook in React.",
+      "answer": "useState initializes state in functional components. Returns array: [state, setState]. Setter function updates state and triggers re-render. Multiple useState calls create independent state variables. Initial value can be primitive or function for lazy initialization. Replaces this.state in class components."
+    },
+    {
+      "id": 34,
+      "question": "Explain useEffect hook in React.",
+      "answer": "useEffect runs side effects in functional components. Runs after render by default. Dependencies array: no array (every render), empty array (only once), [dependency] (when dependency changes). Cleanup function returned from useEffect runs on unmount/before re-run. Replaces componentDidMount, componentDidUpdate, componentWillUnmount."
+    },
+    {
+      "id": 35,
+      "question": "What is the purpose of dependency array in useEffect?",
+      "answer": "Dependency array controls when useEffect runs. No array: runs after every render (performance risk). Empty array: runs only on mount/unmount. [dep1, dep2]: runs when any dependency changes. Prevents unnecessary effects and infinite loops. Must include all external values used in effect."
+    },
+    {
+      "id": 36,
+      "question": "What is the difference between useCallback and useMemo?",
+      "answer": "useMemo memoizes computed values, preventing recalculation. useCallback memoizes function references, preventing recreation. useMemo returns value, useCallback returns function. Both optimize performance by preventing child re-renders. Only use if you have performance issues; they add overhead."
+    },
+    {
+      "id": 37,
+      "question": "Explain the concept of useContext hook in React.",
+      "answer": "useContext accesses context value without Consumer component. Create context with React.createContext(). Provide value with Context.Provider. useContext returns current context value. Avoids prop drilling. Re-renders only when context value changes, not provider."
+    },
+    {
+      "id": 38,
+      "question": "What is the purpose of useRef in React?",
+      "answer": "useRef creates mutable object persisting across re-renders. Returns .current property. Common uses: DOM manipulation (focus, play video), storing mutable values. Doesn't cause re-renders when changed. Alternative to state when you don't need re-render on change."
+    },
+    {
+      "id": 39,
+      "question": "Explain the concept of useReducer hook in React.",
+      "answer": "useReducer manages complex state with action-based updates. Takes reducer function and initial state. Returns [state, dispatch]. dispatch sends action to reducer. Better than useState for complex state logic or when state depends on previous state. Similar to Redux reducers."
+    },
+    {
+      "id": 40,
+      "question": "What is prop drilling and how to avoid it?",
+      "answer": "Prop drilling is passing data through multiple intermediate components that don't use it. Causes: component layers between parent and child. Solutions: Context API (useContext), state management (Redux, Zustand), component composition. Refactor component structure to minimize depth."
+    },
+    {
+      "id": 41,
+      "question": "What is the difference between controlled and uncontrolled components in React?",
+      "answer": "Controlled components: React manages form element state via onChange handlers. Uncontrolled components: DOM manages state, accessed via refs. Controlled: more control, complex but predictable. Uncontrolled: simpler for simple forms. Use controlled for validation, uncontrolled for file inputs."
+    },
+    {
+      "id": 42,
+      "question": "Explain the concept of keys in React lists.",
+      "answer": "Keys identify which items have changed, been added, or removed. Helps React identify elements across re-renders. Use stable, unique IDs, not index (can reorder). Missing keys cause bugs with list state. Important for performance and correctness when rendering arrays."
+    },
+    {
+      "id": 43,
+      "question": "What is the purpose of React.memo?",
+      "answer": "React.memo memoizes functional components, preventing re-renders if props unchanged (shallow comparison). Wraps component: React.memo(Component). Accepts custom comparison function for deep comparison. Optimizes performance for expensive components. Only use if performance issue; adds overhead."
+    },
+    {
+      "id": 44,
+      "question": "Explain higher-order components (HOC) pattern in React.",
+      "answer": "HOC is function taking component and returning enhanced component. Pattern for reusing component logic. Use for code reuse, state abstraction, props manipulation. Examples: withRouter, withTheme. Modern alternative: custom hooks. Still useful for wrapping third-party components."
+    },
+    {
+      "id": 45,
+      "question": "What is the difference between conditional rendering approaches in React?",
+      "answer": "If-else in render method. Ternary operator: condition ? true : false. Logical AND (&&): condition && component. Switch statements. Short-circuit evaluation. Component composition. Each has use cases; ternary and && are most common."
+    },
+    {
+      "id": 46,
+      "question": "What is the purpose of error boundaries in React?",
+      "answer": "Error boundaries catch JavaScript errors in child components and display fallback UI. Implement componentDidCatch() lifecycle or useErrorHandler() hook. Prevent entire app crashes from component errors. Only catch rendering errors, not async/event handlers or server-side rendering."
+    },
+    {
+      "id": 47,
+      "question": "What is the difference between class components and functional components?",
+      "answer": "Class components use ES6 class syntax, have lifecycle methods, manage state with this.state. Functional components use function syntax, use hooks for state/lifecycle. Functional components are simpler, smaller bundle size, easier to test. Modern React prefers functional components."
+    },
+    {
+      "id": 48,
+      "question": "Explain React lifecycle methods in class components.",
+      "answer": "Mounting: constructor, render, componentDidMount. Updating: render, componentDidUpdate. Unmounting: componentWillUnmount. getDerivedStateFromProps for state updates. shouldComponentUpdate for optimization. componentDidCatch for error handling. Modern: useEffect replaces lifecycle methods."
+    },
+    {
+      "id": 49,
+      "question": "What is the purpose of fragments in React?",
+      "answer": "Fragments allow returning multiple elements without wrapping in div. Syntax: <></> or <React.Fragment>. Benefits: cleaner DOM, no extra wrapper divs. Useful when wrapping breaks CSS Grid/Flexbox. Especially useful in maps and lists."
+    },
+    {
+      "id": 50,
+      "question": "What is the difference between state and props in React?",
+      "answer": "Props are read-only inputs passed from parent to child. State is local data managed by component. Props flow down, state is local. Changing props requires parent change. State changes trigger re-render. Props passed as function parameters, state uses useState hook."
+    },
+    {
+      "id": 51,
+      "question": "Explain the concept of lifting state up in React.",
+      "answer": "Lifting state up moves state from child to common parent when multiple children need shared state. Parent passes state as props to children. Enables state sharing and synchronization. Central state management. Alternative: Context API or external state management."
+    },
+    {
+      "id": 52,
+      "question": "What is the purpose of the window object in browser JavaScript?",
+      "answer": "window is global object in browsers. Contains global variables, functions, properties. Access: window.location, window.document, window.localStorage, window.setTimeout. Functions become window methods: window.alert(), window.fetch(). Everything not in function/block scope attaches to window."
+    },
+    {
+      "id": 53,
+      "question": "What is the difference between localStorage and sessionStorage?",
+      "answer": "localStorage persists until explicitly cleared (days/years). sessionStorage cleared when tab closes. Both are 5-10MB per domain. Both accessed via browser JavaScript only. Use localStorage for user preferences, sessionStorage for temporary data. Store JSON strings, not objects."
+    },
+    {
+      "id": 54,
+      "question": "Explain the difference between cookies and web storage.",
+      "answer": "Cookies: 4KB limit, sent with HTTP requests, have expiration, less secure. Web storage (localStorage/sessionStorage): 5-10MB, only browser-accessible, no expiration (except sessionStorage), more secure. Use cookies for authentication tokens, storage for preferences."
+    },
+    {
+      "id": 55,
+      "question": "What is the purpose of the Document Object Model (DOM)?",
+      "answer": "DOM is programming interface for HTML/XML documents. Represents page structure as tree of nodes. JavaScript manipulates DOM to change content, structure, styling. Methods: getElementById, querySelector, addEventListener. Direct DOM manipulation slower than frameworks; frameworks optimize with Virtual DOM."
+    },
+    {
+      "id": 56,
+      "question": "What is the difference between querySelector and getElementById?",
+      "answer": "getElementById returns element by ID (fast, specific). querySelector returns first element matching CSS selector (flexible, slower). querySelectorAll returns all matches. querySelector more powerful and flexible; getElementById more performant for simple ID lookups. Modern code favors querySelector."
+    },
+    {
+      "id": 57,
+      "question": "Explain event handling in JavaScript.",
+      "answer": "Event listeners respond to user actions (click, hover, scroll, input). Attach with addEventListener('event', callback). Events bubble up DOM by default. e.stopPropagation() stops bubbling. e.preventDefault() prevents default behavior. Event delegation handles many elements with single listener."
+    },
+    {
+      "id": 58,
+      "question": "What is the difference between event bubbling and capturing?",
+      "answer": "Bubbling: event triggers on target, then propagates up parent tree. Capturing: event triggers on ancestor, propagates down to target. Bubbling is default. addEventListener(event, callback, true) uses capturing. stopPropagation() stops propagation. Understanding both prevents event handling bugs."
+    },
+    {
+      "id": 59,
+      "question": "What is the purpose of the this binding in event handlers?",
+      "answer": "'this' in event handler refers to element triggering event (event.currentTarget). Regular functions rebind 'this' to element. Arrow functions inherit 'this' from enclosing scope. Access element with event.target or event.currentTarget. Can rebind with .bind(), .call(), .apply()."
+    },
+    {
+      "id": 60,
+      "question": "Explain debouncing and throttling in JavaScript.",
+      "answer": "Debouncing delays function execution until specified time passes without new triggers. Example: search input waits 300ms before searching. Throttling limits function execution to once per specified interval. Example: scroll event fires max once per 100ms. Both optimize performance by reducing excessive calls."
+    },
+    {
+      "id": 61,
+      "question": "What is the purpose of async and await in JavaScript?",
+      "answer": "async function declares asynchronous function returning Promise. await pauses execution until Promise resolves. Makes async code look synchronous and readable. Replaces .then() chains. Error handling with try-catch. Can only use await in async functions or top-level module code (ES2022)."
+    },
+    {
+      "id": 62,
+      "question": "What is the difference between Promise.all and Promise.race?",
+      "answer": "Promise.all waits for all Promises, rejects if any reject. Promise.race returns first Promise result (resolve or reject). all for parallel operations, race for timeout/fastest response. Promise.allSettled waits for all, returns all results. Promise.any waits for first resolve."
+    },
+    {
+      "id": 63,
+      "question": "Explain the concept of template literals in JavaScript.",
+      "answer": "Template literals use backticks (`) instead of quotes. Allow string interpolation: `Hello ${name}`. Multi-line strings without \\n. Tagged template literals for custom parsing. More readable than string concatenation. Widely used in React JSX."
+    },
+    {
+      "id": 64,
+      "question": "What is the purpose of regular expressions in JavaScript?",
+      "answer": "Regular expressions (regex) match, search, replace patterns in strings. Syntax: /pattern/flags. Common methods: test(), match(), replace(), split(). Flags: g (global), i (case-insensitive), m (multiline). Powerful for validation, parsing, text processing."
+    },
+    {
+      "id": 65,
+      "question": "What is the difference between match and exec in regex?",
+      "answer": "String.match(regex) returns array of matches or null. Regex.exec(string) returns match with groups and index or null. match simpler for finding matches. exec provides more info (groups, index). exec stateful with global flag, match not."
+    },
+    {
+      "id": 66,
+      "question": "Explain the concept of prototypes in JavaScript.",
+      "answer": "Prototypes are objects that other objects inherit from. Every object has [[Prototype]] property referencing prototype. Prototype chain enables inheritance. Object.getPrototypeOf() returns prototype. Constructor.prototype defines prototype for instances. Prototypal inheritance foundation."
+    },
+    {
+      "id": 67,
+      "question": "What is the difference between Object.create and constructor functions?",
+      "answer": "Constructor functions use 'new' keyword to create instances. Object.create explicitly sets prototype. Both enable inheritance. Constructor more traditional, Object.create more explicit. Class syntax simplifies both. Understanding prototypal inheritance important even with modern syntax."
+    },
+    {
+      "id": 68,
+      "question": "Explain the concept of class syntax in JavaScript.",
+      "answer": "Class syntax is syntactic sugar over prototypal inheritance. Constructor method creates instances. Methods defined in class prototype. Extends for inheritance, super for parent access. Static methods belong to class, not instances. Cleaner than constructor functions, same inheritance model."
+    },
+    {
+      "id": 69,
+      "question": "What is the purpose of flexbox justify-content and align-items?",
+      "answer": "justify-content aligns items along main axis (horizontal in row). Values: flex-start, flex-end, center, space-between, space-around, space-evenly. align-items aligns items along cross axis (vertical in row). Values: flex-start, flex-end, center, stretch, baseline. Master both for flexbox layouts."
+    },
+    {
+      "id": 70,
+      "question": "Explain CSS Grid template areas.",
+      "answer": "grid-template-areas visually define grid layout using named strings. Define areas in container, place items with grid-area. Intuitive for complex layouts. Responsive with media queries. Alternative to grid-column/grid-row numbers. Improves readability for visual layouts."
+    },
+    {
+      "id": 71,
+      "question": "What is the purpose of CSS custom properties (variables)?",
+      "answer": "CSS custom properties store reusable values. Define: --color-primary: blue. Use: color: var(--color-primary). Scope: global on :root, local in selectors. Fallback: var(--color, blue). Enable theme switching, reduce repetition, improve maintainability."
+    },
+    {
+      "id": 72,
+      "question": "Explain the concept of CSS transforms.",
+      "answer": "CSS transforms modify element appearance without affecting document flow. 2D: translate(), rotate(), scale(), skew(). 3D: rotateX(), rotateY(), perspective. Applied with transform property. Efficient for animations; uses GPU acceleration. Preserve-3d maintains 3D space for children."
+    },
+    {
+      "id": 73,
+      "question": "What is the difference between CSS transitions and animations?",
+      "answer": "Transitions smoothly change property values over time. Animation applies keyframes at specific percentages. Transitions triggered by state change (hover, class). Animations self-playing or triggered. Transitions simpler for property changes, animations for complex sequences."
+    },
+    {
+      "id": 74,
+      "question": "Explain CSS animation and keyframes.",
+      "answer": "CSS animation applies keyframes to elements. Define @keyframes name { 0% { ... } 100% { ... } }. Use with animation property: animation: name 2s ease infinite. Control timing, iteration, direction. Powerful for engaging UI effects."
+    },
+    {
+      "id": 75,
+      "question": "What is the purpose of CSS filters?",
+      "answer": "CSS filters apply visual effects: blur(), brightness(), contrast(), grayscale(), hue-rotate(), opacity(), saturate(). Applied with filter property: filter: blur(5px). Can combine multiple: filter: blur(2px) brightness(1.2). Efficient; can use GPU acceleration."
+    },
+    {
+      "id": 76,
+      "question": "Explain the concept of web fonts and @font-face.",
+      "answer": "@font-face defines custom fonts for web. Specify font-family, src (file paths), font-weight, font-style. Sources: local files, Google Fonts, CDNs. Fallback stack for missing fonts. WOFF/WOFF2 format for modern browsers. Improves typography control."
+    },
+    {
+      "id": 77,
+      "question": "What is the difference between px, em, and rem units in CSS?",
+      "answer": "px absolute units. em relative to element's font-size. rem relative to root element's font-size. Use px for fixed sizes. em for component scaling (depends on parent). rem for consistent scaling (depends on root). Prefer rem for responsive design."
+    },
+    {
+      "id": 78,
+      "question": "What is the purpose of viewport meta tag?",
+      "answer": "Viewport meta tag configures layout viewport for responsive design. <meta name='viewport' content='width=device-width, initial-scale=1.0'>. Sets viewport width to device width. Sets initial zoom. Prevents zooming out on mobile. Essential for responsive pages."
+    },
+    {
+      "id": 79,
+      "question": "Explain the concept of accessibility (a11y) in web development.",
+      "answer": "Accessibility makes websites usable for all people, including disabled users. Semantic HTML, ARIA labels, color contrast, keyboard navigation, alt text. Helps screen readers. Improves UX for all users. Legal requirement (WCAG guidelines). Essential for inclusive design."
+    },
+    {
+      "id": 80,
+      "question": "What is the purpose of ARIA labels and roles?",
+      "answer": "ARIA (Accessible Rich Internet Applications) attributes enhance accessibility. aria-label provides accessible name. aria-role defines element purpose. aria-hidden hides from screen readers. aria-expanded indicates state. Supplements semantic HTML for custom components. Screen readers announce ARIA attributes."
+    },
+    {
+      "id": 81,
+      "question": "What is the difference between innerHTML and textContent?",
+      "answer": "innerHTML includes HTML markup. textContent only text content, ignores HTML. innerText respects CSS visibility/display. textContent faster, safer (prevents HTML injection). Use textContent for text, innerHTML for HTML content (sanitize untrusted HTML)."
+    },
+    {
+      "id": 82,
+      "question": "Explain the concept of HTTP headers in frontend requests.",
+      "answer": "HTTP headers send metadata with requests/responses. Common request headers: Authorization, Content-Type, Accept. Response headers: Content-Length, Cache-Control, Set-Cookie. Frontend access with fetch/axios headers option. Important for CORS, caching, authentication."
+    },
+    {
+      "id": 83,
+      "question": "What is the purpose of CORS in frontend development?",
+      "answer": "CORS (Cross-Origin Resource Sharing) controls cross-origin requests. Browsers enforce same-origin policy for security. Server must set CORS headers (Access-Control-Allow-Origin) for cross-origin requests. Frontend can't change CORS; server must allow. Enables legitimate cross-origin API calls."
+    },
+    {
+      "id": 84,
+      "question": "What is the difference between fetch and XMLHttpRequest?",
+      "answer": "fetch is modern promise-based API for HTTP requests. XMLHttpRequest older callback-based API. fetch cleaner syntax, better error handling, streams support. XMLHttpRequest better upload progress. fetch doesn't reject on HTTP errors (need status check). Prefer fetch for new code."
+    },
+    {
+      "id": 85,
+      "question": "Explain the concept of lazy loading images.",
+      "answer": "Lazy loading defers image loading until scrolled into view. Use loading='lazy' attribute on <img>. Or use Intersection Observer API for custom control. Improves initial page performance, reduces bandwidth. Especially important for image-heavy sites."
+    },
+    {
+      "id": 86,
+      "question": "What is the purpose of React.lazy and Suspense?",
+      "answer": "React.lazy code-splits components loaded on demand. Suspense wraps lazy components, shows fallback while loading. React.lazy(()=> import('./Component')). Enables smaller initial bundle, faster page load. Great for route-based code splitting."
+    },
+    {
+      "id": 87,
+      "question": "What is the difference between client-side and server-side rendering?",
+      "answer": "Client-side rendering: JavaScript runs in browser, builds HTML. Initial load slower, interactive after render. Server-side rendering: server generates HTML, sends to browser. Fast initial load, better SEO. SSR frameworks: Next.js, Nuxt. Choose based on performance/SEO needs."
+    },
+    {
+      "id": 88,
+      "question": "Explain the concept of stateful and stateless components.",
+      "answer": "Stateful components manage state (class components or hooks). Stateless components only receive props, no state. Stateless components simpler, more reusable, easier to test. Modern React: functional components with hooks replace state/stateless distinction."
+    },
+    {
+      "id": 89,
+      "question": "What is the purpose of Babel in frontend development?",
+      "answer": "Babel transpiles modern JavaScript (ES6+) to older ES5 for browser compatibility. Transforms JSX to JavaScript. Enables using latest features immediately. Essential for production builds. Configure with .babelrc or babel.config.js."
+    },
+    {
+      "id": 90,
+      "question": "Explain the concept of webpack and bundling.",
+      "answer": "Webpack bundles JavaScript, CSS, assets into optimized files. Supports code splitting, lazy loading, minification. Loaders transform files; plugins optimize output. Essential for production builds. Modern alternatives: Vite, esbuild for faster builds."
+    },
+    {
+      "id": 91,
+      "question": "What is the purpose of CSS preprocessors like SASS?",
+      "answer": "SASS adds features to CSS: variables, nesting, mixins, functions. Compiles to CSS. Improves maintainability, reduces repetition. SCSS syntax (superset of CSS). Common in large projects. PostCSS alternative. Tools: node-sass, Dart Sass."
+    },
+    {
+      "id": 92,
+      "question": "Explain the concept of CSS-in-JS libraries.",
+      "answer": "CSS-in-JS writes styles in JavaScript. Examples: Styled Components, Emotion, CSS Modules. Benefits: scoped styles, dynamic styling, JavaScript logic. Integrates with components. Downsides: bundle size, runtime performance. Popular in React ecosystem."
+    },
+    {
+      "id": 93,
+      "question": "What is the difference between CSS Modules and BEM naming?",
+      "answer": "CSS Modules locally scope styles, prevent name collisions. BEM (Block Element Modifier) naming convention preventing collisions. CSS Modules automatic; BEM manual discipline. CSS Modules better isolation; BEM more readable naming. Both solve CSS scoping issues differently."
+    },
+    {
+      "id": 94,
+      "question": "Explain the concept of responsive images with srcset.",
+      "answer": "<img srcset=\"small.jpg 480w, medium.jpg 768w\"> serves different images by screen size. browser selects appropriate image. Improves performance by serving optimized sizes. Combine with sizes attribute. Modern approach over media queries for images."
+    },
+    {
+      "id": 95,
+      "question": "What is the purpose of service workers?",
+      "answer": "Service workers are scripts running in background, separate from web pages. Enable offline functionality, push notifications, background sync. Intercept network requests, cache responses. Fundamental for Progressive Web Apps (PWAs). Registered with navigator.serviceWorker.register()."
+    },
+    {
+      "id": 96,
+      "question": "Explain the concept of Progressive Web Apps (PWAs).",
+      "answer": "PWAs are web apps with native-like capabilities. Features: offline support (service workers), installable (manifest.json), responsive, fast loading. Can be installed on home screen. Work offline, sync in background. Bridges web and native apps gap."
+    },
+    {
+      "id": 97,
+      "question": "What is the difference between relative and absolute URLs?",
+      "answer": "Absolute URLs include full path: https://example.com/page. Relative URLs relative to current page: /page or ./page or ../page. Use absolute for external links. Use relative for internal links (portable across domains). Understand path resolution."
+    },
+    {
+      "id": 98,
+      "question": "Explain the concept of meta tags and their importance.",
+      "answer": "Meta tags provide metadata about HTML documents. <meta name='description'>, <meta name='viewport'>, <meta charset='UTF-8'>. Important for SEO, responsive design, character encoding. og tags for social sharing. crucial for page optimization."
+    },
+    {
+      "id": 99,
+      "question": "What is the purpose of the robots.txt file?",
+      "answer": "robots.txt controls how search engines crawl website. Disallow paths from indexing: User-agent: *, Disallow: /admin/. Specifies crawl delay, sitemap location. Robots can ignore, not security tool. Place in root directory. Important for SEO."
+    },
+    {
+      "id": 100,
+      "question": "Explain the concept of web performance optimization.",
+      "answer": "Performance optimization improves load time and responsiveness. Strategies: lazy loading, code splitting, minification, image optimization, caching, CDN, compression, tree shaking. Tools: Lighthouse, WebPageTest. Metrics: LCP, FID, CLS. Essential for user experience and SEO."
+    }
+  ]
+}
