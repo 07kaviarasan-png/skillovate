@@ -2,12 +2,12 @@
   "name": "skillovate-server",
   "version": "1.0.0",
   "description": "Skillovate Multi-Tenant Placement Ecosystem Backend",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "node --watch src/index.js",
-    "start": "node src/index.js",
-    "seed": "node src/utils/seed.js",
-    "cleanup": "node src/utils/cleanup.js"
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "seed": "node seed.js",
+    "cleanup": "node cleanup.js"
   },
   "keywords": [
     "placement",

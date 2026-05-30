@@ -1,0 +1,31 @@
+"""
+Skillovate V2 — API v1 Router
+"""
+from fastapi import APIRouter
+from app.api.v1 import (
+    achievements,
+    assessments,
+    auth,
+    batches,
+    colleges,
+    dashboard,
+    interviews,
+    persistence,
+    placements,
+    students,
+    tests,
+)
+
+api_router = APIRouter()
+
+api_router.include_router(auth.router)
+api_router.include_router(colleges.router)
+api_router.include_router(students.router)
+api_router.include_router(assessments.router)
+api_router.include_router(tests.router)
+api_router.include_router(batches.router)
+api_router.include_router(interviews.router)
+api_router.include_router(placements.router)
+api_router.include_router(achievements.router)
+api_router.include_router(dashboard.router)
+api_router.include_router(persistence.router)
