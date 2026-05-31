@@ -13,7 +13,6 @@ python-multipart==0.0.20
 # --- Database ---
 sqlalchemy==2.0.41
 alembic==1.15.2
-psycopg[binary]>=3.2.10
 
 
 # --- Validation & Serialization ---

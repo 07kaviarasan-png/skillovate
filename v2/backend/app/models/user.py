@@ -7,9 +7,8 @@ Uses table-per-type pattern: shared fields in `users`, role-specific fields in p
 from datetime import datetime, timezone
 from sqlalchemy import (
     Column, Integer, String, Boolean, DateTime, Text, Float, ForeignKey,
-    Index, UniqueConstraint, CheckConstraint,
+    Index, UniqueConstraint, CheckConstraint, JSON
 )
-from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
 
 from app.database import Base
@@ -40,9 +39,9 @@ class User(Base):
     status = Column(String(20), default="approved", nullable=False)  # pending, approved, rejected
     
     # ── Persistence & UI State ───────────────────
-    preferences = Column(JSONB, default={}, nullable=False)
-    saved_data = Column(JSONB, default={}, nullable=False)
-    last_session = Column(JSONB, default={}, nullable=False)
+    preferences = Column(JSON, default={}, nullable=False)
+    saved_data = Column(JSON, default={}, nullable=False)
+    last_session = Column(JSON, default={}, nullable=False)
 
     last_login_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)

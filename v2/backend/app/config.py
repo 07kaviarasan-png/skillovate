@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api/v1"
 
     # ── Database ─────────────────────────────────
-    DATABASE_URL: str = "sqlite:///./skillovate.db"
+    DATABASE_URL: str = "sqlite:///./data/skillovate.db"
 
     # ── JWT ──────────────────────────────────────
     JWT_SECRET_KEY: str = "change-this-to-a-random-64-char-string-in-production"
