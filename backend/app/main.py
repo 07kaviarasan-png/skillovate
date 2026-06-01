@@ -6,7 +6,7 @@ from starlette.staticfiles import StaticFiles
 
 from app import models
 from app.database import engine
-from app.routers import auth, questions, mnc, job_roles, colleges, users, batches, assessments, interviews
+from app.routers import auth, questions, mnc, job_roles, colleges, users, batches, assessments, interviews, placements, dashboard
 
 # Create all database tables
 models.Base.metadata.create_all(bind=engine)
@@ -45,6 +45,8 @@ app.include_router(batches.router, prefix="/api/v1")
 app.include_router(questions.router, prefix="/api/v1")
 app.include_router(assessments.router, prefix="/api/v1")
 app.include_router(interviews.router, prefix="/api/v1")
+app.include_router(placements.router, prefix="/api/v1")
+app.include_router(dashboard.router, prefix="/api/v1")
 app.include_router(mnc.router, prefix="/api/v1")
 app.include_router(job_roles.router, prefix="/api/v1")
 

@@ -39,6 +39,7 @@ class User(Base):
     recruiter_profile = relationship("RecruiterProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
     assessment_attempts = relationship("AssessmentAttempt", back_populates="user")
     interview_sessions = relationship("InterviewSession", back_populates="user")
+    applications = relationship("Application", back_populates="user")
 
 class College(Base):
     __tablename__ = "colleges"
@@ -54,6 +55,7 @@ class College(Base):
     students = relationship("StudentProfile", back_populates="college")
     faculty = relationship("FacultyProfile", back_populates="college")
     batches = relationship("Batch", back_populates="college")
+    jobs = relationship("Job", back_populates="college")
 
 class StudentProfile(Base):
     __tablename__ = "student_profiles"
@@ -65,6 +67,8 @@ class StudentProfile(Base):
     department = Column(String, nullable=True)
     year_of_study = Column(Integer, nullable=True)
     graduation_year = Column(Integer, nullable=True)
+    resume_url = Column(String, nullable=True)
+    skills = Column(Text, nullable=True) # JSON list
 
     # Relationships
     user = relationship("User", back_populates="student_profile")
@@ -91,9 +95,13 @@ class RecruiterProfile(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), unique=True, nullable=False)
     company_name = Column(String, nullable=True)
+    company_description = Column(Text, nullable=True)
+    company_website = Column(String, nullable=True)
+    company_logo = Column(String, nullable=True)
 
     # Relationships
     user = relationship("User", back_populates="recruiter_profile")
+    jobs = relationship("Job", back_populates="recruiter")
 
 class Batch(Base):
     __tablename__ = "batches"
@@ -114,18 +122,12 @@ class Question(Base):
     __tablename__ = "questions"
 
     id = Column(Integer, primary_key=True, index=True)
-    category = Column(String, nullable=False) # Quantitative, Logical, Verbal, DI, Technical, interview
+    category = Column(String, nullable=False) 
     question_text = Column(Text, nullable=False)
-    options = Column(Text, nullable=False) # JSON list
+    options = Column(Text, nullable=False) 
     correct_answer = Column(Text, nullable=False)
     explanation = Column(Text, nullable=True)
     data_presentation = Column(Text, nullable=True)
-
-    def set_options(self, options_list):
-        self.options = json.dumps(options_list)
-
-    def get_options(self):
-        return json.loads(self.options) if self.options else []
 
 class Assessment(Base):
     __tablename__ = "assessments"
@@ -136,7 +138,7 @@ class Assessment(Base):
     duration_minutes = Column(Integer, default=60)
     passing_score = Column(Float, default=40.0)
     total_questions = Column(Integer, default=20)
-    difficulty = Column(String, default="medium") # easy, medium, hard
+    difficulty = Column(String, default="medium") 
     category = Column(String, nullable=True)
     is_published = Column(Boolean, default=False)
     scheduled_at = Column(TIMESTAMP, nullable=True)
@@ -154,9 +156,9 @@ class AssessmentAttempt(Base):
     assessment_id = Column(Integer, ForeignKey("assessments.id"), nullable=False)
     score = Column(Float, nullable=True)
     percentage = Column(Float, nullable=True)
-    status = Column(String, default="started") # started, completed
-    responses = Column(Text, nullable=True) # JSON object {question_id: selected_option}
-    results_analysis = Column(Text, nullable=True) # JSON object for breakdown
+    status = Column(String, default="started") 
+    responses = Column(Text, nullable=True) 
+    results_analysis = Column(Text, nullable=True) 
     started_at = Column(TIMESTAMP, server_default=func.now())
     completed_at = Column(TIMESTAMP, nullable=True)
 
@@ -169,9 +171,9 @@ class InterviewSession(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    category = Column(String, nullable=False) # Frontend, Backend, etc.
-    status = Column(String, default="started") # started, completed
-    responses = Column(Text, nullable=True) # JSON list of {question_id, response, feedback, rating}
+    category = Column(String, nullable=False) 
+    status = Column(String, default="started") 
+    responses = Column(Text, nullable=True) 
     overall_score = Column(Float, nullable=True)
     feedback = Column(Text, nullable=True)
     started_at = Column(TIMESTAMP, server_default=func.now())
@@ -179,6 +181,44 @@ class InterviewSession(Base):
 
     # Relationships
     user = relationship("User", back_populates="interview_sessions")
+
+class Job(Base):
+    __tablename__ = "jobs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, nullable=False)
+    description = Column(Text, nullable=False)
+    requirements = Column(Text, nullable=True)
+    location = Column(String, nullable=True)
+    salary_range = Column(String, nullable=True)
+    job_type = Column(String, default="Full-time") # Full-time, Internship, etc.
+    recruiter_id = Column(Integer, ForeignKey("recruiter_profiles.id"), nullable=False)
+    college_id = Column(Integer, ForeignKey("colleges.id"), nullable=True) # Null means open to all
+    is_active = Column(Boolean, default=True)
+    deadline = Column(TIMESTAMP, nullable=True)
+    created_at = Column(TIMESTAMP, server_default=func.now())
+
+    # Relationships
+    recruiter = relationship("RecruiterProfile", back_populates="jobs")
+    college = relationship("College", back_populates="jobs")
+    applications = relationship("Application", back_populates="job")
+
+class Application(Base):
+    __tablename__ = "applications"
+
+    id = Column(Integer, primary_key=True, index=True)
+    job_id = Column(Integer, ForeignKey("jobs.id"), nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    resume_url = Column(String, nullable=True)
+    status = Column(String, default="Applied") # Applied, Shortlisted, Interview Scheduled, Selected, Offer Released, Rejected
+    recruiter_notes = Column(Text, nullable=True)
+    interview_date = Column(TIMESTAMP, nullable=True)
+    applied_at = Column(TIMESTAMP, server_default=func.now())
+    updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
+
+    # Relationships
+    job = relationship("Job", back_populates="applications")
+    user = relationship("User", back_populates="applications")
 
 class MNC(Base):
     __tablename__ = "mncs"

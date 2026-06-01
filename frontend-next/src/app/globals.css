@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --lp-bg: #FCFDFF;
   --lp-text: #1E2350;

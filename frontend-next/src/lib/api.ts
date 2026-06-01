@@ -14,6 +14,12 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+export const authApi = {
+  login: (data: FormData) => api.post('/auth/token', data),
+  register: (data: any) => api.post('/auth/register', data),
+  getMe: () => api.get('/users/me'),
+};
+
 export const assessmentsApi = {
   list: (params: any) => api.get('/assessments/', { params }),
   get: (id: string) => api.get(`/assessments/${id}`),
@@ -28,6 +34,20 @@ export const interviewsApi = {
   submit: (id: number, data: any) => api.post(`/interviews/sessions/${id}/submit`, data),
   getSessions: () => api.get('/interviews/sessions/me'),
   getSession: (id: string) => api.get(`/interviews/sessions/${id}`),
+};
+
+export const placementsApi = {
+  listJobs: () => api.get('/placements/jobs'),
+  getJob: (id: string) => api.get(`/placements/jobs/${id}`),
+  createJob: (data: any) => api.post('/placements/jobs', data),
+  apply: (jobId: number, resumeUrl?: string) => api.post('/placements/apply', { job_id: jobId, resume_url: resumeUrl }),
+  getMyApplications: () => api.get('/placements/applications/me'),
+  getJobApplicants: (jobId: string) => api.get(`/placements/jobs/${jobId}/applicants`),
+  updateApplication: (id: number, data: any) => api.patch(`/placements/applications/${id}`, data),
+};
+
+export const dashboardApi = {
+  getStats: () => api.get('/dashboard/stats'),
 };
 
 export const questionsApi = {

@@ -20,6 +20,8 @@ class StudentProfileBase(BaseModel):
     year_of_study: Optional[int] = None
     graduation_year: Optional[int] = None
     college_id: int
+    resume_url: Optional[str] = None
+    skills: Optional[Union[List[str], str]] = None
 
 class StudentProfileCreate(StudentProfileBase):
     pass
@@ -27,6 +29,11 @@ class StudentProfileCreate(StudentProfileBase):
 class StudentProfile(StudentProfileBase):
     id: int
     user_id: int
+
+    @field_validator('skills', mode='before')
+    @classmethod
+    def validate_skills(cls, v):
+        return parse_json_field(v)
 
     class Config:
         from_attributes = True
@@ -48,6 +55,9 @@ class FacultyProfile(FacultyProfileBase):
 
 class RecruiterProfileBase(BaseModel):
     company_name: Optional[str] = None
+    company_description: Optional[str] = None
+    company_website: Optional[str] = None
+    company_logo: Optional[str] = None
 
 class RecruiterProfileCreate(RecruiterProfileBase):
     pass
@@ -205,6 +215,68 @@ class InterviewSession(InterviewSessionBase):
     @classmethod
     def validate_responses(cls, v):
         return parse_json_field(v)
+
+    class Config:
+        from_attributes = True
+
+# --- Placement Schemas ---
+
+class JobBase(BaseModel):
+    title: str
+    description: str
+    requirements: Optional[str] = None
+    location: Optional[str] = None
+    salary_range: Optional[str] = None
+    job_type: str = "Full-time"
+    college_id: Optional[int] = None
+    deadline: Optional[datetime.datetime] = None
+    is_active: bool = True
+
+class JobCreate(JobBase):
+    pass
+
+class JobUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    requirements: Optional[str] = None
+    location: Optional[str] = None
+    salary_range: Optional[str] = None
+    job_type: Optional[str] = None
+    college_id: Optional[int] = None
+    deadline: Optional[datetime.datetime] = None
+    is_active: Optional[bool] = None
+
+class Job(JobBase):
+    id: int
+    recruiter_id: int
+    created_at: datetime.datetime
+    recruiter: RecruiterProfile
+
+    class Config:
+        from_attributes = True
+
+class ApplicationBase(BaseModel):
+    job_id: int
+    resume_url: Optional[str] = None
+
+class ApplicationCreate(ApplicationBase):
+    pass
+
+class ApplicationUpdate(BaseModel):
+    status: Optional[str] = None
+    recruiter_notes: Optional[str] = None
+    interview_date: Optional[datetime.datetime] = None
+
+class Application(ApplicationBase):
+    id: int
+    user_id: int
+    status: str
+    recruiter_notes: Optional[str] = None
+    interview_date: Optional[datetime.datetime] = None
+    applied_at: datetime.datetime
+    updated_at: datetime.datetime
+    job: Job
+    user: User
 
     class Config:
         from_attributes = True
