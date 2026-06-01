@@ -1,52 +1,47 @@
 from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-import json # Import json module
-
-from app import crud, schemas, models # Corrected from 'from .. import crud, schemas'
-from app.database import get_db # Corrected from 'from ..database import get_db'
-from app.routers.auth import get_current_user # Corrected from 'from .auth import get_current_user'
+from app.database import get_db
+from app import schemas
+from app.repositories.question_repo import question_repo
+from app.core.rbac import RoleChecker
 
 router = APIRouter(
     prefix="/questions",
     tags=["questions"],
 )
 
-@router.get("/", response_model=List[schemas.Question])
-def read_all_questions(
-    skip: int = 0, limit: int = 100, db: Session = Depends(get_db),
-    # current_user: schemas.User = Depends(get_current_user) # Uncomment to protect
+@router.get("/", response_model=List[schemas.Question], dependencies=[Depends(RoleChecker(["super_admin", "college_admin", "faculty"]))])
+def read_questions(
+    db: Session = Depends(get_db),
+    skip: int = 0,
+    limit: int = 100,
+    category: Optional[str] = None
 ):
-    questions = crud.get_questions(db, skip=skip, limit=limit)
-    # Deserialize options from JSON string to list for each question
-    for q in questions:
-        q.options = json.loads(q.options)
-    return questions
+    if category:
+        return db.query(question_repo.model).filter(question_repo.model.category == category).offset(skip).limit(limit).all()
+    return question_repo.get_multi(db, skip=skip, limit=limit)
 
-@router.get("/{category}", response_model=List[schemas.Question])
-def read_questions_by_category(
-    category: str, skip: int = 0, limit: int = 100, db: Session = Depends(get_db),
-    # current_user: schemas.User = Depends(get_current_user) # Uncomment to protect
+@router.get("/categories", response_model=List[str])
+def get_question_categories(
+    db: Session = Depends(get_db)
 ):
-    questions = crud.get_questions_by_category(db, category=category, skip=skip, limit=limit)
-    if not questions:
-        raise HTTPException(status_code=404, detail="No questions found for this category")
-    # Deserialize options from JSON string to list for each question
-    for q in questions:
-        q.options = json.loads(q.options)
-    return questions
+    return question_repo.get_categories(db)
 
-@router.get("/{category}/{question_id}", response_model=schemas.Question)
-def read_single_question(
-    category: str, question_id: int, db: Session = Depends(get_db),
-    # current_user: schemas.User = Depends(get_current_user) # Uncomment to protect
+@router.post("/", response_model=schemas.Question, dependencies=[Depends(RoleChecker(["super_admin"]))])
+def create_question(
+    *,
+    db: Session = Depends(get_db),
+    question_in: schemas.QuestionCreate
 ):
-    question = db.query(models.Question).filter(
-        models.Question.category == category,
-        models.Question.id == question_id
-    ).first()
+    return question_repo.create(db, obj_in=question_in)
+
+@router.get("/{question_id}", response_model=schemas.Question)
+def read_question(
+    question_id: int,
+    db: Session = Depends(get_db)
+):
+    question = question_repo.get(db, id=question_id)
     if not question:
         raise HTTPException(status_code=404, detail="Question not found")
-    # Deserialize options from JSON string to list
-    question.options = json.loads(question.options)
     return question

@@ -20,8 +20,25 @@ sys.path.append(os.path.abspath(os.path.join(script_dir, '..')))
 from app.database import SessionLocal, engine
 from app import models
 from app.models import Base, Question, MNC, JobRole, College
-from app.crud import create_question, create_mnc, create_job_role, create_college
+from app.repositories.question_repo import question_repo
+from app.repositories.college_repo import college_repo
+from app.repositories.batch_repo import batch_repo
 from app.schemas import QuestionCreate, MNCCreate, JobRoleCreate, CollegeCreate
+
+def create_question(db, obj_in): return question_repo.create(db, obj_in=obj_in)
+def create_mnc(db, obj_in): 
+    db_obj = models.MNC(**obj_in.model_dump())
+    db.add(db_obj)
+    db.commit()
+    db.refresh(db_obj)
+    return db_obj
+def create_job_role(db, obj_in):
+    db_obj = models.JobRole(**obj_in.model_dump())
+    db.add(db_obj)
+    db.commit()
+    db.refresh(db_obj)
+    return db_obj
+def create_college(db, obj_in): return college_repo.create(db, obj_in=obj_in)
 
 
 # Create database tables

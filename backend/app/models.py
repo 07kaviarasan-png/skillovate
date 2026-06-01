@@ -1,10 +1,9 @@
-from sqlalchemy import Column, Integer, String, Boolean, TIMESTAMP, Text, ForeignKey, Table
+from sqlalchemy import Column, Integer, String, Boolean, TIMESTAMP, Text, ForeignKey, Table, Float
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
 import json
 
-Base = declarative_base()
+from app.database import Base
 
 # Many-to-Many relationship between Batches and Students
 batch_student = Table(
@@ -12,6 +11,14 @@ batch_student = Table(
     Base.metadata,
     Column("batch_id", Integer, ForeignKey("batches.id"), primary_key=True),
     Column("student_id", Integer, ForeignKey("student_profiles.id"), primary_key=True),
+)
+
+# Many-to-Many for Assessment Questions
+assessment_question = Table(
+    "assessment_question",
+    Base.metadata,
+    Column("assessment_id", Integer, ForeignKey("assessments.id"), primary_key=True),
+    Column("question_id", Integer, ForeignKey("questions.id"), primary_key=True),
 )
 
 class User(Base):
@@ -30,9 +37,8 @@ class User(Base):
     student_profile = relationship("StudentProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
     faculty_profile = relationship("FacultyProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
     recruiter_profile = relationship("RecruiterProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
-
-    def __repr__(self):
-        return f"<User(username='{self.username}', email='{self.email}', role='{self.role}')>"
+    assessment_attempts = relationship("AssessmentAttempt", back_populates="user")
+    interview_sessions = relationship("InterviewSession", back_populates="user")
 
 class College(Base):
     __tablename__ = "colleges"
@@ -48,9 +54,6 @@ class College(Base):
     students = relationship("StudentProfile", back_populates="college")
     faculty = relationship("FacultyProfile", back_populates="college")
     batches = relationship("Batch", back_populates="college")
-
-    def __repr__(self):
-        return f"<College(name='{self.name}', code='{self.code}')>"
 
 class StudentProfile(Base):
     __tablename__ = "student_profiles"
@@ -111,9 +114,9 @@ class Question(Base):
     __tablename__ = "questions"
 
     id = Column(Integer, primary_key=True, index=True)
-    category = Column(String, nullable=False)
+    category = Column(String, nullable=False) # Quantitative, Logical, Verbal, DI, Technical, interview
     question_text = Column(Text, nullable=False)
-    options = Column(Text, nullable=False)
+    options = Column(Text, nullable=False) # JSON list
     correct_answer = Column(Text, nullable=False)
     explanation = Column(Text, nullable=True)
     data_presentation = Column(Text, nullable=True)
@@ -123,6 +126,59 @@ class Question(Base):
 
     def get_options(self):
         return json.loads(self.options) if self.options else []
+
+class Assessment(Base):
+    __tablename__ = "assessments"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, nullable=False)
+    description = Column(Text, nullable=True)
+    duration_minutes = Column(Integer, default=60)
+    passing_score = Column(Float, default=40.0)
+    total_questions = Column(Integer, default=20)
+    difficulty = Column(String, default="medium") # easy, medium, hard
+    category = Column(String, nullable=True)
+    is_published = Column(Boolean, default=False)
+    scheduled_at = Column(TIMESTAMP, nullable=True)
+    created_at = Column(TIMESTAMP, server_default=func.now())
+
+    # Relationships
+    questions = relationship("Question", secondary=assessment_question)
+    attempts = relationship("AssessmentAttempt", back_populates="assessment")
+
+class AssessmentAttempt(Base):
+    __tablename__ = "assessment_attempts"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    assessment_id = Column(Integer, ForeignKey("assessments.id"), nullable=False)
+    score = Column(Float, nullable=True)
+    percentage = Column(Float, nullable=True)
+    status = Column(String, default="started") # started, completed
+    responses = Column(Text, nullable=True) # JSON object {question_id: selected_option}
+    results_analysis = Column(Text, nullable=True) # JSON object for breakdown
+    started_at = Column(TIMESTAMP, server_default=func.now())
+    completed_at = Column(TIMESTAMP, nullable=True)
+
+    # Relationships
+    user = relationship("User", back_populates="assessment_attempts")
+    assessment = relationship("Assessment", back_populates="attempts")
+
+class InterviewSession(Base):
+    __tablename__ = "interview_sessions"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    category = Column(String, nullable=False) # Frontend, Backend, etc.
+    status = Column(String, default="started") # started, completed
+    responses = Column(Text, nullable=True) # JSON list of {question_id, response, feedback, rating}
+    overall_score = Column(Float, nullable=True)
+    feedback = Column(Text, nullable=True)
+    started_at = Column(TIMESTAMP, server_default=func.now())
+    completed_at = Column(TIMESTAMP, nullable=True)
+
+    # Relationships
+    user = relationship("User", back_populates="interview_sessions")
 
 class MNC(Base):
     __tablename__ = "mncs"

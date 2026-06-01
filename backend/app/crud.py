@@ -1,39 +1,26 @@
 from sqlalchemy.orm import Session
-from app import models, schemas # Corrected from 'from . import models, schemas'
-from passlib.context import CryptContext
+from app import models, schemas
+import bcrypt
 import json
 
-# Password hashing context
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+def verify_password(plain_password: str, hashed_password: str) -> bool:
+    password_bytes = plain_password.encode('utf-8')
+    # If hashed_password is a string (from DB), encode it to bytes
+    if isinstance(hashed_password, str):
+        hashed_password_bytes = hashed_password.encode('utf-8')
+    else:
+        hashed_password_bytes = hashed_password
+    
+    try:
+        return bcrypt.checkpw(password_bytes, hashed_password_bytes)
+    except Exception:
+        return False
 
-def verify_password(plain_password, hashed_password):
-    return pwd_context.verify(plain_password, hashed_password)
-
-def get_password_hash(password):
-    return pwd_context.hash(password)
-
-# User CRUD operations
-def get_user(db: Session, user_id: int):
-    return db.query(models.User).filter(models.User.id == user_id).first()
-
-def get_user_by_email(db: Session, email: str):
-    return db.query(models.User).filter(models.User.email == email).first()
-
-def get_user_by_username(db: Session, username: str):
-    return db.query(models.User).filter(models.User.username == username).first()
-
-def create_user(db: Session, user: schemas.UserCreate):
-    hashed_password = get_password_hash(user.password)
-    db_user = models.User(
-        username=user.username,
-        email=user.email,
-        hashed_password=hashed_password,
-        role=user.role
-    )
-    db.add(db_user)
-    db.commit()
-    db.refresh(db_user)
-    return db_user
+def get_password_hash(password: str) -> str:
+    password_bytes = password.encode('utf-8')
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password_bytes, salt)
+    return hashed.decode('utf-8')
 
 # Question CRUD operations
 def get_questions(db: Session, skip: int = 0, limit: int = 100):
@@ -42,14 +29,11 @@ def get_questions(db: Session, skip: int = 0, limit: int = 100):
 def get_question(db: Session, question_id: int):
     return db.query(models.Question).filter(models.Question.id == question_id).first()
 
-def get_questions_by_category(db: Session, category: str, skip: int = 0, limit: int = 100):
-    return db.query(models.Question).filter(models.Question.category == category).offset(skip).limit(limit).all()
-
 def create_question(db: Session, question: schemas.QuestionCreate):
     db_question = models.Question(
         category=question.category,
         question_text=question.question_text,
-        options=json.dumps(question.options), # Store options as JSON string
+        options=json.dumps(question.options),
         correct_answer=question.correct_answer,
         explanation=question.explanation,
         data_presentation=question.data_presentation
@@ -62,9 +46,6 @@ def create_question(db: Session, question: schemas.QuestionCreate):
 # MNC CRUD operations
 def get_mncs(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.MNC).offset(skip).limit(limit).all()
-
-def get_mnc(db: Session, mnc_id: int):
-    return db.query(models.MNC).filter(models.MNC.id == mnc_id).first()
 
 def create_mnc(db: Session, mnc: schemas.MNCCreate):
     db_mnc = models.MNC(
@@ -86,9 +67,6 @@ def create_mnc(db: Session, mnc: schemas.MNCCreate):
 def get_job_roles(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.JobRole).offset(skip).limit(limit).all()
 
-def get_job_role(db: Session, job_role_id: int):
-    return db.query(models.JobRole).filter(models.JobRole.id == job_role_id).first()
-
 def create_job_role(db: Session, job_role: schemas.JobRoleCreate):
     db_job_role = models.JobRole(
         name=job_role.name,
@@ -100,22 +78,3 @@ def create_job_role(db: Session, job_role: schemas.JobRoleCreate):
     db.commit()
     db.refresh(db_job_role)
     return db_job_role
-
-# College CRUD operations
-def get_colleges(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.College).offset(skip).limit(limit).all()
-
-def get_college(db: Session, college_id: int):
-    return db.query(models.College).filter(models.College.id == college_id).first()
-
-def create_college(db: Session, college: schemas.CollegeCreate):
-    db_college = models.College(
-        name=college.name,
-        code=college.code,
-        num_students=college.num_students,
-        is_enabled=college.is_enabled
-    )
-    db.add(db_college)
-    db.commit()
-    db.refresh(db_college)
-    return db_college

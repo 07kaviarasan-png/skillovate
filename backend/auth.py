@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from typing import Optional
+from typing import Optional, List
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
@@ -56,3 +56,24 @@ def get_current_active_user(current_user: models.User = Depends(get_current_user
     if not current_user.is_active:
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
+
+
+class RoleChecker:
+    def __init__(self, allowed_roles: List[str]):
+        self.allowed_roles = allowed_roles
+
+    def __call__(self, current_user: models.User = Depends(get_current_active_user)):
+        if current_user.role not in self.allowed_roles:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="The user doesn't have enough privileges",
+            )
+        return current_user
+
+
+# Role dependencies
+super_admin_only = RoleChecker(["super_admin"])
+admin_only = RoleChecker(["super_admin", "college_admin"])
+faculty_plus = RoleChecker(["super_admin", "college_admin", "faculty"])
+recruiter_plus = RoleChecker(["super_admin", "recruiter"])
+any_user = RoleChecker(["super_admin", "college_admin", "faculty", "recruiter", "student"])

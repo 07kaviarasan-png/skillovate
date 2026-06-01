@@ -1,13 +1,14 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from starlette.responses import RedirectResponse
 from starlette.staticfiles import StaticFiles
 
-from app import models # Corrected from 'from . import models'
-from app.database import engine # Corrected from 'from .database import engine'
-from app.routers import auth, questions, mnc, job_roles, colleges # Corrected from 'from .routers import ...'
+from app import models
+from app.database import engine
+from app.routers import auth, questions, mnc, job_roles, colleges, users, batches, assessments, interviews
 
-# Create all database tables (if they don't exist)
+# Create all database tables
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -16,23 +17,38 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Mount static files to serve frontend assets. This is a placeholder for now.
-# Once Next.js is set up, this might change to proxying or separate deployments.
-# For now, it allows serving index.html directly from the backend if needed,
-# or for serving generated Next.js static output.
-app.mount("/static", StaticFiles(directory="../frontend"), name="static")
+origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3001",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Root redirect to docs
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse(url="/docs")
 
 # Include routers
 app.include_router(auth.router, prefix="/api/v1")
+app.include_router(users.router, prefix="/api/v1")
+app.include_router(colleges.router, prefix="/api/v1")
+app.include_router(batches.router, prefix="/api/v1")
 app.include_router(questions.router, prefix="/api/v1")
+app.include_router(assessments.router, prefix="/api/v1")
+app.include_router(interviews.router, prefix="/api/v1")
 app.include_router(mnc.router, prefix="/api/v1")
 app.include_router(job_roles.router, prefix="/api/v1")
-app.include_router(colleges.router, prefix="/api/v1")
 
-@app.get("/")
-async def root():
-    return RedirectResponse(url="/static/index.html")
-
-@app.get("/api/v1")
-async def read_root():
-    return {"message": "Welcome to Skillovate API v1"}
+# Health check
+@app.get("/api/v1/health", tags=["health"])
+def health_check():
+    return {"status": "healthy", "version": "1.0.0"}

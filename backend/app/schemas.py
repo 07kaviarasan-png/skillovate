@@ -1,6 +1,16 @@
-from pydantic import BaseModel, EmailStr, Field
-from typing import List, Optional, Any
+from pydantic import BaseModel, EmailStr, Field, field_validator
+from typing import List, Optional, Any, Dict, Union
 import datetime
+import json
+
+# --- Helper for parsing JSON strings from SQLite ---
+def parse_json_field(v: Any) -> Any:
+    if isinstance(v, str):
+        try:
+            return json.loads(v)
+        except json.JSONDecodeError:
+            return v
+    return v
 
 # --- Profile Schemas ---
 
@@ -59,7 +69,6 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str
-    # Optional profile data can be passed during creation
     student_profile: Optional[StudentProfileCreate] = None
     faculty_profile: Optional[FacultyProfileCreate] = None
     recruiter_profile: Optional[RecruiterProfileCreate] = None
@@ -81,7 +90,126 @@ class User(UserBase):
     class Config:
         from_attributes = True
 
-# --- Token Schemas ---
+# --- Assessment Schemas ---
+
+class QuestionBase(BaseModel):
+    category: str
+    question_text: str
+    options: Union[List[str], str]
+    correct_answer: str
+    explanation: Optional[str] = None
+    data_presentation: Optional[str] = None
+
+class QuestionCreate(QuestionBase):
+    pass
+
+class Question(QuestionBase):
+    id: int
+
+    @field_validator('options', mode='before')
+    @classmethod
+    def validate_options(cls, v):
+        return parse_json_field(v)
+
+    class Config:
+        from_attributes = True
+
+class AssessmentBase(BaseModel):
+    title: str
+    description: Optional[str] = None
+    duration_minutes: int = 60
+    passing_score: float = 40.0
+    total_questions: int = 20
+    difficulty: str = "medium"
+    category: Optional[str] = None
+    is_published: bool = False
+    scheduled_at: Optional[datetime.datetime] = None
+
+class AssessmentCreate(AssessmentBase):
+    question_ids: Optional[List[int]] = None
+
+class AssessmentUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    duration_minutes: Optional[int] = None
+    passing_score: Optional[float] = None
+    total_questions: Optional[int] = None
+    difficulty: Optional[str] = None
+    category: Optional[str] = None
+    is_published: Optional[bool] = None
+    scheduled_at: Optional[datetime.datetime] = None
+
+class Assessment(AssessmentBase):
+    id: int
+    created_at: datetime.datetime
+    questions: List[Question] = []
+
+    class Config:
+        from_attributes = True
+
+class AssessmentAttemptBase(BaseModel):
+    assessment_id: int
+
+class AssessmentAttemptCreate(AssessmentAttemptBase):
+    pass
+
+class AssessmentAttemptUpdate(BaseModel):
+    responses: Dict[str, str]
+    status: str = "completed"
+
+class AssessmentAttempt(AssessmentAttemptBase):
+    id: int
+    user_id: int
+    score: Optional[float] = None
+    percentage: Optional[float] = None
+    status: str
+    responses: Optional[Union[str, Dict]] = None
+    results_analysis: Optional[Union[str, Dict]] = None
+    started_at: datetime.datetime
+    completed_at: Optional[datetime.datetime] = None
+    assessment: Assessment
+
+    @field_validator('responses', 'results_analysis', mode='before')
+    @classmethod
+    def validate_json_fields(cls, v):
+        return parse_json_field(v)
+
+    class Config:
+        from_attributes = True
+
+# --- Interview Schemas ---
+
+class InterviewSessionBase(BaseModel):
+    category: str
+
+class InterviewSessionCreate(InterviewSessionBase):
+    pass
+
+class InterviewSessionUpdate(BaseModel):
+    responses: List[Dict[str, Any]] # List of {question_id, response, feedback, rating}
+    status: str = "completed"
+    overall_score: Optional[float] = None
+    feedback: Optional[str] = None
+
+class InterviewSession(InterviewSessionBase):
+    id: int
+    user_id: int
+    status: str
+    responses: Optional[Union[str, List]] = None
+    overall_score: Optional[float] = None
+    feedback: Optional[str] = None
+    started_at: datetime.datetime
+    completed_at: Optional[datetime.datetime] = None
+
+    @field_validator('responses', mode='before')
+    @classmethod
+    def validate_responses(cls, v):
+        return parse_json_field(v)
+
+    class Config:
+        from_attributes = True
+
+# --- Existing Schemas ---
 
 class Token(BaseModel):
     access_token: str
@@ -90,8 +218,6 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     username: Optional[str] = None
     role: Optional[str] = None
-
-# --- College Schemas ---
 
 class CollegeBase(BaseModel):
     name: str
@@ -115,8 +241,6 @@ class College(CollegeBase):
     class Config:
         from_attributes = True
 
-# --- Batch Schemas ---
-
 class BatchBase(BaseModel):
     name: str
     academic_year: Optional[str] = None
@@ -138,27 +262,6 @@ class Batch(BatchBase):
     class Config:
         from_attributes = True
 
-# --- Question Schemas ---
-
-class QuestionBase(BaseModel):
-    category: str
-    question_text: str
-    options: List[str]
-    correct_answer: str
-    explanation: Optional[str] = None
-    data_presentation: Optional[str] = None
-
-class QuestionCreate(QuestionBase):
-    pass
-
-class Question(QuestionBase):
-    id: int
-
-    class Config:
-        from_attributes = True
-
-# --- MNC Schemas ---
-
 class MNCBase(BaseModel):
     name: str
     short_name: str
@@ -177,8 +280,6 @@ class MNC(MNCBase):
 
     class Config:
         from_attributes = True
-
-# --- JobRole Schemas ---
 
 class JobRoleBase(BaseModel):
     name: str

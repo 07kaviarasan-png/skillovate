@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .database import create_db_and_tables
-from .routers import auth, users
+from .routers import auth, users, colleges, batches, profiles
 
 app = FastAPI(title="Skillovate API")
 
@@ -23,6 +23,9 @@ app.add_middleware(
 
 app.include_router(auth.router, prefix="/api")
 app.include_router(users.router, prefix="/api")
+app.include_router(colleges.router, prefix="/api")
+app.include_router(batches.router, prefix="/api")
+app.include_router(profiles.router, prefix="/api")
 
 
 @app.on_event("startup")
