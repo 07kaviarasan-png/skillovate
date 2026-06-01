@@ -1,0 +1,134 @@
+"use client";
+
+import React, { useState } from "react";
+import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
+import { useAuthStore } from "@/stores/authStore";
+
+export function HrLogin() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { login } = useAuthStore();
+
+  const handleLogin = async () => {
+    setError("");
+    if (password === "hr123") {
+      login(
+        {
+          _id: "demo-hr-id",
+          email: email || "hr@company.com",
+          name: email.split("@")[0] || "Recruiter",
+          role: "hr",
+        },
+        "hr-token"
+      );
+    } else {
+      setError("Invalid credentials. Try hr123");
+    }
+  };
+
+  return (
+    <AuthSplitLayout
+      leftContent={
+        <>
+          <div className="lp-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="10" height="10">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
+            HR & Recruiter Platform
+          </div>
+          <div className="lp-title">
+            Hire smarter.
+            <br />
+            Source better.
+          </div>
+          <div className="lp-sub">
+            AI-ranked aptitude profiles, interview scores, and placement-ready talent — all in one recruiter dashboard.
+          </div>
+          <div className="lp-stats">
+            <div className="lp-stat">
+              <div className="lp-stat-val">450+</div>
+              <div className="lp-stat-lbl">Colleges enrolled</div>
+            </div>
+            <div className="lp-stat">
+              <div className="lp-stat-val">2.4L+</div>
+              <div className="lp-stat-lbl">Scored profiles</div>
+            </div>
+            <div className="lp-stat">
+              <div className="lp-stat-val">94%</div>
+              <div className="lp-stat-lbl">Hire success rate</div>
+            </div>
+            <div className="lp-stat">
+              <div className="lp-stat-val">30+</div>
+              <div className="lp-stat-lbl">Partner companies</div>
+            </div>
+          </div>
+          <div className="lp-avs">
+            <div className="lp-av-stack">
+              <div className="lp-av">ZO</div>
+              <div className="lp-av">TC</div>
+              <div className="lp-av">IN</div>
+              <div className="lp-av">HX</div>
+            </div>
+            <span className="lp-av-text">Trusted by top MNC recruiters</span>
+          </div>
+        </>
+      }
+    >
+      <div className="lp-card">
+        <div className="lp-heading">
+          <h2>HR / Recruiter Login</h2>
+          <p>Sign in to access your talent sourcing dashboard</p>
+        </div>
+        <div className="linfo">
+          <strong>Demo credentials:</strong> Any work email &amp; password <strong>hr123</strong>
+        </div>
+        <label className="lbl">Work Email</label>
+        <input
+          type="email"
+          className="fi"
+          placeholder="hr@company.com"
+          style={{ marginBottom: "12px" }}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+          <label className="lbl">Password</label>
+          <a href="#" style={{ fontSize: "12px", marginBottom: "6px", color: "var(--accent)" }}>
+            Forgot Password?
+          </a>
+        </div>
+        <input
+          type="password"
+          className="fi"
+          placeholder="••••••••"
+          style={{ marginBottom: "14px" }}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+        />
+        {error && (
+          <div className="auth-warn" style={{ display: "block", marginBottom: "12px" }}>
+            {error}
+          </div>
+        )}
+        <button className="l-submit l-submit-blue" onClick={handleLogin}>
+          Access HR Dashboard
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
+            <polyline points="9,18 15,12 9,6" />
+          </svg>
+        </button>
+        <div className="or-div" style={{ marginTop: "16px" }}>
+          OR
+        </div>
+        <div className="google-login-btn-container" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          {/* Google Login Placeholder */}
+        </div>
+        <div className="l-footer">
+          New company? <a href="#">Create Account</a>
+        </div>
+      </div>
+    </AuthSplitLayout>
+  );
+}

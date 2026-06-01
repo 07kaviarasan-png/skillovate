@@ -3,19 +3,22 @@ import os
 import re
 import sys
 import requests # For fetching logos
+import json5 # Import json5 library
 
 from sqlalchemy.orm import Session
 
 # Get the directory of the current script
+print(f"Current working directory: {os.getcwd()}")
 script_dir = os.path.dirname(os.path.abspath(__file__))
 # Get the project root directory (two levels up from scripts/)
 project_root = os.path.abspath(os.path.join(script_dir, '..', '..'))
 
 # Add the backend directory to sys.path to allow 'app' to be imported as a package
-sys.path.append(os.path.join(project_root, 'backend'))
+sys.path.append(os.path.abspath(os.path.join(script_dir, '..')))
 
 # Corrected imports for ingest_data.py
 from app.database import SessionLocal, engine
+from app import models
 from app.models import Base, Question, MNC, JobRole, College
 from app.crud import create_question, create_mnc, create_job_role, create_college
 from app.schemas import QuestionCreate, MNCCreate, JobRoleCreate, CollegeCreate
@@ -45,34 +48,24 @@ def extract_logo_url(html_img_tag):
     return None
 
 def preprocess_js_string_to_json(js_string):
-    # Remove single line comments
-    js_string = re.sub(r'//[^
-]*', '', js_string) # Corrected single-line comment regex
-    # Remove multi-line comments
-    js_string = re.sub(r'/\*.*?\*/', '', js_string, flags=re.DOTALL)
+    # json5 handles unquoted keys, single quotes, and trailing commas.
+    # It does NOT handle multi-line comments and backtick string literals as JSON strings natively.
 
-    # Replace JavaScript backtick strings with double-quoted JSON strings
-    js_string = re.sub(r'`([^`]*)`', r'"\1"', js_string)
-
-    # Quote unquoted keys.
-    js_string = re.sub(r'([{,]\s*)([a-zA-Z_]\w*)\s*:', r'\1"\2":', js_string)
-
-    # Function to replace single quotes with double quotes and escape internal double quotes
-    def _convert_and_escape(match):
+    # Convert JS backtick strings to properly escaped JSON strings
+    def _convert_backticks_to_json_string(match):
         content = match.group(1)
-        # Escape any double quotes within the content
-        content = content.replace('"', '"')
+        # Escape any double quotes and backslashes within the content
+        content = content.replace('\\', '\\\\').replace('"', '\\"')
+        # Handle multi-line backticks by replacing newlines with \n
+        content = content.replace('\n', '\\n')
         return f'"{content}"'
+    
+    # Corrected regex to match backtick strings with potential escaped characters
+    js_string = re.sub(r'`((?:[^`\\]|\\.)*)`', _convert_backticks_to_json_string, js_string)
 
-    # Apply this to single-quoted strings
-    js_string = re.sub(r"'((?:[^'\]|\.)*)'", _convert_and_escape, js_string)
-    # Apply this to already double-quoted strings (to ensure internal quotes are escaped)
-    js_string = re.sub(r'"((?:[^"\]|\.)*)"', _convert_and_escape, js_string)
-
-    # Remove trailing commas from objects and arrays
-    js_string = re.sub(r',\s*}', '}', js_string)
-    js_string = re.sub(r',\s*]', ']', js_string)
-
+    # Remove multi-line comments (json5 handles single-line comments)
+    js_string = re.sub(r'/\*.*?\*/', '', js_string, flags=re.DOTALL)
+    
     return js_string
 
 def ingest_data_from_js(db: Session, js_file_path: str):
@@ -89,7 +82,7 @@ def ingest_data_from_js(db: Session, js_file_path: str):
     if qs_match:
         qs_data_str = preprocess_js_string_to_json(qs_match.group(1))
         try:
-            qs_data = json.loads(qs_data_str)
+            qs_data = json5.loads(qs_data_str) # Use json5.loads
             for category, questions in qs_data.items():
                 for q_data in questions:
                     correct_answer = q_data['opts'][q_data['ans']]
@@ -110,16 +103,16 @@ def ingest_data_from_js(db: Session, js_file_path: str):
                     else:
                         print(f"Skipping duplicate question (Qs): {q_data['q'][:50]}...")
             print("Qs data ingested.")
-        except json.JSONDecodeError as e:
+        except (ValueError, json.JSONDecodeError) as e: # Catch ValueError for json5 errors
             print(f"Error parsing Qs JSON: {e}")
-            print(f"Problematic string around position {e.pos}: {qs_data_str[e.pos-50:e.pos+50]}")
+            print(f"Problematic string: {qs_data_str}")
 
     # Ingest MNCs data
     mncs_match = re.search(r"const MNCs = (\[.*?\]);", content, re.DOTALL)
     if mncs_match:
         mncs_data_str = preprocess_js_string_to_json(mncs_match.group(1))
         try:
-            mncs_data = json.loads(mncs_data_str)
+            mncs_data = json5.loads(mncs_data_str) # Use json5.loads
             for mnc_data in mncs_data:
                 # The 'logo' field is a string containing an <img> tag in the JS file.
                 # Extract the URL from it.
@@ -134,22 +127,22 @@ def ingest_data_from_js(db: Session, js_file_path: str):
                     question_bank_size=mnc_data['qb'],
                     note=mnc_data.get('note')
                 )
-                existing_mnc = db.query(MNC).filter(MNC.name == mnc_data['name']).first()
+                existing_mnc = db.query(models.MNC).filter(models.MNC.name == mnc_data['name']).first()
                 if not existing_mnc:
                     create_mnc(db, mnc_schema)
                 else:
                     print(f"Skipping duplicate MNC: {mnc_data['name']}")
             print("MNCs data ingested.")
-        except json.JSONDecodeError as e:
+        except (ValueError, json.JSONDecodeError) as e: # Catch ValueError for json5 errors
             print(f"Error parsing MNCs JSON: {e}")
-            print(f"Problematic string around position {e.pos}: {mncs_data_str[e.pos-50:e.pos+50]}")
+            print(f"Problematic string: {mncs_data_str}")
 
     # Ingest MNCQs data (similar to Qs but flat)
     mncqs_match = re.search(r"const MNCQs = (\[.*?\]);", content, re.DOTALL)
     if mncqs_match:
         mncqs_data_str = preprocess_js_string_to_json(mncqs_match.group(1))
         try:
-            mncqs_data = json.loads(mncqs_data_str)
+            mncqs_data = json5.loads(mncqs_data_str) # Use json5.loads
             for q_data in mncqs_data:
                 correct_answer = q_data['opts'][q_data['ans']]
                 question_data = QuestionCreate(
@@ -169,16 +162,16 @@ def ingest_data_from_js(db: Session, js_file_path: str):
                 else:
                     print(f"Skipping duplicate MNCQ: {q_data['q'][:50]}...")
             print("MNCQs data ingested.")
-        except json.JSONDecodeError as e:
+        except (ValueError, json.JSONDecodeError) as e: # Catch ValueError for json5 errors
             print(f"Error parsing MNCQs JSON: {e}")
-            print(f"Problematic string around position {e.pos}: {mncqs_data_str[e.pos-50:e.pos+50]}")
+            print(f"Problematic string: {mncqs_data_str}")
 
     # Ingest ivQs data (Interview Questions)
     ivqs_match = re.search(r"const ivQs = (\[.*?\]);", content, re.DOTALL)
     if ivqs_match:
         ivqs_data_str = preprocess_js_string_to_json(ivqs_match.group(1))
         try:
-            ivqs_data = json.loads(ivqs_data_str)
+            ivqs_data = json5.loads(ivqs_data_str) # Use json5.loads
             for q_data in ivqs_data:
                 suggestions_json = json.dumps(q_data['sugs'])
                 question_data = QuestionCreate(
@@ -198,9 +191,9 @@ def ingest_data_from_js(db: Session, js_file_path: str):
                 else:
                     print(f"Skipping duplicate interview question: {q_data['q'][:50]}...")
             print("Interview questions (ivQs) data ingested.")
-        except json.JSONDecodeError as e:
+        except (ValueError, json.JSONDecodeError) as e: # Catch ValueError for json5 errors
             print(f"Error parsing ivQs JSON: {e}")
-            print(f"Problematic string around position {e.pos}: {ivqs_data_str[e.pos-50:e.pos+50]}")
+            print(f"Problematic string: {ivqs_data_str}")
 
     # Ingest jobRoles data
     job_roles_match = re.search(r"const jobRoles = (\[.*?\]);", content, re.DOTALL)
@@ -208,7 +201,7 @@ def ingest_data_from_js(db: Session, js_file_path: str):
         job_roles_data_str = preprocess_js_string_to_json(job_roles_match.group(1))
         job_roles_data_str = job_roles_data_str.replace('"∞"', '"-1"') # Use -1 for infinity for easier parsing
         try:
-            job_roles_data = json.loads(job_roles_data_str)
+            job_roles_data = json5.loads(job_roles_data_str) # Use json5.loads
             for jr_data in job_roles_data:
                 job_role_schema = JobRoleCreate(
                     name=jr_data['n'],
@@ -216,22 +209,22 @@ def ingest_data_from_js(db: Session, js_file_path: str):
                     icon=jr_data['icon'],
                     num_questions_estimate=str(jr_data['q']) # Store as string as per schema
                 )
-                existing_jr = db.query(JobRole).filter(JobRole.name == jr_data['n']).first()
+                existing_jr = db.query(models.JobRole).filter(models.JobRole.name == jr_data['n']).first()
                 if not existing_jr:
                     create_job_role(db, job_role_schema)
                 else:
                     print(f"Skipping duplicate Job Role: {jr_data['n']}")
             print("Job Roles data ingested.")
-        except json.JSONDecodeError as e:
+        except (ValueError, json.JSONDecodeError) as e: # Catch ValueError for json5 errors
             print(f"Error parsing Job Roles JSON: {e}")
-            print(f"Problematic string around position {e.pos}: {job_roles_data_str[e.pos-50:e.pos+50]}")
+            print(f"Problematic string: {job_roles_data_str}")
 
     # Ingest colleges data
     colleges_match = re.search(r"const colleges = (\[.*?\]);", content, re.DOTALL)
     if colleges_match:
         colleges_data_str = preprocess_js_string_to_json(colleges_match.group(1))
         try:
-            colleges_data = json.loads(colleges_data_str)
+            colleges_data = json5.loads(colleges_data_str) # Use json5.loads
             for col_data in colleges_data:
                 college_schema = CollegeCreate(
                     name=col_data['name'],
@@ -239,15 +232,15 @@ def ingest_data_from_js(db: Session, js_file_path: str):
                     num_students=col_data['students'],
                     is_enabled=col_data['enabled']
                 )
-                existing_college = db.query(College).filter(College.code == col_data['code']).first()
+                existing_college = db.query(models.College).filter(models.College.code == col_data['code']).first()
                 if not existing_college:
                     create_college(db, college_schema)
                 else:
                     print(f"Skipping duplicate College: {col_data['name']}")
             print("Colleges data ingested.")
-        except json.JSONDecodeError as e:
+        except (ValueError, json.JSONDecodeError) as e: # Catch ValueError for json5 errors
             print(f"Error parsing Colleges JSON: {e}")
-            print(f"Problematic string around position {e.pos}: {colleges_data_str[e.pos-50:e.pos+50]}")
+            print(f"Problematic string: {colleges_data_str}")
 
 def ingest_json_files(db: Session, json_dir: str, category: str):
     print(f"Ingesting JSON files from {json_dir} for category '{category}'...")
@@ -261,7 +254,7 @@ def ingest_json_files(db: Session, json_dir: str, category: str):
                 filepath = os.path.join(json_dir, filename)
                 try:
                     with open(filepath, 'r') as f:
-                        data = json.load(f)
+                        data = json.load(f) # Still using json.load for strict JSON files
                         if isinstance(data, list):
                             for item in data:
                                 if 'question' in item and 'options' in item and 'answer' in item:
@@ -376,10 +369,10 @@ def ingest_json_files(db: Session, json_dir: str, category: str):
                             else:
                                 print(f"Skipping non-question object JSON in {filename}: {data}")
                 except json.JSONDecodeError as e:
-                    # Added encoding='utf-8-sig' for BOM issue
+                    # Fallback to json5 for less strict JSON files
                     try:
                         with open(filepath, 'r', encoding='utf-8-sig') as f_bom:
-                            data = json.load(f_bom)
+                            data = json5.load(f_bom) # Use json5.load for JSONDecodeError fallback
                             if isinstance(data, list): # Process list of questions
                                 for item in data:
                                     if 'question' in item and 'options' in item and 'answer' in item:
@@ -461,8 +454,8 @@ def ingest_json_files(db: Session, json_dir: str, category: str):
                                         print(f"Skipping malformed item in questions list (BOM retry) in {filename}: {item}")
                             else:
                                 print(f"Skipping non-list/non-object-with-questions JSON (BOM retry) in {filename}")
-                    except json.JSONDecodeError as e_bom:
-                        print(f"Error parsing JSON file {filename} even with BOM handling: {e_bom}")
+                    except (ValueError, json.JSONDecodeError) as e_bom: # Catch ValueError for json5 errors
+                        print(f"Error parsing JSON file {filename} even with BOM handling (json5 fallback): {e_bom}")
                     except Exception as e_bom:
                         print(f"An unexpected error occurred during BOM retry for {filename}: {e_bom}")
                 except Exception as e:
@@ -477,7 +470,10 @@ if __name__ == "__main__":
     db = next(db_generator) # Get a database session
 
     # Ingest data from frontend/data.js
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Calculated project_root: {project_root}")
     frontend_data_js_path = os.path.join(project_root, "frontend", "data.js")
+    print(f"Calculated frontend_data_js_path: {frontend_data_js_path}")
     ingest_data_from_js(db, frontend_data_js_path)
 
     # Ingest data from other JSON files
