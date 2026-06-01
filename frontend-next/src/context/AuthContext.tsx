@@ -40,13 +40,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem('token', res.data.access_token);
     const userRes = await authApi.getMe();
     setUser(userRes.data);
-    router.push('/dashboard');
+    router.replace('/dashboard');
   };
 
   const logout = () => {
     localStorage.removeItem('token');
     setUser(null);
-    router.push('/login');
+    router.replace('/login');
   };
 
   return (

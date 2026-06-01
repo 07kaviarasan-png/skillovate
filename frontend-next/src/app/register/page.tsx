@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { authApi } from '@/lib/api';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { BrainCircuit, User, Mail, Lock, Briefcase, GraduationCap, ArrowRight } from 'lucide-react';
 
@@ -15,7 +17,18 @@ export default function RegisterPage() {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const router = useRouter();
+
+  useEffect(() => {
+    if (!authLoading && isAuthenticated) {
+      router.replace('/dashboard');
+    }
+  }, [authLoading, isAuthenticated, router]);
+
+  if (authLoading || isAuthenticated) {
+    return <div className="min-h-screen bg-[#FCFDFF]" />;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +37,7 @@ export default function RegisterPage() {
     
     try {
       await authApi.register(formData);
-      router.push('/login?registered=true');
+      router.replace('/login?registered=true');
     } catch (err) {
       setError('Registration failed. Username or email might already exist.');
     } finally {

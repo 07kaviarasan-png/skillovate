@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { BrainCircuit, ArrowRight, User, Mail, Lock, ShieldCheck } from 'lucide-react';
 
@@ -9,7 +11,18 @@ export default function StudentLoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useAuth();
+  const { login, isAuthenticated, loading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && isAuthenticated) {
+      router.replace('/dashboard');
+    }
+  }, [isAuthenticated, loading, router]);
+
+  if (loading || isAuthenticated) {
+    return <div className="min-h-screen bg-[#FCFDFF]" />;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

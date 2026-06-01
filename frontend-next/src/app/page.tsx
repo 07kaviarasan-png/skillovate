@@ -1,9 +1,25 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { ArrowRight, BrainCircuit, Target, Briefcase } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Home() {
+  const { isAuthenticated, loading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && isAuthenticated) {
+      router.replace('/dashboard');
+    }
+  }, [isAuthenticated, loading, router]);
+
+  if (loading || isAuthenticated) {
+    return <div className="min-h-screen bg-[#FCFDFF]" />;
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}

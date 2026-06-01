@@ -3,87 +3,247 @@
 import React, { useState } from "react";
 import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
 import { useAuthStore } from "@/stores/authStore";
+import { api } from "@/lib/api";
 
-export function LearnerLogin() {
+interface LearnerLoginProps {
+  initialMode?: "login" | "signup";
+}
+
+export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
+  const [tab, setTab] = useState<"login" | "signup">(initialMode);
+  const [loading, setLoading] = useState(false);
+
+  // Login state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [loginError, setLoginError] = useState("");
+
+  // Signup state
+  const [signupName, setSignupName] = useState("");
+  const [signupEmail, setSignupEmail] = useState("");
+  const [signupPassword, setSignupPassword] = useState("");
+  const [signupCollege, setSignupCollege] = useState("");
+  const [signupError, setSignupError] = useState("");
+
   const { login } = useAuthStore();
 
   const handleLogin = async () => {
-    setError("");
-    // Simulation of login for now as per demo credentials in original HTML
-    if (password === "student123") {
+    setLoginError("");
+    if (!email || !password) {
+      setLoginError("Please enter your email and password.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await api.post("/auth/login", { email, password });
+      const { user, token } = res.data.data;
       login(
         {
-          _id: "demo-student-id",
-          email: email || "student@gmail.com",
-          name: email.split("@")[0] || "Demo Student",
-          role: "student",
+          _id: user._id || user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role,
+          college_id: user.college_id || user.collegeId,
+          college_name: user.college_name,
         },
-        "demo-token"
+        token
       );
-    } else {
-      setError("Invalid credentials. Try student123");
+    } catch (err: unknown) {
+      const error = err as { response?: { data?: { detail?: string } } };
+      setLoginError(
+        error?.response?.data?.detail || "Invalid credentials. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSignup = async () => {
+    setSignupError("");
+    if (!signupName.trim()) return setSignupError("Please enter your full name.");
+    if (!signupEmail.trim()) return setSignupError("Please enter your Gmail address.");
+    if (!signupPassword.trim()) return setSignupError("Please choose a password.");
+    setLoading(true);
+    try {
+      const res = await api.post("/auth/register", {
+        name: signupName,
+        email: signupEmail,
+        password: signupPassword,
+        role: "student",
+        ...(signupCollege ? { college_name: signupCollege } : {}),
+      });
+      const { user, token } = res.data.data;
+      login(
+        {
+          _id: user._id || user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role,
+          college_id: user.college_id || user.collegeId,
+          college_name: user.college_name,
+        },
+        token
+      );
+    } catch (err: unknown) {
+      const error = err as { response?: { data?: { detail?: string } } };
+      setSignupError(
+        error?.response?.data?.detail || "Registration failed. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <AuthSplitLayout>
       <div className="lp-card">
-        <div className="lp-heading">
-          <h2>Learner Login</h2>
-          <p>Sign in to continue your aptitude journey</p>
+        {/* Tab switcher */}
+        <div className="l-tabs">
+          <button
+            className={`l-tab ${tab === "login" ? "active" : ""}`}
+            onClick={() => setTab("login")}
+          >
+            Sign In
+          </button>
+          <button
+            className={`l-tab ${tab === "signup" ? "active" : ""}`}
+            onClick={() => setTab("signup")}
+          >
+            Sign Up Free
+          </button>
         </div>
-        <div className="linfo">
-          <strong>Demo credentials:</strong> Any Gmail &amp; password <strong>student123</strong>
-        </div>
-        <label className="lbl">Gmail Address</label>
-        <input
-          type="email"
-          className="fi"
-          placeholder="name@gmail.com"
-          style={{ marginBottom: "12px" }}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-          <label className="lbl">Password</label>
-          <a href="#" style={{ fontSize: "12px", marginBottom: "6px", color: "var(--accent)" }}>
-            Forgot Password?
-          </a>
-        </div>
-        <input
-          type="password"
-          className="fi"
-          placeholder="••••••••"
-          style={{ marginBottom: "14px" }}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-        />
-        {error && (
-          <div className="auth-warn" style={{ display: "block", marginBottom: "12px" }}>
-            {error}
+
+        {/* ─── LOGIN PANEL ─── */}
+        {tab === "login" && (
+          <div className="l-panel active">
+            <div className="lp-heading">
+              <h2>Learner Login</h2>
+              <p>Sign in to continue your aptitude journey</p>
+            </div>
+            <label className="lbl">Gmail Address</label>
+            <input
+              type="email"
+              className="fi"
+              placeholder="name@gmail.com"
+              style={{ marginBottom: "12px" }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+              <label className="lbl">Password</label>
+              <a href="#" style={{ fontSize: "12px", marginBottom: "6px", color: "var(--accent)" }}>
+                Forgot Password?
+              </a>
+            </div>
+            <input
+              type="password"
+              className="fi"
+              placeholder="••••••••"
+              style={{ marginBottom: "14px" }}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            />
+            {loginError && (
+              <div className="auth-warn" style={{ display: "block", marginBottom: "12px" }}>
+                {loginError}
+              </div>
+            )}
+            <button
+              className="l-submit l-submit-blue"
+              onClick={handleLogin}
+              disabled={loading}
+              style={{ opacity: loading ? 0.7 : 1 }}
+            >
+              {loading ? "Signing in…" : "Sign In to Learner Portal"}
+              {!loading && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
+                  <polyline points="9,18 15,12 9,6" />
+                </svg>
+              )}
+            </button>
+            <div className="l-footer" style={{ marginTop: "16px" }}>
+              No account?{" "}
+              <a href="#" onClick={(e) => { e.preventDefault(); setTab("signup"); }}>
+                Sign up free
+              </a>
+            </div>
           </div>
         )}
-        <button className="l-submit l-submit-blue" onClick={handleLogin}>
-          Sign In to Learner Portal
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
-            <polyline points="9,18 15,12 9,6" />
-          </svg>
-        </button>
-        <div style={{ margin: "15px 0 10px", display: "flex", alignItems: "center", gap: "10px" }}>
-          <div style={{ flex: 1, height: "1px", background: "var(--border)" }}></div>
-          <span style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase" }}>or</span>
-          <div style={{ flex: 1, height: "1px", background: "var(--border)" }}></div>
-        </div>
-        <div className="google-login-btn-container" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-          {/* Google Login Placeholder */}
-        </div>
-        <div className="l-footer">
-          No account? <a href="#">Sign up free</a>
-        </div>
+
+        {/* ─── SIGNUP PANEL ─── */}
+        {tab === "signup" && (
+          <div className="l-panel active">
+            <div className="lp-heading">
+              <h2>Create Account</h2>
+              <p>Start your AI-powered placement journey today</p>
+            </div>
+            <label className="lbl">Full Name</label>
+            <input
+              type="text"
+              className="fi"
+              placeholder="Your full name"
+              style={{ marginBottom: "12px" }}
+              value={signupName}
+              onChange={(e) => setSignupName(e.target.value)}
+            />
+            <label className="lbl">Gmail Address</label>
+            <input
+              type="email"
+              className="fi"
+              placeholder="name@gmail.com"
+              style={{ marginBottom: "12px" }}
+              value={signupEmail}
+              onChange={(e) => setSignupEmail(e.target.value)}
+            />
+            <label className="lbl">
+              College / Institution{" "}
+              <span style={{ color: "var(--muted)", fontWeight: 400 }}>(optional)</span>
+            </label>
+            <input
+              type="text"
+              className="fi"
+              placeholder="e.g. PSG College of Technology"
+              style={{ marginBottom: "12px" }}
+              value={signupCollege}
+              onChange={(e) => setSignupCollege(e.target.value)}
+            />
+            <label className="lbl">Password</label>
+            <input
+              type="password"
+              className="fi"
+              placeholder="Choose a strong password"
+              style={{ marginBottom: "14px" }}
+              value={signupPassword}
+              onChange={(e) => setSignupPassword(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSignup()}
+            />
+            {signupError && (
+              <div className="auth-warn" style={{ display: "block", marginBottom: "12px" }}>
+                {signupError}
+              </div>
+            )}
+            <button
+              className="l-submit l-submit-blue"
+              onClick={handleSignup}
+              disabled={loading}
+              style={{ opacity: loading ? 0.7 : 1 }}
+            >
+              {loading ? "Creating account…" : "Create Free Account"}
+              {!loading && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
+                  <polyline points="9,18 15,12 9,6" />
+                </svg>
+              )}
+            </button>
+            <div className="l-footer" style={{ marginTop: "16px" }}>
+              Already have an account?{" "}
+              <a href="#" onClick={(e) => { e.preventDefault(); setTab("login"); }}>
+                Sign in
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </AuthSplitLayout>
   );
