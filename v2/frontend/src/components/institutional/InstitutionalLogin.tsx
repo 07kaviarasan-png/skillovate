@@ -51,11 +51,7 @@ export function InstitutionalLogin() {
       }
       formData.append("password", password);
 
-      const res = await api.post("/auth/login", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await api.post("/auth/login", formData);
 
       const { user, access_token } = res.data;
       login(
@@ -69,10 +65,16 @@ export function InstitutionalLogin() {
         access_token
       );
     } catch (err: unknown) {
-      const error = err as { response?: { data?: { detail?: string } } };
-      setError(
-        error?.response?.data?.detail || "Invalid credentials. Please try again."
-      );
+      const error = err as { response?: { data?: { detail?: any } } };
+      let errMsg = "Invalid credentials. Please try again.";
+      if (error?.response?.data?.detail) {
+        if (Array.isArray(error.response.data.detail)) {
+          errMsg = error.response.data.detail.map((e: any) => e.msg).join(", ");
+        } else if (typeof error.response.data.detail === "string") {
+          errMsg = error.response.data.detail;
+        }
+      }
+      setError(errMsg);
     } finally {
       setLoading(false);
     }

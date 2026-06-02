@@ -320,31 +320,33 @@ export default function HrPage() {
                     <button onClick={() => handleRemoveSkill(skill)} style={{ background: "none", border: "none", cursor: "pointer", marginLeft: "4px", color: "var(--accent)" }}>×</button>
                   </span>
                 ))}
-                <input 
-                  type="text" 
-                  value={newSkill} 
-                  onChange={(e) => setNewSkill(e.target.value)} 
-                  onKeyDown={(e) => e.key === "Enter" && handleAddSkill()}
-                  placeholder="Type and press enter" 
-                  style={{ border: "none", background: "transparent", outline: "none", fontSize: "12px", width: "120px" }} 
-                />
-                <button className="btn btn-g btn-sm" onClick={handleAddSkill}>+ Add</button>
+                <div style={{ display: "flex", flex: 1, minWidth: "150px" }}>
+                  <input
+                    style={{ border: "none", background: "transparent", outline: "none", flex: 1, fontSize: "13px", color: "var(--text)" }}
+                    placeholder="Type skill & press Enter..."
+                    value={newSkill}
+                    onChange={(e) => setNewSkill(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        handleAddSkill();
+                      }
+                    }}
+                  />
+                  <button className="btn btn-g btn-sm" onClick={handleAddSkill} style={{ padding: "4px 8px", fontSize: "11px" }}>+ Add</button>
+                </div>
               </div>
-              <label className="input-lbl">
-                Minimum Aptitude Score <span style={{ color: "var(--faint)", fontWeight: 400 }}>(optional)</span>
-              </label>
-              <input className="input-field" type="number" placeholder="e.g. 70" value={minScore} onChange={(e) => setMinScore(e.target.value)} />
+
+              <label className="input-lbl">Minimum Aptitude Score <span style={{ color: "var(--faint)", fontWeight: 400 }}>(optional)</span></label>
+              <input type="number" className="input-field" placeholder="e.g. 70" value={minScore} onChange={(e) => setMinScore(e.target.value)} />
+
               <label className="input-lbl">Graduation Year</label>
-              <input 
-                className="input-field" 
-                type="text" 
-                placeholder="e.g. 2024, 2025 (or leave blank for any)" 
-                value={gradYear === "Any year" ? "" : gradYear} 
-                onChange={(e) => setGradYear(e.target.value || "Any year")} 
-              />
+              <input className="input-field" placeholder="e.g. 2024, 2025 (or leave blank for any)" value={gradYear} onChange={(e) => setGradYear(e.target.value)} />
+
               <label className="input-lbl">Job Description</label>
-              <textarea className="input-field" rows={4} placeholder="Paste JD here — students see this before applying" style={{ resize: "none" }} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
-              <button className="btn btn-p" style={{ width: "100%", justifyContent: "center" }} onClick={handlePostVacancy} disabled={loading}>
+              <textarea className="input-field" rows={5} placeholder="Paste JD here — students see this before applying" value={description} onChange={(e) => setDescription(e.target.value)} style={{ resize: "vertical" }} />
+
+              <button className="btn btn-p" style={{ width: "100%", justifyContent: "center", marginTop: "8px" }} onClick={handlePostVacancy} disabled={loading}>
                 {loading ? "Posting..." : "Post Vacancy Live"}
               </button>
             </div>

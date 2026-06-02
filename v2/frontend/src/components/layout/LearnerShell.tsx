@@ -38,11 +38,15 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
   ];
 
   return (
-    <div id="app" className={`${isSidebarCollapsed ? "sidebar-collapsed" : ""} ${isMobileSidebarOpen ? "mob-sidebar-open" : ""}`}>
+    <div id="app" className={isMobileSidebarOpen ? "mob-sidebar-open" : ""}>
       {/* Sidebar */}
-      <div id="sidebar">
-        <div className="s-logo">
-          <img src="/logo.png" alt="SKILLOVATE" className="brand-logo" />
+      <div id="sidebar" className={isSidebarCollapsed ? "collapsed" : ""}>
+        <div className="s-logo" style={{ justifyContent: isSidebarCollapsed ? "center" : "flex-start", padding: isSidebarCollapsed ? "16px 0" : "16px 14px 15px" }}>
+          {isSidebarCollapsed ? (
+            <div style={{ fontSize: "22px", fontWeight: 800, color: "var(--accent)", letterSpacing: "-1px" }}>SK</div>
+          ) : (
+            <img src="/logo.png" alt="SKILLOVATE" className="brand-logo" />
+          )}
         </div>
 
         <div id="snav">

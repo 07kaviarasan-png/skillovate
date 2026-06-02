@@ -38,15 +38,29 @@ export function HrShell({ children }: { children: React.ReactNode }) {
   const currentScreen = activeScreen === "dash" ? "hr-dash" : activeScreen;
 
   return (
-    <div id="app" className={`${isSidebarCollapsed ? "sidebar-collapsed" : ""} ${isMobileSidebarOpen ? "mob-sidebar-open" : ""}`}>
+    <div id="app" className={isMobileSidebarOpen ? "mob-sidebar-open" : ""}>
       {/* Sidebar */}
-      <div id="sidebar" style={{ borderRightColor: "rgba(108,92,231,.15)" }}>
-        <div className="s-logo" style={{ background: "linear-gradient(135deg,rgba(108,92,231,.08),transparent)", borderBottomColor: "rgba(108,92,231,.15)", flexDirection: "column", alignItems: "flex-start", height: "auto", padding: "20px" }}>
-          <img src="/logo.png" alt="SKILLOVATE" className="brand-logo" style={{ marginBottom: "8px" }} />
-          <div className="logo-text" style={{ fontSize: "11px", opacity: 0.6, textTransform: "uppercase", letterSpacing: "1px" }}>Recruiter Portal</div>
+      <div id="sidebar" className={isSidebarCollapsed ? "collapsed" : ""} style={{ borderRightColor: "rgba(108,92,231,.15)" }}>
+        <div className="s-logo" style={{ 
+          background: "linear-gradient(135deg,rgba(108,92,231,.08),transparent)", 
+          borderBottomColor: "rgba(108,92,231,.15)", 
+          flexDirection: isSidebarCollapsed ? "row" : "column", 
+          alignItems: isSidebarCollapsed ? "center" : "flex-start", 
+          justifyContent: isSidebarCollapsed ? "center" : "flex-start",
+          height: "auto", 
+          padding: isSidebarCollapsed ? "20px 0" : "20px" 
+        }}>
+          {isSidebarCollapsed ? (
+            <div style={{ fontSize: "24px", fontWeight: 800, color: "var(--accent)", letterSpacing: "-1px" }}>SK</div>
+          ) : (
+            <>
+              <img src="/logo.png" alt="SKILLOVATE" className="brand-logo" style={{ marginBottom: "8px" }} />
+              <div className="logo-text" style={{ fontSize: "11px", opacity: 0.6, textTransform: "uppercase", letterSpacing: "1px" }}>Recruiter Portal</div>
+            </>
+          )}
         </div>
 
-        <div id="hrnav" style={{ padding: "10px" }}>
+        <div id="hrnav" style={{ padding: isSidebarCollapsed ? "10px 0" : "10px" }}>
           {navItems.map((item) => (
             <React.Fragment key={item.id}>
               {item.section && <div className="nav-sec">{item.section}</div>}

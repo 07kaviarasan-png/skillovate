@@ -7070,3 +7070,29 @@ body.mobile-view #frole-cadmin {
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
 }
+#sidebar.collapsed .nav-item {
+  justify-content: center;
+  padding: 10px 0;
+  gap: 0;
+}
+#sidebar.collapsed .nav-sec {
+  display: none;
+}
+
+#sidebar.collapsed .nav-item {
+  padding: 10px 0;
+  margin: 2px auto;
+  justify-content: center;
+  width: 42px;
+}
+
+#sidebar.collapsed #hrnav {
+  padding: 8px 0 !important;
+}
+
+
+#sidebar.collapsed .collapse-btn {
+  justify-content: center;
+  padding: 8px 0;
+}
+
