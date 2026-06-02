@@ -53,7 +53,7 @@ async function apiFetch(endpoint, options = {}) {
     console.error(`[NETWORK ERROR] ${endpoint}:`, error.message);
     if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
       if (typeof showToast !== 'undefined') {
-        showToast('Backend server unreachable. Please ensure the API is running on port 5000.', 'error');
+        showToast('Backend server unreachable. Please ensure the API is running on port 8000.', 'error');
       }
     }
     return { success: false, message: error.message };

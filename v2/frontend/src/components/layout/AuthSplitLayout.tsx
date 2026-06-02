@@ -11,7 +11,12 @@ export function AuthSplitLayout({
     <div style={{ position: "fixed", inset: 0, zIndex: 200, display: "flex", background: "var(--bg)" }}>
       <div className="lp-left">
         <div className="lp-logo">
-          <img src="/logo.png" alt="SKILLOVATE" className="lp-brand-logo" />
+          <img 
+            src="/logo.png" 
+            alt="SKILLOVATE" 
+            className="lp-brand-logo" 
+            style={{ mixBlendMode: "multiply", filter: "contrast(1.1) brightness(1.1)" }}
+          />
         </div>
         <div className="lp-body">
           {leftContent || (

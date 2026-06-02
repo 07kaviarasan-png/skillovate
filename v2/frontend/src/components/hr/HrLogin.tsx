@@ -3,27 +3,50 @@
 import React, { useState } from "react";
 import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
 import { useAuthStore } from "@/stores/authStore";
+import { api } from "@/lib/api";
 
 export function HrLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const { login } = useAuthStore();
 
   const handleLogin = async () => {
     setError("");
-    if (password === "hr123") {
+    if (!email || !password) {
+      setError("Please enter your email and password.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const formData = new FormData();
+      formData.append("username", email);
+      formData.append("password", password);
+
+      const res = await api.post("/auth/login", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      
+      const { user, access_token } = res.data;
       login(
         {
-          _id: "demo-hr-id",
-          email: email || "hr@company.com",
-          name: email.split("@")[0] || "Recruiter",
-          role: "hr",
+          _id: user._id || user.id,
+          email: user.email,
+          name: user.name || user.full_name,
+          role: user.role,
         },
-        "hr-token"
+        access_token
       );
-    } else {
-      setError("Invalid credentials. Try hr123");
+    } catch (err: unknown) {
+      const error = err as { response?: { data?: { detail?: string } } };
+      setError(
+        error?.response?.data?.detail || "Invalid credentials. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
   };
 

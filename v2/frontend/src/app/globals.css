@@ -24,6 +24,17 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+
+    /* Legacy compatibility for new components */
+    --lp-bg: #FCFDFF;
+    --lp-text: #1E2350;
+    --lp-accent: #1B6FE6;
+    --lp-accent-dark: #0D47A1;
+    --lp-accent-light: rgba(27, 111, 230, 0.12);
+    --lp-accent-faint: rgba(27, 111, 230, 0.05);
+    --lp-muted: #6B7280;
+    --lp-surface: #F4F7FF;
+    --lp-border: rgba(27, 111, 230, 0.15);
   }
  
   .dark {

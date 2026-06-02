@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
 import { useAuthStore } from "@/stores/authStore";
+import { api } from "@/lib/api";
 
 const colleges = [
   { name: "PSG College of Technology", code: "PSG-COIM-2024", students: 142, enabled: true },
@@ -20,35 +21,60 @@ export function InstitutionalLogin() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const { login } = useAuthStore();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     setError("");
-    // Simulation
-    if (activeTab === "student") {
-      if (!selectedCollege) return setError("Please select an institution");
-      if (!rollNumber) return setError("Enter roll number");
+    setLoading(true);
+    try {
+      const formData = new FormData();
+      if (activeTab === "student") {
+        if (!selectedCollege) {
+          setError("Please select an institution");
+          setLoading(false);
+          return;
+        }
+        if (!rollNumber) {
+          setError("Enter roll number");
+          setLoading(false);
+          return;
+        }
+        formData.append("username", rollNumber);
+      } else {
+        if (!email || !password) {
+          setError("Enter credentials");
+          setLoading(false);
+          return;
+        }
+        formData.append("username", email);
+      }
+      formData.append("password", password);
+
+      const res = await api.post("/auth/login", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      const { user, access_token } = res.data;
       login(
         {
-          _id: "inst-student-id",
-          email: `${rollNumber.toLowerCase()}@college.edu`,
-          name: rollNumber,
-          role: "student",
-          college_name: selectedCollege,
+          _id: user._id || user.id,
+          email: user.email,
+          name: user.name || user.full_name,
+          role: user.role,
+          college_name: selectedCollege || undefined,
         },
-        "inst-token"
+        access_token
       );
-    } else {
-      if (!email || !password) return setError("Enter credentials");
-      login(
-        {
-          _id: `inst-${activeTab}-id`,
-          email: email,
-          name: email.split("@")[0],
-          role: activeTab,
-        },
-        "inst-token"
+    } catch (err: unknown) {
+      const error = err as { response?: { data?: { detail?: string } } };
+      setError(
+        error?.response?.data?.detail || "Invalid credentials. Please try again."
       );
+    } finally {
+      setLoading(false);
     }
   };
 
