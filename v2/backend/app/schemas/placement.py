@@ -42,7 +42,7 @@ class PlacementResponse(BaseModel):
 
 
 class JobPostingCreateRequest(BaseModel):
-    college_id: int
+    college_id: int = 1  # Defaulting for now
     title: str
     description: Optional[str] = None
     company_name: str
@@ -55,3 +55,13 @@ class JobPostingCreateRequest(BaseModel):
     eligible_years: Optional[str] = None
     min_cgpa: Optional[float] = None
     application_deadline: Optional[datetime] = None
+
+class JobPostingResponse(JobPostingCreateRequest):
+    id: int
+    recruiter_id: int
+    status: str
+    is_active: bool
+    created_at: datetime
+    updated_at: datetime
+
+    model_config = {"from_attributes": True}

@@ -22,14 +22,15 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor - redirects to /learner on auth failure
+import { useAuthStore } from "@/stores/authStore";
+
+// Response interceptor - clears auth store on 401
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem("skillovate_token");
-      localStorage.removeItem("skillovate_user");
-      window.location.href = "/learner";
+      useAuthStore.getState().logout();
+      window.location.reload();
     }
     return Promise.reject(error);
   }

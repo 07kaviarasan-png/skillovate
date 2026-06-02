@@ -3,11 +3,10 @@
 import React from "react";
 import { useUiStore } from "@/stores/uiStore";
 import { useAuthStore } from "@/stores/authStore";
-import Link from "next/link";
 
-export function LearnerShell({ children }: { children: React.ReactNode }) {
+export function HrShell({ children }: { children: React.ReactNode }) {
   const {
-    activeNav,
+    activeScreen,
     setActiveScreen,
     isSidebarCollapsed,
     toggleSidebar,
@@ -18,7 +17,7 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
   } = useUiStore();
 
   const { user, logout } = useAuthStore();
-  
+
   React.useEffect(() => {
     import("@/lib/api").then(({ api }) => {
       api.get("/auth/me").catch(() => {});
@@ -26,31 +25,31 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
   }, []);
 
   const navItems = [
-    { id: "dash", label: "Dashboard", section: "Learning Portal", icon: <DashboardIcon /> },
-    { id: "practice", label: "Mock Practice", icon: <PracticeIcon /> },
-    { id: "tests", label: "Aptitude Tests", icon: <TestsIcon /> },
-    { id: "mnc", label: "MNC Test", icon: <MncIcon /> },
-    { id: "iv", label: "Mock Interviewer", icon: <IvIcon /> },
-    { id: "profile", label: "Profile Summarizer", section: "Professional Profile", icon: <ProfileIcon /> },
-    { id: "resume", label: "Resume Builder", icon: <ResumeIcon /> },
-    { id: "lb", label: "Top Talent Board", icon: <LeaderboardIcon /> },
-    { id: "settings", label: "Settings", icon: <SettingsIcon /> },
+    { id: "hr-dash", label: "Dashboard", section: "Talent Sourcing", icon: <DashboardIcon /> },
+    { id: "hr-vac", label: "Post Vacancy", icon: <VacancyIcon /> },
+    { id: "hr-app", label: "Applicants", icon: <ApplicantsIcon /> },
+    { id: "hr-lb", label: "Talent Board", icon: <BoardIcon /> },
+    { id: "hr-analytics", label: "Candidate Analytics", section: "Insights", icon: <AnalyticsIcon /> },
+    { id: "hr-settings", label: "Settings", icon: <SettingsIcon /> },
   ];
+
+  const currentScreen = activeScreen === "dash" ? "hr-dash" : activeScreen;
 
   return (
     <div id="app" className={`${isSidebarCollapsed ? "sidebar-collapsed" : ""} ${isMobileSidebarOpen ? "mob-sidebar-open" : ""}`}>
       {/* Sidebar */}
-      <div id="sidebar">
-        <div className="s-logo">
-          <img src="/logo.png" alt="SKILLOVATE" className="brand-logo" />
+      <div id="sidebar" style={{ borderRightColor: "rgba(108,92,231,.15)" }}>
+        <div className="s-logo" style={{ background: "linear-gradient(135deg,rgba(108,92,231,.08),transparent)", borderBottomColor: "rgba(108,92,231,.15)", flexDirection: "column", alignItems: "flex-start", height: "auto", padding: "20px" }}>
+          <img src="/logo.png" alt="SKILLOVATE" className="brand-logo" style={{ marginBottom: "8px" }} />
+          <div className="logo-text" style={{ fontSize: "11px", opacity: 0.6, textTransform: "uppercase", letterSpacing: "1px" }}>Recruiter Portal</div>
         </div>
 
-        <div id="snav">
-          {navItems.map((item, index) => (
+        <div id="hrnav" style={{ padding: "10px" }}>
+          {navItems.map((item) => (
             <React.Fragment key={item.id}>
               {item.section && <div className="nav-sec">{item.section}</div>}
               <div
-                className={`nav-item ${activeNav === `nav-${item.id}` ? "active" : ""}`}
+                className={`nav-item ${currentScreen === item.id ? "active" : ""}`}
                 id={`nav-${item.id}`}
                 onClick={() => setActiveScreen(item.id)}
               >
@@ -62,21 +61,14 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="s-foot">
-          <div className="plan-strip" onClick={() => setActiveScreen("subs")}>
-            <div className="plan-name">Base Plan</div>
-            <div className="plan-sub">Upgrade to Pro for more features</div>
-            <div className="plan-bar-w">
-              <div className="plan-bar-f" style={{ width: "20%" }}></div>
-            </div>
-          </div>
           <div className="ui-toggle-wrap" onClick={() => setUiMode(uiMode === "user" ? "admin" : "user")}>
             <div className={`ui-toggle-track ${uiMode === "admin" ? "active" : ""}`}>
               <div className="ui-toggle-thumb"></div>
             </div>
-            <div className="ui-toggle-lbl">{uiMode === "user" ? "User View" : "Admin View"}</div>
+            <div className="ui-toggle-lbl" id="ui-mode-lbl">Recruiter View</div>
           </div>
           <button className="collapse-btn" onClick={toggleSidebar}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points={isSidebarCollapsed ? "13 17 18 12 13 7" : "11 17 6 12 11 7"} />
               <polyline points={isSidebarCollapsed ? "6 17 11 12 6 7" : "18 17 13 12 18 7"} />
             </svg>
@@ -102,7 +94,7 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
             </span>
-            <input type="text" placeholder="Search lessons, tests, or MNCs..." />
+            <input type="text" placeholder="Search applicants, roles, skills..." />
           </div>
           <div className="tbr">
             <div className="ib">
@@ -113,10 +105,10 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
               <div className="nd"></div>
             </div>
             <div className="uc">
-              <div className="uav">{user?.name?.charAt(0) || "S"}</div>
+              <div className="uav" style={{ background: "linear-gradient(135deg,var(--purple),var(--pink))" }}>HR</div>
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <span className="un">{user?.name || "Student"}</span>
-                <span className="ur">Learner Portal</span>
+                <span className="un">{user?.name || "HR Manager"}</span>
+                <span className="ur">{(user as any)?.company || "Zoho Corporation"}</span>
               </div>
             </div>
             <div className="ib" onClick={logout}>
@@ -135,7 +127,7 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Icons (SVG paths from learner.html)
+// Icons
 function DashboardIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -147,28 +139,7 @@ function DashboardIcon() {
   );
 }
 
-function PracticeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M12 20h9" />
-      <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-    </svg>
-  );
-}
-
-function TestsIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="16" y1="13" x2="8" y2="13" />
-      <line x1="16" y1="17" x2="8" y2="17" />
-      <line x1="10" y1="9" x2="8" y2="9" />
-    </svg>
-  );
-}
-
-function MncIcon() {
+function VacancyIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
@@ -177,41 +148,28 @@ function MncIcon() {
   );
 }
 
-function IvIcon() {
+function ApplicantsIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
     </svg>
   );
 }
 
-function ProfileIcon() {
+function BoardIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-      <circle cx="12" cy="7" r="4" />
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
     </svg>
   );
 }
 
-function ResumeIcon() {
+function AnalyticsIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="16" y1="13" x2="8" y2="13" />
-      <line x1="16" y1="17" x2="8" y2="17" />
-    </svg>
-  );
-}
-
-function LeaderboardIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M8 21h8" />
-      <path d="M12 17V7" />
-      <path d="M7 4h10" />
-      <path d="M17 11l-5 5-5-5" />
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
     </svg>
   );
 }
