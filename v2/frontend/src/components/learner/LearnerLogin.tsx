@@ -46,9 +46,9 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
         role: signupRole,
         college_name: signupRole === "student" ? signupCollege || undefined : undefined,
       });
-      
+
       const user = res.data;
-      
+
       const formData = new FormData();
       formData.append("username", signupEmail);
       formData.append("password", signupPassword);
@@ -58,9 +58,9 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
           "Content-Type": "multipart/form-data",
         },
       });
-      
+
       const { access_token } = loginRes.data;
-      
+
       login(
         {
           _id: user._id || user.id,
@@ -120,7 +120,7 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
               <label className="lbl">Password</label>
               <a href="#" style={{ fontSize: "12px", marginBottom: "6px", color: "var(--accent)" }}>
-                Forgot Password?
+                -?
               </a>
             </div>
             <input
@@ -173,10 +173,10 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
                 type="button"
                 onClick={() => setSignupRole('student')}
                 className={`py-2 rounded-lg flex items-center justify-center gap-2 transition-all`}
-                style={{ 
-                  border: 'none', 
-                  cursor: 'pointer', 
-                  background: signupRole === 'student' ? 'white' : 'transparent', 
+                style={{
+                  border: 'none',
+                  cursor: 'pointer',
+                  background: signupRole === 'student' ? 'white' : 'transparent',
                   fontWeight: signupRole === 'student' ? 800 : 500,
                   boxShadow: signupRole === 'student' ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
                   color: signupRole === 'student' ? 'var(--accent)' : 'var(--muted)'
@@ -188,10 +188,10 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
                 type="button"
                 onClick={() => setSignupRole('recruiter')}
                 className={`py-2 rounded-lg flex items-center justify-center gap-2 transition-all`}
-                style={{ 
-                  border: 'none', 
-                  cursor: 'pointer', 
-                  background: signupRole === 'recruiter' ? 'white' : 'transparent', 
+                style={{
+                  border: 'none',
+                  cursor: 'pointer',
+                  background: signupRole === 'recruiter' ? 'white' : 'transparent',
                   fontWeight: signupRole === 'recruiter' ? 800 : 500,
                   boxShadow: signupRole === 'recruiter' ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
                   color: signupRole === 'recruiter' ? 'var(--accent)' : 'var(--muted)'

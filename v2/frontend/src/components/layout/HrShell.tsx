@@ -16,13 +16,15 @@ export function HrShell({ children }: { children: React.ReactNode }) {
     setUiMode,
   } = useUiStore();
 
-  const { user, logout } = useAuthStore();
+  const { user, logout, updateUser } = useAuthStore();
 
   React.useEffect(() => {
     import("@/lib/api").then(({ api }) => {
-      api.get("/auth/me").catch(() => {});
+      api.get("/auth/me").then(res => {
+        updateUser(res.data);
+      }).catch(() => {});
     });
-  }, []);
+  }, [updateUser]);
 
   const navItems = [
     { id: "hr-dash", label: "Dashboard", section: "Talent Sourcing", icon: <DashboardIcon /> },

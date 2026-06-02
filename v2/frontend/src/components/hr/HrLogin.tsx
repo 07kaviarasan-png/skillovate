@@ -30,7 +30,7 @@ export function HrLogin() {
         password,
         role: "hr",
       });
-      
+
       const { user, access_token } = res.data;
       login(
         {
@@ -64,7 +64,7 @@ export function HrLogin() {
         email,
         password,
       });
-      
+
       const { user, access_token } = res.data;
       login(
         {
@@ -154,7 +154,7 @@ export function HrLogin() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
               <label className="lbl">Password</label>
               <a href="#" style={{ fontSize: "12px", marginBottom: "6px", color: "var(--accent)" }}>
-                Forgot Password?
+                -?
               </a>
             </div>
             <input

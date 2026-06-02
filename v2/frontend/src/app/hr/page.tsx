@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 
 export default function HrPage() {
-  const { isAuthenticated, user, logout } = useAuthStore();
+  const { isAuthenticated, user, logout, updateUser } = useAuthStore();
   const { activeScreen, setActiveScreen } = useUiStore();
   const [mounted, setMounted] = useState(false);
   const [jobs, setJobs] = useState<any[]>([]);
@@ -145,15 +145,13 @@ export default function HrPage() {
     if (!stName || !stCompany) return alert("Name and Company are required.");
     setLoading(true);
     try {
-      await api.put("/auth/update", {
+      const res = await api.put("/auth/update", {
         name: stName,
         company_name: stCompany,
         department: stDepartment
       });
+      updateUser(res.data);
       alert("Profile updated successfully!");
-      // Refetch user data via authStore (which triggers /auth/me under the hood typically, 
-      // but we can just reload the window to ensure everything stays perfectly in sync)
-      window.location.reload();
     } catch (err) {
       console.error(err);
       alert("Failed to update profile");

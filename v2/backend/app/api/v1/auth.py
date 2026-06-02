@@ -134,6 +134,10 @@ def update_profile(
     if data.company_name is not None and current_user.role == "recruiter":
         if current_user.recruiter_profile:
             current_user.recruiter_profile.company_name = data.company_name
+        else:
+            from app.models.user import RecruiterProfile
+            rp = RecruiterProfile(user_id=current_user.id, company_name=data.company_name)
+            db.add(rp)
 
     db.commit()
     db.refresh(current_user)

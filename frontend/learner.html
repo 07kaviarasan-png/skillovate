@@ -62,7 +62,8 @@
       </div>
     </div>
     <div class="lp-right" style="position:relative; display:flex; align-items:center; justify-content:center; flex:1">
-      <img src="logo.png" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:1200px; opacity:0.12; z-index:1; pointer-events:none;">
+      <img src="logo.png"
+        style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:1200px; opacity:0.12; z-index:1; pointer-events:none;">
       <div class="lp-card">
         <div class="lp-heading">
           <h2>Learner Login</h2>
@@ -74,7 +75,7 @@
         <div style="display:flex; justify-content:space-between; align-items:flex-end">
           <label class="lbl">Password</label>
           <a href="javascript:void(0)" onclick="doLearnerForgotPassword()"
-            style="font-size:12px; margin-bottom:6px; color:var(--accent)">Forgot Password?</a>
+            style="font-size:12px; margin-bottom:6px; color:var(--accent)">-?</a>
         </div>
         <input type="password" class="fi" id="learner-login-pass" placeholder="••••••••" style="margin-bottom:14px"
           onkeydown="if(event.key==='Enter')doLearnerPortalLogin()">
@@ -89,7 +90,8 @@
           <span style="font-size: 11px; color: var(--muted); text-transform: uppercase;">or</span>
           <div style="flex: 1; height: 1px; background: var(--border);"></div>
         </div>
-        <div class="google-login-btn-container" data-role="learner" style="display:flex; justify-content:center; width: 100%;"></div>
+        <div class="google-login-btn-container" data-role="learner"
+          style="display:flex; justify-content:center; width: 100%;"></div>
         <div class="l-footer">No account? <a onclick="showToast('Sign up flow coming soon')">Sign up free</a></div>
       </div>
     </div>
@@ -312,8 +314,8 @@
               <div class="sd neu">Practice to unlock</div>
             </div>
             <div class="sc">
-              <div class="si2" style="background:var(--red-l)"><svg viewBox="0 0 24 24" fill="none"
-                  stroke="var(--red)" stroke-width="2" width="15" height="15">
+              <div class="si2" style="background:var(--red-l)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)"
+                  stroke-width="2" width="15" height="15">
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg></div>
               <div class="sv" id="dash-stat-speed">—</div>
@@ -396,7 +398,8 @@
               <div class="card"
                 style="background:linear-gradient(135deg,rgba(27,111,230,.07),rgba(108,92,231,.06));border-color:rgba(27,111,230,.14)">
                 <div class="ct" style="font-size:11.5px;color:var(--accent)">AI Recommendation</div>
-                <div style="font-size:13px;color:var(--text);line-height:1.62;margin-bottom:12px" id="dash-ai-rec">Your Data
+                <div style="font-size:13px;color:var(--text);line-height:1.62;margin-bottom:12px" id="dash-ai-rec">Your
+                  Data
                   Interpretation accuracy dropped 12% this week. Practise bar chart questions today to recover.</div>
                 <button class="btn btn-p btn-sm" onclick="startPractice('di')">Practice DI Now</button>
               </div>
@@ -442,7 +445,8 @@
                   <div style="flex:1;height:1px;background:var(--border)"></div>
                 </div>
 
-                <div class="google-login-btn-container" data-role="learner" style="display:flex; justify-content:center; width: 100%;"></div>
+                <div class="google-login-btn-container" data-role="learner"
+                  style="display:flex; justify-content:center; width: 100%;"></div>
               </div>
             </div>
           </div>
@@ -1481,19 +1485,31 @@ Published Technical Blog on React Performance</textarea>
             <!-- Sidebar Nav -->
             <div class="settings-v3-sidebar">
               <button class="sv3-nav-btn active" onclick="st('general', this)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
                 Profile Settings
               </button>
               <button class="sv3-nav-btn" onclick="st('security', this)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0110 0v4" />
+                </svg>
                 Password & Security
               </button>
               <button class="sv3-nav-btn" onclick="st('links', this)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+                  <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+                </svg>
                 Social Links
               </button>
               <button class="sv3-nav-btn" onclick="st('badges', this)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <circle cx="12" cy="8" r="7" />
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                </svg>
                 Achievements
               </button>
             </div>
@@ -1512,25 +1528,33 @@ Published Technical Blog on React Performance</textarea>
                     <div class="sv3-avatar-initials" id="st-avatar-initials">S</div>
                     <img class="sv3-avatar-img" id="st-avatar-img" style="display:none">
                     <div class="sv3-avatar-badge" onclick="document.getElementById('st-avatar-input').click()">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14"
+                        height="14">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                      </svg>
                     </div>
                     <input type="file" id="st-avatar-input" hidden accept="image/*" onchange="handleAvatarUpload(this)">
                   </div>
                   <div class="sv3-avatar-actions">
-                    <button class="sv3-save-btn" style="padding: 10px 20px; font-size: 13px" onclick="document.getElementById('st-avatar-input').click()">Upload New</button>
-                    <button class="sv3-nav-btn" style="border: 1px solid var(--sv3-border)" onclick="currentUser.avatar=null; initSettings()">Delete avatar</button>
+                    <button class="sv3-save-btn" style="padding: 10px 20px; font-size: 13px"
+                      onclick="document.getElementById('st-avatar-input').click()">Upload New</button>
+                    <button class="sv3-nav-btn" style="border: 1px solid var(--sv3-border)"
+                      onclick="currentUser.avatar=null; initSettings()">Delete avatar</button>
                   </div>
                 </div>
 
                 <div class="sv3-form-grid">
                   <div class="sv3-field-group">
                     <label class="sv3-label">Full Name <span>*</span></label>
-                    <input type="text" class="sv3-input" id="st-field-name" placeholder="E.g. Rajesh Kumar" oninput="updateProfileHealth()">
+                    <input type="text" class="sv3-input" id="st-field-name" placeholder="E.g. Rajesh Kumar"
+                      oninput="updateProfileHealth()">
                   </div>
                   <div class="sv3-field-group">
                     <label class="sv3-label">Mobile Number <span>*</span></label>
                     <div style="display:flex; gap:8px">
-                      <div class="sv3-input" style="width: 80px; display: flex; align-items: center; gap: 8px; cursor: default">
+                      <div class="sv3-input"
+                        style="width: 80px; display: flex; align-items: center; gap: 8px; cursor: default">
                         <img src="https://flagcdn.com/w20/in.png" width="16" height="12" alt="IN"> +91
                       </div>
                       <input type="text" class="sv3-input" placeholder="806 123 7890">
@@ -1553,7 +1577,8 @@ Published Technical Blog on React Performance</textarea>
                   </div>
                   <div class="sv3-field-group sv3-field-full">
                     <label class="sv3-label">Professional Bio</label>
-                    <textarea class="sv3-input" id="st-field-bio" style="height:100px; resize:none" placeholder="Briefly describe your career goals..." oninput="updateProfileHealth()"></textarea>
+                    <textarea class="sv3-input" id="st-field-bio" style="height:100px; resize:none"
+                      placeholder="Briefly describe your career goals..." oninput="updateProfileHealth()"></textarea>
                   </div>
                 </div>
               </div>
@@ -1571,7 +1596,8 @@ Published Technical Blog on React Performance</textarea>
                   </div>
                   <div class="sv3-field-group">
                     <label class="sv3-label">New Password</label>
-                    <input type="password" class="sv3-input" id="st-field-newpass" placeholder="Create a strong password">
+                    <input type="password" class="sv3-input" id="st-field-newpass"
+                      placeholder="Create a strong password">
                   </div>
                   <div class="sv3-field-group">
                     <label class="sv3-label">Confirm Password</label>

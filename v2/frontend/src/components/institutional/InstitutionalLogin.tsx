@@ -142,7 +142,7 @@ export function InstitutionalLogin() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
               <label className="lbl">Password</label>
               <a href="#" style={{ fontSize: "11px", marginBottom: "6px", color: "var(--accent)" }}>
-                Forgot Password?
+                -?
               </a>
             </div>
             <input
@@ -162,7 +162,7 @@ export function InstitutionalLogin() {
 
         {(activeTab === "faculty" || activeTab === "admin") && (
           <div className="l-panel active">
-             <label className="lbl">Select Institution</label>
+            <label className="lbl">Select Institution</label>
             <select
               className="fi"
               style={{ width: "100%", marginBottom: "12px" }}
@@ -188,7 +188,7 @@ export function InstitutionalLogin() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
               <label className="lbl">Password</label>
               <a href="#" style={{ fontSize: "11px", marginBottom: "6px", color: "var(--accent)" }}>
-                Forgot Password?
+                -?
               </a>
             </div>
             <input

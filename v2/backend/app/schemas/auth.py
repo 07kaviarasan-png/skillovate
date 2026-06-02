@@ -78,7 +78,7 @@ class ChangePasswordRequest(BaseModel):
 
 
 class ForgotPasswordRequest(BaseModel):
-    """Forgot password request."""
+    """- request."""
     email: EmailStr
 
 
