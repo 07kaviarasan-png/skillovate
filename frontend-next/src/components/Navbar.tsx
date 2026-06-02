@@ -7,12 +7,15 @@ import Image from 'next/image';
 
 export default function Navbar() {
   const { user, isAuthenticated, logout } = useAuth();
+  const allowHomeNavigation = () => {
+    sessionStorage.removeItem('returnToLoginOnHomeBack');
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-[#FCFDFF]/80 backdrop-blur-md border-b border-lp-border min-h-20 flex items-center">
       <div className="w-full px-10 flex items-center justify-between">
         <div className="flex items-center gap-10">
-          <Link href="/" className="logo">
+          <Link href="/" className="logo" onClick={allowHomeNavigation}>
             <img 
               src="/logo.png" 
               alt="Skillovate AI Logo" 
@@ -74,7 +77,7 @@ export default function Navbar() {
             </div>
           ) : (
             <div className="flex items-center gap-4">
-              <Link href="/login" className="nav-link !bg-transparent !text-lp-muted hover:!text-lp-accent">Sign In</Link>
+              <Link href="/login" replace className="nav-link !bg-transparent !text-lp-muted hover:!text-lp-accent">Sign In</Link>
               <Link href="/register" className="btn-primary !px-6 !py-2.5">Sign up free</Link>
             </div>
           )}

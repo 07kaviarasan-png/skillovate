@@ -10,6 +10,9 @@ export default function HrLoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login } = useAuth();
+  const allowHomeNavigation = () => {
+    sessionStorage.removeItem('returnToLoginOnHomeBack');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,7 +37,7 @@ export default function HrLoginPage() {
         <div className="absolute bottom-[-5%] left-[-5%] w-60 h-60 bg-lp-accent-dark/30 rounded-full blur-2xl"></div>
         
         <div className="relative z-10 flex-1">
-          <Link href="/" className="inline-block mb-16">
+          <Link href="/" className="inline-block mb-16" onClick={allowHomeNavigation}>
             <span className="text-3xl font-black tracking-tighter">SKILLOVATE</span>
           </Link>
 

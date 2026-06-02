@@ -19,6 +19,9 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const { isAuthenticated, loading: authLoading } = useAuth();
   const router = useRouter();
+  const allowHomeNavigation = () => {
+    sessionStorage.removeItem('returnToLoginOnHomeBack');
+  };
 
   useEffect(() => {
     if (!authLoading && isAuthenticated) {
@@ -54,7 +57,7 @@ export default function RegisterPage() {
         <div className="absolute bottom-[-5%] left-[-5%] w-60 h-60 bg-lp-accent-dark/30 rounded-full blur-2xl"></div>
         
         <div className="relative z-10 flex-1">
-          <Link href="/" className="inline-block mb-16">
+          <Link href="/" className="inline-block mb-16" onClick={allowHomeNavigation}>
             <span className="text-3xl font-black tracking-tighter">SKILLOVATE</span>
           </Link>
 
@@ -176,7 +179,7 @@ export default function RegisterPage() {
 
             <div className="mt-8 pt-8 border-t border-lp-border text-center">
               <p className="text-sm text-lp-muted font-medium">
-                Already have an account? <Link href="/login" className="text-lp-accent font-black hover:underline">Sign In</Link>
+                Already have an account? <Link href="/login" replace className="text-lp-accent font-black hover:underline">Sign In</Link>
               </p>
             </div>
           </div>

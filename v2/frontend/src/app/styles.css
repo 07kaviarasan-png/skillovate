@@ -766,14 +766,14 @@ textarea {
 
 /* ════════ APP LAYOUT ════════ */
 #app {
-  display: none;
+  display: flex;
   height: 100vh;
   overflow: hidden;
-  flex-direction: row
+  flex-direction: row;
 }
 
 #app.show {
-  display: flex
+  display: flex;
 }
 
 #sidebar {

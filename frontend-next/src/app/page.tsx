@@ -11,10 +11,31 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+    if (!loading && sessionStorage.getItem('returnToLoginOnHomeBack') === 'true') {
+      router.replace('/login');
+      return;
+    }
+
     if (!loading && isAuthenticated) {
       router.replace('/dashboard');
+      return;
+    }
+
+    if (!loading) {
+      sessionStorage.removeItem('returnToLoginOnHomeBack');
     }
   }, [isAuthenticated, loading, router]);
+
+  useEffect(() => {
+    const handlePageShow = () => {
+      if (sessionStorage.getItem('returnToLoginOnHomeBack') === 'true') {
+        router.replace('/login');
+      }
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    return () => window.removeEventListener('pageshow', handlePageShow);
+  }, [router]);
 
   if (loading || isAuthenticated) {
     return <div className="min-h-screen bg-[#FCFDFF]" />;
@@ -57,7 +78,7 @@ export default function Home() {
                 <Link href="/register" className="btn-primary !px-8 !py-4 text-base shadow-[0_8px_24px_rgba(27,111,230,0.35)]">
                   Sign up free
                 </Link>
-                <Link href="/login" className="bg-black text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-[#222] transition-all hover:-translate-y-1 hover:shadow-xl">
+                <Link href="/login" replace className="bg-black text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-[#222] transition-all hover:-translate-y-1 hover:shadow-xl">
                   Login <ArrowRight size={20} />
                 </Link>
               </div>
