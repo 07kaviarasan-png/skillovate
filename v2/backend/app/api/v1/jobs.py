@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.models.placement import JobPosting
+from app.models.placement import JobPosting, JobApplication
 from app.models.user import User
 from app.core.rbac import get_current_user, require_roles, UserRole
-from app.schemas.placement import JobPostingCreateRequest, JobPostingResponse
+from app.schemas.placement import JobPostingCreateRequest, JobPostingResponse, JobApplicationResponse
 
 router = APIRouter(prefix="/jobs", tags=["Jobs"])
 
@@ -44,10 +44,44 @@ def create_job(
         eligible_years=job_data.eligible_years,
         min_cgpa=job_data.min_cgpa,
         application_deadline=job_data.application_deadline,
-        status="active",
+    status="active",
         is_active=True
     )
     db.add(new_job)
     db.commit()
     db.refresh(new_job)
     return new_job
+
+@router.get("/applications/me", response_model=list[JobApplicationResponse])
+def get_my_job_applications(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    """Get all applications for jobs posted by the current HR/Recruiter."""
+    if current_user.role not in ["hr", "recruiter"]:
+        raise HTTPException(status_code=403, detail="Only recruiters can view applications")
+    
+    # Get all jobs posted by this recruiter
+    job_ids = [job.id for job in db.query(JobPosting.id).filter(JobPosting.recruiter_id == current_user.id).all()]
+    
+    if not job_ids:
+        return []
+        
+    applications = db.query(JobApplication).filter(JobApplication.job_posting_id.in_(job_ids)).all()
+    
+    # Enhance the response with student name and job title
+    result = []
+    for app in applications:
+        app_dict = {
+            "id": app.id,
+            "job_posting_id": app.job_posting_id,
+            "student_id": app.student_id,
+            "status": app.status,
+            "applied_at": app.applied_at,
+            "updated_at": app.updated_at,
+            "notes": app.notes,
+            "interview_scheduled_at": app.interview_scheduled_at,
+            "student_name": app.student.name if app.student else None,
+            "student_email": app.student.email if app.student else None,
+            "job_title": app.job_posting.title if app.job_posting else None
+        }
+        result.append(app_dict)
+        
+    return result

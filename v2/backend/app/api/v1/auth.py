@@ -111,3 +111,30 @@ def get_me(
 ):
     """Get the current authenticated user's profile info."""
     return UserBriefResponse.model_validate(current_user)
+
+
+from sqlalchemy.orm import Session
+from app.database import get_db
+from app.schemas.auth import UpdateProfileRequest
+
+@router.put("/update", response_model=UserBriefResponse)
+def update_profile(
+    data: UpdateProfileRequest,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Update user profile."""
+    if data.name is not None:
+        current_user.name = data.name
+    if data.department is not None:
+        current_user.department = data.department
+    if data.avatar_url is not None:
+        current_user.avatar_url = data.avatar_url
+
+    if data.company_name is not None and current_user.role == "recruiter":
+        if current_user.recruiter_profile:
+            current_user.recruiter_profile.company_name = data.company_name
+
+    db.commit()
+    db.refresh(current_user)
+    return UserBriefResponse.model_validate(current_user)

@@ -141,9 +141,7 @@ export function HrLogin() {
               <h2>HR / Recruiter Login</h2>
               <p>Sign in to access your talent sourcing dashboard</p>
             </div>
-            <div className="linfo">
-              <strong>Demo credentials:</strong> Any work email &amp; password <strong>hr123</strong>
-            </div>
+
             <label className="lbl">Work Email</label>
             <input
               type="email"

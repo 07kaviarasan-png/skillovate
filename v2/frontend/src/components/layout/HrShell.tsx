@@ -61,12 +61,7 @@ export function HrShell({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="s-foot">
-          <div className="ui-toggle-wrap" onClick={() => setUiMode(uiMode === "user" ? "admin" : "user")}>
-            <div className={`ui-toggle-track ${uiMode === "admin" ? "active" : ""}`}>
-              <div className="ui-toggle-thumb"></div>
-            </div>
-            <div className="ui-toggle-lbl" id="ui-mode-lbl">Recruiter View</div>
-          </div>
+
           <button className="collapse-btn" onClick={toggleSidebar}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points={isSidebarCollapsed ? "13 17 18 12 13 7" : "11 17 6 12 11 7"} />
@@ -108,7 +103,7 @@ export function HrShell({ children }: { children: React.ReactNode }) {
               <div className="uav" style={{ background: "linear-gradient(135deg,var(--purple),var(--pink))" }}>HR</div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <span className="un">{user?.name || "HR Manager"}</span>
-                <span className="ur">{(user as any)?.company || "Zoho Corporation"}</span>
+                <span className="ur">{(user as any)?.company_name || (user as any)?.company }</span>
               </div>
             </div>
             <div className="ib" onClick={logout}>

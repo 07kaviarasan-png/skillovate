@@ -72,6 +72,18 @@ class User(Base):
     def __repr__(self):
         return f"<User(id={self.id}, email='{self.email}', role='{self.role}')>"
 
+    @property
+    def company_name(self) -> str | None:
+        if self.recruiter_profile:
+            return self.recruiter_profile.company_name
+        return None
+
+    @property
+    def student_id(self) -> str | None:
+        if self.student_profile:
+            return self.student_profile.student_id
+        return None
+
 
 class StudentProfile(Base):
     """Extended profile data for students."""

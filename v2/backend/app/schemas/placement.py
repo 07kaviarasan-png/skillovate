@@ -65,3 +65,20 @@ class JobPostingResponse(JobPostingCreateRequest):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
+
+class JobApplicationResponse(BaseModel):
+    id: int
+    job_posting_id: int
+    student_id: int
+    status: str
+    applied_at: datetime
+    updated_at: datetime
+    notes: Optional[str] = None
+    interview_scheduled_at: Optional[datetime] = None
+    
+    # Nested info we might want
+    student_name: Optional[str] = None
+    student_email: Optional[str] = None
+    job_title: Optional[str] = None
+
+    model_config = {"from_attributes": True}

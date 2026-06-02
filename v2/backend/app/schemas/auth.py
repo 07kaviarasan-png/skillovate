@@ -88,6 +88,13 @@ class ResetPasswordRequest(BaseModel):
     new_password: str = Field(min_length=6, max_length=128)
 
 
+class UpdateProfileRequest(BaseModel):
+    name: Optional[str] = None
+    company_name: Optional[str] = None
+    department: Optional[str] = None
+    avatar_url: Optional[str] = None
+
+
 class UserBriefResponse(BaseModel):
     """Brief user info included in auth responses."""
     id: int
@@ -97,6 +104,8 @@ class UserBriefResponse(BaseModel):
     college_id: Optional[int] = None
     department: Optional[str] = None
     avatar_url: Optional[str] = None
+    company_name: Optional[str] = None
+    student_id: Optional[str] = None
 
     model_config = {"from_attributes": True}
 
