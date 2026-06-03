@@ -3,7 +3,7 @@ from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
 from app.core.exceptions import NotFoundError
-from app.core.rbac import UserRole, get_college_scope, require_roles
+from app.core.rbac import UserRole, get_college_scope, require_roles, get_current_user
 from app.core.security import hash_password
 from app.database import get_db
 from app.models.college import College
@@ -225,11 +225,19 @@ def save_student_portal_state(student_id: int, data: dict):
 
 
 @router.post("/batch", response_model=MessageResponse, dependencies=[require_roles(UserRole.FACULTY, UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
-def create_batch_students(data: dict, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
+def create_batch_students(
+    data: dict, 
+    db: Session = Depends(get_db), 
+    college_scope: int | None = get_college_scope,
+    current_user: User = Depends(get_current_user)
+):
     students = data.get("students") or []
     department = data.get("department")
     year = data.get("year")
     created = 0
+    # Faculty uploads default to 'pending'. College Admin uploads default to 'approved'.
+    default_status = "pending" if current_user.role == "faculty" else "approved"
+    
     for item in students:
         email = item.get("email") or f"{item.get('roll') or item.get('studentId')}@skillovate.local"
         if db.query(User).filter(User.email == email.lower()).first():
@@ -241,11 +249,47 @@ def create_batch_students(data: dict, db: Session = Depends(get_db), college_sco
             role="student",
             college_id=college_scope,
             department=item.get("department") or department,
-            status="approved",
+            status=default_status,
         )
         db.add(user)
         db.flush()
         db.add(StudentProfile(user_id=user.id, student_id=(item.get("roll") or item.get("studentId") or "").upper(), year=year or item.get("year")))
         created += 1
     db.commit()
-    return MessageResponse(message=f"Successfully onboarded {created} students.")
+    return MessageResponse(message=f"Successfully onboarded {created} students. Status: {default_status}")
+
+@router.get("/pending", response_model=list[UserResponse], dependencies=[require_roles(UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
+def list_pending_students(db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
+    """Get all pending students for the master console."""
+    query = db.query(User).filter(User.role == "student", User.status == "pending")
+    if college_scope:
+        query = query.filter(User.college_id == college_scope)
+    return query.order_by(User.created_at.desc()).all()
+
+@router.put("/{student_id}/approve", response_model=UserResponse, dependencies=[require_roles(UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
+def approve_student(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
+    """Approve a pending student."""
+    query = db.query(User).filter(User.id == student_id, User.role == "student", User.status == "pending")
+    if college_scope:
+        query = query.filter(User.college_id == college_scope)
+    student = query.first()
+    if not student:
+        raise NotFoundError("Pending Student", str(student_id))
+    student.status = "approved"
+    db.commit()
+    db.refresh(student)
+    return student
+
+@router.put("/{student_id}/reject", response_model=UserResponse, dependencies=[require_roles(UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
+def reject_student(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
+    """Reject a pending student."""
+    query = db.query(User).filter(User.id == student_id, User.role == "student", User.status == "pending")
+    if college_scope:
+        query = query.filter(User.college_id == college_scope)
+    student = query.first()
+    if not student:
+        raise NotFoundError("Pending Student", str(student_id))
+    student.status = "rejected"
+    db.commit()
+    db.refresh(student)
+    return student

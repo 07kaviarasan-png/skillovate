@@ -25,17 +25,25 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
-  const navItems = [
-    { id: "dash", label: "Dashboard", section: "Learning Portal", icon: <DashboardIcon /> },
-    { id: "practice", label: "Mock Practice", icon: <PracticeIcon /> },
-    { id: "tests", label: "Aptitude Tests", icon: <TestsIcon /> },
-    { id: "mnc", label: "MNC Test", icon: <MncIcon /> },
-    { id: "iv", label: "Mock Interviewer", icon: <IvIcon /> },
-    { id: "profile", label: "Profile Summarizer", section: "Professional Profile", icon: <ProfileIcon /> },
-    { id: "resume", label: "Resume Builder", icon: <ResumeIcon /> },
-    { id: "lb", label: "Top Talent Board", icon: <LeaderboardIcon /> },
-    { id: "settings", label: "Settings", icon: <SettingsIcon /> },
-  ];
+  const navItems = user?.role === "college_admin" 
+    ? [
+        { id: "dash", label: "Dashboard", section: "Master Console", icon: <DashboardIcon /> },
+        { id: "security", label: "Security & Approvals", icon: <PracticeIcon /> }, // Using PracticeIcon as placeholder for SecurityIcon
+        { id: "assessments", label: "Assessments", icon: <TestsIcon /> },
+        { id: "tracking", label: "Student Tracking", icon: <ProfileIcon /> },
+        { id: "settings", label: "Settings", icon: <SettingsIcon /> },
+      ]
+    : [
+        { id: "dash", label: "Dashboard", section: "Learning Portal", icon: <DashboardIcon /> },
+        { id: "practice", label: "Mock Practice", icon: <PracticeIcon /> },
+        { id: "tests", label: "Aptitude Tests", icon: <TestsIcon /> },
+        { id: "mnc", label: "MNC Test", icon: <MncIcon /> },
+        { id: "iv", label: "Mock Interviewer", icon: <IvIcon /> },
+        { id: "profile", label: "Profile Summarizer", section: "Professional Profile", icon: <ProfileIcon /> },
+        { id: "resume", label: "Resume Builder", icon: <ResumeIcon /> },
+        { id: "lb", label: "Top Talent Board", icon: <LeaderboardIcon /> },
+        { id: "settings", label: "Settings", icon: <SettingsIcon /> },
+      ];
 
   return (
     <div id="app" className={isMobileSidebarOpen ? "mob-sidebar-open" : ""}>
