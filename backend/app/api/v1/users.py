@@ -3,13 +3,13 @@ from sqlalchemy.orm import Session
 from typing import List
 
 from app.dependencies import get_db
-from app.core.rbac import get_current_user, RoleChecker
+from app.core.rbac import get_current_user, RoleChecker, UserRole
 from app.models.user import User
 from app.schemas.user import UserResponse
 from app.core.exceptions import NotFoundError
 
 router = APIRouter(prefix="/users", tags=["Users"])
-superadmin_checker = RoleChecker(["super_admin"])
+superadmin_checker = RoleChecker([UserRole.SUPER_ADMIN])
 
 @router.get("/pending", response_model=List[UserResponse])
 def get_pending_users(

@@ -6,12 +6,15 @@ interface User {
   id?: string | number;
   email: string;
   name: string;
-  role: string;          // 'student' | 'faculty' | 'college_admin' | 'super_admin'
+  role: string;          // 'student' | 'faculty' | 'college_admin' | 'super_admin' | 'recruiter'
   college_id?: string;
   college_name?: string;
+  company_name?: string;
+  company?: string;
   rollNumber?: string;
   department?: string;
   year?: number;
+  [key: string]: unknown; // allow extra fields from backend
 }
 
 interface AuthState {
