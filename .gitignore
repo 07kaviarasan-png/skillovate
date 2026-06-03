@@ -9,3 +9,6 @@ v2/backend/alembic/**/*.pyc
 v2/backend/data/*.db
 __pycache__
 venv/
+.venv/
+.agents/
+.codex/

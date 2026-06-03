@@ -1,26 +1,40 @@
+"""
+Skillovate V2 — Database Engine & Session Management
+Provides SQLAlchemy engine, session factory, and dependency injection for FastAPI.
+"""
+
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import DeclarativeBase, sessionmaker, Session
+from typing import Generator
 
-# SQLite database URL
-SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
+from app.config import get_settings
 
-# Create a SQLAlchemy engine
-# connect_args is needed for SQLite to allow multiple threads to access the database
+settings = get_settings()
+
+# ── Engine ───────────────────────────────────────
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    settings.DATABASE_URL,
+    connect_args={"check_same_thread": False} if settings.DATABASE_URL.startswith("sqlite") else {},
+    echo=settings.DEBUG,
 )
 
-# Create a SessionLocal class
-# Each instance of the SessionLocal class will be a database session.
-# The class itself is not a database session yet.
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# ── Session Factory ──────────────────────────────
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine,
+)
 
-# Base class for our models
-Base = declarative_base()
 
-# Dependency to get a database session
-def get_db():
+# ── Base Model ───────────────────────────────────
+class Base(DeclarativeBase):
+    """Base class for all SQLAlchemy models."""
+    pass
+
+
+# ── Dependency ───────────────────────────────────
+def get_db() -> Generator[Session, None, None]:
+    """FastAPI dependency that provides a database session per request."""
     db = SessionLocal()
     try:
         yield db

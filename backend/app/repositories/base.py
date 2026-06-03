@@ -1,69 +1,51 @@
-from typing import Any, Dict, Generic, List, Optional, Type, TypeVar, Union
-import json
-from pydantic import BaseModel
+"""
+Skillovate V2 — Base Repository
+Generic CRUD operations for all models.
+"""
+from typing import TypeVar, Generic, Type, Optional, Any
 from sqlalchemy.orm import Session
-from app.models import Base
+from app.database import Base
 
 ModelType = TypeVar("ModelType", bound=Base)
-CreateSchemaType = TypeVar("CreateSchemaType", bound=BaseModel)
-UpdateSchemaType = TypeVar("UpdateSchemaType", bound=BaseModel)
 
-class BaseRepository(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
-    def __init__(self, model: Type[ModelType]):
+
+class BaseRepository(Generic[ModelType]):
+    """Generic repository with standard CRUD operations."""
+
+    def __init__(self, model: Type[ModelType], db: Session):
         self.model = model
+        self.db = db
 
-    def get(self, db: Session, id: Any) -> Optional[ModelType]:
-        return db.query(self.model).filter(self.model.id == id).first()
+    def get_by_id(self, id: int) -> Optional[ModelType]:
+        return self.db.query(self.model).filter(self.model.id == id).first()
 
-    def get_multi(
-        self, db: Session, *, skip: int = 0, limit: int = 100
-    ) -> List[ModelType]:
-        return db.query(self.model).offset(skip).limit(limit).all()
+    def get_all(self, skip: int = 0, limit: int = 100) -> list[ModelType]:
+        return self.db.query(self.model).offset(skip).limit(limit).all()
 
-    def create(self, db: Session, *, obj_in: CreateSchemaType) -> ModelType:
-        obj_in_data = obj_in.model_dump()
-        # Handle JSON fields for SQLite
-        for field, value in obj_in_data.items():
-            if isinstance(value, (list, dict)):
-                obj_in_data[field] = json.dumps(value)
-                
-        db_obj = self.model(**obj_in_data)
-        db.add(db_obj)
-        db.commit()
-        db.refresh(db_obj)
+    def create(self, obj_data: dict) -> ModelType:
+        db_obj = self.model(**obj_data)
+        self.db.add(db_obj)
+        self.db.commit()
+        self.db.refresh(db_obj)
         return db_obj
 
-    def update(
-        self,
-        db: Session,
-        *,
-        db_obj: ModelType,
-        obj_in: Union[UpdateSchemaType, Dict[str, Any]]
-    ) -> ModelType:
-        if isinstance(obj_in, dict):
-            update_data = obj_in
-        else:
-            update_data = obj_in.model_dump(exclude_unset=True)
-        
-        # Handle JSON fields for SQLite
+    def update(self, db_obj: ModelType, update_data: dict) -> ModelType:
         for field, value in update_data.items():
-            if isinstance(value, (list, dict)):
-                update_data[field] = json.dumps(value)
-
-        for field in update_data:
-            if hasattr(db_obj, field):
-                setattr(db_obj, field, update_data[field])
-        
-        db.add(db_obj)
-        db.commit()
-        db.refresh(db_obj)
+            if value is not None:
+                setattr(db_obj, field, value)
+        self.db.commit()
+        self.db.refresh(db_obj)
         return db_obj
 
-    def remove(self, db: Session, *, id: int) -> ModelType:
-        obj = db.query(self.model).get(id)
-        db.delete(obj)
-        db.commit()
-        return obj
+    def delete(self, db_obj: ModelType) -> None:
+        self.db.delete(db_obj)
+        self.db.commit()
 
-    def count(self, db: Session) -> int:
-        return db.query(self.model).count()
+    def count(self, **filters) -> int:
+        query = self.db.query(self.model)
+        for key, value in filters.items():
+            query = query.filter(getattr(self.model, key) == value)
+        return query.count()
+
+    def exists(self, **filters) -> bool:
+        return self.count(**filters) > 0
