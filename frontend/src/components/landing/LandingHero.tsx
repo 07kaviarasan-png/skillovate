@@ -43,6 +43,14 @@ export function LandingHero() {
             <video className="hero-video" autoPlay muted loop playsInline>
               <source src="/hero_video.mp4" type="video/mp4" />
             </video>
+            {/* Gradient overlay for polish */}
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(135deg, rgba(27,111,230,0.15) 0%, rgba(30,35,80,0.08) 100%)",
+              borderRadius: "inherit",
+              pointerEvents: "none",
+            }} />
           </div>
         </div>
       </div>

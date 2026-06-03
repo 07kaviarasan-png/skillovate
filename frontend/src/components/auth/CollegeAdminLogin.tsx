@@ -54,7 +54,7 @@ export function CollegeAdminLogin() {
 
   return (
     <AuthSplitLayout>
-      <div className="login-box-auth">
+      <div className="lp-card">
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
           <img
             src="/legacy/logo.png"
@@ -100,7 +100,7 @@ export function CollegeAdminLogin() {
             onChange={(e) => setPassword(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
           />
-          <button className="btn-primary" style={{ width: "100%" }} onClick={handleLogin} disabled={loading}>
+          <button className="l-submit l-submit-blue" style={{ width: "100%" }} onClick={handleLogin} disabled={loading}>
             {loading ? "Signing in..." : "Sign In to Portal"}
           </button>
         </div>

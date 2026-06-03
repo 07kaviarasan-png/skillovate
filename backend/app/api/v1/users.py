@@ -11,6 +11,15 @@ from app.core.exceptions import NotFoundError
 router = APIRouter(prefix="/users", tags=["Users"])
 superadmin_checker = RoleChecker([UserRole.SUPER_ADMIN])
 
+@router.get("/", response_model=List[UserResponse])
+def get_all_users(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(superadmin_checker)
+):
+    """Get all users. Only accessible by superadmin."""
+    users = db.query(User).order_by(User.created_at.desc()).all()
+    return users
+
 @router.get("/pending", response_model=List[UserResponse])
 def get_pending_users(
     db: Session = Depends(get_db),
