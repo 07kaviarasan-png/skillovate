@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import api from "@/lib/api";
+import { api } from "@/lib/api";
 
 type PendingStudent = {
-  id: int;
+  id: number;
   name: string;
   email: string;
   department: string;

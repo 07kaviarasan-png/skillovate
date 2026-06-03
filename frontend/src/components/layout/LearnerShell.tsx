@@ -28,9 +28,15 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
   const navItems = user?.role === "college_admin" 
     ? [
         { id: "dash", label: "Dashboard", section: "Master Console", icon: <DashboardIcon /> },
-        { id: "security", label: "Security & Approvals", icon: <PracticeIcon /> }, // Using PracticeIcon as placeholder for SecurityIcon
+        { id: "security", label: "Security & Approvals", icon: <PracticeIcon /> },
         { id: "assessments", label: "Assessments", icon: <TestsIcon /> },
         { id: "tracking", label: "Student Tracking", icon: <ProfileIcon /> },
+        { id: "settings", label: "Settings", icon: <SettingsIcon /> },
+      ]
+    : user?.role === "faculty"
+    ? [
+        { id: "dash", label: "Dashboard", section: "Faculty Portal", icon: <DashboardIcon /> },
+        { id: "upload", label: "Upload Students", icon: <PracticeIcon /> },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
       ]
     : [

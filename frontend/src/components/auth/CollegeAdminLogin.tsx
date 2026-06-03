@@ -32,7 +32,7 @@ export function CollegeAdminLogin() {
           name: user.name,
           email: user.email,
           role: user.role,
-          collegeId: user.collegeId,
+          college_id: user.college_id || user.collegeId,
         },
         access_token
       );
@@ -53,7 +53,7 @@ export function CollegeAdminLogin() {
   };
 
   return (
-    <AuthSplitLayout type="institutional">
+    <AuthSplitLayout>
       <div className="login-box-auth">
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
           <img

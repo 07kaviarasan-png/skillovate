@@ -44,14 +44,9 @@ export function HrLogin() {
       );
     } catch (err: unknown) {
       const error = err as { response?: { data?: { detail?: string } } };
-      const detail = error?.response?.data?.detail;
-      if (detail === "Account is pending approval") {
-        setError("");
-        alert("Your account request has been successfully submitted! Please wait for the Super Admin to approve your company before you can log in.");
-        setIsLogin(true);
-      } else {
-        setError(detail || "Registration failed. Please try again.");
-      }
+      setError(
+        error?.response?.data?.detail || "Registration failed. Please try again."
+      );
     } finally {
       setLoading(false);
     }

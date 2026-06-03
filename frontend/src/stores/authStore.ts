@@ -2,7 +2,8 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 interface User {
-  _id: string;
+  _id?: string;
+  id?: string | number;
   email: string;
   name: string;
   role: string;          // 'student' | 'faculty' | 'college_admin' | 'super_admin'
