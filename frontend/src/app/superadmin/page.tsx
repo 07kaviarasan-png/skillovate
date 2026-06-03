@@ -4,6 +4,8 @@ import React from "react";
 import { SuperAdminLogin } from "@/components/auth/SuperAdminLogin";
 import { useAuthStore } from "@/stores/authStore";
 
+import { SuperAdminDashboard } from "@/components/superadmin/SuperAdminDashboard";
+
 export default function SuperAdminPage() {
   const { isAuthenticated, user } = useAuthStore();
 
@@ -12,10 +14,8 @@ export default function SuperAdminPage() {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Super Admin Dashboard</h1>
-      <p>Welcome, {user.name}!</p>
-      {/* TODO: Add pending users table */}
+    <div className="min-h-screen bg-gray-50/50 py-12">
+      <SuperAdminDashboard />
     </div>
   );
 }
