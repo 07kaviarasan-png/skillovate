@@ -142,3 +142,13 @@ def update_profile(
     db.commit()
     db.refresh(current_user)
     return UserBriefResponse.model_validate(current_user)
+
+@router.put("/change-password", response_model=MessageResponse)
+def change_password(
+    data: ChangePasswordRequest,
+    current_user: User = Depends(get_current_user),
+    auth_service: AuthService = Depends(get_auth_service)
+):
+    """Change user password."""
+    auth_service.change_password(current_user.id, data)
+    return MessageResponse(message="Password changed successfully")
