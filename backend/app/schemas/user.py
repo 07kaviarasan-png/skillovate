@@ -60,6 +60,13 @@ class StudentProfileUpdateRequest(BaseModel):
     """Student profile update."""
     student_id: Optional[str] = None
     year: Optional[int] = None
+
+class AdminUserUpdateRequest(BaseModel):
+    """Admin update request to manage user attributes directly."""
+    name: Optional[str] = Field(None, min_length=2, max_length=255)
+    email: Optional[EmailStr] = None
+    role: Optional[str] = None
+    status: Optional[str] = None
     semester: Optional[int] = None
     cgpa: Optional[float] = None
     skills: Optional[str] = None

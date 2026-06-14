@@ -15,6 +15,10 @@ export function SuperAdminDashboard() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Edit Modal State
+  const [editingUser, setEditingUser] = useState<User | null>(null);
+  const [editFormData, setEditFormData] = useState({ name: "", email: "", role: "", status: "" });
+
   const fetchUsers = async () => {
     setLoading(true);
     try {
@@ -38,7 +42,6 @@ export function SuperAdminDashboard() {
       if (activeTab === "pending") {
         setUsers((prev) => prev.filter((u) => u.id !== id));
       } else {
-        // If in 'all' tab, just refetch to get updated status
         fetchUsers();
       }
     } catch (err) {
@@ -46,10 +49,36 @@ export function SuperAdminDashboard() {
     }
   };
 
+  const handleDelete = async (id: number) => {
+    if (!window.confirm("Are you sure you want to delete this user permanently?")) return;
+    try {
+      await api.delete(`/users/${id}`);
+      setUsers((prev) => prev.filter((u) => u.id !== id));
+    } catch (err) {
+      alert("Failed to delete user");
+    }
+  };
+
+  const handleEditClick = (user: User) => {
+    setEditingUser(user);
+    setEditFormData({ name: user.name, email: user.email, role: user.role, status: user.status });
+  };
+
+  const handleEditSave = async () => {
+    if (!editingUser) return;
+    try {
+      await api.put(`/users/${editingUser.id}`, editFormData);
+      setEditingUser(null);
+      fetchUsers();
+    } catch (err) {
+      alert("Failed to update user");
+    }
+  };
+
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6">
       <h1 className="text-3xl font-bold text-gray-800 tracking-tight">Super Admin Dashboard</h1>
-      <p className="text-gray-500">Manage all portal accounts and requests here.</p>
+      <p className="text-gray-500">Manage all portal accounts and requests here. Update, delete, and approve institutions, faculty, and students.</p>
       
       {/* Tabs */}
       <div className="flex space-x-1 border-b border-gray-200">
@@ -133,7 +162,7 @@ export function SuperAdminDashboard() {
                       {new Date(user.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 text-right space-x-3">
-                      {user.status === "pending" ? (
+                      {activeTab === "pending" ? (
                         <>
                           <button
                             onClick={() => handleAction(user.id, "reject")}
@@ -149,7 +178,20 @@ export function SuperAdminDashboard() {
                           </button>
                         </>
                       ) : (
-                        <span className="text-gray-400 text-sm italic">No actions</span>
+                        <>
+                          <button
+                            onClick={() => handleEditClick(user)}
+                            className="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => handleDelete(user.id)}
+                            className="text-red-500 hover:text-red-700 font-medium text-sm transition-colors"
+                          >
+                            Delete
+                          </button>
+                        </>
                       )}
                     </td>
                   </tr>
@@ -159,6 +201,75 @@ export function SuperAdminDashboard() {
           </div>
         )}
       </div>
+
+      {/* Edit Modal */}
+      {editingUser && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md">
+            <h3 className="text-xl font-bold mb-4">Edit User</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input 
+                  type="text" 
+                  value={editFormData.name} 
+                  onChange={(e) => setEditFormData({...editFormData, name: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input 
+                  type="email" 
+                  value={editFormData.email} 
+                  onChange={(e) => setEditFormData({...editFormData, email: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
+                <select 
+                  value={editFormData.role} 
+                  onChange={(e) => setEditFormData({...editFormData, role: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                >
+                  <option value="student">Student</option>
+                  <option value="faculty">Faculty</option>
+                  <option value="recruiter">Recruiter</option>
+                  <option value="college_admin">College Admin</option>
+                  <option value="super_admin">Super Admin</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <select 
+                  value={editFormData.status} 
+                  onChange={(e) => setEditFormData({...editFormData, status: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                >
+                  <option value="pending">Pending</option>
+                  <option value="approved">Approved</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </div>
+            </div>
+            <div className="mt-6 flex justify-end space-x-3">
+              <button 
+                onClick={() => setEditingUser(null)}
+                className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-medium transition-colors"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={handleEditSave}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-sm transition-colors"
+              >
+                Save Changes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

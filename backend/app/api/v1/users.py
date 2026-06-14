@@ -5,7 +5,7 @@ from typing import List
 from app.dependencies import get_db
 from app.core.rbac import get_current_user, RoleChecker, UserRole
 from app.models.user import User
-from app.schemas.user import UserResponse
+from app.schemas.user import UserResponse, AdminUserUpdateRequest
 from app.core.exceptions import NotFoundError
 
 router = APIRouter(prefix="/users", tags=["Users"])
@@ -55,6 +55,40 @@ def reject_user(
     if not user:
         raise NotFoundError("User", str(user_id))
     user.status = "rejected"
+    db.commit()
+    db.refresh(user)
+    return user
+
+@router.delete("/{user_id}", response_model=dict)
+def delete_user(
+    user_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(superadmin_checker)
+):
+    """Delete a user entirely. Only accessible by superadmin."""
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise NotFoundError("User", str(user_id))
+    db.delete(user)
+    db.commit()
+    return {"message": "User deleted successfully"}
+
+@router.put("/{user_id}", response_model=UserResponse)
+def update_user(
+    user_id: int,
+    payload: AdminUserUpdateRequest,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(superadmin_checker)
+):
+    """Update a user's details. Only accessible by superadmin."""
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise NotFoundError("User", str(user_id))
+    
+    update_data = payload.model_dump(exclude_unset=True)
+    for key, value in update_data.items():
+        setattr(user, key, value)
+        
     db.commit()
     db.refresh(user)
     return user
