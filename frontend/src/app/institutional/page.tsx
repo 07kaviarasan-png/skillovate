@@ -8,6 +8,8 @@ import { InstitutionalStudentLogin } from "@/components/auth/InstitutionalStuden
 import { LearnerShell } from "@/components/layout/LearnerShell"; 
 import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
 import { PlatformChat } from "@/components/shared/PlatformChat";
+import { CollegeAdminDashboard } from "@/components/institutional/CollegeAdminDashboard";
+import { FacultyDashboard } from "@/components/institutional/FacultyDashboard";
 import { useEffect, useState } from "react";
 import { InstitutionalApproval } from "@/components/institutional/InstitutionalApproval";
 
@@ -21,10 +23,10 @@ export default function InstitutionalPage() {
 
   useEffect(() => {
     setMounted(true);
-    if (activeScreen === "dash") {
+    if (activeScreen === "dash" && user?.role === "college_admin" && user?.status === "pending") {
       setActiveScreen("security");
     }
-  }, [activeScreen, setActiveScreen]);
+  }, [activeScreen, setActiveScreen, user]);
 
   if (!mounted) return null;
 
@@ -104,14 +106,16 @@ export default function InstitutionalPage() {
     <LearnerShell>
       {activeScreen === "security" && <InstitutionalApproval />}
       {activeScreen === "chat" && <PlatformChat />}
-      {activeScreen === "dash" && (
+      {activeScreen === "dash" && user?.role === "college_admin" && <CollegeAdminDashboard />}
+      {(activeScreen === "dash" || activeScreen === "upload" || activeScreen === "settings") && user?.role === "faculty" && <FacultyDashboard />}
+      {activeScreen === "dash" && user?.role !== "college_admin" && user?.role !== "faculty" && (
         <div style={{ padding: "40px" }}>
           <h2>Welcome, {user?.name}</h2>
           <p>Role: {user?.role}</p>
-          <p>Institutional Dashboard is under migration.</p>
+          <p>Dashboard is under migration.</p>
         </div>
       )}
-      {activeScreen !== "dash" && activeScreen !== "security" && activeScreen !== "chat" && (
+      {activeScreen !== "dash" && activeScreen !== "security" && activeScreen !== "chat" && activeScreen !== "upload" && activeScreen !== "settings" && (
         <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
           <h2>{activeScreen.toUpperCase()} Screen</h2>
           <p>This module is coming soon in the React migration.</p>

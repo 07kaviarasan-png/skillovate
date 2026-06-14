@@ -6,6 +6,8 @@ import { useAuthStore } from "@/stores/authStore";
 import { api } from "@/lib/api";
 
 export function CollegeAdminLogin({ onBack }: { onBack?: () => void }) {
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -17,28 +19,36 @@ export function CollegeAdminLogin({ onBack }: { onBack?: () => void }) {
     setError("");
     setLoading(true);
     try {
-      if (!email || !password) {
-        setError("Enter credentials");
+      if (!email || !password || (isSignUp && !name)) {
+        setError("Please fill in all fields.");
         setLoading(false);
         return;
       }
-      const payload = { email, password };
-      const res = await api.post("/auth/login", payload);
 
-      const { user, access_token } = res.data;
-      login(
-        {
-          id: user._id || user.id,
-          name: user.name,
-          email: user.email,
-          role: user.role,
-          college_id: user.college_id || user.collegeId,
-        },
-        access_token
-      );
+      if (isSignUp) {
+        const payload = { name, email, password, role: "college_admin" };
+        await api.post("/auth/register", payload);
+        alert("Registration request submitted! Please wait for super admin approval.");
+        setIsSignUp(false);
+      } else {
+        const payload = { email, password };
+        const res = await api.post("/auth/login", payload);
+
+        const { user, access_token } = res.data;
+        login(
+          {
+            id: user._id || user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            college_id: user.college_id || user.collegeId,
+          },
+          access_token
+        );
+      }
     } catch (err: unknown) {
       const error = err as { response?: { data?: { detail?: any } } };
-      let errMsg = "Invalid password or email";
+      let errMsg = "An error occurred.";
       if (error?.response?.data?.detail) {
         if (Array.isArray(error.response.data.detail)) {
           errMsg = error.response.data.detail.map((e: any) => e.msg).join(", ");
@@ -86,35 +96,86 @@ export function CollegeAdminLogin({ onBack }: { onBack?: () => void }) {
           </div>
         )}
 
-        <div className="l-panel active">
-          <label className="lbl">Admin Email</label>
-          <input
-            type="email"
-            className="fi"
-            placeholder="admin@college.edu"
-            style={{ marginBottom: "12px" }}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-            <label className="lbl" style={{ marginBottom: 0 }}>Password</label>
-            <a href="/forgot-password" style={{ fontSize: "12px", color: "var(--accent)", textDecoration: "none", fontWeight: 500, marginBottom: "8px" }}>
-              Forgot password?
-            </a>
-          </div>
-          <input
-            type="password"
-            className="fi"
-            placeholder="••••••••"
-            style={{ marginBottom: "14px" }}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-          />
-          <button className="l-submit l-submit-blue" style={{ width: "100%" }} onClick={handleLogin} disabled={loading}>
-            {loading ? "Signing in..." : "Sign In to Portal"}
+        <div className="l-tabs" style={{ display: "flex", marginBottom: "20px", borderBottom: "1px solid var(--border)" }}>
+          <button 
+            onClick={() => setIsSignUp(false)}
+            style={{ flex: 1, background: "none", border: "none", padding: "10px", fontWeight: !isSignUp ? 700 : 500, color: !isSignUp ? "var(--accent)" : "var(--muted)", borderBottom: !isSignUp ? "2px solid var(--accent)" : "2px solid transparent", cursor: "pointer" }}
+          >
+            Sign In
+          </button>
+          <button 
+            onClick={() => setIsSignUp(true)}
+            style={{ flex: 1, background: "none", border: "none", padding: "10px", fontWeight: isSignUp ? 700 : 500, color: isSignUp ? "var(--accent)" : "var(--muted)", borderBottom: isSignUp ? "2px solid var(--accent)" : "2px solid transparent", cursor: "pointer" }}
+          >
+            Sign Up
           </button>
         </div>
+
+        {isSignUp ? (
+          <div className="l-panel active">
+            <label className="lbl">Institution Name</label>
+            <input
+              type="text"
+              className="fi"
+              placeholder="Your College Name"
+              style={{ marginBottom: "12px" }}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label className="lbl">Admin Email</label>
+            <input
+              type="email"
+              className="fi"
+              placeholder="admin@college.edu"
+              style={{ marginBottom: "12px" }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label className="lbl">Password</label>
+            <input
+              type="password"
+              className="fi"
+              placeholder="••••••••"
+              style={{ marginBottom: "14px" }}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            />
+            <button className="l-submit l-submit-blue" style={{ width: "100%" }} onClick={handleLogin} disabled={loading}>
+              {loading ? "Registering..." : "Submit Registration Request"}
+            </button>
+          </div>
+        ) : (
+          <div className="l-panel active">
+            <label className="lbl">Admin Email</label>
+            <input
+              type="email"
+              className="fi"
+              placeholder="admin@college.edu"
+              style={{ marginBottom: "12px" }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+              <label className="lbl" style={{ marginBottom: 0 }}>Password</label>
+              <a href="/forgot-password" style={{ fontSize: "12px", color: "var(--accent)", textDecoration: "none", fontWeight: 500, marginBottom: "8px" }}>
+                Forgot password?
+              </a>
+            </div>
+            <input
+              type="password"
+              className="fi"
+              placeholder="••••••••"
+              style={{ marginBottom: "14px" }}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            />
+            <button className="l-submit l-submit-blue" style={{ width: "100%" }} onClick={handleLogin} disabled={loading}>
+              {loading ? "Signing in..." : "Sign In to Portal"}
+            </button>
+          </div>
+        )}
       </div>
     </AuthSplitLayout>
   );

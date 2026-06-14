@@ -23,7 +23,7 @@ from app.core.security import (
 from app.models.user import User, StudentProfile, RecruiterProfile, RefreshToken
 from app.repositories.user_repo import UserRepository, StudentProfileRepository, RefreshTokenRepository
 from app.repositories.college_repo import CollegeRepository
-from app.schemas.auth import RegisterRequest, LoginRequest, TokenResponse, UserBriefResponse
+from app.schemas.auth import RegisterRequest, LoginRequest, TokenResponse, UserBriefResponse, ChangePasswordRequest
 
 settings = get_settings()
 
@@ -183,3 +183,12 @@ class AuthService:
     def logout(self, user_id: int) -> None:
         """Revoke all refresh tokens for a user (global logout for simplicity)."""
         self.refresh_token_repo.revoke_all_user_tokens(user_id)
+
+    def change_password(self, user_id: int, data: ChangePasswordRequest) -> None:
+        """Change a user's password."""
+        user = self.user_repo.get_by_id(user_id)
+        if not user or not verify_password(data.current_password, user.password_hash):
+            raise InvalidCredentialsError("Incorrect current password")
+        
+        user.password_hash = hash_password(data.new_password)
+        self.db.commit()

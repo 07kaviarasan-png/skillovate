@@ -2,7 +2,7 @@
 Skillovate V2 — Auth Router
 """
 from fastapi import APIRouter, Depends, Response, status
-from app.schemas.auth import RegisterRequest, LoginRequest, RefreshTokenRequest, UserBriefResponse
+from app.schemas.auth import RegisterRequest, LoginRequest, RefreshTokenRequest, UserBriefResponse, ChangePasswordRequest
 from app.schemas.common import MessageResponse
 from app.services.auth_service import AuthService
 from app.dependencies import get_auth_service
