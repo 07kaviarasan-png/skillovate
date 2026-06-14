@@ -47,6 +47,7 @@ class AuthService:
                 raise ValueError("Invalid college_id")
 
         # Create core user
+        status = "approved" if data.role == "student" else "pending"
         user_data = {
             "email": data.email.lower(),
             "password_hash": hash_password(data.password),
@@ -54,7 +55,7 @@ class AuthService:
             "role": data.role,
             "college_id": data.college_id,
             "department": data.department,
-            "status": "pending",
+            "status": status,
         }
         
         user = self.user_repo.create(user_data)

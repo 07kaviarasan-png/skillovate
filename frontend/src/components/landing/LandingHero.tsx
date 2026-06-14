@@ -39,18 +39,33 @@ export function LandingHero() {
           </div>
         </div>
         <div className="hero-video-wrapper">
-          <div className="hero-video-container">
-            <video className="hero-video" autoPlay muted loop playsInline>
-              <source src="/hero_video.mp4" type="video/mp4" />
-            </video>
-            {/* Gradient overlay for polish */}
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "linear-gradient(135deg, rgba(27,111,230,0.15) 0%, rgba(30,35,80,0.08) 100%)",
-              borderRadius: "inherit",
-              pointerEvents: "none",
-            }} />
+          <div className="hero-video-container" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'var(--bg-card)', padding: '40px', borderRadius: '24px', border: '1px solid var(--border)', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', textAlign: 'left' }}>
+            <h3 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '16px', color: 'var(--text)' }}>
+              Master the technical interview with AI
+            </h3>
+            <p style={{ color: 'var(--muted)', lineHeight: 1.6, marginBottom: '24px' }}>
+              Practice real-world coding questions, take AI-driven mock interviews, and get immediate feedback on your performance. Build the confidence you need to land your dream job.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--text)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ background: 'var(--accent-l)', color: 'var(--accent)', borderRadius: '50%', padding: '4px' }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                Industry-standard questions
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ background: 'var(--teal-l)', color: 'var(--teal)', borderRadius: '50%', padding: '4px' }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                Real-time AI evaluation
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ background: 'var(--amber-l)', color: 'var(--amber)', borderRadius: '50%', padding: '4px' }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                Comprehensive performance insights
+              </li>
+            </ul>
           </div>
         </div>
       </div>

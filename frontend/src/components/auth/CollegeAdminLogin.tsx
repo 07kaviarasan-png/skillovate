@@ -5,7 +5,7 @@ import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
 import { useAuthStore } from "@/stores/authStore";
 import { api } from "@/lib/api";
 
-export function CollegeAdminLogin() {
+export function CollegeAdminLogin({ onBack }: { onBack?: () => void }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -38,12 +38,12 @@ export function CollegeAdminLogin() {
       );
     } catch (err: unknown) {
       const error = err as { response?: { data?: { detail?: any } } };
-      let errMsg = "Invalid credentials. Please try again.";
+      let errMsg = "Invalid password or email";
       if (error?.response?.data?.detail) {
         if (Array.isArray(error.response.data.detail)) {
           errMsg = error.response.data.detail.map((e: any) => e.msg).join(", ");
         } else if (typeof error.response.data.detail === "string") {
-          errMsg = error.response.data.detail;
+          errMsg = error.response.data.detail === "Incorrect email or password" ? "Invalid password or email" : error.response.data.detail;
         }
       }
       setError(errMsg);
@@ -55,9 +55,20 @@ export function CollegeAdminLogin() {
   return (
     <AuthSplitLayout>
       <div className="lp-card">
-        <div style={{ textAlign: "center", marginBottom: "30px" }}>
+        <div style={{ textAlign: "center", marginBottom: "30px", position: "relative" }}>
+          {onBack && (
+            <button 
+              onClick={onBack}
+              style={{ position: "absolute", left: 0, top: 0, background: "none", border: "none", color: "var(--muted)", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px", fontSize: "14px" }}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+              Back
+            </button>
+          )}
           <img
-            src="/legacy/logo.png"
+            src="/logo.png"
             alt="Skillovate"
             style={{ height: "40px", marginBottom: "20px" }}
           />

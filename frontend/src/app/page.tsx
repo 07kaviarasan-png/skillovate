@@ -49,12 +49,33 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="lp-hero-media">
-            <div className="lp-video-box">
-              <video autoPlay muted loop playsInline style={{ width: "100%", height: "100%", objectFit: "cover" }}>
-                <source src="/hero_video.mp4" type="video/mp4" />
-              </video>
-            </div>
+          <div className="lp-hero-media" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'var(--bg-card)', padding: '40px', borderRadius: '24px', border: '1px solid var(--border)', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }}>
+            <h3 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '16px', color: 'var(--text)' }}>
+              Master the technical interview with AI
+            </h3>
+            <p style={{ color: 'var(--muted)', lineHeight: 1.6, marginBottom: '24px' }}>
+              Practice real-world coding questions, take AI-driven mock interviews, and get immediate feedback on your performance. Build the confidence you need to land your dream job.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--text)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ background: 'var(--accent-l)', color: 'var(--accent)', borderRadius: '50%', padding: '4px' }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                Industry-standard questions
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ background: 'var(--teal-l)', color: 'var(--teal)', borderRadius: '50%', padding: '4px' }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                Real-time AI evaluation
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ background: 'var(--amber-l)', color: 'var(--amber)', borderRadius: '50%', padding: '4px' }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                Comprehensive performance insights
+              </li>
+            </ul>
           </div>
         </div>
       </header>

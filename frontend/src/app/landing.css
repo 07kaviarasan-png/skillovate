@@ -4,6 +4,10 @@
    with Tailwind globals and styles.css portal styles.
 ═══════════════════════════════════════════════════════ */
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ── Root wrapper ── */
 .landing-root {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -17,8 +21,6 @@
   background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
   background-position: center top;
   min-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
   line-height: 1.6;
 }
 

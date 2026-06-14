@@ -5,9 +5,9 @@ import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
 import { useAuthStore } from "@/stores/authStore";
 import { api } from "@/lib/api";
 
-export function FacultyLogin({ onBack }: { onBack?: () => void }) {
+export function InstitutionalStudentLogin({ onBack }: { onBack: () => void }) {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [dobPassword, setDobPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   
@@ -17,12 +17,12 @@ export function FacultyLogin({ onBack }: { onBack?: () => void }) {
     setError("");
     setLoading(true);
     try {
-      if (!email || !password) {
-        setError("Enter credentials");
+      if (!email || !dobPassword) {
+        setError("Enter email and DOB password");
         setLoading(false);
         return;
       }
-      const payload = { email, password };
+      const payload = { email, password: dobPassword };
       const res = await api.post("/auth/login", payload);
 
       const { user, access_token } = res.data;
@@ -56,27 +56,25 @@ export function FacultyLogin({ onBack }: { onBack?: () => void }) {
     <AuthSplitLayout>
       <div className="lp-card">
         <div style={{ textAlign: "center", marginBottom: "30px", position: "relative" }}>
-          {onBack && (
-            <button 
-              onClick={onBack}
-              style={{ position: "absolute", left: 0, top: 0, background: "none", border: "none", color: "var(--muted)", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px", fontSize: "14px" }}
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-              </svg>
-              Back
-            </button>
-          )}
+          <button 
+            onClick={onBack}
+            style={{ position: "absolute", left: 0, top: 0, background: "none", border: "none", color: "var(--muted)", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px", fontSize: "14px" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back
+          </button>
           <img
             src="/logo.png"
             alt="Skillovate"
             style={{ height: "40px", marginBottom: "20px" }}
           />
           <h2 style={{ fontSize: "24px", color: "var(--text)", fontWeight: 700, marginBottom: "8px" }}>
-            Faculty Portal
+            Institutional Student Login
           </h2>
-          <p style={{ color: "var(--muted)", fontSize: "14px" }}>
-            Sign in to manage your students
+          <p style={{ color: "var(--muted)", fontSize: "14px", lineHeight: 1.5 }}>
+            Sign in using the email registered by your institution and your Date of Birth as the password.
           </p>
         </div>
 
@@ -87,28 +85,25 @@ export function FacultyLogin({ onBack }: { onBack?: () => void }) {
         )}
 
         <div className="l-panel active">
-          <label className="lbl">Staff Email</label>
+          <label className="lbl">College Email</label>
           <input
             type="email"
             className="fi"
-            placeholder="faculty@college.edu"
+            placeholder="student@college.edu"
             style={{ marginBottom: "12px" }}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-            <label className="lbl" style={{ marginBottom: 0 }}>Password</label>
-            <a href="/forgot-password" style={{ fontSize: "12px", color: "var(--accent)", textDecoration: "none", fontWeight: 500, marginBottom: "8px" }}>
-              Forgot password?
-            </a>
+            <label className="lbl" style={{ marginBottom: 0 }}>Password (DOB)</label>
           </div>
           <input
             type="password"
             className="fi"
-            placeholder="••••••••"
+            placeholder="DDMMYYYY"
             style={{ marginBottom: "14px" }}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={dobPassword}
+            onChange={(e) => setDobPassword(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
           />
           <button className="l-submit l-submit-blue" style={{ width: "100%" }} onClick={handleLogin} disabled={loading}>

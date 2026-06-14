@@ -25,18 +25,22 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
+  const isInstitutionalStudent = user?.role === "student" && !!user?.college_id;
+
   const navItems = user?.role === "college_admin" 
     ? [
         { id: "dash", label: "Dashboard", section: "Master Console", icon: <DashboardIcon /> },
         { id: "security", label: "Security & Approvals", icon: <PracticeIcon /> },
         { id: "assessments", label: "Assessments", icon: <TestsIcon /> },
         { id: "tracking", label: "Student Tracking", icon: <ProfileIcon /> },
+        { id: "chat", label: "Messages", icon: <ChatIcon /> },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
       ]
     : user?.role === "faculty"
     ? [
         { id: "dash", label: "Dashboard", section: "Faculty Portal", icon: <DashboardIcon /> },
         { id: "upload", label: "Upload Students", icon: <PracticeIcon /> },
+        { id: "chat", label: "Messages", icon: <ChatIcon /> },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
       ]
     : [
@@ -45,9 +49,12 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
         { id: "tests", label: "Aptitude Tests", icon: <TestsIcon /> },
         { id: "mnc", label: "MNC Test", icon: <MncIcon /> },
         { id: "iv", label: "Mock Interviewer", icon: <IvIcon /> },
-        { id: "profile", label: "Profile Summarizer", section: "Professional Profile", icon: <ProfileIcon /> },
-        { id: "resume", label: "Resume Builder", icon: <ResumeIcon /> },
-        { id: "lb", label: "Top Talent Board", icon: <LeaderboardIcon /> },
+        ...(isInstitutionalStudent ? [
+          { id: "profile", label: "Profile Summarizer", section: "Professional Profile", icon: <ProfileIcon /> },
+          { id: "resume", label: "Resume Builder", icon: <ResumeIcon /> },
+          { id: "lb", label: "Top Talent Board", icon: <LeaderboardIcon /> },
+        ] : []),
+        { id: "chat", label: "Messages", icon: <ChatIcon />, section: isInstitutionalStudent ? undefined : "Professional Profile" },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
       ];
 
@@ -239,6 +246,16 @@ function SettingsIcon() {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <circle cx="12" cy="12" r="3" />
       <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+    </svg>
+  );
+}
+
+function ChatIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      <path d="M13 8H7" />
+      <path d="M17 12H7" />
     </svg>
   );
 }

@@ -5,6 +5,7 @@ import { useUiStore } from "@/stores/uiStore";
 import { LearnerLogin } from "@/components/learner/LearnerLogin";
 import { LearnerShell } from "@/components/layout/LearnerShell";
 import { LearnerDashboard } from "@/components/learner/LearnerDashboard";
+import { LearnerMockInterview } from "@/components/learner/LearnerMockInterview";
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -29,7 +30,8 @@ function LearnerContent() {
   return (
     <LearnerShell>
       {activeScreen === "dash" && <LearnerDashboard />}
-      {activeScreen !== "dash" && (
+      {activeScreen === "iv" && <LearnerMockInterview />}
+      {activeScreen !== "dash" && activeScreen !== "iv" && (
         <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
           <h2>{activeScreen.toUpperCase()} Screen</h2>
           <p>This module is coming soon in the React migration.</p>

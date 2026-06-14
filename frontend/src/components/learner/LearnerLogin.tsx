@@ -29,7 +29,37 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
   const { login } = useAuthStore();
 
   const handleLogin = async () => {
-    // ... (unchanged)
+    setLoginError("");
+    if (!email.trim() || !password.trim()) {
+      return setLoginError("Please enter your email and password.");
+    }
+    setLoading(true);
+    try {
+      const res = await api.post("/auth/login", { email, password });
+      const { access_token, user } = res.data;
+      login(
+        {
+          _id: user._id || user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role,
+          college_id: user.college_id || user.collegeId,
+          college_name: user.college_name,
+        },
+        access_token
+      );
+    } catch (err: unknown) {
+      const error = err as any;
+      const detail = error?.response?.data?.detail;
+      if (Array.isArray(detail)) {
+        setLoginError(detail.map((e: any) => e.msg).join(", "));
+      } else {
+        const defaultMsg = typeof detail === "string" ? detail : "Invalid password or email";
+        setLoginError(defaultMsg === "Incorrect email or password" ? "Invalid password or email" : defaultMsg);
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSignup = async () => {
@@ -47,36 +77,34 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
         college_name: signupRole === "student" ? signupCollege || undefined : undefined,
       });
 
-      const user = res.data;
+      const payload = res.data;
+      const user = payload.user || payload.data?.user;
+      const access_token = payload.access_token || payload.data?.token || payload.token;
 
-      const formData = new FormData();
-      formData.append("username", signupEmail);
-      formData.append("password", signupPassword);
-
-      const loginRes = await api.post("/auth/login", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      const { access_token } = loginRes.data;
-
-      login(
-        {
-          _id: user._id || user.id,
-          email: user.email,
-          name: user.name,
-          role: user.role,
-          college_id: user.college_id || user.collegeId,
-          college_name: user.college_name,
-        },
-        access_token
-      );
+      if (access_token && user) {
+        login(
+          {
+            _id: user._id || user.id,
+            email: user.email,
+            name: user.name,
+            role: user.role,
+            college_id: user.college_id || user.collegeId,
+            college_name: user.college_name,
+          },
+          access_token
+        );
+      } else {
+        setTab("login");
+        setSignupError("Registration successful. Please log in.");
+      }
     } catch (err: unknown) {
-      const error = err as { response?: { data?: { detail?: string } } };
-      setSignupError(
-        error?.response?.data?.detail || "Registration failed. Please try again."
-      );
+      const error = err as any;
+      const detail = error?.response?.data?.detail;
+      if (Array.isArray(detail)) {
+        setSignupError(detail.map((e: any) => e.msg).join(", "));
+      } else {
+        setSignupError(typeof detail === "string" ? detail : "Registration failed. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
