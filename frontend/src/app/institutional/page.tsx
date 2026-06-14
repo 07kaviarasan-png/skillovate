@@ -7,6 +7,7 @@ import { FacultyLogin } from "@/components/auth/FacultyLogin";
 import { InstitutionalStudentLogin } from "@/components/auth/InstitutionalStudentLogin";
 import { LearnerShell } from "@/components/layout/LearnerShell"; 
 import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
+import { PlatformChat } from "@/components/shared/PlatformChat";
 import { useEffect, useState } from "react";
 import { InstitutionalApproval } from "@/components/institutional/InstitutionalApproval";
 
@@ -102,6 +103,7 @@ export default function InstitutionalPage() {
   return (
     <LearnerShell>
       {activeScreen === "security" && <InstitutionalApproval />}
+      {activeScreen === "chat" && <PlatformChat />}
       {activeScreen === "dash" && (
         <div style={{ padding: "40px" }}>
           <h2>Welcome, {user?.name}</h2>
@@ -109,7 +111,7 @@ export default function InstitutionalPage() {
           <p>Institutional Dashboard is under migration.</p>
         </div>
       )}
-      {activeScreen !== "dash" && activeScreen !== "security" && (
+      {activeScreen !== "dash" && activeScreen !== "security" && activeScreen !== "chat" && (
         <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
           <h2>{activeScreen.toUpperCase()} Screen</h2>
           <p>This module is coming soon in the React migration.</p>
