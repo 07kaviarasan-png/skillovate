@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { api } from "@/lib/api";
 import { useAuthStore } from "@/stores/authStore";
+import { useUiStore } from "@/stores/uiStore";
 
 type User = {
   id: number;
@@ -27,6 +28,7 @@ type Assessment = {
 
 export function CollegeAdminDashboard() {
   const { user: currentUser } = useAuthStore();
+  const { activeScreen } = useUiStore();
   const [users, setUsers] = useState<User[]>([]);
   const [assessments, setAssessments] = useState<Assessment[]>([]);
   const [stats, setStats] = useState({ totalUsers: 0, totalStudents: 0, totalFaculty: 0, totalAssessments: 0 });
@@ -39,7 +41,7 @@ export function CollegeAdminDashboard() {
 
   // Assessment form
   const [showCreateAssessment, setShowCreateAssessment] = useState(false);
-  const [assessmentForm, setAssessmentForm] = useState({ title: "", assessment_type: "aptitude", difficulty: "medium", duration_minutes: 30, total_marks: 100, pass_percentage: 40, status: "active" });
+  const [assessmentForm, setAssessmentForm] = useState({ title: "", description: "", assessment_type: "aptitude", difficulty: "medium", duration_minutes: 30, total_marks: 100, pass_percentage: 40, status: "active" });
 
   const fetchUsers = async () => {
     try {
@@ -94,7 +96,7 @@ export function CollegeAdminDashboard() {
     try {
       await api.post("/assessments", assessmentForm);
       setShowCreateAssessment(false);
-      setAssessmentForm({ title: "", assessment_type: "aptitude", difficulty: "medium", duration_minutes: 30, total_marks: 100, pass_percentage: 40, status: "active" });
+      setAssessmentForm({ title: "", description: "", assessment_type: "aptitude", difficulty: "medium", duration_minutes: 30, total_marks: 100, pass_percentage: 40, status: "active" });
       fetchAssessments();
     } catch (err: any) {
       alert(err.response?.data?.detail || "Failed to create assessment");
@@ -116,29 +118,29 @@ export function CollegeAdminDashboard() {
         <p style={{ color: "var(--muted)" }}>Overview of your institution&apos;s users and assessments.</p>
       </div>
 
-      {/* Stats */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px", marginBottom: "32px" }}>
-        {[
-          { label: "Total Users", value: stats.totalUsers, color: "#4f46e5" },
-          { label: "Students", value: stats.totalStudents, color: "#0891b2" },
-          { label: "Faculty", value: stats.totalFaculty, color: "#7c3aed" },
-          { label: "Assessments", value: stats.totalAssessments, color: "#059669" },
-        ].map(s => (
-          <div key={s.label} className="card" style={{ padding: "20px", borderLeft: `4px solid ${s.color}` }}>
-            <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "4px" }}>{s.label}</div>
-            <div style={{ fontSize: "28px", fontWeight: 800, color: "var(--text)" }}>{s.value}</div>
+      {activeScreen === "dash" && (
+        <>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px", marginBottom: "32px" }}>
+            {[
+              { label: "Total Users", value: stats.totalUsers, color: "#4f46e5" },
+              { label: "Students", value: stats.totalStudents, color: "#0891b2" },
+              { label: "Faculty", value: stats.totalFaculty, color: "#7c3aed" },
+              { label: "Assessments", value: stats.totalAssessments, color: "#059669" },
+            ].map(s => (
+              <div key={s.label} className="card" style={{ padding: "20px", borderLeft: `4px solid ${s.color}` }}>
+                <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "4px" }}>{s.label}</div>
+                <div style={{ fontSize: "28px", fontWeight: 800, color: "var(--text)" }}>{s.value}</div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      {/* Users Section */}
-      <div className="card" style={{ padding: "24px", marginBottom: "24px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <h3 style={{ fontSize: "18px", fontWeight: 700, color: "var(--text)" }}>Manage Users</h3>
-          <button className="btn btn-p" onClick={() => setShowCreateUser(true)}>+ Add User</button>
-        </div>
+          <div className="card" style={{ padding: "24px", marginBottom: "24px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+              <h3 style={{ fontSize: "18px", fontWeight: 700, color: "var(--text)" }}>Manage Users</h3>
+              <button className="btn btn-p" onClick={() => setShowCreateUser(true)}>+ Add User</button>
+            </div>
 
-        {createMsg && <div style={{ padding: "10px", marginBottom: "12px", background: "var(--bg)", borderRadius: "8px", color: "var(--accent)", fontSize: "14px" }}>{createMsg}</div>}
+            {createMsg && <div style={{ padding: "10px", marginBottom: "12px", background: "var(--bg)", borderRadius: "8px", color: "var(--accent)", fontSize: "14px" }}>{createMsg}</div>}
 
         <table style={{ width: "100%", textAlign: "left", borderCollapse: "collapse" }}>
           <thead>
@@ -172,8 +174,11 @@ export function CollegeAdminDashboard() {
           </tbody>
         </table>
       </div>
+      </>
+      )}
 
       {/* Assessments Section */}
+      {(activeScreen === "dash" || activeScreen === "assessments") && (
       <div className="card" style={{ padding: "24px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
           <h3 style={{ fontSize: "18px", fontWeight: 700, color: "var(--text)" }}>Manage Assessments</h3>
@@ -280,6 +285,27 @@ export function CollegeAdminDashboard() {
                     <option value="hard">Hard</option>
                   </select>
                 </div>
+              </div>
+              <div style={{ marginBottom: "14px" }}>
+                <label className="lbl">Questions Data (JSON file)</label>
+                <input type="file" accept=".json" className="fi" onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                      try {
+                        const jsonStr = ev.target?.result as string;
+                        JSON.parse(jsonStr); // Validate JSON
+                        setAssessmentForm(prev => ({ ...prev, description: jsonStr }));
+                      } catch (err) {
+                        alert("Invalid JSON format. Please upload a valid JSON file.");
+                        e.target.value = "";
+                      }
+                    };
+                    reader.readAsText(file);
+                  }
+                }} />
+                {assessmentForm.description && <div style={{ fontSize: "12px", color: "var(--teal)", marginTop: "4px" }}>✓ JSON loaded successfully</div>}
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "20px" }}>
                 <div>
