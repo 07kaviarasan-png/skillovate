@@ -186,10 +186,23 @@ export function PracticeModule() {
         const finalCorrect = correct + (selectedAnswer === resolveAnswer(sessionQuestions[currentIdx]) ? 0 : 0);
         updated[activeCategory.id] = {
           total: prev.total + sessionQuestions.length,
-          correct: prev.correct + (correct),
+          correct: prev.correct + (finalCorrect),
           sessions: prev.sessions + 1,
         };
         saveStats(updated);
+
+        // Save to DB
+        if (user?.id) {
+          import("@/lib/api").then(({ api }) => {
+            api.post(`/students/${user.id}/tests`, {
+              score: finalCorrect,
+              total: sessionQuestions.length,
+              percentage: Math.round((finalCorrect / sessionQuestions.length) * 100),
+              testName: `${activeCategory.label} Practice`,
+              type: "practice"
+            }).catch(console.error);
+          });
+        }
       }
     }
   };

@@ -96,22 +96,14 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="s-foot">
-          {user?.role === "student" && !isInstitutionalStudent && (
-            <>
-              <div className="plan-strip" onClick={() => setActiveScreen("subs")}>
-                <div className="plan-name">{user.preferences?.plan === "pro" ? "Pro Plan" : "Base Plan"}</div>
-                {user.preferences?.plan !== "pro" && <div className="plan-sub">Upgrade to Pro for more features</div>}
-                <div className="plan-bar-w">
-                  <div className="plan-bar-f" style={{ width: user.preferences?.plan === "pro" ? "100%" : "20%", background: user.preferences?.plan === "pro" ? "var(--purple)" : "var(--accent)" }}></div>
-                </div>
+          {user?.role === "student" && !user?.college_id && (
+            <div className="plan-strip" onClick={() => setActiveScreen("subs")}>
+              <div className="plan-name">{user.preferences?.plan === "pro" ? "Pro Plan" : "Base Plan"}</div>
+              {user.preferences?.plan !== "pro" && <div className="plan-sub">Upgrade to Pro for more features</div>}
+              <div className="plan-bar-w">
+                <div className="plan-bar-f" style={{ width: user.preferences?.plan === "pro" ? "100%" : "20%", background: user.preferences?.plan === "pro" ? "var(--purple)" : "var(--accent)" }}></div>
               </div>
-              <div className="ui-toggle-wrap" onClick={() => setUiMode(uiMode === "user" ? "admin" : "user")}>
-                <div className={`ui-toggle-track ${uiMode === "admin" ? "active" : ""}`}>
-                  <div className="ui-toggle-thumb"></div>
-                </div>
-                <div className="ui-toggle-lbl">{uiMode === "user" ? "User View" : "Admin View"}</div>
-              </div>
-            </>
+            </div>
           )}
           <button className="collapse-btn" onClick={toggleSidebar}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">

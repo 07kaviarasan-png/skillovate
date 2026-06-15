@@ -2,10 +2,32 @@
 
 import { useUiStore } from "@/stores/uiStore";
 import { useAuthStore } from "@/stores/authStore";
+import { useEffect, useState } from "react";
+import { api } from "@/lib/api";
+
+type DashboardStats = {
+  tests_completed: number;
+  avg_accuracy: number;
+  interviews_completed: number;
+  streak: number;
+  national_rank: number | string;
+  placement_status: string;
+};
 
 export function LearnerDashboard() {
   const { setActiveScreen } = useUiStore();
   const { user } = useAuthStore();
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    if (user?.id) {
+      api.get(`/students/${user.id}/dashboard`)
+        .then(res => setStats(res.data))
+        .catch(err => console.error("Failed to fetch stats", err))
+        .finally(() => setLoading(false));
+    }
+  }, [user?.id]);
   
   const isInstitutionalStudent = user?.role === 'student' && !!user?.college_id;
 
@@ -71,7 +93,7 @@ export function LearnerDashboard() {
             </svg>
           </div>
           <div className="sv" id="dash-stat-tests">
-            0
+            {loading ? "..." : stats?.tests_completed || 0}
           </div>
           <div className="sl">Tests Completed</div>
           <div className="sd neu">Get started below</div>
@@ -83,7 +105,7 @@ export function LearnerDashboard() {
             </svg>
           </div>
           <div className="sv" id="dash-stat-acc">
-            —
+            {loading ? "..." : stats?.avg_accuracy ? `${stats.avg_accuracy}%` : "—"}
           </div>
           <div className="sl">Avg Accuracy</div>
           <div className="sd neu">Complete a test</div>
@@ -96,7 +118,7 @@ export function LearnerDashboard() {
             </svg>
           </div>
           <div className="sv" id="dash-stat-streak">
-            0
+            {loading ? "..." : stats?.streak || 0}
           </div>
           <div className="sl">Day Streak 🔥</div>
           <div className="sd neu">Start your first session</div>
@@ -109,7 +131,7 @@ export function LearnerDashboard() {
             </svg>
           </div>
           <div className="sv" id="dash-stat-rank">
-            —
+            {loading ? "..." : stats?.national_rank || "—"}
           </div>
           <div className="sl">National Rank</div>
           <div className="sd neu">Practice to unlock</div>

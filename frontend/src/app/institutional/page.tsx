@@ -14,6 +14,13 @@ import { FacultyDashboard } from "@/components/institutional/FacultyDashboard";
 import { InstitutionalApproval } from "@/components/institutional/InstitutionalApproval";
 import { StudentTracking } from "@/components/institutional/StudentTracking";
 import { AptitudeTests } from "@/components/learner/AptitudeTests";
+import { PracticeModule } from "@/components/learner/PracticeModule";
+import { MNCTestModule } from "@/components/learner/MNCTestModule";
+import { LearnerMockInterview } from "@/components/learner/LearnerMockInterview";
+import { ProfileSummarizer } from "@/components/learner/ProfileSummarizer";
+import { ResumeBuilder } from "@/components/learner/ResumeBuilder";
+import { Leaderboard } from "@/components/learner/Leaderboard";
+import { LearnerDashboard } from "@/components/learner/LearnerDashboard";
 import { useEffect, useState } from "react";
 
 type InstitutionalRole = "none" | "admin" | "faculty" | "student";
@@ -107,6 +114,7 @@ export default function InstitutionalPage() {
       case "dash":
         if (user?.role === "college_admin") return <CollegeAdminDashboard />;
         if (user?.role === "faculty") return <FacultyDashboard />;
+        if (user?.role === "student") return <LearnerDashboard />;
         return (
           <div style={{ padding: "40px" }}>
             <h2>Welcome, {user?.name}</h2>
@@ -121,6 +129,18 @@ export default function InstitutionalPage() {
         return <StudentTracking />;
       case "tests":
         return <AptitudeTests />;
+      case "practice":
+        return <PracticeModule />;
+      case "mnc":
+        return <MNCTestModule />;
+      case "iv":
+        return <LearnerMockInterview />;
+      case "profile":
+        return <ProfileSummarizer />;
+      case "resume":
+        return <ResumeBuilder />;
+      case "lb":
+        return <Leaderboard />;
       case "upload":
         return <FacultyDashboard />;
       case "chat":

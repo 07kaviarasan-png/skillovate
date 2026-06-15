@@ -119,6 +119,24 @@ def update_student_profile(student_id: int, data: StudentProfileUpdateRequest, d
     return MessageResponse(message="Student profile updated")
 
 
+@router.get("/{student_id}/dashboard")
+def get_student_dashboard(student_id: int, db: Session = Depends(get_db)):
+    profile = db.query(StudentProfile).filter(StudentProfile.user_id == student_id).first()
+    if not profile:
+        profile = StudentProfile(user_id=student_id)
+        db.add(profile)
+        db.commit()
+        db.refresh(profile)
+        
+    return {
+        "tests_completed": profile.tests_completed,
+        "avg_accuracy": round(profile.avg_accuracy, 1),
+        "interviews_completed": profile.interviews_completed,
+        "streak": profile.streak,
+        "national_rank": profile.national_rank or "-",
+        "placement_status": profile.placement_status
+    }
+
 @router.get("/{student_id}/tests", response_model=list[AttemptResponse])
 def student_tests(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
     query = db.query(AssessmentAttempt).filter(AssessmentAttempt.student_id == student_id)
