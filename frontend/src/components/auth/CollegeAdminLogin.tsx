@@ -47,7 +47,7 @@ export function CollegeAdminLogin({ onBack }: { onBack?: () => void }) {
         );
       }
     } catch (err: unknown) {
-      const error = err as { response?: { data?: { detail?: any } } };
+      const error = err as { response?: { data?: { detail?: any, message?: string } } };
       let errMsg = "An error occurred.";
       if (error?.response?.data?.detail) {
         if (Array.isArray(error.response.data.detail)) {
@@ -55,6 +55,8 @@ export function CollegeAdminLogin({ onBack }: { onBack?: () => void }) {
         } else if (typeof error.response.data.detail === "string") {
           errMsg = error.response.data.detail === "Incorrect email or password" ? "Invalid password or email" : error.response.data.detail;
         }
+      } else if (error?.response?.data?.message) {
+        errMsg = error.response.data.message;
       }
       setError(errMsg);
     } finally {

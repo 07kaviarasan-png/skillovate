@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { api } from "@/lib/api";
+import { useAuthStore } from "@/stores/authStore";
 
 type User = {
   id: number;
@@ -11,9 +12,11 @@ type User = {
 };
 
 export function SuperAdminDashboard() {
+  const { user, logout } = useAuthStore();
   const [activeTab, setActiveTab] = useState<"pending" | "all">("pending");
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState({ total: 0, pending: 0 });
 
   // Edit Modal State
   const [editingUser, setEditingUser] = useState<User | null>(null);
@@ -32,8 +35,21 @@ export function SuperAdminDashboard() {
     }
   };
 
+  const fetchStats = async () => {
+    try {
+      const [allRes, pendingRes] = await Promise.all([
+        api.get("/users/"),
+        api.get("/users/pending")
+      ]);
+      setStats({ total: allRes.data.length, pending: pendingRes.data.length });
+    } catch (err) {
+      console.error("Failed to fetch stats", err);
+    }
+  };
+
   useEffect(() => {
     fetchUsers();
+    fetchStats();
   }, [activeTab]);
 
   const handleAction = async (id: number, action: "approve" | "reject") => {
@@ -44,6 +60,7 @@ export function SuperAdminDashboard() {
       } else {
         fetchUsers();
       }
+      fetchStats();
     } catch (err) {
       alert(`Failed to ${action} user`);
     }
@@ -54,6 +71,7 @@ export function SuperAdminDashboard() {
     try {
       await api.delete(`/users/${id}`);
       setUsers((prev) => prev.filter((u) => u.id !== id));
+      fetchStats();
     } catch (err) {
       alert("Failed to delete user");
     }
@@ -77,9 +95,72 @@ export function SuperAdminDashboard() {
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-gray-800 tracking-tight">Super Admin Dashboard</h1>
-      <p className="text-gray-500">Manage all portal accounts and requests here. Update, delete, and approve institutions, faculty, and students.</p>
+      {/* Header */}
+      <div className="flex justify-between items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-800 tracking-tight">Super Admin Dashboard</h1>
+          <p className="text-gray-500 mt-1">Manage all portal accounts and requests here. Update, delete, and approve institutions, faculty, and students.</p>
+        </div>
+        <div className="flex items-center space-x-6 border-l pl-6 border-gray-100">
+          <div className="text-right hidden sm:block">
+            <p className="text-sm font-semibold text-gray-800">{user?.name || 'Super Admin'}</p>
+            <p className="text-xs text-gray-500">{user?.email}</p>
+          </div>
+          <button 
+            onClick={() => {
+              logout();
+              window.location.href = '/';
+            }}
+            className="px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 rounded-lg text-sm font-medium transition-colors border border-red-100 flex items-center space-x-2"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span>Log Out</span>
+          </button>
+        </div>
+      </div>
       
+      {/* Metrics Row */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+          <div className="p-3 bg-blue-50 text-blue-600 rounded-xl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500 font-medium">Platform Users</p>
+            <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
+          </div>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+          <div className="p-3 bg-yellow-50 text-yellow-600 rounded-xl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500 font-medium">Pending Approvals</p>
+            <p className="text-2xl font-bold text-gray-900">{stats.pending}</p>
+          </div>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+          <div className="p-3 bg-green-50 text-green-600 rounded-xl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500 font-medium">System Status</p>
+            <p className="text-lg font-bold text-gray-900 flex items-center">
+              <span className="w-2.5 h-2.5 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+              Healthy
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Tabs */}
       <div className="flex space-x-1 border-b border-gray-200">
         <button

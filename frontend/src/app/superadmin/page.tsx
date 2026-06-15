@@ -14,7 +14,7 @@ export default function SuperAdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50/50 py-12">
+    <div className="h-screen bg-gray-50/50 py-12 overflow-y-auto">
       <SuperAdminDashboard />
     </div>
   );

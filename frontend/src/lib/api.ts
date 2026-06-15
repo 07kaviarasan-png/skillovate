@@ -24,13 +24,16 @@ api.interceptors.request.use(
 
 import { useAuthStore } from "@/stores/authStore";
 
-// Response interceptor - clears auth store on 401
+// Response interceptor - clears auth store on 401 (except for login requests)
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
     if (error.response?.status === 401) {
-      useAuthStore.getState().logout();
-      window.location.reload();
+      const isLogin = error.config?.url?.includes('/auth/login');
+      if (!isLogin) {
+        useAuthStore.getState().logout();
+        window.location.reload();
+      }
     }
     return Promise.reject(error);
   }

@@ -1,7 +1,7 @@
 """
 Skillovate V2 — Auth Router
 """
-from fastapi import APIRouter, Depends, Response, status
+from fastapi import APIRouter, Depends, Response, status, HTTPException
 from app.schemas.auth import RegisterRequest, LoginRequest, RefreshTokenRequest, UserBriefResponse, ChangePasswordRequest
 from app.schemas.common import MessageResponse
 from app.services.auth_service import AuthService
@@ -47,18 +47,31 @@ def register(
     role = data.get("role") or "student"
     if role == "hr":
         role = "recruiter"
-    request = RegisterRequest(
-        email=data.get("email"),
-        password=data.get("password"),
-        name=data.get("name"),
-        role=role,
-        college_id=data.get("college_id") or data.get("collegeId"),
-        department=data.get("department"),
-        student_id=data.get("student_id") or data.get("studentId"),
-        year=data.get("year"),
-        company_name=data.get("company_name") or data.get("company"),
-    )
-    auth_service.register(request)
+    try:
+        request = RegisterRequest(
+            email=data.get("email"),
+            password=data.get("password"),
+            name=data.get("name"),
+            role=role,
+            college_id=data.get("college_id") or data.get("collegeId"),
+            department=data.get("department"),
+            student_id=data.get("student_id") or data.get("studentId"),
+            year=data.get("year"),
+            company_name=data.get("company_name") or data.get("company"),
+        )
+    except ValueError as e:
+        # Pydantic ValidationError is a subclass of ValueError in v2, 
+        # but let's import it safely if needed. Or just catch Exception
+        # We'll use a direct approach since we just want the message.
+        from pydantic import ValidationError
+        if isinstance(e, ValidationError):
+            raise HTTPException(status_code=400, detail=e.errors()[0]["msg"].replace("Value error, ", ""))
+        raise HTTPException(status_code=400, detail=str(e))
+    user = auth_service.register(request)
+    
+    if user.status == "pending":
+        return {"success": True, "message": "Registration successful. Please wait for approval.", "data": {"user": {"email": user.email, "status": "pending"}}}
+        
     token_response = auth_service.login(LoginRequest(email=request.email, password=request.password))
     _set_token_cookie(response, token_response.access_token, token_response.expires_in)
     return _token_payload(token_response)

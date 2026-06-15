@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -23,11 +23,17 @@ def get_all_users(
 @router.get("/pending", response_model=List[UserResponse])
 def get_pending_users(
     db: Session = Depends(get_db),
-    current_user: User = Depends(superadmin_checker)
+    current_user: User = Depends(get_current_user)
 ):
-    """Get all users with 'pending' status. Only accessible by superadmin."""
-    users = db.query(User).filter(User.status == "pending").order_by(User.created_at.desc()).all()
-    return users
+    """Get all users with 'pending' status. Superadmin sees all, college admin sees their college."""
+    if current_user.role not in [UserRole.SUPER_ADMIN.value, UserRole.COLLEGE_ADMIN.value]:
+        raise HTTPException(status_code=403, detail="Not enough permissions")
+        
+    query = db.query(User).filter(User.status == "pending")
+    if current_user.role == UserRole.COLLEGE_ADMIN.value:
+        query = query.filter(User.college_id == current_user.college_id)
+        
+    return query.order_by(User.created_at.desc()).all()
 
 @router.put("/{user_id}/approve", response_model=UserResponse)
 def approve_user(

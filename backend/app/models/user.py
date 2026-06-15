@@ -53,8 +53,8 @@ class User(Base):
     faculty_profile = relationship("FacultyProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
     recruiter_profile = relationship("RecruiterProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
     refresh_tokens = relationship("RefreshToken", back_populates="user", cascade="all, delete-orphan")
-    achievements = relationship("Achievement", back_populates="user")
-    activity_logs = relationship("ActivityLog", back_populates="user")
+    achievements = relationship("Achievement", back_populates="user", cascade="all, delete-orphan")
+    activity_logs = relationship("ActivityLog", back_populates="user", cascade="all, delete-orphan")
 
     __table_args__ = (
         CheckConstraint(
@@ -165,7 +165,7 @@ class RecruiterProfile(Base):
 
     # ── Relationships ────────────────────────────
     user = relationship("User", back_populates="recruiter_profile")
-    job_postings = relationship("JobPosting", back_populates="recruiter")
+    job_postings = relationship("JobPosting", back_populates="recruiter", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<RecruiterProfile(user_id={self.user_id}, company='{self.company_name}')>"

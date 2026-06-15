@@ -19,11 +19,18 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
 
   const { user, logout } = useAuthStore();
   
+  const [pendingCount, setPendingCount] = React.useState(0);
+
   React.useEffect(() => {
     import("@/lib/api").then(({ api }) => {
       api.get("/auth/me").catch(() => {});
+      if (user?.role === "college_admin" || user?.role === "super_admin") {
+        api.get("/users/pending").then((res) => {
+          setPendingCount(res.data.length);
+        }).catch(() => {});
+      }
     });
-  }, []);
+  }, [user?.role]);
 
   const isInstitutionalStudent = user?.role === "student" && !!user?.college_id;
 
@@ -87,19 +94,23 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="s-foot">
-          <div className="plan-strip" onClick={() => setActiveScreen("subs")}>
-            <div className="plan-name">Base Plan</div>
-            <div className="plan-sub">Upgrade to Pro for more features</div>
-            <div className="plan-bar-w">
-              <div className="plan-bar-f" style={{ width: "20%" }}></div>
-            </div>
-          </div>
-          <div className="ui-toggle-wrap" onClick={() => setUiMode(uiMode === "user" ? "admin" : "user")}>
-            <div className={`ui-toggle-track ${uiMode === "admin" ? "active" : ""}`}>
-              <div className="ui-toggle-thumb"></div>
-            </div>
-            <div className="ui-toggle-lbl">{uiMode === "user" ? "User View" : "Admin View"}</div>
-          </div>
+          {user?.role === "student" && (
+            <>
+              <div className="plan-strip" onClick={() => setActiveScreen("subs")}>
+                <div className="plan-name">Base Plan</div>
+                <div className="plan-sub">Upgrade to Pro for more features</div>
+                <div className="plan-bar-w">
+                  <div className="plan-bar-f" style={{ width: "20%" }}></div>
+                </div>
+              </div>
+              <div className="ui-toggle-wrap" onClick={() => setUiMode(uiMode === "user" ? "admin" : "user")}>
+                <div className={`ui-toggle-track ${uiMode === "admin" ? "active" : ""}`}>
+                  <div className="ui-toggle-thumb"></div>
+                </div>
+                <div className="ui-toggle-lbl">{uiMode === "user" ? "User View" : "Admin View"}</div>
+              </div>
+            </>
+          )}
           <button className="collapse-btn" onClick={toggleSidebar}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
               <polyline points={isSidebarCollapsed ? "13 17 18 12 13 7" : "11 17 6 12 11 7"} />
@@ -130,12 +141,16 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
             <input type="text" placeholder="Search lessons, tests, or MNCs..." />
           </div>
           <div className="tbr">
-            <div className="ib">
+            <div className="ib" style={{ position: "relative" }}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
                 <path d="M13.73 21a2 2 0 01-3.46 0" />
               </svg>
-              <div className="nd"></div>
+              {pendingCount > 0 && (
+                <div style={{ position: "absolute", top: "-2px", right: "-2px", background: "red", color: "white", fontSize: "10px", fontWeight: "bold", width: "16px", height: "16px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {pendingCount}
+                </div>
+              )}
             </div>
             <div className="uc">
               <div className="uav">{user?.name?.charAt(0) || "S"}</div>
