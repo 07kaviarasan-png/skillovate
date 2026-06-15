@@ -77,7 +77,11 @@ def get_all_users(
         
     query = db.query(User)
     if current_user.role == UserRole.COLLEGE_ADMIN.value:
-        query = query.filter(User.college_id == current_user.college_id)
+        if current_user.college_id is None:
+            query = query.filter(User.id == current_user.id)
+        else:
+            query = query.filter(User.college_id == current_user.college_id)
+        query = query.filter(User.role != UserRole.SUPER_ADMIN.value)
         
     return query.order_by(User.created_at.desc()).all()
 
@@ -92,7 +96,11 @@ def get_pending_users(
         
     query = db.query(User).filter(User.status == "pending")
     if current_user.role == UserRole.COLLEGE_ADMIN.value:
-        query = query.filter(User.college_id == current_user.college_id)
+        if current_user.college_id is None:
+            query = query.filter(User.id == current_user.id)
+        else:
+            query = query.filter(User.college_id == current_user.college_id)
+        query = query.filter(User.role != UserRole.SUPER_ADMIN.value)
         
     return query.order_by(User.created_at.desc()).all()
 

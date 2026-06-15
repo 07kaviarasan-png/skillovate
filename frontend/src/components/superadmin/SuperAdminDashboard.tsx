@@ -9,17 +9,21 @@ type User = {
   role: string;
   created_at: string;
   status: string;
+  college_id?: number | null;
+  preferences?: { plan?: "base" | "pro" } | null;
 };
 
 export function SuperAdminDashboard() {
   const { user, logout } = useAuthStore();
-  const [activeTab, setActiveTab] = useState<"pending" | "all">("pending");
+  const [activeTab, setActiveTab] = useState<"pending" | "all" | "assessments">("pending");
   const [users, setUsers] = useState<User[]>([]);
+  const [assessments, setAssessments] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({ total: 0, pending: 0 });
+  const [sortBy, setSortBy] = useState<"name" | "role" | "status" | "date">("date");
 
   const [editingUser, setEditingUser] = useState<User | null>(null);
-  const [editFormData, setEditFormData] = useState({ name: "", email: "", role: "", status: "" });
+  const [editFormData, setEditFormData] = useState({ name: "", email: "", role: "", status: "", plan: "base" });
 
   // Create Modal State
   const [isCreatingUser, setIsCreatingUser] = useState(false);
@@ -49,6 +53,12 @@ export function SuperAdminDashboard() {
     } catch (err) {
       console.error("Failed to fetch stats", err);
     }
+    try {
+      const assessRes = await api.get("/assessments/");
+      setAssessments(assessRes.data);
+    } catch (err) {
+      console.error("Failed to fetch assessments", err);
+    }
   };
 
   const fetchColleges = async () => {
@@ -61,7 +71,9 @@ export function SuperAdminDashboard() {
   };
 
   useEffect(() => {
-    fetchUsers();
+    if (activeTab === "pending" || activeTab === "all") {
+      fetchUsers();
+    }
     fetchStats();
     fetchColleges();
   }, [activeTab]);
@@ -91,18 +103,33 @@ export function SuperAdminDashboard() {
     }
   };
 
-  const handleEditClick = (user: User) => {
-    setEditingUser(user);
-    setEditFormData({ name: user.name, email: user.email, role: user.role, status: user.status });
+  const handleEditClick = (u: User) => {
+    setEditingUser(u);
+    setEditFormData({ 
+      name: u.name, 
+      email: u.email, 
+      role: u.role, 
+      status: u.status,
+      plan: u.preferences?.plan || "base"
+    });
   };
 
-  const handleEditSave = async () => {
+  const handleUpdateUser = async () => {
     if (!editingUser) return;
     try {
-      await api.put(`/users/${editingUser.id}`, editFormData);
+      const preferences = editingUser.preferences || {};
+      const payload = {
+        name: editFormData.name,
+        email: editFormData.email,
+        role: editFormData.role,
+        status: editFormData.status,
+        preferences: { ...preferences, plan: editFormData.plan }
+      };
+      await api.put(`/users/${editingUser.id}`, payload);
       setEditingUser(null);
       fetchUsers();
     } catch (err) {
+      console.error("Update failed", err);
       alert("Failed to update user");
     }
   };
@@ -121,6 +148,13 @@ export function SuperAdminDashboard() {
       alert(err.response?.data?.detail || "Failed to create user");
     }
   };
+
+  const sortedUsers = [...users].sort((a, b) => {
+    if (sortBy === "name") return a.name.localeCompare(b.name);
+    if (sortBy === "role") return a.role.localeCompare(b.role);
+    if (sortBy === "status") return a.status.localeCompare(b.status);
+    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+  });
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6">
@@ -212,18 +246,39 @@ export function SuperAdminDashboard() {
         >
           All Users
         </button>
+        <button
+          onClick={() => setActiveTab("assessments")}
+          className={`py-2 px-4 text-sm font-medium border-b-2 transition-colors ${
+            activeTab === "assessments"
+              ? "border-blue-500 text-blue-600"
+              : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+          }`}
+        >
+          Assessments
+        </button>
       </div>
 
+      {activeTab !== "assessments" ? (
       <div className="bg-white shadow-xl shadow-gray-200/50 rounded-2xl border border-gray-100 overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
           <h2 className="font-semibold text-gray-700">
             {activeTab === "pending" ? "Pending Approvals" : "All Users"} ({users.length})
           </h2>
           <div className="flex space-x-3">
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as any)}
+              className="text-sm border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-1.5 border"
+            >
+              <option value="date">Sort by Date</option>
+              <option value="name">Sort by Name</option>
+              <option value="role">Sort by Role</option>
+              <option value="status">Sort by Status</option>
+            </select>
             <button onClick={() => setIsCreatingUser(true)} className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg font-medium transition-colors">
               + Add User
             </button>
-            <button onClick={fetchUsers} className="text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors py-1.5">
+            <button onClick={fetchUsers} className="text-sm text-blue-600 hover:bg-blue-700 font-medium transition-colors py-1.5">
               Refresh
             </button>
           </div>
@@ -255,13 +310,20 @@ export function SuperAdminDashboard() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {users.map((user) => (
-                  <tr key={user.id} className="hover:bg-gray-50/30 transition-colors">
-                    <td className="px-6 py-4 font-medium text-gray-900">{user.name}</td>
-                    <td className="px-6 py-4 text-gray-500">{user.email}</td>
+                {sortedUsers.map((u) => (
+                  <tr key={u.id} className="hover:bg-gray-50/30 transition-colors">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      {u.name}
+                      {!u.college_id && u.role === "student" && (
+                        <span className={`ml-2 px-2 py-0.5 rounded text-[10px] font-bold ${u.preferences?.plan === 'pro' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'}`}>
+                          {u.preferences?.plan?.toUpperCase() || 'BASE'}
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 text-gray-500">{u.email}</td>
                     <td className="px-6 py-4">
                       <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-50 text-blue-700 capitalize border border-blue-100">
-                        {user.role.replace("_", " ")}
+                        {u.role.replace("_", " ")}
                       </span>
                     </td>
                     <td className="px-6 py-4">
@@ -316,6 +378,50 @@ export function SuperAdminDashboard() {
           </div>
         )}
       </div>
+      ) : (
+      <div className="bg-white shadow-xl shadow-gray-200/50 rounded-2xl border border-gray-100 overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
+          <h2 className="font-semibold text-gray-700">All Assessments ({assessments.length})</h2>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-gray-50/50 text-gray-500 text-sm border-b border-gray-100">
+                <th className="px-6 py-4 font-medium">Title</th>
+                <th className="px-6 py-4 font-medium">Type</th>
+                <th className="px-6 py-4 font-medium">Difficulty</th>
+                <th className="px-6 py-4 font-medium">Duration</th>
+                <th className="px-6 py-4 font-medium">Marks</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {assessments.map((a) => (
+                <tr key={a.id} className="hover:bg-gray-50/30 transition-colors">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{a.title}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 capitalize">{a.assessment_type}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className={`px-2.5 py-1 text-xs font-semibold rounded-full capitalize border ${
+                      a.difficulty === 'hard' ? 'bg-red-50 text-red-700 border-red-100' : 
+                      a.difficulty === 'medium' ? 'bg-yellow-50 text-yellow-700 border-yellow-100' : 
+                      'bg-green-50 text-green-700 border-green-100'
+                    }`}>
+                      {a.difficulty}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{a.duration_minutes} min</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{a.total_marks}</td>
+                </tr>
+              ))}
+              {assessments.length === 0 && (
+                <tr>
+                  <td colSpan={5} className="px-6 py-8 text-center text-gray-500 text-sm">No assessments found.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      )}
 
       {/* Edit Modal */}
       {editingUser && (
@@ -367,6 +473,20 @@ export function SuperAdminDashboard() {
                   <option value="rejected">Rejected</option>
                 </select>
               </div>
+
+              {!editingUser?.college_id && editingUser?.role === "student" && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Plan</label>
+                  <select 
+                    value={editFormData.plan} 
+                    onChange={(e) => setEditFormData({...editFormData, plan: e.target.value})}
+                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                  >
+                    <option value="base">Base Plan</option>
+                    <option value="pro">Pro Plan</option>
+                  </select>
+                </div>
+              )}
             </div>
             <div className="mt-6 flex justify-end space-x-3">
               <button 
@@ -376,7 +496,7 @@ export function SuperAdminDashboard() {
                 Cancel
               </button>
               <button 
-                onClick={handleEditSave}
+                onClick={handleUpdateUser}
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-sm transition-colors"
               >
                 Save Changes

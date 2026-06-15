@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useAuthStore } from "@/stores/authStore";
+import { api } from "@/lib/api";
 
 export function ResumeBuilder() {
   const { user } = useAuthStore();
@@ -15,6 +16,32 @@ export function ResumeBuilder() {
     experience: ""
   });
   const [showPreview, setShowPreview] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const handleGenerateAI = async () => {
+    setIsGenerating(true);
+    try {
+      const res = await api.post("/ai/resume/improve", {
+        objective: formData.objective,
+        education: formData.education,
+        skills: formData.skills,
+        experience: formData.experience
+      });
+      setFormData(prev => ({
+        ...prev,
+        objective: res.data.objective || prev.objective,
+        education: res.data.education || prev.education,
+        skills: res.data.skills || prev.skills,
+        experience: res.data.experience || prev.experience
+      }));
+      alert("Resume improved using AI!");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to improve resume. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,13 +65,25 @@ export function ResumeBuilder() {
           <h2 style={{ fontSize: "28px", fontWeight: 800, color: "var(--text)", marginBottom: "8px" }}>Resume Builder</h2>
           <p style={{ color: "var(--muted)", fontSize: "15px" }}>Create and download your professional resume.</p>
         </div>
-        <button 
-          onClick={() => setShowPreview(!showPreview)} 
-          className="btn btn-p"
-          style={{ padding: "10px 20px" }}
-        >
-          {showPreview ? "Edit Details" : "Preview Resume"}
-        </button>
+        <div style={{ display: "flex", gap: "10px" }}>
+          {!showPreview && (
+            <button 
+              onClick={handleGenerateAI} 
+              disabled={isGenerating || (!formData.objective && !formData.experience && !formData.skills && !formData.education)}
+              className="btn"
+              style={{ padding: "10px 20px", background: "var(--purple)", color: "white", opacity: isGenerating ? 0.7 : 1 }}
+            >
+              {isGenerating ? "Generating..." : "✨ Improve with AI (Groq)"}
+            </button>
+          )}
+          <button 
+            onClick={() => setShowPreview(!showPreview)} 
+            className="btn btn-p"
+            style={{ padding: "10px 20px" }}
+          >
+            {showPreview ? "Edit Details" : "Preview Resume"}
+          </button>
+        </div>
       </div>
 
       {!showPreview ? (

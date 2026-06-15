@@ -22,6 +22,7 @@ class UserResponse(BaseModel):
     last_login_at: Optional[datetime] = None
     created_at: datetime
     updated_at: datetime
+    preferences: dict
 
     model_config = {"from_attributes": True}
 
@@ -80,4 +81,5 @@ class AdminUserUpdateRequest(BaseModel):
     status: Optional[str] = None
     department: Optional[str] = None
     college_id: Optional[int] = None
+    preferences: Optional[dict] = None
 

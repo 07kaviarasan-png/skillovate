@@ -46,7 +46,17 @@ export function PlatformChat() {
     const fetchContacts = async () => {
       try {
         const res = await api.get("/users");
-        const allUsers = res.data.filter((u: Contact) => u.id !== user?.id);
+        let allUsers = res.data.filter((u: Contact) => u.id !== user?.id);
+        
+        // Add virtual broadcast contacts for admins
+        if (user?.role === "super_admin" || user?.role === "college_admin") {
+          allUsers = [
+            { id: -3, name: "📢 Broadcast to Everyone", email: "Sends to all users", role: "broadcast" },
+            { id: -2, name: "📢 Broadcast to Faculty", email: "Sends to all faculty", role: "broadcast" },
+            { id: -1, name: "📢 Broadcast to Students", email: "Sends to all students", role: "broadcast" },
+            ...allUsers
+          ];
+        }
         setContacts(allUsers);
       } catch {
         // If not authorized to list users, try students endpoint
@@ -116,7 +126,35 @@ export function PlatformChat() {
 
   const handleSend = () => {
     if (!input.trim() || !ws.current || ws.current.readyState !== WebSocket.OPEN || !selectedContact) return;
-    ws.current.send(JSON.stringify({ receiver_id: selectedContact.id, content: input }));
+
+    if (selectedContact.id < 0) {
+      // Broadcast mode
+      const targets = contacts.filter(c => {
+        if (c.id < 0) return false; // skip virtual contacts
+        if (selectedContact.id === -1) return c.role === "student";
+        if (selectedContact.id === -2) return c.role === "faculty";
+        if (selectedContact.id === -3) return true; // everyone
+        return false;
+      });
+
+      targets.forEach(t => {
+        ws.current?.send(JSON.stringify({ receiver_id: t.id, content: input }));
+      });
+      
+      // Also add it locally so the admin sees what they broadcasted
+      setMessages(prev => [...prev, {
+        sender_id: user?.id,
+        sender_name: user?.name,
+        receiver_id: selectedContact.id,
+        content: input,
+        timestamp: new Date().toISOString(),
+        isMe: true
+      }]);
+    } else {
+      // Normal 1-on-1 mode
+      ws.current.send(JSON.stringify({ receiver_id: selectedContact.id, content: input }));
+    }
+    
     setInput("");
   };
 
@@ -132,6 +170,7 @@ export function PlatformChat() {
       case "student": return { bg: "#dbeafe", color: "#2563eb" };
       case "college_admin": return { bg: "#fef3c7", color: "#b45309" };
       case "super_admin": return { bg: "#fee2e2", color: "#dc2626" };
+      case "broadcast": return { bg: "#fce7f3", color: "#db2777" };
       default: return { bg: "#f3f4f6", color: "#6b7280" };
     }
   };
@@ -178,7 +217,7 @@ export function PlatformChat() {
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                     <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: badge.bg, color: badge.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: 700, flexShrink: 0 }}>
-                      {c.name.charAt(0).toUpperCase()}
+                      {c.role === "broadcast" ? "📢" : c.name.charAt(0).toUpperCase()}
                     </div>
                     <div style={{ minWidth: 0 }}>
                       <div style={{ fontWeight: 600, fontSize: "13px", color: "var(--text)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{c.name}</div>
@@ -209,7 +248,7 @@ export function PlatformChat() {
               <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: getRoleBadgeColor(selectedContact.role).bg, color: getRoleBadgeColor(selectedContact.role).color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: 700 }}>
-                    {selectedContact.name.charAt(0).toUpperCase()}
+                    {selectedContact.role === "broadcast" ? "📢" : selectedContact.name.charAt(0).toUpperCase()}
                   </div>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: "14px", color: "var(--text)" }}>{selectedContact.name}</div>

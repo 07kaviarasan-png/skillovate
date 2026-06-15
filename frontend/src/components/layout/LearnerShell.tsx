@@ -60,8 +60,10 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
           { id: "profile", label: "Profile Summarizer", section: "Professional Profile", icon: <ProfileIcon /> },
           { id: "resume", label: "Resume Builder", icon: <ResumeIcon /> },
           { id: "lb", label: "Top Talent Board", icon: <LeaderboardIcon /> },
+        ] : user?.preferences?.plan === "pro" ? [
+          { id: "resume", label: "Resume Builder", section: "Professional Profile", icon: <ResumeIcon /> },
         ] : []),
-        { id: "chat", label: "Messages", icon: <ChatIcon />, section: isInstitutionalStudent ? undefined : "Professional Profile" },
+        { id: "chat", label: "Messages", icon: <ChatIcon />, section: isInstitutionalStudent || user?.preferences?.plan === "pro" ? undefined : "Professional Profile" },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
       ];
 
@@ -94,13 +96,13 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="s-foot">
-          {user?.role === "student" && (
+          {user?.role === "student" && !isInstitutionalStudent && (
             <>
               <div className="plan-strip" onClick={() => setActiveScreen("subs")}>
-                <div className="plan-name">Base Plan</div>
-                <div className="plan-sub">Upgrade to Pro for more features</div>
+                <div className="plan-name">{user.preferences?.plan === "pro" ? "Pro Plan" : "Base Plan"}</div>
+                {user.preferences?.plan !== "pro" && <div className="plan-sub">Upgrade to Pro for more features</div>}
                 <div className="plan-bar-w">
-                  <div className="plan-bar-f" style={{ width: "20%" }}></div>
+                  <div className="plan-bar-f" style={{ width: user.preferences?.plan === "pro" ? "100%" : "20%", background: user.preferences?.plan === "pro" ? "var(--purple)" : "var(--accent)" }}></div>
                 </div>
               </div>
               <div className="ui-toggle-wrap" onClick={() => setUiMode(uiMode === "user" ? "admin" : "user")}>

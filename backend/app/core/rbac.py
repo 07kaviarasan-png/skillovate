@@ -131,7 +131,7 @@ class CollegeScope:
     ) -> Optional[int]:
         if current_user.role == UserRole.SUPER_ADMIN.value:
             return None  # Super admin sees everything
-        return current_user.college_id
+        return current_user.college_id or -1
 
 
 get_college_scope = Depends(CollegeScope())
