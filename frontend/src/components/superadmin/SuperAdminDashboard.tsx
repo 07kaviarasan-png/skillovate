@@ -18,9 +18,12 @@ export function SuperAdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({ total: 0, pending: 0 });
 
-  // Edit Modal State
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [editFormData, setEditFormData] = useState({ name: "", email: "", role: "", status: "" });
+
+  // Create Modal State
+  const [isCreatingUser, setIsCreatingUser] = useState(false);
+  const [createFormData, setCreateFormData] = useState({ name: "", email: "", role: "student", password: "", college_id: "" });
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -90,6 +93,21 @@ export function SuperAdminDashboard() {
       fetchUsers();
     } catch (err) {
       alert("Failed to update user");
+    }
+  };
+
+  const handleCreateSave = async () => {
+    try {
+      await api.post("/users/", {
+        ...createFormData,
+        college_id: createFormData.college_id ? parseInt(createFormData.college_id) : undefined
+      });
+      setIsCreatingUser(false);
+      fetchUsers();
+      fetchStats();
+      setCreateFormData({ name: "", email: "", role: "student", password: "", college_id: "" });
+    } catch (err: any) {
+      alert(err.response?.data?.detail || "Failed to create user");
     }
   };
 
@@ -190,9 +208,14 @@ export function SuperAdminDashboard() {
           <h2 className="font-semibold text-gray-700">
             {activeTab === "pending" ? "Pending Approvals" : "All Users"} ({users.length})
           </h2>
-          <button onClick={fetchUsers} className="text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors">
-            Refresh
-          </button>
+          <div className="flex space-x-3">
+            <button onClick={() => setIsCreatingUser(true)} className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg font-medium transition-colors">
+              + Add User
+            </button>
+            <button onClick={fetchUsers} className="text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors py-1.5">
+              Refresh
+            </button>
+          </div>
         </div>
 
         {loading ? (
@@ -346,6 +369,84 @@ export function SuperAdminDashboard() {
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-sm transition-colors"
               >
                 Save Changes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Create Modal */}
+      {isCreatingUser && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md">
+            <h3 className="text-xl font-bold mb-4">Add New User</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input 
+                  type="text" 
+                  value={createFormData.name} 
+                  onChange={(e) => setCreateFormData({...createFormData, name: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input 
+                  type="email" 
+                  value={createFormData.email} 
+                  onChange={(e) => setCreateFormData({...createFormData, email: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                  placeholder="user@example.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <input 
+                  type="password" 
+                  value={createFormData.password} 
+                  onChange={(e) => setCreateFormData({...createFormData, password: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                  placeholder="Initial password"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
+                <select 
+                  value={createFormData.role} 
+                  onChange={(e) => setCreateFormData({...createFormData, role: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                >
+                  <option value="student">Student</option>
+                  <option value="faculty">Faculty</option>
+                  <option value="recruiter">Recruiter</option>
+                  <option value="college_admin">College Admin</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">College ID (Optional)</label>
+                <input 
+                  type="number" 
+                  value={createFormData.college_id} 
+                  onChange={(e) => setCreateFormData({...createFormData, college_id: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                  placeholder="e.g. 1"
+                />
+              </div>
+            </div>
+            <div className="mt-6 flex justify-end space-x-3">
+              <button 
+                onClick={() => setIsCreatingUser(false)}
+                className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-medium transition-colors"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={handleCreateSave}
+                className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium shadow-sm transition-colors"
+              >
+                Create User
               </button>
             </div>
           </div>

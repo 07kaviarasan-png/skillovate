@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { api } from "@/lib/api";
+import { useAuthStore } from "@/stores/authStore";
 
 type User = {
   id: number;
@@ -11,6 +12,7 @@ type User = {
 };
 
 export function CollegeAdminDashboard() {
+  const { user } = useAuthStore();
   const [facultyList, setFacultyList] = useState<User[]>([]);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
@@ -38,12 +40,13 @@ export function CollegeAdminDashboard() {
     setLoading(true);
     setMessage("");
     try {
-      // Register the faculty
-      await api.post("/auth/register", {
+      // Register the faculty directly via the users endpoint
+      await api.post("/users/", {
         name: formData.name,
         email: formData.email,
         password: formData.password,
-        role: "faculty"
+        role: "faculty",
+        college_id: user?.college_id
       });
       setMessage("Faculty account created successfully!");
       setFormData({ name: "", email: "", password: "" });

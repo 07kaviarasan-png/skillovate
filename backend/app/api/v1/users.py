@@ -62,11 +62,17 @@ def create_user(
 @router.get("/", response_model=List[UserResponse])
 def get_all_users(
     db: Session = Depends(get_db),
-    current_user: User = Depends(superadmin_checker)
+    current_user: User = Depends(get_current_user)
 ):
-    """Get all users. Only accessible by superadmin."""
-    users = db.query(User).order_by(User.created_at.desc()).all()
-    return users
+    """Get all users. Superadmin sees all. College Admin sees their college."""
+    if current_user.role not in [UserRole.SUPER_ADMIN.value, UserRole.COLLEGE_ADMIN.value]:
+        raise HTTPException(status_code=403, detail="Not authorized")
+        
+    query = db.query(User)
+    if current_user.role == UserRole.COLLEGE_ADMIN.value:
+        query = query.filter(User.college_id == current_user.college_id)
+        
+    return query.order_by(User.created_at.desc()).all()
 
 @router.get("/pending", response_model=List[UserResponse])
 def get_pending_users(
