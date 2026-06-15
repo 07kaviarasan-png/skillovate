@@ -55,18 +55,20 @@ export function FacultyLogin({ onBack }: { onBack?: () => void }) {
   return (
     <AuthSplitLayout>
       <div className="lp-card">
-        <div style={{ textAlign: "center", marginBottom: "30px", position: "relative" }}>
-          {onBack && (
+        {onBack && (
+          <div style={{ display: "flex", width: "100%", marginBottom: "16px" }}>
             <button 
               onClick={onBack}
-              style={{ position: "absolute", left: 0, top: 0, background: "none", border: "none", color: "var(--muted)", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px", fontSize: "14px" }}
+              style={{ background: "none", border: "none", color: "var(--muted)", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px", fontSize: "14px", padding: 0 }}
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
                 <path d="M19 12H5M12 19l-7-7 7-7"/>
               </svg>
               Back
             </button>
-          )}
+          </div>
+        )}
+        <div style={{ textAlign: "center", marginBottom: "30px" }}>
           <img
             src="/logo.png"
             alt="Skillovate"

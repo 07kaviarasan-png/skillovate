@@ -61,6 +61,17 @@ class StudentProfileUpdateRequest(BaseModel):
     student_id: Optional[str] = None
     year: Optional[int] = None
 
+class AdminUserCreateRequest(BaseModel):
+    """Admin request to create a new user."""
+    name: str = Field(..., min_length=2, max_length=255)
+    email: EmailStr
+    role: str
+    password: str
+    college_id: Optional[int] = None
+    department: Optional[str] = None
+    student_id: Optional[str] = None
+    year: Optional[int] = None
+
 class AdminUserUpdateRequest(BaseModel):
     """Admin update request to manage user attributes directly."""
     name: Optional[str] = Field(None, min_length=2, max_length=255)

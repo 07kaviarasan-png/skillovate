@@ -16,6 +16,7 @@ from app.api.v1 import (
     tests,
     jobs,
     users,
+    chat,
 )
 
 api_router = APIRouter()
@@ -33,3 +34,4 @@ api_router.include_router(achievements.router)
 api_router.include_router(dashboard.router)
 api_router.include_router(persistence.router)
 api_router.include_router(jobs.router)
+api_router.include_router(chat.router)

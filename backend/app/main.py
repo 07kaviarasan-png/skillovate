@@ -26,6 +26,8 @@ logger = logging.getLogger("skillovate")
 settings = get_settings()
 
 
+from app.mongodb import connect_to_mongo, close_mongo_connection
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Lifespan events (startup/shutdown)."""
@@ -35,7 +37,9 @@ async def lifespan(app: FastAPI):
         seed_core_data(db)
     finally:
         db.close()
+    await connect_to_mongo()
     yield
+    await close_mongo_connection()
     logger.info("🛑 Shutting down application...")
 
 

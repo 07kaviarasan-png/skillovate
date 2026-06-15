@@ -28,6 +28,10 @@ class Settings(BaseSettings):
 
     # ── Database ─────────────────────────────────
     DATABASE_URL: str = "sqlite:///./data/skillovate.db"
+    
+    # ── MongoDB ──────────────────────────────────
+    MONGODB_URI: str = "mongodb://localhost:27017"
+    MONGODB_DB_NAME: str = "skillovate"
 
     # ── JWT ──────────────────────────────────────
     JWT_SECRET_KEY: str = "change-this-to-a-random-64-char-string-in-production"
