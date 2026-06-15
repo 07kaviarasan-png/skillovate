@@ -13,6 +13,7 @@ import { CollegeAdminDashboard } from "@/components/institutional/CollegeAdminDa
 import { FacultyDashboard } from "@/components/institutional/FacultyDashboard";
 import { InstitutionalApproval } from "@/components/institutional/InstitutionalApproval";
 import { StudentTracking } from "@/components/institutional/StudentTracking";
+import { AptitudeTests } from "@/components/learner/AptitudeTests";
 import { useEffect, useState } from "react";
 
 type InstitutionalRole = "none" | "admin" | "faculty" | "student";
@@ -118,6 +119,8 @@ export default function InstitutionalPage() {
         return <CollegeAdminDashboard />;
       case "tracking":
         return <StudentTracking />;
+      case "tests":
+        return <AptitudeTests />;
       case "upload":
         return <FacultyDashboard />;
       case "chat":

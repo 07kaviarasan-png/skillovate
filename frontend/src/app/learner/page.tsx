@@ -7,6 +7,9 @@ import { LearnerShell } from "@/components/layout/LearnerShell";
 import { LearnerDashboard } from "@/components/learner/LearnerDashboard";
 import { LearnerMockInterview } from "@/components/learner/LearnerMockInterview";
 import { ResumeBuilder } from "@/components/learner/ResumeBuilder";
+import { AptitudeTests } from "@/components/learner/AptitudeTests";
+import { PracticeModule } from "@/components/learner/PracticeModule";
+import { MNCTestModule } from "@/components/learner/MNCTestModule";
 import { PlatformChat } from "@/components/shared/PlatformChat";
 import { SettingsPanel } from "@/components/shared/SettingsPanel";
 import { useEffect, useState, Suspense } from "react";
@@ -33,6 +36,9 @@ function LearnerContent() {
   const renderScreen = () => {
     switch (activeScreen) {
       case "dash": return <LearnerDashboard />;
+      case "practice": return <PracticeModule />;
+      case "tests": return <AptitudeTests />;
+      case "mnc": return <MNCTestModule />;
       case "iv": return <LearnerMockInterview />;
       case "resume": return <ResumeBuilder />;
       case "chat": return <PlatformChat />;
