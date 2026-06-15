@@ -71,16 +71,17 @@ def get_all_users(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Get all users. Superadmin sees all. College Admin sees their college."""
-    if current_user.role not in [UserRole.SUPER_ADMIN.value, UserRole.COLLEGE_ADMIN.value]:
-        raise HTTPException(status_code=403, detail="Not authorized")
-        
+    """Get users. Superadmin sees all. Others see users in their college."""
     query = db.query(User)
-    if current_user.role == UserRole.COLLEGE_ADMIN.value:
+    
+    if current_user.role != UserRole.SUPER_ADMIN.value:
         if current_user.college_id is None:
+            # Standalone users only see themselves
             query = query.filter(User.id == current_user.id)
         else:
+            # Institutional users see everyone in their college
             query = query.filter(User.college_id == current_user.college_id)
+        # Hide super admins from non-super admins
         query = query.filter(User.role != UserRole.SUPER_ADMIN.value)
         
     return query.order_by(User.created_at.desc()).all()

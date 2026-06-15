@@ -23,7 +23,7 @@ export function SuperAdminDashboard() {
   const [sortBy, setSortBy] = useState<"name" | "role" | "status" | "date">("date");
 
   const [editingUser, setEditingUser] = useState<User | null>(null);
-  const [editFormData, setEditFormData] = useState({ name: "", email: "", role: "", status: "", plan: "base" });
+  const [editFormData, setEditFormData] = useState({ name: "", email: "", role: "", status: "", plan: "base", college_id: "" });
 
   // Create Modal State
   const [isCreatingUser, setIsCreatingUser] = useState(false);
@@ -110,7 +110,8 @@ export function SuperAdminDashboard() {
       email: u.email, 
       role: u.role, 
       status: u.status,
-      plan: u.preferences?.plan || "base"
+      plan: u.preferences?.plan || "base",
+      college_id: u.college_id ? String(u.college_id) : ""
     });
   };
 
@@ -118,12 +119,13 @@ export function SuperAdminDashboard() {
     if (!editingUser) return;
     try {
       const preferences = editingUser.preferences || {};
-      const payload = {
+      const payload: any = {
         name: editFormData.name,
         email: editFormData.email,
         role: editFormData.role,
         status: editFormData.status,
-        preferences: { ...preferences, plan: editFormData.plan }
+        preferences: { ...preferences, plan: editFormData.plan },
+        college_id: editFormData.college_id ? parseInt(editFormData.college_id) : null
       };
       await api.put(`/users/${editingUser.id}`, payload);
       setEditingUser(null);
@@ -474,7 +476,21 @@ export function SuperAdminDashboard() {
                 </select>
               </div>
 
-              {!editingUser?.college_id && editingUser?.role === "student" && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">College / Institution</label>
+                <select
+                  value={editFormData.college_id}
+                  onChange={(e) => setEditFormData({...editFormData, college_id: e.target.value})}
+                  className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
+                >
+                  <option value="">None (Independent)</option>
+                  {colleges.map(c => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
+                  ))}
+                </select>
+              </div>
+
+              {!editFormData.college_id && editFormData.role === "student" && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Plan</label>
                   <select 
