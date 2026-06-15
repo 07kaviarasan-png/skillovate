@@ -7,7 +7,7 @@ from app.core.rbac import get_current_user, RoleChecker, UserRole
 from app.models.user import User
 from app.schemas.user import UserResponse, AdminUserUpdateRequest, AdminUserCreateRequest
 from app.core.exceptions import NotFoundError
-from app.core.security import get_password_hash
+from app.core.security import hash_password
 from app.models.user import StudentProfile, FacultyProfile, RecruiterProfile
 
 router = APIRouter(prefix="/users", tags=["Users"])
@@ -19,15 +19,22 @@ def create_user(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Create a user directly. Superadmin can create anyone. College Admin can only create users in their college."""
-    if current_user.role not in [UserRole.SUPER_ADMIN.value, UserRole.COLLEGE_ADMIN.value]:
+    """Create a user. Superadmin=anyone, College Admin=faculty+students, Faculty=students only."""
+    allowed_roles = [UserRole.SUPER_ADMIN.value, UserRole.COLLEGE_ADMIN.value, UserRole.FACULTY.value]
+    if current_user.role not in allowed_roles:
         raise HTTPException(status_code=403, detail="Not authorized to create users")
+    
+    # Faculty can only create students in their own college
+    if current_user.role == UserRole.FACULTY.value:
+        if payload.role != UserRole.STUDENT.value:
+            raise HTTPException(status_code=403, detail="Faculty can only create students")
+        payload.college_id = current_user.college_id
         
+    # College admin can create faculty + students in their own college
     if current_user.role == UserRole.COLLEGE_ADMIN.value:
-        if payload.college_id != current_user.college_id:
-            raise HTTPException(status_code=403, detail="Can only create users for your own college")
-        if payload.role == UserRole.SUPER_ADMIN.value:
-            raise HTTPException(status_code=403, detail="Cannot create super admin")
+        payload.college_id = current_user.college_id
+        if payload.role not in [UserRole.STUDENT.value, UserRole.FACULTY.value]:
+            raise HTTPException(status_code=403, detail="Can only create students or faculty")
             
     if db.query(User).filter(User.email == payload.email).first():
         raise HTTPException(status_code=400, detail="Email already registered")
@@ -36,7 +43,7 @@ def create_user(
         email=payload.email,
         name=payload.name,
         role=payload.role,
-        password_hash=get_password_hash(payload.password),
+        password_hash=hash_password(payload.password),
         status="approved",
         college_id=payload.college_id,
         department=payload.department
@@ -123,12 +130,16 @@ def reject_user(
 def delete_user(
     user_id: int,
     db: Session = Depends(get_db),
-    current_user: User = Depends(superadmin_checker)
+    current_user: User = Depends(get_current_user)
 ):
-    """Delete a user entirely. Only accessible by superadmin."""
+    """Delete a user. Superadmin can delete anyone. College admin can delete their college users."""
+    if current_user.role not in [UserRole.SUPER_ADMIN.value, UserRole.COLLEGE_ADMIN.value]:
+        raise HTTPException(status_code=403, detail="Not authorized")
     user = db.query(User).filter(User.id == user_id).first()
     if not user:
         raise NotFoundError("User", str(user_id))
+    if current_user.role == UserRole.COLLEGE_ADMIN.value and user.college_id != current_user.college_id:
+        raise HTTPException(status_code=403, detail="Can only delete users from your college")
     db.delete(user)
     db.commit()
     return {"message": "User deleted successfully"}
@@ -138,12 +149,16 @@ def update_user(
     user_id: int,
     payload: AdminUserUpdateRequest,
     db: Session = Depends(get_db),
-    current_user: User = Depends(superadmin_checker)
+    current_user: User = Depends(get_current_user)
 ):
-    """Update a user's details. Only accessible by superadmin."""
+    """Update a user's details. Superadmin or college admin."""
+    if current_user.role not in [UserRole.SUPER_ADMIN.value, UserRole.COLLEGE_ADMIN.value]:
+        raise HTTPException(status_code=403, detail="Not authorized")
     user = db.query(User).filter(User.id == user_id).first()
     if not user:
         raise NotFoundError("User", str(user_id))
+    if current_user.role == UserRole.COLLEGE_ADMIN.value and user.college_id != current_user.college_id:
+        raise HTTPException(status_code=403, detail="Can only update users from your college")
     
     update_data = payload.model_dump(exclude_unset=True)
     for key, value in update_data.items():
@@ -152,3 +167,4 @@ def update_user(
     db.commit()
     db.refresh(user)
     return user
+

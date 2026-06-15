@@ -24,6 +24,7 @@ export function SuperAdminDashboard() {
   // Create Modal State
   const [isCreatingUser, setIsCreatingUser] = useState(false);
   const [createFormData, setCreateFormData] = useState({ name: "", email: "", role: "student", password: "", college_id: "" });
+  const [colleges, setColleges] = useState<{id: number, name: string}[]>([]);
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -50,9 +51,19 @@ export function SuperAdminDashboard() {
     }
   };
 
+  const fetchColleges = async () => {
+    try {
+      const res = await api.get("/colleges/");
+      setColleges(res.data);
+    } catch (err) {
+      console.error("Failed to fetch colleges", err);
+    }
+  };
+
   useEffect(() => {
     fetchUsers();
     fetchStats();
+    fetchColleges();
   }, [activeTab]);
 
   const handleAction = async (id: number, action: "approve" | "reject") => {
@@ -425,14 +436,17 @@ export function SuperAdminDashboard() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">College ID (Optional)</label>
-                <input 
-                  type="number" 
+                <label className="block text-sm font-medium text-gray-700 mb-1">Institution</label>
+                <select 
                   value={createFormData.college_id} 
                   onChange={(e) => setCreateFormData({...createFormData, college_id: e.target.value})}
                   className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
-                  placeholder="e.g. 1"
-                />
+                >
+                  <option value="">— No Institution —</option>
+                  {colleges.map(c => (
+                    <option key={c.id} value={String(c.id)}>{c.name}</option>
+                  ))}
+                </select>
               </div>
             </div>
             <div className="mt-6 flex justify-end space-x-3">

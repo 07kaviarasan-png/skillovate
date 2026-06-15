@@ -8,10 +8,12 @@ import { InstitutionalStudentLogin } from "@/components/auth/InstitutionalStuden
 import { LearnerShell } from "@/components/layout/LearnerShell"; 
 import { AuthSplitLayout } from "@/components/layout/AuthSplitLayout";
 import { PlatformChat } from "@/components/shared/PlatformChat";
+import { SettingsPanel } from "@/components/shared/SettingsPanel";
 import { CollegeAdminDashboard } from "@/components/institutional/CollegeAdminDashboard";
 import { FacultyDashboard } from "@/components/institutional/FacultyDashboard";
-import { useEffect, useState } from "react";
 import { InstitutionalApproval } from "@/components/institutional/InstitutionalApproval";
+import { StudentTracking } from "@/components/institutional/StudentTracking";
+import { useEffect, useState } from "react";
 
 type InstitutionalRole = "none" | "admin" | "faculty" | "student";
 
@@ -23,10 +25,7 @@ export default function InstitutionalPage() {
 
   useEffect(() => {
     setMounted(true);
-    if (activeScreen === "dash" && user?.role === "college_admin" && user?.status === "pending") {
-      setActiveScreen("security");
-    }
-  }, [activeScreen, setActiveScreen, user]);
+  }, []);
 
   if (!mounted) return null;
 
@@ -101,26 +100,44 @@ export default function InstitutionalPage() {
     );
   }
 
-  // Once authenticated (any institutional role), they land in the Shell
+  // Render the active screen based on sidebar selection
+  const renderScreen = () => {
+    switch (activeScreen) {
+      case "dash":
+        if (user?.role === "college_admin") return <CollegeAdminDashboard />;
+        if (user?.role === "faculty") return <FacultyDashboard />;
+        return (
+          <div style={{ padding: "40px" }}>
+            <h2>Welcome, {user?.name}</h2>
+            <p>Role: {user?.role}</p>
+          </div>
+        );
+      case "security":
+        return <InstitutionalApproval />;
+      case "assessments":
+        return <CollegeAdminDashboard />;
+      case "tracking":
+        return <StudentTracking />;
+      case "upload":
+        return <FacultyDashboard />;
+      case "chat":
+        return <PlatformChat />;
+      case "settings":
+        return <SettingsPanel />;
+      default:
+        return (
+          <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
+            <h2>{activeScreen.toUpperCase()} Screen</h2>
+            <p>This module is coming soon.</p>
+          </div>
+        );
+    }
+  };
+
   return (
     <LearnerShell>
-      {activeScreen === "security" && <InstitutionalApproval />}
-      {activeScreen === "chat" && <PlatformChat />}
-      {activeScreen === "dash" && user?.role === "college_admin" && <CollegeAdminDashboard />}
-      {(activeScreen === "dash" || activeScreen === "upload" || activeScreen === "settings") && user?.role === "faculty" && <FacultyDashboard />}
-      {activeScreen === "dash" && user?.role !== "college_admin" && user?.role !== "faculty" && (
-        <div style={{ padding: "40px" }}>
-          <h2>Welcome, {user?.name}</h2>
-          <p>Role: {user?.role}</p>
-          <p>Dashboard is under migration.</p>
-        </div>
-      )}
-      {activeScreen !== "dash" && activeScreen !== "security" && activeScreen !== "chat" && activeScreen !== "upload" && activeScreen !== "settings" && (
-        <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
-          <h2>{activeScreen.toUpperCase()} Screen</h2>
-          <p>This module is coming soon in the React migration.</p>
-        </div>
-      )}
+      {renderScreen()}
     </LearnerShell>
   );
 }
+

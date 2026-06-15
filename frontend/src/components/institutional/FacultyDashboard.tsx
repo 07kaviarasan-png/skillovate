@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import { api } from "@/lib/api";
+import { useAuthStore } from "@/stores/authStore";
 
 export function FacultyDashboard() {
+  const { user } = useAuthStore();
   const [studentForm, setStudentForm] = useState({ name: "", email: "", password: "" });
   const [pwdForm, setPwdForm] = useState({ currentPassword: "", newPassword: "" });
   const [message, setMessage] = useState("");
@@ -15,11 +17,12 @@ export function FacultyDashboard() {
     setLoading(true);
     setMessage("");
     try {
-      await api.post("/auth/register", {
+      await api.post("/users/", {
         name: studentForm.name,
         email: studentForm.email,
         password: studentForm.password,
-        role: "student"
+        role: "student",
+        college_id: user?.college_id
       });
       setMessage("Student account created successfully!");
       setStudentForm({ name: "", email: "", password: "" });

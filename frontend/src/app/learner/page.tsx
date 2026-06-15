@@ -8,6 +8,7 @@ import { LearnerDashboard } from "@/components/learner/LearnerDashboard";
 import { LearnerMockInterview } from "@/components/learner/LearnerMockInterview";
 import { ResumeBuilder } from "@/components/learner/ResumeBuilder";
 import { PlatformChat } from "@/components/shared/PlatformChat";
+import { SettingsPanel } from "@/components/shared/SettingsPanel";
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -29,18 +30,26 @@ function LearnerContent() {
     return <LearnerLogin initialMode={mode} />;
   }
 
+  const renderScreen = () => {
+    switch (activeScreen) {
+      case "dash": return <LearnerDashboard />;
+      case "iv": return <LearnerMockInterview />;
+      case "resume": return <ResumeBuilder />;
+      case "chat": return <PlatformChat />;
+      case "settings": return <SettingsPanel />;
+      default:
+        return (
+          <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
+            <h2>{activeScreen.toUpperCase()} Screen</h2>
+            <p>This module is coming soon.</p>
+          </div>
+        );
+    }
+  };
+
   return (
     <LearnerShell>
-      {activeScreen === "dash" && <LearnerDashboard />}
-      {activeScreen === "iv" && <LearnerMockInterview />}
-      {activeScreen === "resume" && <ResumeBuilder />}
-      {activeScreen === "chat" && <PlatformChat />}
-      {activeScreen !== "dash" && activeScreen !== "iv" && activeScreen !== "resume" && activeScreen !== "chat" && (
-        <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
-          <h2>{activeScreen.toUpperCase()} Screen</h2>
-          <p>This module is coming soon in the React migration.</p>
-        </div>
-      )}
+      {renderScreen()}
     </LearnerShell>
   );
 }
@@ -52,3 +61,4 @@ export default function LearnerPage() {
     </Suspense>
   );
 }
+

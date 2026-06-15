@@ -78,9 +78,6 @@ class AdminUserUpdateRequest(BaseModel):
     email: Optional[EmailStr] = None
     role: Optional[str] = None
     status: Optional[str] = None
-    semester: Optional[int] = None
-    cgpa: Optional[float] = None
-    skills: Optional[str] = None
-    resume_url: Optional[str] = None
-    linkedin_url: Optional[str] = None
-    github_url: Optional[str] = None
+    department: Optional[str] = None
+    college_id: Optional[int] = None
+

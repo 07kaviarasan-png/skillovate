@@ -15,10 +15,10 @@ export function InstitutionalApproval() {
 
   const fetchStudents = async () => {
     try {
-      const res = await api.get("/students/pending");
+      const res = await api.get("/users/pending");
       setStudents(res.data);
     } catch (err) {
-      console.error("Failed to fetch pending students", err);
+      console.error("Failed to fetch pending users", err);
     } finally {
       setLoading(false);
     }
@@ -30,10 +30,10 @@ export function InstitutionalApproval() {
 
   const handleAction = async (id: number, action: "approve" | "reject") => {
     try {
-      await api.put(`/students/${id}/${action}`);
+      await api.put(`/users/${id}/${action}`);
       setStudents((prev) => prev.filter((s) => s.id !== id));
     } catch (err) {
-      alert(`Failed to ${action} student`);
+      alert(`Failed to ${action} user`);
     }
   };
 
