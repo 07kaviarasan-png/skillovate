@@ -217,6 +217,7 @@ export function CollegeAdminDashboard() {
           </tbody>
         </table>
       </div>
+      )}
 
       {/* Create User Modal */}
       {showCreateUser && (
