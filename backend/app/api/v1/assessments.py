@@ -38,6 +38,59 @@ def create_assessment(data: AssessmentCreateRequest, current_user: User = Depend
     return assessment
 
 
+@router.post("/generate-questions", dependencies=[require_roles(UserRole.FACULTY, UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
+def generate_assessment_questions(data: dict):
+    title = data.get("title", "Assessment")
+    type = data.get("type", "general")
+    difficulty = data.get("difficulty", "medium")
+    import os
+    import json
+    from groq import Groq
+    from fastapi import HTTPException
+    
+    groq_api_key = os.getenv("GROQ_API_KEY")
+    if not groq_api_key:
+        return {"questions": [{"question": f"Sample {difficulty} {type} question for {title}", "options": ["A", "B", "C", "D"], "correct_answer": "A"}]}
+        
+    try:
+        client = Groq(api_key=groq_api_key)
+        prompt = f"""
+        You are an expert curriculum designer. 
+        Generate exactly 10 multiple-choice questions for an assessment titled "{title}".
+        Type: {type}
+        Difficulty: {difficulty}
+        
+        Return the result as a raw JSON object with a single key "questions" containing a list of objects.
+        Each object should have:
+        "question": string
+        "options": list of 4 strings
+        "correct_answer": string (must match one of the options)
+        
+        Do not include markdown blocks or any other text outside the JSON.
+        """
+
+        completion = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+            max_tokens=2048,
+            response_format={"type": "json_object"}
+        )
+
+        result_text = completion.choices[0].message.content.strip()
+        if result_text.startswith("```json"):
+            result_text = result_text[7:]
+        if result_text.startswith("```"):
+            result_text = result_text[3:]
+        if result_text.endswith("```"):
+            result_text = result_text[:-3]
+        result_text = result_text.strip()
+        data = json.loads(result_text)
+        return {"questions": data.get("questions", [])}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to generate questions: {str(e)}")
+
+
 @router.get("/overview/stats")
 def overview_stats(db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
     query = db.query(Assessment)

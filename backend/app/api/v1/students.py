@@ -158,7 +158,7 @@ def log_student_test(student_id: int, data: dict, db: Session = Depends(get_db))
     if not assessment:
         assessment = Assessment(
             title=data.get("testName") or data.get("title") or "Practice Test",
-            assessment_type=data.get("type") or "mixed",
+            assessment_type=data.get("type") if data.get("type") in ["aptitude", "technical", "verbal", "logical", "di", "company_specific", "mixed"] else "mixed",
             college_id=student.college_id or 1,
             created_by=student_id,
             duration_minutes=int(data.get("duration") or 30),
@@ -182,12 +182,42 @@ def log_student_test(student_id: int, data: dict, db: Session = Depends(get_db))
     )
     db.add(attempt)
     if student.student_profile:
-        student.student_profile.tests_completed += 1
-        student.student_profile.avg_accuracy = round(
-            ((student.student_profile.avg_accuracy * (student.student_profile.tests_completed - 1)) + pct)
-            / student.student_profile.tests_completed,
+        profile = student.student_profile
+        profile.tests_completed += 1
+        profile.avg_accuracy = round(
+            ((profile.avg_accuracy * (profile.tests_completed - 1)) + pct)
+            / profile.tests_completed,
             2,
         )
+        
+        # ── Streak logic ────────────────────────────────────────────────
+        from datetime import datetime, timezone, timedelta
+        now = datetime.now(timezone.utc)
+        # Check if there was a test attempt yesterday to maintain streak
+        yesterday_start = (now - timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
+        today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        yesterday_attempts = db.query(AssessmentAttempt).filter(
+            AssessmentAttempt.student_id == student_id,
+            AssessmentAttempt.created_at >= yesterday_start,
+            AssessmentAttempt.created_at < today_start,
+        ).count()
+        today_attempts_before = db.query(AssessmentAttempt).filter(
+            AssessmentAttempt.student_id == student_id,
+            AssessmentAttempt.created_at >= today_start,
+        ).count()
+        if today_attempts_before == 0:
+            # First test today
+            if yesterday_attempts > 0 or profile.streak == 0:
+                profile.streak += 1
+            # If no activity yesterday and streak was > 0, reset
+            elif yesterday_attempts == 0 and profile.streak > 0:
+                profile.streak = 1
+        
+        # ── National rank: rank by avg_accuracy desc ─────────────────────
+        better_count = db.query(StudentProfile).filter(
+            StudentProfile.avg_accuracy > profile.avg_accuracy
+        ).count()
+        profile.national_rank = better_count + 1
     db.commit()
     return MessageResponse(message="Test attempt logged")
 

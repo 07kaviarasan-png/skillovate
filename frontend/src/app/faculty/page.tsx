@@ -6,6 +6,9 @@ import { useAuthStore } from "@/stores/authStore";
 import { useUiStore } from "@/stores/uiStore";
 import { LearnerShell } from "@/components/layout/LearnerShell";
 import { FacultyUpload } from "@/components/faculty/FacultyUpload";
+import { FacultyDashboard } from "@/components/institutional/FacultyDashboard";
+import { PlatformChat } from "@/components/shared/PlatformChat";
+import { SettingsPanel } from "@/components/shared/SettingsPanel";
 
 export default function FacultyPage() {
   const { isAuthenticated, user } = useAuthStore();
@@ -14,10 +17,10 @@ export default function FacultyPage() {
 
   useEffect(() => {
     setMounted(true);
-    if (activeScreen === "dash") {
-      setActiveScreen("upload");
+    if (activeScreen === "dash" || !activeScreen) {
+      setActiveScreen("dash");
     }
-  }, [activeScreen, setActiveScreen]);
+  }, []);
 
   if (!mounted) return null;
 
@@ -25,22 +28,19 @@ export default function FacultyPage() {
     return <FacultyLogin />;
   }
 
+  const renderScreen = () => {
+    switch (activeScreen) {
+      case "dash": return <FacultyDashboard />;
+      case "upload": return <FacultyUpload />;
+      case "chat": return <PlatformChat />;
+      case "settings": return <SettingsPanel />;
+      default: return <FacultyDashboard />;
+    }
+  };
+
   return (
     <LearnerShell>
-      {activeScreen === "upload" && <FacultyUpload />}
-      {activeScreen === "dash" && (
-        <div style={{ padding: "40px" }}>
-          <h2>Welcome, {user?.name}</h2>
-          <p>Role: {user?.role}</p>
-          <p>Faculty Dashboard is under migration.</p>
-        </div>
-      )}
-      {activeScreen !== "dash" && activeScreen !== "upload" && (
-        <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
-          <h2>{activeScreen.toUpperCase()} Screen</h2>
-          <p>This module is coming soon in the React migration.</p>
-        </div>
-      )}
+      {renderScreen()}
     </LearnerShell>
   );
 }

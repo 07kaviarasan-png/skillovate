@@ -42,6 +42,28 @@ export function CollegeAdminDashboard() {
   // Assessment form
   const [showCreateAssessment, setShowCreateAssessment] = useState(false);
   const [assessmentForm, setAssessmentForm] = useState({ title: "", description: "", assessment_type: "aptitude", difficulty: "medium", duration_minutes: 30, total_marks: 100, pass_percentage: 40, status: "active" });
+  const [isGeneratingAI, setIsGeneratingAI] = useState(false);
+
+  const handleAIGenerate = async () => {
+    if (!assessmentForm.title) {
+      alert("Please enter a title first to generate questions.");
+      return;
+    }
+    setIsGeneratingAI(true);
+    try {
+      const res = await api.post("/assessments/generate-questions", {
+        title: assessmentForm.title,
+        type: assessmentForm.assessment_type,
+        difficulty: assessmentForm.difficulty
+      });
+      setAssessmentForm(prev => ({ ...prev, description: JSON.stringify(res.data) }));
+    } catch (err) {
+      alert("Failed to generate AI questions.");
+      console.error(err);
+    } finally {
+      setIsGeneratingAI(false);
+    }
+  };
 
   const fetchUsers = async () => {
     try {
@@ -288,7 +310,17 @@ export function CollegeAdminDashboard() {
                 </div>
               </div>
               <div style={{ marginBottom: "14px" }}>
-                <label className="lbl">Questions Data (JSON file)</label>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "8px" }}>
+                  <label className="lbl" style={{ marginBottom: 0 }}>Questions Data (JSON file)</label>
+                  <button 
+                    type="button" 
+                    onClick={handleAIGenerate}
+                    disabled={isGeneratingAI}
+                    style={{ background: "none", border: "none", color: "var(--purple)", fontWeight: 600, fontSize: "13px", cursor: "pointer" }}
+                  >
+                    {isGeneratingAI ? "Generating..." : "✨ Auto-Generate with AI"}
+                  </button>
+                </div>
                 <input type="file" accept=".json" className="fi" onChange={(e) => {
                   const file = e.target.files?.[0];
                   if (file) {

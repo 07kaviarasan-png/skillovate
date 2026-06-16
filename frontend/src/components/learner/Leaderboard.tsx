@@ -13,25 +13,24 @@ type LeaderboardEntry = {
   trend: "up" | "down" | "same";
 };
 
-// Mock data for the leaderboard
-const MOCK_LEADERBOARD: LeaderboardEntry[] = [
-  { rank: 1, name: "Arjun Mehta", college: "IIT Madras", score: 9850, accuracy: 94, avatar: "A", trend: "same" },
-  { rank: 2, name: "Priya Sharma", college: "NIT Trichy", score: 9420, accuracy: 91, avatar: "P", trend: "up" },
-  { rank: 3, name: "Rahul Verma", college: "VIT Vellore", score: 9100, accuracy: 88, avatar: "R", trend: "up" },
-  { rank: 4, name: "Sneha Reddy", college: "SRM University", score: 8950, accuracy: 89, avatar: "S", trend: "down" },
-  { rank: 5, name: "Kaviarasan S", college: "SNS College", score: 8840, accuracy: 86, avatar: "K", trend: "up" },
-  { rank: 6, name: "Vikram Singh", college: "BITS Pilani", score: 8700, accuracy: 85, avatar: "V", trend: "down" },
-  { rank: 7, name: "Ananya Patel", college: "Manipal University", score: 8550, accuracy: 83, avatar: "A", trend: "same" },
-  { rank: 8, name: "Rohan Desai", college: "PSG Tech", score: 8400, accuracy: 82, avatar: "R", trend: "up" },
-];
-
 export function Leaderboard() {
   const { user } = useAuthStore();
   const [activeTab, setActiveTab] = useState<"national" | "college">("national");
+  const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const leaderboardData = activeTab === "national" 
-    ? MOCK_LEADERBOARD 
-    : MOCK_LEADERBOARD.filter(e => e.college === "SNS College" || e.name === "Kaviarasan S");
+  React.useEffect(() => {
+    setLoading(true);
+    import("@/lib/api").then(({ api }) => {
+      api.get(`/leaderboard?scope=${activeTab}`).then((res) => {
+        setLeaderboardData(res.data.data || []);
+        setLoading(false);
+      }).catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+    });
+  }, [activeTab]);
 
   return (
     <div className="screen active" style={{ padding: "40px" }}>

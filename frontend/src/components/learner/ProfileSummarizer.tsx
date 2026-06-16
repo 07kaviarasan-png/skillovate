@@ -1,10 +1,35 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useAuthStore } from "@/stores/authStore";
 
 export function ProfileSummarizer() {
   const { user } = useAuthStore();
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const handlePrint = async () => {
+    const element = document.getElementById('profile-report');
+    if (!element) return;
+    
+    setIsGenerating(true);
+    try {
+      const html2pdf = (await import('html2pdf.js')).default;
+      const opt = {
+        margin:       [0.2, 0.2, 0.2, 0.2],
+        filename:     `${user?.name || 'Student'}_Profile_Report.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      
+      await html2pdf().set(opt).from(element).save();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to export PDF.");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   return (
     <div className="screen active" style={{ padding: "40px" }}>
@@ -13,7 +38,7 @@ export function ProfileSummarizer() {
         <p style={{ color: "var(--muted)", fontSize: "15px" }}>Your AI-generated performance profile and career readiness score.</p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "24px" }}>
+      <div id="profile-report" style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "24px", background: "var(--bg)", padding: "16px" }}>
         
         {/* Left Column: Summary */}
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
@@ -101,7 +126,14 @@ export function ProfileSummarizer() {
               </div>
             </div>
             
-            <button className="btn btn-p" style={{ width: "100%" }}>Download Full Report</button>
+            <button 
+              className="btn btn-p" 
+              style={{ width: "100%" }}
+              onClick={handlePrint}
+              disabled={isGenerating}
+            >
+              {isGenerating ? "Exporting..." : "Download Full Report"}
+            </button>
           </div>
           
         </div>

@@ -74,7 +74,6 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
         email: signupEmail,
         password: signupPassword,
         role: signupRole,
-        college_name: signupRole === "student" ? signupCollege || undefined : undefined,
       });
 
       const payload = res.data;
@@ -215,22 +214,7 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
               value={signupEmail}
               onChange={(e) => setSignupEmail(e.target.value)}
             />
-            {signupRole === "student" && (
-              <>
-                <label className="lbl">
-                  College / Institution{" "}
-                  <span style={{ color: "var(--muted)", fontWeight: 400 }}>(optional)</span>
-                </label>
-                <input
-                  type="text"
-                  className="fi"
-                  placeholder="e.g. PSG College of Technology"
-                  style={{ marginBottom: "12px" }}
-                  value={signupCollege}
-                  onChange={(e) => setSignupCollege(e.target.value)}
-                />
-              </>
-            )}
+
             <label className="lbl">Password</label>
             <input
               type="password"

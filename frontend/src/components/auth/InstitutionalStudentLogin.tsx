@@ -76,7 +76,7 @@ export function InstitutionalStudentLogin({ onBack }: { onBack: () => void }) {
             Institutional Student Login
           </h2>
           <p style={{ color: "var(--muted)", fontSize: "14px", lineHeight: 1.5 }}>
-            Sign in using the email registered by your institution and your Date of Birth as the password.
+            Sign in using the credentials provided by your institution.
           </p>
         </div>
 
@@ -97,12 +97,12 @@ export function InstitutionalStudentLogin({ onBack }: { onBack: () => void }) {
             onChange={(e) => setEmail(e.target.value)}
           />
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-            <label className="lbl" style={{ marginBottom: 0 }}>Password (DOB)</label>
+            <label className="lbl" style={{ marginBottom: 0 }}>Password</label>
           </div>
           <input
             type="password"
             className="fi"
-            placeholder="DDMMYYYY"
+            placeholder="••••••••"
             style={{ marginBottom: "14px" }}
             value={dobPassword}
             onChange={(e) => setDobPassword(e.target.value)}

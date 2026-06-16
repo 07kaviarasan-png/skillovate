@@ -46,6 +46,7 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
     : user?.role === "faculty"
     ? [
         { id: "dash", label: "Dashboard", section: "Faculty Portal", icon: <DashboardIcon /> },
+        { id: "tracking", label: "Student Tracking", icon: <ProfileIcon /> },
         { id: "upload", label: "Upload Students", icon: <PracticeIcon /> },
         { id: "chat", label: "Messages", icon: <ChatIcon /> },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
@@ -96,10 +97,10 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
         <div className="s-foot">
           {user?.role === "student" && !user?.college_id && (
             <div className="plan-strip" onClick={() => setActiveScreen("subs")}>
-              <div className="plan-name">{user.preferences?.plan === "pro" ? "Pro Plan" : "Base Plan"}</div>
-              {user.preferences?.plan !== "pro" && <div className="plan-sub">Upgrade to Pro for more features</div>}
+              <div className="plan-name">Free Plan</div>
+              <div className="plan-sub">Upgrade for more features</div>
               <div className="plan-bar-w">
-                <div className="plan-bar-f" style={{ width: user.preferences?.plan === "pro" ? "100%" : "20%", background: user.preferences?.plan === "pro" ? "var(--purple)" : "var(--accent)" }}></div>
+                <div className="plan-bar-f" style={{ width: "20%", background: "var(--accent)" }}></div>
               </div>
             </div>
           )}
