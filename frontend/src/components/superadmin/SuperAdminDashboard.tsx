@@ -316,10 +316,11 @@ export function SuperAdminDashboard() {
                   <tr key={u.id} className="hover:bg-gray-50/30 transition-colors">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       {u.name}
-                      {!u.college_id && u.role === "student" && (
-                        <span className={`ml-2 px-2 py-0.5 rounded text-[10px] font-bold ${u.preferences?.plan === 'pro' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'}`}>
-                          {u.preferences?.plan?.toUpperCase() || 'BASE'}
-                        </span>
+
+                      {u.college_id && (
+                        <div className="text-xs text-gray-400 mt-0.5 font-normal">
+                          {colleges.find(c => c.id === u.college_id)?.name || `College ID: ${u.college_id}`}
+                        </div>
                       )}
                     </td>
                     <td className="px-6 py-4 text-gray-500">{u.email}</td>
@@ -330,27 +331,27 @@ export function SuperAdminDashboard() {
                     </td>
                     <td className="px-6 py-4">
                       <span className={`px-2.5 py-1 text-xs font-semibold rounded-full capitalize border ${
-                        user.status === 'pending' ? 'bg-yellow-50 text-yellow-700 border-yellow-100' :
-                        user.status === 'approved' ? 'bg-green-50 text-green-700 border-green-100' :
+                        u.status === 'pending' ? 'bg-yellow-50 text-yellow-700 border-yellow-100' :
+                        u.status === 'approved' ? 'bg-green-50 text-green-700 border-green-100' :
                         'bg-red-50 text-red-700 border-red-100'
                       }`}>
-                        {user.status}
+                        {u.status}
                       </span>
                     </td>
                     <td className="px-6 py-4 text-gray-500 text-sm">
-                      {new Date(user.created_at).toLocaleDateString()}
+                      {new Date(u.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 text-right space-x-3">
                       {activeTab === "pending" ? (
                         <>
                           <button
-                            onClick={() => handleAction(user.id, "reject")}
+                            onClick={() => handleAction(u.id, "reject")}
                             className="text-red-500 hover:text-red-700 font-medium text-sm transition-colors"
                           >
                             Reject
                           </button>
                           <button
-                            onClick={() => handleAction(user.id, "approve")}
+                            onClick={() => handleAction(u.id, "approve")}
                             className="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-all hover:shadow focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
                           >
                             Approve
@@ -359,13 +360,13 @@ export function SuperAdminDashboard() {
                       ) : (
                         <>
                           <button
-                            onClick={() => handleEditClick(user)}
+                            onClick={() => handleEditClick(u)}
                             className="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
                           >
                             Edit
                           </button>
                           <button
-                            onClick={() => handleDelete(user.id)}
+                            onClick={() => handleDelete(u.id)}
                             className="text-red-500 hover:text-red-700 font-medium text-sm transition-colors"
                           >
                             Delete
@@ -490,19 +491,7 @@ export function SuperAdminDashboard() {
                 </select>
               </div>
 
-              {!editFormData.college_id && editFormData.role === "student" && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Plan</label>
-                  <select 
-                    value={editFormData.plan} 
-                    onChange={(e) => setEditFormData({...editFormData, plan: e.target.value})}
-                    className="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2 border"
-                  >
-                    <option value="base">Base Plan</option>
-                    <option value="pro">Pro Plan</option>
-                  </select>
-                </div>
-              )}
+
             </div>
             <div className="mt-6 flex justify-end space-x-3">
               <button 

@@ -60,10 +60,8 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
           { id: "profile", label: "Profile Summarizer", section: "Professional Profile", icon: <ProfileIcon /> },
           { id: "resume", label: "Resume Builder", icon: <ResumeIcon /> },
           { id: "lb", label: "Top Talent Board", icon: <LeaderboardIcon /> },
-        ] : user?.preferences?.plan === "pro" ? [
-          { id: "resume", label: "Resume Builder", section: "Professional Profile", icon: <ResumeIcon /> },
         ] : []),
-        { id: "chat", label: "Messages", icon: <ChatIcon />, section: isInstitutionalStudent || user?.preferences?.plan === "pro" ? undefined : "Professional Profile" },
+        { id: "chat", label: "Messages", icon: <ChatIcon />, section: isInstitutionalStudent ? undefined : "Professional Profile" },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
       ];
 

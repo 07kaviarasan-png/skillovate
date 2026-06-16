@@ -195,39 +195,7 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
               <p>Start your AI-powered placement journey today</p>
             </div>
 
-            {/* Role Selection Tabs */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '16px', background: 'var(--bg)', padding: '6px', borderRadius: '12px' }}>
-              <button
-                type="button"
-                onClick={() => setSignupRole('student')}
-                className={`py-2 rounded-lg flex items-center justify-center gap-2 transition-all`}
-                style={{
-                  border: 'none',
-                  cursor: 'pointer',
-                  background: signupRole === 'student' ? 'white' : 'transparent',
-                  fontWeight: signupRole === 'student' ? 800 : 500,
-                  boxShadow: signupRole === 'student' ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
-                  color: signupRole === 'student' ? 'var(--accent)' : 'var(--muted)'
-                }}
-              >
-                STUDENT
-              </button>
-              <button
-                type="button"
-                onClick={() => setSignupRole('recruiter')}
-                className={`py-2 rounded-lg flex items-center justify-center gap-2 transition-all`}
-                style={{
-                  border: 'none',
-                  cursor: 'pointer',
-                  background: signupRole === 'recruiter' ? 'white' : 'transparent',
-                  fontWeight: signupRole === 'recruiter' ? 800 : 500,
-                  boxShadow: signupRole === 'recruiter' ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
-                  color: signupRole === 'recruiter' ? 'var(--accent)' : 'var(--muted)'
-                }}
-              >
-                RECRUITER
-              </button>
-            </div>
+            {/* Role Selection Tabs Removed */}
 
             <label className="lbl">Username</label>
             <input
