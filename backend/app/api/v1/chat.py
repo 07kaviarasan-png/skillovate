@@ -18,10 +18,16 @@ async def get_current_user_ws(token: str, db: Session) -> User:
     try:
         payload = verify_access_token(token)
         user_id = int(payload.get("sub"))
-        user = db.query(User).filter(User.id == user_id).first()
+        user = db["users"].find_one({"id": user_id})
         if not user:
             raise ValueError("User not found")
-        return user
+        # create a dummy object so user.id works
+        class DummyUser:
+            def __init__(self, d):
+                self.id = d["id"]
+                self.name = d.get("name", "")
+                self.role = d.get("role", "")
+        return DummyUser(user)
     except Exception:
         raise ValueError("Invalid token")
 

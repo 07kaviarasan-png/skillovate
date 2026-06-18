@@ -68,12 +68,10 @@ class AuthService:
                 "year": data.year,
             })
         elif data.role == "recruiter" and data.company_name:
-            profile = RecruiterProfile(
-                user_id=user.id,
-                company_name=data.company_name
-            )
-            self.db.add(profile)
-            self.db.commit()
+            self.db["recruiter_profiles"].insert_one({
+                "user_id": user.id,
+                "company_name": data.company_name
+            })
 
         return user
 
@@ -117,15 +115,23 @@ class AuthService:
         return self._issue_tokens(user)
 
     def login_with_student_id(self, student_id: str, password: str, college_id: Optional[int] = None) -> TokenResponse:
-        query = self.db.query(User).join(StudentProfile).filter(
-            User.role == "student",
-            StudentProfile.student_id == student_id.upper(),
-        )
-        if college_id:
-            query = query.filter(User.college_id == college_id)
-        user = query.first()
-        if not user or not verify_password(password, user.password_hash):
+        profile_query = {"student_id": student_id.upper()}
+        profile_doc = self.db["student_profiles"].find_one(profile_query)
+        if not profile_doc:
             raise InvalidCredentialsError()
+            
+        user_query = {"id": profile_doc["user_id"], "role": "student"}
+        if college_id:
+            user_query["college_id"] = int(college_id)
+            
+        user_doc = self.db["users"].find_one(user_query)
+        if not user_doc:
+            raise InvalidCredentialsError()
+            
+        user = self.user_repo._to_obj(user_doc)
+        if not verify_password(password, user.password_hash):
+            raise InvalidCredentialsError()
+            
         return self._issue_tokens(user)
 
     def refresh_token(self, refresh_token: str) -> TokenResponse:
@@ -190,5 +196,5 @@ class AuthService:
         if not user or not verify_password(data.current_password, user.password_hash):
             raise InvalidCredentialsError("Incorrect current password")
         
-        user.password_hash = hash_password(data.new_password)
-        self.db.commit()
+        new_hash = hash_password(data.new_password)
+        self.user_repo.update(user_id, {"password_hash": new_hash})

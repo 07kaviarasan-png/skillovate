@@ -1,41 +1,50 @@
 from datetime import datetime, timezone
+import os
+import json
+from groq import Groq
 
-from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
+from fastapi import APIRouter, Depends, HTTPException
 
 from app.core.exceptions import NotFoundError
 from app.core.rbac import UserRole, get_college_scope, get_current_user, require_roles
 from app.database import get_db
-from app.models.assessment import Assessment, AssessmentAttempt
-from app.models.user import StudentProfile, User
+from app.config import get_settings
 from app.schemas.assessment import AssessmentCreateRequest, AssessmentResponse, AssessmentUpdateRequest, AttemptResponse, TestSubmitRequest
+from app.repositories.base import DotDict
 
 router = APIRouter(prefix="/assessments", tags=["Assessments"])
 
+def to_dict(obj):
+    # Convert MongoDB _id to string or map to id if necessary
+    if obj is None:
+        return None
+    obj["id"] = obj.get("id", str(obj.get("_id", "")))
+    return obj
 
 @router.get("", response_model=list[AssessmentResponse])
-def list_assessments(db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    query = db.query(Assessment)
+def list_assessments(db = Depends(get_db), college_scope: int | None = get_college_scope):
+    query = {}
     if college_scope:
-        query = query.filter(Assessment.college_id == college_scope)
-    return query.order_by(Assessment.created_at.desc()).all()
+        query["college_id"] = int(college_scope)
+    cursor = db["assessments"].find(query).sort("created_at", -1)
+    return [to_dict(doc) for doc in cursor]
 
 
 @router.post("", response_model=AssessmentResponse, dependencies=[require_roles(UserRole.FACULTY, UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
-def create_assessment(data: AssessmentCreateRequest, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
-    assessment = Assessment(
-        **data.model_dump(),
-        college_id=current_user.college_id or 1,
-        created_by=current_user.id,
-        shuffle_questions=True,
-        shuffle_options=False,
-        show_result_immediately=True,
-        max_attempts=1,
-    )
-    db.add(assessment)
-    db.commit()
-    db.refresh(assessment)
-    return assessment
+def create_assessment(data: AssessmentCreateRequest, current_user = Depends(get_current_user), db = Depends(get_db)):
+    doc = data.model_dump()
+    doc["id"] = db["assessments"].count_documents({}) + 1
+    doc["college_id"] = current_user.college_id or 1
+    doc["created_by"] = current_user.id
+    doc["shuffle_questions"] = True
+    doc["shuffle_options"] = False
+    doc["show_result_immediately"] = True
+    doc["max_attempts"] = 1
+    doc["created_at"] = datetime.now(timezone.utc).isoformat()
+    doc["updated_at"] = datetime.now(timezone.utc).isoformat()
+    
+    db["assessments"].insert_one(doc)
+    return to_dict(doc)
 
 
 @router.post("/generate-questions", dependencies=[require_roles(UserRole.FACULTY, UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
@@ -43,11 +52,6 @@ def generate_assessment_questions(data: dict):
     title = data.get("title", "Assessment")
     type = data.get("type", "general")
     difficulty = data.get("difficulty", "medium")
-    import os
-    import json
-    from groq import Groq
-    from fastapi import HTTPException
-    from app.config import get_settings
     
     groq_api_key = get_settings().GROQ_API_KEY
     if not groq_api_key:
@@ -93,96 +97,126 @@ def generate_assessment_questions(data: dict):
 
 
 @router.get("/overview/stats")
-def overview_stats(db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    query = db.query(Assessment)
-    attempts = db.query(AssessmentAttempt)
+def overview_stats(db = Depends(get_db), college_scope: int | None = get_college_scope):
+    query = {}
     if college_scope:
-        query = query.filter(Assessment.college_id == college_scope)
-        attempts = attempts.filter(AssessmentAttempt.college_id == college_scope)
-    total = query.count()
-    attempt_rows = attempts.all()
-    avg_score = round(sum(a.percentage or 0 for a in attempt_rows) / len(attempt_rows), 2) if attempt_rows else 0
-    return {"success": True, "data": {"total": total, "attempts": len(attempt_rows), "avg_score": avg_score}}
+        query["college_id"] = int(college_scope)
+    
+    total = db["assessments"].count_documents(query)
+    attempts = list(db["assessment_attempts"].find(query))
+    
+    avg_score = round(sum(a.get("percentage", 0) for a in attempts) / len(attempts), 2) if attempts else 0
+    return {"success": True, "data": {"total": total, "attempts": len(attempts), "avg_score": avg_score}}
 
 
-@router.get("/{assessment_id}", response_model=AssessmentResponse)
-def get_assessment(assessment_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    query = db.query(Assessment).filter(Assessment.id == assessment_id)
+def get_assessment_internal(assessment_id: int, db, college_scope: int | None):
+    query = {"id": assessment_id}
     if college_scope:
-        query = query.filter(Assessment.college_id == college_scope)
-    assessment = query.first()
+        query["college_id"] = int(college_scope)
+    assessment = db["assessments"].find_one(query)
     if not assessment:
         raise NotFoundError("Assessment", str(assessment_id))
     return assessment
 
 
+@router.get("/{assessment_id}", response_model=AssessmentResponse)
+def get_assessment(assessment_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+    assessment = get_assessment_internal(assessment_id, db, college_scope)
+    return to_dict(assessment)
+
+
 @router.put("/{assessment_id}", response_model=AssessmentResponse, dependencies=[require_roles(UserRole.FACULTY, UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
-def update_assessment(assessment_id: int, data: AssessmentUpdateRequest, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    assessment = get_assessment(assessment_id, db, college_scope)
-    for key, value in data.model_dump(exclude_unset=True).items():
-        setattr(assessment, key, value)
-    db.commit()
-    db.refresh(assessment)
-    return assessment
+def update_assessment(assessment_id: int, data: AssessmentUpdateRequest, db = Depends(get_db), college_scope: int | None = get_college_scope):
+    assessment = get_assessment_internal(assessment_id, db, college_scope)
+    
+    update_data = data.model_dump(exclude_unset=True)
+    update_data["updated_at"] = datetime.now(timezone.utc).isoformat()
+    
+    db["assessments"].update_one({"id": assessment_id}, {"$set": update_data})
+    
+    updated = get_assessment_internal(assessment_id, db, college_scope)
+    return to_dict(updated)
 
 
 @router.delete("/{assessment_id}")
-def delete_assessment(assessment_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    assessment = get_assessment(assessment_id, db, college_scope)
-    db.delete(assessment)
-    db.commit()
+def delete_assessment(assessment_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+    assessment = get_assessment_internal(assessment_id, db, college_scope)
+    db["assessments"].delete_one({"id": assessment_id})
     return {"success": True, "message": "Assessment deleted"}
 
 
 @router.get("/{assessment_id}/results", response_model=list[AttemptResponse])
-def assessment_results(assessment_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    query = db.query(AssessmentAttempt).filter(AssessmentAttempt.assessment_id == assessment_id)
+def assessment_results(assessment_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+    query = {"assessment_id": assessment_id}
     if college_scope:
-        query = query.filter(AssessmentAttempt.college_id == college_scope)
-    return query.order_by(AssessmentAttempt.created_at.desc()).all()
+        query["college_id"] = int(college_scope)
+    
+    attempts = db["assessment_attempts"].find(query).sort("created_at", -1)
+    return [to_dict(doc) for doc in attempts]
 
 
 @router.post("/submit", response_model=AttemptResponse)
-def submit_test(data: TestSubmitRequest, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+def submit_test(data: TestSubmitRequest, current_user = Depends(get_current_user), db = Depends(get_db)):
     assessment = None
     if data.assessment_id:
-        assessment = db.query(Assessment).filter(Assessment.id == data.assessment_id).first()
+        assessment = db["assessments"].find_one({"id": data.assessment_id})
+        
     if not assessment:
-        assessment = Assessment(
-            title="Practice Test",
-            assessment_type="mixed",
-            college_id=current_user.college_id or 1,
-            created_by=current_user.id,
-            duration_minutes=30,
-            total_marks=data.max_score,
-            pass_percentage=40,
-            status="active",
-            difficulty="medium",
-        )
-        db.add(assessment)
-        db.flush()
+        assessment = {
+            "id": db["assessments"].count_documents({}) + 1,
+            "title": "Practice Test",
+            "assessment_type": "mixed",
+            "college_id": current_user.college_id or 1,
+            "created_by": current_user.id,
+            "duration_minutes": 30,
+            "total_marks": data.max_score,
+            "pass_percentage": 40,
+            "status": "active",
+            "difficulty": "medium",
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "updated_at": datetime.now(timezone.utc).isoformat()
+        }
+        db["assessments"].insert_one(assessment)
+        
     pct = data.percentage if data.percentage is not None else round((data.score / data.max_score) * 100, 2)
-    attempt_number = db.query(AssessmentAttempt).filter(AssessmentAttempt.assessment_id == assessment.id, AssessmentAttempt.student_id == current_user.id).count() + 1
-    attempt = AssessmentAttempt(
-        assessment_id=assessment.id,
-        student_id=current_user.id,
-        college_id=current_user.college_id or assessment.college_id,
-        attempt_number=attempt_number,
-        score=data.score,
-        max_score=data.max_score,
-        percentage=pct,
-        time_taken_seconds=data.time_taken_seconds,
-        passed=pct >= assessment.pass_percentage,
-        status="completed",
-        completed_at=datetime.now(timezone.utc),
-        section_scores=data.section_scores,
-        weak_areas=data.weak_areas,
-    )
-    db.add(attempt)
-    profile = current_user.student_profile
+    attempt_number = db["assessment_attempts"].count_documents({
+        "assessment_id": assessment["id"], 
+        "student_id": current_user.id
+    }) + 1
+    
+    attempt = {
+        "id": db["assessment_attempts"].count_documents({}) + 1,
+        "assessment_id": assessment["id"],
+        "student_id": current_user.id,
+        "college_id": current_user.college_id or assessment["college_id"],
+        "attempt_number": attempt_number,
+        "score": data.score,
+        "max_score": data.max_score,
+        "percentage": pct,
+        "time_taken_seconds": data.time_taken_seconds,
+        "passed": pct >= assessment.get("pass_percentage", 40),
+        "status": "completed",
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "section_scores": data.section_scores,
+        "weak_areas": data.weak_areas,
+    }
+    db["assessment_attempts"].insert_one(attempt)
+    
+    # Update profile stats
+    profile = db["student_profiles"].find_one({"user_id": current_user.id})
     if profile:
-        profile.tests_completed += 1
-        profile.avg_accuracy = round(((profile.avg_accuracy * (profile.tests_completed - 1)) + pct) / profile.tests_completed, 2)
-    db.commit()
-    db.refresh(attempt)
-    return attempt
+        tests_completed = profile.get("tests_completed", 0) + 1
+        avg_acc = profile.get("avg_accuracy", 0)
+        new_avg = round(((avg_acc * (tests_completed - 1)) + pct) / tests_completed, 2)
+        
+        db["student_profiles"].update_one(
+            {"user_id": current_user.id},
+            {"$set": {
+                "tests_completed": tests_completed,
+                "avg_accuracy": new_avg
+            }}
+        )
+        
+    return to_dict(attempt)

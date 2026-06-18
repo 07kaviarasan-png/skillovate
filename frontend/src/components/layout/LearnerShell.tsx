@@ -54,6 +54,7 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
       ]
     : [
         { id: "dash", label: "Dashboard", section: "Learning Portal", icon: <DashboardIcon /> },
+        { id: "history", label: "Test History", icon: <ResumeIcon /> },
         { id: "practice", label: "Mock Practice", icon: <PracticeIcon /> },
         { id: "tests", label: "Aptitude Tests", icon: <TestsIcon /> },
         { id: "mnc", label: "MNC Test", icon: <MncIcon /> },
@@ -150,7 +151,11 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
               <div className="uav">{user?.name?.charAt(0) || "S"}</div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <span className="un">{user?.name || "Student"}</span>
-                <span className="ur">Learner Portal</span>
+                <span className="ur">
+                  {user?.role === "college_admin" ? "Institution Admin" : 
+                   user?.role === "faculty" ? "Faculty Portal" : 
+                   user?.role === "super_admin" ? "Master Console" : "Learner Portal"}
+                </span>
               </div>
             </div>
             <div className="ib" onClick={logout}>

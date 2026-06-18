@@ -36,8 +36,8 @@ security_scheme = HTTPBearer(auto_error=False)
 
 async def get_current_user(
     credentials: Optional[HTTPAuthorizationCredentials] = Depends(security_scheme),
-    db: Session = Depends(get_db),
-) -> User:
+    db = Depends(get_db),
+):
     """
     Extract and validate the current user from the JWT bearer token.
     Raises InvalidTokenError if token is missing/invalid.
@@ -53,9 +53,12 @@ async def get_current_user(
     if user_id is None:
         raise InvalidTokenError()
 
-    user = db.query(User).filter(User.id == int(user_id)).first()
-    if user is None:
+    user_doc = db["users"].find_one({"id": int(user_id)})
+    if user_doc is None:
         raise InvalidTokenError()
+
+    from app.repositories.base import DotDict
+    user = DotDict(user_doc)
 
     if not user.is_active:
         raise InactiveAccountError()
@@ -68,8 +71,8 @@ async def get_current_user(
 
 async def get_optional_user(
     credentials: Optional[HTTPAuthorizationCredentials] = Depends(security_scheme),
-    db: Session = Depends(get_db),
-) -> Optional[User]:
+    db = Depends(get_db),
+):
     """Get current user if token is provided, otherwise return None."""
     if credentials is None:
         return None
@@ -95,7 +98,7 @@ class RoleChecker:
     def __init__(self, allowed_roles: list[UserRole]):
         self.allowed_roles = allowed_roles
 
-    async def __call__(self, current_user: User = Depends(get_current_user)) -> User:
+    async def __call__(self, current_user = Depends(get_current_user)):
         if current_user.role not in [role.value for role in self.allowed_roles]:
             raise InsufficientPermissionsError(role=current_user.role)
         return current_user
@@ -127,7 +130,7 @@ class CollegeScope:
 
     async def __call__(
         self,
-        current_user: User = Depends(get_current_user),
+        current_user = Depends(get_current_user),
     ) -> Optional[int]:
         if current_user.role == UserRole.SUPER_ADMIN.value:
             return None  # Super admin sees everything

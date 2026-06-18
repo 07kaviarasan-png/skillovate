@@ -1,76 +1,88 @@
 from fastapi import APIRouter, Depends, Query
-from sqlalchemy import or_
-from sqlalchemy.orm import Session
-
+from datetime import datetime, timezone, timedelta
 from app.core.exceptions import NotFoundError
 from app.core.rbac import UserRole, get_college_scope, require_roles, get_current_user
 from app.core.security import hash_password
 from app.database import get_db
-from app.models.college import College
-from app.models.assessment import Assessment, AssessmentAttempt
-from app.models.interview import InterviewAttempt, InterviewResponse
-from app.models.user import StudentProfile, User
-from app.schemas.assessment import AttemptResponse
-from app.schemas.interview import InterviewAttemptResponse, InterviewSubmitRequest
+from app.schemas.interview import InterviewSubmitRequest
 from app.schemas.common import MessageResponse
-from app.schemas.user import StudentProfileUpdateRequest, UserResponse, UserUpdateRequest
+from app.schemas.user import StudentProfileUpdateRequest, UserUpdateRequest
 
 router = APIRouter(prefix="/students", tags=["Students"])
 
+def to_dict(obj):
+    if not obj: return None
+    obj["id"] = obj.get("id", str(obj.get("_id")))
+    obj.pop("_id", None)
+    return obj
 
-@router.get("", response_model=list[UserResponse], dependencies=[require_roles(UserRole.FACULTY, UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
+@router.get("")
 def list_students(
     search: str | None = None,
     department: str | None = None,
     year: int | None = None,
     limit: int = Query(default=100, ge=1, le=1000),
-    db: Session = Depends(get_db),
+    db = Depends(get_db),
     college_scope: int | None = get_college_scope,
 ):
-    query = db.query(User).outerjoin(StudentProfile).filter(User.role == "student")
+    query = {"role": "student"}
     if college_scope:
-        query = query.filter(User.college_id == college_scope)
+        query["college_id"] = college_scope
     if department:
-        query = query.filter(User.department == department)
-    if year:
-        query = query.filter(StudentProfile.year == year)
+        query["department"] = department
     if search:
-        term = f"%{search}%"
-        query = query.filter(or_(User.name.ilike(term), User.email.ilike(term), StudentProfile.student_id.ilike(term)))
-    return query.order_by(User.name.asc()).limit(limit).all()
+        query["$or"] = [
+            {"name": {"$regex": search, "$options": "i"}},
+            {"email": {"$regex": search, "$options": "i"}}
+        ]
+        
+    users = list(db["users"].find(query).sort("name", 1).limit(limit))
+    
+    # Attach profiles
+    for user in users:
+        prof = db["student_profiles"].find_one({"user_id": user["id"]})
+        if prof:
+            user["student_profile"] = prof
+    
+    # Filter by year if needed
+    if year:
+        users = [u for u in users if u.get("student_profile", {}).get("year") == year]
+        
+    return [to_dict(u) for u in users]
 
 
 @router.post("/identify")
-def identify_student(data: dict, db: Session = Depends(get_db)):
+def identify_student(data: dict, db = Depends(get_db)):
     college_name = str(data.get("college_id") or data.get("collegeName") or "").strip()
     roll_no = str(data.get("roll_no") or data.get("studentId") or "").strip().upper()
-    college = db.query(College).filter(College.name.ilike(college_name)).first()
+    
+    college = db["colleges"].find_one({"name": {"$regex": college_name, "$options": "i"}})
     if not college:
         raise NotFoundError("College", college_name)
-    student = (
-        db.query(User)
-        .join(StudentProfile)
-        .filter(User.college_id == college.id, StudentProfile.student_id == roll_no)
-        .first()
-    )
+        
+    profile = db["student_profiles"].find_one({"student_id": roll_no})
+    if not profile:
+        raise NotFoundError("Student", roll_no)
+        
+    student = db["users"].find_one({"id": profile["user_id"], "college_id": college["id"]})
     if not student:
         raise NotFoundError("Student", roll_no)
-    profile = student.student_profile
+        
     return {
         "success": True,
         "student": {
-            "internal_id": student.id,
-            "id": profile.student_id,
-            "name": student.name,
-            "college": college.name,
-            "college_id": college.id,
-            "department": student.department,
-            "year": profile.year if profile else None,
+            "internal_id": student["id"],
+            "id": profile["student_id"],
+            "name": student.get("name", ""),
+            "college": college["name"],
+            "college_id": college["id"],
+            "department": student.get("department", ""),
+            "year": profile.get("year", None),
             "stats": {
-                "tests_completed": profile.tests_completed if profile else 0,
-                "avg_accuracy": profile.avg_accuracy if profile else 0,
-                "interviews_completed": profile.interviews_completed if profile else 0,
-                "streak": profile.streak if profile else 0,
+                "tests_completed": profile.get("tests_completed", 0),
+                "avg_accuracy": profile.get("avg_accuracy", 0),
+                "interviews_completed": profile.get("interviews_completed", 0),
+                "streak": profile.get("streak", 0),
             },
             "profile_data": {},
             "resumeData": {},
@@ -80,264 +92,229 @@ def identify_student(data: dict, db: Session = Depends(get_db)):
         "history": {"tests": [], "interviews": [], "total_attempts": 0},
     }
 
-
-@router.get("/{student_id}", response_model=UserResponse)
-def get_student(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    query = db.query(User).filter(User.id == student_id, User.role == "student")
+@router.get("/{student_id}")
+def get_student(student_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+    query = {"id": student_id, "role": "student"}
     if college_scope:
-        query = query.filter(User.college_id == college_scope)
-    student = query.first()
+        query["college_id"] = college_scope
+    student = db["users"].find_one(query)
     if not student:
         raise NotFoundError("Student", str(student_id))
-    return student
+    return to_dict(student)
 
-
-@router.put("/{student_id}", response_model=UserResponse)
+@router.put("/{student_id}")
 def update_student(
     student_id: int,
     data: UserUpdateRequest,
-    db: Session = Depends(get_db),
+    db = Depends(get_db),
     college_scope: int | None = get_college_scope,
 ):
     student = get_student(student_id, db, college_scope)
-    for key, value in data.model_dump(exclude_unset=True).items():
-        setattr(student, key, value)
-    db.commit()
-    db.refresh(student)
-    return student
+    update_data = data.model_dump(exclude_unset=True)
+    db["users"].update_one({"id": student_id}, {"$set": update_data})
+    return to_dict(db["users"].find_one({"id": student_id}))
 
-
-@router.put("/{student_id}/profile", response_model=MessageResponse)
-def update_student_profile(student_id: int, data: StudentProfileUpdateRequest, db: Session = Depends(get_db)):
-    profile = db.query(StudentProfile).filter(StudentProfile.user_id == student_id).first()
+@router.put("/{student_id}/profile")
+def update_student_profile(student_id: int, data: StudentProfileUpdateRequest, db = Depends(get_db)):
+    profile = db["student_profiles"].find_one({"user_id": student_id})
+    update_data = data.model_dump(exclude_unset=True)
     if not profile:
-        profile = StudentProfile(user_id=student_id)
-        db.add(profile)
-    for key, value in data.model_dump(exclude_unset=True).items():
-        setattr(profile, key, value)
-    db.commit()
+        update_data["user_id"] = student_id
+        update_data["id"] = db["student_profiles"].count_documents({}) + 1
+        db["student_profiles"].insert_one(update_data)
+    else:
+        db["student_profiles"].update_one({"user_id": student_id}, {"$set": update_data})
     return MessageResponse(message="Student profile updated")
 
-
 @router.get("/{student_id}/dashboard")
-def get_student_dashboard(student_id: int, db: Session = Depends(get_db)):
-    profile = db.query(StudentProfile).filter(StudentProfile.user_id == student_id).first()
+def get_student_dashboard(student_id: int, db = Depends(get_db)):
+    profile = db["student_profiles"].find_one({"user_id": student_id})
     if not profile:
-        profile = StudentProfile(user_id=student_id)
-        db.add(profile)
-        db.commit()
-        db.refresh(profile)
+        profile = {
+            "id": db["student_profiles"].count_documents({}) + 1,
+            "user_id": student_id,
+            "tests_completed": 0,
+            "avg_accuracy": 0,
+            "interviews_completed": 0,
+            "streak": 0
+        }
+        db["student_profiles"].insert_one(profile)
         
     return {
-        "tests_completed": profile.tests_completed,
-        "avg_accuracy": round(profile.avg_accuracy, 1),
-        "interviews_completed": profile.interviews_completed,
-        "streak": profile.streak,
-        "national_rank": profile.national_rank or "-",
-        "placement_status": profile.placement_status
+        "tests_completed": profile.get("tests_completed", 0),
+        "avg_accuracy": round(profile.get("avg_accuracy", 0), 1),
+        "interviews_completed": profile.get("interviews_completed", 0),
+        "streak": profile.get("streak", 0),
+        "national_rank": profile.get("national_rank", "-"),
+        "placement_status": profile.get("placement_status", None)
     }
 
-@router.get("/{student_id}/tests", response_model=list[AttemptResponse])
-def student_tests(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    query = db.query(AssessmentAttempt).filter(AssessmentAttempt.student_id == student_id)
+@router.get("/{student_id}/tests")
+def student_tests(student_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+    query = {"student_id": student_id}
     if college_scope:
-        query = query.filter(AssessmentAttempt.college_id == college_scope)
-    return query.order_by(AssessmentAttempt.created_at.desc()).all()
+        query["college_id"] = college_scope
+    attempts = db["assessment_attempts"].find(query).sort("created_at", -1)
+    return [to_dict(a) for a in attempts]
 
-
-@router.post("/{student_id}/tests", response_model=MessageResponse)
-def log_student_test(student_id: int, data: dict, db: Session = Depends(get_db)):
-    student = db.query(User).filter(User.id == student_id).first()
+@router.post("/{student_id}/tests")
+def log_student_test(student_id: int, data: dict, db = Depends(get_db)):
+    student = db["users"].find_one({"id": student_id})
     if not student:
         raise NotFoundError("Student", str(student_id))
+        
     score = int(data.get("score") or 0)
     max_score = int(data.get("max_score") or data.get("total") or 100)
     pct = float(data.get("percentage") or round((score / max_score) * 100, 2))
     assessment_id = int(data.get("assessment_id") or 0)
-    assessment = db.query(Assessment).filter(Assessment.id == assessment_id).first() if assessment_id else None
+    
+    assessment = db["assessments"].find_one({"id": assessment_id}) if assessment_id else None
     if not assessment:
-        assessment = Assessment(
-            title=data.get("testName") or data.get("title") or "Practice Test",
-            assessment_type=data.get("type") if data.get("type") in ["aptitude", "technical", "verbal", "logical", "di", "company_specific", "mixed"] else "mixed",
-            college_id=student.college_id or 1,
-            created_by=student_id,
-            duration_minutes=int(data.get("duration") or 30),
-            total_marks=max_score,
-            pass_percentage=40,
-            status="active",
-            difficulty="medium",
-        )
-        db.add(assessment)
-        db.flush()
-    attempt = AssessmentAttempt(
-        assessment_id=assessment.id,
-        student_id=student_id,
-        college_id=student.college_id or 1,
-        attempt_number=db.query(AssessmentAttempt).filter(AssessmentAttempt.student_id == student_id).count() + 1,
-        score=score,
-        max_score=max_score,
-        percentage=pct,
-        status="completed",
-        passed=pct >= 40,
-    )
-    db.add(attempt)
-    if student.student_profile:
-        profile = student.student_profile
-        profile.tests_completed += 1
-        profile.avg_accuracy = round(
-            ((profile.avg_accuracy * (profile.tests_completed - 1)) + pct)
-            / profile.tests_completed,
-            2,
+        assessment = {
+            "id": db["assessments"].count_documents({}) + 1,
+            "title": data.get("testName") or data.get("title") or "Practice Test",
+            "assessment_type": "mixed",
+            "college_id": student.get("college_id") or 1,
+            "created_by": student_id,
+            "duration_minutes": int(data.get("duration") or 30),
+            "total_marks": max_score,
+            "pass_percentage": 40,
+            "status": "active",
+            "difficulty": "medium",
+            "created_at": datetime.now(timezone.utc).isoformat(),
+        }
+        db["assessments"].insert_one(assessment)
+        
+    attempt_num = db["assessment_attempts"].count_documents({"student_id": student_id}) + 1
+    attempt = {
+        "id": db["assessment_attempts"].count_documents({}) + 1,
+        "assessment_id": assessment["id"],
+        "student_id": student_id,
+        "college_id": student.get("college_id") or 1,
+        "attempt_number": attempt_num,
+        "score": score,
+        "max_score": max_score,
+        "percentage": pct,
+        "status": "completed",
+        "passed": pct >= 40,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+    }
+    db["assessment_attempts"].insert_one(attempt)
+    
+    profile = db["student_profiles"].find_one({"user_id": student_id})
+    if profile:
+        tests_completed = profile.get("tests_completed", 0) + 1
+        avg_acc = profile.get("avg_accuracy", 0)
+        new_avg = round(((avg_acc * (tests_completed - 1)) + pct) / tests_completed, 2)
+        
+        db["student_profiles"].update_one(
+            {"user_id": student_id},
+            {"$set": {"tests_completed": tests_completed, "avg_accuracy": new_avg}}
         )
         
-        # ── Streak logic ────────────────────────────────────────────────
-        from datetime import datetime, timezone, timedelta
-        now = datetime.now(timezone.utc)
-        # Check if there was a test attempt yesterday to maintain streak
-        yesterday_start = (now - timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
-        today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
-        yesterday_attempts = db.query(AssessmentAttempt).filter(
-            AssessmentAttempt.student_id == student_id,
-            AssessmentAttempt.created_at >= yesterday_start,
-            AssessmentAttempt.created_at < today_start,
-        ).count()
-        today_attempts_before = db.query(AssessmentAttempt).filter(
-            AssessmentAttempt.student_id == student_id,
-            AssessmentAttempt.created_at >= today_start,
-        ).count()
-        if today_attempts_before == 0:
-            # First test today
-            if yesterday_attempts > 0 or profile.streak == 0:
-                profile.streak += 1
-            # If no activity yesterday and streak was > 0, reset
-            elif yesterday_attempts == 0 and profile.streak > 0:
-                profile.streak = 1
-        
-        # ── National rank: rank by avg_accuracy desc ─────────────────────
-        better_count = db.query(StudentProfile).filter(
-            StudentProfile.avg_accuracy > profile.avg_accuracy
-        ).count()
-        profile.national_rank = better_count + 1
-    db.commit()
     return MessageResponse(message="Test attempt logged")
 
-
 @router.get("/{student_id}/tests/analytics")
-def student_test_analytics(student_id: int, db: Session = Depends(get_db)):
-    attempts = db.query(AssessmentAttempt).filter(AssessmentAttempt.student_id == student_id).all()
-    avg = round(sum(a.percentage or 0 for a in attempts) / len(attempts), 2) if attempts else 0
-    return {"success": True, "data": {"attempts": len(attempts), "average": avg, "history": attempts}}
+def student_test_analytics(student_id: int, db = Depends(get_db)):
+    attempts = list(db["assessment_attempts"].find({"student_id": student_id}))
+    avg = round(sum(a.get("percentage", 0) for a in attempts) / len(attempts), 2) if attempts else 0
+    return {"success": True, "data": {"attempts": len(attempts), "average": avg, "history": [to_dict(a) for a in attempts]}}
 
-
-@router.get("/{student_id}/interviews", response_model=list[InterviewAttemptResponse])
-def student_interviews(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    query = db.query(InterviewAttempt).filter(InterviewAttempt.student_id == student_id)
+@router.get("/{student_id}/interviews")
+def student_interviews(student_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+    query = {"student_id": student_id}
     if college_scope:
-        query = query.filter(InterviewAttempt.college_id == college_scope)
-    return query.order_by(InterviewAttempt.created_at.desc()).all()
+        query["college_id"] = college_scope
+    attempts = db["interview_attempts"].find(query).sort("created_at", -1)
+    return [to_dict(a) for a in attempts]
 
-
-@router.post("/{student_id}/interviews", response_model=InterviewAttemptResponse)
-def log_student_interview(student_id: int, data: InterviewSubmitRequest, db: Session = Depends(get_db)):
-    student = db.query(User).filter(User.id == student_id).first()
+@router.post("/{student_id}/interviews")
+def log_student_interview(student_id: int, data: InterviewSubmitRequest, db = Depends(get_db)):
+    student = db["users"].find_one({"id": student_id})
     if not student:
         raise NotFoundError("Student", str(student_id))
-    attempt = InterviewAttempt(
-        student_id=student_id,
-        college_id=student.college_id or 1,
-        role=data.role,
-        category=data.category,
-        overall_rating=data.overall_rating,
-        strengths=data.strengths,
-        improvements=data.improvements,
-        duration_seconds=data.duration_seconds,
-        attempt_number=db.query(InterviewAttempt).filter(InterviewAttempt.student_id == student_id).count() + 1,
-        status="completed",
+        
+    attempt_num = db["interview_attempts"].count_documents({"student_id": student_id}) + 1
+    attempt = {
+        "id": db["interview_attempts"].count_documents({}) + 1,
+        "student_id": student_id,
+        "college_id": student.get("college_id") or 1,
+        "role": data.role,
+        "category": data.category,
+        "overall_rating": data.overall_rating,
+        "strengths": data.strengths,
+        "improvements": data.improvements,
+        "duration_seconds": data.duration_seconds,
+        "attempt_number": attempt_num,
+        "status": "completed",
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    }
+    db["interview_attempts"].insert_one(attempt)
+    
+    for resp in data.responses:
+        r_dict = resp.model_dump()
+        r_dict["attempt_id"] = attempt["id"]
+        r_dict["id"] = db["interview_responses"].count_documents({}) + 1
+        db["interview_responses"].insert_one(r_dict)
+        
+    db["student_profiles"].update_one(
+        {"user_id": student_id},
+        {"$inc": {"interviews_completed": 1}}
     )
-    db.add(attempt)
-    db.flush()
-    for response in data.responses:
-        db.add(InterviewResponse(attempt_id=attempt.id, **response.model_dump()))
-    if student.student_profile:
-        student.student_profile.interviews_completed += 1
-    db.commit()
-    db.refresh(attempt)
-    return attempt
+    return to_dict(attempt)
 
-
-@router.post("/{student_id}/resume", response_model=MessageResponse)
-@router.post("/{student_id}/apply", response_model=MessageResponse)
-@router.post("/{student_id}/track", response_model=MessageResponse)
-def save_student_portal_state(student_id: int, data: dict):
-    return MessageResponse(message="Student state saved")
-
-
-@router.post("/batch", response_model=MessageResponse, dependencies=[require_roles(UserRole.FACULTY, UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
+@router.post("/batch")
 def create_batch_students(
     data: dict, 
-    db: Session = Depends(get_db), 
+    db = Depends(get_db), 
     college_scope: int | None = get_college_scope,
-    current_user: User = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     students = data.get("students") or []
     department = data.get("department")
     year = data.get("year")
     created = 0
-    # Faculty uploads default to 'pending'. College Admin uploads default to 'approved'.
-    default_status = "pending" if current_user.role == "faculty" else "approved"
+    default_status = "pending" if current_user.get("role") == "faculty" else "approved"
     
     for item in students:
         email = item.get("email") or f"{item.get('roll') or item.get('studentId')}@skillovate.local"
-        if db.query(User).filter(User.email == email.lower()).first():
+        if db["users"].count_documents({"email": email.lower()}) > 0:
             continue
-        user = User(
-            email=email.lower(),
-            password_hash=hash_password(item.get("password") or "student123"),
-            name=item.get("name"),
-            role="student",
-            college_id=college_scope,
-            department=item.get("department") or department,
-            status=default_status,
-        )
-        db.add(user)
-        db.flush()
-        db.add(StudentProfile(user_id=user.id, student_id=(item.get("roll") or item.get("studentId") or "").upper(), year=year or item.get("year")))
+            
+        user_id = db["users"].count_documents({}) + 1
+        user = {
+            "id": user_id,
+            "email": email.lower(),
+            "password_hash": hash_password(item.get("password") or "student123"),
+            "name": item.get("name"),
+            "role": "student",
+            "college_id": college_scope,
+            "department": item.get("department") or department,
+            "status": default_status,
+            "is_active": True,
+            "created_at": datetime.now(timezone.utc).isoformat(),
+        }
+        db["users"].insert_one(user)
+        
+        prof = {
+            "id": db["student_profiles"].count_documents({}) + 1,
+            "user_id": user_id,
+            "student_id": (item.get("roll") or item.get("studentId") or "").upper(),
+            "year": year or item.get("year"),
+            "tests_completed": 0,
+            "avg_accuracy": 0,
+            "interviews_completed": 0
+        }
+        db["student_profiles"].insert_one(prof)
         created += 1
-    db.commit()
+        
     return MessageResponse(message=f"Successfully onboarded {created} students. Status: {default_status}")
 
-@router.get("/pending", response_model=list[UserResponse], dependencies=[require_roles(UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
-def list_pending_students(db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    """Get all pending students for the master console."""
-    query = db.query(User).filter(User.role == "student", User.status == "pending")
+@router.get("/pending")
+def list_pending_students(db = Depends(get_db), college_scope: int | None = get_college_scope):
+    query = {"role": "student", "status": "pending"}
     if college_scope:
-        query = query.filter(User.college_id == college_scope)
-    return query.order_by(User.created_at.desc()).all()
-
-@router.put("/{student_id}/approve", response_model=UserResponse, dependencies=[require_roles(UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
-def approve_student(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    """Approve a pending student."""
-    query = db.query(User).filter(User.id == student_id, User.role == "student", User.status == "pending")
-    if college_scope:
-        query = query.filter(User.college_id == college_scope)
-    student = query.first()
-    if not student:
-        raise NotFoundError("Pending Student", str(student_id))
-    student.status = "approved"
-    db.commit()
-    db.refresh(student)
-    return student
-
-@router.put("/{student_id}/reject", response_model=UserResponse, dependencies=[require_roles(UserRole.COLLEGE_ADMIN, UserRole.SUPER_ADMIN)])
-def reject_student(student_id: int, db: Session = Depends(get_db), college_scope: int | None = get_college_scope):
-    """Reject a pending student."""
-    query = db.query(User).filter(User.id == student_id, User.role == "student", User.status == "pending")
-    if college_scope:
-        query = query.filter(User.college_id == college_scope)
-    student = query.first()
-    if not student:
-        raise NotFoundError("Pending Student", str(student_id))
-    student.status = "rejected"
-    db.commit()
-    db.refresh(student)
-    return student
+        query["college_id"] = college_scope
+    users = db["users"].find(query).sort("created_at", -1)
+    return [to_dict(u) for u in users]

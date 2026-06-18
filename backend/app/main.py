@@ -12,7 +12,6 @@ from app.config import get_settings
 from app.core.exceptions import SkillovateException
 from app.core.middleware import setup_middleware
 from app.api.router import api_router
-from app.database import SessionLocal
 from app.schemas.common import HealthResponse
 from app.services.seed_service import seed_core_data
 
@@ -32,11 +31,6 @@ from app.mongodb import connect_to_mongo, close_mongo_connection
 async def lifespan(app: FastAPI):
     """Lifespan events (startup/shutdown)."""
     logger.info(f"🚀 Starting {settings.APP_NAME} in {settings.APP_ENV} mode...")
-    db = SessionLocal()
-    try:
-        seed_core_data(db)
-    finally:
-        db.close()
     await connect_to_mongo()
     yield
     await close_mongo_connection()

@@ -23,6 +23,7 @@ import { ProfileSummarizer } from "@/components/learner/ProfileSummarizer";
 import { ResumeBuilder } from "@/components/learner/ResumeBuilder";
 import { Leaderboard } from "@/components/learner/Leaderboard";
 import { LearnerDashboard } from "@/components/learner/LearnerDashboard";
+import { TestHistory } from "@/components/learner/TestHistory";
 import { useEffect, useState } from "react";
 
 type InstitutionalRole = "none" | "admin" | "faculty" | "student";
@@ -129,6 +130,8 @@ export default function InstitutionalPage() {
         return <CollegeAdminDashboard />;
       case "tracking":
         return <StudentTracking />;
+      case "history":
+        return <TestHistory />;
       case "tests":
         return <AptitudeTests />;
       case "practice":

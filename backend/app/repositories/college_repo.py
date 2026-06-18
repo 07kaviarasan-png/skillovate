@@ -1,35 +1,22 @@
-"""
-Skillovate V2 — College Repository
-"""
 from typing import Optional
-from sqlalchemy.orm import Session
-from app.repositories.base import BaseRepository
-from app.models.college import College, Department
+from app.repositories.base import BaseRepository, DotDict
 
+class CollegeRepository(BaseRepository):
+    def __init__(self, db):
+        super().__init__("colleges", db)
 
-class CollegeRepository(BaseRepository[College]):
-    def __init__(self, db: Session):
-        super().__init__(College, db)
+    def exists(self, id: int) -> bool:
+        # Check integer or string since we migrated from SQL
+        return self.collection.count_documents({"id": {"$in": [id, int(id), str(id)]}}) > 0
 
-    def get_by_short_code(self, code: str) -> Optional[College]:
-        return self.db.query(College).filter(College.short_code == code.upper()).first()
+    def get_by_name(self, name: str):
+        doc = self.collection.find_one({"name": {"$regex": name, "$options": "i"}})
+        return self._to_obj(doc)
 
-    def get_active(self, skip: int = 0, limit: int = 100):
-        return self.db.query(College).filter(College.is_active == True).offset(skip).limit(limit).all()
+    def get_by_domain(self, domain: str):
+        doc = self.collection.find_one({"domain": domain.lower()})
+        return self._to_obj(doc)
 
-    def name_exists(self, name: str) -> bool:
-        return self.db.query(College).filter(College.name == name).count() > 0
-
-    def code_exists(self, code: str) -> bool:
-        return self.db.query(College).filter(College.short_code == code.upper()).count() > 0
-
-
-class DepartmentRepository(BaseRepository[Department]):
-    def __init__(self, db: Session):
-        super().__init__(Department, db)
-
-    def get_by_college(self, college_id: int):
-        return self.db.query(Department).filter(
-            Department.college_id == college_id,
-            Department.is_active == True,
-        ).all()
+    def search(self, query: str, skip: int = 0, limit: int = 100):
+        docs = self.collection.find({"name": {"$regex": query, "$options": "i"}}).skip(skip).limit(limit)
+        return self._to_objs(docs)
