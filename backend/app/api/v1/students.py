@@ -12,8 +12,14 @@ router = APIRouter(prefix="/students", tags=["Students"])
 
 def to_dict(obj):
     if not obj: return None
-    obj["id"] = obj.get("id", str(obj.get("_id")))
-    obj.pop("_id", None)
+    if isinstance(obj, list):
+        return [to_dict(x) for x in obj]
+    if isinstance(obj, dict):
+        obj["id"] = obj.get("id", str(obj.get("_id")))
+        obj.pop("_id", None)
+        for k, v in obj.items():
+            if isinstance(v, (dict, list)):
+                obj[k] = to_dict(v)
     return obj
 
 @router.get("")

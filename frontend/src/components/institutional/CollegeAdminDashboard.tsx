@@ -68,7 +68,9 @@ export function CollegeAdminDashboard() {
   const fetchUsers = async () => {
     try {
       const res = await api.get("/users");
-      setUsers(res.data);
+      // Filter out college admins so they don't see themselves in the Manage Users table
+      const filteredUsers = res.data.filter((u: User) => u.role !== "college_admin");
+      setUsers(filteredUsers);
       const students = res.data.filter((u: User) => u.role === "student").length;
       const faculty = res.data.filter((u: User) => u.role === "faculty").length;
       setStats(prev => ({ ...prev, totalUsers: res.data.length, totalStudents: students, totalFaculty: faculty }));
