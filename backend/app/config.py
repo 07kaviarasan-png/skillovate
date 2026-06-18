@@ -55,6 +55,9 @@ class Settings(BaseSettings):
     # ── Super Admin Seed ─────────────────────────
     SUPER_ADMIN_EMAIL: str = "admin@skillovate.com"
     SUPER_ADMIN_PASSWORD: str = "admin123"
+    
+    # ── AI Keys ──────────────────────────────────
+    GROQ_API_KEY: str | None = None
 
     @field_validator("DEBUG", mode="before")
     @classmethod

@@ -47,8 +47,9 @@ def generate_assessment_questions(data: dict):
     import json
     from groq import Groq
     from fastapi import HTTPException
+    from app.config import get_settings
     
-    groq_api_key = os.getenv("GROQ_API_KEY")
+    groq_api_key = get_settings().GROQ_API_KEY
     if not groq_api_key:
         return {"questions": [{"question": f"Sample {difficulty} {type} question for {title}", "options": ["A", "B", "C", "D"], "correct_answer": "A"}]}
         

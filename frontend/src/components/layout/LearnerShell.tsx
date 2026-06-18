@@ -47,7 +47,8 @@ export function LearnerShell({ children }: { children: React.ReactNode }) {
     ? [
         { id: "dash", label: "Dashboard", section: "Faculty Portal", icon: <DashboardIcon /> },
         { id: "tracking", label: "Student Tracking", icon: <ProfileIcon /> },
-        { id: "upload", label: "Upload Students", icon: <PracticeIcon /> },
+        { id: "add-student", label: "Add Student", icon: <PracticeIcon /> },
+        { id: "upload", label: "Upload Students", icon: <ResumeIcon /> },
         { id: "chat", label: "Messages", icon: <ChatIcon /> },
         { id: "settings", label: "Settings", icon: <SettingsIcon /> },
       ]

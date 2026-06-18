@@ -142,7 +142,7 @@ export function ResumeBuilder() {
     setIsGenerating(true);
     try {
       const html2pdf = (await import('html2pdf.js')).default;
-      const opt = {
+      const opt: any = {
         margin:       [0.2, 0.2, 0.2, 0.2],
         filename:     `${formData.personal.name || 'Resume'}.pdf`,
         image:        { type: 'jpeg', quality: 0.98 },

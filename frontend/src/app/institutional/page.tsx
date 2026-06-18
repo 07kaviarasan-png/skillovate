@@ -13,6 +13,8 @@ import { CollegeAdminDashboard } from "@/components/institutional/CollegeAdminDa
 import { FacultyDashboard } from "@/components/institutional/FacultyDashboard";
 import { InstitutionalApproval } from "@/components/institutional/InstitutionalApproval";
 import { StudentTracking } from "@/components/institutional/StudentTracking";
+import { AddStudentPanel } from "@/components/institutional/AddStudentPanel";
+import { FacultyUpload } from "@/components/faculty/FacultyUpload";
 import { AptitudeTests } from "@/components/learner/AptitudeTests";
 import { PracticeModule } from "@/components/learner/PracticeModule";
 import { MNCTestModule } from "@/components/learner/MNCTestModule";
@@ -141,8 +143,10 @@ export default function InstitutionalPage() {
         return <ResumeBuilder />;
       case "lb":
         return <Leaderboard />;
+      case "add-student":
+        return <AddStudentPanel />;
       case "upload":
-        return <FacultyDashboard />;
+        return <FacultyUpload />;
       case "chat":
         return <PlatformChat />;
       case "settings":

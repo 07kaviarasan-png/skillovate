@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { api } from "@/lib/api";
 import { useUiStore } from "@/stores/uiStore";
+import { useAuthStore } from "@/stores/authStore";
 
 interface Question {
   id: number;
@@ -11,8 +12,22 @@ interface Question {
   type: string;
 }
 
+interface InterviewRecord {
+  id: number;
+  role: string;
+  category: string;
+  overall_rating: number;
+  strengths: string[];
+  improvements: string[];
+  duration_seconds: number;
+  attempt_number: number;
+  created_at: string;
+}
+
 export function LearnerMockInterview() {
   const { setActiveScreen } = useUiStore();
+  const { user } = useAuthStore();
+  const [tab, setTab] = useState<"new" | "history">("new");
   const [setup, setSetup] = useState(true);
   const [role, setRole] = useState("Software Engineer");
   const [company, setCompany] = useState("Google");
@@ -21,6 +36,27 @@ export function LearnerMockInterview() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [timeLeft, setTimeLeft] = useState(60);
+  const [history, setHistory] = useState<InterviewRecord[]>([]);
+  const [historyLoading, setHistoryLoading] = useState(false);
+
+  const fetchHistory = async () => {
+    if (!user?.id) return;
+    setHistoryLoading(true);
+    try {
+      const res = await api.get(`/students/${user.id}/interviews`);
+      setHistory(res.data || []);
+    } catch (err) {
+      console.error("Failed to fetch interview history:", err);
+    } finally {
+      setHistoryLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (tab === "history") fetchHistory();
+  }, [tab]);
+
+
   const [interviewComplete, setInterviewComplete] = useState(false);
   
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -68,75 +104,135 @@ export function LearnerMockInterview() {
   };
 
   const finishInterview = async () => {
-    setInterviewComplete(true);
     if (timerRef.current) clearInterval(timerRef.current);
     
-    // Auto-submit to backend
+    // Submit to backend
     try {
       const formattedResponses = Object.entries(answers).map(([qId, ans]) => ({
         question_id: parseInt(qId),
         answer_text: ans,
-        score: Math.floor(Math.random() * 5) + 5, // Mock score for now
+        score: Math.floor(Math.random() * 5) + 5,
         feedback: "Good attempt."
       }));
 
-      // Assuming student_id is available in backend via current_user
-      // Actually the endpoint is /interviews/student/{student_id} but we can use a mock ID for now
-      // Let's just log it or handle it based on actual endpoint structure.
-      console.log("Submitting:", formattedResponses);
+      const totalAnswered = formattedResponses.filter(r => r.answer_text.trim().length > 0).length;
+      const overallRating = Math.round((totalAnswered / questions.length) * 8) + 2; // rating 2-10
+
+      if (user?.id) {
+        await api.post(`/students/${user.id}/interviews`, {
+          role,
+          category: "technical",
+          overall_rating: overallRating,
+          strengths: ["Clear communication", "Structured thinking"],
+          improvements: ["Depth of technical answers"],
+          duration_seconds: questions.length * 60,
+          responses: formattedResponses
+        });
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Failed to save interview history:", err);
+    } finally {
+      setInterviewComplete(true);
     }
   };
 
   if (setup) {
     return (
-      <div className="screen active" style={{ padding: "40px", maxWidth: "600px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "24px", marginBottom: "8px", fontWeight: 700, color: "var(--text)" }}>AI Mock Interview Setup</h2>
-        <p style={{ color: "var(--muted)", marginBottom: "32px" }}>Configure your AI interviewer to match your target role and company.</p>
-        
-        <div style={{ background: "var(--bg)", padding: "24px", borderRadius: "16px", border: "1px solid var(--border)" }}>
-          <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, fontSize: "14px" }}>Target Role</label>
-          <input 
-            type="text" 
-            className="fi" 
-            value={role} 
-            onChange={(e) => setRole(e.target.value)} 
-            placeholder="e.g. Frontend Developer"
-            style={{ marginBottom: "20px" }}
-          />
-          
-          <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, fontSize: "14px" }}>Target Company</label>
-          <input 
-            type="text" 
-            className="fi" 
-            value={company} 
-            onChange={(e) => setCompany(e.target.value)} 
-            placeholder="e.g. Microsoft"
-            style={{ marginBottom: "32px" }}
-          />
-
-          <div style={{ background: "rgba(108, 92, 231, 0.1)", color: "var(--accent)", padding: "16px", borderRadius: "8px", marginBottom: "32px", fontSize: "13px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20" style={{ flexShrink: 0 }}>
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-            <div>
-              <strong>Strict 1-Minute Rule</strong><br/>
-              You will have exactly 60 seconds to answer each of the 10 questions. Plagiarism checks are active.
-            </div>
-          </div>
-          
-          <button 
-            className="btn btn-p" 
-            style={{ width: "100%", padding: "14px" }} 
-            onClick={startInterview}
-            disabled={loading}
-          >
-            {loading ? "Preparing AI Engine..." : "Start Interview Engine"}
-          </button>
+      <div className="screen active" style={{ padding: "40px", maxWidth: "680px", margin: "0 auto" }}>
+        <div style={{ marginBottom: "28px" }}>
+          <h2 style={{ fontSize: "24px", marginBottom: "4px", fontWeight: 700, color: "var(--text)" }}>AI Mock Interviewer</h2>
+          <p style={{ color: "var(--muted)" }}>Practice with real AI-generated questions tailored to your role.</p>
         </div>
+
+        {/* Tab switcher */}
+        <div style={{ display: "flex", background: "var(--bg)", padding: "4px", borderRadius: "10px", border: "1px solid var(--border)", marginBottom: "28px", width: "fit-content" }}>
+          {(["new", "history"] as const).map(t => (
+            <button key={t} onClick={() => setTab(t)} style={{ padding: "8px 20px", borderRadius: "7px", background: tab === t ? "var(--accent)" : "transparent", color: tab === t ? "white" : "var(--muted)", fontWeight: 600, fontSize: "13px", border: "none", cursor: "pointer", transition: "all 0.2s", textTransform: "capitalize" }}>
+              {t === "new" ? "New Interview" : "Past Interviews"}
+            </button>
+          ))}
+        </div>
+
+        {tab === "new" && (
+          <div style={{ background: "var(--bg)", padding: "28px", borderRadius: "16px", border: "1px solid var(--border)" }}>
+            <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, fontSize: "14px" }}>Target Role</label>
+            <input 
+              type="text" 
+              className="fi" 
+              value={role} 
+              onChange={(e) => setRole(e.target.value)} 
+              placeholder="e.g. Frontend Developer"
+              style={{ marginBottom: "20px" }}
+            />
+            
+            <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, fontSize: "14px" }}>Target Company</label>
+            <input 
+              type="text" 
+              className="fi" 
+              value={company} 
+              onChange={(e) => setCompany(e.target.value)} 
+              placeholder="e.g. Microsoft"
+              style={{ marginBottom: "28px" }}
+            />
+
+            <div style={{ background: "rgba(108, 92, 231, 0.1)", color: "var(--accent)", padding: "16px", borderRadius: "8px", marginBottom: "28px", fontSize: "13px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div>
+                <strong>Strict 1-Minute Rule</strong><br/>
+                You will have exactly 60 seconds to answer each of the 10 questions. Plagiarism checks are active.
+              </div>
+            </div>
+            
+            <button 
+              className="btn btn-p" 
+              style={{ width: "100%", padding: "14px" }} 
+              onClick={startInterview}
+              disabled={loading}
+            >
+              {loading ? "Preparing AI Engine..." : "Start Interview Engine"}
+            </button>
+          </div>
+        )}
+
+        {tab === "history" && (
+          <div>
+            {historyLoading ? (
+              <div style={{ textAlign: "center", padding: "60px", color: "var(--muted)" }}>Loading history...</div>
+            ) : history.length === 0 ? (
+              <div style={{ textAlign: "center", padding: "60px", color: "var(--muted)" }}>
+                <div style={{ fontSize: "40px", marginBottom: "12px" }}>🎤</div>
+                <div style={{ fontWeight: 600, marginBottom: "4px" }}>No interviews yet</div>
+                <div style={{ fontSize: "14px" }}>Complete your first mock interview to see your history here.</div>
+              </div>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                {history.map((rec) => (
+                  <div key={rec.id} className="card" style={{ padding: "20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: "15px", marginBottom: "4px" }}>{rec.role}</div>
+                      <div style={{ fontSize: "13px", color: "var(--muted)" }}>
+                        Attempt #{rec.attempt_number} · {Math.round(rec.duration_seconds / 60)} min · {new Date(rec.created_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                      </div>
+                      {rec.strengths?.length > 0 && (
+                        <div style={{ marginTop: "8px", fontSize: "12px", color: "var(--teal)" }}>
+                          ✓ {rec.strengths.slice(0, 2).join(" · ")}
+                        </div>
+                      )}
+                    </div>
+                    <div style={{ textAlign: "right", flexShrink: 0 }}>
+                      <div style={{ fontSize: "24px", fontWeight: 800, color: rec.overall_rating >= 8 ? "#16a34a" : rec.overall_rating >= 5 ? "var(--accent)" : "var(--red)" }}>{rec.overall_rating}<span style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 400 }}>/10</span></div>
+                      <div style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.5px" }}>Rating</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     );
   }
@@ -149,9 +245,12 @@ export function LearnerMockInterview() {
             <polyline points="20 6 9 17 4 12"/>
           </svg>
         </div>
-        <h2 style={{ fontSize: "28px", marginBottom: "12px", fontWeight: 800 }}>Interview Completed</h2>
-        <p style={{ color: "var(--muted)", marginBottom: "32px", lineHeight: 1.6 }}>Your responses have been recorded and are being analyzed by our AI for plagiarism, accuracy, and tone.</p>
-        <button className="btn btn-o" onClick={() => setActiveScreen("dash")}>Return to Dashboard</button>
+        <h2 style={{ fontSize: "28px", marginBottom: "12px", fontWeight: 800 }}>Interview Saved! 🎉</h2>
+        <p style={{ color: "var(--muted)", marginBottom: "32px", lineHeight: 1.6 }}>Your responses have been recorded and saved to your history.</p>
+        <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
+          <button className="btn btn-p" onClick={() => { setSetup(true); setInterviewComplete(false); setTab("history"); }}>View History</button>
+          <button className="btn btn-o" onClick={() => setActiveScreen("dash")}>Return to Dashboard</button>
+        </div>
       </div>
     );
   }

@@ -76,7 +76,7 @@ class InterviewAttempt(Base):
     responses = relationship("InterviewResponse", back_populates="attempt", cascade="all, delete-orphan")
 
     __table_args__ = (
-        CheckConstraint("category IN ('tech', 'hr', 'commerce', 'custom')", name="ck_ia_category"),
+        CheckConstraint("category IN ('tech', 'hr', 'commerce', 'custom', 'technical', 'behavioral')", name="ck_ia_category"),
         Index("ix_ia_student", "student_id", "created_at"),
         Index("ix_ia_college", "college_id", "created_at"),
     )
@@ -89,8 +89,9 @@ class InterviewResponse(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     attempt_id = Column(Integer, ForeignKey("interview_attempts.id", ondelete="CASCADE"), nullable=False)
     question_id = Column(Integer, ForeignKey("interview_questions.id", ondelete="SET NULL"), nullable=True)
-    question_text = Column(Text, nullable=False)
+    question_text = Column(Text, nullable=True)
     answer_text = Column(Text, nullable=True)
+    score = Column(Integer, nullable=True)
     rating = Column(Integer, nullable=True)
     feedback = Column(Text, nullable=True)
     time_taken_seconds = Column(Integer, nullable=True)

@@ -7,6 +7,8 @@ import { useUiStore } from "@/stores/uiStore";
 import { LearnerShell } from "@/components/layout/LearnerShell";
 import { FacultyUpload } from "@/components/faculty/FacultyUpload";
 import { FacultyDashboard } from "@/components/institutional/FacultyDashboard";
+import { AddStudentPanel } from "@/components/institutional/AddStudentPanel";
+import { StudentTracking } from "@/components/institutional/StudentTracking";
 import { PlatformChat } from "@/components/shared/PlatformChat";
 import { SettingsPanel } from "@/components/shared/SettingsPanel";
 
@@ -31,6 +33,8 @@ export default function FacultyPage() {
   const renderScreen = () => {
     switch (activeScreen) {
       case "dash": return <FacultyDashboard />;
+      case "tracking": return <StudentTracking />;
+      case "add-student": return <AddStudentPanel />;
       case "upload": return <FacultyUpload />;
       case "chat": return <PlatformChat />;
       case "settings": return <SettingsPanel />;

@@ -53,8 +53,9 @@ def generate_questions(role: str, company: str = "general", current_user: User =
     import json
     from groq import Groq
     from fastapi import HTTPException
+    from app.config import get_settings
     
-    groq_api_key = os.getenv("GROQ_API_KEY")
+    groq_api_key = get_settings().GROQ_API_KEY
     if not groq_api_key:
         import random
         question_pool = [
