@@ -43,10 +43,14 @@ export function HrLogin() {
         access_token
       );
     } catch (err: unknown) {
-      const error = err as { response?: { data?: { detail?: string } } };
-      setError(
-        error?.response?.data?.detail || "Registration failed. Please try again."
-      );
+      const error = err as any;
+      const data = error?.response?.data;
+      const detail = data?.detail;
+      if (Array.isArray(detail)) {
+        setError(detail.map((e: any) => e.msg).join(", "));
+      } else {
+        setError(data?.message || detail || "Registration failed. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
@@ -76,10 +80,14 @@ export function HrLogin() {
         access_token
       );
     } catch (err: unknown) {
-      const error = err as { response?: { data?: { detail?: string } } };
-      setError(
-        error?.response?.data?.detail || "Invalid credentials. Please try again."
-      );
+      const error = err as any;
+      const data = error?.response?.data;
+      const detail = data?.detail;
+      if (Array.isArray(detail)) {
+        setError(detail.map((e: any) => e.msg).join(", "));
+      } else {
+        setError(data?.message || detail || "Invalid credentials. Please try again.");
+      }
     } finally {
       setLoading(false);
     }

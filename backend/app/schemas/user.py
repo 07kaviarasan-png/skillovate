@@ -1,7 +1,7 @@
 """
 Skillovate V2 — User Pydantic Schemas
 """
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 from pydantic import BaseModel, EmailStr, Field
 
@@ -16,13 +16,13 @@ class UserResponse(BaseModel):
     department: Optional[str] = None
     phone: Optional[str] = None
     avatar_url: Optional[str] = None
-    is_active: bool
-    is_email_verified: bool
-    status: str
+    is_active: bool = True
+    is_email_verified: bool = False
+    status: str = "approved"
     last_login_at: Optional[datetime] = None
-    created_at: datetime
-    updated_at: datetime
-    preferences: dict
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    preferences: Optional[dict] = None
 
     model_config = {"from_attributes": True}
 

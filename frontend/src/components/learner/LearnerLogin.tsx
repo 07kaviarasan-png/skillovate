@@ -50,7 +50,7 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
       );
     } catch (err: unknown) {
       const error = err as any;
-      const detail = error?.response?.data?.detail;
+      const detail = error?.response?.data?.detail || error?.response?.data?.message;
       if (Array.isArray(detail)) {
         setLoginError(detail.map((e: any) => e.msg).join(", "));
       } else {
@@ -98,7 +98,7 @@ export function LearnerLogin({ initialMode = "login" }: LearnerLoginProps) {
       }
     } catch (err: unknown) {
       const error = err as any;
-      const detail = error?.response?.data?.detail;
+      const detail = error?.response?.data?.detail || error?.response?.data?.message;
       if (Array.isArray(detail)) {
         setSignupError(detail.map((e: any) => e.msg).join(", "));
       } else {
