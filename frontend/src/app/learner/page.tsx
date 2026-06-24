@@ -13,6 +13,7 @@ import { MNCTestModule } from "@/components/learner/MNCTestModule";
 import { Leaderboard } from "@/components/learner/Leaderboard";
 import { Subscription } from "@/components/learner/Subscription";
 import { ProfileSummarizer } from "@/components/learner/ProfileSummarizer";
+import { TestHistory } from "@/components/learner/TestHistory";
 import { PlatformChat } from "@/components/shared/PlatformChat";
 import { SettingsPanel } from "@/components/shared/SettingsPanel";
 import { useEffect, useState, Suspense } from "react";
@@ -46,6 +47,7 @@ function LearnerContent() {
       case "profile": return <ProfileSummarizer />;
       case "resume": return <ResumeBuilder />;
       case "lb": return <Leaderboard />;
+      case "history": return <TestHistory />;
       case "subs": return <Subscription />;
       case "chat": return <PlatformChat />;
       case "settings": return <SettingsPanel />;

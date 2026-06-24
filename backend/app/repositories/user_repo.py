@@ -53,7 +53,8 @@ class UserRepository(BaseRepository):
         
     def create(self, data: dict):
         if "id" not in data:
-            data["id"] = self.collection.count_documents({}) + 1
+            last_doc = self.collection.find_one(sort=[("id", -1)])
+            data["id"] = (last_doc["id"] + 1) if last_doc and "id" in last_doc else 1
             data["is_active"] = True
         self.collection.insert_one(data)
         return self._to_obj(data)
@@ -72,7 +73,8 @@ class StudentProfileRepository(BaseRepository):
         
     def create(self, data: dict):
         if "id" not in data:
-            data["id"] = self.collection.count_documents({}) + 1
+            last_doc = self.collection.find_one(sort=[("id", -1)])
+            data["id"] = (last_doc["id"] + 1) if last_doc and "id" in last_doc else 1
         self.collection.insert_one(data)
         return self._to_obj(data)
 
@@ -105,7 +107,8 @@ class RefreshTokenRepository(BaseRepository):
         
     def create(self, data: dict):
         if "id" not in data:
-            data["id"] = self.collection.count_documents({}) + 1
+            last_doc = self.collection.find_one(sort=[("id", -1)])
+            data["id"] = (last_doc["id"] + 1) if last_doc and "id" in last_doc else 1
         data["is_revoked"] = False
         self.collection.insert_one(data)
         return self._to_obj(data)

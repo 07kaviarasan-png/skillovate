@@ -17,10 +17,8 @@ export function TestHistory() {
     import("@/stores/authStore").then(({ useAuthStore }) => {
       const user = useAuthStore.getState().user;
       if (user?.id) {
-        api.get(`/dashboard/student/${user.id}`).then((res) => {
-          if (res.data?.success) {
-            setHistory(res.data.data.history || []);
-          }
+        api.get(`/students/${user.id}/tests`).then((res) => {
+          setHistory(res.data || []);
         }).catch(console.error).finally(() => setLoading(false));
       } else {
         setLoading(false);

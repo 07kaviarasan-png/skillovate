@@ -12,6 +12,14 @@ type DashboardStats = {
   streak: number;
   national_rank: number | string;
   placement_status: string;
+  recent_activity?: {
+    id: number;
+    title: string;
+    score: number;
+    max_score: number;
+    percentage: number;
+    date: string;
+  }[];
 };
 
 export function LearnerDashboard() {
@@ -30,6 +38,30 @@ export function LearnerDashboard() {
   }, [user?.id]);
   
   const isInstitutionalStudent = user?.role === 'student' && !!user?.college_id;
+  
+  const hasActivity = stats?.recent_activity && stats.recent_activity.length > 0;
+
+  const defaultChallenges = hasActivity ? [
+    { subject: "Quantitative", topic: "Time & Work", defaultStatus: "Due", defaultBadge: "ba", action: "Start", btnClass: "btn-p" },
+    { subject: "Logical Reasoning", topic: "Arrangements", defaultStatus: "Due", defaultBadge: "ba", action: "Start", btnClass: "btn-p" },
+    { subject: "Data Interpretation", topic: "Bar Charts", defaultStatus: "Weak area", defaultBadge: "br", action: "Start", btnClass: "btn-p" },
+    { subject: "Verbal / English", topic: "Reading Comp.", defaultStatus: "New", defaultBadge: "bb", action: "Start", btnClass: "btn-o" }
+  ] : [
+    { subject: "Quantitative", topic: "Basic Math", defaultStatus: "New", defaultBadge: "bb", action: "Start", btnClass: "btn-p" },
+    { subject: "Logical Reasoning", topic: "Puzzles", defaultStatus: "New", defaultBadge: "bb", action: "Start", btnClass: "btn-p" },
+    { subject: "Data Interpretation", topic: "Tables", defaultStatus: "New", defaultBadge: "bb", action: "Start", btnClass: "btn-p" },
+    { subject: "Verbal / English", topic: "Grammar", defaultStatus: "New", defaultBadge: "bb", action: "Start", btnClass: "btn-o" }
+  ];
+
+  const getChallengeData = (c: typeof defaultChallenges[0]) => {
+    const isDone = stats?.recent_activity?.some(act => 
+      act.title.toLowerCase().includes(c.subject.toLowerCase()) || 
+      act.title.toLowerCase().includes("logical re") && c.subject === "Logical Reasoning" ||
+      act.title.toLowerCase().includes("quant") && c.subject === "Quantitative"
+    );
+    if (isDone) return { status: "Done", badge: "bg", action: "Review", btnClass: "btn-g" };
+    return { status: c.defaultStatus, badge: c.defaultBadge, action: c.action, btnClass: c.btnClass };
+  };
 
   return (
     <div className="screen active" id="screen-dash">
@@ -156,21 +188,34 @@ export function LearnerDashboard() {
               Recent Activity <span onClick={() => setActiveScreen("practice")}>View all</span>
             </div>
             <div id="dash-activity-list">
-              <div style={{ textAlign: "center", padding: "28px", color: "var(--muted)", fontSize: "13px" }}>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  width="36"
-                  height="36"
-                  style={{ display: "block", margin: "0 auto 10px", opacity: 0.3 }}
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12,6 12,12 16,14" />
-                </svg>
-                No activity yet. Start a practice session!
-              </div>
+              {stats?.recent_activity?.length ? (
+                stats.recent_activity.map(act => (
+                  <div key={act.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', borderBottom: '1px solid var(--border)', fontSize: '13px' }}>
+                    <div>
+                      <div style={{ fontWeight: 500, color: 'var(--text)' }}>{act.title}</div>
+                      <div style={{ color: 'var(--muted)', fontSize: '12px', marginTop: '4px' }}>
+                        {new Date(act.date).toLocaleDateString()}
+                      </div>
+                    </div>
+                    <div style={{ textAlign: 'right' }}>
+                      <div style={{ fontWeight: 600, color: act.percentage >= 70 ? 'var(--green)' : act.percentage >= 40 ? 'var(--amber)' : 'var(--red)' }}>
+                        {act.percentage}%
+                      </div>
+                      <div style={{ color: 'var(--muted)', fontSize: '12px', marginTop: '4px' }}>
+                        {act.score} / {act.max_score}
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div style={{ textAlign: "center", padding: "28px", color: "var(--muted)", fontSize: "13px" }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="36" height="36" style={{ display: "block", margin: "0 auto 10px", opacity: 0.3 }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  No activity yet. Start a practice session!
+                </div>
+              )}
             </div>
           </div>
           <div className="card">
@@ -185,70 +230,27 @@ export function LearnerDashboard() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <div className="tn">Quantitative</div>
-                  </td>
-                  <td>
-                    <div style={{ fontSize: "12px", color: "var(--muted)" }}>Time &amp; Work</div>
-                  </td>
-                  <td>
-                    <span className="badge bg">Done</span>
-                  </td>
-                  <td>
-                    <button className="btn btn-g btn-sm" onClick={() => setActiveScreen("practice")}>
-                      Review
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="tn">Logical Reasoning</div>
-                  </td>
-                  <td>
-                    <div style={{ fontSize: "12px", color: "var(--muted)" }}>Arrangements</div>
-                  </td>
-                  <td>
-                    <span className="badge ba">Due</span>
-                  </td>
-                  <td>
-                    <button className="btn btn-p btn-sm" onClick={() => setActiveScreen("practice")}>
-                      Start
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="tn">Data Interpretation</div>
-                  </td>
-                  <td>
-                    <div style={{ fontSize: "12px", color: "var(--muted)" }}>Bar Charts</div>
-                  </td>
-                  <td>
-                    <span className="badge br">Weak area</span>
-                  </td>
-                  <td>
-                    <button className="btn btn-p btn-sm" onClick={() => setActiveScreen("practice")}>
-                      Start
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="tn">Verbal / English</div>
-                  </td>
-                  <td>
-                    <div style={{ fontSize: "12px", color: "var(--muted)" }}>Reading Comp.</div>
-                  </td>
-                  <td>
-                    <span className="badge bb">New</span>
-                  </td>
-                  <td>
-                    <button className="btn btn-o btn-sm" onClick={() => setActiveScreen("practice")}>
-                      Start
-                    </button>
-                  </td>
-                </tr>
+                {defaultChallenges.map((c, i) => {
+                  const data = getChallengeData(c);
+                  return (
+                    <tr key={i}>
+                      <td>
+                        <div className="tn">{c.subject}</div>
+                      </td>
+                      <td>
+                        <div style={{ fontSize: "12px", color: "var(--muted)" }}>{c.topic}</div>
+                      </td>
+                      <td>
+                        <span className={`badge ${data.badge}`}>{data.status}</span>
+                      </td>
+                      <td>
+                        <button className={`btn ${data.btnClass} btn-sm`} onClick={() => setActiveScreen("practice")}>
+                          {data.action}
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -265,10 +267,12 @@ export function LearnerDashboard() {
               AI Recommendation
             </div>
             <div style={{ fontSize: "13px", color: "var(--text)", lineHeight: 1.62, marginBottom: "12px" }}>
-              Your Data Interpretation accuracy dropped 12% this week. Practise bar chart questions today to recover.
+              {hasActivity 
+                ? "Your Data Interpretation accuracy dropped 12% this week. Practise bar chart questions today to recover."
+                : "Welcome! Take your first assessment to unlock personalized, AI-driven insights and recommendations to improve your skills."}
             </div>
             <button className="btn btn-p btn-sm" onClick={() => setActiveScreen("practice")}>
-              Train Now
+              {hasActivity ? "Train Now" : "Take First Test"}
             </button>
           </div>
         </div>

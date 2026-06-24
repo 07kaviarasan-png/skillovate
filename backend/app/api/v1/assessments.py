@@ -211,11 +211,31 @@ def submit_test(data: TestSubmitRequest, current_user = Depends(get_current_user
         avg_acc = profile.get("avg_accuracy", 0)
         new_avg = round(((avg_acc * (tests_completed - 1)) + pct) / tests_completed, 2)
         
+        today_date = datetime.now(timezone.utc).date()
+        last_test_str = profile.get("last_test_date")
+        streak = profile.get("streak", 0)
+        
+        if last_test_str:
+            try:
+                last_test_date = datetime.fromisoformat(last_test_str).date()
+                if last_test_date == today_date:
+                    pass
+                elif last_test_date == today_date - timedelta(days=1):
+                    streak += 1
+                else:
+                    streak = 1
+            except:
+                streak = 1
+        else:
+            streak = 1
+
         db["student_profiles"].update_one(
             {"user_id": current_user.id},
             {"$set": {
                 "tests_completed": tests_completed,
-                "avg_accuracy": new_avg
+                "avg_accuracy": new_avg,
+                "streak": streak,
+                "last_test_date": today_date.isoformat()
             }}
         )
         

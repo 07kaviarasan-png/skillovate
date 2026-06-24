@@ -146,20 +146,37 @@ def get_student_dashboard(student_id: int, db = Depends(get_db)):
         }
         db["student_profiles"].insert_one(profile)
         
+    recent_attempts = list(db["assessment_attempts"].find({"student_id": student_id}).sort("created_at", -1).limit(5))
+    recent_activity = []
+    for a in recent_attempts:
+        assessment = db["assessments"].find_one({"id": a["assessment_id"]})
+        title = assessment["title"] if assessment else "Practice Test"
+        recent_activity.append({
+            "id": a["id"],
+            "title": title,
+            "score": a.get("score", 0),
+            "max_score": a.get("max_score", 100),
+            "percentage": a.get("percentage", 0),
+            "date": a.get("created_at")
+        })
+
     return {
         "tests_completed": profile.get("tests_completed", 0),
         "avg_accuracy": round(profile.get("avg_accuracy", 0), 1),
         "interviews_completed": profile.get("interviews_completed", 0),
         "streak": profile.get("streak", 0),
         "national_rank": profile.get("national_rank", "-"),
-        "placement_status": profile.get("placement_status", None)
+        "placement_status": profile.get("placement_status", None),
+        "recent_activity": recent_activity
     }
 
 @router.get("/{student_id}/tests")
-def student_tests(student_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+def student_tests(student_id: int, db = Depends(get_db), current_user = Depends(get_current_user)):
     query = {"student_id": student_id}
-    if college_scope:
-        query["college_id"] = college_scope
+    if current_user.role != "super_admin" and current_user.id != student_id:
+        if current_user.college_id:
+            query["college_id"] = current_user.college_id
+            
     attempts = db["assessment_attempts"].find(query).sort("created_at", -1)
     return [to_dict(a) for a in attempts]
 
@@ -214,9 +231,32 @@ def log_student_test(student_id: int, data: dict, db = Depends(get_db)):
         avg_acc = profile.get("avg_accuracy", 0)
         new_avg = round(((avg_acc * (tests_completed - 1)) + pct) / tests_completed, 2)
         
+        today_date = datetime.now(timezone.utc).date()
+        last_test_str = profile.get("last_test_date")
+        streak = profile.get("streak", 0)
+        
+        if last_test_str:
+            try:
+                last_test_date = datetime.fromisoformat(last_test_str).date()
+                if last_test_date == today_date:
+                    pass
+                elif last_test_date == today_date - timedelta(days=1):
+                    streak += 1
+                else:
+                    streak = 1
+            except:
+                streak = 1
+        else:
+            streak = 1
+            
         db["student_profiles"].update_one(
             {"user_id": student_id},
-            {"$set": {"tests_completed": tests_completed, "avg_accuracy": new_avg}}
+            {"$set": {
+                "tests_completed": tests_completed, 
+                "avg_accuracy": new_avg,
+                "streak": streak,
+                "last_test_date": today_date.isoformat()
+            }}
         )
         
     return MessageResponse(message="Test attempt logged")
@@ -228,10 +268,12 @@ def student_test_analytics(student_id: int, db = Depends(get_db)):
     return {"success": True, "data": {"attempts": len(attempts), "average": avg, "history": [to_dict(a) for a in attempts]}}
 
 @router.get("/{student_id}/interviews")
-def student_interviews(student_id: int, db = Depends(get_db), college_scope: int | None = get_college_scope):
+def student_interviews(student_id: int, db = Depends(get_db), current_user = Depends(get_current_user)):
     query = {"student_id": student_id}
-    if college_scope:
-        query["college_id"] = college_scope
+    if current_user.role != "super_admin" and current_user.id != student_id:
+        if current_user.college_id:
+            query["college_id"] = current_user.college_id
+            
     attempts = db["interview_attempts"].find(query).sort("created_at", -1)
     return [to_dict(a) for a in attempts]
 

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 
 export default function HrPage() {
-  const { isAuthenticated, user, logout, updateUser } = useAuthStore();
+  const { isAuthenticated, user } = useAuthStore();
   const { activeScreen, setActiveScreen } = useUiStore();
   const [mounted, setMounted] = useState(false);
   const [jobs, setJobs] = useState<any[]>([]);
@@ -29,18 +29,19 @@ export default function HrPage() {
   const [newSkill, setNewSkill] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Settings State
-  const [stName, setStName] = useState("");
-  const [stCompany, setStCompany] = useState("");
-  const [stDepartment, setStDepartment] = useState("");
-
-  useEffect(() => {
-    if (user) {
-      setStName(user.name || "");
-      setStCompany((user as any).company_name || (user as any).company || "");
-      setStDepartment(user.department || "HR");
+  const normalizeLeaderboardScore = (entry: any) => {
+    const accuracy = Number(entry?.accuracy);
+    if (Number.isFinite(accuracy) && accuracy >= 0) {
+      return Math.min(100, Math.max(0, accuracy));
     }
-  }, [user]);
+
+    const rawScore = Number(entry?.score);
+    if (!Number.isFinite(rawScore) || rawScore <= 0) {
+      return 0;
+    }
+
+    return Math.min(100, Math.max(0, rawScore > 100 ? rawScore / 10 : rawScore));
+  };
 
   const fetchJobs = async () => {
     try {
@@ -73,7 +74,13 @@ export default function HrPage() {
     try {
       const res = await api.get("/leaderboard");
       if (res.data.success) {
-        setLeaderboard(res.data.data);
+        setLeaderboard(
+          (res.data.data || []).map((entry: any) => ({
+            ...entry,
+            displayScore: normalizeLeaderboardScore(entry),
+            tests_completed: Number(entry?.tests_completed) || 0,
+          }))
+        );
       }
     } catch (err) {
       console.error("Error fetching leaderboard", err);
@@ -141,24 +148,7 @@ export default function HrPage() {
     setSkills(skills.filter((s) => s !== skill));
   };
 
-  const handleUpdateSettings = async () => {
-    if (!stName || !stCompany) return alert("Name and Company are required.");
-    setLoading(true);
-    try {
-      const res = await api.put("/auth/update", {
-        name: stName,
-        company_name: stCompany,
-        department: stDepartment
-      });
-      updateUser(res.data);
-      alert("Profile updated successfully!");
-    } catch (err) {
-      console.error(err);
-      alert("Failed to update profile");
-    } finally {
-      setLoading(false);
-    }
-  };
+
 
   return (
     <HrShell>
@@ -485,7 +475,7 @@ export default function HrPage() {
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
                 </div>
-                <div className="lb-metric-val">{leaderboard.filter(l => l.score >= 70).length}</div>
+                <div className="lb-metric-val">{leaderboard.filter(l => l.displayScore >= 70).length}</div>
                 <div className="lb-metric-lbl">Placement Ready</div>
               </div>
               <div className="lb-metric-card creative-tilt-card">
@@ -505,7 +495,7 @@ export default function HrPage() {
                   </svg>
                 </div>
                 <div className="lb-metric-val">
-                  {leaderboard.length > 0 ? Math.round(leaderboard.reduce((acc, curr) => acc + curr.score, 0) / leaderboard.length) : 0}%
+                  {leaderboard.length > 0 ? Math.round(leaderboard.reduce((acc, curr) => acc + curr.displayScore, 0) / leaderboard.length) : 0}%
                 </div>
                 <div className="lb-metric-lbl">Top percentile avg</div>
               </div>
@@ -541,7 +531,7 @@ export default function HrPage() {
                 <tbody>
                   {leaderboard.filter(s => {
                     if (lbSearch && !s.name.toLowerCase().includes(lbSearch.toLowerCase())) return false;
-                    if (lbFilter === "Top 1% Profiles" && s.score < 90) return false;
+                    if (lbFilter === "Top 1% Profiles" && s.displayScore < 90) return false;
                     if (lbFilter === "Engineering" && (!s.department || !s.department.toLowerCase().includes("engineer"))) return false;
                     if (lbFilter === "Management" && (!s.department || !s.department.toLowerCase().includes("manage"))) return false;
                     return true;
@@ -552,7 +542,7 @@ export default function HrPage() {
                   ) : (
                     leaderboard.filter(s => {
                       if (lbSearch && !s.name.toLowerCase().includes(lbSearch.toLowerCase())) return false;
-                      if (lbFilter === "Top 1% Profiles" && s.score < 90) return false;
+                      if (lbFilter === "Top 1% Profiles" && s.displayScore < 90) return false;
                       if (lbFilter === "Engineering" && (!s.department || !s.department.toLowerCase().includes("engineer"))) return false;
                       if (lbFilter === "Management" && (!s.department || !s.department.toLowerCase().includes("manage"))) return false;
                       return true;
@@ -568,7 +558,7 @@ export default function HrPage() {
                         </td>
                         <td>{student.department || "Unknown"}</td>
                         <td>{student.tests_completed} completed</td>
-                        <td><span style={{ fontWeight: 700, color: "var(--teal)" }}>{student.score.toFixed(1)}/100</span></td>
+                        <td><span style={{ fontWeight: 700, color: "var(--teal)" }}>{student.displayScore.toFixed(1)}/100</span></td>
                         <td><button className="btn btn-o btn-sm">Invite</button></td>
                       </tr>
                     ))
@@ -626,45 +616,9 @@ export default function HrPage() {
         </div>
       )}
 
-      {currentScreen === "hr-settings" && (
-        <div className="screen active" id="screen-hr-settings">
-          <div className="ph">
-            <div className="pt">Recruiter Console Settings</div>
-            <div className="ps">Manage your professional identity, company details, and credentials.</div>
-          </div>
-          <div className="settings-v3-container" style={{ display: "flex", gap: "20px", background: "var(--surface)", border: "1.5px solid var(--border)", borderRadius: "12px", padding: "20px" }}>
-            <div className="settings-v3-content" style={{ flex: 1 }}>
-              <div className="sv3-header" style={{ marginBottom: "20px" }}>
-                <h2 style={{ fontSize: "18px", fontWeight: 700, margin: "0 0 4px 0" }}>Recruiter Identity</h2>
-                <p style={{ color: "var(--muted)", fontSize: "13px", margin: 0 }}>Manage how you and your company appear to candidates.</p>
-              </div>
-              <div className="sv3-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
-                <div>
-                  <label className="input-lbl">Full Name</label>
-                  <input type="text" className="input-field" value={stName} onChange={e => setStName(e.target.value)} />
-                </div>
-                <div>
-                  <label className="input-lbl">Company Name</label>
-                  <input type="text" className="input-field" value={stCompany} onChange={e => setStCompany(e.target.value)} />
-                </div>
-                <div>
-                  <label className="input-lbl">Work Email</label>
-                  <input type="email" className="input-field" defaultValue={user?.email || ""} disabled />
-                </div>
-                <div>
-                  <label className="input-lbl">Department / Role</label>
-                  <input type="text" className="input-field" value={stDepartment} onChange={e => setStDepartment(e.target.value)} />
-                </div>
-              </div>
-              <button className="btn btn-p" style={{ marginTop: "20px" }} onClick={handleUpdateSettings} disabled={loading}>
-                {loading ? "Saving..." : "Save Changes"}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
-      {currentScreen !== "hr-dash" && currentScreen !== "hr-vac" && currentScreen !== "hr-app" && currentScreen !== "hr-lb" && currentScreen !== "hr-analytics" && currentScreen !== "hr-settings" && (
+
+      {currentScreen !== "hr-dash" && currentScreen !== "hr-vac" && currentScreen !== "hr-app" && currentScreen !== "hr-lb" && currentScreen !== "hr-analytics" && (
         <div style={{ padding: "40px", textAlign: "center", color: "var(--muted)" }}>
           <h2>{currentScreen.replace("hr-", "").toUpperCase()} Screen</h2>
           <p>This module is currently being migrated to React.</p>

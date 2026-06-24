@@ -51,7 +51,8 @@ def create_user(
     if db["users"].count_documents({"email": payload.email.lower()}) > 0:
         raise HTTPException(status_code=400, detail="Email already registered")
         
-    user_id = db["users"].count_documents({}) + 1
+    last_user = db["users"].find_one(sort=[("id", -1)])
+    user_id = (last_user["id"] + 1) if last_user and "id" in last_user else 1
     user = {
         "id": user_id,
         "email": payload.email.lower(),
